@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Finanças - Consultoria e Tecnologia para Negócios</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Azul-acinzentado escuro (seriedade) */
+            --secondary-color: #d4af37; /* Dourado (valor, finanças) */
+            --accent-color: #27ae60; /* Verde (crescimento, cerrado) */
+            --text-color: #333;
+            --light-gray-bg: #f9f9f9;
+            --white-bg: #ffffff;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--white-bg);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo img {
+            height: 70px; 
+            width: auto;
+        }
+        nav ul {
+            margin: 0; padding: 0; list-style: none;
+        }
+        nav ul li {
+            display: inline; margin-left: 20px;
+        }
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        .section {
+            padding: 80px 0;
+        }
+        #hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070' ) center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        #hero p {
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--white-bg);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary-color);
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary-color);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tab-button {
+            padding: 15px 30px;
+            cursor: pointer;
+            background: var(--white-bg);
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .tab-button:hover {
+            background: #e9e9e9;
+            border-color: #ccc;
+        }
+        .tab-button.active {
+            background: var(--primary-color);
+            color: var(--white-bg);
+            border-color: var(--primary-color);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--white-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            border-top: 5px solid var(--accent-color);
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .service-card ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .service-card .example {
+            background: var(--light-gray-bg);
+            padding: 15px;
+            border-radius: 5px;
+            font-style: italic;
+            border-left: 3px solid var(--secondary-color);
+        }
+        .service-card .example strong {
+            display: block;
+            margin-bottom: 5px;
+            font-style: normal;
+        }
+        #process { background: var(--white-bg); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--accent-color); top: 0; bottom: 0; left: 20px; margin-left: -2px; }
+        .timeline-item { padding: 10px 0 10px 50px; position: relative; width: 100%; box-sizing: border-box; }
+        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; left: 10px; background-color: var(--white-bg); border: 4px solid var(--accent-color); top: 25px; border-radius: 50%; z-index: 1; }
+        .timeline-content { padding: 20px; background-color: var(--light-gray-bg); position: relative; border-radius: 6px; }
+        .timeline-content h3 { margin-top: 0; color: var(--primary-color); }
+        .case-card { background: var(--white-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.07); }
+        .case-card-content { padding: 30px; }
+        .case-card-content h3 { margin-top: 0; color: var(--primary-color); }
+        .case-card-content .tag { display: inline-block; background: var(--accent-color); color: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-bottom: 15px; }
+        .case-card-content .result { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-top: 15px; }
+        #contact { background: var(--primary-color); color: #fff; }
+        #contact .section-title, #contact .section-subtitle { color: #fff; }
+        .contact-form { max-width: 700px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            width: auto;
+            justify-self: center;
+        }
+        footer { background: #222; color: #aaa; text-align: center; padding: 30px 0; font-size: 0.9rem;}
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- MEDIA QUERIES PARA DESKTOP --- */
+        @media (min-width: 768px) {
+            header .logo img { height: 80px; }
+            nav ul li { margin-left: 30px; }
+            #hero h1 { font-size: 3.5rem; }
+            #hero p { font-size: 1.3rem; }
+            .section-title { font-size: 2.8rem; }
+            .timeline::after { left: 50%; }
+            .timeline-item { width: 50%; padding: 10px 40px; }
+            .timeline-item.left { left: 0; padding-left: 0; text-align: right;}
+            .timeline-item.right { left: 50%; padding-right: 0; text-align: left;}
+            .timeline-item.left::after { right: -10px; left: auto; }
+            .timeline-item.right::after { left: -10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <!-- LOGO CORRIGIDA COM LINK DIRETO PARA A IMAGEM -->
+            <img src="https://www.canva.com/design/DAGt1RUh5BE/5Ktn9XTarEhvpeqnUoZo2Q/view?utm_content=DAGt1RUh5BE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb1d490a008" alt="Logo da Cerrado Finanças">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#solutions">Soluções</a></li>
+                <li><a href="#process">Processo</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="container">
+        <h1>Inteligência Financeira e Tecnológica para o seu Negócio Decolar.</h1>
+        <p>Combinamos consultoria estratégica e desenvolvimento de software sob medida para transformar seus desafios em crescimento sustentável.</p>
+        <a href="#contact" class="cta-button">Agende um Diagnóstico Estratégico</a>
+    </div>
+</section>
+
+<section id="solutions" class="section">
+    <div class="container">
+        <h2 class="section-title">Nosso Portfólio de Soluções</h2>
+        <p class="section-subtitle">Navegue por nossas duas frentes de atuação: serviços de consultoria personalizados e produtos de software escaláveis.</p>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'consultoria' )">Serviços de Consultoria</button>
+            <button class="tab-button" onclick="openTab(event, 'produtos')">Produtos de Software (SaaS)</button>
+        </div>
+
+        <div id="consultoria" class="tab-content active">
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Consultoria Estratégica</h3>
+                    <p>Análise profunda para transformar dados em decisões lucrativas e processos em vantagens competitivas.</p>
+                    <ul>
+                        <li>Diagnóstico Financeiro e Contábil</li>
+                        <li>Modelagem de Fluxo de Caixa e DRE</li>
+                        <li>Mapeamento e Otimização de Processos</li>
+                        <li>Definição de KPIs (Indicadores-Chave)</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Exemplo Prático:</strong> Uma indústria com dificuldade em entender sua lucratividade. Mapeamos os custos, reestruturamos o DRE e definimos KPIs que mostraram exatamente onde o lucro estava sendo perdido.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Implementação de Sistemas</h3>
+                    <p>Construímos o ecossistema digital que sua empresa precisa, com ferramentas que se adaptam a você, e não o contrário.</p>
+                    <ul>
+                        <li>Desenvolvimento de ERPs customizados</li>
+                        <li>Implantação de CRMs para gestão de clientes</li>
+                        <li>Criação de Dashboards de BI (Business Intelligence)</li>
+                        <li>Automação de tarefas repetitivas</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Exemplo Prático:</strong> Uma distribuidora perdia vendas por falta de controle. Criamos um CRM simples, integrado ao estoque, que alerta os vendedores sobre oportunidades e níveis de produtos.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="produtos" class="tab-content">
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Produto: Insight Financeiro IA</h3>
+                    <p>Seu CFO Virtual. Uma plataforma que se conecta aos seus dados e gera relatórios financeiros e gerenciais de forma automática.</p>
+                    <ul>
+                        <li>Visão clara do fluxo de caixa</li>
+                        <li>Análise de despesas em tempo real</li>
+                        <li>Projeções de faturamento com IA</li>
+                        <li>Alertas de inconsistências financeiras</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Ideal para:</strong> Gestores sem tempo a perder com planilhas, que precisam de respostas rápidas e confiáveis sobre a saúde financeira do negócio diretamente no celular.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Produto: Portfolio AI Optimizer</h3>
+                    <p>Otimize seus investimentos. Nossa IA analisa sua carteira de ativos (ações, imóveis, etc.) e gera recomendações para maximizar retornos e minimizar riscos.</p>
+                    <ul>
+                        <li>Análise de Risco x Retorno</li>
+                        <li>Recomendações de Alocação de Ativos</li>
+                        <li>Simulação de Cenários Econômicos</li>
+                        <li>Acompanhamento de performance consolidado</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Ideal para:</strong> Empreendedores e investidores que possuem múltiplos ativos e buscam uma gestão inteligente e baseada em dados para proteger e fazer seu patrimônio crescer.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="process" class="section">
+    <div class="container">
+        <h2 class="section-title">Nossa Metodologia</h2>
+        <p class="section-subtitle">Uma jornada transparente e colaborativa em 4 etapas para garantir resultados concretos.</p>
+        <div class="timeline">
+            <div class="timeline-item left"><div class="timeline-content"><h3>1. Diagnóstico</h3><p>Entendemos suas metas e desafios através de uma análise 360º dos seus processos, dados e sistemas atuais.</p></div></div>
+            <div class="timeline-item right"><div class="timeline-content"><h3>2. Estratégia</h3><p>Desenhamos um plano de ação detalhado, definindo as soluções tecnológicas e as melhorias de processo necessárias.</p></div></div>
+            <div class="timeline-item left"><div class="timeline-content"><h3>3. Construção</h3><p>Desenvolvemos e implementamos as ferramentas, com sprints ágeis e validações constantes junto à sua equipe.</p></div></div>
+            <div class="timeline-item right"><div class="timeline-content"><h3>4. Evolução</h3><p>Acompanhamos os resultados, oferecemos suporte contínuo e otimizamos as soluções para garantir o crescimento a longo prazo.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="cases" class="section">
+    <div class="container">
+        <h2 class="section-title">Resultados Reais</h2>
+        <p class="section-subtitle">Veja como ajudamos empresas como a sua a superar desafios e alcançar novos patamares.</p>
+        <div class="service-grid">
+            <div class="case-card"><div class="case-card-content"><span class="tag">Varejo</span><h3>Otimização de Estoque</h3><p>Implementamos um sistema de BI que integra vendas e estoque, permitindo uma previsão de demanda mais precisa.</p><div class="result">+25% de Margem de Lucro</div></div></div>
+            <div class="case-card"><div class="case-card-content"><span class="tag">Indústria</span><h3>Automação Financeira</h3><p>Desenvolvemos um robô que automatizou a conciliação fiscal e a geração de relatórios, liberando a equipe para análises estratégicas.</p><div class="result">-80% de Tempo em Tarefas Manuais</div></div></div>
+            <div class="case-card"><div class="case-card-content"><span class="tag">Startup de Tecnologia</span><h3>Estruturação para Investimento</h3><p>Organizamos o DRE, o fluxo de caixa e as métricas-chave, preparando a empresa para uma rodada de captação bem-sucedida.</p><div class="result">R$ 2 Milhões Captados</div></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Vamos construir o futuro do seu negócio?</h2>
+        <p class="section-subtitle">Preencha o formulário abaixo para agendar um diagnóstico gratuito. Nossa equipe entrará em contato em até 24 horas.</p>
+        <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Seu Nome Completo" required>
+            <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+            <input type="text" name="company" placeholder="Nome da sua Empresa">
+            <textarea name="message" rows="5" placeholder="Conte-nos um pouco sobre seu principal desafio..." required></textarea>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://renato0503.github.io/cerradofinancas/obrigado.html">
+            <button type="submit" class="cta-button">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Cerrado Finanças | Todos os direitos reservados.</p>
+        <p>Transformando dados em decisão.</p>
+        <p>Consultor Responsável: <a href="https://renatorosa.my.canva.site/" target="_blank" rel="noopener noreferrer">Renato de Oliveira Rosa</a></p>
+    </div>
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tabbuttons;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tabbuttons = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tabbuttons.length; i++) {
+            tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
