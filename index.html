@@ -383,13 +383,19 @@
         <div class="container">
             <h2 class="section-title">Vamos construir o futuro do seu negócio?</h2>
             <p class="section-subtitle">Preencha o formulário abaixo para agendar um diagnóstico gratuito. Nossa equipe entrará em contato em até 24 horas.</p>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Seu Nome Completo" required>
-                <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
-                <input type="text" name="company" placeholder="Nome da sua Empresa">
-                <textarea name="message" rows="5" placeholder="Conte-nos um pouco sobre seu principal desafio..." required></textarea>
-                <button type="submit" class="cta-button">Enviar Mensagem</button>
-            </form>
+            <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Seu Nome Completo" required>
+    <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+    <input type="text" name="company" placeholder="Nome da sua Empresa">
+    <textarea name="message" rows="5" placeholder="Conte-nos um pouco sobre seu principal desafio..." required></textarea>
+
+    <!-- Configurações do FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://renato0503.github.io/cerradofinancas/obrigado.html">
+
+    <button type="submit" class="cta-button">Enviar Mensagem</button>
+</form>
+
         </div>
     </section>
 
