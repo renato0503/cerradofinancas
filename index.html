@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Finanças - Consultoria e Tecnologia para Negócios</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Azul-acinzentado escuro (seriedade) */
+            --secondary-color: #d4af37; /* Dourado (valor, finanças) */
+            --accent-color: #27ae60; /* Verde (crescimento, cerrado) */
+            --whatsapp-color: #25D366;
+            --text-color: #333;
+            --light-gray-bg: #f9f9f9;
+            --white-bg: #ffffff;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--white-bg);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        nav ul {
+            margin: 0; padding: 0; list-style: none;
+        }
+        nav ul li {
+            display: inline; margin-left: 20px;
+        }
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* --- ESTILOS PARA O LOGO (APENAS TEXTO) --- */
+        .logo {
+            text-decoration: none;
+        }
+        .logo-text {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1;
+        }
+        .logo-cerrado, .logo-financas {
+            font-size: 28px;
+        }
+        .logo-cerrado .green, .logo-cerrado .yellow {
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: #000;
+        }
+        .logo-cerrado .green {
+            color: #1e8d42;
+        }
+        .logo-cerrado .yellow {
+            color: #fecb00;
+        }
+        .logo-financas {
+            color: white;
+            -webkit-text-stroke-width: 1.2px;
+            -webkit-text-stroke-color: #000;
+        }
+        /* --- FIM DOS ESTILOS DO LOGO --- */
+
+        .section {
+            padding: 80px 0;
+        }
+        #hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070' ) center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        #hero p {
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--white-bg);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary-color);
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary-color);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tab-button {
+            padding: 15px 30px;
+            cursor: pointer;
+            background: var(--white-bg);
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .tab-button:hover {
+            background: #e9e9e9;
+            border-color: #ccc;
+        }
+        .tab-button.active {
+            background: var(--primary-color);
+            color: var(--white-bg);
+            border-color: var(--primary-color);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--white-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            border-top: 5px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            flex-grow: 1; /* Faz a lista crescer para alinhar os cards */
+        }
+        .service-card ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .service-card .example {
+            background: var(--light-gray-bg);
+            padding: 15px;
+            border-radius: 5px;
+            font-style: italic;
+            border-left: 3px solid var(--secondary-color);
+        }
+        .service-card .example strong {
+            display: block;
+            margin-bottom: 5px;
+            font-style: normal;
+        }
+        #process { background: var(--white-bg); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--accent-color); top: 0; bottom: 0; left: 20px; margin-left: -2px; }
+        .timeline-item { padding: 10px 0 10px 50px; position: relative; width: 100%; box-sizing: border-box; }
+        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; left: 10px; background-color: var(--white-bg); border: 4px solid var(--accent-color); top: 25px; border-radius: 50%; z-index: 1; }
+        .timeline-content { padding: 20px; background-color: var(--light-gray-bg); position: relative; border-radius: 6px; }
+        .timeline-content h3 { margin-top: 0; color: var(--primary-color); }
+        .case-card { 
+            background: var(--white-bg); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07); 
+            display: flex; /* Adicionado para garantir alinhamento */
+        }
+        .case-card-content { 
+            padding: 30px; 
+            display: flex; /* Adicionado */
+            flex-direction: column; /* Adicionado */
+        }
+        .case-card-content h3 { 
+            margin-top: 0; 
+            color: var(--primary-color); 
+        }
+        .case-card-content p {
+            flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+        }
+        .case-card-content .tag { 
+            display: inline-block; 
+            background: var(--accent-color); 
+            color: #fff; padding: 5px 10px; 
+            border-radius: 5px; 
+            font-size: 0.8rem; 
+            margin-bottom: 15px; 
+            font-weight: 600;
+        }
+        .case-card-content .result { 
+            font-size: 1.2rem; 
+            font-weight: bold; 
+            color: var(--primary-color); 
+            margin-top: 15px; 
+            background-color: #f0fdf4; 
+            padding: 10px; 
+            border-radius: 5px; 
+            border-left: 4px solid var(--accent-color);
+        }
+        .case-card-content .result span {
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+        
+        #whatsapp-cta {
+            background-color: var(--white-bg);
+            text-align: center;
+        }
+        .whatsapp-button {
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .whatsapp-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        #contact { background: var(--primary-color); color: #fff; }
+        #contact .section-title, #contact .section-subtitle { color: #fff; }
+        .contact-form { max-width: 700px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            width: auto;
+            justify-self: center;
+        }
+        footer { background: #222; color: #aaa; text-align: center; padding: 30px 0; font-size: 0.9rem;}
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- MEDIA QUERIES PARA DESKTOP --- */
+        @media (min-width: 768px) {
+            header .container { height: 90px; }
+            .logo-cerrado, .logo-financas { font-size: 32px; }
+            nav ul li { margin-left: 30px; }
+            #hero h1 { font-size: 3.5rem; }
+            #hero p { font-size: 1.3rem; }
+            .section-title { font-size: 2.8rem; }
+            .timeline::after { left: 50%; }
+            .timeline-item { width: 50%; padding: 10px 40px; }
+            .timeline-item.left { left: 0; padding-left: 0; text-align: right;}
+            .timeline-item.right { left: 50%; padding-right: 0; text-align: left;}
+            .timeline-item.left::after { right: -10px; left: auto; }
+            .timeline-item.right::after { left: -10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="#" class="logo">
+            <div class="logo-text">
+                <span class="logo-cerrado">
+                    <span class="green">Cerra</span><span class="yellow">do</span>
+                </span>
+                <span class="logo-financas">Finanças</span>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#solutions">Soluções</a></li>
+                <li><a href="#process">Processo</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="container">
+        <h1>Inteligência Financeira e Tecnológica para o seu Negócio Decolar.</h1>
+        <p>Combinamos consultoria estratégica e desenvolvimento de software sob medida para transformar seus desafios em crescimento sustentável.</p>
+        <a href="#contact" class="cta-button">Agende um Diagnóstico Estratégico</a>
+    </div>
+</section>
+
+<section id="solutions" class="section">
+    <div class="container">
+        <h2 class="section-title">Nosso Portfólio de Soluções</h2>
+        <p class="section-subtitle">Navegue por nossas frentes de atuação: consultoria estratégica, serviços contábeis e produtos de software escaláveis.</p>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'consultoria' )">Consultoria Estratégica</button>
+            <button class="tab-button" onclick="openTab(event, 'contabil')">Serviços Contábeis</button>
+            <button class="tab-button" onclick="openTab(event, 'produtos')">Produtos de Software (SaaS)</button>
+        </div>
+
+        <!-- ABA DE CONSULTORIA -->
+        <div id="consultoria" class="tab-content active">
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Consultoria Estratégica e Financeira</h3>
+                    <p>Trabalhamos com diagnósticos financeiros e contábeis para identificar distorções e entregar análises com base em dados reais da operação.</p>
+                    <ul>
+                        <li>Modelagem de Fluxo de Caixa e DRE</li>
+                        <li>Construção de indicadores por centro de custo</li>
+                        <li>Reestruturação de relatórios gerenciais</li>
+                        <li>Comparativos de desempenho (unidades/áreas)</li>
+                        <li>Análise de rentabilidade, margem e inadimplência</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Implantação de Sistemas e Automação</h3>
+                    <p>Implantamos e personalizamos sistemas de gestão financeira e orçamentária, adaptando a ferramenta ao seu processo.</p>
+                    <ul>
+                        <li>Implementação de módulos no Protheus</li>
+                        <li>Estruturação da jornada operacional em ERPs (Integra)</li>
+                        <li>Criação de fluxos com metas e aprovações</li>
+                        <li>Integração de dados para reduzir retrabalho</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Inteligência de Dados e Dashboards</h3>
+                    <p>Criamos dashboards no Power BI para transformar dados brutos em leitura clara e imediata, com painéis construídos sob medida para a sua operação.</p>
+                    <ul>
+                        <li>Dashboards de inadimplência (cobrador/região)</li>
+                        <li>Painéis de desempenho por canal de venda e LTV</li>
+                        <li>Visualização da margem por procedimento/unidade</li>
+                        <li>Relatórios interativos com filtros e alertas visuais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA DE SERVIÇOS CONTÁBEIS -->
+        <div id="contabil" class="tab-content">
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Gestão Fiscal e Tributária</h3>
+                    <p>Mantenha sua empresa em dia com o fisco e otimize sua carga de impostos com nosso acompanhamento especializado.</p>
+                    <ul>
+                        <li>Apuração mensal de faturamento e impostos (Simples Nacional).</li>
+                        <li>Cálculo e emissão da guia DAS.</li>
+                        <li>Controle do limite de faturamento do Simples.</li>
+                        <li>Planejamento tributário com análise de alíquotas.</li>
+                        <li>Simulações para regimes alternativos (Lucro Presumido).</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Escrituração e Obrigações</h3>
+                    <p>Cuidamos de toda a burocracia para que você tenha informações precisas para a tomada de decisão.</p>
+                    <ul>
+                        <li>Escrituração contábil e lançamentos mensais.</li>
+                        <li>Emissão de balancetes e relatórios de resultado.</li>
+                        <li>Entrega de obrigações acessórias (DCTFWeb, eSocial, EFD-Reinf).</li>
+                        <li>Declaração anual do Simples Nacional (DEFIS).</li>
+                        <li>Registro e controle de pró-labore.</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Suporte e Regularidade</h3>
+                    <p>Seu braço direito para questões burocráticas, garantindo a conformidade e a saúde operacional do seu negócio.</p>
+                    <ul>
+                        <li>Emissão periódica de Certidões Negativas.</li>
+                        <li>Atendimento a intimações da Receita Federal e outros órgãos.</li>
+                        <li>Suporte para emissão de nota fiscal eletrônica.</li>
+                        <li>Apoio na organização de documentos e rotinas diárias.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA DE PRODUTOS -->
+        <div id="produtos" class="tab-content">
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Produto: Smart Finance IA</h3>
+                    <p>Plataforma que substitui planilhas e automatiza relatórios financeiros. O usuário envia os dados por um bot no WhatsApp e recebe análises em tempo real.</p>
+                    <ul>
+                        <li>Envio simplificado de dados via WhatsApp</li>
+                        <li>Relatórios gerenciais e dashboards automáticos</li>
+                        <li>Alertas de inconsistências e análise contínua</li>
+                        <li>Fluxo de caixa atualizado e projeções de resultados</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Indicado para:</strong> Quem precisa ter clareza financeira sem depender de controles manuais, com acesso fácil e rápido às informações.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Produto: Carteira Inteligente IA</h3>
+                    <p>Ferramenta que analisa sua carteira de ativos, cruza dados e sugere a melhor alocação com base no seu perfil de risco e cenários econômicos.</p>
+                    <ul>
+                        <li>Análise de carteira de ativos e perfil de risco</li>
+                        <li>Recomendações de alocação baseadas em IA</li>
+                        <li>Simulações de cenários e acompanhamento de performance</li>
+                        <li>Envio de informações e recebimento de relatórios via WhatsApp</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Serve para:</strong> Quem tem múltiplos investimentos e quer tomar decisões com base em dados, reduzindo riscos e buscando o melhor retorno.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="process" class="section">
+    <div class="container">
+        <h2 class="section-title">Nossa Metodologia</h2>
+        <p class="section-subtitle">Uma jornada transparente e colaborativa em 4 etapas para garantir resultados concretos.</p>
+        <div class="timeline">
+            <div class="timeline-item left"><div class="timeline-content"><h3>1. Diagnóstico</h3><p>Entendemos suas metas e desafios através de uma análise 360º dos seus processos, dados e sistemas atuais.</p></div></div>
+            <div class="timeline-item right"><div class="timeline-content"><h3>2. Estratégia</h3><p>Desenhamos um plano de ação detalhado, definindo as soluções tecnológicas e as melhorias de processo necessárias.</p></div></div>
+            <div class="timeline-item left"><div class="timeline-content"><h3>3. Construção</h3><p>Desenvolvemos e implementamos as ferramentas, com sprints ágeis e validações constantes junto à sua equipe.</p></div></div>
+            <div class="timeline-item right"><div class="timeline-content"><h3>4. Evolução</h3><p>Acompanhamos os resultados, oferecemos suporte contínuo e otimizamos as soluções para garantir o crescimento a longo prazo.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- SEÇÃO DE CASES ATUALIZADA -->
+<section id="cases" class="section" style="background-color: var(--white-bg);">
+    <div class="container">
+        <h2 class="section-title">Resultados Reais</h2>
+        <p class="section-subtitle">Veja como ajudamos empresas como a sua a superar desafios e alcançar novos patamares.</p>
+        <div class="service-grid">
+
+            <div class="case-card">
+                <div class="case-card-content">
+                    <span class="tag">Grupo Econômico – Construção Civil</span>
+                    <h3>Implantação Orçamentária Integrada</h3>
+                    <p>Estruturamos o módulo de Planejamento e Controle Orçamentário no TOTVS Protheus, conectando metas, fluxo de aprovação e execução em tempo real por obra.</p>
+                    <div class="result"><span>✔</span>Redução de 40% nos desvios orçamentários por obra</div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-card-content">
+                    <span class="tag">Setor Funerário – Rede Nacional</span>
+                    <h3>Análise de Contas a Receber</h3>
+                    <p>Criamos dashboards em Power BI que segmentam riscos por contrato, tempo de atraso e filial, com alertas para cobrança direcionada.</p>
+                    <div class="result"><span>✔</span>Aumento de 32% na recuperação de crédito em 3 meses</div>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-card-content">
+                    <span class="tag">Grupo de Saúde – Clínica e Hospital</span>
+                    <h3>Painel de Procedimentos e Margens</h3>
+                    <p>Desenvolvemos relatórios interativos com cruzamento entre frequência, valor faturado e margem por unidade, especialidade e convênio.</p>
+                    <div class="result"><span>✔</span>Identificação de procedimentos com baixa margem em tempo real</div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-card-content">
+                    <span class="tag">Startup EdTech – Moçambique</span>
+                    <h3>Sistema Integrado e Reestruturação</h3>
+                    <p>Desenvolvemos o ERP Integra, conectando dados administrativos, financeiros, acadêmicos e comerciais em uma plataforma única.</p>
+                    <div class="result"><span>✔</span>Redução de 70% do tempo de consolidação de informações</div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-card-content">
+                    <span class="tag">Distribuidora – Setor Industrial</span>
+                    <h3>Automação da Conciliação Fiscal</h3>
+                    <p>Implantamos um robô que substituiu tarefas repetitivas de conciliação e geração de relatórios, liberando a equipe para análise.</p>
+                    <div class="result"><span>✔</span>Corte de 80% no tempo gasto com processos manuais</div>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-card-content">
+                    <span class="tag">Instituto Educacional – Portugal</span>
+                    <h3>Reestruturação Financeira e Estratégia</h3>
+                    <p>Com reorganização da área financeira e renegociação com parceiros, revertemos uma operação que era deficitária.</p>
+                    <div class="result"><span>✔</span>Transformação do instituto em unidade superavitária</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="whatsapp-cta" class="section">
+    <div class="container">
+        <h2 class="section-title">Prefere um contato mais direto?</h2>
+        <p class="section-subtitle">Entre em contato agora e agende uma consulta para entender o seu problema.</p>
+        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5567993515206" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-66.3-11.1-92.2-31.2l-6.7-4-69.8 18.3L72 359.2l-4.5-7c-21.9-34.1-33.7-74.3-33.7-116.3 0-108.4 88.1-196.5 196.5-196.5 53.1 0 103.3 20.5 140.2 57.4 36.9 36.9 57.3 87.1 57.3 140.2 0 108.4-88.2 196.5-196.6 196.5zm101.7-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.8-16.2-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.4 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            <span>Falar no WhatsApp</span>
+        </a>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Vamos construir o futuro do seu negócio?</h2>
+        <p class="section-subtitle">Preencha o formulário abaixo para agendar um diagnóstico gratuito. Nossa equipe entrará em contato em até 24 horas.</p>
+        <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Seu Nome Completo" required>
+            <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+            <input type="text" name="company" placeholder="Nome da sua Empresa">
+            <textarea name="message" rows="5" placeholder="Conte-nos um pouco sobre seu principal desafio..." required></textarea>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://renato0503.github.io/cerradofinancas/obrigado.html">
+            <button type="submit" class="cta-button">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Cerrado Finanças | Todos os direitos reservados.</p>
+        <p>Transformando dados em decisão.</p>
+        <p>Consultor Responsável: <a href="https://renatorosa.my.canva.site/" target="_blank" rel="noopener noreferrer">Renato de Oliveira Rosa</a></p>
+    </div>
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tabbuttons;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tabbuttons = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tabbuttons.length; i++) {
+            tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Garante que a primeira aba esteja visível ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("consultoria").style.display = "block";
+    });
+</script>
+
+</body>
+</html>
