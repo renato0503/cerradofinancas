@@ -1,652 +1,515 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerrado Finanças - Consultoria e Tecnologia para Negócios</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50; /* Azul-acinzentado escuro (seriedade) */
-            --secondary-color: #d4af37; /* Dourado (valor, finanças) */
-            --accent-color: #27ae60; /* Verde (crescimento, cerrado) */
-            --whatsapp-color: #25D366;
-            --linkedin-color: #0077b5;
-            --text-color: #333;
-            --light-gray-bg: #f9f9f9;
-            --white-bg: #ffffff;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-gray-bg);
-            color: var(--text-color);
-            line-height: 1.7;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-        header {
-            background: var(--white-bg);
-            padding: 0.5rem 0;
-            border-bottom: 3px solid var(--primary-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-        nav ul {
-            margin: 0; padding: 0; list-style: none;
-        }
-        nav ul li {
-            display: inline; margin-left: 20px;
-        }
-        nav a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* --- ESTILOS PARA O LOGO (APENAS TEXTO) --- */
-        .logo { text-decoration: none; }
-        .logo-text { font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; display: flex; flex-direction: column; justify-content: center; line-height: 1; }
-        .logo-cerrado, .logo-financas { font-size: 28px; }
-        .logo-cerrado .green, .logo-cerrado .yellow { -webkit-text-stroke-width: 0.5px; -webkit-text-stroke-color: #000; }
-        .logo-cerrado .green { color: #1e8d42; }
-        .logo-cerrado .yellow { color: #fecb00; }
-        .logo-financas { color: white; -webkit-text-stroke-width: 1.2px; -webkit-text-stroke-color: #000; }
-        /* --- FIM DOS ESTILOS DO LOGO --- */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerrado Finanças — Consultoria e Tecnologia</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1f2a37;
+      --secondary: #d4af37;
+      --accent: #2ea44f;
+      --ink: #222;
+      --muted: #6b7280;
+      --bg: #f6f7f9;
+      --white: #fff;
+      --whatsapp: #25D366;
+      --linkedin: #0077b5;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        .section { padding: 80px 0; }
-        #hero { background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070' ) center/cover no-repeat; color: #fff; text-align: center; padding: 100px 0; }
-        #hero h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
-        #hero p { font-size: 1.1rem; max-width: 750px; margin: 0 auto 30px auto; font-weight: 300; }
-        .cta-button { display: inline-block; background: var(--secondary-color); color: var(--white-bg); padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: all 0.3s ease; border: 2px solid var(--secondary-color); cursor: pointer; }
-        .cta-button:hover { background: transparent; color: var(--secondary-color); }
-        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 10px; color: var(--primary-color); font-weight: 700; }
-        .section-subtitle { text-align: center; font-size: 1rem; color: #777; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .tabs { display: flex; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; gap: 10px; }
-        .tab-button { padding: 15px 30px; cursor: pointer; background: var(--white-bg); border: 2px solid #ddd; border-radius: 50px; font-size: 1.1rem; font-weight: 600; color: var(--primary-color); transition: all 0.3s ease; }
-        .tab-button:hover { background: #e9e9e9; border-color: #ccc; }
-        .tab-button.active { background: var(--primary-color); color: var(--white-bg); border-color: var(--primary-color); }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: var(--white-bg); padding: 30px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.07); border-top: 5px solid var(--accent-color); display: flex; flex-direction: column; }
-        .service-card h3 { font-size: 1.6rem; color: var(--primary-color); margin-top: 0; }
-        .service-card ul { list-style: none; padding: 0; margin: 20px 0; flex-grow: 1; }
-        .service-card ul li { padding-left: 25px; position: relative; margin-bottom: 10px; }
-        .service-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
-        .service-card .example { background: var(--light-gray-bg); padding: 15px; border-radius: 5px; font-style: italic; border-left: 3px solid var(--secondary-color); }
-        .service-card .example strong { display: block; margin-bottom: 5px; font-style: normal; }
-        #process { background: var(--white-bg); }
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--accent-color); top: 0; bottom: 0; left: 20px; margin-left: -2px; }
-        .timeline-item { padding: 10px 0 10px 50px; position: relative; width: 100%; box-sizing: border-box; }
-        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; left: 10px; background-color: var(--white-bg); border: 4px solid var(--accent-color); top: 25px; border-radius: 50%; z-index: 1; }
-        .timeline-content { padding: 20px; background-color: var(--light-gray-bg); position: relative; border-radius: 6px; }
-        .timeline-content h3 { margin-top: 0; color: var(--primary-color); }
-        
-        /* --- ESTILOS DA EQUIPE --- */
-        .team-card { background: var(--white-bg); padding: 30px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.07); border-top: 5px solid var(--secondary-color); display: flex; flex-direction: column; text-align: center; }
-        .team-card h3 { font-size: 1.5rem; color: var(--primary-color); margin-top: 0; margin-bottom: 5px; }
-        .team-title { color: var(--secondary-color); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; display: block; }
-        .team-card p:not(.team-title) { flex-grow: 1; margin-bottom: 20px; }
-        .linkedin-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; background-color: transparent; border: 2px solid var(--linkedin-color); color: var(--linkedin-color); border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: auto; align-self: center; }
-        .linkedin-link:hover { background-color: var(--linkedin-color); color: var(--white-bg); }
-        .linkedin-link svg { width: 16px; height: 16px; fill: currentColor; }
-        /* --- FIM ESTILOS DA EQUIPE --- */
-        
-        /* --- ESTILOS DA PÁGINA DE PREÇOS --- */
-        #precos { background-color: var(--white-bg); }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        .pricing-card { background: var(--white-bg); padding: 30px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.07); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; position: relative; overflow: hidden; }
-        .pricing-card.highlight { border-top-color: var(--secondary-color); }
-        .best-value-badge { position: absolute; top: 20px; right: -40px; background: var(--secondary-color); color: var(--white-bg); padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 0.8rem; }
-        .pricing-card h3 { font-size: 1.6rem; color: var(--primary-color); margin-top: 0; text-align: center; }
-        .price { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); text-align: center; margin: 10px 0; }
-        .price span { font-size: 1rem; font-weight: normal; color: #777; }
-        .pricing-card .subtitle { text-align: center; font-style: italic; color: #555; margin-bottom: 25px; min-height: 40px; }
-        .features { list-style: none; padding: 0; margin: 0 0 30px 0; flex-grow: 1; }
-        .features li { padding-left: 25px; position: relative; margin-bottom: 12px; }
-        .features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
-        .pricing-card .cta-button { margin-top: auto; text-align: center; }
-        .combo-offer { background: linear-gradient(45deg, var(--primary-color), #3e5772); color: var(--white-bg); padding: 40px; border-radius: 8px; text-align: center; box-shadow: 0 10px 30px rgba(44, 62, 80, 0.3); }
-        .combo-offer h3 { font-size: 1.8rem; margin-top: 0; color: var(--secondary-color); }
-        .combo-offer p { font-size: 1.1rem; max-width: 600px; margin: 10px auto 0 auto; }
-        .combo-offer .discount { font-size: 2rem; font-weight: 700; color: var(--white-bg); margin: 10px 0; }
-        /* --- FIM ESTILOS DE PREÇOS --- */
+    /* Header */
+    header { position: sticky; top:0; z-index: 50; background: var(--white); border-bottom: 3px solid var(--primary); box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .brand-mark { display:grid; place-items:center; width:44px; height:44px; border-radius:10px; background: linear-gradient(135deg, #1e8d42, #fecb00); border:2px solid #000; }
+    .brand-txt { line-height:1; font-weight:800; color: #0b0b0b; -webkit-text-stroke: .6px #000; font-size: 20px; letter-spacing:.3px; }
+    .menu { display:flex; gap: 22px; align-items:center; }
+    .menu a { text-decoration:none; color: var(--primary); font-weight:600; padding:10px 14px; border-radius: 999px; transition: .2s ease; }
+    .menu a:hover { background:#eef2f7; }
+    .hamb { display:none; background:none; border:none; font-size:28px; }
 
-        .case-card { background: var(--white-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.07); display: flex; }
-        .case-card-content { padding: 30px; display: flex; flex-direction: column; }
-        .case-card-content h3 { margin-top: 0; color: var(--primary-color); }
-        .case-card-content p { flex-grow: 1; }
-        .case-card-content .tag { display: inline-block; background: var(--accent-color); color: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-bottom: 15px; font-weight: 600; }
-        .case-card-content .result { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-top: 15px; background-color: #f0fdf4; padding: 10px; border-radius: 5px; border-left: 4px solid var(--accent-color); }
-        .case-card-content .result span { color: var(--accent-color); margin-right: 8px; }
-        #whatsapp-cta { background-color: var(--white-bg); text-align: center; }
-        .whatsapp-button { background-color: var(--whatsapp-color); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .whatsapp-button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-        .whatsapp-button svg { width: 24px; height: 24px; fill: currentColor; }
-        #contact { background: var(--primary-color); color: #fff; }
-        #contact .section-title, #contact .section-subtitle { color: #fff; }
-        .contact-form { max-width: 700px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; border-radius: 5px; border: none; font-family: 'Poppins', sans-serif; box-sizing: border-box; }
-        .contact-form button { width: auto; justify-self: center; }
-        footer { background: #222; color: #aaa; text-align: center; padding: 30px 0; font-size: 0.9rem; }
-        footer a { color: var(--secondary-color); text-decoration: none; font-weight: bold; }
-        footer a:hover { text-decoration: underline; }
+    /* Hero */
+    #hero { position: relative; color: #fff; text-align:center; padding: 110px 0 90px; background:
+      linear-gradient(rgba(31,42,55,.80), rgba(31,42,55,.80)),
+      url('https://renato0503.github.io/cerradofinancas/hero.jpg') center/cover no-repeat; }
+    #hero h1 { margin:0 0 12px; font-size: clamp(32px, 4vw, 56px); font-weight:800; letter-spacing: -.5px; }
+    #hero p { margin:0 auto 26px; max-width: 800px; font-size: clamp(16px, 1.8vw, 20px); color: #e5e7eb; }
+    .cta { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; background: var(--secondary); color: #000; border:2px solid var(--secondary); border-radius: 999px; font-weight:700; text-decoration:none; transition:.2s ease; }
+    .cta:hover { background: transparent; color: var(--secondary); }
 
-        /* --- MEDIA QUERIES PARA DESKTOP --- */
-        @media (min-width: 768px) {
-            header .container { height: 90px; }
-            .logo-cerrado, .logo-financas { font-size: 32px; }
-            nav ul li { margin-left: 30px; }
-            #hero h1 { font-size: 3.5rem; }
-            #hero p { font-size: 1.3rem; }
-            .section-title { font-size: 2.8rem; }
-            .timeline::after { left: 50%; }
-            .timeline-item { width: 50%; padding: 10px 40px; }
-            .timeline-item.left { left: 0; padding-left: 0; text-align: right; }
-            .timeline-item.right { left: 50%; padding-right: 0; text-align: left; }
-            .timeline-item.left::after { right: -10px; left: auto; }
-            .timeline-item.right::after { left: -10px; }
-        }
-    </style>
+    /* Sections */
+    section { padding: 80px 0; }
+    .title { text-align:center; font-size: clamp(28px, 3vw, 42px); color: var(--primary); margin:0 0 8px; font-weight:800; }
+    .subtitle { text-align:center; color: var(--muted); max-width: 780px; margin:0 auto 42px; }
+
+    /* Tabs */
+    .tabs { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom: 30px; }
+    .tab-btn { border:2px solid #d1d5db; background: var(--white); border-radius: 999px; padding:12px 18px; font-weight:600; color: var(--primary); cursor:pointer; transition:.2s ease; }
+    .tab-btn[aria-selected="true"] { background: var(--primary); border-color: var(--primary); color:#fff; }
+    .tabpanel { display:none; }
+    .tabpanel.active { display:block; }
+
+    /* Cards */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:26px; }
+    .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; display:flex; flex-direction:column; gap:14px; border-top: 6px solid var(--accent); }
+    .card h3 { margin:0; color: var(--primary); font-size: 22px; }
+    .card p { margin:0; }
+    .card .meta { display:flex; gap:10px; align-items:center; color:var(--muted); font-size:.95rem; }
+    .card .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#ecfdf5; color:#065f46; font-weight:700; font-size:.8rem; }
+    .card .block { background:#f9fafb; padding:14px; border-radius: 10px; border-left:4px solid var(--secondary); }
+
+    /* Pricing */
+    .pricing { background: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+    .price-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:26px; }
+    .p-card { position:relative; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding:26px; border-top:6px solid var(--primary); display:flex; flex-direction:column; gap:14px; }
+    .p-card.highlight { border-top-color: var(--secondary); }
+    .ribbon { position:absolute; top:18px; right:-42px; transform: rotate(45deg); background: var(--secondary); color:#000; padding:6px 42px; font-weight:800; font-size:.8rem; }
+    .money { font-size: 44px; font-weight:800; color: var(--primary); }
+    .note { color: var(--muted); font-style: italic; }
+
+    /* Cases */
+    .case { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; display:flex; flex-direction:column; gap:8px; border-left:6px solid var(--accent); }
+    .case .tag { display:inline-block; background:#10b981; color:#fff; padding:6px 10px; border-radius:999px; font-weight:700; font-size:.8rem; }
+    .case .kpi { background:#f0fdf4; border-left:4px solid var(--accent); padding:10px 12px; border-radius:10px; font-weight:700; color: var(--primary); }
+
+    /* CTA WhatsApp */
+    .wa-wrap { text-align:center; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
+    .wa { display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:999px; text-decoration:none; color:#fff; background: var(--whatsapp); font-weight:800; }
+
+    /* Contact */
+    #contact { background: var(--primary); color:#fff; }
+    #contact .title, #contact .subtitle { color:#fff; }
+    form { max-width: 760px; margin: 0 auto; display:grid; gap:14px; }
+    input, textarea { width:100%; padding:14px 16px; border-radius: 12px; border:1px solid #e5e7eb; font: inherit; }
+    button[type="submit"] { justify-self:center; }
+
+    /* Team */
+    .t-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; text-align:center; border-top:6px solid var(--secondary); display:flex; flex-direction:column; gap:8px; }
+    .role { color: var(--secondary); font-weight:700; text-transform:uppercase; letter-spacing:.4px; font-size:.85rem; }
+    .lnk { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:2px solid var(--linkedin); color: var(--linkedin); text-decoration:none; font-weight:700; }
+    .lnk:hover { background: var(--linkedin); color:#fff; }
+
+    /* Process */
+    .timeline { max-width: 880px; margin: 0 auto; position: relative; }
+    .timeline:before { content:""; position:absolute; left: 50%; top:0; bottom:0; width:4px; background: var(--accent); transform: translateX(-50%); }
+    .step { width: 50%; padding: 10px 20px; position: relative; }
+    .step .box { background:#f9fafb; border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+    .step:after { content:""; position:absolute; top: 24px; width:20px; height:20px; border-radius:50%; border:4px solid var(--accent); background:#fff; z-index:2; }
+    .step.left { left:0; text-align:right; padding-right:40px; }
+    .step.left:after { right:-10px; }
+    .step.right { left:50%; padding-left:40px; }
+    .step.right:after { left:-10px; }
+
+    /* Footer */
+    footer { background:#0f172a; color:#94a3b8; text-align:center; padding:30px 0; }
+    footer a { color: var(--secondary); font-weight:800; text-decoration:none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .timeline:before { left: 24px; transform:none; }
+      .step, .step.left, .step.right { width: 100%; left:0; text-align:left; padding: 10px 10px 10px 56px; }
+      .step:after { left: 14px; right:auto; }
+    }
+    @media (max-width: 760px) {
+      .menu { display:none; position:absolute; top:76px; left:0; right:0; background: var(--white); border-bottom:1px solid #e5e7eb; padding: 12px; }
+      .menu.open { display:flex; flex-direction:column; }
+      .hamb { display:block; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <a href="#" class="logo">
-            <div class="logo-text">
-                <span class="logo-cerrado">
-                    <span class="green">Cerra</span><span class="yellow">do</span>
-                </span>
-                <span class="logo-financas">Finanças</span>
-            </div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#solutions">Soluções</a></li>
-                <li><a href="#precos">Preços</a></li>
-                <li><a href="#process">Processo</a></li>
-                <li><a href="#quem-somos">Quem Somos</a></li>
-                <li><a href="#cases">Cases</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
+  <header>
+    <div class="container nav" role="navigation" aria-label="principal">
+      <a class="brand" href="#">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-txt">Cerrado Finanças</div>
+      </a>
+      <button class="hamb" aria-label="abrir menu" aria-expanded="false" aria-controls="mainmenu">☰</button>
+      <nav id="mainmenu" class="menu" aria-label="atalhos">
+        <a href="#solutions">Soluções</a>
+        <a href="#precos">Preços</a>
+        <a href="#processo">Processo</a>
+        <a href="#quem-somos">Quem somos</a>
+        <a href="#cases">Cases</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<section id="hero">
+  <section id="hero" aria-label="apresentacao">
     <div class="container">
-        <h1>Inteligência Financeira e Tecnológica para o seu Negócio Decolar.</h1>
-        <p>Combinamos consultoria estratégica e desenvolvimento de software sob medida para transformar seus desafios em crescimento sustentável.</p>
-        <a href="#contact" class="cta-button">Agende um Diagnóstico Estratégico</a>
+      <h1>Finanças e software para crescer com base em dados</h1>
+      <p>Unimos consultoria e desenvolvimento para organizar números, padronizar rotinas e implantar sistemas que sustentam resultado. Você decide com clareza e executa sem ruído.</p>
+      <a href="#contato" class="cta">Agendar diagnóstico</a>
     </div>
-</section>
+  </section>
 
-<section id="solutions" class="section">
+  <section id="solutions">
     <div class="container">
-        <h2 class="section-title">Nosso Portfólio de Soluções</h2>
-        <p class="section-subtitle">Navegue por nossas frentes de atuação e descubra como podemos impulsionar a sua empresa.</p>
+      <h2 class="title">Portfólio de soluções</h2>
+      <p class="subtitle">Escolha a frente que atende a sua necessidade. Cada card explica objetivo, como funciona, o que você recebe e como medimos resultado.</p>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'consultoria' )">Consultoria Estratégica</button>
-            <button class="tab-button" onclick="openTab(event, 'contabil')">Serviços Contábeis</button>
-            <!-- BOTÃO DA NOVA ABA ADICIONADO AQUI -->
-            <button class="tab-button" onclick="openTab(event, 'escritorios')">Tecnologia para Escritórios</button>
-            <button class="tab-button" onclick="openTab(event, 'produtos')">Produtos de Software (SaaS)</button>
-        </div>
+      <div role="tablist" aria-label="abas de soluções" class="tabs">
+        <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-consult" id="btn-consult">Consultoria</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-contabil" id="btn-contabil">Contábil</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-escritorios" id="btn-escritorios">Tecnologia para escritórios</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-produtos" id="btn-produtos">Produtos de software</button>
+      </div>
 
-        <!-- ABA DE CONSULTORIA -->
-        <div id="consultoria" class="tab-content active">
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Consultoria Estratégica e Financeira</h3>
-                    <p>Trabalhamos com diagnósticos financeiros e contábeis para identificar distorções e entregar análises com base em dados reais da operação.</p>
-                    <ul>
-                        <li>Modelagem de Fluxo de Caixa e DRE</li>
-                        <li>Construção de indicadores por centro de custo</li>
-                        <li>Reestruturação de relatórios gerenciais</li>
-                        <li>Comparativos de desempenho (unidades/áreas)</li>
-                        <li>Análise de rentabilidade, margem e inadimplência</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Implantação de Sistemas e Automação</h3>
-                    <p>Implantamos e personalizamos sistemas de gestão financeira e orçamentária, adaptando a ferramenta ao seu processo.</p>
-                    <ul>
-                        <li>Implementação de módulos no Protheus</li>
-                        <li>Estruturação da jornada operacional em ERPs (Integra)</li>
-                        <li>Criação de fluxos com metas e aprovações</li>
-                        <li>Integração de dados para reduzir retrabalho</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Inteligência de Dados e Dashboards</h3>
-                    <p>Criamos dashboards no Power BI para transformar dados brutos em leitura clara e imediata, com painéis construídos sob medida para a sua operação.</p>
-                    <ul>
-                        <li>Dashboards de inadimplência (cobrador/região)</li>
-                        <li>Painéis de desempenho por canal de venda e LTV</li>
-                        <li>Visualização da margem por procedimento/unidade</li>
-                        <li>Relatórios interativos com filtros e alertas visuais</li>
-                    </ul>
-                </div>
+      <!-- Consultoria -->
+      <div id="tab-consult" class="tabpanel active" role="tabpanel" aria-labelledby="btn-consult">
+        <div class="grid">
+          <article class="card">
+            <h3>Consultoria estratégica e financeira</h3>
+            <p>Objetivo. Mapear números e fluxos para corrigir distorções e padronizar leitura de desempenho.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Levantamos dados de caixa, DRE e centros de custo. Reestruturamos relatórios e criamos comparativos entre unidades e áreas.</p>
             </div>
-        </div>
-
-        <!-- ABA DE SERVIÇOS CONTÁBEIS -->
-        <div id="contabil" class="tab-content">
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Gestão Fiscal e Tributária</h3>
-                    <p>Mantenha sua empresa em dia com o fisco e otimize sua carga de impostos com nosso acompanhamento especializado.</p>
-                    <ul>
-                        <li>Apuração mensal de faturamento e impostos (Simples Nacional).</li>
-                        <li>Cálculo e emissão da guia DAS.</li>
-                        <li>Controle do limite de faturamento do Simples.</li>
-                        <li>Planejamento tributário com análise de alíquotas.</li>
-                        <li>Simulações para regimes alternativos (Lucro Presumido).</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Escrituração e Obrigações</h3>
-                    <p>Cuidamos de toda a burocracia para que você tenha informações precisas para a tomada de decisão.</p>
-                    <ul>
-                        <li>Escrituração contábil e lançamentos mensais.</li>
-                        <li>Emissão de balancetes e relatórios de resultado.</li>
-                        <li>Entrega de obrigações acessórias (DCTFWeb, eSocial, EFD-Reinf).</li>
-                        <li>Declaração anual do Simples Nacional (DEFIS).</li>
-                        <li>Registro e controle de pró-labore.</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Suporte e Regularidade</h3>
-                    <p>Seu braço direito para questões burocráticas, garantindo a conformidade e a saúde operacional do seu negócio.</p>
-                    <ul>
-                        <li>Emissão periódica de Certidões Negativas.</li>
-                        <li>Atendimento a intimações da Receita Federal e outros órgãos.</li>
-                        <li>Suporte para emissão de nota fiscal eletrônica.</li>
-                        <li>Apoio na organização de documentos e rotinas diárias.</li>
-                    </ul>
-                </div>
+            <div class="block">
+              <strong>O que você recebe</strong>
+              <p>Modelo de caixa e DRE por competência, indicadores por centro de custo e relatório gerencial pronto para reunião mensal.</p>
             </div>
-        </div>
+            <div class="meta"><span class="badge">Resultado medido</span> redução de retrabalho e clareza de margem por linha</div>
+          </article>
 
-        <!-- ========================================================= -->
-        <!-- === INÍCIO DA NOVA ABA DE SERVIÇOS PARA ESCRITÓRIOS === -->
-        <!-- ========================================================= -->
-        <div id="escritorios" class="tab-content">
-             <p class="section-subtitle" style="margin-bottom: 40px; font-size: 1.1rem;">
-                <strong>Eleve a eficiência do seu escritório. Menos tarefas, mais estratégia.</strong><br>
-                Soluções desenhadas para consultorias, escritórios contábeis e de auditoria que buscam escalar a operação, reduzir custos e se diferenciar no mercado através da tecnologia.
-             </p>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Automação Inteligente de Processos (RPA)</h3>
-                    <p>Libere sua equipe de tarefas manuais, repetitivas e de baixo valor. Nossos robôs (bots) executam rotinas com precisão e velocidade, 24/7.</p>
-                    <ul>
-                        <li>Robôs para conciliação bancária e fiscal</li>
-                        <li>Automação de download e organização de XMLs e extratos</li>
-                        <li>Geração e envio automático de guias e relatórios</li>
-                        <li>Preenchimento de formulários e obrigações acessórias</li>
-                    </ul>
-                    <div class="example">
-                        <strong>Exemplo prático:</strong> Um bot que trabalha 24/7, garantindo que todas as guias do Simples Nacional sejam geradas e enviadas sem intervenção humana, eliminando o risco de multas por atraso.
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Integração de Dados e Sistemas</h3>
-                    <p>Acabe com a fragmentação de dados. Conectamos os sistemas dos seus clientes (ERPs, financeiros) diretamente ao seu ambiente de trabalho.</p>
-                    <ul>
-                        <li>Criação de APIs e conectores customizados</li>
-                        <li>Centralização de informações para uma visão única do cliente</li>
-                        <li>Sincronização automática entre diferentes softwares</li>
-                        <li>Dashboards consolidados com dados de múltiplas fontes</li>
-                    </ul>
-                     <div class="example">
-                        <strong>Exemplo prático:</strong> Receba automaticamente os dados de vendas e despesas do sistema do seu cliente, sem precisar pedir extratos ou planilhas, agilizando o fechamento mensal.
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>IA Generativa e Chatbots de Atendimento</h3>
-                    <p>Ofereça um serviço de ponta e um atendimento instantâneo. Usamos Inteligência Artificial para criar assistentes virtuais que resolvem problemas e analisam informações.</p>
-                    <ul>
-                        <li>Chatbots para responder dúvidas frequentes de clientes (24/7)</li>
-                        <li>Assistentes de IA para análise e classificação de documentos</li>
-                        <li>IA para identificar padrões e potenciais inconsistências fiscais</li>
-                        <li>Geração de resumos e insights a partir de grandes volumes de texto</li>
-                    </ul>
-                     <div class="example">
-                        <strong>Exemplo prático:</strong> Um chatbot no seu site que orienta novos clientes sobre os documentos necessários para a abertura de empresa, qualificando o lead antes mesmo de chegar a um consultor.
-                    </div>
-                </div>
+          <article class="card">
+            <h3>Implantação de sistemas e automação</h3>
+            <p>Objetivo. Colocar o ERP para trabalhar a seu favor e eliminar lançamentos manuais.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Parametrizamos módulos, definimos fluxos com metas e aprovações e integramos fontes para evitar digitação em duplicidade.</p>
             </div>
-        </div>
-        <!-- =============================================== -->
-        <!-- === FIM DA NOVA ABA DE SERVIÇOS === -->
-        <!-- =============================================== -->
-
-
-        <!-- ABA DE PRODUTOS -->
-        <div id="produtos" class="tab-content">
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Produto: Smart Finance IA</h3>
-                    <p>Plataforma que substitui planilhas e automatiza relatórios financeiros. O usuário envia os dados por um bot no WhatsApp e recebe análises em tempo real.</p>
-                    <ul>
-                        <li>Envio simplificado de dados via WhatsApp</li>
-                        <li>Relatórios gerenciais e dashboards automáticos</li>
-                        <li>Alertas de inconsistências e análise contínua</li>
-                        <li>Fluxo de caixa atualizado e projeções de resultados</li>
-                    </ul>
-                    <div class="example">
-                        <strong>Indicado para:</strong> Quem precisa ter clareza financeira sem depender de controles manuais, com acesso fácil e rápido às informações.
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Produto: Carteira Inteligente IA</h3>
-                    <p>Ferramenta que analisa sua carteira de ativos, cruza dados e sugere a melhor alocação com base no seu perfil de risco e cenários econômicos.</p>
-                    <ul>
-                        <li>Análise de carteira de ativos e perfil de risco</li>
-                        <li>Recomendações de alocação baseadas em IA</li>
-                        <li>Simulações de cenários e acompanhamento de performance</li>
-                        <li>Envio de informações e recebimento de relatórios via WhatsApp</li>
-                    </ul>
-                    <div class="example">
-                        <strong>Serve para:</strong> Quem tem múltiplos investimentos e quer tomar decisões com base em dados, reduzindo riscos e buscando o melhor retorno.
-                    </div>
-                </div>
+            <div class="block">
+              <strong>O que você recebe</strong>
+              <p>Processo operando no Protheus ou no Integra com checklists e trilhas de aprovação documentadas.</p>
             </div>
+            <div class="meta"><span class="badge">Resultado medido</span> tempo de ciclo menor e queda de erros de entrada</div>
+          </article>
+
+          <article class="card">
+            <h3>Dados e painéis de acompanhamento</h3>
+            <p>Objetivo. Transformar dados brutos em leitura direta no Power BI.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Modelamos bases, publicamos painéis e definimos regras de atualização. Implantamos painéis de cobrança, vendas e margem por procedimento.</p>
+            </div>
+            <div class="block">
+              <strong>O que você recebe</strong>
+              <p>Painéis com filtros e alertas visuais e manual de uso para sua equipe.</p>
+            </div>
+            <div class="meta"><span class="badge">Resultado medido</span> ganho de previsibilidade em recebimento e margem</div>
+          </article>
         </div>
+      </div>
+
+      <!-- Contábil -->
+      <div id="tab-contabil" class="tabpanel" role="tabpanel" aria-labelledby="btn-contabil">
+        <div class="grid">
+          <article class="card">
+            <h3>Gestão fiscal e tributária</h3>
+            <p>Objetivo. Garantir regularidade e pagar o que é devido sem excesso.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Apuramos receitas, calculamos tributos e emitimos as guias. Monitoramos limite do Simples e simulamos alternativas quando fizer sentido.</p>
+            </div>
+            <div class="block">
+              <strong>O que você recebe</strong>
+              <p>Calendário fiscal, guias e relatórios de apuração com histórico organizado.</p>
+            </div>
+            <div class="meta"><span class="badge">Resultado medido</span> regularidade e economia com base em simulações</div>
+          </article>
+
+          <article class="card">
+            <h3>Escrituração e obrigações</h3>
+            <p>Objetivo. Registrar fatos e entregar declarações sem lacunas.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Executamos lançamentos, geramos balancetes e transmitimos eSocial, DCTFWeb e EFD-Reinf. Entregamos DEFIS no prazo.</p>
+            </div>
+            <div class="block">
+              <strong>O que você recebe</strong>
+              <p>Balancetes, DRE, razão e pastas mensais com comprovações.</p>
+            </div>
+            <div class="meta"><span class="badge">Resultado medido</span> informação contábil pronta para decisão</div>
+          </article>
+
+          <article class="card">
+            <h3>Suporte e regularidade</h3>
+            <p>Objetivo. Resolver demandas de rotina sem atrasos.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Emitimos certidões, respondemos intimações e apoiamos emissão de notas. Organizamos documentos e rotinas diárias.</p>
+            </div>
+            <div class="block">
+              <strong>O que você recebe</strong>
+              <p>Portal com solicitações, prazos e entregas documentadas.</p>
+            </div>
+            <div class="meta"><span class="badge">Resultado medido</span> menos pendências e fluxo mais estável</div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Escritórios -->
+      <div id="tab-escritorios" class="tabpanel" role="tabpanel" aria-labelledby="btn-escritorios">
+        <p class="subtitle">Foco em consultorias, contábeis e auditorias. A meta é escalar operação e reduzir custo operacional com automação e integração.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Automação de processos</h3>
+            <p>Objetivo. Tirar tarefas repetitivas da equipe e executar 24 horas por dia com bots.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Construímos rotinas de conciliação, download e organização de XML e extratos. Automatizamos geração e envio de guias e relatórios e o preenchimento de obrigações.</p>
+            </div>
+            <div class="block">
+              <strong>Exemplo prático</strong>
+              <p>Bot que gera e envia guias do Simples de toda a base sem intervenção humana e elimina multa por atraso.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Integração de dados e sistemas</h3>
+            <p>Objetivo. Unificar fontes e sincronizar tudo em um só lugar.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Criamos conectores e APIs, centralizamos informações e sincronizamos cadastros e lançamentos. Publicamos painéis consolidados de múltiplas origens.</p>
+            </div>
+            <div class="block">
+              <strong>Exemplo prático</strong>
+              <p>Vendas e despesas chegam do ERP do cliente de forma automática e o fechamento mensal acontece sem troca de planilhas.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>IA generativa e atendimento</h3>
+            <p>Objetivo. Responder rápido e processar documentos com apoio de modelos.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Criamos chatbots para dúvidas frequentes, assistentes para leitura e classificação de documentos e modelos para apontar inconsistências fiscais. Geramos resumos de grandes volumes de texto.</p>
+            </div>
+            <div class="block">
+              <strong>Exemplo prático</strong>
+              <p>Chat no site orienta novos clientes sobre documentos para abertura de empresa e qualifica o contato antes de chegar ao consultor.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Produtos -->
+      <div id="tab-produtos" class="tabpanel" role="tabpanel" aria-labelledby="btn-produtos">
+        <div class="grid">
+          <article class="card">
+            <h3>Smart Finance IA</h3>
+            <p>Objetivo. Substituir planilhas e automatizar leitura financeira com envio de dados por WhatsApp.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>Você envia arquivos e lançamentos pelo bot. O sistema atualiza painéis e envia alertas sobre inconsistências e caixa.</p>
+            </div>
+            <div class="block">
+              <strong>Indicado para</strong>
+              <p>Operações que querem clareza sem manter controles manuais e acesso rápido às informações.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Carteira Inteligente IA</h3>
+            <p>Objetivo. Analisar carteira de ativos e sugerir alocação com base em perfil e cenários.</p>
+            <div class="block">
+              <strong>Como funciona</strong>
+              <p>O motor cruza dados da carteira, simula cenários e propõe ajustes. Relatórios chegam por WhatsApp.</p>
+            </div>
+            <div class="block">
+              <strong>Indicado para</strong>
+              <p>Investidores com múltiplos ativos que precisam decidir com base em dados e risco aceito.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="precos" class="section">
+  <section id="precos">
     <div class="container">
-        <h2 class="section-title">Planos e Preços</h2>
-        <p class="section-subtitle">Soluções transparentes e flexíveis que se adaptam ao crescimento da sua empresa. Escolha o plano ideal para o seu momento.</p>
+      <h2 class="title">Planos e preços</h2>
+      <p class="subtitle">Valores de referência para contratação. O escopo pode ajustar o número final conforme porte e volume.</p>
 
-        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 60px;">Serviços Contábeis</h3>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Abertura e Regularização</h3>
-                <div class="price">R$ 300 <span>/ Pagamento Único</span></div>
-                <p class="subtitle">O primeiro passo para formalizar seu negócio com segurança e agilidade.</p>
-                <ul class="features">
-                    <li>Registro na Junta Comercial</li>
-                    <li>Emissão do CNPJ</li>
-                    <li>Definição de regime tributário</li>
-                    <li>Orientações iniciais</li>
-                </ul>
-                <a href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20no%20serviço%20de%20Abertura%20e%20Regularização%20de%20Empresa." target="_blank" rel="noopener noreferrer" class="cta-button">Começar Agora</a>
-            </div>
-            <div class="pricing-card highlight">
-                 <div class="best-value-badge">Popular</div>
-                <h3>Acompanhamento Mensal</h3>
-                <div class="price">R$ 600 <span>/mês</span></div>
-                <p class="subtitle">Base para empresas com até 2 funcionários. +15% por funcionário adicional.</p>
-                <ul class="features">
-                    <li>Apuração de tributos (DAS)</li>
-                    <li>Transmissão de obrigações (eSocial, DCTFWeb)</li>
-                    <li>Escrituração contábil completa</li>
-                    <li>Planejamento tributário</li>
-                    <li>Suporte e orientação contínua</li>
-                </ul>
-                <a href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Acompanhamento%20Contábil%20Mensal." target="_blank" rel="noopener noreferrer" class="cta-button">Quero a Consultoria</a>
-            </div>
+      <h3 class="title" style="font-size:28px; margin-top:26px;">Serviços contábeis</h3>
+      <div class="price-grid">
+        <div class="p-card">
+          <h3>Abertura e regularização</h3>
+          <div class="money">R$ 300</div>
+          <p class="note">Pagamento único</p>
+          <p>Inclui registro na Junta, CNPJ, definição de regime e orientações iniciais.</p>
+          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20no%20serviço%20de%20Abertura%20e%20Regularização%20de%20Empresa." target="_blank" rel="noopener noreferrer">Começar agora</a>
         </div>
+        <div class="p-card highlight">
+          <div class="ribbon">Popular</div>
+          <h3>Acompanhamento mensal</h3>
+          <div class="money">R$ 600</div>
+          <p class="note">Mês para até 2 funcionários. Mais 15% por funcionário extra.</p>
+          <p>Apuração de tributos, transmissão de obrigações, escrituração completa, planejamento e suporte.</p>
+          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Acompanhamento%20Contábil%20Mensal." target="_blank" rel="noopener noreferrer">Quero a consultoria</a>
+        </div>
+      </div>
 
-        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 60px;">Consultoria Estratégica e Financeira</h3>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Diagnóstico Pontual</h3>
-                <div class="price">R$ 2.200 <span>/ Pagamento Único</span></div>
-                <p class="subtitle">Uma análise 360º para identificar os maiores desafios e oportunidades do seu negócio.</p>
-                <ul class="features">
-                    <li>Análise de saúde financeira</li>
-                    <li>Identificação de gargalos</li>
-                    <li>Mapeamento de processos</li>
-                    <li>Plano de ação inicial</li>
-                </ul>
-                <a href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20no%20Diagnóstico%20Estratégico%20Pontual." target="_blank" rel="noopener noreferrer" class="cta-button">Solicitar Análise</a>
-            </div>
-            <div class="pricing-card highlight">
-                <div class="best-value-badge">Estratégico</div>
-                <h3>Consultoria Contínua</h3>
-                <div class="price">R$ 900 <span>/mês</span></div>
-                <p class="subtitle">Acompanhamento constante para a execução da estratégia e a manutenção do crescimento com base sustentável. O valor informado representa uma estimativa inicial, podendo sofrer ajustes conforme o porte da operação e o volume de dados envolvidos.</p>
-                <ul class="features">
-                    <li>Reuniões mensais de performance</li>
-                    <li>Análise de indicadores (KPIs)</li>
-                    <li>Suporte na tomada de decisão</li>
-                    <li>Otimização de processos</li>
-                    <li>Planejamento de longo prazo</li>
-                </ul>
-                <a href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Consultoria%20Estratégica%20Contínua." target="_blank" rel="noopener noreferrer" class="cta-button">Agendar Reunião</a>
-            </div>
+      <h3 class="title" style="font-size:28px; margin-top:40px;">Consultoria</h3>
+      <div class="price-grid">
+        <div class="p-card">
+          <h3>Diagnóstico pontual</h3>
+          <div class="money">R$ 2.200</div>
+          <p class="note">Pagamento único</p>
+          <p>Levantamento de saúde financeira, gargalos, processos e plano de ação inicial.</p>
+          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20no%20Diagnóstico%20Estratégico%20Pontual." target="_blank" rel="noopener noreferrer">Solicitar análise</a>
         </div>
+        <div class="p-card highlight">
+          <div class="ribbon">Estratégico</div>
+          <h3>Consultoria contínua</h3>
+          <div class="money">R$ 900</div>
+          <p class="note">Mês com valor inicial que pode variar conforme porte e volume.</p>
+          <p>Reuniões de performance, análise de indicadores, apoio à decisão, otimizações e planejamento.</p>
+          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Consultoria%20Estratégica%20Contínua." target="_blank" rel="noopener noreferrer">Agendar reunião</a>
+        </div>
+      </div>
 
-        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 60px;">Produtos de Software (SaaS)</h3>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Plano Individual</h3>
-                <div class="price">R$ 350 <span>/mês</span></div>
-                <p class="subtitle">Para investidores e profissionais autônomos que buscam inteligência de dados.</p>
-                <ul class="features">
-                    <li>Acesso a 1 produto (Smart Finance ou Carteira IA)</li>
-                    <li>Envio de dados via WhatsApp</li>
-                    <li>Dashboards e relatórios em tempo real</li>
-                    <li>Suporte via comunidade</li>
-                </ul>
-                <a href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20em%20assinar%20o%20Plano%20Individual%20de%20um%20dos%20produtos%20SaaS." target="_blank" rel="noopener noreferrer" class="cta-button">Assinar Agora</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Plano Empresarial</h3>
-                <div class="price">R$ 1.500 <span>/mês + Instalação R$5.000 </span></div>
-                <p class="subtitle">Para empresas que precisam automatizar a gestão financeira com tecnologia limitado a 2 usuários, + 10% a cada usuário.</p>
-                <ul class="features">
-                    <li>Acesso a 1 produto (Smart Finance ou Carteira IA)</li>
-                    <li>Dados do CNPJ integrados</li>
-                    <li>Painéis customizáveis</li>
-                    <li>Suporte prioritário via e-mail</li>
-                </ul>
-                <a href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Empresarial%20para%20os%20produtos%20SaaS." target="_blank" rel="noopener noreferrer" class="cta-button">Fale com Vendas</a>
-            </div>
+      <h3 class="title" style="font-size:28px; margin-top:40px;">Produtos de software</h3>
+      <div class="price-grid">
+        <div class="p-card">
+          <h3>Plano individual</h3>
+          <div class="money">R$ 350</div>
+          <p class="note">Mês</p>
+          <p>Acesso a um produto, envio de dados por WhatsApp, painéis em tempo real e suporte em comunidade.</p>
+          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20em%20assinar%20o%20Plano%20Individual%20de%20um%20dos%20produtos%20SaaS." target="_blank" rel="noopener noreferrer">Assinar agora</a>
         </div>
+        <div class="p-card">
+          <h3>Plano empresarial</h3>
+          <div class="money">R$ 1.500</div>
+          <p class="note">Mês mais instalação de R$ 5.000. Até dois usuários e mais 10% por usuário extra.</p>
+          <p>Acesso a um produto, integração com CNPJ, painéis customizáveis e suporte por e-mail.</p>
+          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Empresarial%20para%20os%20produtos%20SaaS." target="_blank" rel="noopener noreferrer">Falar com vendas</a>
+        </div>
+      </div>
 
-        <div style="margin-top: 80px;">
-            <div class="combo-offer">
-                <h3>Combo Cerrado Finanças</h3>
-                <p>Contrate dois ou mais serviços de acompanhamento mensal (Contábil e/ou Estratégico) e potencialize seus resultados com um benefício exclusivo.</p>
-                <div class="discount">Ganhe R$ 250 de desconto</div>
-                <p>no valor total da sua fatura mensal. Sempre.</p>
-            </div>
-        </div>
+      <div style="margin-top:40px" class="pricing">
+        <h3 class="title" style="font-size:26px; margin-bottom:8px;">Combo Cerrado Finanças</h3>
+        <p>Ao contratar dois ou mais acompanhamentos mensais você recebe desconto de R$ 250 no valor total da fatura de forma contínua.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="process" class="section">
+  <section id="processo">
     <div class="container">
-        <h2 class="section-title">Nossa Metodologia</h2>
-        <p class="section-subtitle">Uma jornada transparente e colaborativa em 4 etapas para garantir resultados concretos.</p>
-        <div class="timeline">
-            <div class="timeline-item left"><div class="timeline-content"><h3>1. Diagnóstico</h3><p>Entendemos suas metas e desafios através de uma análise 360º dos seus processos, dados e sistemas atuais.</p></div></div>
-            <div class="timeline-item right"><div class="timeline-content"><h3>2. Estratégia</h3><p>Desenhamos um plano de ação detalhado, definindo as soluções tecnológicas e as melhorias de processo necessárias.</p></div></div>
-            <div class="timeline-item left"><div class="timeline-content"><h3>3. Construção</h3><p>Desenvolvemos e implementamos as ferramentas, com sprints ágeis e validações constantes junto à sua equipe.</p></div></div>
-            <div class="timeline-item right"><div class="timeline-content"><h3>4. Evolução</h3><p>Acompanhamos os resultados, oferecemos suporte contínuo e otimizamos as soluções para garantir o crescimento a longo prazo.</p></div></div>
+      <h2 class="title">Metodologia</h2>
+      <p class="subtitle">Quatro etapas para sair do diagnóstico para a execução com clareza de próximos passos.</p>
+      <div class="timeline" aria-label="linha do tempo">
+        <div class="step left"><div class="box"><h3>Diagnóstico</h3><p>Alinhamos metas e levantamos processos e dados atuais.</p></div></div>
+        <div class="step right"><div class="box"><h3>Estratégia</h3><p>Desenhamos plano de ação e definimos tecnologia e melhorias.</p></div></div>
+        <div class="step left"><div class="box"><h3>Construção</h3><p>Implementamos ferramentas e validamos em sprints com a equipe.</p></div></div>
+        <div class="step right"><div class="box"><h3>Evolução</h3><p>Acompanhamos entregas, ajustamos e mantemos o ritmo.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quem-somos" style="background:#eef2f7;">
+    <div class="container">
+      <h2 class="title">Equipe</h2>
+      <p class="subtitle">Lideranças responsáveis por arquitetura de software, finanças e operação.</p>
+      <div class="grid">
+        <div class="t-card">
+          <h3>Renato Rosa</h3>
+          <div class="role">Consultor técnico e contador</div>
+          <p>Conduz arquitetura de software, pesquisa e desenvolvimento e o roadmap de produtos.</p>
+          <a class="lnk" href="https://www.linkedin.com/in/gestorrenato/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-    </div>
-</section>
-
-<section id="quem-somos" class="section" style="background-color: var(--light-gray-bg);">
-    <div class="container">
-        <h2 class="section-title">Nossa Equipe</h2>
-        <p class="section-subtitle">Conheça os líderes que combinam expertise financeira e tecnológica para impulsionar seu negócio.</p>
-        <div class="service-grid">
-            <div class="team-card">
-                <h3>Renato Rosa</h3>
-                <p class="team-title">Consultor Técnico e Contador</p>
-                <p>Líder técnico de todos os projetos, responsável pela arquitetura de software, P&D de novas tecnologias e pelo roadmap de produtos.</p>
-                <a href="https://www.linkedin.com/in/gestorrenato/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-            <div class="team-card">
-                <h3>Denner Port</h3>
-                <p class="team-title">Administrador e Comercial</p>
-                <p>Gerencia a parte administrativa, financeira e a estratégia comercial da empresa, incluindo precificação e parcerias estratégicas.</p>
-                <a href="https://www.linkedin.com/in/dennerport/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-            <div class="team-card">
-                <h3>João Victor</h3>
-                <p class="team-title">Consultor Mercado de Capitais</p>
-                <p>Conduz o relacionamento comercial, desde o diagnóstico e conversão de leads até a manutenção do contato técnico com os clientes.</p>
-                <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-brand%C3%A3o-349b9a185/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
+        <div class="t-card">
+          <h3>Denner Port</h3>
+          <div class="role">Administrador e comercial</div>
+          <p>Cuida de administração, finanças e estratégia comercial com foco em precificação e parcerias.</p>
+          <a class="lnk" href="https://www.linkedin.com/in/dennerport/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="cases" class="section" style="background-color: var(--white-bg);">
+  <section id="cases">
     <div class="container">
-        <h2 class="section-title">Resultados Reais</h2>
-        <p class="section-subtitle">Veja como ajudamos empresas como a sua a superar desafios e alcançar novos patamares.</p>
-        <div class="service-grid">
-            <div class="case-card">
-                <div class="case-card-content">
-                    <span class="tag">Grupo Econômico – Construção Civil</span>
-                    <h3>Implantação Orçamentária Integrada</h3>
-                    <p>Estruturamos o módulo de Planejamento e Controle Orçamentário no TOTVS Protheus, conectando metas, fluxo de aprovação e execução em tempo real por obra.</p>
-                    <div class="result"><span>✔</span>Redução de 40% nos desvios orçamentários por obra</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-card-content">
-                    <span class="tag">Setor Funerário – Rede Nacional</span>
-                    <h3>Análise de Contas a Receber</h3>
-                    <p>Criamos dashboards em Power BI que segmentam riscos por contrato, tempo de atraso e filial, com alertas para cobrança direcionada.</p>
-                    <div class="result"><span>✔</span>Aumento de 32% na recuperação de crédito em 3 meses</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-card-content">
-                    <span class="tag">Grupo de Saúde – Clínica e Hospital</span>
-                    <h3>Painel de Procedimentos e Margens</h3>
-                    <p>Desenvolvemos relatórios interativos com cruzamento entre frequência, valor faturado e margem por unidade, especialidade e convênio.</p>
-                    <div class="result"><span>✔</span>Identificação de procedimentos com baixa margem em tempo real</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-card-content">
-                    <span class="tag">Startup EdTech – Moçambique</span>
-                    <h3>Sistema Integrado e Reestruturação</h3>
-                    <p>Desenvolvemos o ERP Integra, conectando dados administrativos, financeiros, acadêmicos e comerciais em uma plataforma única.</p>
-                    <div class="result"><span>✔</span>Redução de 70% do tempo de consolidação de informações</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-card-content">
-                    <span class="tag">Distribuidora – Setor Industrial</span>
-                    <h3>Automação da Conciliação Fiscal</h3>
-                    <p>Implantamos um robô que substituiu tarefas repetitivas de conciliação e geração de relatórios, liberando a equipe para análise.</p>
-                    <div class="result"><span>✔</span>Corte de 80% no tempo gasto com processos manuais</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-card-content">
-                    <span class="tag">Instituto Educacional – Portugal</span>
-                    <h3>Reestruturação Financeira e Estratégia</h3>
-                    <p>Com reorganização da área financeira e renegociação com parceiros, revertemos uma operação que era deficitária.</p>
-                    <div class="result"><span>✔</span>Transformação do instituto em unidade superavitária</div>
-                </div>
-            </div>
-        </div>
+      <h2 class="title">Resultados</h2>
+      <p class="subtitle">Exemplos de entregas com números mensuráveis.</p>
+      <div class="grid">
+        <div class="case"><span class="tag">Construção civil</span><h3>Orçamento integrado</h3><p>Parametrização do Protheus com metas, aprovações e execução por obra.</p><div class="kpi">Queda de 40% nos desvios por obra</div></div>
+        <div class="case"><span class="tag">Setor funerário</span><h3>Contas a receber</h3><p>Painéis de risco por contrato, atraso e filial com alertas para cobrança.</p><div class="kpi">Aumento de 32% na recuperação em três meses</div></div>
+        <div class="case"><span class="tag">Saúde</span><h3>Margem por procedimento</h3><p>Relatórios com frequência, valor e margem por unidade, especialidade e convênio.</p><div class="kpi">Detecção imediata de baixa margem</div></div>
+        <div class="case"><span class="tag">EdTech</span><h3>ERP Integra</h3><p>Dados administrativos, financeiros, acadêmicos e comerciais unificados.</p><div class="kpi">Redução de 70% no tempo de consolidação</div></div>
+        <div class="case"><span class="tag">Distribuidora</span><h3>Conciliação fiscal</h3><p>Robô para conciliações e relatórios com liberação de equipe para análise.</p><div class="kpi">Corte de 80% no tempo de processos manuais</div></div>
+        <div class="case"><span class="tag">Instituto educacional</span><h3>Reestruturação financeira</h3><p>Organização de rotinas e renegociação com parceiros.</p><div class="kpi">Virada para resultado positivo</div></div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="whatsapp-cta" class="section">
+  <section id="whatsapp-cta">
+    <div class="container wa-wrap">
+      <h2 class="title" style="font-size:28px;">Quer falar agora</h2>
+      <p class="subtitle">Use o WhatsApp para explicar a sua demanda e combinar o próximo passo.</p>
+      <a class="wa" href="http://api.whatsapp.com/send?phone=5567993515206" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="contato" style="background: var(--primary); color:#fff;">
     <div class="container">
-        <h2 class="section-title">Prefere um contato mais direto?</h2>
-        <p class="section-subtitle">Entre em contato agora e agende uma consulta para entender o seu problema.</p>
-        <a href="http://api.whatsapp.com/send?phone=5567993515206" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-66.3-11.1-92.2-31.2l-6.7-4-69.8 18.3L72 359.2l-4.5-7c-21.9-34.1-33.7-74.3-33.7-116.3 0-108.4 88.1-196.5 196.5-196.5 53.1 0 103.3 20.5 140.2 57.4 36.9 36.9 57.3 87.1 57.3 140.2 0 108.4-88.2 196.5-196.6 196.5zm101.7-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.8-16.2-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.4 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-            <span>Falar no WhatsApp</span>
-        </a>
+      <h2 class="title">Vamos trabalhar no seu caso</h2>
+      <p class="subtitle">Preencha o formulário para o diagnóstico. Retorno em até 24 horas úteis.</p>
+      <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <input type="text" name="company" placeholder="Empresa" />
+        <textarea name="message" rows="5" placeholder="Descreva o principal problema" required></textarea>
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://renato0503.github.io/cerradofinancas/obrigado.html" />
+        <button type="submit" class="cta">Enviar mensagem</button>
+      </form>
     </div>
-</section>
+  </section>
 
-<section id="contact" class="section">
+  <footer>
     <div class="container">
-        <h2 class="section-title">Vamos construir o futuro do seu negócio?</h2>
-        <p class="section-subtitle">Preencha o formulário abaixo para agendar um diagnóstico gratuito. Nossa equipe entrará em contato em até 24 horas.</p>
-        <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Seu Nome Completo" required>
-            <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
-            <input type="text" name="company" placeholder="Nome da sua Empresa">
-            <textarea name="message" rows="5" placeholder="Conte-nos um pouco sobre seu principal desafio..." required></textarea>
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://renato0503.github.io/cerradofinancas/obrigado.html">
-            <button type="submit" class="cta-button">Enviar Mensagem</button>
-        </form>
+      <p>© 2025 Cerrado Finanças</p>
+      <p>Dados viram decisão</p>
+      <p>Consultor responsável <a href="https://renatorosa.my.canva.site/" target="_blank" rel="noopener noreferrer">Renato de Oliveira Rosa</a></p>
     </div>
-</section>
+  </footer>
 
-<footer>
-    <div class="container">
-        <p>© 2025 Cerrado Finanças | Todos os direitos reservados.</p>
-        <p>Transformando dados em decisão.</p>
-        <p>Consultor Responsável: <a href="https://renatorosa.my.canva.site/" target="_blank" rel="noopener noreferrer">Renato de Oliveira Rosa</a></p>
-    </div>
-</footer>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tabbuttons;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tabbuttons = document.getElementsByClassName("tab-button");
-        for (i = 0; i < tabbuttons.length; i++) {
-            tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    // Garante que a primeira aba esteja visível ao carregar a página
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("consultoria").style.display = "block";
+  <script>
+    // Menu móvel
+    const hamb = document.querySelector('.hamb');
+    const menu = document.querySelector('.menu');
+    hamb.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-</script>
 
+    // Tabs acessíveis
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const panels = document.querySelectorAll('[role="tabpanel"]');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(tab.getAttribute('aria-controls')).classList.add('active');
+      });
+    });
+
+    // Estado inicial
+    document.getElementById('btn-consult').click();
+  </script>
 </body>
 </html>
