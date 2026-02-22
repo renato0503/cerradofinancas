@@ -41,7 +41,7 @@
     /* Hero */
     #hero { position: relative; color: #fff; text-align:center; padding: 110px 0 90px; background:
       linear-gradient(rgba(31,42,55,.80), rgba(31,42,55,.80)),
-      url('https://renato0503.github.io/cerradofinancas/hero.jpg') center/cover no-repeat; }
+      url('hero.jpg') center/cover no-repeat; }
     #hero h1 { margin:0 0 12px; font-size: clamp(32px, 4vw, 56px); font-weight:800; letter-spacing: -.5px; }
     #hero p { margin:0 auto 26px; max-width: 800px; font-size: clamp(16px, 1.8vw, 20px); color: #e5e7eb; }
     .cta { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; background: var(--secondary); color: #000; border:2px solid var(--secondary); border-radius: 999px; font-weight:700; text-decoration:none; transition:.2s ease; }
@@ -94,9 +94,9 @@
     button[type="submit"] { justify-self:center; }
 
     /* Team */
-    .t-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; text-align:center; border-top:6px solid var(--secondary); display:flex; flex-direction:column; gap:8px; }
+    .t-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; text-align:center; border-top:6px solid var(--secondary); display:flex; flex-direction:column; gap:8px; height: 100%; }
     .role { color: var(--secondary); font-weight:700; text-transform:uppercase; letter-spacing:.4px; font-size:.85rem; }
-    .lnk { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:2px solid var(--linkedin); color: var(--linkedin); text-decoration:none; font-weight:700; }
+    .lnk { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:2px solid var(--linkedin); color: var(--linkedin); text-decoration:none; font-weight:700; margin-top: auto; justify-content: center; }
     .lnk:hover { background: var(--linkedin); color:#fff; }
 
     /* Process */
@@ -139,7 +139,7 @@
         <a href="#solutions">Soluções</a>
         <a href="#precos">Preços</a>
         <a href="#processo">Processo</a>
-        <a href="#quem-somos">Quem somos</a>
+        <a href="#quem-somos">Equipe</a>
         <a href="#cases">Cases</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -157,57 +157,57 @@
   <section id="solutions">
     <div class="container">
       <h2 class="title">Portfólio de soluções</h2>
-      <p class="subtitle">Escolha a frente que atende a sua necessidade. Cada card explica objetivo, como funciona, o que você recebe e como medimos resultado.</p>
+      <p class="subtitle">Escolha a frente que atende a sua necessidade. Cada card detalha o nosso processo de atuação técnica e os resultados práticos que entregamos na sua operação.</p>
 
       <div role="tablist" aria-label="abas de soluções" class="tabs">
         <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-consult" id="btn-consult">Consultoria</button>
         <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-contabil" id="btn-contabil">Contábil</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-escritorios" id="btn-escritorios">Tecnologia para escritórios</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-produtos" id="btn-produtos">Produtos de software</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-escritorios" id="btn-escritorios">Tech para escritórios</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-produtos" id="btn-produtos">Produtos SaaS</button>
       </div>
 
       <div id="tab-consult" class="tabpanel active" role="tabpanel" aria-labelledby="btn-consult">
         <div class="grid">
           <article class="card">
-            <h3>Consultoria estratégica e financeira</h3>
-            <p>Objetivo. Mapear números e fluxos para corrigir distorções e padronizar leitura de desempenho.</p>
+            <h3>Consultoria Estratégica & Financeira</h3>
+            <p>Objetivo. Mapear números, auditar contas e corrigir distorções para padronizar a leitura de desempenho da sua empresa.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Levantamos dados de caixa, DRE e centros de custo. Reestruturamos relatórios e criamos comparativos entre unidades e áreas.</p>
+              <strong>A Execução</strong>
+              <p>Mergulhamos nos dados do seu caixa, estruturamos uma DRE por competência e desenhamos centros de custo lógicos. Criamos inteligência para comparar o desempenho entre unidades e áreas do negócio.</p>
             </div>
             <div class="block">
-              <strong>O que você recebe</strong>
-              <p>Modelo de caixa e DRE por competência, indicadores por centro de custo e relatório gerencial pronto para reunião mensal.</p>
+              <strong>A Entrega</strong>
+              <p>Relatório gerencial definitivo e pronto para suas reuniões mensais de diretoria, permitindo clareza total para cortes e investimentos.</p>
             </div>
-            <a href="https://renato0503.github.io/DREGerencial/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar DRE Automático</a>
+            <a href="https://cerradofinancas.com.br/DREGerencial/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar DRE Automático</a>
           </article>
 
           <article class="card">
-            <h3>Implantação de sistemas e automação</h3>
-            <p>Objetivo. Colocar o ERP para trabalhar a seu favor e eliminar lançamentos manuais.</p>
+            <h3>Automação e Implantação de ERP</h3>
+            <p>Objetivo. Fazer o seu sistema trabalhar de verdade, eliminando retrabalho humano e lançamentos manuais.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Parametrizamos módulos, definimos fluxos com metas e aprovações e integramos fontes para evitar digitação em duplicidade.</p>
+              <strong>A Execução</strong>
+              <p>Realizamos a parametrização completa de módulos, definimos fluxos de aprovação com alçadas de valores e conectamos APIs para evitar qualquer digitação em duplicidade.</p>
             </div>
             <div class="block">
-              <strong>O que você recebe</strong>
-              <p>Processo operando no Protheus ou no Integra com checklists e trilhas de aprovação documentadas.</p>
+              <strong>A Entrega</strong>
+              <p>Um ecossistema (Protheus, Integra ou similar) rodando de forma fluida, com checklists operacionais e documentação das trilhas de sistema.</p>
             </div>
-            <a href="https://renato0503.github.io/ImplantacaoAutomacaoERP/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Responda o questionário</a>
+            <a href="https://cerradofinancas.com.br/ImplantacaoAutomacaoERP/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Diagnóstico de ERP</a>
           </article>
 
           <article class="card">
-            <h3>Dados e painéis de acompanhamento</h3>
-            <p>Objetivo. Transformar dados brutos em leitura direta no Power BI.</p>
+            <h3>Business Intelligence (Power BI)</h3>
+            <p>Objetivo. Transformar planilhas extensas e bancos de dados complexos em leitura visual e direta para tomada de decisão.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Modelamos bases, publicamos painéis e definimos regras de atualização. Implantamos painéis de cobrança, vendas e margem por procedimento.</p>
+              <strong>A Execução</strong>
+              <p>Modelamos seus bancos de dados (SQL, Excel, ERP), tratamos as informações e construímos painéis visuais para áreas chave: fluxo de caixa, inadimplência, e margem por produto/procedimento.</p>
             </div>
             <div class="block">
-              <strong>O que você recebe</strong>
-              <p>Painéis com filtros e alertas visuais e manual de uso para sua equipe.</p>
+              <strong>A Entrega</strong>
+              <p>Dashboards dinâmicos com atualização programada, filtros avançados e alertas automáticos enviados para a liderança.</p>
             </div>
-            <a href="https://renato0503.github.io/DadosPaineisAcompanhamento/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar Painel</a>
+            <a href="https://cerradofinancas.com.br/DadosPaineisAcompanhamento/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar Painel BI</a>
           </article>
         </div>
       </div>
@@ -215,91 +215,91 @@
       <div id="tab-contabil" class="tabpanel" role="tabpanel" aria-labelledby="btn-contabil">
         <div class="grid">
           <article class="card">
-            <h3>Gestão fiscal e tributária</h3>
-            <p>Objetivo. Garantir regularidade e pagar o que é devido sem excesso.</p>
+            <h3>Gestão Fiscal e Planejamento</h3>
+            <p>Objetivo. Garantir conformidade com o fisco e aplicar inteligência para pagar apenas o tributo estritamente necessário.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Apuramos receitas, calculamos tributos e emitimos as guias. Monitoramos limite do Simples e simulamos alternativas quando fizer sentido.</p>
+              <strong>A Execução</strong>
+              <p>Apuramos receitas detalhadamente e emitimos guias com rigor. Fazemos o monitoramento constante de faixas do Simples Nacional e simulamos migrações para Lucro Presumido/Real preventivamente.</p>
             </div>
             <div class="block">
-              <strong>O que você recebe</strong>
-              <p>Calendário fiscal, guias e relatórios de apuração com histórico organizado.</p>
+              <strong>A Entrega</strong>
+              <p>Calendário fiscal atualizado, guias validadas e relatórios gerenciais que mostram o impacto tributário na margem do negócio.</p>
             </div>
-            <div class="meta"><span class="badge">Resultado medido</span> regularidade e economia com base em simulações</div>
+            <div class="meta"><span class="badge">Resultado</span> Economia legal e segurança tributária</div>
           </article>
 
           <article class="card">
-            <h3>Escrituração e obrigações</h3>
-            <p>Objetivo. Registrar fatos e entregar declarações sem lacunas.</p>
+            <h3>BPO Contábil e Escrituração</h3>
+            <p>Objetivo. Registrar todos os fatos financeiros da empresa e entregar obrigações acessórias sem lacunas.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Executamos lançamentos, geramos balancetes e transmitimos eSocial, DCTFWeb e EFD-Reinf. Entregamos DEFIS no prazo.</p>
+              <strong>A Execução</strong>
+              <p>Cuidamos de toda a cadeia de lançamentos. Processamos balancetes, folha de pagamento e transmitimos obrigações críticas como eSocial, DCTFWeb, EFD-Reinf e DEFIS no prazo legal.</p>
             </div>
             <div class="block">
-              <strong>O que você recebe</strong>
-              <p>Balancetes, DRE, razão e pastas mensais com comprovações.</p>
+              <strong>A Entrega</strong>
+              <p>Fechamento mensal transparente com balancetes, DRE contábil, razão e pastas organizadas digitalmente.</p>
             </div>
-            <div class="meta"><span class="badge">Resultado medido</span> informação contábil pronta para decisão</div>
+            <div class="meta"><span class="badge">Resultado</span> Contabilidade usada como ferramenta de gestão</div>
           </article>
 
           <article class="card">
-            <h3>Suporte e regularidade</h3>
-            <p>Objetivo. Resolver demandas de rotina sem atrasos.</p>
+            <h3>Legalização e Suporte Contínuo</h3>
+            <p>Objetivo. Resolver burocracias do dia a dia da empresa com velocidade, destravando a operação comercial.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Emitimos certidões, respondemos intimações e apoiamos emissão de notas. Organizamos documentos e rotinas diárias.</p>
+              <strong>A Execução</strong>
+              <p>Atuamos na emissão ágil de CNDs, regularização de alvarás, resposta a intimações fiscais e apoio técnico direto para o faturamento (dúvidas de NFe, retenções, CFOPs).</p>
             </div>
             <div class="block">
-              <strong>O que você recebe</strong>
-              <p>Portal com solicitações, prazos e entregas documentadas.</p>
+              <strong>A Entrega</strong>
+              <p>Portal exclusivo do cliente centralizando todas as solicitações, prazos estipulados e documentos entregues.</p>
             </div>
-            <div class="meta"><span class="badge">Resultado medido</span> menos pendências e fluxo mais estável</div>
+            <div class="meta"><span class="badge">Resultado</span> Fim de multas por atraso e pendências</div>
           </article>
         </div>
       </div>
 
       <div id="tab-escritorios" class="tabpanel" role="tabpanel" aria-labelledby="btn-escritorios">
-        <p class="subtitle">Foco em consultorias, contábeis e auditorias. A meta é escalar operação e reduzir custo operacional com automação e integração.</p>
+        <p class="subtitle">Soluções exclusivas para consultorias, escritórios de contabilidade e BPOs. Nosso objetivo é permitir que você escale o número de clientes sem precisar inchar sua folha de pagamento.</p>
         <div class="grid">
           <article class="card">
-            <h3>Automação de processos</h3>
-            <p>Objetivo. Tirar tarefas repetitivas da equipe e executar 24 horas por dia com bots.</p>
+            <h3>RPA (Automação de Processos)</h3>
+            <p>Objetivo. Construir robôs (bots) para executar tarefas repetitivas 24 horas por dia, liberando seu time para análises.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Construímos rotinas de conciliação, download e organização de XML e extratos. Automatizamos geração e envio de guias e relatórios e o preenchimento de obrigações.</p>
+              <strong>A Execução</strong>
+              <p>Mapeamos rotinas de extração de relatórios, download massivo de notas (XMLs) e extratos. Desenvolvemos scripts que interagem com portais do governo e ERPs automaticamente.</p>
             </div>
             <div class="block">
-              <strong>Exemplo prático</strong>
-              <p>Bot que gera e envia guias do Simples de toda a base sem intervenção humana e elimina multa por atraso.</p>
+              <strong>Exemplo Prático</strong>
+              <p>Bot que entra no portal e-CAC, gera guias do Simples de 100 clientes, salva em PDF e dispara por WhatsApp, reduzindo um trabalho de dias para minutos.</p>
             </div>
-            <a href="https://renato0503.github.io/AutomacaoContabil/" class="cta" style="align-self:start; margin-top:10px;">Entenda a automação</a>
+            <a href="https://cerradofinancas.com.br/AutomacaoContabil/" class="cta" style="align-self:start; margin-top:10px;">Entenda a Automação</a>
           </article>
 
           <article class="card">
-            <h3>Integração de dados e sistemas</h3>
-            <p>Objetivo. Unificar fontes e sincronizar tudo em um só lugar.</p>
+            <h3>Integração de Dados (APIs)</h3>
+            <p>Objetivo. Acabar com planilhas manuais e sincronizar sistemas distintos, fazendo o ERP do seu cliente "falar" com o seu.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Criamos conectores e APIs, centralizamos informações e sincronizamos cadastros e lançamentos. Publicamos painéis consolidados de múltiplas origens.</p>
+              <strong>A Execução</strong>
+              <p>Construímos conectores de software e webhooks. Centralizamos cadastros, unificamos faturamentos e levamos a movimentação financeira direto para a sua plataforma de contabilidade.</p>
             </div>
             <div class="block">
-              <strong>Exemplo prático</strong>
-              <p>Vendas e despesas chegam do ERP do cliente de forma automática e o fechamento mensal acontece sem troca de planilhas.</p>
+              <strong>Exemplo Prático</strong>
+              <p>O cliente faz uma venda no sistema de PDV dele, e o lançamento já cai conciliado na sua plataforma Questor/Dominio/ContaAzul automaticamente.</p>
             </div>
           </article>
 
           <article class="card">
-            <h3>IA generativa e atendimento</h3>
-            <p>Objetivo. Responder rápido e processar documentos com apoio de modelos.</p>
+            <h3>IA Generativa para Atendimento</h3>
+            <p>Objetivo. Elevar o nível do atendimento ao cliente do seu escritório usando inteligência artificial treinada com a sua base de conhecimento.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Criamos chatbots para dúvidas frequentes, assistentes para leitura e classificação de documentos e modelos para apontar inconsistências fiscais. Geramos resumos de grandes volumes de texto.</p>
+              <strong>A Execução</strong>
+              <p>Treinamos modelos (LLMs) para responder dúvidas fiscais e trabalhistas, ler e classificar PDFs (como rescisões e impostos) e apontar inconsistências em lote.</p>
             </div>
             <div class="block">
-              <strong>Exemplo prático</strong>
-              <p>Chat no site orienta novos clientes sobre documentos para abertura de empresa e qualifica o contato antes de chegar ao consultor.</p>
+              <strong>Exemplo Prático</strong>
+              <p>Chatbot inteligente no WhatsApp do seu escritório que faz a qualificação de novos leads e responde dúvidas operacionais (ex: "como emitir nota de devolução") para os clientes atuais.</p>
             </div>
-            <a href="https://renato0503.github.io/AtendimentoEscritorioContabil/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar bot de atendimento</a>
+            <a href="https://cerradofinancas.com.br/AtendimentoEscritorioContabil/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar Bot Inteligente</a>
           </article>
         </div>
       </div>
@@ -308,44 +308,44 @@
         <div class="grid">
           <article class="card">
             <h3>Smart Finance IA</h3>
-            <p>Objetivo. Substituir planilhas e automatizar leitura financeira com envio de dados por WhatsApp.</p>
+            <p>A inteligência de um consultor financeiro na palma da sua mão através do WhatsApp.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Você envia arquivos e lançamentos pelo bot. O sistema atualiza painéis e envia alertas sobre inconsistências e caixa.</p>
+              <strong>Como Funciona</strong>
+              <p>Você não precisa preencher sistemas complexos. Envie extratos, comprovantes e valores via WhatsApp. Nossa IA entende os dados, categoriza as despesas, atualiza seu dashboard em nuvem e te avisa proativamente sobre furos de caixa.</p>
             </div>
             <div class="block">
-              <strong>Indicado para</strong>
-              <p>Operações que querem clareza sem manter controles manuais e acesso rápido às informações.</p>
+              <strong>Público Ideal</strong>
+              <p>Pequenas e médias operações, clínicas ou prestadores de serviço que odeiam alimentar planilhas, mas precisam de controle rigoroso do dinheiro.</p>
             </div>
-            <a href="https://renato0503.github.io/ChatBotConsultorFinanceiroIA/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Testar Consultor Financeiro IA</a>
+            <a href="https://cerradofinancas.com.br/ChatBotConsultorFinanceiroIA/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Testar Smart Finance IA</a>
           </article>
 
           <article class="card">
             <h3>Carteira Inteligente IA</h3>
-            <p>Objetivo. Analisar carteira de ativos e sugerir alocação com base em perfil e cenários.</p>
+            <p>Análise de investimentos orientada por dados, risco e cenário macroeconômico.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>O motor cruza dados da carteira, simula cenários e propõe ajustes. Relatórios chegam por WhatsApp.</p>
+              <strong>Como Funciona</strong>
+              <p>Nossa inteligência cruza os dados do seu portfólio de ativos com o cenário atual de juros e mercado. O sistema realiza testes de estresse, simula cenários e sugere rebalanceamentos táticos para proteger patrimônio.</p>
             </div>
             <div class="block">
-              <strong>Indicado para</strong>
-              <p>Investidores com múltiplos ativos que precisam decidir com base em dados e risco aceito.</p>
+              <strong>Público Ideal</strong>
+              <p>Investidores que possuem diversificação de ativos, tesourarias corporativas e profissionais que precisam basear decisões de aporte em matemática pura.</p>
             </div>
-            <a href="https://chatgpt.com/g/g-6813605b08d88191ba176e9eb99714d0-carteira-inteligente-ia?model=gpt-4o" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Testar Carteira Inteligente IA</a>
+            <a href="https://chatgpt.com/g/g-6813605b08d88191ba176e9eb99714d0-carteira-inteligente-ia?model=gpt-4o" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Analisar Carteira</a>
           </article>
 
           <article class="card">
-            <h3>Cerrado Tech</h3>
-            <p>Objetivo. Centralizar e automatizar o ciclo de vida do cliente, da prospecção ao suporte.</p>
+            <h3>CRM Cerrado Tech</h3>
+            <p>A máquina comercial estruturada para escalar vendas sem perder o controle dos contatos.</p>
             <div class="block">
-              <strong>Como funciona</strong>
-              <p>Nossa plataforma integra WhatsApp, site e redes sociais, organizando leads, agendando follow-ups e gerando relatórios de conversão para a equipe comercial.</p>
+              <strong>Como Funciona</strong>
+              <p>Uma plataforma unificada que conecta os leads do seu site, Instagram e WhatsApp diretamente em um funil Kanban. O sistema agenda follow-ups sozinhos, distribui leads para vendedores e gera relatórios de conversão por canal.</p>
             </div>
             <div class="block">
-              <strong>Indicado para</strong>
-              <p>Empresas que buscam estruturar o processo comercial, melhorar o tempo de resposta e ter visibilidade completa do funil de vendas.</p>
+              <strong>Público Ideal</strong>
+              <p>Empresas de serviço, clínicas e escolas que recebem muito volume de mensagens, demoram a responder e perdem vendas por falta de acompanhamento (follow-up).</p>
             </div>
-            <a href="https://renato0503.github.io/LandingPageBotCRM/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Conhecer a Cerrado Tech</a>
+            <a href="https://cerradofinancas.com.br/LandingPageBotCRM/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Conhecer o CRM</a>
           </article>
         </div>
       </div>
@@ -436,19 +436,19 @@
   <section id="quem-somos" style="background:#eef2f7;">
     <div class="container">
       <h2 class="title">Equipe</h2>
-      <p class="subtitle">Lideranças responsáveis por arquitetura de software, finanças e operação.</p>
+      <p class="subtitle">Lideranças em arquitetura de software, finanças e uma rede de consultores focados no seu resultado.</p>
       <div class="grid">
         <div class="t-card">
           <h3>Renato Rosa</h3>
-          <div class="role">Consultor técnico e contador</div>
-          <p>Conduz arquitetura de software, pesquisa e desenvolvimento e o roadmap de produtos.</p>
+          <div class="role">Consultor Técnico e Contador</div>
+          <p>Conduz o braço de arquitetura de software, pesquisa e desenvolvimento e o roadmap de soluções financeiras.</p>
           <a class="lnk" href="https://www.linkedin.com/in/gestorrenato/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <div class="t-card">
-          <h3>Denner Port</h3>
-          <div class="role">Administrador e comercial</div>
-          <p>Cuida de administração, finanças e estratégia comercial com foco em precificação e parcerias.</p>
-          <a class="lnk" href="https://www.linkedin.com/in/dennerport/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <h3>Consultores Parceiros</h3>
+          <div class="role">Rede Multidisciplinar</div>
+          <p>Contamos com profissionais experientes nas áreas tributária, societária, engenharia de dados e Power BI. Alocamos o talento exato que a dor da sua empresa exige no momento.</p>
+          <a class="lnk" href="#contato" style="background:var(--primary); color:#fff; border-color:var(--primary);">Fale Conosco</a>
         </div>
       </div>
     </div>
@@ -487,7 +487,7 @@
         <input type="text" name="company" placeholder="Empresa" />
         <textarea name="message" rows="5" placeholder="Descreva o principal problema" required></textarea>
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://renato0503.github.io/cerradofinancas/obrigado.html" />
+        <input type="hidden" name="_next" value="https://cerradofinancas.com.br/obrigado.html" />
         <button type="submit" class="cta">Enviar mensagem</button>
       </form>
     </div>
@@ -527,5 +527,3 @@
   </script>
 </body>
 </html>
-
-
