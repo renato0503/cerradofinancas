@@ -3,527 +3,1487 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cerrado Finanças — Consultoria e Tecnologia</title>
+  <title>Cerrado Finanças — Inteligência de Dados e Gestão Estratégica</title>
+  <meta name="description" content="Destravamos sistemas ERP, automatizamos processos financeiros e criamos painéis executivos de Business Intelligence para tomada de decisão.">
   <link rel="icon" type="image/png" href="logo.png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <style>
+    /* ==========================================================================
+       VARIÁVEIS GERAIS E PALETA DE CORES
+       ========================================================================== */
     :root {
-      --primary: #1f2a37;
-      --secondary: #d4af37;
-      --accent: #2ea44f;
-      --ink: #222;
-      --muted: #6b7280;
-      --bg: #f6f7f9;
-      --white: #fff;
+      --primary: #0F172A; /* Slate 900 */
+      --primary-light: #1E293B; /* Slate 800 */
+      --secondary: #D4AF37; /* Gold */
+      --secondary-hover: #b8972e;
+      --accent: #10B981; /* Emerald 500 */
+      --accent-hover: #059669;
+      --danger: #EF4444; /* Red 500 */
+      
+      --surface: #FFFFFF;
+      --surface-alt: #F8FAFC; /* Slate 50 */
+      --bg: #F1F5F9; /* Slate 100 */
+      
+      --text-main: #0F172A;
+      --text-muted: #64748B; /* Slate 500 */
+      --text-light: #F8FAFC;
+      
+      --border: #E2E8F0;
+      --border-dark: #334155;
+      
       --whatsapp: #25D366;
-      --linkedin: #0077b5;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --linkedin: #0A66C2;
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      
+      --transition-fast: 0.15s ease-in-out;
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Header */
-    header { position: sticky; top:0; z-index: 50; background: var(--white); border-bottom: 3px solid var(--primary); box-shadow: 0 4px 20px rgba(0,0,0,.06); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
-    .brand-mark { display:grid; place-items:center; width:44px; height:44px; border-radius:10px; background: linear-gradient(135deg, #1e8d42, #fecb00); border:2px solid #000; }
-    .brand-txt { line-height:1; font-weight:800; color: #0b0b0b; -webkit-text-stroke: .6px #000; font-size: 20px; letter-spacing:.3px; }
-    .menu { display:flex; gap: 22px; align-items:center; }
-    .menu a { text-decoration:none; color: var(--primary); font-weight:600; padding:10px 14px; border-radius: 999px; transition: .2s ease; }
-    .menu a:hover { background:#eef2f7; }
-    .hamb { display:none; background:none; border:none; font-size:28px; }
-
-    /* Hero */
-    #hero { position: relative; color: #fff; text-align:center; padding: 110px 0 90px; background:
-      linear-gradient(rgba(31,42,55,.80), rgba(31,42,55,.80)),
-      url('hero.jpg') center/cover no-repeat; }
-    #hero h1 { margin:0 0 12px; font-size: clamp(32px, 4vw, 56px); font-weight:800; letter-spacing: -.5px; }
-    #hero p { margin:0 auto 26px; max-width: 800px; font-size: clamp(16px, 1.8vw, 20px); color: #e5e7eb; }
-    .cta { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; background: var(--secondary); color: #000; border:2px solid var(--secondary); border-radius: 999px; font-weight:700; text-decoration:none; transition:.2s ease; }
-    .cta:hover { background: transparent; color: var(--secondary); }
-
-    /* Sections */
-    section { padding: 80px 0; }
-    .title { text-align:center; font-size: clamp(28px, 3vw, 42px); color: var(--primary); margin:0 0 8px; font-weight:800; }
-    .subtitle { text-align:center; color: var(--muted); max-width: 780px; margin:0 auto 42px; }
-
-    /* Tabs */
-    .tabs { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom: 30px; }
-    .tab-btn { border:2px solid #d1d5db; background: var(--white); border-radius: 999px; padding:12px 18px; font-weight:600; color: var(--primary); cursor:pointer; transition:.2s ease; }
-    .tab-btn[aria-selected="true"] { background: var(--primary); border-color: var(--primary); color:#fff; }
-    .tabpanel { display:none; }
-    .tabpanel.active { display:block; }
-
-    /* Cards */
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:26px; }
-    .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; display:flex; flex-direction:column; gap:14px; border-top: 6px solid var(--accent); }
-    .card h3 { margin:0; color: var(--primary); font-size: 22px; }
-    .card p { margin:0; }
-    .card .meta { display:flex; gap:10px; align-items:center; color:var(--muted); font-size:.95rem; }
-    .card .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#ecfdf5; color:#065f46; font-weight:700; font-size:.8rem; }
-    .card .block { background:#f9fafb; padding:14px; border-radius: 10px; border-left:4px solid var(--secondary); }
-
-    /* Pricing */
-    .pricing { background: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
-    .price-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:26px; }
-    .p-card { position:relative; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding:26px; border-top:6px solid var(--primary); display:flex; flex-direction:column; gap:14px; }
-    .p-card.highlight { border-top-color: var(--secondary); }
-    .ribbon { position:absolute; top:18px; right:-42px; transform: rotate(45deg); background: var(--secondary); color:#000; padding:6px 42px; font-weight:800; font-size:.8rem; }
-    .money { font-size: 44px; font-weight:800; color: var(--primary); }
-    .note { color: var(--muted); font-style: italic; }
-
-    /* Cases */
-    .case { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; display:flex; flex-direction:column; gap:8px; border-left:6px solid var(--accent); }
-    .case .tag { display:inline-block; background:#10b981; color:#fff; padding:6px 10px; border-radius:999px; font-weight:700; font-size:.8rem; }
-    .case .kpi { background:#f0fdf4; border-left:4px solid var(--accent); padding:10px 12px; border-radius:10px; font-weight:700; color: var(--primary); }
-
-    /* CTA WhatsApp */
-    .wa-wrap { text-align:center; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
-    .wa { display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:999px; text-decoration:none; color:#fff; background: var(--whatsapp); font-weight:800; }
-
-    /* Contact */
-    #contact { background: var(--primary); color:#fff; }
-    #contact .title, #contact .subtitle { color:#fff; }
-    form { max-width: 760px; margin: 0 auto; display:grid; gap:14px; }
-    input, textarea { width:100%; padding:14px 16px; border-radius: 12px; border:1px solid #e5e7eb; font: inherit; }
-    button[type="submit"] { justify-self:center; }
-
-    /* Team */
-    .t-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; text-align:center; border-top:6px solid var(--secondary); display:flex; flex-direction:column; gap:8px; height: 100%; }
-    .role { color: var(--secondary); font-weight:700; text-transform:uppercase; letter-spacing:.4px; font-size:.85rem; }
-    .lnk { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:2px solid var(--linkedin); color: var(--linkedin); text-decoration:none; font-weight:700; margin-top: auto; justify-content: center; }
-    .lnk:hover { background: var(--linkedin); color:#fff; }
-
-    /* Process */
-    .timeline { max-width: 880px; margin: 0 auto; position: relative; }
-    .timeline:before { content:""; position:absolute; left: 50%; top:0; bottom:0; width:4px; background: var(--accent); transform: translateX(-50%); }
-    .step { width: 50%; padding: 10px 20px; position: relative; }
-    .step .box { background:#f9fafb; border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
-    .step:after { content:""; position:absolute; top: 24px; width:20px; height:20px; border-radius:50%; border:4px solid var(--accent); background:#fff; z-index:2; }
-    .step.left { left:0; text-align:right; padding-right:40px; }
-    .step.left:after { right:-10px; }
-    .step.right { left:50%; padding-left:40px; }
-    .step.right:after { left:-10px; }
-
-    /* Footer */
-    footer { background:#0f172a; color:#94a3b8; text-align:center; padding:30px 0; }
-    footer a { color: var(--secondary); font-weight:800; text-decoration:none; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .timeline:before { left: 24px; transform:none; }
-      .step, .step.left, .step.right { width: 100%; left:0; text-align:left; padding: 10px 10px 10px 56px; }
-      .step:after { left: 14px; right:auto; }
+    /* ==========================================================================
+       RESET E BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    @media (max-width: 760px) {
-      .menu { display:none; position:absolute; top:76px; left:0; right:0; background: var(--white); border-bottom:1px solid #e5e7eb; padding: 12px; }
-      .menu.open { display:flex; flex-direction:column; }
-      .hamb { display:block; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--surface-alt);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .text-highlight { color: var(--secondary); }
+    .text-accent { color: var(--accent); }
+
+    /* ==========================================================================
+       ANIMAÇÕES (INTERSECTION OBSERVER)
+       ========================================================================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* ==========================================================================
+       HEADER E NAVEGAÇÃO
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition-normal);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+      height: 70px;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      transition: height var(--transition-normal);
+    }
+
+    header.scrolled .nav-container { height: 70px; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 101;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      color: var(--primary);
+    }
+
+    .brand-txt {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    .desktop-menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .desktop-menu a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+    }
+
+    .desktop-menu a:hover {
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: var(--surface) !important;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      transition: var(--transition-normal);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--primary) !important;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--secondary);
+      color: var(--primary) !important;
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition-normal);
+      border: 2px solid var(--secondary);
+    }
+
+    .btn-secondary:hover {
+      background: transparent;
+      color: var(--secondary) !important;
+    }
+
+    /* Mobile Menu */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary);
+      z-index: 101;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 180px 0 140px;
+      background-color: var(--primary);
+      color: var(--text-light);
+      overflow: hidden;
+    }
+
+    /* Background Elements */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 40%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--secondary);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: #CBD5E1;
+      margin-bottom: 40px;
+      max-width: 760px;
+      margin-inline: auto;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    /* Tech Stack Banner */
+    .tech-stack {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 30px 0;
+      text-align: center;
+    }
+    .tech-stack p {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .tech-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      opacity: 0.6;
+      filter: grayscale(100%);
+      transition: var(--transition-normal);
+    }
+    .tech-logos:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+    .tech-logos svg { height: 35px; width: auto; }
+
+    /* ==========================================================================
+       SEÇÕES GERAIS
+       ========================================================================== */
+    .section { padding: 100px 0; }
+    .section-bg { background-color: var(--surface); }
+    .section-dark { background-color: var(--primary); color: var(--text-light); }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 64px;
+    }
+    
+    .section-dark .section-header p { color: #94A3B8; }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    h2.title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+    
+    .section-dark h2.title { color: var(--surface); }
+
+    p.subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       PROBLEMA VS SOLUÇÃO (BEFORE/AFTER)
+       ========================================================================== */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .comp-card {
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+
+    .comp-card.bad {
+      background: #FEF2F2;
+      border-color: #FECACA;
+    }
+
+    .comp-card.good {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+      box-shadow: var(--shadow-lg);
+      transform: scale(1.02);
+    }
+
+    .comp-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid;
+    }
+
+    .comp-card.bad .comp-header { border-color: #FECACA; color: var(--danger); }
+    .comp-card.good .comp-header { border-color: #BBF7D0; color: var(--accent); }
+
+    .comp-header h3 { font-size: 1.5rem; font-weight: 800; }
+
+    .comp-list {
+      list-style: none;
+    }
+
+    .comp-list li {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .comp-list svg {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .comp-card.bad .comp-list svg { color: var(--danger); }
+    .comp-card.good .comp-list svg { color: var(--accent); }
+
+    /* ==========================================================================
+       VISÃO 360º E SERVIÇOS (S&OP APPROACH)
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-xl);
+      border-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .icon-wrapper {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-md);
+      background: var(--surface-alt);
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      color: var(--primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .service-deliverables {
+      background: var(--surface-alt);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+    }
+
+    .service-deliverables h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .service-deliverables ul {
+      list-style: none;
+    }
+
+    .service-deliverables li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .service-deliverables li svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+
+    .link-arrow svg {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition-fast);
+    }
+
+    .link-arrow:hover { color: var(--secondary); }
+    .link-arrow:hover svg { transform: translateX(5px); }
+
+    /* ==========================================================================
+       NÍVEIS DE MATURIDADE (JORNADA)
+       ========================================================================== */
+    .maturity-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .maturity-step {
+      display: flex;
+      align-items: stretch;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .maturity-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: 70px;
+      bottom: -10px;
+      width: 2px;
+      background: var(--border);
+      z-index: 1;
+    }
+
+    .step-indicator {
+      flex-shrink: 0;
+      width: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .step-number {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: var(--transition-normal);
+    }
+
+    .maturity-step.active .step-number {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--secondary);
+    }
+
+    .step-content {
+      padding: 0 0 40px 30px;
+      flex-grow: 1;
+    }
+
+    .step-content h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .status-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .status-badge.danger { background: #FEE2E2; color: var(--danger); }
+    .status-badge.warning { background: #FEF3C7; color: #D97706; }
+    .status-badge.success { background: #D1FAE5; color: var(--accent); }
+
+    .step-content p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .step-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: var(--radius-md);
+    }
+
+    .step-box strong { display: block; margin-bottom: 8px; color: var(--primary); }
+
+    /* ==========================================================================
+       CASES & RESULTADOS (KPIs)
+       ========================================================================== */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .kpi-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      transition: var(--transition-normal);
+    }
+
+    .kpi-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .kpi-value {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--secondary);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .kpi-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .kpi-desc {
+      color: #94A3B8;
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       AUTORIDADE (QUEM SOMOS)
+       ========================================================================== */
+    .authority-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .auth-image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .auth-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 4px solid var(--secondary);
+      border-radius: var(--radius-lg);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .auth-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .auth-content h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .auth-role {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .auth-bio {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .auth-credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .cred-item svg {
+      color: var(--accent);
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .cred-item p {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       FAQ (ACCORDION)
+       ========================================================================== */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 24px;
+      background: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      transition: var(--transition-fast);
+    }
+
+    .faq-question:hover { background: var(--surface-alt); }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+      color: var(--secondary);
+    }
+
+    .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background: var(--surface);
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 24px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       CONTATO E FOOTER
+       ========================================================================== */
+    .contact-wrapper {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      box-shadow: var(--shadow-xl);
+      max-width: 800px;
+      margin: 0 auto;
+      border-top: 6px solid var(--secondary);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text-main);
+      transition: var(--transition-fast);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--surface);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--primary);
+      color: var(--surface);
+      padding: 18px;
+      border-radius: var(--radius-md);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 16px;
+      transition: var(--transition-normal);
+    }
+
+    .submit-btn:hover { background: var(--accent); }
+
+    footer {
+      background: #020617;
+      color: #94A3B8;
+      padding: 80px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand .brand-txt { color: var(--surface); margin-bottom: 20px; display: block; }
+    
+    .footer-links h4 {
+      color: var(--surface);
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { transition: var(--transition-fast); }
+    .footer-links a:hover { color: var(--secondary); }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid #1E293B;
+    }
+
+    /* ==========================================================================
+       RESPONSIVIDADE
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .comparison-grid, .authority-wrapper { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .auth-image { max-width: 500px; margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+      .desktop-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 40px 24px;
+        box-shadow: var(--shadow-lg);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease-in-out;
+      }
+      .desktop-menu.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .mobile-toggle { display: block; }
+      
+      .hero { padding: 140px 0 100px; }
+      .hero-actions { flex-direction: column; }
+      .btn-secondary, .btn-primary { width: 100%; }
+      
+      .section { padding: 80px 0; }
+      .contact-wrapper { padding: 30px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      
+      .maturity-step:not(:last-child)::after { left: 25px; }
+      .step-indicator { width: 50px; }
+      .step-number { width: 50px; height: 50px; font-size: 1.2rem; }
+      .step-content { padding-left: 20px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav" role="navigation" aria-label="principal">
-      <a class="brand" href="#">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-txt">Cerrado Finanças</div>
+
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <div class="brand-mark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <span class="brand-txt">Cerrado Finanças</span>
       </a>
-      <button class="hamb" aria-label="abrir menu" aria-expanded="false" aria-controls="mainmenu">☰</button>
-      <nav id="mainmenu" class="menu" aria-label="atalhos">
-        <a href="#solutions">Soluções</a>
-        <a href="#precos">Preços</a>
-        <a href="#processo">Processo</a>
-        <a href="#quem-somos">Equipe</a>
-        <a href="#cases">Cases</a>
-        <a href="#contato">Contato</a>
+
+      <button class="mobile-toggle" aria-label="Abrir menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="desktop-menu">
+        <a href="#o-problema">O Desafio</a>
+        <a href="#solucoes">Atuação 360º</a>
+        <a href="#maturidade">Metodologia</a>
+        <a href="#quem-somos">Liderança</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico." target="_blank" class="btn-primary">
+          Falar com Especialista
+        </a>
       </nav>
     </div>
   </header>
 
-  <section id="hero" aria-label="apresentacao">
-    <div class="container">
-      <h1>Finanças e software para crescer com base em dados</h1>
-      <p>Unimos consultoria e desenvolvimento para organizar números, padronizar rotinas e implantar sistemas que sustentam resultado. Você decide com clareza e executa sem ruído.</p>
-      <a href="#contato" class="cta">Agendar diagnóstico</a>
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <div class="hero-badge fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Consultoria Estratégica & Arquitetura de Dados
+      </div>
+      <h1 class="fade-up delay-1">Passe da intuição para a <span class="text-highlight">Decisão Baseada em Dados.</span></h1>
+      <p class="fade-up delay-2">Sistemas pesados (ERP) e planilhas desconexas escondem o lucro da sua empresa. A Cerrado Finanças destrava a sua operação, integrando processos e criando painéis executivos para o gestor decidir com clareza.</p>
+      
+      <div class="hero-actions fade-up delay-3">
+        <a href="#contato" class="btn-secondary">
+          Agendar Diagnóstico Gratuito
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#o-problema" class="btn-primary" style="background: transparent; border-color: rgba(255,255,255,0.3); color: #fff !important;">
+          Entenda a Metodologia
+        </a>
+      </div>
     </div>
   </section>
 
-  <section id="solutions">
+  <div class="tech-stack">
     <div class="container">
-      <h2 class="title">Portfólio de soluções</h2>
-      <p class="subtitle">Escolha a frente que atende a sua necessidade. Cada card detalha o nosso processo de atuação técnica e os resultados práticos que entregamos na sua operação.</p>
+      <p>Sistemas que destravamos e integramos na sua operação</p>
+      <div class="tech-logos">
+        <h3 style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px;">SAP<span style="color:var(--accent)">®</span></h3>
+        <h3 style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; font-style: italic;">TOTVS Protheus</h3>
+        <h3 style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color:#F2C811;">Power BI</h3>
+        <h3 style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color:#2684FF;">ContaAzul</h3>
+        <h3 style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color:#FF5722;">Bling ERP</h3>
+      </div>
+    </div>
+  </div>
 
-      <div role="tablist" aria-label="abas de soluções" class="tabs">
-        <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-consult" id="btn-consult">Consultoria</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-contabil" id="btn-contabil">Contábil</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-escritorios" id="btn-escritorios">Tech para escritórios</button>
-        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-produtos" id="btn-produtos">Produtos SaaS</button>
+  <section class="section section-bg" id="o-problema">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag">Identificação de Cenário</span>
+        <h2 class="title">Por que sua empresa gera dados, mas não gera inteligência?</h2>
+        <p class="subtitle">A maioria dos negócios possui sistemas caros que viram "cemitérios de dados". Analise em qual lado da mesa a sua gestão está sentada hoje.</p>
       </div>
 
-      <div id="tab-consult" class="tabpanel active" role="tabpanel" aria-labelledby="btn-consult">
-        <div class="grid">
-          <article class="card">
-            <h3>Consultoria Estratégica & Financeira</h3>
-            <p>Objetivo. Mapear números, auditar contas e corrigir distorções para padronizar a leitura de desempenho da sua empresa.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Mergulhamos nos dados do seu caixa, estruturamos uma DRE por competência e desenhamos centros de custo lógicos. Criamos inteligência para comparar o desempenho entre unidades e áreas do negócio.</p>
-            </div>
-            <div class="block">
-              <strong>A Entrega</strong>
-              <p>Relatório gerencial definitivo e pronto para suas reuniões mensais de diretoria, permitindo clareza total para cortes e investimentos.</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/DREGerencial/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar DRE Automático</a>
-          </article>
-
-          <article class="card">
-            <h3>Automação e Implantação de ERP</h3>
-            <p>Objetivo. Fazer o seu sistema trabalhar de verdade, eliminando retrabalho humano e lançamentos manuais.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Realizamos a parametrização completa de módulos, definimos fluxos de aprovação com alçadas de valores e conectamos APIs para evitar qualquer digitação em duplicidade.</p>
-            </div>
-            <div class="block">
-              <strong>A Entrega</strong>
-              <p>Um ecossistema (Protheus, Integra ou similar) rodando de forma fluida, com checklists operacionais e documentação das trilhas de sistema.</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/ImplantacaoAutomacaoERP/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Diagnóstico de ERP</a>
-          </article>
-
-          <article class="card">
-            <h3>Business Intelligence (Power BI)</h3>
-            <p>Objetivo. Transformar planilhas extensas e bancos de dados complexos em leitura visual e direta para tomada de decisão.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Modelamos seus bancos de dados (SQL, Excel, ERP), tratamos as informações e construímos painéis visuais para áreas chave: fluxo de caixa, inadimplência, e margem por produto/procedimento.</p>
-            </div>
-            <div class="block">
-              <strong>A Entrega</strong>
-              <p>Dashboards dinâmicos com atualização programada, filtros avançados e alertas automáticos enviados para a liderança.</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/DadosPaineisAcompanhamento/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar Painel BI</a>
-          </article>
+      <div class="comparison-grid">
+        <div class="comp-card bad fade-up delay-1">
+          <div class="comp-header">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <h3>O Cenário Atual (Silos)</h3>
+          </div>
+          <ul class="comp-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Fechamento financeiro lento (só sabe o resultado no dia 20).
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              O ERP (Protheus, SAP) é visto como fardo pela equipe.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Comercial e Financeiro operam planilhas que não batem.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Decisões baseadas no "saldo da conta bancária".
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <div id="tab-contabil" class="tabpanel" role="tabpanel" aria-labelledby="btn-contabil">
-        <div class="grid">
-          <article class="card">
-            <h3>Gestão Fiscal e Planejamento</h3>
-            <p>Objetivo. Garantir conformidade com o fisco e aplicar inteligência para pagar apenas o tributo estritamente necessário.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Apuramos receitas detalhadamente e emitimos guias com rigor. Fazemos o monitoramento constante de faixas do Simples Nacional e simulamos migrações para Lucro Presumido/Real preventivamente.</p>
-            </div>
-            <div class="block">
-              <strong>A Entrega</strong>
-              <p>Calendário fiscal atualizado, guias validadas e relatórios gerenciais que mostram o impacto tributário na margem do negócio.</p>
-            </div>
-            <div class="meta"><span class="badge">Resultado</span> Economia legal e segurança tributária</div>
-          </article>
-
-          <article class="card">
-            <h3>BPO Contábil e Escrituração</h3>
-            <p>Objetivo. Registrar todos os fatos financeiros da empresa e entregar obrigações acessórias sem lacunas.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Cuidamos de toda a cadeia de lançamentos. Processamos balancetes, folha de pagamento e transmitimos obrigações críticas como eSocial, DCTFWeb, EFD-Reinf e DEFIS no prazo legal.</p>
-            </div>
-            <div class="block">
-              <strong>A Entrega</strong>
-              <p>Fechamento mensal transparente com balancetes, DRE contábil, razão e pastas organizadas digitalmente.</p>
-            </div>
-            <div class="meta"><span class="badge">Resultado</span> Contabilidade usada como ferramenta de gestão</div>
-          </article>
-
-          <article class="card">
-            <h3>Legalização e Suporte Contínuo</h3>
-            <p>Objetivo. Resolver burocracias do dia a dia da empresa com velocidade, destravando a operação comercial.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Atuamos na emissão ágil de CNDs, regularização de alvarás, resposta a intimações fiscais e apoio técnico direto para o faturamento (dúvidas de NFe, retenções, CFOPs).</p>
-            </div>
-            <div class="block">
-              <strong>A Entrega</strong>
-              <p>Portal exclusivo do cliente centralizando todas as solicitações, prazos estipulados e documentos entregues.</p>
-            </div>
-            <div class="meta"><span class="badge">Resultado</span> Fim de multas por atraso e pendências</div>
-          </article>
-        </div>
-      </div>
-
-      <div id="tab-escritorios" class="tabpanel" role="tabpanel" aria-labelledby="btn-escritorios">
-        <p class="subtitle">Soluções exclusivas para consultorias, escritórios de contabilidade e BPOs. Nosso objetivo é permitir que você escale o número de clientes sem precisar inchar sua folha de pagamento.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>RPA (Automação de Processos)</h3>
-            <p>Objetivo. Construir robôs (bots) para executar tarefas repetitivas 24 horas por dia, liberando seu time para análises.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Mapeamos rotinas de extração de relatórios, download massivo de notas (XMLs) e extratos. Desenvolvemos scripts que interagem com portais do governo e ERPs automaticamente.</p>
-            </div>
-            <div class="block">
-              <strong>Exemplo Prático</strong>
-              <p>Bot que entra no portal e-CAC, gera guias do Simples de 100 clientes, salva em PDF e dispara por WhatsApp, reduzindo um trabalho de dias para minutos.</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/AutomacaoContabil/" class="cta" style="align-self:start; margin-top:10px;">Entenda a Automação</a>
-          </article>
-
-          <article class="card">
-            <h3>Integração de Dados (APIs)</h3>
-            <p>Objetivo. Acabar com planilhas manuais e sincronizar sistemas distintos, fazendo o ERP do seu cliente "falar" com o seu.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Construímos conectores de software e webhooks. Centralizamos cadastros, unificamos faturamentos e levamos a movimentação financeira direto para a sua plataforma de contabilidade.</p>
-            </div>
-            <div class="block">
-              <strong>Exemplo Prático</strong>
-              <p>O cliente faz uma venda no sistema de PDV dele, e o lançamento já cai conciliado na sua plataforma Questor/Dominio/ContaAzul automaticamente.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>IA Generativa para Atendimento</h3>
-            <p>Objetivo. Elevar o nível do atendimento ao cliente do seu escritório usando inteligência artificial treinada com a sua base de conhecimento.</p>
-            <div class="block">
-              <strong>A Execução</strong>
-              <p>Treinamos modelos (LLMs) para responder dúvidas fiscais e trabalhistas, ler e classificar PDFs (como rescisões e impostos) e apontar inconsistências em lote.</p>
-            </div>
-            <div class="block">
-              <strong>Exemplo Prático</strong>
-              <p>Chatbot inteligente no WhatsApp do seu escritório que faz a qualificação de novos leads e responde dúvidas operacionais (ex: "como emitir nota de devolução") para os clientes atuais.</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/AtendimentoEscritorioContabil/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self:start; margin-top:10px;">Testar Bot Inteligente</a>
-          </article>
-        </div>
-      </div>
-
-      <div id="tab-produtos" class="tabpanel" role="tabpanel" aria-labelledby="btn-produtos">
-        <div class="grid">
-          <article class="card">
-            <h3>Smart Finance IA</h3>
-            <p>A inteligência de um consultor financeiro na palma da sua mão através do WhatsApp.</p>
-            <div class="block">
-              <strong>Como Funciona</strong>
-              <p>Você não precisa preencher sistemas complexos. Envie extratos, comprovantes e valores via WhatsApp. Nossa IA entende os dados, categoriza as despesas, atualiza seu dashboard em nuvem e te avisa proativamente sobre furos de caixa.</p>
-            </div>
-            <div class="block">
-              <strong>Público Ideal</strong>
-              <p>Pequenas e médias operações, clínicas ou prestadores de serviço que odeiam alimentar planilhas, mas precisam de controle rigoroso do dinheiro.</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/ChatBotConsultorFinanceiroIA/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Testar Smart Finance IA</a>
-          </article>
-
-          <article class="card">
-            <h3>Carteira Inteligente IA</h3>
-            <p>Análise de investimentos orientada por dados, risco e cenário macroeconômico.</p>
-            <div class="block">
-              <strong>Como Funciona</strong>
-              <p>Nossa inteligência cruza os dados do seu portfólio de ativos com o cenário atual de juros e mercado. O sistema realiza testes de estresse, simula cenários e sugere rebalanceamentos táticos para proteger patrimônio.</p>
-            </div>
-            <div class="block">
-              <strong>Público Ideal</strong>
-              <p>Investidores que possuem diversificação de ativos, tesourarias corporativas e profissionais que precisam basear decisões de aporte em matemática pura.</p>
-            </div>
-            <a href="https://chatgpt.com/g/g-6813605b08d88191ba176e9eb99714d0-carteira-inteligente-ia?model=gpt-4o" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Analisar Carteira</a>
-          </article>
-
-          <article class="card">
-            <h3>CRM Cerrado Tech</h3>
-            <p>A máquina comercial estruturada para escalar vendas sem perder o controle dos contatos.</p>
-            <div class="block">
-              <strong>Como Funciona</strong>
-              <p>Uma plataforma unificada que conecta os leads do seu site, Instagram e WhatsApp diretamente em um funil Kanban. O sistema agenda follow-ups sozinhos, distribui leads para vendedores e gera relatórios de conversão por canal.</p>
-            </div>
-            <div class="block">
-              <strong>Público Ideal</strong>
-              <p>Empresas de serviço, clínicas e escolas que recebem muito volume de mensagens, demoram a responder e perdem vendas por falta de acompanhamento (follow-up).</p>
-            </div>
-            <a href="https://cerradofinancas.com.br/LandingPageBotCRM/" target="_blank" rel="noopener noreferrer" class="cta" style="align-self: start; margin-top: 10px;">Conhecer o CRM</a>
-          </article>
+        <div class="comp-card good fade-up delay-2">
+          <div class="comp-header">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <h3>Com a Cerrado Finanças</h3>
+          </div>
+          <ul class="comp-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              DRE Gerencial e Fluxo de Caixa automatizados no D+1.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              ERP configurado para trabalhar pela equipe (APIs e Robôs).
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Fonte única de verdade: todas as áreas olhando o mesmo painel.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Visibilidade exata de margem por produto/serviço.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="precos">
+  <section class="section" id="solucoes">
     <div class="container">
-      <h2 class="title">Planos e preços</h2>
-      <p class="subtitle">Valores de referência para contratação. O escopo pode ajustar o número final conforme porte e volume.</p>
-
-      <h3 class="title" style="font-size:28px; margin-top:26px;">Serviços contábeis</h3>
-      <div class="price-grid">
-        <div class="p-card">
-          <h3>Abertura e regularização</h3>
-          <div class="money">R$ 300</div>
-          <p class="note">Pagamento único</p>
-          <p>Inclui registro na Junta, CNPJ, definição de regime e orientações iniciais.</p>
-          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20no%20serviço%20de%20Abertura%20e%20Regularização%20de%20Empresa." target="_blank" rel="noopener noreferrer">Começar agora</a>
-        </div>
-        <div class="p-card highlight">
-          <div class="ribbon">Popular</div>
-          <h3>Acompanhamento mensal</h3>
-          <div class="money">R$ 600</div>
-          <p class="note">Mês para até 2 funcionários. Mais 15% por funcionário extra.</p>
-          <p>Apuração de tributos, transmissão de obrigações, escrituração completa, planejamento e suporte.</p>
-          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Acompanhamento%20Contábil%20Mensal." target="_blank" rel="noopener noreferrer">Quero a consultoria</a>
-        </div>
+      <div class="section-header fade-up">
+        <span class="tag">Visão 360º de Negócios</span>
+        <h2 class="title">Conectamos a sua operação de ponta a ponta.</h2>
+        <p class="subtitle">Nossa atuação não se limita a emitir guias ou instalar software. Aplicamos engenharia de dados e finanças executivas para sustentar a sua tomada de decisão.</p>
       </div>
 
-      <h3 class="title" style="font-size:28px; margin-top:40px;">Consultoria</h3>
-      <div class="price-grid">
-        <div class="p-card">
-          <h3>Diagnóstico pontual</h3>
-          <div class="money">R$ 2.200</div>
-          <p class="note">Pagamento único</p>
-          <p>Levantamento de saúde financeira, gargalos, processos e plano de ação inicial.</p>
-          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20no%20Diagnóstico%20Estratégico%20Pontual." target="_blank" rel="noopener noreferrer">Solicitar análise</a>
+      <div class="services-grid">
+        
+        <div class="service-card fade-up delay-1">
+          <div class="icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+          <h3>Destravamento de ERP e Automação</h3>
+          <p>Corrigimos parametrizações de sistemas rígidos. Criamos robôs (RPA) e conexões via API para eliminar digitação dupla e furos operacionais.</p>
+          <div class="service-deliverables">
+            <h4>Entregáveis:</h4>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Saneamento de cadastros e regras</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Integração PDV/CRM com o Financeiro</li>
+            </ul>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20destravar%20meu%20ERP." class="link-arrow">Falar sobre Integração <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
         </div>
-        <div class="p-card highlight">
-          <div class="ribbon">Estratégico</div>
-          <h3>Consultoria contínua</h3>
-          <div class="money">R$ 900</div>
-          <p class="note">Mês com valor inicial que pode variar conforme porte e volume.</p>
-          <p>Reuniões de performance, análise de indicadores, apoio à decisão, otimizações e planejamento.</p>
-          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Consultoria%20Estratégica%20Contínua." target="_blank" rel="noopener noreferrer">Agendar reunião</a>
-        </div>
-      </div>
 
-      <h3 class="title" style="font-size:28px; margin-top:40px;">Produtos de software</h3>
-      <div class="price-grid">
-        <div class="p-card">
-          <h3>Plano individual</h3>
-          <div class="money">R$ 350</div>
-          <p class="note">Mês</p>
-          <p>Acesso a um produto, envio de dados por WhatsApp, painéis em tempo real e suporte em comunidade.</p>
-          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Tenho%20interesse%20em%20assinar%20o%20Plano%20Individual%20de%20um%20dos%20produtos%20SaaS." target="_blank" rel="noopener noreferrer">Assinar agora</a>
+        <div class="service-card fade-up delay-2">
+          <div class="icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          </div>
+          <h3>B.I. e Dashboards Executivos</h3>
+          <p>Extraímos dados brutos do seu banco de dados e construímos painéis visuais interativos. A diretoria passa a ver a empresa de cima.</p>
+          <div class="service-deliverables">
+            <h4>Entregáveis:</h4>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Painéis em Power BI (Real time)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Alertas automáticos de inadimplência</li>
+            </ul>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20criar%20Dashboards." class="link-arrow">Ver painéis de dados <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
         </div>
-        <div class="p-card">
-          <h3>Plano empresarial</h3>
-          <div class="money">R$ 1.500</div>
-          <p class="note">Mês mais instalação de R$ 5.000. Até dois usuários e mais 10% por usuário extra.</p>
-          <p>Acesso a um produto, integração com CNPJ, painéis customizáveis e suporte por e-mail.</p>
-          <a class="cta" href="http://api.whatsapp.com/send?phone=5567993515206&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Empresarial%20para%20os%20produtos%20SaaS." target="_blank" rel="noopener noreferrer">Falar com vendas</a>
-        </div>
-      </div>
 
-      <div style="margin-top:40px" class="pricing">
-        <h3 class="title" style="font-size:26px; margin-bottom:8px;">Combo Cerrado Finanças</h3>
-        <p>Ao contratar dois ou mais acompanhamentos mensais você recebe desconto de R$ 250 no valor total da fatura de forma contínua.</p>
+        <div class="service-card fade-up delay-3">
+          <div class="icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3>Controladoria e BPO Contábil</h3>
+          <p>Terceirização estratégica. Mantemos a conformidade fiscal, reduzimos impostos legalmente e desenhamos DREs baseadas em centros de custo.</p>
+          <div class="service-deliverables">
+            <h4>Entregáveis:</h4>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Planejamento Tributário Ativo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Escrituração contábil impecável</li>
+            </ul>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20estruturar%20a%20Controladoria." class="link-arrow">Falar sobre Controladoria <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section id="processo">
+  <section class="section section-bg" id="maturidade">
     <div class="container">
-      <h2 class="title">Metodologia</h2>
-      <p class="subtitle">Quatro etapas para sair do diagnóstico para a execução com clareza de próximos passos.</p>
-      <div class="timeline" aria-label="linha do tempo">
-        <div class="step left"><div class="box"><h3>Diagnóstico</h3><p>Alinhamos metas e levantamos processos e dados atuais.</p></div></div>
-        <div class="step right"><div class="box"><h3>Estratégia</h3><p>Desenhamos plano de ação e definimos tecnologia e melhorias.</p></div></div>
-        <div class="step left"><div class="box"><h3>Construção</h3><p>Implementamos ferramentas e validamos em sprints com a equipe.</p></div></div>
-        <div class="step right"><div class="box"><h3>Evolução</h3><p>Acompanhamos entregas, ajustamos e mantemos o ritmo.</p></div></div>
+      <div class="section-header fade-up">
+        <span class="tag">Caminho da Evolução</span>
+        <h2 class="title">A Jornada da Maturidade de Dados</h2>
+        <p class="subtitle">Nossa metodologia tira empresas do amadorismo reativo e as eleva ao estágio preditivo. Veja como conduzimos essa evolução técnica.</p>
       </div>
-    </div>
-  </section>
 
-  <section id="quem-somos" style="background:#eef2f7;">
-    <div class="container">
-      <h2 class="title">Equipe</h2>
-      <p class="subtitle">Lideranças em arquitetura de software, finanças e uma rede de consultores focados no seu resultado.</p>
-      <div class="grid">
-        <div class="t-card">
-          <h3>Renato Rosa</h3>
-          <div class="role">Consultor Técnico e Contador</div>
-          <p>Conduz o braço de arquitetura de software, pesquisa e desenvolvimento e o roadmap de soluções financeiras.</p>
-          <a class="lnk" href="https://www.linkedin.com/in/gestorrenato/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="maturity-wrapper">
+        
+        <div class="maturity-step active fade-up">
+          <div class="step-indicator">
+            <div class="step-number">1</div>
+          </div>
+          <div class="step-content">
+            <h3>Organização Base (Descritiva) <span class="status-badge warning">Diagnóstico</span></h3>
+            <p>O foco inicial é estancar o sangramento de dados. Padronizamos a taxonomia financeira, organizamos o plano de contas e mapeamos onde as informações nascem e onde se perdem na sua empresa.</p>
+            <div class="step-box">
+              <strong>Métrica de sucesso:</strong> O sistema reflete exatamente o que acontece no caixa real. Fim do "ajuste manual de fechamento".
+            </div>
+          </div>
         </div>
-        <div class="t-card">
-          <h3>Consultores Parceiros</h3>
-          <div class="role">Rede Multidisciplinar</div>
-          <p>Contamos com profissionais experientes nas áreas tributária, societária, engenharia de dados e Power BI. Alocamos o talento exato que a dor da sua empresa exige no momento.</p>
-          <a class="lnk" href="#contato" style="background:var(--primary); color:#fff; border-color:var(--primary);">Fale Conosco</a>
+
+        <div class="maturity-step active fade-up delay-1">
+          <div class="step-indicator">
+            <div class="step-number">2</div>
+          </div>
+          <div class="step-content">
+            <h3>Integração e Automação <span class="status-badge success">Implantação</span></h3>
+            <p>Conectamos as pontas. A venda feita no software comercial gera automaticamente o contas a receber, a comissão e a nota fiscal no ERP. Criamos robôs para leitura de notas e conciliação bancária.</p>
+            <div class="step-box">
+              <strong>Métrica de sucesso:</strong> Redução drástica de horas extras da equipe operacional com digitação.
+            </div>
+          </div>
+        </div>
+
+        <div class="maturity-step fade-up delay-2">
+          <div class="step-indicator">
+            <div class="step-number">3</div>
+          </div>
+          <div class="step-content">
+            <h3>Visibilidade Executiva (Diagnóstica) <span class="status-badge success">Inteligência</span></h3>
+            <p>Com a base sólida, construímos a camada de B.I. (Power BI). Você acessa pelo celular a sua DRE, análise de margem de contribuição por filial e controle rigoroso de orçamentos.</p>
+            <div class="step-box">
+              <strong>Métrica de sucesso:</strong> Reuniões de diretoria baseadas em tela dinâmica, não em impressões em papel.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="title">Impacto Direto na Margem</h2>
+        <p>A tecnologia e a contabilidade só fazem sentido quando o ROI (Retorno sobre Investimento) é claro. Abaixo, médias reais das nossas implantações.</p>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card fade-up">
+          <div class="kpi-value">40%</div>
+          <h4 class="kpi-title">Menos tempo no fechamento</h4>
+          <p class="kpi-desc">Aceleração no tempo de consolidação contábil e financeira no fim do mês devido à automação de lançamentos.</p>
+        </div>
+        <div class="kpi-card fade-up delay-1">
+          <div class="kpi-value">100%</div>
+          <h4 class="kpi-title">Rastreabilidade</h4>
+          <p class="kpi-desc">Fim das despesas "sem centro de custo". Você sabe exatamente o custo de cada produto vendido.</p>
+        </div>
+        <div class="kpi-card fade-up delay-2">
+          <div class="kpi-value">ROI</div>
+          <h4 class="kpi-title">Recuperação Tributária</h4>
+          <p class="kpi-desc">A consultoria fiscal contínua garante aproveitamento máximo de créditos e enquadramentos legais corretos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cases">
+  <section class="section" id="quem-somos">
     <div class="container">
-      <h2 class="title">Resultados</h2>
-      <p class="subtitle">Exemplos de entregas com números mensuráveis.</p>
-      <div class="grid">
-        <div class="case"><span class="tag">Construção civil</span><h3>Orçamento integrado</h3><p>Parametrização do Protheus com metas, aprovações e execução por obra.</p><div class="kpi">Queda de 40% nos desvios por obra</div></div>
-        <div class="case"><span class="tag">Setor funerário</span><h3>Contas a receber</h3><p>Painéis de risco por contrato, atraso e filial com alertas para cobrança.</p><div class="kpi">Aumento de 32% na recuperação em três meses</div></div>
-        <div class="case"><span class="tag">Saúde</span><h3>Margem por procedimento</h3><p>Relatórios com frequência, valor e margem por unidade, especialidade e convênio.</p><div class="kpi">Detecção imediata de baixa margem</div></div>
-        <div class="case"><span class="tag">EdTech</span><h3>ERP Integra</h3><p>Dados administrativos, financeiros, acadêmicos e comerciais unificados.</p><div class="kpi">Redução de 70% no tempo de consolidação</div></div>
-        <div class="case"><span class="tag">Distribuidora</span><h3>Conciliação fiscal</h3><p>Robô para conciliações e relatórios com liberação de equipe para análise.</p><div class="kpi">Corte de 80% no tempo de processos manuais</div></div>
-        <div class="case"><span class="tag">Instituto educacional</span><h3>Reestruturação financeira</h3><p>Organização de rotinas e renegociação com parceiros.</p><div class="kpi">Virada para resultado positivo</div></div>
+      <div class="authority-wrapper">
+        <div class="auth-image fade-up">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQHLfVdPcdHtdg/profile-displayphoto-scale_200_200/B4DZmw7_UQHsAY-/0/1759610141087?e=2147483647&v=beta&t=eqY_v9vbfrac8uDJVS5C3KgbPkm_YLIo0YiXZT2dS08" alt="Renato de Oliveira Rosa, Consultor e Doutorando" style="aspect-ratio: 1/1;">
+        </div>
+        
+        <div class="auth-content fade-up delay-1">
+          <span class="tag">A Liderança Técnica</span>
+          <h3>Renato de Oliveira Rosa</h3>
+          <p class="auth-role">Consultor Técnico, Contador & Pesquisador</p>
+          
+          <p class="auth-bio">Você não está contratando "uma agência generalista". A Cerrado Finanças é liderada por conhecimento acadêmico rigoroso aliado à execução tática no chão de fábrica e corporativo.</p>
+          <p class="auth-bio">Atuamos como um hub estratégico: desenhamos a arquitetura de dados e alocamos engenheiros de software, contadores e advogados especialistas sob demanda para a dor exata do seu negócio.</p>
+
+          <div class="auth-credentials">
+            <div class="cred-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <p>Doutorando em Ciências Contábeis e Administração</p>
+            </div>
+            <div class="cred-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              <p>Professor Universitário (Graduação Faculdade Católica / Pós Unisenai)</p>
+            </div>
+            <div class="cred-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <p>Instrutor SENAI (MT e PR) em Formação Profissional</p>
+            </div>
+            <div class="cred-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <p>Certificações em Implantação de Sistemas ERP</p>
+            </div>
+          </div>
+
+          <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank" class="btn-primary" style="background:var(--linkedin); border-color:var(--linkedin);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            Conectar no LinkedIn
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="whatsapp-cta">
-    <div class="container wa-wrap">
-      <h2 class="title" style="font-size:28px;">Quer falar agora</h2>
-      <p class="subtitle">Use o WhatsApp para explicar a sua demanda e combinar o próximo passo.</p>
-      <a class="wa" href="http://api.whatsapp.com/send?phone=5567993515206" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+  <section class="section section-bg" id="faq">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag">Tire suas dúvidas</span>
+        <h2 class="title">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="faq-container fade-up delay-1">
+        <div class="faq-item">
+          <button class="faq-question">
+            Vocês substituem o meu ERP atual ou arrumam ele?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              O nosso foco inicial é <strong>sempre rentabilizar o seu investimento atual</strong>. Se você possui um SAP, Protheus ou ContaAzul, nós entramos para corrigir as parametrizações e processos para que ele funcione. A troca de sistema (migração) só é indicada se o atual for tecnicamente incapaz de suportar o seu crescimento.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Vocês fazem a contabilidade oficial ou apenas consultoria?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Fazemos os dois. Temos o serviço de <strong>BPO Contábil completo</strong> (emissão de guias, eSocial, fechamento oficial) operando como o seu escritório contábil, mas com o diferencial de entregar a inteligência gerencial (DRE, Fluxo de Caixa, BI) acoplada a esse serviço obrigatorio.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como funciona o projeto de Dashboards em Power BI?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Mapeamos os bancos de dados da sua empresa (ERP, Planilhas, Sistemas Web). Construímos robôs ou conexões (APIs) que puxam esses dados diariamente. Depois, modelamos as visões executivas no Power BI. Você recebe os acessos e passa a visualizar o faturamento, margem e despesas atualizados automaticamente.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contato" style="background: var(--primary); color:#fff;">
+  <section class="section" id="contato">
     <div class="container">
-      <h2 class="title">Vamos trabalhar no seu caso</h2>
-      <p class="subtitle">Preencha o formulário para o diagnóstico. Retorno em até 24 horas úteis.</p>
-      <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <input type="text" name="company" placeholder="Empresa" />
-        <textarea name="message" rows="5" placeholder="Descreva o principal problema" required></textarea>
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://cerradofinancas.com.br/obrigado.html" />
-        <button type="submit" class="cta">Enviar mensagem</button>
-      </form>
+      <div class="contact-wrapper fade-up">
+        <div class="section-header" style="margin-bottom: 40px;">
+          <h2 class="title">Vamos destravar o seu negócio</h2>
+          <p class="subtitle">Preencha o formulário para iniciarmos o diagnóstico. Retornaremos em até 24 horas úteis para marcar uma reunião focada nas suas dores de gestão.</p>
+        </div>
+
+        <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Seu Nome *</label>
+              <input type="text" id="name" name="name" placeholder="Ex: Carlos Silva" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-mail Corporativo *</label>
+              <input type="email" id="email" name="email" placeholder="carlos@suaempresa.com.br" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Empresa / Ramo</label>
+              <input type="text" id="company" name="company" placeholder="Ex: Transportadora X" />
+            </div>
+
+            <div class="form-group">
+              <label for="erp">Qual sistema (ERP) utilizam hoje?</label>
+              <input type="text" id="erp" name="erp" placeholder="Ex: Protheus, ContaAzul, Planilhas..." />
+            </div>
+            
+            <div class="form-group full">
+              <label for="message">Qual o maior gargalo na sua gestão hoje? *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Descreva brevemente o cenário (ex: Fechamento atrasa, não confio no estoque, quero dashboards...)" required></textarea>
+            </div>
+          </div>
+          
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://cerradofinancas.com.br/obrigado.html" />
+          
+          <button type="submit" class="submit-btn">Solicitar Diagnóstico Estratégico</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>© 2025 Cerrado Finanças</p>
-      <p>Dados viram decisão</p>
-      <p>Consultor responsável <a href="https://renatorosa.my.canva.site/" target="_blank" rel="noopener noreferrer">Renato de Oliveira Rosa</a></p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-txt">Cerrado Finanças e Gestão</span>
+          <p>Consultoria técnica especializada em estruturação financeira, inteligência fiscal e destravamento de sistemas ERP para decisões de alto nível.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Soluções</h4>
+          <ul>
+            <li><a href="#solucoes">Integração de ERP</a></li>
+            <li><a href="#solucoes">Business Intelligence</a></li>
+            <li><a href="#solucoes">Controladoria / BPO</a></li>
+            <li><a href="#solucoes">Planejamento Tributário</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Contato Direto</h4>
+          <ul>
+            <li><a href="http://api.whatsapp.com/send?phone=5567993515206" target="_blank">WhatsApp Comercial</a></li>
+            <li><a href="mailto:gestor.renatorosa@gmail.com">gestor.renatorosa@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/gestorrenato/" target="_blank">LinkedIn - Renato Rosa</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2026 Cerrado Finanças e Gestão Empresarial LTDA. Todos os direitos reservados. CNPJ sob consulta.</p>
+        <p style="margin-top: 8px; color: var(--secondary); font-weight: 600;">Dados viram decisão.</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Menu móvel
-    const hamb = document.querySelector('.hamb');
-    const menu = document.querySelector('.menu');
-    hamb.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Menu Mobile e Sticky Header
+      const header = document.getElementById('header');
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const desktopMenu = document.querySelector('.desktop-menu');
+      const menuLinks = document.querySelectorAll('.desktop-menu a');
 
-    // Tabs acessíveis
-    const tabs = document.querySelectorAll('[role="tab"]');
-    const panels = document.querySelectorAll('[role="tabpanel"]');
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-        panels.forEach(p => p.classList.remove('active'));
-        tab.setAttribute('aria-selected', 'true');
-        document.getElementById(tab.getAttribute('aria-controls')).classList.add('active');
+      // Efeito de Scroll no Header
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Toggle Menu
+      mobileToggle.addEventListener('click', () => {
+        desktopMenu.classList.toggle('active');
+      });
+
+      // Fechar menu ao clicar num link
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          desktopMenu.classList.remove('active');
+        });
+      });
+
+      // 2. Animações de Fade-Up via Intersection Observer
+      const fadeElements = document.querySelectorAll('.fade-up');
+      
+      const fadeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Anima apenas uma vez
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1, // Dispara quando 10% do elemento estiver visível
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      fadeElements.forEach(el => fadeObserver.observe(el));
+
+      // 3. Sistema de FAQ (Accordion)
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Fecha todos
+          faqItems.forEach(faq => {
+            faq.classList.remove('active');
+            faq.querySelector('.faq-answer').style.maxHeight = null;
+          });
+          
+          // Abre o clicado, se não estava ativo
+          if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
       });
     });
-
-    // Estado inicial
-    document.getElementById('btn-consult').click();
   </script>
 </body>
 </html>
