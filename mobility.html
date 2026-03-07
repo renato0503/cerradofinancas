@@ -49,7 +49,7 @@ permalink: /solucoes/mobility/
         }
         .mobility-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 60%); pointer-events: none;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 60%); pointer-events: none;
         }
 
         .mob-split-layout { display: flex; align-items: center; gap: 60px; }
@@ -62,7 +62,7 @@ permalink: /solucoes/mobility/
             width: 100%;
             max-width: 320px;
             aspect-ratio: 1 / 1;
-            border-radius: 60px; /* Squircle Apple */
+            border-radius: 60px; 
             box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
             display: flex;
             align-items: center;
@@ -75,7 +75,7 @@ permalink: /solucoes/mobility/
         .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); box-shadow: 0 40px 80px rgba(14, 165, 233, 0.3); }
         .hero-app-icon img { max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));}
 
-        .hero-tag { background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px; }
+        .hero-tag { background: rgba(14, 165, 233, 0.15); color: #38bdf8; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px; }
         .mobility-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
         .mobility-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
         
@@ -95,13 +95,22 @@ permalink: /solucoes/mobility/
         .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
         
         .demo-workspace {
-            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; flex-wrap: wrap; position: relative;
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; position: relative;
+        }
+
+        /* Ajuste do Simulador para Mobile: quebra a linha em telas menores */
+        @media(max-width: 992px) {
+            .demo-workspace { flex-direction: column; padding: 20px; border-radius: 20px; }
         }
 
         /* Mockup Mobile App (Estilo Smartphone) */
         .demo-app {
             flex: 0 0 320px; background: #000; border-radius: 40px; border: 10px solid #334155; padding: 25px 20px; display: flex; flex-direction: column; position: relative; overflow: hidden; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
+        @media(max-width: 992px) {
+            .demo-app { flex: none; width: 100%; max-width: 350px; margin: 0 auto; border-width: 6px; }
+        }
+
         .demo-app::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #334155; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 10; }
         .app-header { color: #fff; font-weight: 700; text-align: center; margin-top: 10px; margin-bottom: 20px; font-size: 1.1rem; }
         .app-map-bg { background: #111; border-radius: 16px; height: 180px; margin-bottom: 20px; position: relative; overflow: hidden; border: 1px solid #222; display: flex; justify-content: center; align-items: center; }
@@ -118,7 +127,7 @@ permalink: /solucoes/mobility/
 
         /* Mockup Web Dashboard (SaaS) */
         .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
-        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 10px;}
         .status-badge { background: #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .status-badge.active { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
         .status-badge.active::before { content: ''; width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 10px #34d399; }
@@ -129,21 +138,20 @@ permalink: /solucoes/mobility/
         .tel-card strong { font-size: 2.2rem; font-weight: 900; color: #fff; font-variant-numeric: tabular-nums; line-height: 1; }
         .tel-card strong small { font-size: 1rem; color: #64748b; font-weight: 600; }
         
-        .dash-map-area { flex: 1; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+        .dash-map-area { flex: 1; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; padding: 30px; display: flex; flex-direction: column; justify-content: center; min-height: 150px;}
         .route-line { height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; position: relative; margin: 40px 20px; }
         .route-progress { position: absolute; top: 0; left: 0; height: 100%; background: var(--gov-blue); width: 0%; transition: width 1s linear; border-radius: 10px; box-shadow: 0 0 15px var(--gov-blue); }
         .car-dot { position: absolute; top: -10px; left: 0%; width: 26px; height: 26px; background: #fff; border: 6px solid var(--gov-blue); border-radius: 50%; box-shadow: 0 0 20px rgba(255,255,255,0.5); transition: left 1s linear; transform: translateX(-50%); z-index: 2;}
         
         .map-labels { display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.9rem; font-weight: 600; padding: 0 10px; }
 
-        /* ================= FUNCIONALIDADES ================= */
+        /* ================= FUNCIONALIDADES (CARROSSEL NO MOBILE) ================= */
         .features-section { padding: 100px 0; background: #f8fafc; }
         .feature-grid { display: flex; flex-direction: column; gap: 60px; }
         
         .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
         .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
         .feat-row:nth-child(even) { flex-direction: row-reverse; }
-        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-app { flex: 1; width: 100%; max-width: 100%; border-width: 6px; } }
         
         .feat-content { flex: 1.2; }
         .feat-icon { width: 64px; height: 64px; background: #f0f9ff; color: var(--gov-blue); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #e0f2fe; }
@@ -155,6 +163,28 @@ permalink: /solucoes/mobility/
         
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(14, 165, 233, 0.15)); }
+
+        /* Ajuste Mobile: Transforma as Features em Carrossel (Scroll Horizontal) */
+        @media (max-width: 992px) { 
+            .feature-grid {
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 30px;
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+            }
+            .feature-grid::-webkit-scrollbar { display: none; }
+            
+            .feat-row {
+                flex: 0 0 85vw; /* Ocupa 85% da tela para o usuario ver que rola pro lado */
+                flex-direction: column !important; /* Força empilhar o texto e imagem */
+                padding: 40px 30px;
+                scroll-snap-align: start;
+            }
+            .feat-content h3 { font-size: 1.5rem; }
+        }
 
     </style>
 </head>
@@ -168,7 +198,7 @@ permalink: /solucoes/mobility/
                 
                 <div class="mob-visual-content fade-up">
                     <div class="hero-app-icon">
-                        <img src="{{ '/img/mobility.png' | relative_url }}" alt="Mobility Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}'">
+                        <img src="{{ '/img/mobility.png' | relative_url }}" alt="Mobility Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
                     </div>
                 </div>
 
@@ -192,10 +222,11 @@ permalink: /solucoes/mobility/
         <div class="container">
             <div class="demo-header fade-up">
                 <h2>Sinta a Tecnologia em Ação</h2>
-                <p>Clique em <strong>Solicitar Veículo</strong> no App (esquerda) e veja o Painel do Gestor (direita) reagir em tempo real através da nossa arquitetura de dados (WebSocket).</p>
+                <p>Clique em <strong>Solicitar Veículo</strong> no App e veja o Painel do Gestor reagir em tempo real através da nossa arquitetura de dados.</p>
             </div>
 
             <div class="demo-workspace fade-up delay-1">
+                
                 <div class="demo-app">
                     <div class="app-header">App do Servidor</div>
                     <div class="app-map-bg">
