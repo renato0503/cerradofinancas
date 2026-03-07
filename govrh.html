@@ -8,7 +8,7 @@ permalink: /solucoes/govrh/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrado GovRH | Folha de Pagamento Pública Inteligente</title>
-    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,37 +42,80 @@ permalink: /solucoes/govrh/
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
         .rh-hero {
             background: linear-gradient(135deg, #020617 0%, var(--rh-dark) 100%);
-            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
             border-bottom: 4px solid var(--rh-primary);
-            text-align: center;
         }
         .rh-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 60%); pointer-events: none;
         }
+
+        .rh-split-layout { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        .rh-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .rh-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS (LIMPO - SEM FUNDO DUPLO) */
+        .hero-app-icon {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); }
+        
+        .hero-app-icon img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 60px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
         .hero-tag { background: rgba(13, 148, 136, 0.2); color: #5eead4; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(13, 148, 136, 0.4); text-transform: uppercase; letter-spacing: 1px; }
-        .rh-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .rh-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+        .rh-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .rh-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
         .btn-action { background: var(--rh-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(13, 148, 136, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--rh-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(13, 148, 136, 0.4); }
 
+        @media(max-width: 992px){ 
+            .rh-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .rh-text-content { text-align: center; }
+            .hero-app-icon { max-width: 220px; transform: none; }
+            .hero-app-icon img { border-radius: 40px; }
+        }
+
         /* ================= SIMULADOR IA DE FOLHA ================= */
         .demo-section { padding: 100px 0; background: #fff; }
-        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header { text-align: center; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;}
         .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
         .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
         
         .demo-workspace {
-            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #115e59; flex-wrap: wrap; position: relative;
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #115e59; position: relative; max-width: 1200px; margin: 0 auto;
+        }
+
+        /* Ajuste do Simulador para Mobile: quebra a linha em telas menores */
+        @media(max-width: 992px) {
+            .demo-workspace { flex-direction: column; padding: 20px; border-radius: 20px; margin: 0 20px; }
         }
 
         /* Mockup Processamento */
         .demo-process {
             flex: 0 0 320px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column; position: relative; overflow: hidden;
         }
+        @media(max-width: 992px) {
+            .demo-process { flex: none; width: 100%; max-width: 350px; margin: 0 auto; }
+        }
+
         .process-header { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.1); }
         .process-header h4 { margin: 0; color: #fff; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
         .process-header p { margin: 5px 0 0 0; color: #94a3b8; font-size: 0.85rem; }
@@ -91,13 +134,13 @@ permalink: /solucoes/govrh/
 
         /* Mockup Console IA */
         .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
-        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 10px;}
         
         .ai-status-badge { background: #134e4a; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
         .ai-status-badge.scanning { background: rgba(13, 148, 136, 0.2); color: #5eead4; border: 1px solid rgba(13, 148, 136, 0.4); }
         .ai-status-badge.alert { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
         
-        .ai-console { flex: 1; background: #020617; border-radius: 20px; padding: 30px; font-family: monospace; color: #5eead4; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center;}
+        .ai-console { flex: 1; background: #020617; border-radius: 20px; padding: 30px; font-family: monospace; color: #5eead4; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; min-height: 250px;}
         .console-line { opacity: 0.7; margin-bottom: 8px; font-size: 0.95rem; display: none; }
         .console-line.visible { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
@@ -110,14 +153,14 @@ permalink: /solucoes/govrh/
         .btn-assistente { background: #ef4444; color: #fff; padding: 12px 20px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;}
         .btn-assistente:hover { background: #dc2626; }
 
-        /* ================= FUNCIONALIDADES ================= */
+        /* ================= FUNCIONALIDADES (CARROSSEL NO MOBILE) ================= */
         .features-section { padding: 100px 0; background: #f8fafc; }
-        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feature-grid { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; padding: 0 20px; }
         
         .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
         .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
         .feat-row:nth-child(even) { flex-direction: row-reverse; }
-        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-process { flex: 1; width: 100%; max-width: 100%; } }
         
         .feat-content { flex: 1.2; }
         .feat-icon { width: 64px; height: 64px; background: #f0fdfa; color: var(--rh-primary); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #ccfbf1; }
@@ -130,6 +173,28 @@ permalink: /solucoes/govrh/
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(13, 148, 136, 0.15)); }
 
+        /* Ajuste Mobile: Transforma as Features em Carrossel (Scroll Horizontal) */
+        @media (max-width: 992px) { 
+            .feature-grid {
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 30px;
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+            }
+            .feature-grid::-webkit-scrollbar { display: none; }
+            
+            .feat-row {
+                flex: 0 0 75vw; /* Reduzido para mostrar claramente que tem outro card ao lado */
+                flex-direction: column !important; 
+                padding: 40px 30px;
+                scroll-snap-align: center; /* Centraliza o card na tela do celular */
+            }
+            .feat-content h3 { font-size: 1.5rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -138,82 +203,92 @@ permalink: /solucoes/govrh/
 
     <section class="rh-hero">
         <div class="container">
-            <span class="hero-tag fade-up">GovTech | RH e Folha de Pagamento</span>
-            <h1 class="fade-up delay-1">Cerrado GovRH</h1>
-            <p class="fade-up delay-2">Solução de folha de pagamento focada na automação extrema, conformidade legal rigorosa e minimização de passivos trabalhistas para a gestão pública municipal e estadual.</p>
-            <div class="fade-up delay-3">
-                <a href="#simulador" class="btn-action">
-                    Testar Auditoria de Folha com IA
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-                </a>
+            <div class="rh-split-layout">
+                
+                <div class="rh-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/rh.png' | relative_url }}" alt="GovRH Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+                    </div>
+                </div>
+
+                <div class="rh-text-content">
+                    <span class="hero-tag fade-up delay-1">GovTech | RH e Folha de Pagamento</span>
+                    <h1 class="fade-up delay-1">Cerrado GovRH</h1>
+                    <p class="fade-up delay-2">Solução de folha de pagamento focada na automação extrema, conformidade legal rigorosa e minimização de passivos trabalhistas para a gestão pública municipal e estadual.</p>
+                    <div class="fade-up delay-3">
+                        <a href="#simulador" class="btn-action">
+                            Testar Auditoria de Folha com IA
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section id="simulador" class="demo-section">
-        <div class="container">
-            <div class="demo-header fade-up">
-                <h2>Blindagem Financeira Automática</h2>
-                <p>Clique em <strong>Processar Folha</strong>. Nossa Inteligência Artificial atua como um auditor invisível, varrendo os contracheques <em>antes</em> do dinheiro sair da conta para evitar erros e glosas de Tribunais de Contas.</p>
-            </div>
+        <div class="demo-header fade-up">
+            <h2>Blindagem Financeira Automática</h2>
+            <p>Clique em <strong>Processar Folha</strong>. Nossa Inteligência Artificial atua como um auditor invisível, varrendo os contracheques <em>antes</em> do dinheiro sair da conta para evitar erros e glosas de Tribunais de Contas.</p>
+        </div>
 
-            <div class="demo-workspace fade-up delay-1">
+        <div class="demo-workspace fade-up delay-1">
+            
+            <div class="demo-process">
+                <div class="process-header">
+                    <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> Módulo de Processamento</h4>
+                    <p>Competência Atual: Março/2026</p>
+                </div>
                 
-                <div class="demo-process">
-                    <div class="process-header">
-                        <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> Módulo de Processamento</h4>
-                        <p>Competência Atual: Março/2026</p>
+                <div class="payroll-stats">
+                    <div class="stat-row">
+                        <span>Servidores Ativos</span>
+                        <strong>1.542</strong>
                     </div>
-                    
-                    <div class="payroll-stats">
-                        <div class="stat-row">
-                            <span>Servidores Ativos</span>
-                            <strong>1.542</strong>
-                        </div>
-                        <div class="stat-row">
-                            <span>Aposentados / Pensionistas</span>
-                            <strong>438</strong>
-                        </div>
-                        <div class="stat-row">
-                            <span>Previsão de Empenho</span>
-                            <strong>R$ 8.450.210,00</strong>
-                        </div>
+                    <div class="stat-row">
+                        <span>Aposentados / Pensionistas</span>
+                        <strong>438</strong>
                     </div>
-
-                    <div class="progress-container">
-                        <div class="progress-bar" id="payrollProgress"></div>
+                    <div class="stat-row">
+                        <span>Previsão de Empenho</span>
+                        <strong>R$ 8.450.210,00</strong>
                     </div>
-
-                    <button class="app-btn" id="btnRunPayroll" onclick="runPayrollSimulation()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                        Processar e Auditar Folha
-                    </button>
                 </div>
 
-                <div class="demo-dash">
-                    <div class="dash-header">
-                        <div>
-                            <strong style="font-size: 1.1rem;">Validador Legal Inteligente</strong>
-                            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Análise Pré-Processamento</span>
-                        </div>
-                        <div class="ai-status-badge" id="aiStatus">Aguardando Execução</div>
-                    </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="payrollProgress"></div>
+                </div>
 
-                    <div class="ai-console">
-                        <div id="consoleText">
-                            <span style="opacity: 0.3;">> Aguardando comando para iniciar varredura eSocial e regras do TCE...</span>
-                        </div>
-                        
-                        <div class="ai-result" id="aiResultBox">
-                            <h4>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                                Bloqueio Preventivo: Teto Constitucional
-                            </h4>
-                            <p><strong>Anomalia Detectada:</strong> O reajuste automático da <em>Rubrica 104 (Gratificação Especial)</em> fez com que 3 servidores ultrapassassem o limite do Teto Constitucional do Prefeito. <strong>Risco de Glosa no TCE evitado.</strong></p>
-                            <button class="btn-assistente" onclick="fixPayroll()">
-                                Aplicar Abate-Teto e Concluir Folha
-                            </button>
-                        </div>
+                <button class="app-btn" id="btnRunPayroll" onclick="runPayrollSimulation()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Processar e Auditar Folha
+                </button>
+            </div>
+
+            <div class="demo-dash">
+                <div class="dash-header">
+                    <div>
+                        <strong style="font-size: 1.1rem;">Validador Legal Inteligente</strong>
+                        <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Análise Pré-Processamento</span>
+                    </div>
+                    <div class="ai-status-badge" id="aiStatus">Aguardando Execução</div>
+                </div>
+
+                <div class="ai-console">
+                    <div id="consoleText">
+                        <span style="opacity: 0.3;">> Aguardando comando para iniciar varredura eSocial e regras do TCE...</span>
+                    </div>
+                    
+                    <div class="ai-result" id="aiResultBox">
+                        <h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            Bloqueio Preventivo: Teto Constitucional
+                        </h4>
+                        <p><strong>Anomalia Detectada:</strong> O reajuste automático da <em>Rubrica 104 (Gratificação Especial)</em> fez com que 3 servidores ultrapassassem o limite do Teto Constitucional do Prefeito. <strong>Risco de Glosa no TCE evitado.</strong></p>
+                        <button class="btn-assistente" onclick="fixPayroll()">
+                            Aplicar Abate-Teto e Concluir Folha
+                        </button>
                     </div>
                 </div>
             </div>
@@ -221,123 +296,121 @@ permalink: /solucoes/govrh/
     </section>
 
     <section class="features-section">
-        <div class="container">
-            <div class="demo-header fade-up">
-                <h2>Tecnologia para zerar passivos trabalhistas.</h2>
-                <p>Nossa plataforma foi desenhada para a complexidade do setor público, garantindo que cada centavo pago esteja fundamentado na lei.</p>
+        <div class="demo-header fade-up">
+            <h2>Tecnologia para zerar passivos trabalhistas.</h2>
+            <p>Nossa plataforma foi desenhada para a complexidade do setor público, garantindo que cada centavo pago esteja fundamentado na lei.</p>
+        </div>
+
+        <div class="feature-grid">
+            
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <h3>Motor Visual de Fórmulas (No-Code)</h3>
+                    <p>Diga adeus à dependência de programadores caros para criar um novo evento. Nosso editor dinâmico permite que a equipe de RH crie rubricas, gratificações e descontos usando blocos visuais e lógicos, garantindo flexibilidade total para novas leis municipais.</p>
+                    <div class="feat-tags">
+                        <span>Editor Arrastar-e-Soltar</span>
+                        <span>Fórmulas Customizadas</span>
+                        <span>Gestão de Rubricas</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="40" width="120" height="30" rx="6" fill="#0d9488"/>
+                        <circle cx="100" cy="70" r="8" fill="#0d9488"/>
+                        <rect x="40" y="85" width="120" height="30" rx="6" fill="#14b8a6"/>
+                        <circle cx="100" cy="85" r="8" fill="#f8fafc"/>
+                        <circle cx="100" cy="115" r="8" fill="#14b8a6"/>
+                        <rect x="40" y="130" width="120" height="30" rx="6" fill="#2dd4bf"/>
+                        <circle cx="100" cy="130" r="8" fill="#f8fafc"/>
+                        <path d="M40 55 H20 V145 H40" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="4 4"/>
+                    </svg>
+                </div>
             </div>
 
-            <div class="feature-grid">
-                
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                        </div>
-                        <h3>Motor Visual de Fórmulas (No-Code)</h3>
-                        <p>Diga adeus à dependência de programadores caros para criar um novo evento. Nosso editor dinâmico permite que a equipe de RH crie rubricas, gratificações e descontos usando blocos visuais e lógicos, garantindo flexibilidade total para novas leis municipais.</p>
-                        <div class="feat-tags">
-                            <span>Editor Arrastar-e-Soltar</span>
-                            <span>Fórmulas Customizadas</span>
-                            <span>Gestão de Rubricas</span>
-                        </div>
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="40" y="40" width="120" height="30" rx="6" fill="#0d9488"/>
-                            <circle cx="100" cy="70" r="8" fill="#0d9488"/>
-                            <rect x="40" y="85" width="120" height="30" rx="6" fill="#14b8a6"/>
-                            <circle cx="100" cy="85" r="8" fill="#f8fafc"/>
-                            <circle cx="100" cy="115" r="8" fill="#14b8a6"/>
-                            <rect x="40" y="130" width="120" height="30" rx="6" fill="#2dd4bf"/>
-                            <circle cx="100" cy="130" r="8" fill="#f8fafc"/>
-                            <path d="M40 55 H20 V145 H40" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="4 4"/>
-                        </svg>
+                    <h3>Conformidade Fiscal e TCEs</h3>
+                    <p>O sistema mais atualizado do mercado. Adequação imediata às regras da EC 103/2019 e às tabelas federais. Exportação nativa e homologada para o eSocial, SEFIP/GFIP, DIRF, RAIS e relatórios pré-configurados para mais de 12 Tribunais de Contas Estaduais.</p>
+                    <div class="feat-tags">
+                        <span>eSocial Nativo</span>
+                        <span>Layouts TCE</span>
+                        <span>Geração de SEFIP</span>
                     </div>
                 </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <h3>Conformidade Fiscal e TCEs</h3>
-                        <p>O sistema mais atualizado do mercado. Adequação imediata às regras da EC 103/2019 e às tabelas federais. Exportação nativa e homologada para o eSocial, SEFIP/GFIP, DIRF, RAIS e relatórios pré-configurados para mais de 12 Tribunais de Contas Estaduais.</p>
-                        <div class="feat-tags">
-                            <span>eSocial Nativo</span>
-                            <span>Layouts TCE</span>
-                            <span>Geração de SEFIP</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="20" width="120" height="160" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
-                            <rect x="70" y="50" width="60" height="6" rx="3" fill="#cbd5e1"/>
-                            <rect x="70" y="70" width="80" height="6" rx="3" fill="#cbd5e1"/>
-                            <rect x="70" y="90" width="40" height="6" rx="3" fill="#cbd5e1"/>
-                            <path d="M150 100 L150 160 L210 130 Z" fill="#0d9488" opacity="0.1"/>
-                            <path d="M180 110 L180 180 L230 150 L230 90 Z" fill="#0f766e"/>
-                            <path d="M195 130 L205 140 L220 115" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="20" width="120" height="160" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                        <rect x="70" y="50" width="60" height="6" rx="3" fill="#cbd5e1"/>
+                        <rect x="70" y="70" width="80" height="6" rx="3" fill="#cbd5e1"/>
+                        <rect x="70" y="90" width="40" height="6" rx="3" fill="#cbd5e1"/>
+                        <path d="M150 100 L150 160 L210 130 Z" fill="#0d9488" opacity="0.1"/>
+                        <path d="M180 110 L180 180 L230 150 L230 90 Z" fill="#0f766e"/>
+                        <path d="M195 130 L205 140 L220 115" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
                 </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                        </div>
-                        <h3>Simulador de Impacto com IA</h3>
-                        <p>Quer dar um reajuste de 4% para a saúde e 3% para a educação? Antes de enviar o projeto de lei para a câmara, a nossa IA simula o impacto financeiro exato na folha para os próximos 12 meses, evitando que o município fure os limites de gastos.</p>
-                        <div class="feat-tags">
-                            <span>Simulação de Cenários</span>
-                            <span>IA em Linguagem Natural</span>
-                            <span>Previsão Orçamentária</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="30" y1="170" x2="220" y2="170" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
-                            <line x1="30" y1="170" x2="30" y2="30" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
-                            <rect x="50" y="100" width="30" height="70" rx="4" fill="#99f6e4"/>
-                            <rect x="100" y="80" width="30" height="90" rx="4" fill="#5eead4"/>
-                            <rect x="150" y="40" width="30" height="130" rx="4" fill="none" stroke="#0d9488" stroke-width="4" stroke-dasharray="6 6"/>
-                            <path d="M65 90 L115 60 L165 20" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
-                            <circle cx="165" cy="20" r="6" fill="#f59e0b"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        </div>
-                        <h3>Gestão Completa de Ocorrências</h3>
-                        <p>Uma central única que processa a folha normal, gera adiantamentos de férias, provisionamento e pagamento de 13º salário, folhas complementares, rescisões exatas e gerencia minuciosamente mais de 16 tipos diferentes de afastamentos legais.</p>
-                        <div class="feat-tags">
-                            <span>16+ Tipos de Afastamento</span>
-                            <span>Férias e 13º Salário</span>
-                            <span>Rescisões Automáticas</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="40" y="40" width="120" height="120" rx="16" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
-                            <rect x="40" y="40" width="120" height="35" rx="10" fill="#0d9488"/>
-                            <line x1="70" y1="25" x2="70" y2="55" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
-                            <line x1="130" y1="25" x2="130" y2="55" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
-                            <rect x="55" y="90" width="20" height="20" rx="4" fill="#e2e8f0"/>
-                            <rect x="90" y="90" width="20" height="20" rx="4" fill="#fecb00"/>
-                            <rect x="125" y="90" width="20" height="20" rx="4" fill="#e2e8f0"/>
-                            <rect x="55" y="125" width="20" height="20" rx="4" fill="#e2e8f0"/>
-                            <rect x="90" y="125" width="20" height="20" rx="4" fill="#e2e8f0"/>
-                            <rect x="125" y="125" width="20" height="20" rx="4" fill="#10b981"/>
-                        </svg>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3>Simulador de Impacto com IA</h3>
+                    <p>Quer dar um reajuste de 4% para a saúde e 3% para a educação? Antes de enviar o projeto de lei para a câmara, a nossa IA simula o impacto financeiro exato na folha para os próximos 12 meses, evitando que o município fure os limites de gastos.</p>
+                    <div class="feat-tags">
+                        <span>Simulação de Cenários</span>
+                        <span>IA em Linguagem Natural</span>
+                        <span>Previsão Orçamentária</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="30" y1="170" x2="220" y2="170" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="30" y1="170" x2="30" y2="30" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+                        <rect x="50" y="100" width="30" height="70" rx="4" fill="#99f6e4"/>
+                        <rect x="100" y="80" width="30" height="90" rx="4" fill="#5eead4"/>
+                        <rect x="150" y="40" width="30" height="130" rx="4" fill="none" stroke="#0d9488" stroke-width="4" stroke-dasharray="6 6"/>
+                        <path d="M65 90 L115 60 L165 20" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="165" cy="20" r="6" fill="#f59e0b"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3>Gestão Completa de Ocorrências</h3>
+                    <p>Uma central única que processa a folha normal, gera adiantamentos de férias, provisionamento e pagamento de 13º salário, folhas complementares, rescisões exatas e gerencia minuciosamente mais de 16 tipos diferentes de afastamentos legais.</p>
+                    <div class="feat-tags">
+                        <span>16+ Tipos de Afastamento</span>
+                        <span>Férias e 13º Salário</span>
+                        <span>Rescisões Automáticas</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="40" width="120" height="120" rx="16" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                        <rect x="40" y="40" width="120" height="35" rx="10" fill="#0d9488"/>
+                        <line x1="70" y1="25" x2="70" y2="55" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="130" y1="25" x2="130" y2="55" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
+                        <rect x="55" y="90" width="20" height="20" rx="4" fill="#e2e8f0"/>
+                        <rect x="90" y="90" width="20" height="20" rx="4" fill="#fecb00"/>
+                        <rect x="125" y="90" width="20" height="20" rx="4" fill="#e2e8f0"/>
+                        <rect x="55" y="125" width="20" height="20" rx="4" fill="#e2e8f0"/>
+                        <rect x="90" y="125" width="20" height="20" rx="4" fill="#e2e8f0"/>
+                        <rect x="125" y="125" width="20" height="20" rx="4" fill="#10b981"/>
+                    </svg>
+                </div>
+            </div>
+
         </div>
     </section>
 
