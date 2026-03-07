@@ -29,92 +29,103 @@ permalink: /solucoes/mobility/
             --dash-panel: #0f172a;
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --success: #10b981;
-            --warning: #f59e0b;
         }
 
-        body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; }
+        body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
         
+        /* Animações Dinâmicas */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
         /* ================= HERO SECTION ================= */
         .mobility-hero {
             background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-            color: #fff; padding: 80px 0 100px; position: relative; overflow: hidden;
+            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
             border-bottom: 4px solid var(--gov-blue);
+            text-align: center;
         }
         .mobility-hero::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%); pointer-events: none;
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 60%); pointer-events: none;
         }
-        .hero-tag { background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 20px; border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-        .mobility-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .mobility-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 800px; margin-bottom: 40px; font-weight: 300; }
-        .btn-action { background: var(--gov-blue); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3); border: none; cursor: pointer; }
-        .btn-action:hover { background: var(--gov-blue-dark); transform: translateY(-3px); color: #fff; }
+        .hero-tag { background: rgba(14, 165, 233, 0.15); color: #38bdf8; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px; }
+        .mobility-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .mobility-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+        .btn-action { background: var(--gov-blue); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3); border: none; cursor: pointer; }
+        .btn-action:hover { background: var(--gov-blue-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4); }
 
         /* ================= SIMULADOR INTERATIVO ================= */
-        .demo-section { padding: 80px 0; background: #fff; }
-        .demo-header { text-align: center; margin-bottom: 50px; }
-        .demo-header h2 { color: var(--gov-dark); font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; }
+        .demo-section { padding: 100px 0; background: #fff; }
+        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header h2 { color: var(--gov-dark); font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
         
         .demo-workspace {
-            display: flex; gap: 30px; background: var(--dash-bg); padding: 30px; border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.15); border: 1px solid #334155; flex-wrap: wrap;
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; flex-wrap: wrap; position: relative;
         }
 
-        /* Mockup Mobile App */
+        /* Mockup Mobile App (Estilo Smartphone) */
         .demo-app {
-            flex: 0 0 300px; background: #000; border-radius: 30px; border: 8px solid #334155; padding: 20px; display: flex; flex-direction: column; position: relative; overflow: hidden;
+            flex: 0 0 320px; background: #000; border-radius: 40px; border: 10px solid #334155; padding: 25px 20px; display: flex; flex-direction: column; position: relative; overflow: hidden; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
-        .app-header { color: #fff; font-weight: 700; text-align: center; margin-bottom: 20px; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 15px;}
-        .app-map-bg { background: #111; border-radius: 12px; height: 150px; margin-bottom: 20px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #222;}
-        .app-card { background: #1a1a1a; border-radius: 16px; padding: 20px; color: #fff; border: 1px solid #333; margin-top: auto; }
-        .app-card h4 { margin: 0 0 10px 0; font-size: 1rem; color: #cbd5e1; }
-        .app-btn { background: var(--gov-blue); width: 100%; border: none; padding: 15px; border-radius: 12px; color: #fff; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 15px; }
+        .demo-app::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #334155; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 10; }
+        .app-header { color: #fff; font-weight: 700; text-align: center; margin-top: 10px; margin-bottom: 20px; font-size: 1.1rem; }
+        .app-map-bg { background: #111; border-radius: 16px; height: 180px; margin-bottom: 20px; position: relative; overflow: hidden; border: 1px solid #222; display: flex; justify-content: center; align-items: center; }
+        .app-map-bg svg { width: 60px; opacity: 0.2; }
+        .app-card { background: #1a1a1a; border-radius: 20px; padding: 24px; color: #fff; border: 1px solid #333; margin-top: auto; }
+        .app-card h4 { margin: 0 0 8px 0; font-size: 1.05rem; color: #e2e8f0; }
+        .app-btn { background: var(--gov-blue); width: 100%; border: none; padding: 18px; border-radius: 14px; color: #fff; font-weight: 800; font-size: 1.05rem; cursor: pointer; transition: 0.3s; margin-top: 20px; }
         .app-btn:hover { background: var(--gov-blue-dark); }
         .app-btn:disabled { background: #334155; cursor: not-allowed; color: #94a3b8; }
         
-        .driver-info { display: none; align-items: center; gap: 15px; margin-top: 15px; border-top: 1px solid #333; padding-top: 15px; }
-        .driver-avatar { width: 45px; height: 45px; background: #38bdf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #000; font-size: 1.2rem;}
+        .driver-info { display: none; align-items: center; gap: 15px; margin-top: 15px; border-top: 1px dashed #333; padding-top: 15px; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .driver-avatar { width: 50px; height: 50px; background: var(--gov-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #fff; font-size: 1.2rem; }
 
-        /* Mockup Web Dashboard */
-        .demo-dash { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
-        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 10px 20px; background: var(--dash-panel); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
-        .status-badge { background: #334155; color: #cbd5e1; padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; transition: 0.3s; }
-        .status-badge.active { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        /* Mockup Web Dashboard (SaaS) */
+        .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .status-badge { background: #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .status-badge.active { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-badge.active::before { content: ''; width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 10px #34d399; }
         
-        .dash-telemetry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .tel-card { background: var(--dash-panel); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); color: #fff; }
-        .tel-card span { display: block; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; }
-        .tel-card strong { font-size: 1.8rem; font-weight: 900; color: #38bdf8; font-variant-numeric: tabular-nums; }
+        .dash-telemetry { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .tel-card { background: var(--dash-panel); padding: 24px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); color: #fff; display: flex; flex-direction: column; justify-content: center; }
+        .tel-card span { display: block; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .tel-card strong { font-size: 2.2rem; font-weight: 900; color: #fff; font-variant-numeric: tabular-nums; line-height: 1; }
+        .tel-card strong small { font-size: 1rem; color: #64748b; font-weight: 600; }
         
-        .dash-map-area { flex: 1; background: var(--dash-panel); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
-        .route-line { height: 4px; background: #334155; border-radius: 4px; position: relative; margin: 40px 20px; }
-        .route-progress { position: absolute; top: 0; left: 0; height: 100%; background: var(--gov-blue); width: 0%; transition: width 1s linear; border-radius: 4px; box-shadow: 0 0 10px var(--gov-blue); }
-        .car-dot { position: absolute; top: -8px; left: 0%; width: 20px; height: 20px; background: #fff; border: 4px solid var(--gov-blue); border-radius: 50%; box-shadow: 0 0 15px rgba(255,255,255,0.5); transition: left 1s linear; transform: translateX(-50%); z-index: 2;}
+        .dash-map-area { flex: 1; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+        .route-line { height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; position: relative; margin: 40px 20px; }
+        .route-progress { position: absolute; top: 0; left: 0; height: 100%; background: var(--gov-blue); width: 0%; transition: width 1s linear; border-radius: 10px; box-shadow: 0 0 15px var(--gov-blue); }
+        .car-dot { position: absolute; top: -10px; left: 0%; width: 26px; height: 26px; background: #fff; border: 6px solid var(--gov-blue); border-radius: 50%; box-shadow: 0 0 20px rgba(255,255,255,0.5); transition: left 1s linear; transform: translateX(-50%); z-index: 2;}
         
-        .map-labels { display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.85rem; font-weight: 600; padding: 0 10px; }
+        .map-labels { display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.9rem; font-weight: 600; padding: 0 10px; }
 
-        /* ================= FUNCIONALIDADES DETALHADAS ================= */
-        .features-section { padding: 80px 0; background: #f8fafc; }
-        .feature-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-        .feat-row { display: flex; gap: 50px; align-items: center; background: #fff; padding: 50px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
+        /* ================= FUNCIONALIDADES (MODULAR E CORPORATIVO) ================= */
+        .features-section { padding: 100px 0; background: #f8fafc; }
+        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
+        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
         .feat-row:nth-child(even) { flex-direction: row-reverse; }
-        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 30px; gap: 30px; } .demo-workspace { flex-direction: column; } .demo-app { flex: 1; width: 100%; max-width: 100%; } }
+        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-app { flex: 1; width: 100%; max-width: 100%; border-width: 6px; } }
         
-        .feat-content { flex: 1; }
-        .feat-icon { width: 60px; height: 60px; background: #f0f9ff; color: var(--gov-blue); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 20px; }
-        .feat-content h3 { font-size: 1.8rem; color: var(--gov-dark); font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
-        .feat-content p { font-size: 1.1rem; color: #475569; margin-bottom: 20px; }
+        .feat-content { flex: 1.2; }
+        .feat-icon { width: 64px; height: 64px; background: #f0f9ff; color: var(--gov-blue); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #e0f2fe; }
+        .feat-content h3 { font-size: 2rem; color: var(--gov-dark); font-weight: 800; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+        .feat-content p { font-size: 1.1rem; color: #475569; margin-bottom: 24px; line-height: 1.7; }
         .feat-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-        .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; }
+        .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
+        .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--gov-blue); border-radius: 50%; }
         
-        .feat-visual { flex: 1; background: #f1f5f9; border-radius: 16px; padding: 30px; text-align: center; border: 1px dashed #cbd5e1; color: #64748b; font-weight: 600; display: flex; align-items: center; justify-content: center; min-height: 250px; }
+        /* Box de Ilustração SVG */
+        .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(14, 165, 233, 0.15)); }
 
-        /* Estilização específica das ilustrações abstratas nas features */
-        .ill-box { width: 100%; height: 100%; display: flex; flex-direction: column; gap: 15px; }
-        .ill-line { height: 12px; background: #e2e8f0; border-radius: 10px; width: 100%; }
-        .ill-line.short { width: 60%; }
-        .ill-line.blue { background: var(--gov-blue); opacity: 0.5; }
-        .ill-circle { width: 60px; height: 60px; border-radius: 50%; background: #e2e8f0; margin: 0 auto; }
     </style>
 </head>
 <body>
@@ -122,36 +133,41 @@ permalink: /solucoes/mobility/
     {% include header.html titulo="Cerrado Tech" %}
 
     <section class="mobility-hero">
-        <div class="container text-center">
-            <span class="hero-tag">GovTech & Corporate SaaS</span>
-            <h1>Cerrado Mobility</h1>
-            <p>A plataforma definitiva para gestão de frota pública e corporativa. Operação com dinâmica "estilo Uber", telemetria ao vivo via WebSocket e controle absoluto de insumos e infrações.</p>
-            <a href="#simulador" class="btn-action">Testar Simulador ao Vivo</a>
+        <div class="container">
+            <span class="hero-tag fade-up">GovTech & Corporate SaaS</span>
+            <h1 class="fade-up delay-1">Cerrado Mobility</h1>
+            <p class="fade-up delay-2">A plataforma definitiva para gestão de frota pública e corporativa. Operação com dinâmica "estilo Uber", telemetria ao vivo via WebSocket e controle absoluto de insumos e infrações.</p>
+            <div class="fade-up delay-3">
+                <a href="#simulador" class="btn-action">
+                    Testar Simulador ao Vivo
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="simulador" class="demo-section">
         <div class="container">
-            <div class="demo-header">
+            <div class="demo-header fade-up">
                 <h2>Sinta a Tecnologia em Ação</h2>
-                <p>Clique em <strong>Solicitar Veículo</strong> no App (esquerda) e veja o Painel do Gestor (direita) reagir em tempo real através da nossa arquitetura WebSocket simulada.</p>
+                <p>Clique em <strong>Solicitar Veículo</strong> no App (esquerda) e veja o Painel do Gestor (direita) reagir em tempo real através da nossa arquitetura de dados (WebSocket).</p>
             </div>
 
-            <div class="demo-workspace">
+            <div class="demo-workspace fade-up delay-1">
                 <div class="demo-app">
-                    <div class="app-header">Cerrado Mobility App</div>
+                    <div class="app-header">App do Servidor</div>
                     <div class="app-map-bg">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#333"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <div class="app-card">
-                        <h4>Nova Viagem (Oficial)</h4>
+                        <h4>Nova Viagem Oficial</h4>
                         <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px;">Origem: Prefeitura Municipal<br>Destino: Secretaria de Obras</p>
                         
                         <div class="driver-info" id="appDriverInfo">
                             <div class="driver-avatar">JS</div>
                             <div>
-                                <strong style="font-size: 0.9rem; display: block;">João Silva (Motorista)</strong>
-                                <span style="font-size: 0.8rem; color: #fecb00;">★ 4.9 - Hilux Branca</span>
+                                <strong style="font-size: 0.95rem; display: block; color: #f8fafc;">João Silva (Motorista)</strong>
+                                <span style="font-size: 0.8rem; color: var(--gov-accent);">★ 4.9 &nbsp;|&nbsp; Hilux Branca</span>
                             </div>
                         </div>
 
@@ -162,29 +178,29 @@ permalink: /solucoes/mobility/
                 <div class="demo-dash">
                     <div class="dash-header">
                         <div>
-                            <strong style="font-size: 1.1rem;">Painel de Comando Georreferenciado</strong>
-                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Monitoramento WebSocket Ativo</span>
+                            <strong style="font-size: 1.1rem;">Painel de Comando (Gestor)</strong>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Monitoramento OSRM Ativo</span>
                         </div>
                         <div class="status-badge" id="dashStatus">Frota Ociosa</div>
                     </div>
 
                     <div class="dash-telemetry">
                         <div class="tel-card">
-                            <span>Status da Viagem</span>
-                            <strong id="telStatus" style="color: #cbd5e1; font-size: 1.2rem;">Aguardando</strong>
+                            <span>Status da Frota</span>
+                            <strong id="telStatus" style="color: #cbd5e1; font-size: 1.5rem;">Aguardando</strong>
                         </div>
                         <div class="tel-card">
-                            <span>Velocidade Média</span>
-                            <strong><span id="telSpeed">0</span> <small style="font-size: 0.9rem;">km/h</small></strong>
+                            <span>Velocidade</span>
+                            <strong><span id="telSpeed">0</span><small> km/h</small></strong>
                         </div>
                         <div class="tel-card">
-                            <span>Odômetro (KM)</span>
+                            <span>Odômetro Total</span>
                             <strong><span id="telKm">12450.0</span></strong>
                         </div>
                     </div>
 
                     <div class="dash-map-area">
-                        <span style="color: #94a3b8; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Roteirização OSRM</span>
+                        <span style="color: #94a3b8; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Mapa de Rota em Tempo Real</span>
                         
                         <div class="route-line">
                             <div class="route-progress" id="routeProgress"></div>
@@ -192,8 +208,8 @@ permalink: /solucoes/mobility/
                         </div>
                         
                         <div class="map-labels">
-                            <span>📍 Ponto A (Prefeitura)</span>
-                            <span>📍 Ponto B (Secretaria)</span>
+                            <span>📍 Origem</span>
+                            <span>Destino 📍</span>
                         </div>
                     </div>
                 </div>
@@ -203,39 +219,47 @@ permalink: /solucoes/mobility/
 
     <section class="features-section">
         <div class="container">
-            <div class="demo-header">
+            <div class="demo-header fade-up">
                 <h2>O fim do controle em planilhas de papel.</h2>
-                <p>Nossa plataforma ataca os 5 maiores ralos financeiros da gestão de frotas através de automação rigorosa e inteligência preditiva.</p>
+                <p>Nossa plataforma ataca os 4 maiores ralos financeiros da gestão de frotas através de automação rigorosa e inteligência corporativa.</p>
             </div>
 
             <div class="feature-grid">
                 
-                <div class="feat-row">
+                <div class="feat-row fade-up">
                     <div class="feat-content">
-                        <div class="feat-icon">📱</div>
-                        <h3>Aplicativo Mobile Nativon(Android e iOS)</h3>
-                        <p>Diga adeus às requisições de papel. O aplicativo opera com dinâmica "estilo Uber": o servidor solicita a viagem, justifica o motivo oficial e o motorista mais próximo aceita. Tudo com interface otimizada (Dark Mode) e uso de GPS nativo do aparelho celular.</p>
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        </div>
+                        <h3>App Mobile Nativo (Android/iOS)</h3>
+                        <p>Diga adeus às requisições de papel. O aplicativo opera com dinâmica "estilo Uber": o servidor solicita a viagem, justifica o motivo oficial e o motorista mais próximo aceita. Tudo com uso de GPS nativo do aparelho para rastreio irrefutável.</p>
                         <div class="feat-tags">
                             <span>GPS Nativo</span>
-                            <span>Dark Mode</span>
                             <span>Dinâmica Uber</span>
+                            <span>App Servidor/Motorista</span>
                         </div>
                     </div>
                     <div class="feat-visual">
-                        <div class="ill-box">
-                            <div class="ill-line blue"></div>
-                            <div class="ill-line"></div>
-                            <div class="ill-line short"></div>
-                            <div class="ill-line blue" style="margin-top: 20px;"></div>
-                        </div>
+                        <svg class="svg-illustration" viewBox="0 0 200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="10" width="150" height="230" rx="20" fill="#0f172a" stroke="#cbd5e1" stroke-width="4"/>
+                            <rect x="75" y="10" width="50" height="15" rx="5" fill="#cbd5e1"/>
+                            <rect x="40" y="40" width="120" height="80" rx="10" fill="#1e293b"/>
+                            <circle cx="100" cy="80" r="15" fill="#0ea5e9" fill-opacity="0.3"/>
+                            <circle cx="100" cy="80" r="5" fill="#0ea5e9"/>
+                            <path d="M40 140 H160" stroke="#334155" stroke-width="2" stroke-dasharray="4 4"/>
+                            <rect x="40" y="160" width="120" height="20" rx="5" fill="#334155"/>
+                            <rect x="40" y="190" width="120" height="30" rx="8" fill="#0ea5e9"/>
+                        </svg>
                     </div>
                 </div>
 
-                <div class="feat-row">
+                <div class="feat-row fade-up">
                     <div class="feat-content">
-                        <div class="feat-icon">💻</div>
-                        <h3>Painel de Gestão de Viagens (Web)</h3>
-                        <p>Uma torre de controle para o gestor. Dashboard interativo exibindo o mapa, rotas executadas e marcadores de origem/destino. Os cards de viagem trazem a avaliação do motorista, foto do veículo e telemetria ao vivo com status completo do empenho oficial.</p>
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <h3>Painel Web de Gestão e Aprovação</h3>
+                        <p>Uma torre de controle para o gestor. Dashboard interativo exibindo o mapa, rotas reais e marcadores de origem/destino. Permite aprovação gerencial prévia de viagens longas e exibe os cards completos dos participantes.</p>
                         <div class="feat-tags">
                             <span>Aprovação Web</span>
                             <span>Telemetria ao Vivo</span>
@@ -243,67 +267,71 @@ permalink: /solucoes/mobility/
                         </div>
                     </div>
                     <div class="feat-visual">
-                        <div class="ill-box" style="flex-direction: row; align-items: flex-end;">
-                            <div style="width: 30%; height: 40%; background: var(--gov-blue); opacity: 0.3; border-radius: 8px;"></div>
-                            <div style="width: 30%; height: 80%; background: var(--gov-blue); opacity: 0.6; border-radius: 8px;"></div>
-                            <div style="width: 30%; height: 100%; background: var(--gov-blue); border-radius: 8px;"></div>
-                        </div>
+                        <svg class="svg-illustration" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="280" height="180" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                            <rect x="10" y="10" width="60" height="180" rx="8" fill="#0f172a"/>
+                            <rect x="25" y="30" width="30" height="6" rx="3" fill="#334155"/>
+                            <rect x="25" y="50" width="30" height="6" rx="3" fill="#0ea5e9"/>
+                            <rect x="25" y="70" width="30" height="6" rx="3" fill="#334155"/>
+                            
+                            <rect x="85" y="30" width="190" height="80" rx="8" fill="#f0f9ff"/>
+                            <circle cx="120" cy="70" r="12" fill="#0ea5e9"/>
+                            <circle cx="230" cy="70" r="12" fill="#10b981"/>
+                            <path d="M132 70 H218" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="6 6"/>
+                            
+                            <rect x="85" y="130" width="90" height="40" rx="6" fill="#e2e8f0"/>
+                            <rect x="185" y="130" width="90" height="40" rx="6" fill="#e2e8f0"/>
+                        </svg>
                     </div>
                 </div>
 
-                <div class="feat-row">
+                <div class="feat-row fade-up">
                     <div class="feat-content">
-                        <div class="feat-icon">⛽</div>
-                        <h3>Controle de Insumos e Manutenção</h3>
-                        <p>Acabe com os desvios de combustível. Registro detalhado a cada parada no posto (litros, preço da bomba, KM do painel). O sistema calcula automaticamente o consumo (km/L) entre tanques cheios, gerando o histórico antifraude e o resumo mensal exato de custos.</p>
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3>Controle de Insumos Anti-Fraude</h3>
+                        <p>Registro detalhado a cada parada no posto. O motorista insere litros e preço, o sistema cruza com o odômetro do veículo e calcula automaticamente o consumo (km/L) entre tanques cheios, dedurando médias de consumo fora do padrão.</p>
                         <div class="feat-tags">
                             <span>Cálculo km/L</span>
                             <span>Auditoria de Postos</span>
-                            <span>Controle de Custos</span>
+                            <span>Redução de Custos</span>
                         </div>
                     </div>
                     <div class="feat-visual">
-                        <div class="ill-circle"></div>
-                        <div class="ill-line short" style="margin: 15px auto;"></div>
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="20" width="200" height="160" rx="16" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                            <path d="M50 140 L90 80 L130 110 L190 50" stroke="#0ea5e9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="190" cy="50" r="8" fill="#fff" stroke="#0ea5e9" stroke-width="4"/>
+                            <rect x="50" y="150" width="140" height="4" rx="2" fill="#e2e8f0"/>
+                            <rect x="50" y="165" width="80" height="8" rx="4" fill="#cbd5e1"/>
+                        </svg>
                     </div>
                 </div>
 
-                <div class="feat-row">
+                <div class="feat-row fade-up">
                     <div class="feat-content">
-                        <div class="feat-icon">🛑</div>
-                        <h3>Automação Cega de Infrações</h3>
-                        <p>O veículo foi multado? O sistema já sabe. Integração via API direta com sistemas governamentais de trânsito (SERPRO, ApiConsultas). A multa cai no painel iniciando um workflow obrigatório: Pendente -> Identificação do Condutor -> Recurso -> Pagamento.</p>
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </div>
+                        <h3>Automação de Multas e Analytics</h3>
+                        <p>Integração via API com sistemas de trânsito (SERPRO) importa multas automaticamente e inicia um workflow de defesa e identificação do condutor. Exporte dados granulares para Excel ou PDF para fácil prestação de contas aos órgãos controladores.</p>
                         <div class="feat-tags">
                             <span>API SERPRO</span>
-                            <span>Workflow de Defesa</span>
-                            <span>Indicador de Gravidade</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <div class="ill-box">
-                            <div style="background: #fee2e2; border: 1px solid #ef4444; padding: 15px; border-radius: 8px; color: #b91c1c;">Infração Detectada (API)</div>
-                            <div style="background: #fef3c7; border: 1px solid #f59e0b; padding: 15px; border-radius: 8px; color: #b45309;">Motorista Identificado</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feat-row">
-                    <div class="feat-content">
-                        <div class="feat-icon">📈</div>
-                        <h3>Data Analytics Corporativo</h3>
-                        <p>A transparência exigida pelo Tribunal de Contas entregue com um clique. Geração de gráficos dinâmicos de ociosidade, custo por quilômetro rodado e exportação nativa e granular dos dados para planilhas Excel (.xlsx) e relatórios fechados em PDF.</p>
-                        <div class="feat-tags">
-                            <span>Exportação XLS/PDF</span>
-                            <span>Indicadores de Ociosidade</span>
+                            <span>Exportação PDF/XLS</span>
                             <span>Compliance TCE</span>
                         </div>
                     </div>
                     <div class="feat-visual">
-                        <div class="ill-box">
-                            <div class="ill-line blue" style="width: 100%;"></div>
-                            <div class="ill-line blue" style="width: 80%;"></div>
-                            <div class="ill-line blue" style="width: 40%;"></div>
-                        </div>
+                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="40" y="20" width="120" height="160" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                            <rect x="60" y="50" width="80" height="6" rx="3" fill="#cbd5e1"/>
+                            <rect x="60" y="70" width="60" height="6" rx="3" fill="#cbd5e1"/>
+                            <rect x="60" y="90" width="70" height="6" rx="3" fill="#cbd5e1"/>
+                            <circle cx="140" cy="140" r="30" fill="#fef2f2" stroke="#ef4444" stroke-width="4"/>
+                            <line x1="140" y1="125" x2="140" y2="145" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="140" cy="155" r="3" fill="#ef4444"/>
+                        </svg>
                     </div>
                 </div>
 
@@ -312,9 +340,9 @@ permalink: /solucoes/mobility/
     </section>
 
     <section style="padding: 80px 0; background: var(--gov-dark); text-align: center; color: #fff;">
-        <div class="container">
+        <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Pronto para blindar sua frota?</h2>
-            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma reunião técnica com nossa equipe de engenharia e veja o Cerrado Mobility operando com os dados do seu município ou empresa.</p>
+            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma reunião técnica com nossa equipe de engenharia e veja o Cerrado Mobility operando com os dados reais do seu município ou empresa.</p>
             <a href="/index.html#contato" class="btn-action" style="background: var(--gov-accent); color: var(--gov-dark); box-shadow: 0 10px 20px rgba(254, 203, 0, 0.2);">Agendar Reunião Técnica</a>
         </div>
     </section>
@@ -324,6 +352,24 @@ permalink: /solucoes/mobility/
     <script src="{{ '/js/main.js' | relative_url }}"></script>
 
     <script>
+        // Animação de rolagem (Fade Up)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Lógica do Simulador Interativo
         function simulateTrip() {
             const btn = document.getElementById('btnRequest');
             const appInfo = document.getElementById('appDriverInfo');
@@ -335,71 +381,64 @@ permalink: /solucoes/mobility/
             const routeProgress = document.getElementById('routeProgress');
             const carDot = document.getElementById('carDot');
 
-            // Reset inicial
             if(btn.disabled) return;
             btn.disabled = true;
-            btn.innerHTML = '<span style="opacity: 0.7;">Buscando motorista via GPS...</span>';
+            btn.innerHTML = '<span style="opacity: 0.7;">Buscando via GPS...</span>';
             
-            dashStatus.innerText = "Processando Request...";
-            dashStatus.style.background = "rgba(245, 158, 11, 0.2)";
+            dashStatus.innerHTML = '<span style="width:8px;height:8px;background:#fbbf24;border-radius:50%;display:inline-block;"></span> Processando...';
+            dashStatus.style.background = "rgba(245, 158, 11, 0.15)";
             dashStatus.style.color = "#fbbf24";
             dashStatus.style.borderColor = "rgba(245, 158, 11, 0.3)";
             
-            // Passo 1: Motorista Aceitou (Apos 1.5s)
             setTimeout(() => {
                 btn.innerHTML = 'Motorista a Caminho';
                 btn.style.background = '#10b981';
-                appInfo.style.display = 'flex'; // Mostra card do motorista
+                appInfo.style.display = 'flex'; 
 
-                dashStatus.innerText = "Viagem Ativa (Em Trânsito)";
+                dashStatus.innerHTML = 'Viagem Ativa';
                 dashStatus.className = "status-badge active";
-                telStatus.innerText = "Em Rota";
+                telStatus.innerText = "Em Rota OSRM";
                 telStatus.style.color = "#34d399";
                 telSpeed.innerText = "45";
 
-                // Inicia Animação do Mapa e Odometro
                 let progress = 0;
                 let currentKm = 12450.0;
                 
                 const driveInterval = setInterval(() => {
-                    progress += 2; // avança 2%
-                    currentKm += 0.05; // avança 50 metros
+                    progress += 2; 
+                    currentKm += 0.05; 
                     
-                    // Atualiza UI
                     routeProgress.style.width = progress + '%';
                     carDot.style.left = progress + '%';
                     telKm.innerText = currentKm.toFixed(1);
                     
-                    // Oscila velocidade para parecer real
                     telSpeed.innerText = Math.floor(Math.random() * (60 - 35 + 1) + 35);
 
                     if (progress >= 100) {
                         clearInterval(driveInterval);
                         finishTrip();
                     }
-                }, 150); // a cada 150ms
+                }, 150); 
 
             }, 1500);
 
-            // Passo 2: Finalizar Viagem
             function finishTrip() {
                 btn.innerHTML = 'Viagem Concluída';
                 btn.style.background = '#334155';
                 
-                dashStatus.innerText = "Viagem Encerrada";
+                dashStatus.innerHTML = "Viagem Encerrada";
                 dashStatus.className = "status-badge";
                 dashStatus.style.background = "transparent";
                 dashStatus.style.borderColor = "rgba(255,255,255,0.2)";
                 dashStatus.style.color = "#94a3b8";
 
-                telStatus.innerText = "Finalizado (Aguardando Fatura)";
+                telStatus.innerText = "Aguardando Fatura";
                 telStatus.style.color = "#cbd5e1";
                 telSpeed.innerText = "0";
 
-                // Restaura botão para brincar de novo
                 setTimeout(() => {
                     btn.disabled = false;
-                    btn.innerHTML = 'Solicitar Nova Viagem';
+                    btn.innerHTML = 'Solicitar Novo Veículo';
                     btn.style.background = 'var(--gov-blue)';
                     appInfo.style.display = 'none';
                     routeProgress.style.width = '0%';
