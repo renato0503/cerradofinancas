@@ -1,36 +1,159 @@
-<footer class="footer">
+<style>
+  /* --- ESTILOS DO FOOTER PREMIUM --- */
+  .footer-premium {
+    background-color: #0f172a; /* Fundo Azul/Slate Escuro */
+    color: #cbd5e1;
+    padding: 80px 0 30px;
+    font-family: 'Inter', sans-serif;
+    border-top: 4px solid #fecb00; /* Linha de destaque dourada da marca */
+  }
+  
+  .footer-premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .footer-brand img {
+    height: 60px;
+    background: #ffffff; /* Fundo branco para destacar a logo png */
+    padding: 8px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    object-fit: contain;
+  }
+  
+  .footer-heading {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li { margin-bottom: 14px; }
+  
+  .footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .footer-links a:hover { 
+    color: #38bdf8; 
+    padding-left: 8px; /* Efeito de deslizar ao passar o mouse */
+  }
+  
+  .footer-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn-footer-partner {
+    background: #fecb00;
+    color: #001f5c;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-footer-partner:hover {
+    background: #ffd733;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(254, 203, 0, 0.2);
+  }
+  
+  .btn-footer-work {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-footer-work:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #ffffff;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+  
+  .footer-bottom a { 
+    color: #38bdf8; 
+    text-decoration: none; 
+    font-weight: 700; 
+  }
+  .footer-bottom a:hover { text-decoration: underline; }
+</style>
+
+<footer class="footer-premium">
   <div class="container">
-    <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 40px;">
+    <div class="footer-premium-grid">
       
-      <div class="footer-col">
-        <h4 style="color: var(--primary); margin-bottom: 20px;">Cerrado Finanças</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">Transformando a gestão financeira de negócios com metodologia ágil e tecnologia de ponta.</p>
+      <div>
+        <a href="/index.html" class="footer-brand">
+          <img src="/img/logo.png" alt="Cerrado Finanças Logo">
+        </a>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #94a3b8;">Transformando a gestão financeira de negócios com metodologia ágil, inteligência de dados e tecnologia de ponta para o executivo.</p>
       </div>
 
-      <div class="footer-col">
-        <h4 style="color: var(--primary); margin-bottom: 20px;">Navegação</h4>
-        <ul style="list-style: none; padding: 0; line-height: 2;">
-          <li><a href="index.html#o-problema" style="text-decoration: none; color: var(--text-muted);">O Desafio</a></li>
-          <li><a href="index.html#solucoes" style="text-decoration: none; color: var(--text-muted);">Atuação 360º</a></li>
-          <li><a href="startups.html" style="text-decoration: none; color: var(--text-muted);">Cerrado Tech</a></li>
-          <li><a href="parceiros.html" style="text-decoration: none; color: var(--primary); font-weight: 600;">Programa de Parceiros</a></li>
+      <div>
+        <h4 class="footer-heading">Navegação Rápida</h4>
+        <ul class="footer-links">
+          <li><a href="/index.html">Página Inicial</a></li>
+          <li><a href="/index.html#maturidade">Nossa Metodologia</a></li>
+          <li><a href="/startups.html">Cerrado Tech (Startups)</a></li>
+          <li><a href="/solucoes.html">Fábrica de Software & GovTech</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4 style="color: var(--primary); margin-bottom: 20px;">Contato</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          WhatsApp: (67) 99351-5206<br>
-          Email: contato@cerradofinancas.com.br
-        </p>
+      <div>
+        <h4 class="footer-heading">Fale Conosco</h4>
+        <ul class="footer-links">
+          <li><strong style="color: #ffffff;">WhatsApp:</strong> <br><a href="https://api.whatsapp.com/send?phone=5567993515206" target="_blank">(67) 99351-5206</a></li>
+          <li><strong style="color: #ffffff;">E-mail:</strong> <br><a href="mailto:contato@cerradofinancas.com.br">contato@cerradofinancas.com.br</a></li>
+          <li><strong style="color: #ffffff;">Base de Operações:</strong> <br>Cuiabá - Mato Grosso</li>
+        </ul>
       </div>
+
+      <div>
+        <h4 class="footer-heading">Faça Parte da Rede</h4>
+        <div class="footer-ctas">
+          <a href="/parceiros.html" class="btn-footer-partner">🚀 Seja Parceiro e Ganhe Comissões</a>
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de saber mais sobre as oportunidades para trabalhar ou me integrar ao time da Cerrado Finanças." target="_blank" class="btn-footer-work">💼 Trabalhe Conosco</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="footer-bottom" style="border-top: 1px solid var(--border); padding-top: 20px; text-align: center;">
-      <p style="font-size: 0.8rem; color: var(--text-muted);">
-        &copy; 2026 Cerrado Finanças. Todos os direitos reservados. <br>
-        Responsável: <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank" style="color: var(--accent); text-decoration: none;">Renato de Oliveira Rosa</a>
-      </p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cerrado Finanças e Gestão Empresarial LTDA. Todos os direitos reservados. <br>
+      Idealização e Responsabilidade Técnica: <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank">Renato de Oliveira Rosa</a></p>
     </div>
   </div>
 </footer>
