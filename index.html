@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/home.css">
 
   <style>
-      /* --- SUPER HERO ASSIMÉTRICO (LOGO NA LATERAL) --- */
+      /* --- HERO CORPORATIVO: LOGO FIXA NA LATERAL --- */
       .hero-enhanced {
           background: linear-gradient(135deg, rgba(0, 31, 92, 0.95) 0%, rgba(0, 10, 30, 0.85) 100%), 
                       url('img/escritorio.jpeg') center/cover no-repeat fixed;
@@ -33,7 +33,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 60px;
+          gap: 80px;
       }
 
       .hero-text-content {
@@ -44,22 +44,15 @@
       .hero-visual-content {
           flex: 0.8;
           display: flex;
-          justify-content: center;
-          position: relative;
+          justify-content: flex-end; /* Empurra a logo para a direita */
       }
 
+      /* Logo Grande, Estática e Imponente */
       .hero-big-logo {
-          max-width: 320px;
+          max-width: 420px; /* Aumentada para dar mais destaque */
           width: 100%;
           height: auto;
-          filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.5));
-          animation: floatLogoAsym 5s ease-in-out infinite;
-      }
-
-      @keyframes floatLogoAsym {
-          0% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(2deg); }
-          100% { transform: translateY(0px) rotate(0deg); }
+          filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.6)); /* Sombra forte para destacar do fundo */
       }
 
       .hero-badge {
@@ -73,21 +66,22 @@
           margin-bottom: 24px;
           font-size: 0.9rem;
           font-weight: 600;
+          letter-spacing: 0.5px;
       }
 
       .hero-enhanced h1 {
-          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-size: clamp(2.8rem, 5vw, 4.5rem);
           font-weight: 900;
           line-height: 1.1;
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           letter-spacing: -1px;
       }
 
       .hero-enhanced .text-highlight { color: #fecb00; }
       
       .hero-enhanced p {
-          font-size: 1.2rem;
-          max-width: 600px;
+          font-size: 1.25rem;
+          max-width: 650px;
           margin: 0 0 40px 0;
           color: #e2e8f0;
           font-weight: 300;
@@ -131,128 +125,56 @@
 
       /* Responsividade Topo */
       @media (max-width: 992px) {
-          .hero-split-layout { flex-direction: column-reverse; text-align: center; gap: 30px; }
+          .hero-split-layout { flex-direction: column-reverse; text-align: center; gap: 40px; }
           .hero-text-content { text-align: center; }
+          .hero-visual-content { justify-content: center; }
           .hero-enhanced p { margin: 0 auto 40px; }
           .hero-actions-new { justify-content: center; }
-          .hero-big-logo { max-width: 220px; }
+          .hero-big-logo { max-width: 280px; }
       }
 
       /* --- ESTRUTURA GLOBAL DE CARROSSEL NATIVO --- */
-      .carousel-container {
-          position: relative;
-          width: 100%;
-          padding: 10px 0;
-      }
-
+      .carousel-container { position: relative; width: 100%; padding: 10px 0; }
       .carousel-track {
-          display: flex;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          gap: 24px;
-          padding-bottom: 20px; /* Espaço para a sombra */
-          scroll-behavior: smooth;
-          -ms-overflow-style: none;  
-          scrollbar-width: none;  
+          display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; padding-bottom: 20px; scroll-behavior: smooth;
+          -ms-overflow-style: none; scrollbar-width: none;  
       }
       .carousel-track::-webkit-scrollbar { display: none; }
 
-      /* Setas do Carrossel */
       .carousel-btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: #fff;
-          border: 1px solid #e2e8f0;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-          z-index: 10;
-          color: #001f5c;
-          font-size: 20px;
-          font-weight: bold;
-          transition: 0.3s;
+          position: absolute; top: 50%; transform: translateY(-50%); background: #fff; border: 1px solid #e2e8f0; border-radius: 50%;
+          width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.08); z-index: 10; color: #001f5c; font-size: 20px; font-weight: bold; transition: 0.3s;
       }
       .carousel-btn:hover { background: #001f5c; color: #fff; border-color: #001f5c; }
       .carousel-btn.prev { left: -25px; }
       .carousel-btn.next { right: -25px; }
-      @media (max-width: 1024px) { .carousel-btn { display: none; } } /* Usa o dedo no mobile */
+      @media (max-width: 1024px) { .carousel-btn { display: none; } }
 
-      /* --- CARDS METODOLOGIA (AGORA EM CARROSSEL) --- */
-      .method-step {
-          flex: 0 0 340px; /* Largura fixa do card no carrossel */
-          scroll-snap-align: center;
-          background: #fff;
-          padding: 40px 30px;
-          border-radius: 24px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-          position: relative;
-          border: 1px solid #f1f5f9;
-          transition: all 0.4s ease;
-          overflow: hidden;
-          display: flex;
-          flex-direction: column;
+      /* --- CARDS METODOLOGIA E SERVIÇOS --- */
+      .method-step, .service-card {
+          flex: 0 0 340px; scroll-snap-align: center; background: #fff; padding: 40px 30px; border-radius: 24px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; border: 1px solid #f1f5f9; transition: all 0.4s ease; display: flex; flex-direction: column;
       }
-      @media (max-width: 768px) { .method-step { flex: 0 0 85vw; } }
+      @media (max-width: 768px) { .method-step, .service-card { flex: 0 0 85vw; } }
+      .method-step:hover, .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,31,92,0.1); border-color: #cbd5e1; }
 
-      .method-step::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; width: 100%; height: 4px;
-          background: linear-gradient(90deg, #001f5c, #006430);
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.4s ease;
-      }
-      .method-step:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,31,92,0.1); border-color: #cbd5e1; }
-      .method-step:hover::before { transform: scaleX(1); }
-
-      .step-number-big {
-          font-size: 4.5rem;
-          font-weight: 900;
-          color: rgba(0, 31, 92, 0.04);
-          position: absolute;
-          top: 10px;
-          right: 20px;
-          line-height: 1;
-      }
-
-      .method-step h3 { color: #001f5c; font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; position: relative; z-index: 2; }
-      .method-step p { color: #475569; font-size: 1rem; line-height: 1.6; position: relative; z-index: 2; margin-bottom: 20px;}
-
+      /* Ajustes de tipografia Metodologia */
+      .step-number-big { font-size: 4.5rem; font-weight: 900; color: rgba(0, 31, 92, 0.04); position: absolute; top: 10px; right: 20px; line-height: 1; }
+      .method-step h3, .service-card h3 { color: #001f5c; font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; position: relative; z-index: 2; }
+      .method-step p, .service-card p { color: #475569; font-size: 1rem; line-height: 1.6; position: relative; z-index: 2; margin-bottom: 20px;}
       .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
       .tech-tags span { background: #f0f4f8; color: #001f5c; font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 6px; }
-
-      /* --- CARDS SERVIÇOS 360 (AGORA EM CARROSSEL) --- */
-      .service-card {
-          flex: 0 0 340px;
-          scroll-snap-align: center;
-          background: #fff;
-          padding: 40px 30px;
-          border-radius: 20px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-          border: 1px solid #e2e8f0;
-          transition: all 0.3s;
-          display: flex;
-          flex-direction: column;
-      }
-      @media (max-width: 768px) { .service-card { flex: 0 0 85vw; } }
-
-      .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #cbd5e1; }
       .service-card .icon-wrapper { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-      .service-card h3 { font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; }
-      .service-card p { font-size: 1rem; color: #64748b; line-height: 1.6; margin-bottom: auto;}
 
       /* Dor vs Solução Animada */
-      .comp-card { transition: all 0.4s ease; cursor: default; }
+      .comp-card { transition: all 0.4s ease; cursor: default; padding: 40px; border-radius: 24px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
       .comp-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
-      .comp-card.good { border-top: 5px solid #006430; }
-      .comp-card.bad { border-top: 5px solid #e11d48; }
+      .comp-card.good { border-top: 6px solid #006430; }
+      .comp-card.bad { border-top: 6px solid #e11d48; }
+
+      /* Botão Contato Premium */
+      .submit-btn-premium { background: #001f5c; color: #fff; width: 100%; padding: 20px; border-radius: 12px; font-size: 1.2rem; font-weight: 800; cursor: pointer; border: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+      .submit-btn-premium:hover { background: #006430; box-shadow: 0 10px 20px rgba(0, 100, 48, 0.3); }
 
   </style>
 </head>
@@ -270,9 +192,9 @@
             Consultoria Estratégica & Inteligência de Dados
           </div>
           
-          <h1 class="fade-up delay-1">Passe da intuição para a <br><span class="text-highlight">Decisão Baseada em Dados.</span></h1>
+          <h1 class="fade-up delay-1">Decisão baseada em <span class="text-highlight">dados</span>, não em intuição.</h1>
           
-          <p class="fade-up delay-2">Sistemas pesados (ERP) e planilhas desconexas escondem o lucro da sua empresa. A Cerrado Finanças destrava a sua operação, integrando processos e construindo painéis executivos para o gestor decidir com clareza absoluta.</p>
+          <p class="fade-up delay-2">Sistemas pesados (ERP) e planilhas desconexas escondem o lucro da sua empresa. A Cerrado Finanças atua como sua Controladoria Externa, destravando a operação e construindo painéis executivos para uma gestão transparente e rentável.</p>
           
           <div class="hero-actions-new fade-up delay-3">
             <a href="#contato" class="btn-gold">
@@ -295,7 +217,7 @@
 
   <div class="tech-stack" style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 40px 0;">
     <div class="container text-center">
-      <p style="color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Ecossistemas que dominamos e integramos</p>
+      <p style="color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; font-size: 0.9rem;">Ecossistemas que dominamos e integramos</p>
       <div class="tech-logos" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; align-items: center; color: #94a3b8; font-size: 1.5rem; font-weight: 800;">
         <span style="color: #0ea5e9;">SAP®</span>
         <span style="font-style: italic; color: #1e293b;">TOTVS Protheus</span>
@@ -311,33 +233,33 @@
       <div class="section-header fade-up text-center">
         <span class="tag">Identificação de Cenário</span>
         <h2 class="title">Por que sua empresa gera dados, mas não gera inteligência?</h2>
-        <p class="subtitle" style="margin: 0 auto; max-width: 600px;">Analise em qual lado da mesa a sua gestão está sentada hoje.</p>
+        <p class="subtitle" style="margin: 0 auto; max-width: 650px;">A maioria das corporações possui sistemas caros que viram "cemitérios de informações". Analise em qual lado da mesa a sua gestão está sentada hoje.</p>
       </div>
 
       <div class="comparison-grid">
         <div class="comp-card bad fade-up delay-1">
           <div class="comp-header">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            <h3 style="color: #e11d48;">O Cenário Atual (Silos)</h3>
+            <h3 style="color: #e11d48; margin-top: 10px;">O Cenário Atual (Silos)</h3>
           </div>
-          <ul class="comp-list">
+          <ul class="comp-list" style="margin-top: 20px;">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Fechamento financeiro lento (só sabe o resultado no dia 20).</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> O ERP (Protheus, SAP) é visto como um fardo pela equipe.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Comercial e Financeiro operam planilhas que não batem.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Decisões baseadas puramente no "saldo da conta bancária".</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> O ERP (Protheus, SAP) é visto como um fardo burocrático pela equipe.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Comercial e Financeiro operam planilhas separadas que nunca batem.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Decisões baseadas puramente na intuição ou no "saldo da conta".</li>
           </ul>
         </div>
 
         <div class="comp-card good fade-up delay-2">
           <div class="comp-header">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <h3 style="color: #006430;">Com a Cerrado Finanças</h3>
+            <h3 style="color: #006430; margin-top: 10px;">Com a Cerrado Finanças</h3>
           </div>
-          <ul class="comp-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> DRE Gerencial e Fluxo de Caixa automatizados no D+1.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ERP configurado para trabalhar pela equipe (APIs e Robôs).</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Fonte única de verdade: todas as áreas olhando o mesmo painel.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Visibilidade exata de margem de lucro por produto/serviço.</li>
+          <ul class="comp-list" style="margin-top: 20px;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> DRE Gerencial e Fluxo de Caixa automatizados e confiáveis.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ERP configurado para trabalhar pela equipe via integrações e robôs.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Fonte única de verdade: diretoria olhando o mesmo painel de B.I.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Visibilidade exata de margem de lucro por produto, serviço ou filial.</li>
           </ul>
         </div>
       </div>
@@ -349,7 +271,7 @@
       <div class="section-header fade-up text-center">
         <span class="tag">A Jornada da Maturidade</span>
         <h2 class="title">Nossa Consultoria de Inteligência</h2>
-        <p class="subtitle" style="margin: 0 auto; max-width: 800px;">Nós não entregamos planilhas, entregamos cultura de dados. Veja como elevamos o patamar analítico da sua empresa em 4 fases.</p>
+        <p class="subtitle" style="margin: 0 auto; max-width: 800px;">Nós não entregamos planilhas, entregamos cultura de dados corporativa. Veja como elevamos o patamar analítico da sua empresa em 4 fases consecutivas.</p>
       </div>
 
       <div class="carousel-container fade-up delay-1">
@@ -361,7 +283,7 @@
             <div class="method-step">
                 <span class="step-number-big">01</span>
                 <h3>Mapeamento & Diagnóstico</h3>
-                <p>Auditoria completa do seu sistema atual (ERP). Padronizamos a taxonomia financeira (Plano de Contas, Centros de Custo) e identificamos gargalos onde a informação se perde.</p>
+                <p>Auditoria completa do seu sistema atual (ERP). Padronizamos a taxonomia financeira (Plano de Contas, Centros de Custo) e identificamos gargalos operacionais onde a informação se perde.</p>
                 <div class="tech-tags">
                     <span>Auditoria Fiscal</span>
                     <span>Mapeamento de Processos</span>
@@ -370,7 +292,7 @@
 
             <div class="method-step">
                 <span class="step-number-big">02</span>
-                <h3>Saneamento (BPO)</h3>
+                <h3>Saneamento & BPO</h3>
                 <p>Terceirizamos e assumimos a rotina tática para limpar a casa. Nossa equipe organiza conciliações bancárias, ajusta históricos e garante que a base de dados seja 100% confiável.</p>
                 <div class="tech-tags">
                     <span>BPO Financeiro</span>
@@ -391,10 +313,10 @@
             <div class="method-step" style="border: 2px solid #fecb00; background: #fffcf0;">
                 <span class="step-number-big" style="color: rgba(254, 203, 0, 0.2);">04</span>
                 <h3 style="color: #001f5c;">Inteligência Executiva (BI)</h3>
-                <p>A fase de ouro. Extraímos os dados limpos do ERP e criamos os Dashboards em Power BI. Você passa a acompanhar o DRE, Ebitda e Metas Comerciais em tempo real.</p>
+                <p>A fase de ouro. Extraímos os dados limpos do ERP e criamos os Dashboards em Power BI. A diretoria passa a acompanhar o DRE, Ebitda e Metas Comerciais em tempo real pelo celular.</p>
                 <div class="tech-tags">
                     <span style="background: #fecb00;">Power BI</span>
-                    <span style="background: #001f5c; color: #fff;">Analytics</span>
+                    <span style="background: #001f5c; color: #fff;">Analytics Avançado</span>
                 </div>
             </div>
 
@@ -407,7 +329,7 @@
     <div class="container">
       <div class="section-header fade-up text-center">
         <h2 class="title">Nossa Atuação 360º</h2>
-        <p class="subtitle" style="margin: 0 auto;">Aplicamos engenharia de dados de ponta a ponta na sua operação.</p>
+        <p class="subtitle" style="margin: 0 auto; max-width: 600px;">Aplicamos engenharia de dados e finanças estruturadas de ponta a ponta na sua operação empresarial.</p>
       </div>
       
       <div class="carousel-container fade-up delay-1">
@@ -418,25 +340,25 @@
             <div class="service-card">
               <div class="icon-wrapper" style="background: #e0f2fe; color: #0284c7;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
               <h3>Destravamento de ERP</h3>
-              <p>Corrigimos parametrizações de sistemas rígidos. Criamos conexões para o software finalmente trabalhar a favor da sua equipe, e não o contrário.</p>
+              <p>Corrigimos parametrizações de sistemas rígidos. Criamos conexões para o software finalmente trabalhar a favor da sua equipe, reduzindo retrabalho.</p>
             </div>
 
             <div class="service-card">
               <div class="icon-wrapper" style="background: #fef3c7; color: #ca8a04;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
               <h3>Dashboards (BI)</h3>
-              <p>Diga adeus às dezenas de planilhas. Unificamos todas as suas métricas em painéis visuais, interativos e automatizados atualizados diariamente.</p>
+              <p>Diga adeus às dezenas de planilhas. Unificamos todas as suas métricas em painéis visuais, interativos e automatizados para a diretoria.</p>
             </div>
 
             <div class="service-card">
               <div class="icon-wrapper" style="background: #dcfce7; color: #16a34a;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
               <h3>Controladoria e BPO</h3>
-              <p>Terceirização estratégica. Monitoramento orçamentário rígido, planejamento tributário e criação de DREs voltadas para a visualização exata do lucro.</p>
+              <p>Terceirização estratégica. Monitoramento orçamentário rígido, planejamento tributário e criação de DREs voltadas para a visualização do lucro real.</p>
             </div>
             
             <div class="service-card">
               <div class="icon-wrapper" style="background: #f3e8ff; color: #4f46e5;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
               <h3>Mentoria e Treinamento</h3>
-              <p>Capacitamos o seu time interno de finanças e diretoria para analisar dados, gerir o fluxo de caixa e operar o ERP com máxima eficiência.</p>
+              <p>Capacitamos o seu time interno de finanças e diretoria para analisar dados, gerir o fluxo de caixa e operar o ERP com máxima eficiência técnica.</p>
             </div>
         </div>
       </div>
@@ -448,14 +370,14 @@
     <div class="container">
       <div class="authority-wrapper">
         <div class="auth-image fade-up">
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQHLfVdPcdHtdg/profile-displayphoto-scale_200_200/B4DZmw7_UQHsAY-/0/1759610141087?e=2147483647&v=beta&t=eqY_v9vbfrac8uDJVS5C3KgbPkm_YLIo0YiXZT2dS08" alt="Renato Rosa" style="aspect-ratio: 1/1;">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQHLfVdPcdHtdg/profile-displayphoto-scale_200_200/B4DZmw7_UQHsAY-/0/1759610141087?e=2147483647&v=beta&t=eqY_v9vbfrac8uDJVS5C3KgbPkm_YLIo0YiXZT2dS08" alt="Renato Rosa" style="aspect-ratio: 1/1; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
         </div>
         <div class="auth-content fade-up delay-1">
           <span class="tag">A Liderança Técnica</span>
-          <h3>Renato de Oliveira Rosa</h3>
-          <p class="auth-role">CEO e Arquiteto de Soluções</p>
-          <p class="auth-bio">A Cerrado Finanças é liderada por conhecimento acadêmico de ponta aliado à execução tática. Transformamos teorias complexas de controladoria em software e processos que dão resultado no caixa da empresa.</p>
-          <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank" class="btn-primary" style="background:var(--linkedin); border-color:var(--linkedin);">Conectar no LinkedIn</a>
+          <h3 style="font-size: 2.2rem; font-weight: 800; color: #001f5c; margin-bottom: 5px;">Renato de Oliveira Rosa</h3>
+          <p class="auth-role" style="color: #006430; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">CEO e Arquiteto de Soluções</p>
+          <p class="auth-bio" style="font-size: 1.1rem; line-height: 1.6; color: #475569; margin-bottom: 30px;">A Cerrado Finanças é liderada por conhecimento acadêmico de ponta aliado à execução tática. Transformamos teorias complexas de controladoria em software, BI e processos que dão resultado mensurável no caixa da empresa.</p>
+          <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank" class="btn-primary" style="background:var(--linkedin); border-color:var(--linkedin); padding: 15px 35px; border-radius: 50px;">Conectar no LinkedIn</a>
         </div>
       </div>
     </div>
@@ -463,19 +385,28 @@
 
   <section class="section section-bg" id="contato">
     <div class="container">
-      <div class="contact-wrapper fade-up">
-        <div class="section-header" style="margin-bottom: 40px;">
-          <h2 class="title">Vamos destravar o seu negócio</h2>
-          <p class="subtitle">Preencha o formulário para iniciarmos o diagnóstico estratégico da sua operação.</p>
+      <div class="contact-wrapper fade-up" style="background: #fff; padding: 50px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+        <div class="section-header text-center" style="margin-bottom: 40px;">
+          <h2 class="title" style="font-size: 2.5rem;">Vamos destravar o seu negócio</h2>
+          <p class="subtitle" style="max-width: 600px; margin: 0 auto;">Preencha o formulário para iniciarmos o diagnóstico estratégico da sua operação.</p>
         </div>
         <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST">
-          <div class="form-grid">
-            <div class="form-group"><label>Seu Nome *</label><input type="text" name="name" required /></div>
-            <div class="form-group"><label>E-mail Corporativo *</label><input type="email" name="email" required /></div>
-            <div class="form-group full"><label>Qual o maior gargalo na sua gestão hoje? *</label><textarea name="message" rows="4" required placeholder="Ex: Meu ERP não gera os relatórios que eu preciso..."></textarea></div>
+          <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="form-group" style="display: flex; flex-direction: column;">
+                <label style="font-weight: 700; margin-bottom: 8px; color: #0f172a;">Seu Nome *</label>
+                <input type="text" name="name" required style="padding: 16px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc;" />
+            </div>
+            <div class="form-group" style="display: flex; flex-direction: column;">
+                <label style="font-weight: 700; margin-bottom: 8px; color: #0f172a;">E-mail Corporativo *</label>
+                <input type="email" name="email" required style="padding: 16px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc;" />
+            </div>
+            <div class="form-group full" style="grid-column: 1 / -1; display: flex; flex-direction: column;">
+                <label style="font-weight: 700; margin-bottom: 8px; color: #0f172a;">Qual o maior gargalo na sua gestão hoje? *</label>
+                <textarea name="message" rows="4" required placeholder="Ex: Meu ERP não gera os relatórios que eu preciso..." style="padding: 16px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; resize: vertical;"></textarea>
+            </div>
           </div>
           <input type="hidden" name="_next" value="https://cerradofinancas.com.br/obrigado.html" />
-          <button type="submit" class="submit-btn" style="background: #001f5c; color: #fff; width: 100%; padding: 18px; border-radius: 8px; font-size: 1.1rem; font-weight: 800; cursor: pointer; border: none; transition: 0.3s;">Solicitar Reunião de Diagnóstico</button>
+          <button type="submit" class="submit-btn-premium" style="margin-top: 30px;">Solicitar Reunião de Diagnóstico</button>
         </form>
       </div>
     </div>
