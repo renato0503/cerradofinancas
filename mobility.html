@@ -8,7 +8,8 @@ permalink: /solucoes/mobility/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrado Mobility | Gestão Inteligente de Frotas</title>
-    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@ permalink: /solucoes/mobility/
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
 
     <style>
-        /* ================= CORES E VARIÁVEIS GOVTECH ================= */
+        /* ================= CORES E VARIÁVEIS CERRADO MOBILITY ================= */
         :root {
             --gov-dark: #0f172a;
             --gov-blue: #0ea5e9;
@@ -40,22 +41,52 @@ permalink: /solucoes/mobility/
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
         .mobility-hero {
             background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
             border-bottom: 4px solid var(--gov-blue);
-            text-align: center;
         }
         .mobility-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 60%); pointer-events: none;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 60%); pointer-events: none;
         }
-        .hero-tag { background: rgba(14, 165, 233, 0.15); color: #38bdf8; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-        .mobility-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .mobility-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+
+        .mob-split-layout { display: flex; align-items: center; gap: 60px; }
+        .mob-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .mob-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS */
+        .hero-app-icon {
+            background: #ffffff;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            border-radius: 60px; /* Squircle Apple */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); box-shadow: 0 40px 80px rgba(14, 165, 233, 0.3); }
+        .hero-app-icon img { max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));}
+
+        .hero-tag { background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px; }
+        .mobility-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .mobility-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
         .btn-action { background: var(--gov-blue); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--gov-blue-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4); }
+
+        @media(max-width: 992px){ 
+            .mob-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .mob-text-content { text-align: center; }
+            .hero-app-icon { max-width: 220px; border-radius: 40px; transform: none; }
+        }
 
         /* ================= SIMULADOR INTERATIVO ================= */
         .demo-section { padding: 100px 0; background: #fff; }
@@ -105,7 +136,7 @@ permalink: /solucoes/mobility/
         
         .map-labels { display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.9rem; font-weight: 600; padding: 0 10px; }
 
-        /* ================= FUNCIONALIDADES (MODULAR E CORPORATIVO) ================= */
+        /* ================= FUNCIONALIDADES ================= */
         .features-section { padding: 100px 0; background: #f8fafc; }
         .feature-grid { display: flex; flex-direction: column; gap: 60px; }
         
@@ -122,7 +153,6 @@ permalink: /solucoes/mobility/
         .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
         .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--gov-blue); border-radius: 50%; }
         
-        /* Box de Ilustração SVG */
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(14, 165, 233, 0.15)); }
 
@@ -134,14 +164,26 @@ permalink: /solucoes/mobility/
 
     <section class="mobility-hero">
         <div class="container">
-            <span class="hero-tag fade-up">GovTech & Corporate SaaS</span>
-            <h1 class="fade-up delay-1">Cerrado Mobility</h1>
-            <p class="fade-up delay-2">A plataforma definitiva para gestão de frota pública e corporativa. Operação com dinâmica "estilo Uber", telemetria ao vivo via WebSocket e controle absoluto de insumos e infrações.</p>
-            <div class="fade-up delay-3">
-                <a href="#simulador" class="btn-action">
-                    Testar Simulador ao Vivo
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
+            <div class="mob-split-layout">
+                
+                <div class="mob-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/mobility.png' | relative_url }}" alt="Mobility Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}'">
+                    </div>
+                </div>
+
+                <div class="mob-text-content">
+                    <span class="hero-tag fade-up delay-1">GovTech & Corporate SaaS</span>
+                    <h1 class="fade-up delay-1">Cerrado Mobility</h1>
+                    <p class="fade-up delay-2">A plataforma definitiva para gestão de frota pública e corporativa. Operação com dinâmica "estilo Uber", telemetria ao vivo via WebSocket e controle absoluto de insumos e infrações.</p>
+                    <div class="fade-up delay-3">
+                        <a href="#simulador" class="btn-action">
+                            Testar Simulador ao Vivo
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -352,7 +394,6 @@ permalink: /solucoes/mobility/
     <script src="{{ '/js/main.js' | relative_url }}"></script>
 
     <script>
-        // Animação de rolagem (Fade Up)
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -369,7 +410,6 @@ permalink: /solucoes/mobility/
             });
         });
 
-        // Lógica do Simulador Interativo
         function simulateTrip() {
             const btn = document.getElementById('btnRequest');
             const appInfo = document.getElementById('appDriverInfo');
@@ -377,7 +417,6 @@ permalink: /solucoes/mobility/
             const telStatus = document.getElementById('telStatus');
             const telSpeed = document.getElementById('telSpeed');
             const telKm = document.getElementById('telKm');
-            
             const routeProgress = document.getElementById('routeProgress');
             const carDot = document.getElementById('carDot');
 
