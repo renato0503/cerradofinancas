@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/footer.css">
 
   <style>
-      /* --- NOVO HERO GOVTECH (LOGO À ESQUERDA NO CARD BRANCO) --- */
+      /* --- NOVO HERO GOVTECH --- */
       .hero-gov {
           padding: 120px 0 80px;
           background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
@@ -27,70 +27,25 @@
           border-bottom: 4px solid #0ea5e9;
       }
 
-      .gov-split-layout {
-          display: flex;
-          align-items: center;
-          gap: 60px;
-      }
-
-      .gov-visual-content {
-          flex: 0.8;
-          display: flex;
-          justify-content: center;
-      }
-
+      .gov-split-layout { display: flex; align-items: center; gap: 60px; }
+      .gov-visual-content { flex: 0.8; display: flex; justify-content: center; }
+      
       .gov-logo-card {
-          background: #ffffff;
-          padding: 40px;
-          border-radius: 30px;
-          box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-          width: 100%;
-          max-width: 380px;
-          aspect-ratio: 1 / 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transform: rotate(-2deg);
-          transition: transform 0.4s ease;
+          background: #ffffff; padding: 40px; border-radius: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+          width: 100%; max-width: 380px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+          transform: rotate(-2deg); transition: transform 0.4s ease;
       }
       .gov-logo-card:hover { transform: rotate(0deg) translateY(-10px); box-shadow: 0 35px 60px rgba(14, 165, 233, 0.2); }
       .gov-logo-card img { max-width: 100%; height: auto; display: block; }
 
-      .gov-text-content {
-          flex: 1.2;
-          text-align: left;
-      }
-
+      .gov-text-content { flex: 1.2; text-align: left; }
       .gov-hero-tag {
-          background: rgba(14, 165, 233, 0.15);
-          color: #38bdf8;
-          padding: 8px 20px;
-          border-radius: 50px;
-          font-weight: 800;
-          font-size: 0.85rem;
-          display: inline-block;
-          margin-bottom: 24px;
-          border: 1px solid rgba(14, 165, 233, 0.3);
-          text-transform: uppercase;
-          letter-spacing: 1px;
+          background: rgba(14, 165, 233, 0.15); color: #38bdf8; padding: 8px 20px; border-radius: 50px;
+          font-weight: 800; font-size: 0.85rem; display: inline-block; margin-bottom: 24px;
+          border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px;
       }
-
-      .gov-hero-title {
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 900;
-          line-height: 1.1;
-          margin-bottom: 24px;
-          letter-spacing: -1px;
-          color: #fff;
-      }
-
-      .gov-hero-subtitle {
-          font-size: 1.15rem;
-          color: #cbd5e1;
-          max-width: 700px;
-          line-height: 1.6;
-          margin: 0;
-      }
+      .gov-hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+      .gov-hero-subtitle { font-size: 1.15rem; color: #cbd5e1; max-width: 700px; line-height: 1.6; margin: 0; }
 
       @media (max-width: 992px) {
           .gov-split-layout { flex-direction: column; text-align: center; gap: 40px; }
@@ -99,102 +54,120 @@
           .gov-logo-card { transform: none; padding: 30px; }
       }
 
-      /* --- ESTRUTURA DAS LÂMINAS --- */
-      .gov-lamina { padding: 100px 0; overflow: hidden; border-bottom: 1px solid rgba(0,0,0,0.05); }
-      .lamina-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-      .lamina-reverse { flex-direction: row-reverse; }
-      .lamina-content { flex: 1.1; }
-      .lamina-visual { flex: 0.9; position: relative; }
-
-      .gov-app-icon {
-          width: 85px; height: 85px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
-          font-size: 3rem; margin-bottom: 24px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      }
-
-      .lamina-subtitle { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
-      .lamina-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 20px 0; line-height: 1.1; }
-      .lamina-desc { font-size: 1.15rem; line-height: 1.6; margin-bottom: 35px; }
-
-      /* Painel Dinâmico: Dor vs Solução + SVG */
-      .lamina-interactive-panel {
-          background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-radius: 24px; padding: 40px;
-          box-shadow: 0 25px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,255,255,0.4); transition: transform 0.3s ease;
-      }
-      .lamina-interactive-panel:hover { transform: translateY(-5px); }
-
-      /* Animações dos SVGs */
-      .lamina-svg-wrapper { text-align: center; margin-bottom: 30px; height: 140px; display: flex; justify-content: center; align-items: center; }
-      .lamina-svg-wrapper svg { height: 100%; max-width: 100%; }
-      @keyframes float-svg { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
-      .anim-float { animation: float-svg 4s ease-in-out infinite; }
-
-      .pain-block { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid rgba(0,0,0,0.08); }
-      .solution-block { margin-bottom: 0; }
-      .interactive-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-      .interactive-label.dor { color: #e11d48; }
-      .interactive-label.solucao { color: #059669; }
-      .interactive-text { font-size: 1rem; line-height: 1.5; margin: 0; color: #334155; font-weight: 500; }
-
-      /* Tags e Botões */
-      .gov-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-      .gov-tags span { font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 50px; }
-      .btn-lamina { display: inline-block; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1.05rem; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; }
-
-      /* --- TEMAS DE CORES --- */
+      /* --- FÁBRICA DE SOFTWARE --- */
+      .fabrica-section { padding: 100px 0; background: #fff; border-bottom: 1px solid rgba(0,0,0,0.05); }
+      .fabrica-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+      .fabrica-content { flex: 1.2; }
+      .fabrica-visual { flex: 0.8; }
       
-      /* Escuro: Fábrica, GovRH, Social */
-      .theme-dark-slate { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; }
-      .theme-dark-slate .lamina-subtitle { color: #38bdf8; }
-      .theme-dark-slate .lamina-desc { color: #cbd5e1; }
-      .theme-dark-slate .lamina-interactive-panel { background: rgba(30, 41, 59, 0.6); border-color: rgba(255,255,255,0.1); }
-      .theme-dark-slate .interactive-text { color: #f8fafc; }
-      .theme-dark-slate .pain-block { border-color: rgba(255,255,255,0.1); }
-      .theme-dark-slate .interactive-label.dor { color: #fb7185; }
-      .theme-dark-slate .interactive-label.solucao { color: #34d399; }
-      .theme-dark-slate .gov-app-icon { background: #38bdf8; color: #0f172a; }
-      .theme-dark-slate .btn-lamina { background: #38bdf8; color: #0f172a; }
-      .theme-dark-slate .btn-lamina:hover { background: #0ea5e9; color: #fff; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
-      .theme-dark-slate .gov-tags span { background: rgba(56, 189, 248, 0.1); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.2); }
+      .fabrica-icon { width: 70px; height: 70px; border-radius: 16px; background: #f0f9ff; color: #0ea5e9; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; border: 1px solid #bae6fd;}
+      .fabrica-title { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; line-height: 1.1; letter-spacing: -0.5px;}
+      .fabrica-desc { font-size: 1.15rem; color: #475569; line-height: 1.6; margin-bottom: 30px; }
 
-      /* Claro: Azul (GovDash, Docs) */
-      .theme-light-blue { background: #f0f9ff; color: #0f172a; }
-      .theme-light-blue .lamina-subtitle { color: #0284c7; }
-      .theme-light-blue .lamina-desc { color: #475569; }
-      .theme-light-blue .interactive-text { color: #334155; }
-      .theme-light-blue .gov-app-icon { background: #0284c7; color: #fff; }
-      .theme-light-blue .btn-lamina { background: #0284c7; color: #fff; }
-      .theme-light-blue .btn-lamina:hover { background: #0369a1; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.2); }
-      .theme-light-blue .gov-tags span { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+      .fabrica-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+      .fabrica-tags span { font-size: 0.85rem; font-weight: 700; padding: 8px 16px; border-radius: 50px; background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; }
 
-      /* Escuro: Azul Marinho (Mobility, Prev) */
-      .theme-dark-blue { background: linear-gradient(135deg, #172554 0%, #1e3a8a 100%); color: #fff; }
-      .theme-dark-blue .lamina-subtitle { color: #60a5fa; }
-      .theme-dark-blue .lamina-desc { color: #bfdbfe; }
-      .theme-dark-blue .lamina-interactive-panel { background: rgba(30, 58, 138, 0.5); border-color: rgba(255,255,255,0.1); }
-      .theme-dark-blue .interactive-text { color: #f8fafc; }
-      .theme-dark-blue .pain-block { border-color: rgba(255,255,255,0.1); }
-      .theme-dark-blue .interactive-label.dor { color: #fb7185; }
-      .theme-dark-blue .interactive-label.solucao { color: #34d399; }
-      .theme-dark-blue .gov-app-icon { background: #3b82f6; color: #fff; }
-      .theme-dark-blue .btn-lamina { background: #3b82f6; color: #fff; }
-      .theme-dark-blue .btn-lamina:hover { background: #2563eb; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
-      .theme-dark-blue .gov-tags span { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+      .fabrica-interactive-panel { background: #0f172a; border-radius: 24px; padding: 40px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); border: 1px solid #1e293b; color: #fff;}
+      .fabrica-svg-wrapper { text-align: center; margin-bottom: 30px; height: 160px; display: flex; justify-content: center; align-items: center; }
+      .fabrica-svg-wrapper svg { height: 100%; max-width: 100%; }
 
-      /* Claro: Cinza/Cloud (Edu, Privacy) */
-      .theme-light-gray { background: #f8fafc; color: #0f172a; }
-      .theme-light-gray .lamina-subtitle { color: #4f46e5; }
-      .theme-light-gray .lamina-desc { color: #475569; }
-      .theme-light-gray .interactive-text { color: #334155; }
-      .theme-light-gray .gov-app-icon { background: #4f46e5; color: #fff; }
-      .theme-light-gray .btn-lamina { background: #4f46e5; color: #fff; }
-      .theme-light-gray .btn-lamina:hover { background: #4338ca; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2); }
-      .theme-light-gray .gov-tags span { background: #e0e7ff; color: #4338ca; border: 1px solid #c7d2fe; }
+      @media (max-width: 992px) { .fabrica-container { flex-direction: column; } .fabrica-content, .fabrica-visual { width: 100%; } }
 
-      @media (max-width: 992px) {
-          .lamina-container, .lamina-container.lamina-reverse { flex-direction: column; gap: 40px; }
-          .lamina-title { font-size: 2rem; }
-          .lamina-visual { width: 100%; }
-      }
+      /* --- PLATAFORMAS (CARROSSEL) --- */
+      .platforms-section { padding: 100px 0; background: #f8fafc; }
+      .plat-header { text-align: center; margin-bottom: 50px; }
+      .plat-header h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
+
+      .carousel-wrapper { position: relative; max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+      .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 30px; padding-bottom: 40px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+      .carousel-track::-webkit-scrollbar { display: none; }
+
+      /* Setas do Carrossel */
+      .carousel-btn { position: absolute; top: 40%; transform: translateY(-50%); background: #fff; border: 1px solid #cbd5e1; border-radius: 50%; width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 10; color: #0f172a; font-size: 20px; font-weight: bold; transition: 0.3s; }
+      .carousel-btn:hover { background: #0f172a; color: #fff; border-color: #0f172a; transform: translateY(-50%) scale(1.1); }
+      .carousel-btn.prev { left: -10px; }
+      .carousel-btn.next { right: -10px; }
+      @media (max-width: 1024px) { .carousel-btn { display: none; } }
+
+      /* Cards do Carrossel */
+      .plat-card { flex: 0 0 400px; scroll-snap-align: start; background: #fff; border-radius: 24px; border: 1px solid #e2e8f0; padding: 40px; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; overflow: hidden; }
+      .plat-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+      @media (max-width: 768px) { .plat-card { flex: 0 0 88vw; padding: 30px; } }
+
+      .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+      .card-header .icon { font-size: 2.2rem; width: 60px; height: 60px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 16px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+      .card-header-text { display: flex; flex-direction: column; }
+      .card-header-text span { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px; }
+      .card-header h3 { font-size: 1.5rem; font-weight: 900; color: #0f172a; margin: 0; line-height: 1.1; letter-spacing: -0.5px;}
+
+      /* Área de SVG Viva */
+      .card-svg-area { border-radius: 16px; height: 180px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; padding: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative;}
+      .card-svg-area svg { height: 100%; max-width: 100%; z-index: 2; position: relative; }
+      
+      .plat-desc { font-size: 1.05rem; color: #475569; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+
+      .card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; padding-top: 20px; border-top: 1px dashed #e2e8f0; }
+      .card-tags span { background: #f8fafc; color: #334155; font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 6px; border: 1px solid #e2e8f0; }
+
+      .btn-card-plat { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; padding: 18px 0; border-radius: 14px; font-weight: 800; font-size: 1.05rem; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+
+      /* ANIMAÇÕES SVG NATIVAS */
+      @keyframes pulse-glow { 0% { opacity: 0.4; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0.4; transform: scale(0.9); } }
+      @keyframes float-up-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes draw-line { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
+      @keyframes spin-slow { 100% { transform: rotate(360deg); } }
+      @keyframes slide-right { 0% { transform: translateX(-20px); opacity: 0;} 50% { opacity: 1;} 100% { transform: translateX(20px); opacity: 0;} }
+
+      /* --- TEMAS DOS CARDS --- */
+      
+      /* GovDash (Azul Escuro/Laranja) */
+      .theme-govdash .card-header .icon { background: #e0f2fe; color: #0284c7; }
+      .theme-govdash .card-svg-area { background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); }
+      .theme-govdash .btn-card-plat { background: #0284c7; color: #fff; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2); }
+      .theme-govdash .btn-card-plat:hover { background: #0369a1; transform: translateY(-3px); }
+      
+      /* Mobility (Azul Marinho) */
+      .theme-mobility .card-header .icon { background: #eff6ff; color: #2563eb; }
+      .theme-mobility .card-svg-area { background: radial-gradient(circle at center, #1e3a8a 0%, #172554 100%); }
+      .theme-mobility .btn-card-plat { background: #2563eb; color: #fff; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2); }
+      .theme-mobility .btn-card-plat:hover { background: #1d4ed8; transform: translateY(-3px); }
+
+      /* Edu (Índigo/Roxo) */
+      .theme-edu .card-header .icon { background: #e0e7ff; color: #4f46e5; }
+      .theme-edu .card-svg-area { background: radial-gradient(circle at center, #312e81 0%, #1e1b4b 100%); }
+      .theme-edu .btn-card-plat { background: #4f46e5; color: #fff; box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2); }
+      .theme-edu .btn-card-plat:hover { background: #4338ca; transform: translateY(-3px); }
+
+      /* GovRH (Esmeralda/Teal) */
+      .theme-govrh .card-header .icon { background: #ccfbf1; color: #0d9488; }
+      .theme-govrh .card-svg-area { background: radial-gradient(circle at center, #134e4a 0%, #064e3b 100%); }
+      .theme-govrh .btn-card-plat { background: #0d9488; color: #fff; box-shadow: 0 8px 20px rgba(13, 148, 136, 0.2); }
+      .theme-govrh .btn-card-plat:hover { background: #0f766e; transform: translateY(-3px); }
+
+      /* Prev (Ouro/Azul Escuro) */
+      .theme-prev .card-header .icon { background: #fef3c7; color: #d97706; }
+      .theme-prev .card-svg-area { background: radial-gradient(circle at center, #1e293b 0%, #020617 100%); }
+      .theme-prev .btn-card-plat { background: #d97706; color: #fff; box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2); }
+      .theme-prev .btn-card-plat:hover { background: #b45309; transform: translateY(-3px); }
+
+      /* Privacy (Cyber Cyan) */
+      .theme-privacy .card-header .icon { background: #cffafe; color: #0891b2; }
+      .theme-privacy .card-svg-area { background: radial-gradient(circle at center, #083344 0%, #000000 100%); }
+      .theme-privacy .btn-card-plat { background: #0891b2; color: #fff; box-shadow: 0 8px 20px rgba(8, 145, 178, 0.2); }
+      .theme-privacy .btn-card-plat:hover { background: #0e7490; transform: translateY(-3px); }
+
+      /* Social (Violeta/Fuchsia) */
+      .theme-social .card-header .icon { background: #fae8ff; color: #c026d3; }
+      .theme-social .card-svg-area { background: radial-gradient(circle at center, #4c1d95 0%, #2e1065 100%); }
+      .theme-social .btn-card-plat { background: #c026d3; color: #fff; box-shadow: 0 8px 20px rgba(192, 38, 211, 0.2); }
+      .theme-social .btn-card-plat:hover { background: #a21caf; transform: translateY(-3px); }
+
+      /* Docs (Sky Blue / Cloud) */
+      .theme-docs .card-header .icon { background: #f1f5f9; color: #0284c7; }
+      .theme-docs .card-svg-area { background: radial-gradient(circle at center, #0ea5e9 0%, #0369a1 100%); }
+      .theme-docs .btn-card-plat { background: #0284c7; color: #fff; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2); }
+      .theme-docs .btn-card-plat:hover { background: #0369a1; transform: translateY(-3px); }
+
   </style>
 </head>
 <body>
@@ -204,394 +177,309 @@
   <section class="hero-gov">
     <div class="container">
       <div class="gov-split-layout">
-        
         <div class="gov-visual-content">
           <div class="gov-logo-card">
             <img src="img/cerradogov.png" alt="Cerrado Gov Logo">
           </div>
         </div>
-
         <div class="gov-text-content">
           <span class="gov-hero-tag">GovTech & Corporate Software</span>
-          <h1 class="gov-hero-title">Soluções de Alto Impacto para o Executivo.</h1>
-          <p class="gov-hero-subtitle">Nossa missão é transformar a complexidade da gestão pública e corporativa em plataformas digitais blindadas, transparentes e escaláveis. Conheça nosso ecossistema de soluções de prateleira.</p>
+          <h1 class="gov-hero-title">O Ecossistema de Gestão Pública.</h1>
+          <p class="gov-hero-subtitle">Transformamos a complexidade da gestão municipal e corporativa em plataformas digitais blindadas, transparentes e escaláveis. Construímos sob demanda ou fornecemos nossas soluções de prateleira.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <section class="gov-lamina theme-dark-slate" id="fabrica">
-      <div class="lamina-container">
-          <div class="lamina-content">
-              <div class="gov-app-icon">💻</div>
-              <span class="lamina-subtitle">Engenharia Sob Demanda</span>
-              <h2 class="lamina-title">Fábrica de Software Cerrado</h2>
-              <p class="lamina-desc">Não somos apenas um produto, somos o <strong>motor</strong>. Nosso braço de engenharia atua sob demanda para arquitetar e desenvolver os projetos mais críticos e exclusivos de prefeituras e corporações.</p>
+  <section class="fabrica-section">
+      <div class="fabrica-container">
+          <div class="fabrica-content">
+              <div class="fabrica-icon">💻</div>
+              <h2 class="fabrica-title">Fábrica de Software Cerrado</h2>
+              <p class="fabrica-desc">Não somos apenas um produto, somos o <strong>motor</strong>. Nosso braço de engenharia de alta performance atua sob demanda para arquitetar, integrar e desenvolver os projetos mais críticos de prefeituras e corporações de grande porte.</p>
               
-              <div class="gov-tags">
-                  <span>Governança LGPD</span>
-                  <span>AWS / Azure</span>
-                  <span>Scrum & Agile</span>
+              <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Squads Completos:</strong> POs, Scrum Masters, Arquitetos Cloud e QA.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>SLA Rigoroso:</strong> Resposta garantida de até 4 horas para incidentes.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Segurança de Dados:</strong> Códigos 100% testados e aderentes à LGPD.</li>
+              </ul>
+
+              <div class="fabrica-tags">
+                  <span>Arquitetura AWS / Azure</span>
+                  <span>APIs REST</span>
+                  <span>Docker / Kubernetes</span>
               </div>
           </div>
           
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="20" y="20" width="160" height="110" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="4"/>
-                          <circle cx="40" cy="40" r="5" fill="#ef4444"/>
-                          <circle cx="60" cy="40" r="5" fill="#f59e0b"/>
-                          <circle cx="80" cy="40" r="5" fill="#10b981"/>
-                          <path d="M40 80 L60 60 L40 100" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                          <line x1="80" y1="100" x2="140" y2="100" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+          <div class="fabrica-visual">
+              <div class="fabrica-interactive-panel">
+                  <div class="fabrica-svg-wrapper">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="20" y="20" width="160" height="110" rx="12" fill="#0f172a" stroke="#0ea5e9" stroke-width="3"/>
+                          <path d="M20 40 H180" stroke="#1e293b" stroke-width="2"/>
+                          <circle cx="35" cy="30" r="4" fill="#ef4444"/>
+                          <circle cx="50" cy="30" r="4" fill="#f59e0b"/>
+                          <circle cx="65" cy="30" r="4" fill="#10b981"/>
+                          <path d="M40 70 L55 55 L40 85" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="anim-float"/>
+                          <line x1="70" y1="85" x2="130" y2="85" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation: draw-line 2s infinite alternate;"/>
+                          <line x1="40" y1="105" x2="100" y2="105" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 A Dor do Órgão</span>
-                      <p class="interactive-text">Sistemas legados engessados e lentidão na entrega tecnológica por fornecedores sem padrão de qualidade.</p>
-                  </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ Nossa Engenharia</span>
-                      <p class="interactive-text">Squads completos (POs, Arquitetos, QA) com SLA rigoroso de resposta de até 4 horas para incidentes críticos.</p>
-                  </div>
+                  <h3 style="font-size: 1.3rem; color: #38bdf8; margin: 0 0 10px 0; font-weight: 800;">Desenvolvimento Ágil e Seguro</h3>
+                  <p style="font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Entregas contínuas utilizando Scrum/Kanban para escalar a transformação digital do seu governo de forma sustentável.</p>
               </div>
           </div>
       </div>
   </section>
 
-  <section class="gov-lamina theme-light-blue lamina-reverse" id="govdash">
-      <div class="lamina-container lamina-reverse">
-          <div class="lamina-content">
-              <div class="gov-app-icon">📊</div>
-              <span class="lamina-subtitle">BI Executivo Municipal</span>
-              <h2 class="lamina-title">Cerrado GovDash</h2>
-              <p class="lamina-desc">O verdadeiro "Cockpit" do prefeito e secretários. Uma central de inteligência que extrai dados de bancos antigos e transforma tudo em painéis de decisão em tempo real.</p>
-              
-              <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-lamina">Acessar Demonstração</a>
-
-              <div class="gov-tags">
-                  <span>UX Premium</span>
-                  <span>Alerta LRF 54%</span>
-                  <span>Motor ETL</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="20" y="30" width="40" height="100" rx="6" fill="#0284c7"/>
-                          <rect x="80" y="60" width="40" height="70" rx="6" fill="#38bdf8"/>
-                          <rect x="140" y="90" width="40" height="40" rx="6" fill="#bae6fd"/>
-                          <path d="M40 30 L100 60 L160 90" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
-                          <circle cx="160" cy="90" r="6" fill="#f59e0b"/>
-                      </svg>
-                  </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 O Problema Oculto</span>
-                      <p class="interactive-text">Decisões tomadas com base em planilhas atrasadas. Limite da LRF estourando sem aviso prévio do RH.</p>
-                  </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ A Visão Clara</span>
-                      <p class="interactive-text">Termômetros visuais da folha (54%). Acompanhe as filas do SUS, obras e caixa unificados em 1 clique.</p>
-                  </div>
-              </div>
+  <section class="platforms-section">
+      <div class="container">
+          <div class="plat-header">
+              <h2>Nossas Plataformas (Prateleira)</h2>
+              <p style="font-size: 1.15rem; color: #64748b; max-width: 600px; margin: 10px auto 0;">Explore nosso ecossistema de soluções prontas para acelerar a gestão do seu órgão.</p>
           </div>
       </div>
-  </section>
 
-  <section class="gov-lamina theme-dark-blue" id="mobility">
-      <div class="lamina-container">
-          <div class="lamina-content">
-              <div class="gov-app-icon">🚗</div>
-              <span class="lamina-subtitle">Gestão Inteligente de Frotas</span>
-              <h2 class="lamina-title">Cerrado Mobility</h2>
-              <p class="lamina-desc">A experiência de um app de transporte privado construído exclusivamente para a frota oficial. Controle total de roteiros, insumos e multas.</p>
+      <div class="carousel-wrapper">
+          <button class="carousel-btn prev" onclick="scrollCarousel('platTrack', -1)">&#10094;</button>
+          <button class="carousel-btn next" onclick="scrollCarousel('platTrack', 1)">&#10095;</button>
+
+          <div class="carousel-track" id="platTrack">
               
-              <a href="/solucoes/mobility/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>App Android/iOS</span>
-                  <span>Rastreio GPS</span>
-                  <span>Integração SERPRO</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M20 75 Q 100 20 180 130" stroke="#3b82f6" stroke-width="6" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
-                          <path d="M100 75 C 100 75 85 55 85 40 C 85 25 115 25 115 40 C 115 55 100 75 100 75 Z" fill="#60a5fa"/>
-                          <circle cx="100" cy="40" r="6" fill="#172554"/>
+              <div class="plat-card theme-govdash">
+                  <div class="card-header">
+                      <div class="icon">📊</div>
+                      <div class="card-header-text">
+                          <span>Inteligência de Dados</span>
+                          <h3>Cerrado GovDash</h3>
+                      </div>
+                  </div>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 30 H200 M0 70 H200 M0 110 H200" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4"/>
+                          <rect x="40" y="70" width="30" height="60" rx="4" fill="#0284c7" style="transform-origin: bottom; animation: float-up-down 3s ease-in-out infinite;"/>
+                          <rect x="85" y="40" width="30" height="90" rx="4" fill="#38bdf8" style="transform-origin: bottom; animation: float-up-down 3s ease-in-out infinite 0.5s;"/>
+                          <rect x="130" y="20" width="30" height="110" rx="4" fill="#bae6fd" style="transform-origin: bottom; animation: float-up-down 3s ease-in-out infinite 1s;"/>
+                          <path d="M55 60 L100 30 L145 10" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+                          <circle cx="145" cy="10" r="6" fill="#f59e0b" style="animation: pulse-glow 2s infinite;"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 O Ralo Financeiro</span>
-                      <p class="interactive-text">Desvios de rota injustificados, multas perdidas na gaveta e consumo de combustível adulterado.</p>
+                  <p class="plat-desc">O "Cockpit" do prefeito. Transforma dados em painéis de decisão em tempo real, alertando sobre limites da LRF (54%), saúde e andamento de obras.</p>
+                  <div class="card-tags">
+                      <span>Termômetro LRF</span>
+                      <span>Painel Executivo</span>
+                      <span>Integração ETL</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ O Controle Total</span>
-                      <p class="interactive-text">O servidor pede a viagem no app. O painel web cruza KM com litros abastecidos para garantir a eficiência.</p>
+                  <a href="/solucoes/govdash/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
+              <div class="plat-card theme-mobility">
+                  <div class="card-header">
+                      <div class="icon">🚗</div>
+                      <div class="card-header-text">
+                          <span>Frotas e Telemetria</span>
+                          <h3>Cerrado Mobility</h3>
+                      </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="gov-lamina theme-light-gray lamina-reverse" id="edu">
-      <div class="lamina-container lamina-reverse">
-          <div class="lamina-content">
-              <div class="gov-app-icon">🎓</div>
-              <span class="lamina-subtitle">Gestão Escolar e Pedagógica</span>
-              <h2 class="lamina-title">Cerrado Edu</h2>
-              <p class="lamina-desc">Sistema com mais de 28 módulos cobrindo 100% da vida acadêmica municipal. Da chamada digital até a Inteligência Artificial que prevê a evasão.</p>
-              
-              <a href="/solucoes/edu/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>Diário Eletrônico</span>
-                  <span>IA Preditiva</span>
-                  <span>Merenda/PNAE</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M100 30 L170 60 L100 90 L30 60 Z" fill="#4f46e5"/>
-                          <path d="M50 70 V110 C50 120 100 130 100 130 C100 130 150 120 150 110 V70" fill="none" stroke="#4f46e5" stroke-width="8" stroke-linecap="round"/>
-                          <line x1="170" y1="60" x2="170" y2="100" stroke="#f59e0b" stroke-width="4"/>
-                          <circle cx="170" cy="100" r="4" fill="#f59e0b"/>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M30 100 Q 100 20 170 120" stroke="#3b82f6" stroke-width="6" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
+                          <circle cx="100" cy="50" r="10" fill="#60a5fa" style="animation: pulse-glow 1.5s infinite;"/>
+                          <circle cx="100" cy="50" r="4" fill="#fff"/>
+                          <path d="M30 100 C 30 100 20 85 20 75 C 20 65 40 65 40 75 C 40 85 30 100 30 100 Z" fill="#1d4ed8"/>
+                          <path d="M170 120 C 170 120 160 105 160 95 C 160 85 180 85 180 95 C 180 105 170 120 170 120 Z" fill="#10b981"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 O Atraso Educacional</span>
-                      <p class="interactive-text">Diários de classe em papel e alunos abandonando a escola sem que a direção consiga intervir a tempo.</p>
+                  <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, roteirização OSRM, controle antifraude de combustível e automação de multas com API do SERPRO.</p>
+                  <div class="card-tags">
+                      <span>App Android/iOS</span>
+                      <span>Cálculo km/L</span>
+                      <span>API SERPRO</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ A Escola do Futuro</span>
-                      <p class="interactive-text">Algoritmos de Inteligência Artificial alertam o conselho tutelar antes do aluno evadir. Gestão 100% web.</p>
+                  <a href="/solucoes/mobility/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
+              <div class="plat-card theme-edu">
+                  <div class="card-header">
+                      <div class="icon">🎓</div>
+                      <div class="card-header-text">
+                          <span>Gestão Educacional</span>
+                          <h3>Cerrado Edu</h3>
+                      </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="gov-lamina theme-dark-slate" id="govrh">
-      <div class="lamina-container">
-          <div class="lamina-content">
-              <div class="gov-app-icon">💼</div>
-              <span class="lamina-subtitle">Folha de Pagamento Pública</span>
-              <h2 class="lamina-title">Cerrado GovRH</h2>
-              <p class="lamina-desc">Processamento de folha ultrarrápido, seguro e à prova de falhas. Focado em manter a prefeitura blindada contra glosas do Tribunal de Contas.</p>
-              
-              <a href="/solucoes/govrh/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>Fórmulas No-Code</span>
-                  <span>eSocial Nativo</span>
-                  <span>Validador de TCE</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="40" y="20" width="120" height="110" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="4"/>
-                          <rect x="60" y="45" width="80" height="8" rx="4" fill="#34d399"/>
-                          <rect x="60" y="65" width="60" height="8" rx="4" fill="#34d399"/>
-                          <circle cx="100" cy="100" r="20" fill="#10b981"/>
-                          <path d="M90 100 L95 105 L110 90" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M100 40 L160 70 L100 100 L40 70 Z" fill="#6366f1" class="anim-float"/>
+                          <path d="M60 80 V110 C60 120 100 130 100 130 C100 130 140 120 140 110 V80" fill="none" stroke="#6366f1" stroke-width="6" stroke-linecap="round"/>
+                          <line x1="160" y1="70" x2="160" y2="100" stroke="#f59e0b" stroke-width="4"/>
+                          <circle cx="160" cy="100" r="4" fill="#f59e0b"/>
+                          <circle cx="50" cy="30" r="6" fill="#a5b4fc" style="animation: pulse-glow 2s infinite;"/>
+                          <circle cx="150" cy="20" r="4" fill="#a5b4fc" style="animation: pulse-glow 2s infinite 0.5s;"/>
+                          <path d="M50 30 L100 40 L150 20" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="4 4"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 O Risco Trabalhista</span>
-                      <p class="interactive-text">Sistemas confusos gerando erros crônicos no pagamento e inconsistências diárias no envio do eSocial.</p>
+                  <p class="plat-desc">O fim do diário de papel. Sistema 100% web com 28 módulos cobrindo merenda PNAE, conselho de classe e IA (Random Forest) que prevê evasão escolar.</p>
+                  <div class="card-tags">
+                      <span>Diário Eletrônico</span>
+                      <span>IA Preditiva</span>
+                      <span>Merenda/Transporte</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ O Pagamento Seguro</span>
-                      <p class="interactive-text">Editor "No-Code" para criar regras complexas visualmente. Exportação homologada para 12 Tribunais de Contas.</p>
+                  <a href="/solucoes/edu/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
+              <div class="plat-card theme-govrh">
+                  <div class="card-header">
+                      <div class="icon">💼</div>
+                      <div class="card-header-text">
+                          <span>Recursos Humanos</span>
+                          <h3>Cerrado GovRH</h3>
+                      </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="gov-lamina theme-light-blue lamina-reverse" id="docs">
-      <div class="lamina-container lamina-reverse">
-          <div class="lamina-content">
-              <div class="gov-app-icon">📂</div>
-              <span class="lamina-subtitle">Gestão Cognitiva e Workflow</span>
-              <h2 class="lamina-title">Cerrado Docs</h2>
-              <p class="lamina-desc">Aposente a sala do arquivo morto. Nossa nuvem não apenas guarda PDFs, ela "lê" os documentos para que você possa conversar com eles via Inteligência Artificial.</p>
-              
-              <a href="/solucoes/docs/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>Busca Vetorial (RAG)</span>
-                  <span>Extração OCR</span>
-                  <span>Workflow Assinatura</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M30 40 L70 40 L85 60 L170 60 C175 60 180 65 180 70 L180 130 C180 135 175 140 170 140 L30 140 C25 140 20 135 20 130 L20 50 C20 45 25 40 30 40 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="6"/>
-                          <circle cx="120" cy="100" r="20" fill="#fff" stroke="#0284c7" stroke-width="4"/>
-                          <line x1="135" y1="115" x2="155" y2="135" stroke="#0284c7" stroke-width="6" stroke-linecap="round"/>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="40" y="30" width="80" height="25" rx="6" fill="#14b8a6" class="anim-float"/>
+                          <rect x="40" y="65" width="100" height="25" rx="6" fill="#0d9488" class="anim-float" style="animation-delay: 0.2s;"/>
+                          <rect x="40" y="100" width="60" height="25" rx="6" fill="#0f766e" class="anim-float" style="animation-delay: 0.4s;"/>
+                          <circle cx="150" cy="80" r="25" fill="#10b981" stroke="#064e3b" stroke-width="4"/>
+                          <path d="M140 80 L147 87 L162 72" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 A Burocracia Física</span>
-                      <p class="interactive-text">Processos demorando semanas. Servidores perdendo dias para achar um decreto de 1998 em caixas de papelão.</p>
+                  <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas, adequação à EC 103/2019 e layouts nativos homologados para o eSocial e TCEs.</p>
+                  <div class="card-tags">
+                      <span>Motor Visão (No-Code)</span>
+                      <span>Validador TCE</span>
+                      <span>Simulador Impacto IA</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ A Inteligência Digital</span>
-                      <p class="interactive-text">Pergunte à IA: "Qual o decreto de férias de 2010?" e ela responde citando a página exata do PDF escaneado.</p>
+                  <a href="/solucoes/govrh/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
+              <div class="plat-card theme-prev">
+                  <div class="card-header">
+                      <div class="icon">🛡️</div>
+                      <div class="card-header-text">
+                          <span>Regime Previdenciário</span>
+                          <h3>Cerrado Prev</h3>
+                      </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="gov-lamina theme-dark-blue" id="prev">
-      <div class="lamina-container">
-          <div class="lamina-content">
-              <div class="gov-app-icon">🛡️</div>
-              <span class="lamina-subtitle">Hub para RPPS</span>
-              <h2 class="lamina-title">Cerrado Prev</h2>
-              <p class="lamina-desc">O sistema centralizado para gerir Institutos de Previdência Própria (RPPS) com compliance do Pró-Gestão e integração ao COMPREV.</p>
-              
-              <a href="/solucoes/prev/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>Concessão Automática</span>
-                  <span>Integração COMPREV</span>
-                  <span>Portal do Segurado</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M100 20 L160 40 V80 C160 120 100 140 100 140 C100 140 40 120 40 80 V40 L100 20 Z" fill="#1e3a8a" stroke="#60a5fa" stroke-width="4"/>
-                          <circle cx="100" cy="80" r="15" fill="#f59e0b"/>
-                          <path d="M85 80 Q100 60 115 80" stroke="#fff" stroke-width="4" fill="none"/>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="70" y="30" width="60" height="80" rx="4" fill="#cbd5e1" class="anim-float"/>
+                          <rect x="80" y="50" width="40" height="4" fill="#94a3b8" class="anim-float"/>
+                          <rect x="80" y="60" width="20" height="4" fill="#94a3b8" class="anim-float"/>
+                          
+                          <path d="M100 20 L150 40 V80 C150 110 100 140 100 140 C100 140 50 110 50 80 V40 L100 20 Z" fill="rgba(217, 119, 6, 0.8)" stroke="#fbbf24" stroke-width="4"/>
+                          <circle cx="100" cy="70" r="16" fill="#fff"/>
+                          <path d="M93 70 L98 75 L108 64" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 O Caos Previdenciário</span>
-                      <p class="interactive-text">Processos manuais demorados, cálculos errados de paridade e falta de compensação com o INSS, gerando déficit.</p>
+                  <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação integrada ao COMPREV e portal do segurado 24/7 (Pró-Gestão).</p>
+                  <div class="card-tags">
+                      <span>Concessão Automática</span>
+                      <span>Integração COMPREV</span>
+                      <span>Perícia Médica IA</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ A Gestão Protegida</span>
-                      <p class="interactive-text">Automação da emissão de guias ao cálculo da folha. Autoatendimento 24/7 garantindo certificação CRP.</p>
+                  <a href="/solucoes/prev/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
+              <div class="plat-card theme-privacy">
+                  <div class="card-header">
+                      <div class="icon">🔒</div>
+                      <div class="card-header-text">
+                          <span>Compliance LGPD</span>
+                          <h3>Cerrado Privacy</h3>
+                      </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="gov-lamina theme-light-gray lamina-reverse" id="privacy">
-      <div class="lamina-container lamina-reverse">
-          <div class="lamina-content">
-              <div class="gov-app-icon">🔒</div>
-              <span class="lamina-subtitle">SaaS e Consultoria LGPD</span>
-              <h2 class="lamina-title">Cerrado Privacy</h2>
-              <p class="lamina-desc">A plataforma SaaS definitiva para governança de dados governamentais. Mapeie vulnerabilidades e blinde sua instituição contra a ANPD.</p>
-              
-              <a href="/solucoes/privacy/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>DPO as a Service</span>
-                  <span>Geração de ROPA</span>
-                  <span>Módulo EAD Interno</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="50" y="60" width="100" height="70" rx="8" fill="#4f46e5"/>
-                          <path d="M70 60 V40 C70 20 130 20 130 40 V60" stroke="#4f46e5" stroke-width="12" stroke-linecap="round" fill="none"/>
-                          <circle cx="100" cy="95" r="10" fill="#fff"/>
-                          <line x1="100" y1="105" x2="100" y2="115" stroke="#fff" stroke-width="4"/>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="70" y="70" width="60" height="50" rx="8" fill="#06b6d4" class="anim-float"/>
+                          <path d="M85 70 V50 C85 35 115 35 115 50 V70" stroke="#06b6d4" stroke-width="8" fill="none" class="anim-float"/>
+                          <circle cx="100" cy="95" r="8" fill="#fff" class="anim-float"/>
+                          <line x1="20" y1="40" x2="60" y2="40" stroke="#0891b2" stroke-width="4" stroke-linecap="round" style="animation: slide-right 2s infinite;"/>
+                          <line x1="140" y1="100" x2="180" y2="100" stroke="#0891b2" stroke-width="4" stroke-linecap="round" style="animation: slide-right 2s infinite 0.5s;"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 A Ameaça Jurídica</span>
-                      <p class="interactive-text">Órgãos públicos operando no escuro, com dados vazados em planilhas e expostos a multas milionárias.</p>
+                  <p class="plat-desc">SaaS e DPO as a Service. Mapeamento de dados via IA, geração automática de ROPA/RIPD, Canal do Titular e plataforma EAD nativa para servidores.</p>
+                  <div class="card-tags">
+                      <span>Geração de ROPA</span>
+                      <span>Gestão Incidentes</span>
+                      <span>Módulo EAD LGPD</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ A Blindagem Legal</span>
-                      <p class="interactive-text">Data mapping automatizado, Canal do Titular e módulo EAD nativo para treinamento contínuo dos servidores.</p>
+                  <a href="/solucoes/privacy/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
+              <div class="plat-card theme-social">
+                  <div class="card-header">
+                      <div class="icon">🤝</div>
+                      <div class="card-header-text">
+                          <span>Assistência Social</span>
+                          <h3>Cerrado Social</h3>
+                      </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="gov-lamina theme-dark-slate" id="social">
-      <div class="lamina-container">
-          <div class="lamina-content">
-              <div class="gov-app-icon">🤝</div>
-              <span class="lamina-subtitle">Inovação no SUAS</span>
-              <h2 class="lamina-title">Cerrado Social</h2>
-              <p class="lamina-desc">Sistema integrado focado na Assistência Social, conectando a rede de acolhimento (CRAS) e transformando a gestão em políticas públicas efetivas.</p>
-              
-              <a href="/solucoes/social/" class="btn-lamina">Conhecer Plataforma</a>
-
-              <div class="gov-tags">
-                  <span>Prontuário Eletrônico</span>
-                  <span>Regulação de Filas</span>
-                  <span>Georreferenciamento</span>
-              </div>
-          </div>
-          
-          <div class="lamina-visual">
-              <div class="lamina-interactive-panel">
-                  <div class="lamina-svg-wrapper">
-                      <svg class="anim-float" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="70" cy="60" r="20" fill="#38bdf8"/>
-                          <circle cx="130" cy="60" r="20" fill="#10b981"/>
-                          <path d="M40 120 C40 90 100 90 100 120" fill="#38bdf8"/>
-                          <path d="M160 120 C160 90 100 90 100 120" fill="#10b981"/>
-                          <path d="M100 80 L100 100" stroke="#fff" stroke-width="4"/>
-                          <path d="M85 90 L115 90" stroke="#fff" stroke-width="4"/>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="70" cy="50" r="16" fill="#d946ef" style="animation: pulse-glow 2s infinite;"/>
+                          <circle cx="130" cy="50" r="16" fill="#a78bfa" style="animation: pulse-glow 2s infinite 0.5s;"/>
+                          <circle cx="100" cy="100" r="20" fill="#7c3aed" class="anim-float"/>
+                          <path d="M70 50 L100 100 L130 50" stroke="#c026d3" stroke-width="4" fill="none" stroke-dasharray="4 4"/>
+                          <circle cx="100" cy="100" r="6" fill="#fff" class="anim-float"/>
                       </svg>
                   </div>
-                  <div class="pain-block">
-                      <span class="interactive-label dor">🛑 O Abandono Social</span>
-                      <p class="interactive-text">Filas desumanas nas portas do CRAS e perda do histórico familiar pela falta de cruzamento com o CadÚnico.</p>
+                  <p class="plat-desc">Prontuário Social Eletrônico. Zera filas físicas com regulação inteligente, mapa de calor de vulnerabilidade e cruza dados do Bolsa Família e CadÚnico.</p>
+                  <div class="card-tags">
+                      <span>Prontuário Único</span>
+                      <span>Georreferenciamento</span>
+                      <span>Fim das Filas SUAS</span>
                   </div>
-                  <div class="solution-block">
-                      <span class="interactive-label solucao">✅ O Atendimento Dignificado</span>
-                      <p class="interactive-text">Regulação inteligente que agenda a vaga e zera a fila. Mapa de calor em tempo real para o gestor municipal.</p>
-                  </div>
+                  <a href="/solucoes/social/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
+
+              <div class="plat-card theme-docs">
+                  <div class="card-header">
+                      <div class="icon">📂</div>
+                      <div class="card-header-text">
+                          <span>Gestão Documental</span>
+                          <h3>Cerrado Docs</h3>
+                      </div>
+                  </div>
+                  <div class="card-svg-area">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M40 40 L70 40 L85 60 L160 60 C165 60 170 65 170 70 L170 120 C170 125 165 130 160 130 L40 130 C35 130 30 125 30 120 L30 50 C30 45 35 40 40 40 Z" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="4" class="anim-float"/>
+                          <rect x="40" y="80" width="120" height="4" fill="#38bdf8" style="animation: float-up-down 2s linear infinite;"/>
+                          <path d="M40 80 L60 120 H140 L160 80" fill="rgba(56, 189, 248, 0.2)" style="animation: float-up-down 2s linear infinite;"/>
+                      </svg>
+                  </div>
+                  <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura digital e o motor de IA que permite "conversar" com seus PDFs (RAG).</p>
+                  <div class="card-tags">
+                      <span>Chat com PDF (IA)</span>
+                      <span>Busca OCR</span>
+                      <span>Assinatura ICP-Brasil</span>
+                  </div>
+                  <a href="/solucoes/docs/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+              </div>
+
           </div>
       </div>
   </section>
 
   <section class="section section-dark text-center" style="border-top: 1px solid rgba(255,255,255,0.1); background: #020617; padding: 100px 0;">
     <div class="container">
-      <h2 class="title" style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;">Modernize a gestão pública do seu município.</h2>
-      <p class="subtitle" style="color: #cbd5e1; max-width: 600px; margin: 0 auto 40px; font-size: 1.15rem;">Nossos especialistas estão prontos para desenhar a arquitetura ideal de tecnologia para o seu instituto, secretaria ou prefeitura.</p>
-      <a href="/index.html#contato" class="btn-lamina" style="background: #10b981; color: #fff; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);">Agendar Reunião Técnica</a>
+      <h2 class="title" style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;">A evolução do seu município começa aqui.</h2>
+      <p class="subtitle" style="color: #cbd5e1; max-width: 650px; margin: 0 auto 40px; font-size: 1.15rem;">Nossos arquitetos de software estão prontos para desenhar a infraestrutura ideal de tecnologia para o seu instituto, secretaria ou prefeitura.</p>
+      <a href="/index.html#contato" style="display: inline-block; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; text-transform: uppercase; background: #0ea5e9; color: #fff; box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3); transition: 0.3s;">Agendar Reunião de Engenharia</a>
     </div>
   </section>
 
   {% include footer.html %}
   
   <script src="js/main.js"></script>
+
+  <script>
+      function scrollCarousel(trackId, direction) {
+          const track = document.getElementById(trackId);
+          // Largura do card + gap aproxima a rolagem perfeita (400 + 30)
+          const scrollAmount = 430 * direction; 
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+  </script>
 </body>
 </html>
