@@ -1,0 +1,465 @@
+---
+layout: null
+permalink: /solucoes/privacy/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Privacy | SaaS e Consultoria LGPD</title>
+    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        /* ================= CORES E VARIÁVEIS CERRADO PRIVACY ================= */
+        :root {
+            --priv-dark: #020617; /* Slate 950 (Quase Preto) */
+            --priv-panel: #0f172a; /* Slate 900 */
+            --priv-primary: #06b6d4; /* Cyan 500 */
+            --priv-primary-dark: #0891b2; /* Cyan 600 */
+            --priv-accent: #3b82f6; /* Blue 500 */
+            --dash-bg: #020617;
+            --text-muted: #94a3b8;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+
+        body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
+        
+        /* Animações Dinâmicas */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ================= HERO SECTION ================= */
+        .priv-hero {
+            background: linear-gradient(135deg, #000000 0%, var(--priv-dark) 100%);
+            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            border-bottom: 4px solid var(--priv-primary);
+            text-align: center;
+        }
+        /* Grid de cibersegurança no fundo */
+        .priv-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px; pointer-events: none;
+        }
+        .hero-tag { background: rgba(6, 182, 212, 0.15); color: #22d3ee; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(6, 182, 212, 0.3); text-transform: uppercase; letter-spacing: 1px; position: relative; }
+        .priv-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; position: relative; }
+        .priv-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; position: relative; }
+        .btn-action { background: var(--priv-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3); border: none; cursor: pointer; position: relative; }
+        .btn-action:hover { background: var(--priv-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(6, 182, 212, 0.4); }
+
+        /* ================= SIMULADOR DATA MAPPING ================= */
+        .demo-section { padding: 100px 0; background: #fff; }
+        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+        
+        .demo-workspace {
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #1e293b; flex-wrap: wrap; position: relative;
+        }
+
+        /* Mockup Scanner (Esquerda) */
+        .demo-scanner {
+            flex: 0 0 340px; background: var(--priv-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column; position: relative; overflow: hidden;
+        }
+        .scan-header { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+        .scan-header h4 { margin: 0; color: #fff; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        
+        .db-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+        .db-item { display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; color: #cbd5e1; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.02); transition: 0.3s; }
+        .db-item .status-icon { width: 12px; height: 12px; border-radius: 50%; background: #334155; }
+        .db-item.scanning { border-color: var(--priv-primary); background: rgba(6, 182, 212, 0.1); }
+        .db-item.scanning .status-icon { background: var(--priv-primary); box-shadow: 0 0 10px var(--priv-primary); animation: pulse 1s infinite; }
+        .db-item.alert .status-icon { background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+        .db-item.safe .status-icon { background: var(--success); box-shadow: 0 0 10px var(--success); }
+
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+
+        .app-btn { background: var(--priv-primary); width: 100%; border: none; padding: 18px; border-radius: 14px; color: #fff; font-weight: 800; font-size: 1.05rem; cursor: pointer; transition: 0.3s; margin-top: auto; display: flex; justify-content: center; align-items: center; gap: 8px;}
+        .app-btn:hover { background: var(--priv-primary-dark); }
+        .app-btn:disabled { background: #1e293b; cursor: not-allowed; color: #64748b; border: 1px solid #334155;}
+
+        /* Mockup DPO Console (Direita) */
+        .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--priv-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        .ai-status-badge { background: #1e293b; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 8px; border: 1px solid #334155; }
+        .ai-status-badge.scanning { background: rgba(6, 182, 212, 0.15); color: #22d3ee; border-color: rgba(6, 182, 212, 0.3); }
+        .ai-status-badge.alert { background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3); }
+        
+        .ai-console { flex: 1; background: #000; border-radius: 20px; padding: 30px; font-family: 'Courier New', Courier, monospace; color: #22d3ee; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center;}
+        .console-line { opacity: 0.8; margin-bottom: 10px; font-size: 0.95rem; display: none; line-height: 1.5; }
+        .console-line.visible { display: block; animation: fadeIn 0.2s ease; }
+        .console-line .highlight { color: #facc15; }
+        .console-line .error { color: #f87171; font-weight: bold; }
+
+        /* Documentos Finais (ROPA) */
+        .ai-result { display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 25px; margin-top: 20px; animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .ai-result h4 { color: #34d399; font-family: 'Inter', sans-serif; font-size: 1.2rem; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px; }
+        
+        .doc-files { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+        .doc-file { background: #fff; color: #0f172a; padding: 12px 18px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: 0.2s; border: 1px solid #e2e8f0;}
+        .doc-file:hover { background: #f8fafc; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* ================= FUNCIONALIDADES ================= */
+        .features-section { padding: 100px 0; background: #f8fafc; }
+        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
+        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+        .feat-row:nth-child(even) { flex-direction: row-reverse; }
+        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-scanner { flex: 1; width: 100%; max-width: 100%; } }
+        
+        .feat-content { flex: 1.2; }
+        .feat-icon { width: 64px; height: 64px; background: #ecfeff; color: var(--priv-primary); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #cffafe; }
+        .feat-content h3 { font-size: 2rem; color: #0f172a; font-weight: 800; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+        .feat-content p { font-size: 1.1rem; color: #475569; margin-bottom: 24px; line-height: 1.7; }
+        .feat-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
+        .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--priv-primary); border-radius: 50%; }
+        
+        .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(6, 182, 212, 0.15)); }
+
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="Cerrado Tech" %}
+
+    <section class="priv-hero">
+        <div class="container">
+            <span class="hero-tag fade-up">GovTech & Compliance | Lei 13.709/2018</span>
+            <h1 class="fade-up delay-1">Cerrado Privacy</h1>
+            <p class="fade-up delay-2">Plataforma SaaS e serviços especializados (DPO as a Service) para adequação e governança total de dados. Mapeie vulnerabilidades, atenda aos titulares e blinde sua instituição contra multas da ANPD.</p>
+            <div class="fade-up delay-3">
+                <a href="#simulador" class="btn-action">
+                    Simular Mapeamento de Dados
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="demo-section">
+        <div class="container">
+            <div class="demo-header fade-up">
+                <h2>Onde estão os dados dos seus cidadãos?</h2>
+                <p>Clique em <strong>Iniciar Mapeamento</strong>. Nossa tecnologia simula a varredura do seu ecossistema, identificando dados sensíveis expostos e gerando automaticamente os relatórios legais exigidos pela ANPD.</p>
+            </div>
+
+            <div class="demo-workspace fade-up delay-1">
+                
+                <div class="demo-scanner">
+                    <div class="scan-header">
+                        <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Data Mapping (Radar)</h4>
+                    </div>
+                    
+                    <div class="db-list">
+                        <div class="db-item" id="db1">
+                            <span>Bando de Dados: RH/Folha</span>
+                            <div class="status-icon"></div>
+                        </div>
+                        <div class="db-item" id="db2">
+                            <span>Sistema da Saúde (SUS)</span>
+                            <div class="status-icon"></div>
+                        </div>
+                        <div class="db-item" id="db3">
+                            <span>Portal da Transparência</span>
+                            <div class="status-icon"></div>
+                        </div>
+                    </div>
+
+                    <button class="app-btn" id="btnRunScan" onclick="runPrivacyScan()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Iniciar Mapeamento de Dados
+                    </button>
+                </div>
+
+                <div class="demo-dash">
+                    <div class="dash-header">
+                        <div>
+                            <strong style="font-size: 1.1rem;">Console do DPO</strong>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Auditoria de Vulnerabilidades LGPD</span>
+                        </div>
+                        <div class="ai-status-badge" id="aiStatus">Aguardando Execução</div>
+                    </div>
+
+                    <div class="ai-console">
+                        <div id="consoleText">
+                            <span style="opacity: 0.3;">root@cerradoprivacy:~# Aguardando inicialização do scanner...</span>
+                        </div>
+                        
+                        <div class="ai-result" id="aiResultBox">
+                            <h4>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Matriz de Risco Mapeada e Tratada
+                            </h4>
+                            <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #cbd5e1;">A vulnerabilidade no DB de Saúde foi isolada. A base legal (Tutela da Saúde) foi vinculada automaticamente. Relatórios obrigatórios gerados para assinatura do controlador.</p>
+                            
+                            <div class="doc-files">
+                                <div class="doc-file">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+                                    Relatório_ROPA_vFinal.pdf
+                                </div>
+                                <div class="doc-file">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+                                    RIPD_Impacto_Saude.pdf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="demo-header fade-up">
+                <h2>Sua instituição dentro da lei.</h2>
+                <p>Muito além de documentos genéricos. Entregamos a plataforma SaaS e o serviço humano (DPO) para assumir a bronca da governança de ponta a ponta.</p>
+            </div>
+
+            <div class="feature-grid">
+                
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <h3>Consultoria e DPO as a Service</h3>
+                        <p>Terceirize a figura do Encarregado de Dados (DPO) para nossa equipe jurídica e de tecnologia. Implantamos a cultura de <em>Privacy by Design</em>, desenvolvemos planos de resposta rápida a incidentes cibernéticos e atuamos na preservação de provas digitais em caso de vazamentos externos.</p>
+                        <div class="feat-tags">
+                            <span>DPO Certificado</span>
+                            <span>Privacy by Design</span>
+                            <span>Resposta a Incidentes</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 20 L170 45 V95 C170 145 100 180 100 180 C100 180 30 145 30 95 V45 L100 20 Z" fill="#ecfeff" stroke="#06b6d4" stroke-width="4"/>
+                            <circle cx="100" cy="80" r="20" fill="#0f172a"/>
+                            <path d="M60 140 C60 120 75 110 100 110 C125 110 140 120 140 140" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3>Módulo: Diagnóstico e Risco (ROPA)</h3>
+                        <p>Chega de planilhas complexas. A plataforma automatiza o mapeamento de dados (Data Mapping) através de formulários dinâmicos preenchidos pelos setores. Com base nisso, o sistema gera o <strong>ROPA</strong> (Registro de Operações) e o <strong>RIPD</strong> (Relatório de Impacto) em um clique, prontos para a fiscalização.</p>
+                        <div class="feat-tags">
+                            <span>Geração Automática ROPA</span>
+                            <span>Relatório RIPD</span>
+                            <span>Data Mapping Web</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="40" y="30" width="170" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                            <circle cx="80" cy="70" r="12" fill="#06b6d4"/>
+                            <circle cx="160" cy="70" r="12" fill="#06b6d4"/>
+                            <circle cx="120" cy="140" r="16" fill="#0f172a"/>
+                            <line x1="85" y1="80" x2="110" y2="125" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="4 4"/>
+                            <line x1="155" y1="80" x2="130" y2="125" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="4 4"/>
+                            <line x1="95" y1="70" x2="145" y2="70" stroke="#cbd5e1" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        </div>
+                        <h3>Módulo: Monitoramento e Canais</h3>
+                        <p>O seu site público protegido. Gestão automatizada de pop-ups de cookies inteligente. Sistema de chamados integrado para o <strong>Canal do Titular</strong> (para cidadãos solicitarem exclusão ou cópia de dados) e workflow de incidentes estruturado para notificar a ANPD no prazo legal de 48h.</p>
+                        <div class="feat-tags">
+                            <span>Aviso de Cookies</span>
+                            <span>Canal do Titular e Denúncia</span>
+                            <span>Alerta ANPD</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="40" width="160" height="120" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
+                            <rect x="20" y="40" width="160" height="25" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="4"/>
+                            <circle cx="35" cy="52" r="4" fill="#ef4444"/>
+                            <circle cx="50" cy="52" r="4" fill="#f59e0b"/>
+                            <circle cx="65" cy="52" r="4" fill="#10b981"/>
+                            <rect x="40" y="120" width="120" height="30" rx="4" fill="#0f172a"/>
+                            <rect x="50" y="130" width="60" height="10" rx="2" fill="#334155"/>
+                            <rect x="120" y="128" width="30" height="14" rx="4" fill="#06b6d4"/>
+                            <circle cx="170" cy="40" r="15" fill="#ef4444"/>
+                            <path d="M170 33 V42" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="170" cy="47" r="2" fill="#fff"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <h3>Módulo: EAD e Treinamento da Equipe</h3>
+                        <p>O maior risco de vazamento de dados é o fator humano (phishing, senhas fracas). O Cerrado Privacy possui uma área de Educação a Distância (EAD) nativa. Cadastre seus servidores e funcionários para realizarem trilhas de capacitação sobre LGPD, com testes de nivelamento e emissão de certificados rastreáveis.</p>
+                        <div class="feat-tags">
+                            <span>Plataforma EAD Nativa</span>
+                            <span>Testes de Nivelamento</span>
+                            <span>Certificação de Servidores</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="60" width="150" height="90" rx="6" fill="#fff" stroke="#0f172a" stroke-width="4"/>
+                            <path d="M30 150 L220 150 L230 160 H20 Z" fill="#e2e8f0" stroke="#0f172a" stroke-width="4" stroke-linejoin="round"/>
+                            <circle cx="125" cy="105" r="20" fill="#06b6d4"/>
+                            <path d="M118 95 L135 105 L118 115 Z" fill="#fff"/>
+                            <path d="M125 20 L170 40 L125 60 L80 40 Z" fill="#fecb00" opacity="0.8"/>
+                            <path d="M90 45 V70" stroke="#fecb00" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: var(--priv-dark); text-align: center; color: #fff;">
+        <div class="container fade-up">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Evite multas, proteja o cidadão.</h2>
+            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">O prazo de adequação acabou e a ANPD já está multando entes públicos. Agende uma conversa com nosso DPO oficial e inicie o diagnóstico da sua instituição.</p>
+            <a href="/index.html#contato" class="btn-action" style="background: var(--priv-accent); color: #fff; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);">Agendar Reunião de Diagnóstico</a>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+
+    <script>
+        // Animação de rolagem (Fade Up)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Lógica do Scanner de Privacidade
+        function runPrivacyScan() {
+            const btn = document.getElementById('btnRunScan');
+            const statusBadge = document.getElementById('aiStatus');
+            const consoleBox = document.getElementById('consoleText');
+            const resultBox = document.getElementById('aiResultBox');
+            
+            const db1 = document.getElementById('db1');
+            const db2 = document.getElementById('db2');
+            const db3 = document.getElementById('db3');
+
+            if(btn.disabled) return;
+            
+            // Reset state
+            btn.disabled = true;
+            btn.innerHTML = 'Varredura em Andamento...';
+            resultBox.style.display = 'none';
+            consoleBox.innerHTML = '';
+            db1.className = 'db-item'; db2.className = 'db-item'; db3.className = 'db-item';
+            
+            statusBadge.innerText = 'Escaneando Bases SQL...';
+            statusBadge.className = 'ai-status-badge scanning';
+
+            const steps = [
+                { msg: "root@cerradoprivacy:~# Iniciando Crawler de Dados (LGPD)...", db: null },
+                { msg: "> Verificando DB: RH/Folha... [OK - Aderente: Execução de Contrato]", db: db1, class: 'safe' },
+                { msg: "> Verificando DB: Portal da Transparência... [OK - Aderente: LAI]", db: db3, class: 'safe' },
+                { msg: "> Verificando DB: Sistema da Saúde (SUS)...", db: db2, class: 'scanning' },
+                { msg: ">> <span class='error'>ALERTA: 4.530 registros com CIDs e Laudos Médicos não anonimizados.</span>", db: null },
+                { msg: ">> Nível de Risco: <span class='highlight'>CRÍTICO (Dados Sensíveis - Art. 5º, II)</span>", db: null },
+                { msg: "> Aplicando rotina de isolamento e anonimização de colunas...", db: db2, class: 'alert' },
+                { msg: "> Gerando Registro de Operações (ROPA) automatizado...", db: null }
+            ];
+
+            let stepIndex = 0;
+
+            const interval = setInterval(() => {
+                if (stepIndex < steps.length) {
+                    const step = steps[stepIndex];
+                    
+                    const line = document.createElement('div');
+                    line.className = 'console-line visible';
+                    line.innerHTML = step.msg;
+                    consoleBox.appendChild(line);
+                    
+                    if(step.db) {
+                        step.db.className = `db-item ${step.class}`;
+                    }
+
+                    if(stepIndex === 4) statusBadge.innerText = 'Vulnerabilidade Detectada!';
+
+                    stepIndex++;
+                } else {
+                    clearInterval(interval);
+                    showScanResult();
+                }
+            }, 800); 
+
+            function showScanResult() {
+                statusBadge.innerText = 'Compliance Restabelecido';
+                statusBadge.className = 'ai-status-badge';
+                statusBadge.style.background = 'rgba(16, 185, 129, 0.15)';
+                statusBadge.style.color = '#34d399';
+                statusBadge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+                
+                db2.className = 'db-item safe'; // Fix the database visually
+                
+                resultBox.style.display = 'block';
+                btn.innerHTML = 'Mapeamento Finalizado';
+
+                // Reset after 8 seconds
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Iniciar Novo Mapeamento';
+                    btn.style.background = 'var(--priv-primary)';
+                    
+                    statusBadge.innerText = 'Aguardando Execução';
+                    statusBadge.className = 'ai-status-badge';
+                    statusBadge.style = ''; // reset inline styles
+                    
+                    db1.className = 'db-item'; db2.className = 'db-item'; db3.className = 'db-item';
+                    
+                    consoleBox.innerHTML = '<span style="opacity: 0.3;">root@cerradoprivacy:~# Sistema pronto. Aguardando inicialização do scanner...</span>';
+                    resultBox.style.display = 'none';
+                }, 8000);
+            }
+        }
+    </script>
+</body>
+</html>
