@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cerrado Tech | Nossas Startups</title>
   <meta name="description" content="Conheça o portfólio de startups desenvolvidas pela Cerrado Tech.">
-  <link rel="icon" type="image/png" href="img/logo.png">
+  
+  <link rel="icon" type="image/png" href="img/logo-tech.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,139 +20,125 @@
   <link rel="stylesheet" href="css/startups.css"> 
 
   <style>
-      .hero-logo-wrapper img {
-          max-width: 340px;
-          width: 100%;
-          height: auto;
-          margin: 0 auto;
-          display: block;
+      /* --- NOVO HERO CERRADO TECH (INSPIRADO NA REFERÊNCIA) --- */
+      .hero-tech {
+          padding: 100px 0 80px;
+          background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+          color: #fff;
+          border-bottom: 4px solid #10b981;
       }
 
-      /* --- ESTRUTURA DAS LÂMINAS DE STARTUPS --- */
-      .startup-lamina {
-          padding: 100px 0;
-          overflow: hidden;
-      }
-
-      .lamina-container {
+      .tech-split-layout {
           display: flex;
           align-items: center;
           gap: 60px;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
       }
 
-      .lamina-reverse {
-          flex-direction: row-reverse;
+      .tech-visual-content {
+          flex: 0.8;
+          display: flex;
+          justify-content: center;
       }
 
-      .lamina-content {
-          flex: 1.1;
-      }
-
-      .lamina-visual {
-          flex: 0.9;
-          position: relative;
-      }
-
-      /* Caixinha branca para destacar a logo PNG transparente */
-      .startup-logo-box {
+      /* O Card Branco Flutuante com a Logo */
+      .tech-logo-card {
           background: #ffffff;
-          padding: 24px; /* Aumentado o respiro interno */
-          border-radius: 20px; /* Canto um pouco mais suave */
-          box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-          display: inline-flex;
+          padding: 40px;
+          border-radius: 30px;
+          box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+          width: 100%;
+          max-width: 380px;
+          aspect-ratio: 1 / 1; /* Garante que fique quadrado como na sua imagem */
+          display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 30px;
-          border: 1px solid rgba(0,0,0,0.05);
+          transform: rotate(-2deg);
+          transition: transform 0.4s ease;
       }
+      .tech-logo-card:hover { transform: rotate(0deg) translateY(-10px); }
 
-      .startup-logo-box img {
-          width: 150px; /* Mais que o dobro do tamanho anterior */
-          height: 150px; /* Mantém a proporção quadrada da caixa */
-          object-fit: contain; /* Garante que a logo não corte e fique centralizada */
+      .tech-logo-card img {
+          max-width: 100%;
+          height: auto;
           display: block;
       }
 
-      .lamina-title-wrapper {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          margin-bottom: 20px;
-          flex-wrap: wrap;
+      .tech-text-content {
+          flex: 1.2;
+          text-align: left;
       }
 
-      .lamina-title {
-          font-size: 2.5rem;
+      .tech-tag {
+          background: rgba(16, 185, 129, 0.15);
+          color: #34d399;
+          padding: 8px 20px;
+          border-radius: 50px;
           font-weight: 800;
-          margin: 0;
-          line-height: 1.1;
-      }
-
-      .lamina-desc {
-          font-size: 1.15rem;
-          line-height: 1.6;
-          margin-bottom: 30px;
-      }
-
-      /* Box de "O Problema / A Solução" estilizado */
-      .lamina-info-card {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          padding: 40px;
-          border-radius: 24px;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-          border: 1px solid rgba(255,255,255,0.2);
-      }
-
-      .info-block {
+          font-size: 0.85rem;
+          display: inline-block;
           margin-bottom: 24px;
-      }
-
-      .info-block:last-child {
-          margin-bottom: 0;
-      }
-
-      .info-block h4 {
-          font-size: 0.9rem;
+          border: 1px solid rgba(16, 185, 129, 0.3);
           text-transform: uppercase;
           letter-spacing: 1px;
-          font-weight: 800;
-          margin-bottom: 8px;
       }
 
-      .info-block p {
-          font-size: 1rem;
+      .tech-title {
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-weight: 900;
+          line-height: 1.1;
+          margin-bottom: 24px;
+          letter-spacing: -1px;
+          color: #fff;
+      }
+
+      .tech-subtitle {
+          font-size: 1.15rem;
+          color: #cbd5e1;
+          max-width: 700px;
+          line-height: 1.6;
           margin: 0;
-          color: #334155;
       }
 
-      .lamina-tech-tags {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-          margin-top: 30px;
-          padding-top: 24px;
-          border-top: 1px solid rgba(0,0,0,0.05);
+      @media (max-width: 992px) {
+          .tech-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+          .tech-text-content { text-align: center; }
+          .tech-subtitle { margin: 0 auto; }
+          .tech-logo-card { transform: none; aspect-ratio: auto; padding: 30px; }
       }
 
-      .lamina-tag {
-          font-size: 0.8rem;
-          font-weight: 700;
-          padding: 6px 14px;
-          border-radius: 50px;
-          letter-spacing: 0.5px;
+      /* --- ESTRUTURA DAS LÂMINAS DE STARTUPS --- */
+      .startup-lamina { padding: 100px 0; overflow: hidden; }
+      .lamina-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+      .lamina-reverse { flex-direction: row-reverse; }
+      .lamina-content { flex: 1.1; }
+      .lamina-visual { flex: 0.9; position: relative; }
+
+      .startup-logo-box {
+          background: #ffffff; padding: 24px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+          display: inline-flex; align-items: center; justify-content: center; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);
       }
+      .startup-logo-box img { width: 150px; height: 150px; object-fit: contain; display: block; }
+
+      .lamina-title-wrapper { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+      .lamina-title { font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.1; }
+      .lamina-desc { font-size: 1.15rem; line-height: 1.6; margin-bottom: 30px; }
+
+      .lamina-info-card {
+          background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.2);
+      }
+      .info-block { margin-bottom: 24px; }
+      .info-block:last-child { margin-bottom: 0; }
+      .info-block h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 8px; }
+      .info-block p { font-size: 1rem; margin: 0; color: #334155; }
+
+      .lamina-tech-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.05); }
+      .lamina-tag { font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 50px; letter-spacing: 0.5px; }
+      .btn-lamina { display: inline-block; padding: 16px 32px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; margin-top: 10px; }
 
       /* --- TEMAS INDIVIDUAIS --- */
-      
-      /* GoGym (Dark / Laranja) */
-      .theme-gogym {
-          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-          color: #ffffff;
-      }
+      /* GoGym */
+      .theme-gogym { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); color: #ffffff; }
       .theme-gogym .lamina-title { color: #ffffff; }
       .theme-gogym .lamina-desc { color: #a1a1aa; }
       .theme-gogym .lamina-info-card { background: rgba(30, 30, 30, 0.6); border-color: #333; }
@@ -161,11 +148,8 @@
       .theme-gogym .btn-lamina { background: #ff4500; color: #fff; border: none; }
       .theme-gogym .btn-lamina:hover { background: #e63e00; box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3); color: #fff; }
 
-      /* PataMed (Verde Escuro e Salmão) */
-      .theme-patamed {
-          background: linear-gradient(135deg, #f4fcf9 0%, #e0f2eb 100%);
-          color: #054D3F;
-      }
+      /* PataMed */
+      .theme-patamed { background: linear-gradient(135deg, #f4fcf9 0%, #e0f2eb 100%); color: #054D3F; }
       .theme-patamed .lamina-title { color: #054D3F; }
       .theme-patamed .lamina-desc { color: #1b4035; }
       .theme-patamed .info-block h4 { color: #F29479; }
@@ -173,11 +157,8 @@
       .theme-patamed .btn-lamina { background: #F29479; color: #fff; border: none; }
       .theme-patamed .btn-lamina:hover { background: #e07a5f; box-shadow: 0 10px 20px rgba(242, 148, 121, 0.3); color: #fff; }
 
-      /* ChamaLá (Laranja Marketplace) */
-      .theme-chamala {
-          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-          color: #431407;
-      }
+      /* ChamaLá */
+      .theme-chamala { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); color: #431407; }
       .theme-chamala .lamina-title { color: #431407; }
       .theme-chamala .lamina-desc { color: #9a3412; }
       .theme-chamala .info-block h4 { color: #F97316; }
@@ -185,43 +166,89 @@
       .theme-chamala .btn-lamina { background: #F97316; color: #fff; border: none; }
       .theme-chamala .btn-lamina:hover { background: #ea580c; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); color: #fff; }
 
-      /* Botão Genérico Lâmina */
-      .btn-lamina {
-          display: inline-block;
-          padding: 16px 32px;
-          border-radius: 50px;
-          font-weight: 800;
-          font-size: 1.1rem;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          margin-top: 10px;
-      }
-
       /* Responsivo */
       @media (max-width: 992px) {
-          .lamina-container, .lamina-container.lamina-reverse {
-              flex-direction: column;
-              gap: 40px;
-          }
+          .lamina-container, .lamina-container.lamina-reverse { flex-direction: column; gap: 40px; }
           .lamina-title { font-size: 2rem; }
           .lamina-visual { width: 100%; }
       }
+
+      /* --- NOVA SEÇÃO: INCUBADORA / NOVO NEGÓCIO --- */
+      .incubator-section {
+          padding: 100px 0;
+          background: #ffffff;
+          text-align: center;
+      }
+      .incubator-box {
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 30px;
+          padding: 60px 40px;
+          max-width: 900px;
+          margin: 0 auto;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+      }
+      .incubator-icon {
+          font-size: 4rem;
+          margin-bottom: 20px;
+          display: block;
+      }
+      .incubator-title {
+          font-size: 2.2rem;
+          font-weight: 800;
+          color: #0f172a;
+          margin-bottom: 20px;
+          line-height: 1.2;
+      }
+      .incubator-desc {
+          font-size: 1.15rem;
+          color: #475569;
+          margin-bottom: 40px;
+          line-height: 1.6;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .btn-incubator {
+          background: #0f172a;
+          color: #fff;
+          padding: 18px 40px;
+          border-radius: 50px;
+          font-size: 1.1rem;
+          font-weight: 800;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: inline-block;
+      }
+      .btn-incubator:hover {
+          background: #10b981;
+          box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+          transform: translateY(-3px);
+      }
+
   </style>
 </head>
 <body>
 
   {% include header.html titulo="Cerrado Tech" %}
 
-  <section class="hero-tech" style="padding-bottom: 60px;">
-    <div class="container hero-content text-center">
-      
-      <div class="hero-logo-wrapper">
-        <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
+  <section class="hero-tech">
+    <div class="container">
+      <div class="tech-split-layout">
+        
+        <div class="tech-visual-content">
+          <div class="tech-logo-card">
+            <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
+          </div>
+        </div>
+
+        <div class="tech-text-content">
+          <span class="tech-tag">Venture Builder</span>
+          <h1 class="tech-title">Ecossistema de Inovação Próprio.</h1>
+          <p class="tech-subtitle">Nascidas sob o guarda-chuva e a expertise da <strong>Cerrado Finanças</strong>, nossas startups são operações de mercado independentes que compartilham a mesma inteligência de negócios, backoffice corporativo e infraestrutura tecnológica de ponta desenvolvida pela Cerrado Tech.</p>
+        </div>
+
       </div>
-      
-      <span class="tag" style="display:block; margin: 0 auto 16px; width: fit-content;">Venture Builder</span>
-      <h1 class="title">Ecossistema de Inovação Próprio.</h1>
-      <p class="subtitle" style="max-width: 800px; margin: 0 auto;">Nascidas sob o guarda-chuva e a expertise da <strong>Cerrado Finanças</strong>, nossas startups são operações de mercado independentes que compartilham a mesma inteligência de negócios, backoffice corporativo e infraestrutura tecnológica de ponta desenvolvida pela Cerrado Tech.</p>
     </div>
   </section>
 
@@ -233,7 +260,7 @@
               </div>
               <div class="lamina-title-wrapper">
                   <h2 class="lamina-title">GoGym Store</h2>
-                  <span class="status-badge success" style="margin: 0;">Em Operação</span>
+                  <span class="status-badge success" style="margin: 0; background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.3); padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Em Operação</span>
               </div>
               <p class="lamina-desc">Operação estruturada no modelo de Dark Store, otimizando a logística e a distribuição de ponta a ponta com custos reduzidos. Um e-commerce dedicado à alta performance.</p>
               
@@ -268,7 +295,7 @@
               </div>
               <div class="lamina-title-wrapper">
                   <h2 class="lamina-title">PataMed</h2>
-                  <span class="status-badge warning" style="margin: 0; background: #fff0eb; color: #d96d50; border: 1px solid #ffdacc;">Em Desenvolvimento</span>
+                  <span class="status-badge warning" style="margin: 0; background: #fff0eb; color: #d96d50; border: 1px solid #ffdacc; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Em Desenvolvimento</span>
               </div>
               <p class="lamina-desc">Plataforma tecnológica focada em centralizar e simplificar o acesso a dados de saúde e atendimento veterinário. A revolução do cuidado animal na palma da mão.</p>
               
@@ -303,7 +330,7 @@
               </div>
               <div class="lamina-title-wrapper">
                   <h2 class="lamina-title">ChamaLá</h2>
-                  <span class="status-badge warning" style="margin: 0; background: #ffedd5; color: #ea580c; border: 1px solid #fed7aa;">Ideação / MVP</span>
+                  <span class="status-badge warning" style="margin: 0; background: #ffedd5; color: #ea580c; border: 1px solid #fed7aa; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Ideação / MVP</span>
               </div>
               <p class="lamina-desc">Aplicativo de intermediação de serviços rápidos, conectando demandas urgentes a profissionais qualificados em tempo real. A ponte entre o problema doméstico e a solução.</p>
               
@@ -330,31 +357,47 @@
       </div>
   </section>
 
-  <section class="section process-section">
+  <section class="section process-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 80px 0;">
     <div class="container">
-      <div class="section-header" style="text-align: center;">
-        <span class="tag">Como Criamos</span>
-        <h2 class="title" style="margin-left: auto; margin-right: auto;">Do Papel à Escala</h2>
+      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+        <span class="tag" style="background: #e0f2fe; color: #0284c7; padding: 6px 16px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #bae6fd;">Como Criamos</span>
+        <h2 class="title" style="margin: 15px auto 0; font-size: 2.2rem; font-weight: 800; color: #0f172a;">Do Papel à Escala</h2>
       </div>
       
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-icon">1</div>
-          <h4>Validação e Dores</h4>
-          <p>Identificamos ineficiências reais no mercado. Não codificamos nada antes de ter certeza matemática de que o problema existe e as pessoas pagariam pela solução.</p>
+      <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+        <div class="process-step" style="background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center;">
+          <div class="step-icon" style="width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px;">1</div>
+          <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">Validação e Dores</h4>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Identificamos ineficiências reais no mercado. Não codificamos nada antes de ter certeza matemática de que o problema existe e as pessoas pagariam pela solução.</p>
         </div>
-        <div class="process-step">
-          <div class="step-icon">2</div>
-          <h4>Construção do MVP</h4>
-          <p>Utilizamos arquitetura de software ágil e integrações de API para construir a primeira versão do produto no menor tempo possível para testes reais.</p>
+        <div class="process-step" style="background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center;">
+          <div class="step-icon" style="width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px;">2</div>
+          <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">Construção do MVP</h4>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Utilizamos arquitetura de software ágil e integrações de API para construir a primeira versão do produto no menor tempo possível para testes reais.</p>
         </div>
-        <div class="process-step">
-          <div class="step-icon">3</div>
-          <h4>Tração e Spin-off</h4>
-          <p>Uma vez que o produto prova seu valor, estruturamos a governança, a contabilidade corporativa e a inteligência de dados para que a startup ganhe vida própria.</p>
+        <div class="process-step" style="background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center;">
+          <div class="step-icon" style="width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px;">3</div>
+          <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">Tração e Spin-off</h4>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Uma vez que o produto prova seu valor, estruturamos a governança, a contabilidade corporativa e a inteligência de dados para que a startup ganhe vida própria.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="incubator-section">
+      <div class="container">
+          <div class="incubator-box">
+              <span class="incubator-icon">💡</span>
+              <h2 class="incubator-title">Você tem uma ideia de negócio, mas não sabe como executar?</h2>
+              <p class="incubator-desc">
+                  Transformar uma ideia em uma empresa rentável exige suporte administrativo pesado, inteligência financeira e desenvolvimento digital de ponta. 
+                  <strong>A Cerrado Tech é a parceira ideal para estruturar a sua visão e levá-la ao mercado com segurança.</strong>
+              </p>
+              <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Tenho uma ideia de negócio e gostaria de conversar sobre como a Cerrado Tech pode atuar como minha parceira/Venture Builder." target="_blank" class="btn-incubator">
+                  Desenvolva sua Ideia com a Cerrado Tech
+              </a>
+          </div>
+      </div>
   </section>
 
   {% include footer.html %}
