@@ -8,7 +8,8 @@ permalink: /solucoes/govdash/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrado GovDash | Business Intelligence Municipal</title>
-    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,25 +44,55 @@ permalink: /solucoes/govdash/
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
         .gd-hero {
             background: linear-gradient(135deg, #020617 0%, var(--gd-dark) 100%);
-            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
             border-bottom: 4px solid var(--gd-primary);
-            text-align: center;
         }
         .gd-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, transparent 60%); pointer-events: none;
         }
+
+        .gd-split-layout { display: flex; align-items: center; gap: 60px; }
+        .gd-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .gd-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS */
+        .hero-app-icon {
+            background: #ffffff;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            border-radius: 60px; /* Squircle Apple */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); box-shadow: 0 40px 80px rgba(2, 132, 199, 0.3); }
+        .hero-app-icon img { max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));}
+
         .hero-tag { background: rgba(2, 132, 199, 0.2); color: #7dd3fc; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(2, 132, 199, 0.4); text-transform: uppercase; letter-spacing: 1px; }
-        .gd-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .gd-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+        .gd-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .gd-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
         .btn-action { background: var(--gd-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--gd-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(2, 132, 199, 0.4); }
         .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); padding: 16px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; text-decoration: none; display: inline-flex; transition: 0.3s; margin-left: 15px;}
         .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
-        @media(max-width: 768px){ .btn-outline { margin-left: 0; margin-top: 15px; } }
+
+        @media(max-width: 992px){ 
+            .gd-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .gd-text-content { text-align: center; }
+            .btn-outline { margin-left: 0; margin-top: 15px; }
+            .hero-app-icon { max-width: 220px; border-radius: 40px; transform: none; }
+        }
 
         /* ================= SIMULADOR DASHBOARD LRF ================= */
         .demo-section { padding: 100px 0; background: #fff; }
@@ -92,13 +123,13 @@ permalink: /solucoes/govdash/
         
         /* Gráfico de Termômetro LRF */
         .chart-box { background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column;}
-        .chart-title { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        .chart-title { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;}
         
         .lrf-meter-container { width: 100%; height: 30px; background: #334155; border-radius: 15px; position: relative; margin-bottom: 20px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5); }
         .lrf-bar { height: 100%; width: 35%; background: var(--success); border-radius: 15px; transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s; }
         
         /* Marcadores do Gráfico */
-        .marker { position: absolute; top: -25px; font-size: 0.8rem; font-weight: 700; color: #94a3b8; transform: translateX(-50%); }
+        .marker { position: absolute; top: -30px; font-size: 0.8rem; font-weight: 700; color: #94a3b8; transform: translateX(-50%); }
         .marker.m-51 { left: 51.3%; color: #f59e0b; } /* Prudencial */
         .marker.m-54 { left: 54%; color: #ef4444; } /* Máximo */
         .marker-line { position: absolute; top: 0; bottom: -10px; width: 2px; background: rgba(255,255,255,0.2); }
@@ -132,6 +163,11 @@ permalink: /solucoes/govdash/
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(2, 132, 199, 0.15)); }
 
+        /* Animações dos SVGs */
+        @keyframes slideRight { 0% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(20px); opacity: 0; } }
+        @keyframes slideUp { 0% { transform: translateY(10px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        @keyframes pulseAlert { 0% { fill: #ef4444; stroke: #fef2f2; } 50% { fill: #b91c1c; stroke: #fee2e2; } 100% { fill: #ef4444; stroke: #fef2f2; } }
+
     </style>
 </head>
 <body>
@@ -140,17 +176,29 @@ permalink: /solucoes/govdash/
 
     <section class="gd-hero">
         <div class="container">
-            <span class="hero-tag fade-up">GovTech | Business Intelligence Municipal</span>
-            <h1 class="fade-up delay-1">Cerrado GovDash</h1>
-            <p class="fade-up delay-2">O painel de controle do executivo. Transforma volumes massivos de planilhas contábeis e legadas em KPIs visuais em tempo real. Governe com foco, transparência e velocidade.</p>
-            <div class="fade-up delay-3">
-                <a href="#simulador" class="btn-action">
-                    Testar Motor de Compliance LRF
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                </a>
-                <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-outline">
-                    Acessar Plataforma Web
-                </a>
+            <div class="gd-split-layout">
+                
+                <div class="gd-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/govdash.png' | relative_url }}" alt="GovDash Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}'">
+                    </div>
+                </div>
+
+                <div class="gd-text-content">
+                    <span class="hero-tag fade-up delay-1">GovTech | Business Intelligence Municipal</span>
+                    <h1 class="fade-up delay-1">Cerrado GovDash</h1>
+                    <p class="fade-up delay-2">O painel de controle do executivo. Transforma volumes massivos de planilhas contábeis e legadas em KPIs visuais em tempo real. Governe com foco, transparência e velocidade.</p>
+                    <div class="fade-up delay-3">
+                        <a href="#simulador" class="btn-action">
+                            Testar Motor de Compliance
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </a>
+                        <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-outline">
+                            Acessar Web App
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -220,8 +268,8 @@ permalink: /solucoes/govdash/
     <section class="features-section">
         <div class="container">
             <div class="demo-header fade-up">
-                <h2>Um farol em meio à escuridão burocrática.</h2>
-                <p>Governar às cegas destrói orçamentos. O GovDash integra os dados isolados das secretarias e entrega um panorama mastigado e acionável.</p>
+                <h2>O fim do achismo na administração pública.</h2>
+                <p>O GovDash consolida os dados dispersos das secretarias, entregando um panorama unificado, visual e acionável para o chefe do executivo.</p>
             </div>
 
             <div class="feature-grid">
@@ -229,12 +277,40 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3>Foco Executivo e UX Premium</h3>
+                        <p>Desenvolvido exclusivamente para Prefeitos, Gabinete, Secretários (Fazenda, Saúde, Educação, Infraestrutura) e Controladoria Geral (CGM). Substitui as antigas interfaces cinzas defasadas por um design moderno e em nuvem, com menus laterais em <em>Apple Glassmorphism</em>, focando na agilidade de leitura de dados.</p>
+                        <div class="feat-tags">
+                            <span>Apple Glassmorphism</span>
+                            <span>Design em Nuvem</span>
+                            <span>Dashboard Executivo</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="210" height="160" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+                            <rect x="20" y="20" width="60" height="160" rx="16" fill="rgba(2, 132, 199, 0.1)" stroke="#bae6fd" stroke-width="2"/>
+                            <rect x="35" y="40" width="30" height="8" rx="4" fill="#0284c7"/>
+                            <rect x="35" y="60" width="20" height="6" rx="3" fill="#94a3b8"/>
+                            <rect x="35" y="80" width="25" height="6" rx="3" fill="#94a3b8"/>
+                            <rect x="100" y="50" width="110" height="100" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4" style="animation: slideUp 2s infinite alternate;"/>
+                            <circle cx="120" cy="70" r="8" fill="#f59e0b"/>
+                            <rect x="140" y="66" width="50" height="8" rx="4" fill="#cbd5e1"/>
+                            <path d="M120 120 L140 100 L160 110 L190 80" stroke="#10b981" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                         </div>
                         <h3>Finanças e Compliance (LRF)</h3>
-                        <p>Monitoramento do ciclo do dinheiro público. Acompanha a evolução de Receitas (próprias vs. transferências) e Despesas (Empenhado, Liquidado e Pago). Inclui um "termômetro" de compliance que vigia a Dívida Consolidada e emite alertas visuais caso o Limite de Gastos com Pessoal se aproxime dos 54% da RCL.</p>
+                        <p>Monitoramento exato do ciclo do dinheiro público. Acompanha a evolução de Receitas (próprias vs. transferências) e Despesas (Empenhado, Liquidado e Pago). Inclui um termômetro visual que vigia a Dívida Consolidada e emite alertas (amarelo, laranja e vermelho) caso a folha se aproxime dos 54% da RCL.</p>
                         <div class="feat-tags">
-                            <span>Termômetro LRF</span>
+                            <span>Termômetro LRF 54%</span>
                             <span>Receitas x Despesas</span>
                             <span>Ciclo de Empenhos</span>
                         </div>
@@ -242,12 +318,11 @@ permalink: /solucoes/govdash/
                     <div class="feat-visual">
                         <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="25" y="30" width="200" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
-                            <path d="M25 120 H225" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4"/>
-                            <rect x="50" y="80" width="30" height="90" rx="4" fill="#0284c7"/>
-                            <rect x="110" y="50" width="30" height="120" rx="4" fill="#38bdf8"/>
-                            <rect x="170" y="100" width="30" height="70" rx="4" fill="#ef4444"/>
-                            <circle cx="185" cy="80" r="10" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
-                            <path d="M185 75 V85 M180 80 H190" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M25 130 H225" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4"/>
+                            <rect x="60" y="80" width="25" height="50" rx="4" fill="#0284c7"/>
+                            <rect x="110" y="50" width="25" height="80" rx="4" fill="#38bdf8"/>
+                            <rect x="160" y="30" width="25" height="100" rx="4" fill="#ef4444" style="animation: pulseAlert 2s infinite;"/>
+                            <path d="M25 60 H225" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 6"/>
                         </svg>
                     </div>
                 </div>
@@ -258,7 +333,7 @@ permalink: /solucoes/govdash/
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                         </div>
                         <h3>Saúde Pública e Epidemiologia</h3>
-                        <p>Controle da eficiência na veia. Monitore a produtividade das UBSs, o tamanho de filas de espera do SUS e a cobertura vacinal. Acompanha a Farmácia Básica (REMUME) com alertas para estoques zerados e monitora surtos epidemiológicos integrando dados como o LIRAa (índice da Dengue).</p>
+                        <p>Controle de produtividade das UBSs, tamanho de filas do SUS e cobertura vacinal. Acompanha o estoque da Farmácia Básica (REMUME) com alertas para medicamentos zerados/críticos. Monitora surtos epidemiológicos cruzando dados de casos confirmados com o LIRAa (índice da Dengue e arboviroses).</p>
                         <div class="feat-tags">
                             <span>Fila do SUS</span>
                             <span>Estoque REMUME</span>
@@ -267,15 +342,33 @@ permalink: /solucoes/govdash/
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="40" y="20" width="170" height="160" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
-                            <rect x="60" y="40" width="130" height="40" rx="8" fill="#fff" stroke="#10b981" stroke-width="2"/>
-                            <path d="M70 60 L80 60 L85 50 L95 70 L100 60 L110 60" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            
-                            <rect x="60" y="100" width="60" height="60" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
-                            <path d="M90 130 V115 M90 130 V145 M90 130 H75 M90 130 H105" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
-                            
-                            <rect x="130" y="100" width="60" height="60" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
-                            <circle cx="160" cy="130" r="15" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="70 100"/>
+                            <rect x="105" y="40" width="40" height="120" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+                            <rect x="65" y="80" width="120" height="40" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+                            <path d="M40 100 L80 100 L95 70 L120 130 L140 100 L180 100" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <circle cx="180" cy="100" r="4" fill="#10b981"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        </div>
+                        <h3>Educação e Operação Escolar</h3>
+                        <p>Censo analítico em tempo real demonstrando taxas de matrículas ativas, evasão escolar histórica e fila por vagas em creches. Na infraestrutura da secretaria, monitora o custo/km da frota do transporte escolar e o estoque da merenda por unidade, disparando alertas de baixas no PNAE para escolas específicas.</p>
+                        <div class="feat-tags">
+                            <span>Censo em Tempo Real</span>
+                            <span>Fila de Creches</span>
+                            <span>Estoque Merenda (PNAE)</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M125 30 L200 60 L125 90 L50 60 Z" fill="#0284c7"/>
+                            <path d="M80 75 V115 C80 130 125 140 125 140 C125 140 170 130 170 115 V75" fill="none" stroke="#0284c7" stroke-width="8" stroke-linecap="round"/>
+                            <circle cx="180" cy="130" r="25" fill="#fff" stroke="#e2e8f0" stroke-width="6"/>
+                            <path d="M180 105 A25 25 0 1 1 155 130" stroke="#f59e0b" stroke-width="6" fill="none" stroke-linecap="round"/>
                         </svg>
                     </div>
                 </div>
@@ -285,28 +378,25 @@ permalink: /solucoes/govdash/
                         <div class="feat-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                         </div>
-                        <h3>Obras, Contratos e Suprimentos</h3>
-                        <p>Portfólio visual das Obras Municipais (licitando, no prazo, atrasadas ou paralisadas). Cruza dados de Medições Físico-Financeiras para identificar gaps entre o avanço da obra e os pagamentos. Gerencia o vencimento de contratos e aplica a Curva ABC no Almoxarifado para priorizar compras.</p>
+                        <h3>Engenharia, Contratos e Almoxarifado</h3>
+                        <p>Portfólio visual de Obras (licitando, no prazo, atrasadas ou paralisadas). A plataforma cruza os dados de Medições Físico-Financeiras para identificar falhas entre o avanço real da obra e os pagamentos. Gerencia o vencimento de contratos, aditivos e aplica a Curva ABC no Almoxarifado para guiar compras.</p>
                         <div class="feat-tags">
                             <span>Medição Físico-Financeira</span>
-                            <span>Curva ABC</span>
                             <span>Avisos de Aditivos</span>
+                            <span>Curva ABC (Estoque)</span>
                         </div>
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="60" width="60" height="100" fill="#e2e8f0" stroke="#0f172a" stroke-width="4"/>
-                            <rect x="65" y="80" width="10" height="15" fill="#0284c7"/>
-                            <rect x="85" y="80" width="10" height="15" fill="#0284c7"/>
-                            <rect x="65" y="110" width="10" height="15" fill="#0284c7"/>
-                            <rect x="85" y="110" width="10" height="15" fill="#f59e0b"/>
-                            <line x1="120" y1="160" x2="120" y2="40" stroke="#f59e0b" stroke-width="6"/>
-                            <line x1="120" y1="40" x2="60" y2="40" stroke="#f59e0b" stroke-width="6"/>
-                            <line x1="70" y1="40" x2="70" y2="55" stroke="#64748b" stroke-width="2"/>
-                            <rect x="130" y="80" width="80" height="60" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
-                            <circle cx="155" cy="110" r="10" fill="none" stroke="#10b981" stroke-width="4"/>
-                            <line x1="175" y1="100" x2="195" y2="100" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
-                            <line x1="175" y1="110" x2="185" y2="110" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+                            <rect x="60" y="80" width="80" height="80" fill="#e2e8f0" stroke="#0f172a" stroke-width="4"/>
+                            <rect x="75" y="100" width="15" height="20" fill="#0284c7"/>
+                            <rect x="110" y="100" width="15" height="20" fill="#0284c7"/>
+                            <rect x="75" y="140" width="15" height="20" fill="#0284c7"/>
+                            <rect x="110" y="140" width="15" height="20" fill="#f59e0b"/>
+                            <line x1="140" y1="160" x2="140" y2="40" stroke="#f59e0b" stroke-width="8"/>
+                            <line x1="140" y1="40" x2="70" y2="40" stroke="#f59e0b" stroke-width="8"/>
+                            <line x1="90" y1="40" x2="90" y2="60" stroke="#64748b" stroke-width="3"/>
+                            <rect x="80" y="60" width="20" height="15" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/>
                         </svg>
                     </div>
                 </div>
@@ -316,26 +406,22 @@ permalink: /solucoes/govdash/
                         <div class="feat-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                         </div>
-                        <h3>Motor de Integração (ETL)</h3>
-                        <p>O coração tecnológico do GovDash. Não exigimos que o servidor digite dados novamente. Nossa arquitetura conecta-se diretamente aos bancos de dados legados da prefeitura via API, ou permite o upload automatizado de planilhas CSV pelas secretarias, garantindo dados sempre frescos.</p>
+                        <h3>Motor de Integração Nativo (ETL)</h3>
+                        <p>O coração tecnológico da plataforma. Chega de digitação dupla e planilhas soltas. O sistema possui ferramentas de ETL que permitem o upload de arquivos CSV pelos servidores ou a conexão 100% automatizada com bancos de dados (SQL) legados, mantendo todos os dashboards vivos sem esforço manual.</p>
                         <div class="feat-tags">
-                            <span>Conexão SQL/API</span>
-                            <span>Upload de CSV</span>
-                            <span>ETL Automatizado</span>
+                            <span>Conexão SQL Server</span>
+                            <span>Upload Automatizado</span>
+                            <span>Integração de Legados</span>
                         </div>
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="80" width="40" height="40" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="4" stroke-dasharray="2 2"/>
-                            <rect x="190" y="70" width="40" height="60" rx="8" fill="#0284c7"/>
-                            
-                            <path d="M70 100 Q 130 50 180 100" stroke="#38bdf8" stroke-width="4" fill="none" stroke-dasharray="6 6"/>
-                            <polygon points="175,95 185,100 175,105" fill="#38bdf8"/>
-                            
-                            <rect x="95" y="60" width="60" height="30" rx="15" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="2"/>
-                            <text x="110" y="80" fill="#0ea5e9" font-family="monospace" font-size="14" font-weight="bold">ETL</text>
-                            
-                            <path d="M30 90 H50 M30 100 H50 M30 110 H40" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="20" y="60" width="50" height="80" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="4" stroke-dasharray="4 4"/>
+                            <rect x="180" y="50" width="50" height="100" rx="8" fill="#0284c7" stroke="#0369a1" stroke-width="4"/>
+                            <path d="M70 100 Q 125 50 180 100" stroke="#38bdf8" stroke-width="4" fill="none"/>
+                            <circle cx="125" cy="75" r="6" fill="#38bdf8" style="animation: slideRight 2s linear infinite;"/>
+                            <circle cx="125" cy="120" r="25" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="4"/>
+                            <path d="M125 110 V130 M115 120 H135" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
                         </svg>
                     </div>
                 </div>
@@ -347,7 +433,7 @@ permalink: /solucoes/govdash/
     <section style="padding: 80px 0; background: var(--gd-dark); text-align: center; color: #fff;">
         <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Ligue a luz da sua gestão.</h2>
-            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma demonstração do GovDash e descubra como grandes municípios estão tomando decisões precisas baseadas em dados consolidados.</p>
+            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma demonstração técnica e descubra como grandes municípios estão tomando decisões milionárias baseadas em dados seguros e consolidados.</p>
             <a href="/index.html#contato" class="btn-action" style="background: var(--gd-accent); color: #fff; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);">Agendar Reunião Técnica</a>
         </div>
     </section>
@@ -357,7 +443,6 @@ permalink: /solucoes/govdash/
     <script src="{{ '/js/main.js' | relative_url }}"></script>
 
     <script>
-        // Animação de rolagem (Fade Up)
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -374,7 +459,6 @@ permalink: /solucoes/govdash/
             });
         });
 
-        // Lógica do Simulador LRF
         function runETL() {
             const btn = document.getElementById('btnSync');
             const statusBadge = document.getElementById('etlStatus');
@@ -384,19 +468,17 @@ permalink: /solucoes/govdash/
 
             if(btn.disabled) return;
             
-            // Reset
             btn.disabled = true;
             btn.innerHTML = 'Extraindo dados contábeis...';
             
             statusBadge.innerHTML = '<span style="width:8px;height:8px;background:#fb923c;border-radius:50%;display:inline-block;"></span> Processando ETL';
             statusBadge.className = 'ai-status-badge scanning';
 
-            // Animação do Gráfico Subindo
+            // Animação do Gráfico
             setTimeout(() => {
-                lrfBar.style.width = '53.8%'; // Bate quase no teto!
-                lrfBar.style.background = '#ef4444'; // Fica vermelho
+                lrfBar.style.width = '53.8%'; // Risco Quase Máximo
+                lrfBar.style.background = '#ef4444'; 
                 
-                // Anima o numero subindo rápido
                 let currentVal = 35.0;
                 const countInterval = setInterval(() => {
                     currentVal += 0.5;
@@ -418,7 +500,6 @@ permalink: /solucoes/govdash/
 
                         btn.innerHTML = 'Painel Atualizado';
                         
-                        // Reset automático depois de 6 segundos para testar de novo
                         setTimeout(() => {
                             btn.disabled = false;
                             btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg> Sincronizar Contabilidade (ETL)';
@@ -433,13 +514,13 @@ permalink: /solucoes/govdash/
                             lrfAlert.style.color = '#94a3b8';
 
                             statusBadge.innerHTML = 'Aguardando Extração';
-                            statusBadge.style = ''; // reset inline styles
+                            statusBadge.style = '';
                             statusBadge.className = 'ai-status-badge';
-                        }, 6000);
+                        }, 7000);
                     }
                 }, 40);
 
-            }, 1000); // 1 segundo de "loading" do banco
+            }, 1000); 
         }
     </script>
 </body>
