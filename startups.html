@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cerrado Tech | Nossas Startups e Produtos</title>
-  <meta name="description" content="Conheça o portfólio de startups e produtos desenvolvidos pela Cerrado Tech.">
+  <meta name="description" content="Conheça o portfólio de startups, plataformas governamentais e produtos da Cerrado Tech.">
   <link rel="icon" type="image/png" href="img/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,97 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/startups.css"> 
+
+  <style>
+      /* Estilos extras para a nova seção GovTech */
+      .govtech-section {
+          background-color: #f8fafc;
+          padding: 100px 0;
+          border-top: 1px solid #e2e8f0;
+      }
+      .gov-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          gap: 30px;
+          margin-top: 50px;
+      }
+      .gov-card {
+          background: #fff;
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          padding: 40px 32px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+      }
+      .gov-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+          border-color: #cbd5e1;
+      }
+      .gov-header {
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #f1f5f9;
+      }
+      .gov-title {
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: #0f172a;
+          margin-bottom: 8px;
+          line-height: 1.3;
+      }
+      .gov-subtitle {
+          font-size: 0.9rem;
+          color: #0EA5E9;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+      .gov-desc {
+          font-size: 1rem;
+          color: #475569;
+          margin-bottom: 24px;
+          line-height: 1.6;
+      }
+      .gov-features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          margin-top: auto;
+      }
+      .gov-features li {
+          font-size: 0.9rem;
+          color: #334155;
+          position: relative;
+          padding-left: 24px;
+          line-height: 1.5;
+      }
+      .gov-features li::before {
+          content: '→';
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #0EA5E9;
+          font-weight: bold;
+      }
+      .gov-features strong {
+          color: #0f172a;
+      }
+      
+      /* Ajuste para aumentar a logo da Cerrado Tech no topo */
+      .hero-logo-wrapper img {
+          max-width: 340px;
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+      }
+  </style>
 </head>
 <body>
 
@@ -38,12 +129,11 @@
   <section id="portfolio" class="section">
     <div class="container">
       <div class="section-header" style="text-align: center;">
-        <h2 class="title">Nosso Portfólio</h2>
+        <h2 class="title">Nosso Portfólio de Startups</h2>
         <p class="subtitle" style="margin: 0 auto;">Conheça as operações e aplicativos que nasceram dentro de casa e já estão tracionando no mercado.</p>
       </div>
 
       <div class="startups-grid">
-        
         <article class="startup-card">
           <div class="startup-header">
             <img src="img/logo-gogym.png" alt="GoGym Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
@@ -103,6 +193,144 @@
           </div>
           <a href="https://renato0503.github.io/ChamaLaSite/" target="_blank" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem; background: #F97316; color: #fff !important; border-color: #F97316;">Acessar ChamaLá</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="govtech" class="govtech-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <span class="tag" style="background: #e2e8f0; color: #475569;">GovTech & Corporate</span>
+        <h2 class="title" style="margin-top: 16px;">Plataformas Governamentais</h2>
+        <p class="subtitle" style="margin: 0 auto; max-width: 800px;">Soluções robustas, escaláveis e focadas na transformação digital, transparência e eficiência do setor público e grandes corporações.</p>
+      </div>
+
+      <div class="gov-grid">
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Gestão Inteligente de Frotas</div>
+                <h3 class="gov-title">Cerrado Mobility</h3>
+            </div>
+            <p class="gov-desc">Plataforma completa para gestão de frota veicular pública e corporativa, operando com comunicação bidirecional em tempo real via WebSocket.</p>
+            <ul class="gov-features">
+                <li><strong>App Mobile:</strong> Dinâmica "estilo Uber" com GPS nativo, roteirização otimizada via OSRM e Dark Mode.</li>
+                <li><strong>Gestão de Viagens:</strong> Dashboard com mapa real, avaliação de motoristas, aprovação web e telemetria.</li>
+                <li><strong>Controle de Insumos:</strong> Registro de abastecimentos com cálculo automático de consumo (km/L) e custos.</li>
+                <li><strong>Automação de Infrações:</strong> Integração com APIs de trânsito (SERPRO) e workflow de tratamento.</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Gestão Escolar e Pedagógica</div>
+                <h3 class="gov-title">Cerrado Edu</h3>
+            </div>
+            <p class="gov-desc">Sistema de Gestão Escolar 100% web e responsivo, focado em redes municipais e estaduais, estruturado em mais de 28 módulos e 500+ endpoints de API.</p>
+            <ul class="gov-features">
+                <li><strong>Gestão Acadêmica:</strong> Controle de turmas, frequência digital e alertas automáticos de faltas.</li>
+                <li><strong>Conselho Digital:</strong> Cálculo de médias, boletins em PDF e conselho de classe 100% informatizado.</li>
+                <li><strong>IA Nativa:</strong> Predição de evasão escolar (Random Forest) e detecção de surtos epidemiológicos.</li>
+                <li><strong>Infraestrutura Escolar:</strong> Módulos focados em Merenda (PNAE), Biblioteca, Transporte e Prestação de Contas (FNDE/PDDE).</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Folha de Pagamento Pública</div>
+                <h3 class="gov-title">Cerrado GovRH</h3>
+            </div>
+            <p class="gov-desc">Solução de folha de pagamento focada na automação, conformidade legal e minimização de passivos para a gestão pública.</p>
+            <ul class="gov-features">
+                <li><strong>Motor Visual (No-code):</strong> Editor dinâmico para criar rubricas e eventos com fórmulas complexas visualmente.</li>
+                <li><strong>Conformidade TCEs:</strong> Exportação nativa eSocial, SEFIP/GFIP, DIRF e layouts para 12 Tribunais de Contas Estaduais.</li>
+                <li><strong>Automação com IA:</strong> Validador de legislação e simulador de impacto financeiro para reajustes.</li>
+                <li><strong>Gestão Completa:</strong> Processamento de folhas normais, 13º, rescisões e mais de 16 tipos de afastamentos.</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Hub para RPPS</div>
+                <h3 class="gov-title">Cerrado Prev</h3>
+            </div>
+            <p class="gov-desc">Um sistema centralizado e integrado em tempo real para gerir Institutos de Previdência Própria (RPPS).</p>
+            <ul class="gov-features">
+                <li><strong>Concessão e Folha:</strong> Automação de aposentadorias/pensões com cálculo de paridades e reajustes.</li>
+                <li><strong>Arrecadação:</strong> Emissão de guias, conciliação e integração direta com o COMPREV federal.</li>
+                <li><strong>Perícia com IA:</strong> Agendamento inteligente e assistente para análise de atestados (sugestão CID).</li>
+                <li><strong>Portal do Servidor:</strong> Autoatendimento 24/7 (LGPD, Pró-Gestão) e "Chat com PDF" para consulta normativa.</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">SaaS e Consultoria LGPD</div>
+                <h3 class="gov-title">Cerrado Privacy</h3>
+            </div>
+            <p class="gov-desc">Plataforma e serviços especializados para adequação e governança de dados segundo a Lei 13.709/2018.</p>
+            <ul class="gov-features">
+                <li><strong>Consultoria:</strong> DPO as a Service, Privacy by Design e planos de resposta a incidentes.</li>
+                <li><strong>Diagnóstico e Risco:</strong> Geração automática de ROPA (Registro de Operações) e RIPD.</li>
+                <li><strong>Monitoramento:</strong> Canal de Titulares, Canal de Denúncias e notificação à ANPD.</li>
+                <li><strong>Treinamento Contínuo:</strong> Módulo EAD para capacitação da equipe com testes e certificação.</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Gestão Cognitiva e Workflow</div>
+                <h3 class="gov-title">Cerrado Docs</h3>
+            </div>
+            <p class="gov-desc">Plataforma paperless na nuvem para Gestão Documental e Automação de Processos de ponta a ponta.</p>
+            <ul class="gov-features">
+                <li><strong>Armazenamento Cloud:</strong> Interface estilo "Drive" com pre-visualização nativa e permissões granulares.</li>
+                <li><strong>Busca Vetorial (RAG) e OCR:</strong> Indexação semântica e extração automática de textos em imagens escaneadas.</li>
+                <li><strong>Chat com Documentos:</strong> Interação em linguagem natural com PDFs simultâneos via IA (resumos com fontes).</li>
+                <li><strong>Workflow Dinâmico:</strong> Tramitação digital com hierarquia de aprovação, prazos e assinatura digital.</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Inovação no SUAS</div>
+                <h3 class="gov-title">Cerrado Social</h3>
+            </div>
+            <p class="gov-desc">Sistema integrado focado na Assistência Social, transformando a gestão de dados em políticas públicas efetivas.</p>
+            <ul class="gov-features">
+                <li><strong>Prontuário Social:</strong> Integração completa entre CRAS, CREAS, Centro POP e Unidades de Acolhimento.</li>
+                <li><strong>Condicionalidades:</strong> Monitoramento de Bolsa Família, CadÚnico, Tarifa Social, entre outros.</li>
+                <li><strong>Fluxo e Regulação:</strong> Gestão inteligente do ciclo de atendimento eliminando filas de espera.</li>
+                <li><strong>Inteligência Georreferenciada:</strong> Mapeamento social para direcionamento estratégico e prestação de contas (MDS).</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">BI Executivo Municipal</div>
+                <h3 class="gov-title">Cerrado GovDash</h3>
+            </div>
+            <p class="gov-desc">Plataforma centralizada de Business Intelligence (BI) que transforma dados complexos em indicadores visuais (KPIs) em tempo real.</p>
+            <ul class="gov-features">
+                <li><strong>Foco Executivo:</strong> Design moderno (UX Premium) para tomada de decisão ágil de Prefeitos e Secretários.</li>
+                <li><strong>Compliance (LRF):</strong> Monitoramento de Despesas/Receitas com alertas de termômetro para Limites de Gastos (54%).</li>
+                <li><strong>Gestão Setorial:</strong> Indicadores de Saúde (filas, LIRAa), Educação (evasão, vagas) e Engenharia (status de obras).</li>
+                <li><strong>Motor ETL:</strong> Conexão automatizada com bancos de dados legados e upload simplificado de planilhas.</li>
+            </ul>
+        </div>
+
+        <div class="gov-card">
+            <div class="gov-header">
+                <div class="gov-subtitle">Engenharia de Alta Performance</div>
+                <h3 class="gov-title">Fábrica de Software</h3>
+            </div>
+            <p class="gov-desc">Braço de engenharia de software escalável e profissional para projetos governamentais e corporativos.</p>
+            <ul class="gov-features">
+                <li><strong>Governança:</strong> Squads completos (POs, Scrum Masters, Arquitetos, QA, DevOps) 100% LGPD.</li>
+                <li><strong>Stack Moderno:</strong> Especialistas em AWS, Azure, GCP, Docker, Kubernetes, Python, .NET, React e Flutter.</li>
+                <li><strong>Metodologias Ágeis:</strong> Entregas via Scrum/Kanban com modelos flexíveis de contratação.</li>
+                <li><strong>SLA de Resolução:</strong> Acordos de nível de serviço rigorosos (de 4h para incidentes críticos a 48h para baixos).</li>
+            </ul>
+        </div>
 
       </div>
     </div>
