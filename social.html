@@ -1,0 +1,469 @@
+---
+layout: null
+permalink: /solucoes/social/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Social | Inovação em Assistência Social (SUAS)</title>
+    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        /* ================= CORES E VARIÁVEIS CERRADO SOCIAL ================= */
+        :root {
+            --soc-dark: #2e1065; /* Violet 950 */
+            --soc-primary: #7c3aed; /* Violet 600 */
+            --soc-primary-dark: #5b21b6; /* Violet 800 */
+            --soc-accent: #d946ef; /* Fuchsia 500 */
+            --dash-bg: #0f172a;
+            --dash-panel: #1e1b4b; /* Fundo misturado com violeta */
+            --text-muted: #a78bfa;
+            --danger: #ef4444;
+            --success: #10b981;
+        }
+
+        body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
+        
+        /* Animações Dinâmicas */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ================= HERO SECTION ================= */
+        .soc-hero {
+            background: linear-gradient(135deg, #020617 0%, var(--soc-dark) 100%);
+            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            border-bottom: 4px solid var(--soc-accent);
+            text-align: center;
+        }
+        .soc-hero::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 60%); pointer-events: none;
+        }
+        .hero-tag { background: rgba(217, 70, 239, 0.15); color: #f0abfc; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(217, 70, 239, 0.3); text-transform: uppercase; letter-spacing: 1px; }
+        .soc-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .soc-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+        .btn-action { background: var(--soc-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3); border: none; cursor: pointer; }
+        .btn-action:hover { background: var(--soc-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4); }
+
+        /* ================= SIMULADOR REGULAÇÃO E GEO ================= */
+        .demo-section { padding: 100px 0; background: #fff; }
+        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 750px; margin: 0 auto; }
+        
+        .demo-workspace {
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; flex-wrap: wrap; position: relative;
+        }
+
+        /* Mockup Fila (Esquerda) */
+        .demo-queue {
+            flex: 0 0 320px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column; position: relative; overflow: hidden;
+        }
+        .queue-header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+        .queue-header h4 { margin: 0; color: #fff; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        
+        .waiting-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .waiting-item { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;}
+        .waiting-item.active { border-color: var(--soc-accent); background: rgba(217, 70, 239, 0.1); }
+        .waiting-item h5 { color: #f8fafc; margin: 0 0 5px 0; font-size: 1rem; }
+        .waiting-item p { color: #94a3b8; font-size: 0.8rem; margin: 0; }
+        .badge-cadunico { display: inline-block; background: #0284c7; color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-top: 5px;}
+
+        .app-btn { background: var(--soc-primary); width: 100%; border: none; padding: 16px; border-radius: 12px; color: #fff; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: auto; display: flex; justify-content: center; align-items: center; gap: 8px;}
+        .app-btn:hover { background: var(--soc-primary-dark); }
+        .app-btn:disabled { background: #334155; cursor: not-allowed; color: #94a3b8; }
+
+        /* Mockup Mapa e Regulação (Direita) */
+        .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: rgba(0,0,0,0.2); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        .ai-status-badge { background: #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .ai-status-badge.scanning { background: rgba(217, 70, 239, 0.15); color: #f0abfc; border: 1px solid rgba(217, 70, 239, 0.3); }
+        
+        .map-console-area { flex: 1; display: flex; gap: 20px; }
+        @media(max-width: 768px){ .map-console-area { flex-direction: column; } }
+
+        /* Mapa de Calor */
+        .geo-map { flex: 1; background: #020617; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; min-height: 200px; display: flex; align-items: center; justify-content: center; }
+        /* Pontos no mapa */
+        .cras-point { position: absolute; width: 16px; height: 16px; background: #3b82f6; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+        .cras-point.c1 { top: 30%; left: 30%; }
+        .cras-point.c2 { top: 60%; left: 70%; }
+        .family-point { position: absolute; top: 40%; left: 40%; width: 12px; height: 12px; background: var(--soc-accent); border-radius: 50%; opacity: 0; transition: opacity 0.3s; }
+        .family-point.visible { opacity: 1; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; }
+        @keyframes ping { 75%, 100% { transform: scale(3); opacity: 0; } }
+        .route-line { position: absolute; top: 35%; left: 35%; width: 0; height: 2px; background: var(--soc-accent); transform-origin: left; transform: rotate(15deg); transition: width 0.8s ease; }
+
+        /* Console de Logs */
+        .ai-console { flex: 1; background: rgba(0,0,0,0.3); border-radius: 20px; padding: 20px; font-family: monospace; color: #a78bfa; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;}
+        .console-line { opacity: 0.8; margin-bottom: 10px; font-size: 0.85rem; display: none; }
+        .console-line.visible { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Resultado Regulação */
+        .ai-result { display: none; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 15px; margin-top: auto; animation: scaleIn 0.3s ease; }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .ai-result h4 { color: #34d399; font-family: 'Inter', sans-serif; font-size: 1.1rem; margin: 0 0 5px 0; display: flex; align-items: center; gap: 8px; }
+        .ai-result p { color: #f1f5f9; font-family: 'Inter', sans-serif; font-size: 0.85rem; margin: 0; }
+
+        /* ================= FUNCIONALIDADES ================= */
+        .features-section { padding: 100px 0; background: #f8fafc; }
+        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
+        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+        .feat-row:nth-child(even) { flex-direction: row-reverse; }
+        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-queue { flex: 1; width: 100%; max-width: 100%; } }
+        
+        .feat-content { flex: 1.2; }
+        .feat-icon { width: 64px; height: 64px; background: #f3e8ff; color: var(--soc-primary); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #ddd6fe; }
+        .feat-content h3 { font-size: 2rem; color: #0f172a; font-weight: 800; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+        .feat-content p { font-size: 1.1rem; color: #475569; margin-bottom: 24px; line-height: 1.7; }
+        .feat-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
+        .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--soc-accent); border-radius: 50%; }
+        
+        .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(124, 58, 237, 0.15)); }
+
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="Cerrado Tech" %}
+
+    <section class="soc-hero">
+        <div class="container">
+            <span class="hero-tag fade-up">GovTech | Sistema Único de Assistência Social</span>
+            <h1 class="fade-up delay-1">Cerrado Social</h1>
+            <p class="fade-up delay-2">Transformando dados em políticas públicas efetivas. Integre toda a rede de atendimento (CRAS, CREAS), regule filas com inteligência e monitore as condicionalidades do CadÚnico em um único painel georreferenciado.</p>
+            <div class="fade-up delay-3">
+                <a href="#simulador" class="btn-action">
+                    Simular Regulação de Fila
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="demo-section">
+        <div class="container">
+            <div class="demo-header fade-up">
+                <h2>O fim das filas sob o sol.</h2>
+                <p>Clique em <strong>Executar Regulação</strong>. Veja como a plataforma analisa o perfil da família na fila, localiza o endereço no mapa e agenda o atendimento na unidade correta do CRAS automaticamente.</p>
+            </div>
+
+            <div class="demo-workspace fade-up delay-1">
+                
+                <div class="demo-queue">
+                    <div class="queue-header">
+                        <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> Fila de Regulação (Bolsa Família)</h4>
+                    </div>
+                    
+                    <div class="waiting-list">
+                        <div class="waiting-item" id="fam1">
+                            <h5>Família Silva (Ana Maria)</h5>
+                            <p>NIS: 123.4567.890-1 • Bairro: Centro</p>
+                            <span class="badge-cadunico">CadÚnico Desatualizado</span>
+                        </div>
+                        <div class="waiting-item" style="opacity: 0.5;">
+                            <h5>Família Souza (José)</h5>
+                            <p>NIS: 987.6543.210-9 • Bairro: Zona Sul</p>
+                        </div>
+                    </div>
+
+                    <button class="app-btn" id="btnRunReg" onclick="runRegulation()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Executar Regulação Inteligente
+                    </button>
+                </div>
+
+                <div class="demo-dash">
+                    <div class="dash-header">
+                        <div>
+                            <strong style="font-size: 1.1rem;">Central de Comando SUAS</strong>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Mapeamento Georreferenciado Ativo</span>
+                        </div>
+                        <div class="ai-status-badge" id="aiStatus">Sistema em Espera</div>
+                    </div>
+
+                    <div class="map-console-area">
+                        <div class="geo-map">
+                            <svg width="100%" height="100%" style="position:absolute; opacity: 0.1;"><path d="M0 50 L300 150 M100 0 L150 200 M0 150 L300 50" stroke="#fff" stroke-width="2"/></svg>
+                            
+                            <div class="cras-point c1" title="CRAS Centro"></div>
+                            <div class="cras-point c2" title="CRAS Zona Sul"></div>
+                            
+                            <div class="family-point" id="famPoint"></div>
+                            <div class="route-line" id="famRoute"></div>
+                        </div>
+
+                        <div class="ai-console">
+                            <div id="consoleText">
+                                <span style="opacity: 0.3;">> Aguardando próximo da fila para cruzamento de dados...</span>
+                            </div>
+                            
+                            <div class="ai-result" id="aiResultBox">
+                                <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Regulação Concluída</h4>
+                                <p>Família vinculada ao <strong>CRAS Centro</strong> (1.2km de distância). Agendamento confirmado para Amanhã, 09h00. SMS disparado para o titular.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="demo-header fade-up">
+                <h2>Tecnologia a serviço da dignidade.</h2>
+                <p>Nossa plataforma integra as pontas soltas da assistência social, permitindo que a prefeitura atue de forma proativa, e não apenas apagando incêndios.</p>
+            </div>
+
+            <div class="feature-grid">
+                
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>Prontuário Social Eletrônico (Único)</h3>
+                        <p>Chega de criar uma pasta nova de papel para o cidadão cada vez que ele visita uma unidade diferente. O sistema unifica o histórico de atendimento integrando toda a rede: <strong>CRAS, CREAS, Centro POP, Centro-Dia e Unidades de Acolhimento</strong>. O assistente social sabe exatamente o histórico da família em segundos.</p>
+                        <div class="feat-tags">
+                            <span>Prontuário Unificado</span>
+                            <span>Integração CRAS/CREAS</span>
+                            <span>Histórico Familiar</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="25" fill="#7c3aed"/>
+                            <rect x="85" y="85" width="30" height="30" rx="4" fill="#fff" opacity="0.9"/>
+                            <line x1="100" y1="75" x2="100" y2="30" stroke="#a78bfa" stroke-width="4" stroke-dasharray="4 4"/>
+                            <line x1="120" y1="115" x2="160" y2="150" stroke="#a78bfa" stroke-width="4" stroke-dasharray="4 4"/>
+                            <line x1="80" y1="115" x2="40" y2="150" stroke="#a78bfa" stroke-width="4" stroke-dasharray="4 4"/>
+                            <circle cx="100" cy="25" r="15" fill="#fff" stroke="#7c3aed" stroke-width="4"/>
+                            <circle cx="165" cy="155" r="15" fill="#fff" stroke="#7c3aed" stroke-width="4"/>
+                            <circle cx="35" cy="155" r="15" fill="#fff" stroke="#7c3aed" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h3>Gestão de Condicionalidades</h3>
+                        <p>Monitoramento ativo dos benefícios. O sistema controla e unifica as exigências de programas federais, estaduais e municipais como <strong>Bolsa Família, CadÚnico, Passe Livre, Tarifa Social de Energia e Minha Casa Minha Vida</strong>. Emite alertas para recadastramento antes do bloqueio do benefício.</p>
+                        <div class="feat-tags">
+                            <span>Alerta CadÚnico</span>
+                            <span>Controle Bolsa Família</span>
+                            <span>Tarifa Social</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="20" width="140" height="160" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                            <rect x="70" y="50" width="20" height="20" rx="4" fill="#10b981"/>
+                            <path d="M74 60 L78 64 L84 56" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                            <rect x="100" y="56" width="60" height="8" rx="4" fill="#cbd5e1"/>
+                            <rect x="70" y="90" width="20" height="20" rx="4" fill="#10b981"/>
+                            <path d="M74 100 L78 104 L84 96" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                            <rect x="100" y="96" width="70" height="8" rx="4" fill="#cbd5e1"/>
+                            <rect x="70" y="130" width="20" height="20" rx="4" fill="#f59e0b"/>
+                            <circle cx="80" cy="140" r="3" fill="#fff"/>
+                            <rect x="100" y="136" width="50" height="8" rx="4" fill="#cbd5e1"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3>Fluxo e Regulação Automática</h3>
+                        <p>Nós literalmente acabamos com as filas de espera físicas. Através de um painel de regulação, o município faz a gestão inteligente do ciclo de vida do atendimento, roteando o cidadão da triagem inicial (regulação) para o agendamento no polo correto, acompanhando até a alta social do indivíduo.</p>
+                        <div class="feat-tags">
+                            <span>Fim das Filas</span>
+                            <span>Agendamento Eletrônico</span>
+                            <span>Ciclo de Alta</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="100" r="10" fill="#cbd5e1"/>
+                            <circle cx="80" cy="100" r="10" fill="#94a3b8"/>
+                            <circle cx="110" cy="100" r="10" fill="#64748b"/>
+                            
+                            <path d="M135 100 L160 100" stroke="#7c3aed" stroke-width="4" stroke-dasharray="4 4"/>
+                            <polygon points="155,95 165,100 155,105" fill="#7c3aed"/>
+                            
+                            <rect x="180" y="70" width="40" height="60" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="4"/>
+                            <line x1="180" y1="90" x2="220" y2="90" stroke="#7c3aed" stroke-width="4"/>
+                            <circle cx="200" cy="110" r="4" fill="#d946ef"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <h3>Inteligência Georreferenciada (Mapa)</h3>
+                        <p>Onde a prefeitura deve construir o próximo CRAS? O sistema responde. Mapeamento social com mapas de calor (heatmaps) indicando onde estão as maiores zonas de vulnerabilidade na região. Perfeito para o direcionamento estratégico de recursos e prestação de contas automatizada ao Ministério do Desenvolvimento Social (MDS).</p>
+                        <div class="feat-tags">
+                            <span>Mapa de Calor (Heatmap)</span>
+                            <span>Zonas de Vulnerabilidade</span>
+                            <span>Relatórios MDS</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="160" height="160" rx="20" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="4"/>
+                            <path d="M20 80 Q 80 120 180 60" stroke="#cbd5e1" stroke-width="4" fill="none"/>
+                            <path d="M60 20 V 180" stroke="#cbd5e1" stroke-width="4" fill="none"/>
+                            <circle cx="100" cy="120" r="30" fill="#d946ef" opacity="0.2"/>
+                            <circle cx="100" cy="120" r="15" fill="#d946ef" opacity="0.5"/>
+                            <path d="M100 120 C 100 120 85 100 85 85 C 85 70 115 70 115 85 C 115 100 100 120 100 120 Z" fill="#7c3aed"/>
+                            <circle cx="100" cy="85" r="5" fill="#fff"/>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: var(--soc-dark); text-align: center; color: #fff;">
+        <div class="container fade-up">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Transforme a Assistência Social.</h2>
+            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Implante um sistema que respeita o cidadão e blinda o gestor público. Fale com um arquiteto de soluções e agende uma demonstração.</p>
+            <a href="/index.html#contato" class="btn-action" style="background: var(--soc-accent); color: #fff; box-shadow: 0 10px 20px rgba(217, 70, 239, 0.2);">Solicitar Demonstração Gratuita</a>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+
+    <script>
+        // Animação de rolagem (Fade Up)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Lógica do Simulador
+        function runRegulation() {
+            const btn = document.getElementById('btnRunReg');
+            const fam1 = document.getElementById('fam1');
+            const statusBadge = document.getElementById('aiStatus');
+            const consoleBox = document.getElementById('consoleText');
+            const resultBox = document.getElementById('aiResultBox');
+            
+            const famPoint = document.getElementById('famPoint');
+            const famRoute = document.getElementById('famRoute');
+
+            if(btn.disabled) return;
+            
+            // Reset
+            btn.disabled = true;
+            btn.innerHTML = 'Processando Fila...';
+            fam1.classList.add('active');
+            resultBox.style.display = 'none';
+            consoleBox.innerHTML = '';
+            
+            statusBadge.innerText = 'Lendo NIS 123.4567...';
+            statusBadge.className = 'ai-status-badge scanning';
+
+            const steps = [
+                "> Coletando dados: Família Silva (Ana Maria)...",
+                "> Verificando NIS. <span style='color:#ef4444;'>Alerta: CadÚnico vence em 15 dias.</span>",
+                "> Acionando módulo de Inteligência Georreferenciada...",
+                "> Localizando endereço via API: Bairro Centro (CEP 78000-000).",
+                "> Calculando unidade de acolhimento mais próxima..."
+            ];
+
+            let stepIndex = 0;
+
+            const interval = setInterval(() => {
+                if (stepIndex < steps.length) {
+                    const line = document.createElement('div');
+                    line.className = 'console-line visible';
+                    line.innerHTML = steps[stepIndex];
+                    consoleBox.appendChild(line);
+
+                    if(stepIndex === 3) {
+                        famPoint.classList.add('visible'); // Show family on map
+                    }
+
+                    stepIndex++;
+                } else {
+                    clearInterval(interval);
+                    showResult();
+                }
+            }, 800); 
+
+            function showResult() {
+                // Desenha a "rota" da familia pro CRAS 1
+                famRoute.style.width = '60px'; 
+
+                statusBadge.innerText = 'Vaga Regulada com Sucesso';
+                statusBadge.className = 'ai-status-badge';
+                statusBadge.style.background = 'rgba(16, 185, 129, 0.15)';
+                statusBadge.style.color = '#34d399';
+                statusBadge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+                
+                resultBox.style.display = 'block';
+                btn.innerHTML = 'Regulação Finalizada';
+
+                // Reset para rodar de novo
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Executar Próxima Regulação';
+                    btn.style.background = 'var(--soc-primary)';
+                    
+                    statusBadge.innerText = 'Sistema em Espera';
+                    statusBadge.className = 'ai-status-badge';
+                    statusBadge.style = ''; 
+                    
+                    fam1.classList.remove('active');
+                    famPoint.classList.remove('visible');
+                    famRoute.style.width = '0';
+                    
+                    consoleBox.innerHTML = '<span style="opacity: 0.3;">> Aguardando próximo da fila para cruzamento de dados...</span>';
+                    resultBox.style.display = 'none';
+                }, 7000);
+            }
+        }
+    </script>
+</body>
+</html>
