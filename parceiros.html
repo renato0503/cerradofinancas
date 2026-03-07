@@ -118,7 +118,7 @@ layout: null
             border: 1px solid #e2e8f0;
         }
 
-        .comission-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        .comission-table { width: 100%; border-collapse: collapse; min-width: 900px; }
 
         .comission-table th {
             background: #0f172a;
@@ -136,10 +136,23 @@ layout: null
             border-bottom: 1px solid #f1f5f9;
             color: #334155;
             font-size: 1.05rem;
+            vertical-align: middle;
+        }
+        
+        /* Categoria Divisor na Tabela */
+        .table-category {
+            background: #f8fafc;
+            color: #0f172a;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 2px solid #e2e8f0;
         }
 
-        .comission-table tr:hover td { background-color: #f8fafc; }
+        .comission-table tr:hover td:not(.table-category) { background-color: #f8fafc; }
 
+        /* Badges de Remuneração e Tipos */
         .badge-verde {
             background: #f0fdf4;
             color: #16a34a;
@@ -148,6 +161,35 @@ layout: null
             border-radius: 8px;
             border: 1px solid #bbf7d0;
             display: inline-block;
+        }
+
+        .badge-recorrente {
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #bfdbfe;
+            display: inline-block;
+        }
+
+        .badge-pontual {
+            background: #fff7ed;
+            color: #ea580c;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #fed7aa;
+            display: inline-block;
+        }
+
+        .info-recorrente {
+            display: block;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 6px;
         }
 
         .cta-parceiro {
@@ -192,7 +234,7 @@ layout: null
     <div class="container">
         <h1>Transforme sua Rede em <span class="highlight-blue">Lucro Recorrente</span></h1>
         <p>
-            O Programa de Parceiros da Cerrado Finanças foi feito para quem busca uma aliança estratégica séria, com suporte técnico e comissionamento acima da média do mercado.
+            O Programa de Parceiros da Cerrado Finanças foi feito para quem busca uma aliança estratégica séria, oferecendo desde consultorias e cursos até plataformas governamentais complexas.
         </p>
     </div>
 </section>
@@ -201,25 +243,25 @@ layout: null
     <div class="benefits-wrapper">
         <div class="benefit-card">
             <span class="benefit-icon">🚀</span>
-            <h3>Alta Conversão</h3>
-            <p>Nossas soluções resolvem dores reais das empresas. Indicar a Cerrado é oferecer excelência técnica aos seus clientes.</p>
+            <h3>Portfólio 360º</h3>
+            <p>Monetize sua rede em todas as frentes: Educação, Finanças Corporativas e Plataformas Tecnológicas (GovTech/B2B).</p>
         </div>
         <div class="benefit-card">
             <span class="benefit-icon">💰</span>
-            <h3>Adiantamento (6x)</h3>
-            <p>Precisa de caixa? Antecipamos sua comissão anual em 6 parcelas mensais, garantindo fôlego financeiro imediato.</p>
+            <h3>Comissionamento Ágil</h3>
+            <p>Ganhos claros e sem letras miúdas. Receba repasses pontuais rápidos ou construa uma carteira de renda passiva mensal.</p>
         </div>
         <div class="benefit-card">
             <span class="benefit-icon">🔄</span>
             <h3>Renda Recorrente</h3>
-            <p>Trabalhe uma vez e receba todos os meses. Enquanto o cliente estiver ativo, sua comissão está garantida na conta.</p>
+            <p>Trabalhe uma vez e receba todos os meses. Nos contratos SaaS e Consultoria Mensal, sua comissão é garantida enquanto o cliente estiver ativo.</p>
         </div>
     </div>
 
     <div class="table-section-title">
         <span class="label">Oportunidades de Negócio</span>
         <h2>Tabela de Remuneração</h2>
-        <p style="color: #64748b; max-width: 600px; margin: 15px auto; font-size: 1.1rem;">Ganhos claros, diretos e sem letras miúdas. Veja quanto você pode lucrar por indicação fechada:</p>
+        <p style="color: #64748b; max-width: 700px; margin: 15px auto; font-size: 1.1rem;">Explore todas as soluções da Cerrado Finanças e Cerrado Tech. Veja quanto você pode lucrar por cada contrato fechado:</p>
     </div>
 
     <div class="table-container">
@@ -229,33 +271,68 @@ layout: null
                     <th>Solução Estratégica</th>
                     <th>Ticket Médio</th>
                     <th>Sua Remuneração</th>
-                    <th>Opção Adiantamento</th>
+                    <th>Tipo de Repasse</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td colspan="4" class="table-category">💼 Consultoria Financeira e Empresarial</td>
+                </tr>
+                <tr>
+                    <td><strong>Diagnóstico Financeiro</strong><br><span style="font-size: 0.85rem; color: #64748b;">Análise profunda e reestruturação</span></td>
+                    <td>R$ 2.200 (Único)</td>
+                    <td><span class="badge-verde">R$ 462,00</span></td>
+                    <td><span class="badge-pontual">Pontual</span><span class="info-recorrente">Pago à vista no fechamento.</span></td>
+                </tr>
+                <tr>
                     <td><strong>Acompanhamento Mensal</strong></td>
                     <td>R$ 600 / mês</td>
-                    <td><span class="badge-verde">R$ 115,50</span></td>
-                    <td style="font-weight: 800; color: #0f172a;">R$ 693,00 (6x)</td>
+                    <td><span class="badge-verde">R$ 115,50 /mês</span></td>
+                    <td><span class="badge-recorrente">Recorrente Mensal</span><span class="info-recorrente">Opção de adiantar R$ 693,00 (6x).</span></td>
                 </tr>
                 <tr>
                     <td><strong>Consultoria Contínua</strong></td>
                     <td>R$ 900 / mês</td>
-                    <td><span class="badge-verde">R$ 189,00</span></td>
-                    <td style="font-weight: 800; color: #0f172a;">R$ 1.134,00 (6x)</td>
+                    <td><span class="badge-verde">R$ 189,00 /mês</span></td>
+                    <td><span class="badge-recorrente">Recorrente Mensal</span><span class="info-recorrente">Opção de adiantar R$ 1.134,00 (6x).</span></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="table-category">🎓 Formação Executiva e Mentoria</td>
                 </tr>
                 <tr>
-                    <td><strong>Diagnóstico Financeiro</strong></td>
-                    <td>R$ 2.200 (Único)</td>
-                    <td><span class="badge-verde">R$ 462,00</span></td>
-                    <td style="color: #94a3b8; font-weight: 600;">À vista</td>
+                    <td><strong>Cursos de Formação Continuada</strong><br><span style="font-size: 0.85rem; color: #64748b;">Turmas em grupo (In Company ou Abertas)</span></td>
+                    <td>R$ 800 (Por aluno)</td>
+                    <td><span class="badge-verde">R$ 168,00</span></td>
+                    <td><span class="badge-pontual">Pontual</span><span class="info-recorrente">Pago conforme matrículas.</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Mentoria Individual</strong><br><span style="font-size: 0.85rem; color: #64748b;">Acompanhamento estratégico 1:1</span></td>
+                    <td>R$ 800 (Único)</td>
+                    <td><span class="badge-verde">R$ 168,00</span></td>
+                    <td><span class="badge-pontual">Pontual</span><span class="info-recorrente">Pago no fechamento do pacote.</span></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="table-category">💻 Plataformas Cerrado Tech (GovTech / SaaS / Corporate)</td>
                 </tr>
                 <tr>
                     <td><strong>SaaS Plano Enterprise</strong></td>
                     <td>R$ 1.500 / mês</td>
-                    <td><span class="badge-verde">R$ 315,00</span></td>
-                    <td style="font-weight: 800; color: #0f172a;">R$ 1.890,00 (6x)</td>
+                    <td><span class="badge-verde">R$ 315,00 /mês</span></td>
+                    <td><span class="badge-recorrente">Recorrente Mensal</span><span class="info-recorrente">Opção de adiantar R$ 1.890,00 (6x).</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Plataformas GovTech (GovDash, Edu, Prev...)</strong><br><span style="font-size: 0.85rem; color: #64748b;">Licenciamento para prefeituras e órgãos</span></td>
+                    <td>Sob Consulta</td>
+                    <td><span class="badge-verde">Até 20% do Contrato</span></td>
+                    <td><span class="badge-recorrente">Recorrente ou Pontual</span><span class="info-recorrente">Pago conforme fatura/empenho do cliente.</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Fábrica de Software</strong><br><span style="font-size: 0.85rem; color: #64748b;">Projetos customizados de alta complexidade</span></td>
+                    <td>Sob Consulta</td>
+                    <td><span class="badge-verde">10% a 20% do Escopo</span></td>
+                    <td><span class="badge-pontual">Pontual por Medição</span><span class="info-recorrente">Pago a cada Sprint/Entrega faturada.</span></td>
                 </tr>
             </tbody>
         </table>
