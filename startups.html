@@ -1,0 +1,150 @@
+---
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerrado Tech | Nossas Startups e Produtos</title>
+  <meta name="description" content="Conheça o portfólio de startups e produtos desenvolvidos pela Cerrado Tech.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/startups.css"> 
+</head>
+<body>
+
+  {% include header.html titulo="Cerrado Tech" %}
+
+  <section class="hero-tech">
+    <div class="container hero-content text-center">
+      
+      <div class="hero-logo-wrapper">
+        <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
+      </div>
+      
+      <span class="tag" style="display:block; margin: 0 auto 16px; width: fit-content;">Venture Builder</span>
+      <h1 class="title">Nós construímos o futuro da gestão e do varejo.</h1>
+      <p class="subtitle">A Cerrado Tech não é apenas uma consultoria. Somos um laboratório de inovação que idealiza, desenvolve e escala modelos de negócios disruptivos baseados em inteligência de dados e software proprietário.</p>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <h2 class="title">Nosso Portfólio</h2>
+        <p class="subtitle" style="margin: 0 auto;">Conheça as operações e aplicativos que nasceram dentro de casa e já estão tracionando no mercado.</p>
+      </div>
+
+      <div class="startups-grid">
+        
+        <article class="startup-card">
+          <div class="startup-header">
+            <img src="img/logo-gogym.png" alt="GoGym Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
+            <div>
+              <h3>GoGym Store</h3>
+              <span class="status-badge success">Em Operação</span>
+            </div>
+          </div>
+          <p class="startup-desc">Operação estruturada no modelo de Dark Store, otimizando a logística e a distribuição de ponta a ponta com custos reduzidos.</p>
+          <div class="startup-details">
+            <div class="detail-item"><strong>O Problema:</strong> Custo de vitrine física e gargalos logísticos no varejo tradicional.</div>
+            <div class="detail-item"><strong>A Solução:</strong> Hub logístico com gestão de estoque baseada em dados.</div>
+            <div class="detail-item tech-tags">
+              <span class="tech-tag">Logística</span>
+              <span class="tech-tag">Dark Store</span>
+            </div>
+          </div>
+          <a href="/startups/gogym/" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem;">Acessar GoGym Store</a>
+        </article>
+
+        <article class="startup-card">
+          <div class="startup-header">
+            <img src="img/logo-patamed.png" alt="PataMed Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
+            <div>
+              <h3>PataMed</h3>
+              <span class="status-badge warning">Em Desenvolvimento</span>
+            </div>
+          </div>
+          <p class="startup-desc">Plataforma tecnológica focada em centralizar e simplificar o acesso a dados de saúde e atendimento veterinário.</p>
+          <div class="startup-details">
+            <div class="detail-item"><strong>O Problema:</strong> Histórico fragmentado entre tutores e clínicas.</div>
+            <div class="detail-item"><strong>A Solução:</strong> Prontuário eletrônico e app de gestão de saúde.</div>
+            <div class="detail-item tech-tags">
+              <span class="tech-tag">HealthTech</span>
+              <span class="tech-tag">App Mobile</span>
+            </div>
+          </div>
+          <a href="/startups/patamed/" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem; background: #0EA5E9; color: #fff !important; border-color: #0EA5E9;">Conhecer a PataMed</a>
+        </article>
+
+        <article class="startup-card">
+          <div class="startup-header">
+            <img src="img/logo-chamala.png" alt="ChamaLá Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
+            <div>
+              <h3>ChamaLá</h3>
+              <span class="status-badge warning">Ideação / MVP</span>
+            </div>
+          </div>
+          <p class="startup-desc">Aplicativo de intermediação de serviços rápidos, conectando demandas urgentes a profissionais qualificados em tempo real.</p>
+          <div class="startup-details">
+            <div class="detail-item"><strong>O Problema:</strong> Fricção e demora na contratação de serviços sob demanda.</div>
+            <div class="detail-item"><strong>A Solução:</strong> Match instantâneo com geolocalização e reputação.</div>
+            <div class="detail-item tech-tags">
+              <span class="tech-tag">Marketplace</span>
+              <span class="tech-tag">Geolocalização</span>
+            </div>
+          </div>
+          <a href="https://renato0503.github.io/ChamaLaSite/" target="_blank" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem; background: #F97316; color: #fff !important; border-color: #F97316;">Acessar ChamaLá</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <span class="tag">Como Criamos</span>
+        <h2 class="title" style="margin-left: auto; margin-right: auto;">Do Papel à Escala</h2>
+      </div>
+      
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-icon">1</div>
+          <h4>Validação e Dores</h4>
+          <p>Identificamos ineficiências reais no mercado. Não codificamos nada antes de ter certeza matemática de que o problema existe e as pessoas pagariam pela solução.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon">2</div>
+          <h4>Construção do MVP</h4>
+          <p>Utilizamos arquitetura de software ágil e integrações de API para construir a primeira versão do produto no menor tempo possível para testes reais.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon">3</div>
+          <h4>Tração e Spin-off</h4>
+          <p>Uma vez que o produto prova seu valor, estruturamos a governança, a contabilidade corporativa e a inteligência de dados para que a startup ganhe vida própria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark text-center">
+    <div class="container">
+      <h2 class="title" style="color: #fff;">Tem um desafio complexo na sua operação?</h2>
+      <p class="subtitle" style="color: #cbd5e1; max-width: 600px; margin: 0 auto 32px;">A mesma inteligência de negócios que desenvolve as startups da Cerrado Tech pode reestruturar os sistemas e processos da sua empresa.</p>
+      <a href="index.html#contato" class="btn-secondary">Agendar Diagnóstico com nossos Especialistas</a>
+    </div>
+  </section>
+
+  {% include footer.html %}
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

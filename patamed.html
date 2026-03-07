@@ -1,0 +1,256 @@
+---
+layout: null
+permalink: /startups/patamed/
+---
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PataMed | O Veterinário na Palma da Sua Mão</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#054D3F',
+                            light: '#10B981',
+                            accent: '#F29479',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        .hero-pattern { background-image: radial-gradient(#10B981 1px, transparent 1px); background-size: 20px 20px; opacity: 0.05; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-light selection:text-white">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/startups/patamed/" class="flex items-center gap-2">
+                    <img src="{{ '/img/logo-patamed.png' | relative_url }}" alt="PataMed Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'">
+                    <span class="text-2xl font-extrabold text-brand-dark tracking-tight">Pata<span class="text-brand-light">Med</span></span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#como-funciona" class="text-sm font-bold text-slate-600 hover:text-brand-light transition-colors">Como Funciona</a>
+                    <a href="#planos" class="text-sm font-bold text-slate-600 hover:text-brand-light transition-colors">Para Tutores</a>
+                    <a href="#parceiros" class="text-sm font-bold text-slate-600 hover:text-brand-light transition-colors">Para Veterinários</a>
+                    <a href="#planos" class="bg-brand-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-emerald-900 transition-all transform hover:scale-105 shadow-lg shadow-brand-dark/20">
+                        Assinar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 hero-pattern"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+            
+            <div class="flex-1 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-brand-light text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-light opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-light"></span>
+                    </span>
+                    Chegamos na Baixada Cuiabana
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] mb-6">
+                    O veterinário na <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-light">porta da sua casa.</span>
+                </h1>
+                <p class="text-lg text-slate-500 mb-10 max-w-xl mx-auto lg:mx-0 font-medium">
+                    Atendimento veterinário em domicílio com rapidez, segurança e valores que cabem no bolso. O modelo Uber que revolucionou a saúde do seu pet.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#planos" class="bg-brand-accent hover:bg-[#E07A5F] text-white px-8 py-4 rounded-2xl font-extrabold text-lg transition-all shadow-xl shadow-brand-accent/30 flex items-center justify-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i> Proteger meu Pet
+                    </a>
+                    <a href="#parceiros" class="bg-white text-slate-700 border-2 border-slate-200 hover:border-brand-light hover:text-brand-light px-8 py-4 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        Sou Veterinário
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full max-w-lg lg:max-w-none relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-brand-light/20 to-transparent rounded-[3rem] transform rotate-3 scale-105"></div>
+                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=800&q=80" alt="Veterinário atendendo cachorro" class="rounded-[3rem] shadow-2xl relative z-10 object-cover h-[500px] w-full border-4 border-white">
+                
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-brand-light">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase">Tempo Médio</p>
+                        <p class="text-lg font-black text-slate-800">Chega em 30 min</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-black text-slate-900 mb-4">Seu pet passou mal? Resolva em 3 toques.</h2>
+                <p class="text-slate-500 font-medium">Esqueça o trânsito e o estresse da caixa de transporte. Nós vamos até você.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-slate-50 border border-slate-100 rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-light shadow-sm">
+                        <i data-lucide="smartphone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">1. Peça pelo App</h3>
+                    <p class="text-slate-500 text-sm">Abra o app, descreva os sintomas e confirme sua localização.</p>
+                </div>
+                <div class="text-center relative">
+                    <div class="hidden md:block absolute top-10 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200"></div>
+                    <div class="w-20 h-20 bg-emerald-50 border border-emerald-100 rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-light shadow-sm relative z-10">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">2. Match Automático</h3>
+                    <p class="text-slate-500 text-sm">O sistema localiza o veterinário parceiro mais próximo e disponível.</p>
+                </div>
+                <div class="text-center relative">
+                    <div class="hidden md:block absolute top-10 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200"></div>
+                    <div class="w-20 h-20 bg-brand-dark rounded-3xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg shadow-brand-dark/30 relative z-10">
+                        <i data-lucide="home" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">3. Atendimento em Casa</h3>
+                    <p class="text-slate-500 text-sm">O profissional realiza a consulta, medicação e receituário no conforto do seu lar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-light font-bold tracking-widest uppercase text-xs">Planos de Assinatura</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2 mb-4">Segurança que cabe no bolso</h2>
+                <p class="text-slate-500 font-medium">Pague uma mensalidade fixa e garanta atendimento de emergência com taxas reduzidas.</p>
+            </div>
+
+            <div class="max-w-lg mx-auto">
+                <div class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-2xl border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-[10px] font-black uppercase tracking-widest py-2 px-6 rounded-bl-2xl">Mais Popular</div>
+                    
+                    <h3 class="text-2xl font-black text-slate-800">PataMed Standard</h3>
+                    <p class="text-slate-500 text-sm mb-6 mt-1">Ideal para cães e gatos de todas as idades.</p>
+                    
+                    <div class="mb-8">
+                        <span class="text-5xl font-black text-brand-dark">R$ 59<span class="text-2xl text-slate-400">,90</span></span>
+                        <span class="text-slate-400 font-bold text-sm">/mês</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-light shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Até <strong>3 visitas domiciliares</strong> subsidiadas por ano.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-light shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Coparticipação de apenas <strong>R$ 80,00</strong> em horário comercial.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-light shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Plantão noturno garantido por <strong>R$ 130,00</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-light shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Descontos exclusivos em clínicas parceiras para Raio-X e Internação.</span>
+                        </li>
+                    </ul>
+
+                    <button class="w-full bg-brand-dark text-white font-extrabold py-5 rounded-2xl transition-all shadow-xl shadow-brand-dark/20 hover:bg-emerald-900 hover:scale-[1.02] uppercase tracking-widest text-sm">
+                        Garantir Meu Plano
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parceiros" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1200&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-4xl font-black mb-6">Você é Médico Veterinário? Junte-se à Revolução.</h2>
+                <p class="text-emerald-100 text-lg mb-8 font-light">
+                    Transforme seu tempo livre em renda. Seja um parceiro PataMed, atenda chamados na sua região pelo app e tenha total autonomia sobre a sua agenda, sem custos fixos de clínica.
+                </p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-brand-light/20 rounded-lg flex items-center justify-center"><i data-lucide="wallet" class="w-4 h-4 text-brand-light"></i></div>
+                        <span class="font-bold text-white">Repasses rápidos e garantidos.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-brand-light/20 rounded-lg flex items-center justify-center"><i data-lucide="calendar-clock" class="w-4 h-4 text-brand-light"></i></div>
+                        <span class="font-bold text-white">Você decide quando e onde ficar online.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-brand-light/20 rounded-lg flex items-center justify-center"><i data-lucide="stethoscope" class="w-4 h-4 text-brand-light"></i></div>
+                        <span class="font-bold text-white">Foque na medicina, nós trazemos os clientes.</span>
+                    </li>
+                </ul>
+                <button class="bg-white text-brand-dark font-black py-4 px-8 rounded-2xl transition-all hover:bg-emerald-50 hover:scale-105 shadow-xl uppercase tracking-widest text-sm flex items-center gap-2">
+                    Quero ser Parceiro <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <div class="flex-1 hidden lg:block">
+                <div class="w-72 h-[550px] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl mx-auto relative overflow-hidden flex flex-col pt-10 px-4">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-xl"></div>
+                    <h4 class="text-white font-bold text-lg mb-6">PataMed Vet</h4>
+                    <div class="bg-slate-800 p-4 rounded-2xl mb-4 border-l-4 border-brand-accent">
+                        <p class="text-xs text-brand-accent font-bold mb-1">NOVO CHAMADO</p>
+                        <p class="font-bold text-white mb-2">Pinscher • Centro Norte</p>
+                        <button class="w-full bg-brand-light text-white py-2 rounded-xl text-xs font-bold">Aceitar Corrida</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-extrabold text-slate-50 tracking-tight">Pata<span class="text-brand-light">Med</span></span>
+                <p class="text-slate-500 text-sm mt-2">Tecnologia e cuidado para quem você ama.</p>
+                <p class="text-slate-600 text-xs mt-1">Cuiabá - MT</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-center flex flex-col items-center">
+            <div class="text-slate-600 text-xs mb-2">
+                &copy; 2026 PataMed. Todos os direitos reservados.
+            </div>
+            <div class="text-slate-500 text-xs">
+                Desenvolvido por <strong class="text-slate-400">Cerrado Tech</strong>, braço de inovação da <strong class="text-slate-400">Cerrado Finanças</strong>.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializa os ícones
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+---
+layout: null
+permalink: /startups/gogym/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoGym Store | Cerrado Tech</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+
+    <style>
+        :root {
+            --gogym-primary: #ff4500;
+            --gogym-dark: #121212;
+            --gogym-gray: #1e1e1e;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+            background-color: var(--gogym-dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Estilos do Cabeçalho Customizado da GoGym */
+        #gogym-header {
+            background: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        #gogym-header .brand img {
+            border-radius: 8px;
+            height: 44px;
+            object-fit: cover;
+        }
+
+        #gogym-header .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #001f5c;
+        }
+
+        #gogym-header .desktop-menu a:hover {
+            color: var(--gogym-primary);
+        }
+
+        .btn-header-gogym {
+            background: var(--gogym-dark);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-header-gogym:hover {
+            background: var(--gogym-primary);
+        }
+
+        /* --- Hero Section GoGym --- */
+        .gogym-hero {
+            background: linear-gradient(to right, rgba(18, 18, 18, 0.95) 0%, rgba(18, 18, 18, 0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80') center/cover no-repeat;
+            padding: 140px 0;
+            border-bottom: 3px solid var(--gogym-primary);
+            text-align: left;
+        }
+
+        .gogym-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .gogym-hero .destaque { color: var(--gogym-primary); }
+
+        .gogym-hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* --- Cards de Categoria --- */
+        .categorias-section { padding: 80px 0; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .grid-categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .cat-card {
+            background: var(--gogym-gray);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gogym-primary);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.15);
+        }
+
+        .cat-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+        .cat-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--white); }
+        .cat-card p { color: #aaa; font-size: 0.95rem; }
+
+        /* --- CTA para a Loja Oficial --- */
+        .store-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            margin: 60px 0 100px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+
+        .btn-gogym {
+            background: var(--gogym-primary);
+            color: var(--white);
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-gogym:hover {
+            background: #e63e00;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 69, 0, 0.4);
+        }
+
+        /* --- Footer Exclusivo GoGym --- */
+        .gogym-footer {
+            background-color: #0a0a0a;
+            padding: 50px 20px 30px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .gogym-footer img {
+            height: 40px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            border-radius: 6px;
+        }
+
+        .gogym-footer p {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .gogym-footer .creditos {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gogym-footer .creditos strong {
+            color: #aaa;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<header id="gogym-header">
+    <div class="container nav-container" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+        
+        <a href="/startups/gogym/" class="brand">
+            <img src="{{ '/img/logo-gogym.png' | relative_url }}" alt="GoGym Logo">
+            <span>GoGym Store</span>
+        </a>
+
+        <nav class="desktop-menu">
+            <a href="#inicio">Início</a>
+            <a href="#categorias">Categorias</a>
+            <a href="https://gogymapp-5bd6f.web.app/" target="_blank" class="btn-header-gogym">Acessar Loja Oficial</a>
+        </nav>
+
+        <button class="mobile-toggle" aria-label="Abrir Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+    </div>
+</header>
+
+<main>
+    <section id="inicio" class="gogym-hero">
+        <div class="container">
+            <h1>Sua Melhor<br><span class="destaque">Performance</span></h1>
+            <p>A GoGym Store é o braço de e-commerce da Cerrado Tech dedicado ao mundo fitness. Encontre tecnologia, moda e suplementação de ponta para superar seus limites.</p>
+            
+            <a href="https://gogymapp-5bd6f.web.app/" target="_blank" class="btn-gogym">ACESSAR A LOJA OFICIAL</a>
+        </div>
+    </section>
+
+    <section id="categorias" class="categorias-section container">
+        <h2 class="section-title">O que você <span style="color: var(--gogym-primary);">encontra</span> lá</h2>
+        
+        <div class="grid-categorias">
+            <div class="cat-card">
+                <span class="cat-icon">👕</span>
+                <h3>Moda Fitness</h3>
+                <p>Roupas de alta tecnologia que garantem conforto, mobilidade e controle térmico durante os treinos mais intensos.</p>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">⚡</span>
+                <h3>Suplementação</h3>
+                <p>Marcas consagradas para potencializar sua energia, ganho de massa e recuperação muscular com segurança.</p>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🏋️‍♂️</span>
+                <h3>Acessórios</h3>
+                <p>Tudo o que você precisa para seu treino: luvas, coqueteleiras, faixas e equipamentos inteligentes.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="store-cta">
+            <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Pronto para o próximo nível?</h2>
+            <p style="color: #ccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Visite nosso e-commerce oficial, navegue pelo catálogo completo e receba seus produtos em casa com total segurança.</p>
+            
+            <a href="https://gogymapp-5bd6f.web.app/" target="_blank" class="btn-gogym">ENTRAR NA GOGYM STORE</a>
+        </section>
+    </div>
+</main>
+
+<footer class="gogym-footer">
+    <div class="container">
+        <img src="{{ '/img/logo-gogym.png' | relative_url }}" alt="GoGym Logo">
+        <p>© 2026 GoGym Store. Todos os direitos reservados.</p>
+        
+        <div class="creditos">
+            Desenvolvido por <strong>Cerrado Tech</strong>, braço de inovação da <strong>Cerrado Finanças</strong>.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.desktop-menu');
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
