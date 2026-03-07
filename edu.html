@@ -8,7 +8,8 @@ permalink: /solucoes/edu/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrado Edu | Gestão Escolar e Pedagógica com IA</title>
-    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,37 +43,80 @@ permalink: /solucoes/edu/
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
         .edu-hero {
             background: linear-gradient(135deg, #020617 0%, var(--edu-dark) 100%);
-            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
             border-bottom: 4px solid var(--edu-primary);
-            text-align: center;
         }
         .edu-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 60%); pointer-events: none;
         }
+
+        .edu-split-layout { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        .edu-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .edu-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS (LIMPO - SEM FUNDO DUPLO) */
+        .hero-app-icon {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); }
+        
+        .hero-app-icon img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 60px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
         .hero-tag { background: rgba(79, 70, 229, 0.2); color: #a5b4fc; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(79, 70, 229, 0.4); text-transform: uppercase; letter-spacing: 1px; }
-        .edu-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .edu-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+        .edu-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .edu-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
         .btn-action { background: var(--edu-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--edu-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4); }
 
+        @media(max-width: 992px){ 
+            .edu-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .edu-text-content { text-align: center; }
+            .hero-app-icon { max-width: 220px; transform: none; }
+            .hero-app-icon img { border-radius: 40px; }
+        }
+
         /* ================= SIMULADOR IA (RANDOM FOREST) ================= */
         .demo-section { padding: 100px 0; background: #fff; }
-        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header { text-align: center; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;}
         .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
         .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
         
         .demo-workspace {
-            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; flex-wrap: wrap; position: relative;
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; position: relative; max-width: 1200px; margin: 0 auto;
+        }
+
+        /* Ajuste do Simulador para Mobile: quebra a linha em telas menores */
+        @media(max-width: 992px) {
+            .demo-workspace { flex-direction: column; padding: 20px; border-radius: 20px; margin: 0 20px; }
         }
 
         /* Mockup Student Profile */
         .demo-student {
             flex: 0 0 320px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column; position: relative; overflow: hidden;
         }
+        @media(max-width: 992px) {
+            .demo-student { flex: none; width: 100%; max-width: 350px; margin: 0 auto; }
+        }
+
         .student-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.1); }
         .student-avatar { width: 60px; height: 60px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #475569; overflow: hidden; }
         .student-avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -90,13 +134,13 @@ permalink: /solucoes/edu/
 
         /* Mockup AI Analytics */
         .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
-        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 10px;}
         
         .ai-status-badge { background: #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
         .ai-status-badge.scanning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
         .ai-status-badge.alert { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
         
-        .ai-console { flex: 1; background: #020617; border-radius: 20px; padding: 30px; font-family: monospace; color: #34d399; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center;}
+        .ai-console { flex: 1; background: #020617; border-radius: 20px; padding: 30px; font-family: monospace; color: #34d399; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; min-height: 250px;}
         .console-line { opacity: 0.5; margin-bottom: 8px; font-size: 0.9rem; display: none; }
         .console-line.visible { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
@@ -109,14 +153,14 @@ permalink: /solucoes/edu/
         .btn-assistente { background: #10b981; color: #fff; padding: 12px 20px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; width: 100%; }
         .btn-assistente:hover { background: #059669; }
 
-        /* ================= FUNCIONALIDADES ================= */
+        /* ================= FUNCIONALIDADES (CARROSSEL NO MOBILE) ================= */
         .features-section { padding: 100px 0; background: #f8fafc; }
-        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feature-grid { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; padding: 0 20px; }
         
         .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
         .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
         .feat-row:nth-child(even) { flex-direction: row-reverse; }
-        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-student { flex: 1; width: 100%; max-width: 100%; } }
         
         .feat-content { flex: 1.2; }
         .feat-icon { width: 64px; height: 64px; background: #e0e7ff; color: var(--edu-primary); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #c7d2fe; }
@@ -129,6 +173,28 @@ permalink: /solucoes/edu/
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(79, 70, 229, 0.15)); }
 
+        /* Ajuste Mobile: Transforma as Features em Carrossel (Scroll Horizontal) */
+        @media (max-width: 992px) { 
+            .feature-grid {
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 30px;
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+            }
+            .feature-grid::-webkit-scrollbar { display: none; }
+            
+            .feat-row {
+                flex: 0 0 75vw; /* Reduzido para mostrar claramente que tem outro card ao lado */
+                flex-direction: column !important; 
+                padding: 40px 30px;
+                scroll-snap-align: center; /* Centraliza o card na tela do celular */
+            }
+            .feat-content h3 { font-size: 1.5rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -137,85 +203,95 @@ permalink: /solucoes/edu/
 
     <section class="edu-hero">
         <div class="container">
-            <span class="hero-tag fade-up">Plataforma GovTech Educacional</span>
-            <h1 class="fade-up delay-1">Cerrado Edu</h1>
-            <p class="fade-up delay-2">O Sistema de Gestão Escolar definitivo para redes municipais e estaduais. 100% web, estruturado em mais de 28 módulos e equipado com Inteligência Artificial para predição de evasão escolar e surtos epidemiológicos.</p>
-            <div class="fade-up delay-3">
-                <a href="#simulador" class="btn-action">
-                    Testar Motor de Inteligência Artificial
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                </a>
+            <div class="edu-split-layout">
+                
+                <div class="edu-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/edu.png' | relative_url }}" alt="Edu Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+                    </div>
+                </div>
+
+                <div class="edu-text-content">
+                    <span class="hero-tag fade-up delay-1">Plataforma GovTech Educacional</span>
+                    <h1 class="fade-up delay-1">Cerrado Edu</h1>
+                    <p class="fade-up delay-2">O Sistema de Gestão Escolar definitivo para redes municipais e estaduais. 100% web, estruturado em mais de 28 módulos e equipado com Inteligência Artificial para predição de evasão escolar e surtos epidemiológicos.</p>
+                    <div class="fade-up delay-3">
+                        <a href="#simulador" class="btn-action">
+                            Testar Motor de Inteligência Artificial
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section id="simulador" class="demo-section">
-        <div class="container">
-            <div class="demo-header fade-up">
-                <h2>Inteligência Artificial (Random Forest)</h2>
-                <p>Clique em <strong>Rodar Predição</strong> e veja como o Cerrado Edu cruza os dados do diário de classe digital para prever a evasão escolar antes que o aluno abandone os estudos.</p>
-            </div>
+        <div class="demo-header fade-up">
+            <h2>Inteligência Artificial (Random Forest)</h2>
+            <p>Clique em <strong>Rodar Predição</strong> e veja como o Cerrado Edu cruza os dados do diário de classe digital para prever a evasão escolar antes que o aluno abandone os estudos.</p>
+        </div>
 
-            <div class="demo-workspace fade-up delay-1">
+        <div class="demo-workspace fade-up delay-1">
+            
+            <div class="demo-student">
+                <div class="student-header">
+                    <div class="student-avatar">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#94a3b8"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <div class="student-info">
+                        <h4>Lucas Gabriel Martins</h4>
+                        <p>8º Ano - Ensino Fundamental II</p>
+                    </div>
+                </div>
                 
-                <div class="demo-student">
-                    <div class="student-header">
-                        <div class="student-avatar">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="#94a3b8"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        </div>
-                        <div class="student-info">
-                            <h4>Lucas Gabriel Martins</h4>
-                            <p>8º Ano - Ensino Fundamental II</p>
-                        </div>
+                <div class="student-stats">
+                    <div class="stat-row">
+                        <span>Média de Matemática</span>
+                        <strong class="stat-danger">4.5</strong>
                     </div>
-                    
-                    <div class="student-stats">
-                        <div class="stat-row">
-                            <span>Média de Matemática</span>
-                            <strong class="stat-danger">4.5</strong>
-                        </div>
-                        <div class="stat-row">
-                            <span>Média de Português</span>
-                            <strong>6.5</strong>
-                        </div>
-                        <div class="stat-row">
-                            <span>Faltas Consecutivas</span>
-                            <strong class="stat-danger">04 dias</strong>
-                        </div>
-                        <div class="stat-row">
-                            <span>Perfil SUAS</span>
-                            <strong>Bolsa Família Ativo</strong>
-                        </div>
+                    <div class="stat-row">
+                        <span>Média de Português</span>
+                        <strong>6.5</strong>
                     </div>
-
-                    <button class="app-btn" id="btnAiRun" onclick="runAiPrediction()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                        Rodar Algoritmo Preditivo
-                    </button>
+                    <div class="stat-row">
+                        <span>Faltas Consecutivas</span>
+                        <strong class="stat-danger">04 dias</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Perfil SUAS</span>
+                        <strong>Bolsa Família Ativo</strong>
+                    </div>
                 </div>
 
-                <div class="demo-dash">
-                    <div class="dash-header">
-                        <div>
-                            <strong style="font-size: 1.1rem;">Motor Analítico: Cerrado AI</strong>
-                            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Rede Neural / Random Forest</span>
-                        </div>
-                        <div class="ai-status-badge" id="aiStatus">Aguardando Input</div>
-                    </div>
+                <button class="app-btn" id="btnAiRun" onclick="runAiPrediction()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    Rodar Algoritmo Preditivo
+                </button>
+            </div>
 
-                    <div class="ai-console">
-                        <div id="consoleText">
-                            <span style="opacity: 0.3;">> Sistema pronto. Aguardando solicitação do gestor pedagógico...</span>
-                        </div>
-                        
-                        <div class="ai-result" id="aiResultBox">
-                            <h4>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                                Alerta Crítico: Risco de Evasão (87%)
-                            </h4>
-                            <p><strong>Padrão Detectado:</strong> Combinação de 4 faltas consecutivas não justificadas e queda abrupta no rendimento em Exatas (Matemática). Histórico da rede indica altíssima probabilidade de abandono nesta semana.</p>
-                            <button class="btn-assistente" onclick="resetAi()">Acionar Assistente Social via WhatsApp Ocorrência</button>
-                        </div>
+            <div class="demo-dash">
+                <div class="dash-header">
+                    <div>
+                        <strong style="font-size: 1.1rem;">Motor Analítico: Cerrado AI</strong>
+                        <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Rede Neural / Random Forest</span>
+                    </div>
+                    <div class="ai-status-badge" id="aiStatus">Aguardando Input</div>
+                </div>
+
+                <div class="ai-console">
+                    <div id="consoleText">
+                        <span style="opacity: 0.3;">> Sistema pronto. Aguardando solicitação do gestor pedagógico...</span>
+                    </div>
+                    
+                    <div class="ai-result" id="aiResultBox">
+                        <h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            Alerta Crítico: Risco de Evasão (87%)
+                        </h4>
+                        <p><strong>Padrão Detectado:</strong> Combinação de 4 faltas consecutivas não justificadas e queda abrupta no rendimento em Exatas (Matemática). Histórico da rede indica altíssima probabilidade de abandono nesta semana.</p>
+                        <button class="btn-assistente" onclick="resetAi()">Acionar Assistente Social via WhatsApp Ocorrência</button>
                     </div>
                 </div>
             </div>
@@ -223,130 +299,128 @@ permalink: /solucoes/edu/
     </section>
 
     <section class="features-section">
-        <div class="container">
-            <div class="demo-header fade-up">
-                <h2>Tecnologia que transforma a educação.</h2>
-                <p>Do diário de classe do professor à prestação de contas do prefeito, o Cerrado Edu cobre 100% da operação educacional.</p>
+        <div class="demo-header fade-up">
+            <h2>Tecnologia que transforma a educação.</h2>
+            <p>Do diário de classe do professor à prestação de contas do prefeito, o Cerrado Edu cobre 100% da operação educacional.</p>
+        </div>
+
+        <div class="feature-grid">
+            
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h3>Gestão Acadêmica Integrada</h3>
+                    <p>O fim do diário de papel. Controle total de turmas, escolas, capacidade física, grades curriculares e frequência digital em tempo real. Inclui registro de justificativas pelo celular dos pais (com envio de atestados em foto) e compensação automática de faltas.</p>
+                    <div class="feat-tags">
+                        <span>Diário Eletrônico</span>
+                        <span>Atestados Digitais</span>
+                        <span>Alertas aos Pais</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="30" y="20" width="140" height="210" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
+                        <rect x="80" y="20" width="40" height="8" fill="#cbd5e1"/>
+                        
+                        <circle cx="55" cy="70" r="8" fill="#10b981"/>
+                        <path d="M51 70 L54 73 L59 67" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="75" y="66" width="70" height="8" rx="4" fill="#e2e8f0"/>
+                        
+                        <circle cx="55" cy="110" r="8" fill="#10b981"/>
+                        <path d="M51 110 L54 113 L59 107" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="75" y="106" width="50" height="8" rx="4" fill="#e2e8f0"/>
+                        
+                        <circle cx="55" cy="150" r="8" fill="#ef4444"/>
+                        <path d="M52 147 L58 153 M58 147 L52 153" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="75" y="146" width="80" height="8" rx="4" fill="#e2e8f0"/>
+                        <rect x="75" y="160" width="40" height="6" rx="3" fill="#fca5a5"/>
+                    </svg>
+                </div>
             </div>
 
-            <div class="feature-grid">
-                
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        </div>
-                        <h3>Gestão Acadêmica Integrada</h3>
-                        <p>O fim do diário de papel. Controle total de turmas, escolas, capacidade física, grades curriculares e frequência digital em tempo real. Inclui registro de justificativas pelo celular dos pais (com envio de atestados em foto) e compensação automática de faltas.</p>
-                        <div class="feat-tags">
-                            <span>Diário Eletrônico</span>
-                            <span>Atestados Digitais</span>
-                            <span>Alertas aos Pais</span>
-                        </div>
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
                     </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="30" y="20" width="140" height="210" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
-                            <rect x="80" y="20" width="40" height="8" fill="#cbd5e1"/>
-                            
-                            <circle cx="55" cy="70" r="8" fill="#10b981"/>
-                            <path d="M51 70 L54 73 L59 67" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                            <rect x="75" y="66" width="70" height="8" rx="4" fill="#e2e8f0"/>
-                            
-                            <circle cx="55" cy="110" r="8" fill="#10b981"/>
-                            <path d="M51 110 L54 113 L59 107" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                            <rect x="75" y="106" width="50" height="8" rx="4" fill="#e2e8f0"/>
-                            
-                            <circle cx="55" cy="150" r="8" fill="#ef4444"/>
-                            <path d="M52 147 L58 153 M58 147 L52 153" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                            <rect x="75" y="146" width="80" height="8" rx="4" fill="#e2e8f0"/>
-                            <rect x="75" y="160" width="40" height="6" rx="3" fill="#fca5a5"/>
-                        </svg>
+                    <h3>Avaliações e Conselho Digital</h3>
+                    <p>Automatizamos o cálculo complexo de médias da rede de ensino. O sistema gerencia regras de arredondamento, períodos de recuperação e aprovação final. O Conselho de Classe é feito 100% no sistema, com emissão de boletins oficiais em PDF assinados digitalmente.</p>
+                    <div class="feat-tags">
+                        <span>Boletim PDF Automático</span>
+                        <span>Regras Customizadas</span>
+                        <span>Conselho 100% Online</span>
                     </div>
                 </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-                        </div>
-                        <h3>Avaliações e Conselho Digital</h3>
-                        <p>Automatizamos o cálculo complexo de médias da rede de ensino. O sistema gerencia regras de arredondamento, períodos de recuperação e aprovação final. O Conselho de Classe é feito 100% no sistema, com emissão de boletins oficiais em PDF assinados digitalmente.</p>
-                        <div class="feat-tags">
-                            <span>Boletim PDF Automático</span>
-                            <span>Regras Customizadas</span>
-                            <span>Conselho 100% Online</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="30" width="140" height="150" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
-                            <path d="M50 150 L50 100" stroke="#4f46e5" stroke-width="12" stroke-linecap="round"/>
-                            <path d="M80 150 L80 120" stroke="#818cf8" stroke-width="12" stroke-linecap="round"/>
-                            <path d="M110 150 L110 70" stroke="#4f46e5" stroke-width="12" stroke-linecap="round"/>
-                            <path d="M140 150 L140 40" stroke="#10b981" stroke-width="12" stroke-linecap="round"/>
-                            <circle cx="190" cy="80" r="40" fill="#fff" stroke="#fecb00" stroke-width="8"/>
-                            <path d="M190 40 A40 40 0 0 1 230 80 L190 80 Z" fill="#f59e0b"/>
-                        </svg>
-                    </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="140" height="150" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                        <path d="M50 150 L50 100" stroke="#4f46e5" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M80 150 L80 120" stroke="#818cf8" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M110 150 L110 70" stroke="#4f46e5" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M140 150 L140 40" stroke="#10b981" stroke-width="12" stroke-linecap="round"/>
+                        <circle cx="190" cy="80" r="40" fill="#fff" stroke="#fecb00" stroke-width="8"/>
+                        <path d="M190 40 A40 40 0 0 1 230 80 L190 80 Z" fill="#f59e0b"/>
+                    </svg>
                 </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                        </div>
-                        <h3>Inteligência Artificial Nativa</h3>
-                        <p>Não é apenas um banco de dados, é um assistente pedagógico ativo. Além da análise preditiva de evasão, nossos algoritmos monitoram o lançamento de faltas por motivo de saúde para detecção precoce de surtos epidemiológicos (como Dengue ou Viroses) na comunidade escolar.</p>
-                        <div class="feat-tags">
-                            <span>Random Forest</span>
-                            <span>Monitoramento Epidemiológico</span>
-                            <span>IA Pedagógica</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="50" y1="100" x2="125" y2="50" stroke="#a5b4fc" stroke-width="3"/>
-                            <line x1="50" y1="100" x2="125" y2="150" stroke="#a5b4fc" stroke-width="3"/>
-                            <line x1="125" y1="50" x2="200" y2="100" stroke="#a5b4fc" stroke-width="3"/>
-                            <line x1="125" y1="150" x2="200" y2="100" stroke="#a5b4fc" stroke-width="3"/>
-                            <line x1="125" y1="50" x2="125" y2="150" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="4 4"/>
-                            
-                            <circle cx="50" cy="100" r="12" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
-                            <circle cx="125" cy="50" r="15" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
-                            <circle cx="125" cy="150" r="15" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
-                            <circle cx="200" cy="100" r="18" fill="#4f46e5" stroke="#c7d2fe" stroke-width="6"/>
-                            <circle cx="200" cy="100" r="4" fill="#fff"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                        </div>
-                        <h3>Gestão de Infraestrutura Escolar (FNDE)</h3>
-                        <p>Controle unificado dos recursos físicos. Módulos completos para <strong>Merenda</strong> (estoque, controle PNAE, cardápios e alergias), <strong>Biblioteca</strong> (catálogo ISBN, código de barras) e <strong>Transporte</strong> (roteirização). Tudo alimentando dashboards executivos para prestação de contas de recursos do PDDE.</p>
-                        <div class="feat-tags">
-                            <span>Estoque de Merenda PNAE</span>
-                            <span>Biblioteca Digital</span>
-                            <span>Rotas de Transporte</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="40" y="80" width="50" height="50" rx="8" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
-                            <path d="M40 100 L90 100" stroke="#4f46e5" stroke-width="4"/>
-                            <rect x="110" y="100" width="50" height="50" rx="8" fill="#e0e7ff"/>
-                            <rect x="110" y="100" width="50" height="50" rx="8" fill="none" stroke="#a5b4fc" stroke-width="4"/>
-                            <rect x="75" y="20" width="50" height="50" rx="8" fill="#fff" stroke="#f59e0b" stroke-width="4"/>
-                            <path d="M75 40 L125 40" stroke="#f59e0b" stroke-width="4"/>
-                        </svg>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    </div>
+                    <h3>Inteligência Artificial Nativa</h3>
+                    <p>Não é apenas um banco de dados, é um assistente pedagógico ativo. Além da análise preditiva de evasão, nossos algoritmos monitoram o lançamento de faltas por motivo de saúde para detecção precoce de surtos epidemiológicos (como Dengue ou Viroses) na comunidade escolar.</p>
+                    <div class="feat-tags">
+                        <span>Random Forest</span>
+                        <span>Monitoramento Epidemiológico</span>
+                        <span>IA Pedagógica</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="50" y1="100" x2="125" y2="50" stroke="#a5b4fc" stroke-width="3"/>
+                        <line x1="50" y1="100" x2="125" y2="150" stroke="#a5b4fc" stroke-width="3"/>
+                        <line x1="125" y1="50" x2="200" y2="100" stroke="#a5b4fc" stroke-width="3"/>
+                        <line x1="125" y1="150" x2="200" y2="100" stroke="#a5b4fc" stroke-width="3"/>
+                        <line x1="125" y1="50" x2="125" y2="150" stroke="#a5b4fc" stroke-width="3" stroke-dasharray="4 4"/>
+                        
+                        <circle cx="50" cy="100" r="12" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
+                        <circle cx="125" cy="50" r="15" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
+                        <circle cx="125" cy="150" r="15" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
+                        <circle cx="200" cy="100" r="18" fill="#4f46e5" stroke="#c7d2fe" stroke-width="6"/>
+                        <circle cx="200" cy="100" r="4" fill="#fff"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <h3>Gestão de Infraestrutura Escolar (FNDE)</h3>
+                    <p>Controle unificado dos recursos físicos. Módulos completos para <strong>Merenda</strong> (estoque, controle PNAE, cardápios e alergias), <strong>Biblioteca</strong> (catálogo ISBN, código de barras) e <strong>Transporte</strong> (roteirização). Tudo alimentando dashboards executivos para prestação de contas de recursos do PDDE.</p>
+                    <div class="feat-tags">
+                        <span>Estoque de Merenda PNAE</span>
+                        <span>Biblioteca Digital</span>
+                        <span>Rotas de Transporte</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="80" width="50" height="50" rx="8" fill="#fff" stroke="#4f46e5" stroke-width="4"/>
+                        <path d="M40 100 L90 100" stroke="#4f46e5" stroke-width="4"/>
+                        <rect x="110" y="100" width="50" height="50" rx="8" fill="#e0e7ff"/>
+                        <rect x="110" y="100" width="50" height="50" rx="8" fill="none" stroke="#a5b4fc" stroke-width="4"/>
+                        <rect x="75" y="20" width="50" height="50" rx="8" fill="#fff" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M75 40 L125 40" stroke="#f59e0b" stroke-width="4"/>
+                    </svg>
+                </div>
+            </div>
+
         </div>
     </section>
 
