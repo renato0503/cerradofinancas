@@ -8,7 +8,8 @@ permalink: /solucoes/docs/
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrado Docs | Gestão Cognitiva e Workflow</title>
-    <link rel="icon" type="image/png" href="{{ '/img/logo.png' | relative_url }}">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,37 +41,80 @@ permalink: /solucoes/docs/
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
         .docs-hero {
             background: linear-gradient(135deg, #020617 0%, var(--docs-dark) 100%);
-            color: #fff; padding: 100px 0 120px; position: relative; overflow: hidden;
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
             border-bottom: 4px solid var(--docs-primary);
-            text-align: center;
         }
         .docs-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, transparent 60%); pointer-events: none;
         }
+
+        .docs-split-layout { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        .docs-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .docs-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS (LIMPO - SEM FUNDO DUPLO) */
+        .hero-app-icon {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); }
+        
+        .hero-app-icon img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 60px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
         .hero-tag { background: rgba(2, 132, 199, 0.2); color: var(--docs-accent); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(2, 132, 199, 0.4); text-transform: uppercase; letter-spacing: 1px; }
-        .docs-hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .docs-hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px; font-weight: 300; line-height: 1.6; }
+        .docs-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .docs-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
         .btn-action { background: var(--docs-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--docs-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(2, 132, 199, 0.4); }
 
+        @media(max-width: 992px){ 
+            .docs-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .docs-text-content { text-align: center; }
+            .hero-app-icon { max-width: 220px; transform: none; }
+            .hero-app-icon img { border-radius: 40px; }
+        }
+
         /* ================= SIMULADOR IA (CHAT COM PDF) ================= */
         .demo-section { padding: 100px 0; background: #fff; }
-        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header { text-align: center; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;}
         .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
         .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
         
         .demo-workspace {
-            display: flex; gap: 30px; background: var(--dash-bg); padding: 20px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; flex-wrap: wrap; position: relative;
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 20px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative; max-width: 1200px; margin: 0 auto;
+        }
+
+        /* Ajuste do Simulador para Mobile: quebra a linha em telas menores */
+        @media(max-width: 992px) {
+            .demo-workspace { flex-direction: column; padding: 20px; border-radius: 20px; margin: 0 20px;}
         }
 
         /* Mockup "Drive" (Arquivos) */
         .demo-drive {
             flex: 0 0 320px; background: var(--dash-panel); border-radius: 20px; border: 1px solid #e2e8f0; padding: 25px; display: flex; flex-direction: column;
         }
+        @media(max-width: 992px) {
+            .demo-drive { flex: none; width: 100%; max-width: 100%; margin: 0 auto; }
+        }
+
         .drive-header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;}
         .drive-header h4 { margin: 0; color: #0f172a; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
         
@@ -82,7 +126,7 @@ permalink: /solucoes/docs/
 
         /* Mockup Chat IA */
         .demo-chat { flex: 1; min-width: 320px; background: var(--dash-panel); border-radius: 20px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; overflow: hidden;}
-        .chat-header { display: flex; justify-content: space-between; color: #0f172a; align-items: center; padding: 20px 24px; background: #fff; border-bottom: 1px solid #e2e8f0; }
+        .chat-header { display: flex; justify-content: space-between; color: #0f172a; align-items: center; padding: 20px 24px; background: #fff; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px;}
         
         .ai-status-badge { background: #f0f9ff; color: var(--docs-primary); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; border: 1px solid #bae6fd;}
         .ai-status-badge.scanning { background: #fffbeb; color: #d97706; border-color: #fde68a; }
@@ -105,14 +149,14 @@ permalink: /solucoes/docs/
         .app-btn:hover { background: #1e293b; }
         .app-btn:disabled { background: #cbd5e1; cursor: not-allowed; color: #fff; }
 
-        /* ================= FUNCIONALIDADES ================= */
+        /* ================= FUNCIONALIDADES (CARROSSEL NO MOBILE) ================= */
         .features-section { padding: 100px 0; background: #fff; border-top: 1px solid #e2e8f0; }
-        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feature-grid { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; padding: 0 20px; }
         
         .feat-row { display: flex; gap: 60px; align-items: center; background: #f8fafc; padding: 60px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
         .feat-row:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #cbd5e1; }
         .feat-row:nth-child(even) { flex-direction: row-reverse; background: #fff; }
-        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } .demo-workspace { flex-direction: column; } .demo-drive { flex: 1; width: 100%; max-width: 100%; } }
         
         .feat-content { flex: 1.2; }
         .feat-icon { width: 64px; height: 64px; background: #f0f9ff; color: var(--docs-primary); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #bae6fd; }
@@ -125,6 +169,28 @@ permalink: /solucoes/docs/
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(2, 132, 199, 0.1)); }
 
+        /* Ajuste Mobile: Transforma as Features em Carrossel (Scroll Horizontal) */
+        @media (max-width: 992px) { 
+            .feature-grid {
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 30px;
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+            }
+            .feature-grid::-webkit-scrollbar { display: none; }
+            
+            .feat-row {
+                flex: 0 0 75vw; /* Reduzido para mostrar claramente que tem outro card ao lado */
+                flex-direction: column !important; 
+                padding: 40px 30px;
+                scroll-snap-align: center; /* Centraliza o card na tela do celular */
+            }
+            .feat-content h3 { font-size: 1.5rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -133,180 +199,188 @@ permalink: /solucoes/docs/
 
     <section class="docs-hero">
         <div class="container">
-            <span class="hero-tag fade-up">GovTech & Corporate SaaS | Paperless</span>
-            <h1 class="fade-up delay-1">Cerrado Docs</h1>
-            <p class="fade-up delay-2">Plataforma cognitiva para Gestão Documental e Automação de Processos. Armazenamento em nuvem, extração de texto em imagens (OCR) e Inteligência Artificial para dialogar com milhares de PDFs em segundos.</p>
-            <div class="fade-up delay-3">
-                <a href="#simulador" class="btn-action">
-                    Testar Motor de Busca Vetorial
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
+            <div class="docs-split-layout">
+                
+                <div class="docs-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/docs.png' | relative_url }}" alt="Docs Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+                    </div>
+                </div>
+
+                <div class="docs-text-content">
+                    <span class="hero-tag fade-up delay-1">GovTech & Corporate SaaS | Paperless</span>
+                    <h1 class="fade-up delay-1">Cerrado Docs</h1>
+                    <p class="fade-up delay-2">Plataforma cognitiva para Gestão Documental e Automação de Processos. Armazenamento em nuvem, extração de texto em imagens (OCR) e Inteligência Artificial para dialogar com milhares de PDFs em segundos.</p>
+                    <div class="fade-up delay-3">
+                        <a href="#simulador" class="btn-action">
+                            Testar Motor de Busca Vetorial
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section id="simulador" class="demo-section">
-        <div class="container">
-            <div class="demo-header fade-up">
-                <h2>Aposente a lupa e o marca-texto.</h2>
-                <p>Clique em <strong>Perguntar à IA</strong>. O Cerrado Docs varre os arquivos da nuvem, entende o contexto (RAG) e formula a resposta exata indicando em qual página do PDF a informação se encontra.</p>
-            </div>
+        <div class="demo-header fade-up">
+            <h2>Aposente a lupa e o marca-texto.</h2>
+            <p>Clique em <strong>Perguntar à IA</strong>. O Cerrado Docs varre os arquivos da nuvem, entende o contexto (RAG) e formula a resposta exata indicando em qual página do PDF a informação se encontra.</p>
+        </div>
 
-            <div class="demo-workspace fade-up delay-1">
+        <div class="demo-workspace fade-up delay-1">
+            
+            <div class="demo-drive">
+                <div class="drive-header">
+                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Repositório Cloud</h4>
+                </div>
                 
-                <div class="demo-drive">
-                    <div class="drive-header">
-                        <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Repositório Cloud</h4>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-icon">PDF</div>
+                        <div class="file-info">
+                            <h5>Edital_Licitacao_042_2026.pdf</h5>
+                            <p>145 páginas • Atualizado ontem</p>
+                        </div>
                     </div>
-                    
-                    <div class="file-list">
-                        <div class="file-item">
-                            <div class="file-icon">PDF</div>
-                            <div class="file-info">
-                                <h5>Edital_Licitacao_042_2026.pdf</h5>
-                                <p>145 páginas • Atualizado ontem</p>
-                            </div>
+                    <div class="file-item">
+                        <div class="file-icon">PDF</div>
+                        <div class="file-info">
+                            <h5>Lei_Organica_Municipal_V2.pdf</h5>
+                            <p>312 páginas • Modificado em Fev/2026</p>
                         </div>
-                        <div class="file-item">
-                            <div class="file-icon">PDF</div>
-                            <div class="file-info">
-                                <h5>Lei_Organica_Municipal_V2.pdf</h5>
-                                <p>312 páginas • Modificado em Fev/2026</p>
-                            </div>
-                        </div>
-                        <div class="file-item" style="opacity: 0.6;">
-                            <div class="file-icon" style="background: #e0f2fe; color: #0284c7;">DOCX</div>
-                            <div class="file-info">
-                                <h5>Minuta_Contrato_Limpeza.docx</h5>
-                                <p>12 páginas • Atualizado há 2h</p>
-                            </div>
+                    </div>
+                    <div class="file-item" style="opacity: 0.6;">
+                        <div class="file-icon" style="background: #e0f2fe; color: #0284c7;">DOCX</div>
+                        <div class="file-info">
+                            <h5>Minuta_Contrato_Limpeza.docx</h5>
+                            <p>12 páginas • Atualizado há 2h</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="demo-chat">
-                    <div class="chat-header">
-                        <div>
-                            <strong style="font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--docs-primary)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                                Chat com Documentos (IA)
-                            </strong>
-                        </div>
-                        <div class="ai-status-badge" id="aiStatus">Motor RAG Pronto</div>
+            <div class="demo-chat">
+                <div class="chat-header">
+                    <div>
+                        <strong style="font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--docs-primary)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                            Chat com Documentos (IA)
+                        </strong>
                     </div>
+                    <div class="ai-status-badge" id="aiStatus">Motor RAG Pronto</div>
+                </div>
 
-                    <div class="chat-window">
-                        <div class="msg-bubble msg-user" id="msgUser">
-                            Qual é a multa por atraso prevista no Edital de Licitação 042?
-                        </div>
-                        <div class="msg-bubble msg-ai" id="msgAi">
-                            De acordo com os documentos analisados, a multa por atraso injustificado no <strong>Edital de Licitação 042/2026</strong> é de:<br><br>
-                            • <strong>0,5% (meio por cento)</strong> ao dia sobre o valor da parcela em atraso, limitada ao máximo de 10% do valor total do contrato.<br><br>
-                            <span class="citation-tag">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                Edital_Licitacao_042_2026.pdf (Pág. 42, Cláusula 8.1)
-                            </span>
-                        </div>
+                <div class="chat-window">
+                    <div class="msg-bubble msg-user" id="msgUser">
+                        Qual é a multa por atraso prevista no Edital de Licitação 042?
                     </div>
+                    <div class="msg-bubble msg-ai" id="msgAi">
+                        De acordo com os documentos analisados, a multa por atraso injustificado no <strong>Edital de Licitação 042/2026</strong> é de:<br><br>
+                        • <strong>0,5% (meio por cento)</strong> ao dia sobre o valor da parcela em atraso, limitada ao máximo de 10% do valor total do contrato.<br><br>
+                        <span class="citation-tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Edital_Licitacao_042_2026.pdf (Pág. 42, Cláusula 8.1)
+                        </span>
+                    </div>
+                </div>
 
-                    <div class="chat-input-area">
-                        <button class="app-btn" id="btnAskAi" onclick="runAiChat()">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                            Perguntar à IA: "Qual a multa no Edital 042?"
-                        </button>
-                    </div>
+                <div class="chat-input-area">
+                    <button class="app-btn" id="btnAskAi" onclick="runAiChat()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        Perguntar à IA: "Qual a multa no Edital 042?"
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="features-section">
-        <div class="container">
-            <div class="demo-header fade-up">
-                <h2>Transforme papel em inteligência.</h2>
-                <p>Uma plataforma completa que vai desde a guarda segura na nuvem até a tramitação eletrônica de processos com validade jurídica.</p>
+        <div class="demo-header fade-up">
+            <h2>Transforme papel em inteligência.</h2>
+            <p>Uma plataforma completa que vai desde a guarda segura na nuvem até a tramitação eletrônica de processos com validade jurídica.</p>
+        </div>
+
+        <div class="feature-grid">
+            
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h3>Armazenamento Cloud Intuitivo</h3>
+                    <p>Uma interface amigável estilo "Drive". Crie árvores de pastas, faça upload em lote simplesmente arrastando e soltando (drag-and-drop) e use a pré-visualização nativa para ler PDFs sem precisar baixar. Gestão granular de permissões garante que cada servidor veja apenas o que deve.</p>
+                    <div class="feat-tags">
+                        <span>Drag-and-Drop</span>
+                        <span>Permissões Granulares</span>
+                        <span>Visualizador Nativo</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 60 L70 60 L85 80 L170 80 C175 80 180 85 180 90 L180 150 C180 155 175 160 170 160 L30 160 C25 160 20 155 20 150 L20 70 C20 65 25 60 30 60 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
+                        <path d="M40 80 L80 80 L95 100 L180 100 C185 100 190 105 190 110 L190 170 C190 175 185 180 180 180 L40 180 C35 180 30 175 30 170 L30 90 C30 85 35 80 40 80 Z" fill="#fff" stroke="#0284c7" stroke-width="4"/>
+                        <path d="M80 140 C80 130 88 122 98 122 C100 112 110 105 120 105 C132 105 142 115 142 127 C150 128 155 135 155 142 C155 150 148 155 140 155 L90 155 C84 155 80 148 80 140 Z" fill="#0284c7" opacity="0.2"/>
+                    </svg>
+                </div>
             </div>
 
-            <div class="feature-grid">
-                
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                        </div>
-                        <h3>Armazenamento Cloud Intuitivo</h3>
-                        <p>Uma interface amigável estilo "Drive". Crie árvores de pastas, faça upload em lote simplesmente arrastando e soltando (drag-and-drop) e use a pré-visualização nativa para ler PDFs sem precisar baixar. Gestão granular de permissões garante que cada servidor veja apenas o que deve.</p>
-                        <div class="feat-tags">
-                            <span>Drag-and-Drop</span>
-                            <span>Permissões Granulares</span>
-                            <span>Visualizador Nativo</span>
-                        </div>
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 60 L70 60 L85 80 L170 80 C175 80 180 85 180 90 L180 150 C180 155 175 160 170 160 L30 160 C25 160 20 155 20 150 L20 70 C20 65 25 60 30 60 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
-                            <path d="M40 80 L80 80 L95 100 L180 100 C185 100 190 105 190 110 L190 170 C190 175 185 180 180 180 L40 180 C35 180 30 175 30 170 L30 90 C30 85 35 80 40 80 Z" fill="#fff" stroke="#0284c7" stroke-width="4"/>
-                            <path d="M80 140 C80 130 88 122 98 122 C100 112 110 105 120 105 C132 105 142 115 142 127 C150 128 155 135 155 142 C155 150 148 155 140 155 L90 155 C84 155 80 148 80 140 Z" fill="#0284c7" opacity="0.2"/>
-                        </svg>
+                    <h3>Busca Vetorial (RAG) e OCR</h3>
+                    <p>Encontrar um documento antigo nunca foi tão fácil. Nossa tecnologia de OCR (Reconhecimento Óptico de Caracteres) lê textos até mesmo de imagens escaneadas. A Busca Vetorial (IA) compreende o <em>contexto</em> da sua pesquisa, não apenas a palavra exata, reduzindo o tempo de auditoria em até 90%.</p>
+                    <div class="feat-tags">
+                        <span>Indexação Semântica</span>
+                        <span>Extração de Texto (OCR)</span>
+                        <span>Buscador Ultra-Rápido</span>
                     </div>
                 </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        </div>
-                        <h3>Busca Vetorial (RAG) e OCR</h3>
-                        <p>Encontrar um documento antigo nunca foi tão fácil. Nossa tecnologia de OCR (Reconhecimento Óptico de Caracteres) lê textos até mesmo de imagens escaneadas. A Busca Vetorial (IA) compreende o <em>contexto</em> da sua pesquisa, não apenas a palavra exata, reduzindo o tempo de auditoria em até 90%.</p>
-                        <div class="feat-tags">
-                            <span>Indexação Semântica</span>
-                            <span>Extração de Texto (OCR)</span>
-                            <span>Buscador Ultra-Rápido</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="30" width="120" height="150" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
-                            <rect x="70" y="60" width="80" height="6" rx="3" fill="#cbd5e1"/>
-                            <rect x="70" y="80" width="60" height="6" rx="3" fill="#cbd5e1"/>
-                            <circle cx="160" cy="120" r="30" fill="#f0f9ff" stroke="#0284c7" stroke-width="6"/>
-                            <line x1="180" y1="140" x2="210" y2="170" stroke="#0284c7" stroke-width="8" stroke-linecap="round"/>
-                            <rect x="140" y="110" width="40" height="8" rx="4" fill="#0284c7"/>
-                            <rect x="140" y="125" width="25" height="8" rx="4" fill="#38bdf8"/>
-                        </svg>
-                    </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="30" width="120" height="150" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
+                        <rect x="70" y="60" width="80" height="6" rx="3" fill="#cbd5e1"/>
+                        <rect x="70" y="80" width="60" height="6" rx="3" fill="#cbd5e1"/>
+                        <circle cx="160" cy="120" r="30" fill="#f0f9ff" stroke="#0284c7" stroke-width="6"/>
+                        <line x1="180" y1="140" x2="210" y2="170" stroke="#0284c7" stroke-width="8" stroke-linecap="round"/>
+                        <rect x="140" y="110" width="40" height="8" rx="4" fill="#0284c7"/>
+                        <rect x="140" y="125" width="25" height="8" rx="4" fill="#38bdf8"/>
+                    </svg>
                 </div>
-
-                <div class="feat-row fade-up">
-                    <div class="feat-content">
-                        <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg>
-                        </div>
-                        <h3>Workflow e Assinatura Digital</h3>
-                        <p>Substitua o processo físico por tramitações eletrônicas rígidas. Crie fluxos com campos customizados, defina hierarquias de aprovação e prazos estruturados. O sistema notifica os responsáveis e suporta assinatura digital (ICP-Brasil), gerando relatórios de eficiência por departamento.</p>
-                        <div class="feat-tags">
-                            <span>Tramitação Digital</span>
-                            <span>Assinatura ICP-Brasil</span>
-                            <span>Workflow Customizável</span>
-                        </div>
-                    </div>
-                    <div class="feat-visual">
-                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="80" width="50" height="40" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
-                            <path d="M70 100 L110 100" stroke="#0284c7" stroke-width="4" stroke-dasharray="4 4"/>
-                            <polygon points="105,95 115,100 105,105" fill="#0284c7"/>
-                            
-                            <rect x="110" y="80" width="50" height="40" rx="8" fill="#fff" stroke="#0284c7" stroke-width="4"/>
-                            <path d="M160 100 L200 100" stroke="#10b981" stroke-width="4" stroke-dasharray="4 4"/>
-                            <polygon points="195,95 205,100 195,105" fill="#10b981"/>
-                            
-                            <rect x="200" y="80" width="40" height="40" rx="20" fill="#10b981"/>
-                            <path d="M210 100 L215 105 L225 93" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg>
+                    </div>
+                    <h3>Workflow e Assinatura Digital</h3>
+                    <p>Substitua o processo físico por tramitações eletrônicas rígidas. Crie fluxos com campos customizados, defina hierarquias de aprovação e prazos estruturados. O sistema notifica os responsáveis e suporta assinatura digital (ICP-Brasil), gerando relatórios de eficiência por departamento.</p>
+                    <div class="feat-tags">
+                        <span>Tramitação Digital</span>
+                        <span>Assinatura ICP-Brasil</span>
+                        <span>Workflow Customizável</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="80" width="50" height="40" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="4"/>
+                        <path d="M70 100 L110 100" stroke="#0284c7" stroke-width="4" stroke-dasharray="4 4"/>
+                        <polygon points="105,95 115,100 105,105" fill="#0284c7"/>
+                        
+                        <rect x="110" y="80" width="50" height="40" rx="8" fill="#fff" stroke="#0284c7" stroke-width="4"/>
+                        <path d="M160 100 L200 100" stroke="#10b981" stroke-width="4" stroke-dasharray="4 4"/>
+                        <polygon points="195,95 205,100 195,105" fill="#10b981"/>
+                        
+                        <rect x="200" y="80" width="40" height="40" rx="20" fill="#10b981"/>
+                        <path d="M210 100 L215 105 L225 93" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
         </div>
     </section>
 
