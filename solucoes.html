@@ -11,98 +11,203 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/startups.css"> 
 
   <style>
       .hero-logo-wrapper img {
-          max-width: 340px;
+          max-width: 320px;
           width: 100%;
           height: auto;
           margin: 0 auto;
           display: block;
       }
-      
-      .govtech-section {
-          background-color: #f8fafc;
-          padding: 80px 0 120px;
-      }
-      .gov-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-          gap: 30px;
-          margin-top: 50px;
-      }
-      .gov-card {
+
+      .hero-tech {
+          padding: 80px 0 60px;
           background: #fff;
-          border: 1px solid #e2e8f0;
-          border-radius: 16px;
-          padding: 40px 32px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* --- ESTRUTURA DAS LÂMINAS GOVTECH --- */
+      .gov-lamina {
+          padding: 90px 0;
+          overflow: hidden;
+          border-top: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .lamina-container {
           display: flex;
-          flex-direction: column;
+          align-items: center;
+          gap: 60px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
       }
-      .gov-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-          border-color: #cbd5e1;
+
+      .lamina-reverse { flex-direction: row-reverse; }
+      .lamina-content { flex: 1.1; }
+      .lamina-visual { flex: 0.9; position: relative; }
+
+      /* Ícone Estilo App */
+      .gov-app-icon {
+          width: 85px;
+          height: 85px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 3rem;
+          margin-bottom: 24px;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
       }
-      .gov-header {
-          margin-bottom: 20px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #f1f5f9;
-      }
-      .gov-title {
-          font-size: 1.4rem;
-          font-weight: 800;
-          color: #0f172a;
-          margin-bottom: 8px;
-          line-height: 1.3;
-      }
-      .gov-subtitle {
+
+      .lamina-subtitle {
           font-size: 0.9rem;
-          color: #0EA5E9;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          margin-bottom: 8px;
+          display: block;
+      }
+
+      .lamina-title {
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin: 0 0 20px 0;
+          line-height: 1.1;
+      }
+
+      .lamina-desc {
+          font-size: 1.15rem;
+          line-height: 1.6;
+          margin-bottom: 35px;
+      }
+
+      /* Painel Dinâmico: Dor vs Solução */
+      .lamina-interactive-panel {
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(12px);
+          border-radius: 24px;
+          padding: 40px;
+          box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+          border: 1px solid rgba(255,255,255,0.4);
+          transition: transform 0.3s ease;
+      }
+
+      .lamina-interactive-panel:hover {
+          transform: translateY(-5px);
+      }
+
+      .pain-block { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+      .solution-block { margin-bottom: 0; }
+
+      .interactive-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 0.85rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 10px;
+      }
+
+      .interactive-label.dor { color: #e11d48; }
+      .interactive-label.solucao { color: #059669; }
+
+      .interactive-text {
+          font-size: 1.05rem;
+          line-height: 1.5;
+          margin: 0;
+          font-weight: 500;
+      }
+
+      /* Tags Tecnológicas */
+      .gov-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 30px;
+      }
+
+      .gov-tags span {
+          font-size: 0.8rem;
           font-weight: 700;
+          padding: 6px 14px;
+          border-radius: 50px;
+      }
+
+      /* Botão Genérico Lâmina */
+      .btn-lamina {
+          display: inline-block;
+          padding: 16px 36px;
+          border-radius: 50px;
+          font-weight: 800;
+          font-size: 1.05rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
           text-transform: uppercase;
           letter-spacing: 0.5px;
       }
-      .gov-desc {
-          font-size: 1rem;
-          color: #475569;
-          margin-bottom: 24px;
-          line-height: 1.6;
-      }
-      .gov-features {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-          margin-top: auto;
-      }
-      .gov-features li {
-          font-size: 0.9rem;
-          color: #334155;
-          position: relative;
-          padding-left: 24px;
-          line-height: 1.5;
-      }
-      .gov-features li::before {
-          content: '→';
-          position: absolute;
-          left: 0;
-          top: 0;
-          color: #0EA5E9;
-          font-weight: bold;
-      }
-      .gov-features strong {
-          color: #0f172a;
+
+      /* --- TEMAS DE CORES (CLAROS E ESCUROS) --- */
+      
+      /* Escuro: Fábrica, GovRH, Social */
+      .theme-dark-slate { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; }
+      .theme-dark-slate .lamina-subtitle { color: #38bdf8; }
+      .theme-dark-slate .lamina-desc { color: #cbd5e1; }
+      .theme-dark-slate .lamina-interactive-panel { background: rgba(30, 41, 59, 0.7); border-color: rgba(255,255,255,0.1); }
+      .theme-dark-slate .interactive-text { color: #f8fafc; }
+      .theme-dark-slate .pain-block { border-color: rgba(255,255,255,0.1); }
+      .theme-dark-slate .interactive-label.dor { color: #fb7185; }
+      .theme-dark-slate .interactive-label.solucao { color: #34d399; }
+      .theme-dark-slate .gov-app-icon { background: #38bdf8; color: #0f172a; }
+      .theme-dark-slate .btn-lamina { background: #38bdf8; color: #0f172a; }
+      .theme-dark-slate .btn-lamina:hover { background: #0ea5e9; color: #fff; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
+      .theme-dark-slate .gov-tags span { background: rgba(56, 189, 248, 0.1); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.2); }
+
+      /* Claro: Azul (GovDash, Docs) */
+      .theme-light-blue { background: #f0f9ff; color: #0f172a; }
+      .theme-light-blue .lamina-subtitle { color: #0284c7; }
+      .theme-light-blue .lamina-desc { color: #475569; }
+      .theme-light-blue .interactive-text { color: #334155; }
+      .theme-light-blue .gov-app-icon { background: #0284c7; color: #fff; }
+      .theme-light-blue .btn-lamina { background: #0284c7; color: #fff; }
+      .theme-light-blue .btn-lamina:hover { background: #0369a1; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.2); }
+      .theme-light-blue .gov-tags span { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+      /* Escuro: Azul Marinho (Mobility, Prev) */
+      .theme-dark-blue { background: linear-gradient(135deg, #172554 0%, #1e3a8a 100%); color: #fff; }
+      .theme-dark-blue .lamina-subtitle { color: #60a5fa; }
+      .theme-dark-blue .lamina-desc { color: #bfdbfe; }
+      .theme-dark-blue .lamina-interactive-panel { background: rgba(30, 58, 138, 0.5); border-color: rgba(255,255,255,0.1); }
+      .theme-dark-blue .interactive-text { color: #f8fafc; }
+      .theme-dark-blue .pain-block { border-color: rgba(255,255,255,0.1); }
+      .theme-dark-blue .interactive-label.dor { color: #fb7185; }
+      .theme-dark-blue .interactive-label.solucao { color: #34d399; }
+      .theme-dark-blue .gov-app-icon { background: #3b82f6; color: #fff; }
+      .theme-dark-blue .btn-lamina { background: #3b82f6; color: #fff; }
+      .theme-dark-blue .btn-lamina:hover { background: #2563eb; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+      .theme-dark-blue .gov-tags span { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+      /* Claro: Cinza/Cloud (Edu, Privacy) */
+      .theme-light-gray { background: #f8fafc; color: #0f172a; }
+      .theme-light-gray .lamina-subtitle { color: #4f46e5; }
+      .theme-light-gray .lamina-desc { color: #475569; }
+      .theme-light-gray .interactive-text { color: #334155; }
+      .theme-light-gray .gov-app-icon { background: #4f46e5; color: #fff; }
+      .theme-light-gray .btn-lamina { background: #4f46e5; color: #fff; }
+      .theme-light-gray .btn-lamina:hover { background: #4338ca; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2); }
+      .theme-light-gray .gov-tags span { background: #e0e7ff; color: #4338ca; border: 1px solid #c7d2fe; }
+
+      /* Responsivo */
+      @media (max-width: 992px) {
+          .lamina-container, .lamina-container.lamina-reverse { flex-direction: column; gap: 40px; }
+          .lamina-title { font-size: 2rem; }
+          .lamina-visual { width: 100%; }
       }
   </style>
 </head>
@@ -111,156 +216,305 @@
   {% include header.html titulo="Cerrado Tech" %}
 
   <section class="hero-tech">
-    <div class="container hero-content text-center">
-      
+    <div class="container text-center">
       <div class="hero-logo-wrapper">
-        <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
+        <img src="img/cerradogov.png" alt="Cerrado Gov Logo">
       </div>
-      
-      <span class="tag" style="display:block; margin: 0 auto 16px; width: fit-content; background: #0f172a; color: #fff;">GovTech & Corporate</span>
-      <h1 class="title">Fábrica de Software e Soluções.</h1>
-      <p class="subtitle" style="max-width: 800px; margin: 0 auto;">Nossa missão é construir soluções robustas para parceiros estratégicos, com <strong>foco total em ferramentas para o executivo público e grandes corporações</strong>. Transformamos a complexidade da gestão governamental em plataformas digitais transparentes, eficientes e escaláveis.</p>
+      <h1 class="title" style="margin-bottom: 15px; font-size: clamp(2rem, 4vw, 3rem);">Soluções Tecnológicas para o Executivo.</h1>
+      <p class="subtitle" style="max-width: 800px; margin: 0 auto; color: #475569;">Transformamos a complexidade da gestão governamental em plataformas digitais transparentes. Conheça nossa Fábrica de Software e nosso ecossistema de soluções.</p>
     </div>
   </section>
 
-  <section id="govtech" class="govtech-section">
-    <div class="container">
-      <div class="gov-grid">
-        
-        <div class="gov-card" style="border-top: 4px solid #0EA5E9;">
-            <div class="gov-header">
-                <div class="gov-subtitle">Engenharia de Alta Performance</div>
-                <h3 class="gov-title">Fábrica de Software Cerrado</h3>
-            </div>
-            <p class="gov-desc">Nosso braço de engenharia de software escalável e profissional. Atuamos sob demanda para desenvolver os projetos governamentais e corporativos mais críticos e complexos do mercado.</p>
-            <ul class="gov-features">
-                <li><strong>Governança:</strong> Squads completos (POs, Scrum Masters, Arquitetos, QA, DevOps) 100% aderentes à LGPD.</li>
-                <li><strong>Stack Moderno:</strong> Especialistas em AWS, Azure, GCP, Docker, Kubernetes, Python, .NET, React e Flutter.</li>
-                <li><strong>Metodologias Ágeis:</strong> Entregas via Scrum/Kanban com modelos flexíveis (Ordem de Serviço, Sprints, Sustentação).</li>
-                <li><strong>SLA de Resolução:</strong> Acordos de nível de serviço rigorosos (de 4h para incidentes críticos a 48h para baixos).</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">BI Executivo Municipal</div>
-                <h3 class="gov-title">Cerrado GovDash</h3>
-            </div>
-            <p class="gov-desc">Plataforma centralizada de Business Intelligence (BI) que atua como o "painel de controle" executivo do município, transformando dados contábeis em KPIs visuais.</p>
-            <ul class="gov-features">
-                <li><strong>Foco Executivo:</strong> Design UX Premium para Prefeitos e Secretários, acelerando a tomada de decisão.</li>
-                <li><strong>Compliance (LRF):</strong> Termômetro visual da Dívida Consolidada e Limite de Gastos com Pessoal (alerta para os 54%).</li>
-                <li><strong>Saúde e Educação:</strong> Monitoramento de surtos (LIRAa), filas do SUS, vagas em creches e estoque de merenda.</li>
-                <li><strong>Motor ETL:</strong> Conexão automatizada com bancos de dados legados das secretarias e upload de planilhas.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">Gestão Inteligente de Frotas</div>
-                <h3 class="gov-title">Cerrado Mobility</h3>
-            </div>
-            <p class="gov-desc">Plataforma completa para gestão de frota veicular pública e corporativa, operando com comunicação bidirecional em tempo real via WebSocket.</p>
-            <ul class="gov-features">
-                <li><strong>App Mobile:</strong> Dinâmica "estilo Uber" com GPS nativo, roteirização otimizada via OSRM e Dark Mode.</li>
-                <li><strong>Gestão de Viagens:</strong> Dashboard web com mapa real, avaliação de motoristas e telemetria.</li>
-                <li><strong>Controle de Insumos:</strong> Registro de abastecimentos com cálculo automático de consumo (km/L).</li>
-                <li><strong>Automação de Infrações:</strong> Importação de multas via integração com APIs governamentais e de trânsito.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">Gestão Escolar e Pedagógica</div>
-                <h3 class="gov-title">Cerrado Edu</h3>
-            </div>
-            <p class="gov-desc">Sistema de Gestão Escolar 100% web, focado em redes municipais e estaduais, estruturado em mais de 28 módulos e 500+ endpoints de API.</p>
-            <ul class="gov-features">
-                <li><strong>Gestão Acadêmica:</strong> Controle de turmas, grades, frequência digital e envio de justificativas de faltas.</li>
-                <li><strong>Conselho Digital:</strong> Cálculo automatizado de médias, boletins em PDF e conselho de classe digital.</li>
-                <li><strong>IA Nativa:</strong> Predição de evasão escolar usando algoritmos de Random Forest.</li>
-                <li><strong>Infraestrutura Escolar:</strong> Módulos para Merenda (PNAE), Biblioteca, Transporte e Prestação de Contas.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">Folha de Pagamento Pública</div>
-                <h3 class="gov-title">Cerrado GovRH</h3>
-            </div>
-            <p class="gov-desc">Solução de folha de pagamento focada na automação, conformidade legal e minimização de passivos para a gestão pública.</p>
-            <ul class="gov-features">
-                <li><strong>Motor Visual (No-code):</strong> Editor dinâmico para criar rubricas e eventos com fórmulas visuais.</li>
-                <li><strong>Conformidade Fiscal:</strong> Exportação nativa eSocial, SEFIP/GFIP e layouts para 12 Tribunais de Contas Estaduais.</li>
-                <li><strong>Automação com IA:</strong> Validador inteligente de legislação e simulador de impacto financeiro de reajustes.</li>
-                <li><strong>Gestão Completa:</strong> Folha normal, férias, 13º, folhas complementares e mais de 16 tipos de afastamentos.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">Hub para RPPS</div>
-                <h3 class="gov-title">Cerrado Prev</h3>
-            </div>
-            <p class="gov-desc">Um sistema centralizado e integrado em tempo real para gerir Institutos de Previdência Própria (RPPS) com segurança e compliance.</p>
-            <ul class="gov-features">
-                <li><strong>Concessão e Folha:</strong> Automação de aposentadorias e pensões com cálculo imediato de paridades.</li>
-                <li><strong>Arrecadação e Integração:</strong> Emissão de guias, conciliação e integração direta com o COMPREV federal.</li>
-                <li><strong>Perícia Médica com IA:</strong> Assistente IA para análise de atestados e sugestão de enquadramento CID.</li>
-                <li><strong>Portal do Servidor:</strong> Autoatendimento 24/7 com recurso inovador de "Chat com PDF" para consulta à base normativa.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">SaaS e Consultoria LGPD</div>
-                <h3 class="gov-title">Cerrado Privacy</h3>
-            </div>
-            <p class="gov-desc">Plataforma e serviços especializados para adequação e governança de dados segundo a Lei 13.709/2018 (LGPD).</p>
-            <ul class="gov-features">
-                <li><strong>Consultoria Especializada:</strong> DPO as a Service e planos de resposta a incidentes cibernéticos.</li>
-                <li><strong>Diagnóstico e Risco:</strong> Mapeamento de dados e geração automática de ROPA e RIPD.</li>
-                <li><strong>Monitoramento (15+ Módulos):</strong> Canal de Titulares, Canal de Denúncias e workflow de incidentes.</li>
-                <li><strong>Treinamento:</strong> Módulo EAD para capacitação contínua da equipe do órgão/empresa.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">Gestão Cognitiva e Workflow</div>
-                <h3 class="gov-title">Cerrado Docs</h3>
-            </div>
-            <p class="gov-desc">Plataforma paperless na nuvem para Gestão Documental e Automação de Processos públicos e corporativos.</p>
-            <ul class="gov-features">
-                <li><strong>Armazenamento Cloud:</strong> Upload em lote via drag-and-drop, pré-visualização nativa e gestão de permissões.</li>
-                <li><strong>Busca Vetorial (RAG) e OCR:</strong> Indexação semântica e extração automática de textos em imagens escaneadas.</li>
-                <li><strong>Chat com Documentos:</strong> Interação em linguagem natural com PDFs simultâneos; a IA consolida resumos.</li>
-                <li><strong>Workflow Dinâmico:</strong> Tramitação de processos com hierarquia de aprovação e assinatura digital.</li>
-            </ul>
-        </div>
-
-        <div class="gov-card">
-            <div class="gov-header">
-                <div class="gov-subtitle">Inovação no SUAS</div>
-                <h3 class="gov-title">Cerrado Social</h3>
-            </div>
-            <p class="gov-desc">Sistema integrado focado na Assistência Social, transformando a gestão de dados vulneráveis em políticas públicas efetivas.</p>
-            <ul class="gov-features">
-                <li><strong>Prontuário Social Eletrônico:</strong> Integração de toda a rede: CRAS, CREAS, Centro POP e Unidades de Acolhimento.</li>
-                <li><strong>Gestão de Condicionalidades:</strong> Monitoramento unificado do Bolsa Família, CadÚnico e Tarifa Social.</li>
-                <li><strong>Fluxo e Regulação:</strong> Fim das filas de espera através da gestão inteligente do ciclo de atendimento.</li>
-                <li><strong>Inteligência Georreferenciada:</strong> Mapeamento social para prestação de contas automatizada ao MDS.</li>
-            </ul>
-        </div>
-
+  <section class="gov-lamina theme-dark-slate" id="fabrica">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="gov-app-icon">💻</div>
+              <span class="lamina-subtitle">Engenharia Sob Demanda</span>
+              <h2 class="lamina-title">Fábrica de Software Cerrado Tech</h2>
+              <p class="lamina-desc">Não somos apenas um produto, somos o <strong>motor</strong>. Nosso braço de engenharia de software atua sob demanda para arquitetar e desenvolver os projetos mais críticos e exclusivos de prefeituras e corporações.</p>
+              
+              <div class="gov-tags">
+                  <span>Governança LGPD</span>
+                  <span>AWS / Azure</span>
+                  <span>Scrum & Agile</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 A Dor do Órgão</span>
+                      <p class="interactive-text">Sistemas legados engessados, lentidão em licitações de tecnologia e fornecedores que não entregam código seguro ou aderente à LGPD.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ Nossa Engenharia</span>
+                      <p class="interactive-text">Squads completos (POs, Arquitetos, QA) entregando software de alto impacto por sprints, com SLA de resposta de até 4 horas para incidentes críticos.</p>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
   </section>
 
-  <section class="section section-dark text-center">
+  <section class="gov-lamina theme-light-blue lamina-reverse" id="govdash">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content">
+              <div class="gov-app-icon">📊</div>
+              <span class="lamina-subtitle">BI Executivo Municipal</span>
+              <h2 class="lamina-title">Cerrado GovDash</h2>
+              <p class="lamina-desc">O verdadeiro "Cockpit" do prefeito e secretários. Uma central de inteligência que extrai dados de bancos antigos e transforma tudo em painéis de decisão em tempo real.</p>
+              
+              <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-lamina">Acessar Demonstração</a>
+
+              <div class="gov-tags">
+                  <span>UX Premium</span>
+                  <span>Alerta LRF 54%</span>
+                  <span>Integração Automática</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 O Problema Oculto</span>
+                      <p class="interactive-text">O prefeito toma decisões baseadas em planilhas de 3 meses atrás. O limite da LRF estoura sem aviso e o Tribunal de Contas rejeita o balanço.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ A Visão Clara</span>
+                      <p class="interactive-text">Termômetros visuais avisam se a folha bater 54%. Acompanhe as filas do SUS, mapa da dengue (LIRAa) e o status das licitações com um clique.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-dark-blue" id="mobility">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="gov-app-icon">🚗</div>
+              <span class="lamina-subtitle">Gestão Inteligente de Frotas</span>
+              <h2 class="lamina-title">Cerrado Mobility</h2>
+              <p class="lamina-desc">A experiência de um app de transporte privado, mas construído exclusivamente para a frota oficial da prefeitura ou corporação. Comunicação em tempo real.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>App Android/iOS</span>
+                  <span>Rastreio GPS</span>
+                  <span>API de Multas</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 O Ralo Financeiro</span>
+                      <p class="interactive-text">Veículos ociosos, desvios de rota injustificados, multas de trânsito perdidas no papel e consumo de combustível sem nenhum controle.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ O Controle Total</span>
+                      <p class="interactive-text">O servidor pede a viagem no celular, o motorista aceita. O painel web cruza os Km rodados com os litros abastecidos para dar a eficiência exata.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-light-gray lamina-reverse" id="edu">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content">
+              <div class="gov-app-icon">🎓</div>
+              <span class="lamina-subtitle">Gestão Escolar e Pedagógica</span>
+              <h2 class="lamina-title">Cerrado Edu</h2>
+              <p class="lamina-desc">Sistema com mais de 28 módulos cobrindo 100% da vida acadêmica municipal. Da chamada digital feita pelo professor até o controle de despensa da merenda.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>Conselho Digital</span>
+                  <span>IA Preditiva</span>
+                  <span>Prestação FNDE</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 O Atraso Educacional</span>
+                      <p class="interactive-text">Diários de classe em papel, falta de estatísticas de frequência e alunos abandonando a escola sem que a direção perceba a tempo.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ A Escola do Futuro</span>
+                      <p class="interactive-text">Algoritmos de Inteligência Artificial alertam o conselho tutelar antes do aluno evadir. Notas, transporte e merenda auditáveis em tempo real.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-dark-slate" id="govrh">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="gov-app-icon">💼</div>
+              <span class="lamina-subtitle">Folha de Pagamento Pública</span>
+              <h2 class="lamina-title">Cerrado GovRH</h2>
+              <p class="lamina-desc">Processamento de folha ultrarrápido, seguro e à prova de falhas. Focado em manter a prefeitura blindada contra passivos trabalhistas.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>Fórmulas Visuais</span>
+                  <span>eSocial Nativo</span>
+                  <span>Exportação TCE</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 O Risco Trabalhista</span>
+                      <p class="interactive-text">Sistemas que exigem programação complexa para criar um benefício novo, gerando erros crônicos na folha e inconsistências no eSocial.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ O Pagamento Seguro</span>
+                      <p class="interactive-text">Interface "No-Code" onde o RH arrasta blocos para criar fórmulas. Exportação nativa já mastigada nos layouts de mais de 12 Tribunais de Contas.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-light-blue lamina-reverse" id="docs">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content">
+              <div class="gov-app-icon">📂</div>
+              <span class="lamina-subtitle">Gestão Cognitiva e Workflow</span>
+              <h2 class="lamina-title">Cerrado Docs</h2>
+              <p class="lamina-desc">Aposente a sala do arquivo morto. Nossa nuvem não apenas guarda PDFs, ela "lê" os documentos para que você possa conversar com eles usando Inteligência Artificial.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>Chat com PDF</span>
+                  <span>Busca OCR</span>
+                  <span>Assinatura Digital</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 A Burocracia Física</span>
+                      <p class="interactive-text">Processos que demoram semanas tramitando fisicamente. Servidores perdendo dias para achar uma portaria de 1998 em caixas de papelão.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ A Inteligência Digital</span>
+                      <p class="interactive-text">Pergunte ao sistema: "Qual foi o decreto de férias de 2010?" e a IA responde citando a página exata do documento escaneado via busca semântica (RAG).</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-dark-blue" id="prev">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="gov-app-icon">🛡️</div>
+              <span class="lamina-subtitle">Hub para RPPS</span>
+              <h2 class="lamina-title">Cerrado Prev</h2>
+              <p class="lamina-desc">Um sistema centralizado e integrado em tempo real para gerir Institutos de Previdência Própria (RPPS) com segurança jurídica e compliance.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>Concessão em Lote</span>
+                  <span>Perícia com IA</span>
+                  <span>Portal do Segurado</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 O Caos Previdenciário</span>
+                      <p class="interactive-text">Processos manuais demorados para concessão de aposentadorias, cálculos errados de paridade e falta de integração com o COMPREV, gerando déficit no instituto.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ A Gestão Protegida</span>
+                      <p class="interactive-text">Automação desde a emissão de guias de arrecadação até o cálculo instantâneo da folha. Autoatendimento 24/7 para o servidor garantindo certificação Pró-Gestão e CRP.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-light-gray lamina-reverse" id="privacy">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content">
+              <div class="gov-app-icon">🔒</div>
+              <span class="lamina-subtitle">SaaS e Consultoria LGPD</span>
+              <h2 class="lamina-title">Cerrado Privacy</h2>
+              <p class="lamina-desc">Plataforma SaaS com 15+ módulos e serviços especializados (DPO as a Service) para adequação e governança total de dados segundo a Lei 13.709/2018.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>Mapeamento ROPA</span>
+                  <span>Canal de Denúncias</span>
+                  <span>Treinamento EAD</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 A Ameaça Jurídica</span>
+                      <p class="interactive-text">Órgãos públicos operando no escuro, totalmente vulneráveis a vazamentos de dados, sem processos definidos e expostos a multas altíssimas da ANPD.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ A Blindagem Legal</span>
+                      <p class="interactive-text">Mapeamento dinâmico de riscos (RIPD), gestão automatizada de cookies, Canal do Titular ativo e capacitação contínua da equipe através do módulo de EAD integrado.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="gov-lamina theme-dark-slate" id="social">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="gov-app-icon">🤝</div>
+              <span class="lamina-subtitle">Inovação em Assistência Social</span>
+              <h2 class="lamina-title">Cerrado Social</h2>
+              <p class="lamina-desc">Sistema integrado focado no SUAS, conectando toda a rede de acolhimento (CRAS, CREAS) e transformando a gestão de dados vulneráveis em políticas públicas efetivas.</p>
+              
+              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+
+              <div class="gov-tags">
+                  <span>Prontuário Eletrônico</span>
+                  <span>Regulação de Filas</span>
+                  <span>Georreferenciamento</span>
+              </div>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-interactive-panel">
+                  <div class="pain-block">
+                      <span class="interactive-label dor">🛑 O Abandono Social</span>
+                      <p class="interactive-text">Filas desumanas nas portas do CRAS, histórico de famílias vulneráveis perdidos em pastas de papel e falta de cruzamento de dados com o Bolsa Família e CadÚnico.</p>
+                  </div>
+                  <div class="solution-block">
+                      <span class="interactive-label solucao">✅ O Atendimento Dignificado</span>
+                      <p class="interactive-text">Regulação inteligente que acaba com as filas de espera. Mapa de calor em tempo real indicando as áreas de maior vulnerabilidade para prestação de contas exata ao MDS.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="section section-dark text-center" style="border-top: 1px solid rgba(255,255,255,0.1);">
     <div class="container">
       <h2 class="title" style="color: #fff;">Modernize a gestão pública do seu município.</h2>
-      <p class="subtitle" style="color: #cbd5e1; max-width: 600px; margin: 0 auto 32px;">Nossos especialistas estão prontos para desenhar a arquitetura ideal de tecnologia para o seu instituto ou prefeitura.</p>
+      <p class="subtitle" style="color: #cbd5e1; max-width: 600px; margin: 0 auto 32px;">Nossos especialistas estão prontos para desenhar a arquitetura ideal de tecnologia para o seu instituto, secretaria ou prefeitura.</p>
       <a href="index.html#contato" class="btn-secondary">Agendar Reunião Técnica</a>
     </div>
   </section>
