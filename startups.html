@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
@@ -26,13 +26,193 @@
           margin: 0 auto;
           display: block;
       }
+
+      /* --- ESTRUTURA DAS LÂMINAS DE STARTUPS --- */
+      .startup-lamina {
+          padding: 100px 0;
+          overflow: hidden;
+      }
+
+      .lamina-container {
+          display: flex;
+          align-items: center;
+          gap: 60px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+
+      .lamina-reverse {
+          flex-direction: row-reverse;
+      }
+
+      .lamina-content {
+          flex: 1.1;
+      }
+
+      .lamina-visual {
+          flex: 0.9;
+          position: relative;
+      }
+
+      /* Caixinha branca para destacar a logo PNG transparente */
+      .startup-logo-box {
+          background: #ffffff;
+          padding: 24px; /* Aumentado o respiro interno */
+          border-radius: 20px; /* Canto um pouco mais suave */
+          box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 30px;
+          border: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .startup-logo-box img {
+          width: 150px; /* Mais que o dobro do tamanho anterior */
+          height: 150px; /* Mantém a proporção quadrada da caixa */
+          object-fit: contain; /* Garante que a logo não corte e fique centralizada */
+          display: block;
+      }
+
+      .lamina-title-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 20px;
+          flex-wrap: wrap;
+      }
+
+      .lamina-title {
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin: 0;
+          line-height: 1.1;
+      }
+
+      .lamina-desc {
+          font-size: 1.15rem;
+          line-height: 1.6;
+          margin-bottom: 30px;
+      }
+
+      /* Box de "O Problema / A Solução" estilizado */
+      .lamina-info-card {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          padding: 40px;
+          border-radius: 24px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+          border: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .info-block {
+          margin-bottom: 24px;
+      }
+
+      .info-block:last-child {
+          margin-bottom: 0;
+      }
+
+      .info-block h4 {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 800;
+          margin-bottom: 8px;
+      }
+
+      .info-block p {
+          font-size: 1rem;
+          margin: 0;
+          color: #334155;
+      }
+
+      .lamina-tech-tags {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 30px;
+          padding-top: 24px;
+          border-top: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .lamina-tag {
+          font-size: 0.8rem;
+          font-weight: 700;
+          padding: 6px 14px;
+          border-radius: 50px;
+          letter-spacing: 0.5px;
+      }
+
+      /* --- TEMAS INDIVIDUAIS --- */
+      
+      /* GoGym (Dark / Laranja) */
+      .theme-gogym {
+          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+          color: #ffffff;
+      }
+      .theme-gogym .lamina-title { color: #ffffff; }
+      .theme-gogym .lamina-desc { color: #a1a1aa; }
+      .theme-gogym .lamina-info-card { background: rgba(30, 30, 30, 0.6); border-color: #333; }
+      .theme-gogym .info-block h4 { color: #ff4500; }
+      .theme-gogym .info-block p { color: #e4e4e7; }
+      .theme-gogym .lamina-tag { background: rgba(255, 69, 0, 0.1); color: #ff4500; border: 1px solid rgba(255, 69, 0, 0.2); }
+      .theme-gogym .btn-lamina { background: #ff4500; color: #fff; border: none; }
+      .theme-gogym .btn-lamina:hover { background: #e63e00; box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3); color: #fff; }
+
+      /* PataMed (Verde Escuro e Salmão) */
+      .theme-patamed {
+          background: linear-gradient(135deg, #f4fcf9 0%, #e0f2eb 100%);
+          color: #054D3F;
+      }
+      .theme-patamed .lamina-title { color: #054D3F; }
+      .theme-patamed .lamina-desc { color: #1b4035; }
+      .theme-patamed .info-block h4 { color: #F29479; }
+      .theme-patamed .lamina-tag { background: rgba(5, 77, 63, 0.1); color: #054D3F; border: 1px solid rgba(5, 77, 63, 0.2); }
+      .theme-patamed .btn-lamina { background: #F29479; color: #fff; border: none; }
+      .theme-patamed .btn-lamina:hover { background: #e07a5f; box-shadow: 0 10px 20px rgba(242, 148, 121, 0.3); color: #fff; }
+
+      /* ChamaLá (Laranja Marketplace) */
+      .theme-chamala {
+          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+          color: #431407;
+      }
+      .theme-chamala .lamina-title { color: #431407; }
+      .theme-chamala .lamina-desc { color: #9a3412; }
+      .theme-chamala .info-block h4 { color: #F97316; }
+      .theme-chamala .lamina-tag { background: rgba(249, 115, 22, 0.1); color: #ea580c; border: 1px solid rgba(249, 115, 22, 0.2); }
+      .theme-chamala .btn-lamina { background: #F97316; color: #fff; border: none; }
+      .theme-chamala .btn-lamina:hover { background: #ea580c; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); color: #fff; }
+
+      /* Botão Genérico Lâmina */
+      .btn-lamina {
+          display: inline-block;
+          padding: 16px 32px;
+          border-radius: 50px;
+          font-weight: 800;
+          font-size: 1.1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          margin-top: 10px;
+      }
+
+      /* Responsivo */
+      @media (max-width: 992px) {
+          .lamina-container, .lamina-container.lamina-reverse {
+              flex-direction: column;
+              gap: 40px;
+          }
+          .lamina-title { font-size: 2rem; }
+          .lamina-visual { width: 100%; }
+      }
   </style>
 </head>
 <body>
 
   {% include header.html titulo="Cerrado Tech" %}
 
-  <section class="hero-tech">
+  <section class="hero-tech" style="padding-bottom: 60px;">
     <div class="container hero-content text-center">
       
       <div class="hero-logo-wrapper">
@@ -41,79 +221,113 @@
       
       <span class="tag" style="display:block; margin: 0 auto 16px; width: fit-content;">Venture Builder</span>
       <h1 class="title">Ecossistema de Inovação Próprio.</h1>
-      <p class="subtitle">Nascidas sob o guarda-chuva e a expertise da <strong>Cerrado Finanças</strong>, nossas startups são operações de mercado independentes que compartilham a mesma inteligência de negócios, backoffice corporativo e infraestrutura tecnológica de ponta desenvolvida pela Cerrado Tech.</p>
+      <p class="subtitle" style="max-width: 800px; margin: 0 auto;">Nascidas sob o guarda-chuva e a expertise da <strong>Cerrado Finanças</strong>, nossas startups são operações de mercado independentes que compartilham a mesma inteligência de negócios, backoffice corporativo e infraestrutura tecnológica de ponta desenvolvida pela Cerrado Tech.</p>
     </div>
   </section>
 
-  <section id="portfolio" class="section">
-    <div class="container">
-      <div class="section-header" style="text-align: center;">
-        <h2 class="title">Nosso Portfólio de Startups</h2>
-        <p class="subtitle" style="margin: 0 auto;">Conheça as operações e aplicativos que nasceram dentro de casa e já estão tracionando no mercado.</p>
+  <section class="startup-lamina theme-gogym" id="gogym">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="startup-logo-box">
+                  <img src="img/logo-gogym.png" alt="GoGym Logo">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">GoGym Store</h2>
+                  <span class="status-badge success" style="margin: 0;">Em Operação</span>
+              </div>
+              <p class="lamina-desc">Operação estruturada no modelo de Dark Store, otimizando a logística e a distribuição de ponta a ponta com custos reduzidos. Um e-commerce dedicado à alta performance.</p>
+              
+              <a href="/startups/gogym/" class="btn-lamina">Acessar GoGym Store</a>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>O alto custo de vitrines físicas e os gargalos logísticos crônicos no varejo tradicional de suplementação.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Um Hub logístico otimizado com gestão de estoque baseada em dados e inteligência preditiva de demanda.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">Logística</span>
+                      <span class="lamina-tag">Dark Store</span>
+                      <span class="lamina-tag">E-commerce</span>
+                  </div>
+              </div>
+          </div>
       </div>
+  </section>
 
-      <div class="startups-grid">
-        <article class="startup-card">
-          <div class="startup-header">
-            <img src="img/logo-gogym.png" alt="GoGym Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
-            <div>
-              <h3>GoGym Store</h3>
-              <span class="status-badge success">Em Operação</span>
-            </div>
+  <section class="startup-lamina theme-patamed lamina-reverse" id="patamed">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content">
+              <div class="startup-logo-box">
+                  <img src="img/logo-patamed.png" alt="PataMed Logo">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">PataMed</h2>
+                  <span class="status-badge warning" style="margin: 0; background: #fff0eb; color: #d96d50; border: 1px solid #ffdacc;">Em Desenvolvimento</span>
+              </div>
+              <p class="lamina-desc">Plataforma tecnológica focada em centralizar e simplificar o acesso a dados de saúde e atendimento veterinário. A revolução do cuidado animal na palma da mão.</p>
+              
+              <a href="/startups/patamed/" class="btn-lamina">Conhecer a PataMed</a>
           </div>
-          <p class="startup-desc">Operação estruturada no modelo de Dark Store, otimizando a logística e a distribuição de ponta a ponta com custos reduzidos.</p>
-          <div class="startup-details">
-            <div class="detail-item"><strong>O Problema:</strong> Custo de vitrine física e gargalos logísticos no varejo tradicional.</div>
-            <div class="detail-item"><strong>A Solução:</strong> Hub logístico com gestão de estoque baseada em dados.</div>
-            <div class="detail-item tech-tags">
-              <span class="tech-tag">Logística</span>
-              <span class="tech-tag">Dark Store</span>
-            </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>Histórico médico fragmentado, perda de carteirinhas de vacinação e desconexão entre tutores e clínicas veterinárias.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Prontuário eletrônico unificado na nuvem e aplicativo mobile para gestão proativa da saúde e bem-estar do pet.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">HealthTech</span>
+                      <span class="lamina-tag">App Mobile</span>
+                      <span class="lamina-tag">Medicina Veterinária</span>
+                  </div>
+              </div>
           </div>
-          <a href="/startups/gogym/" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem;">Acessar GoGym Store</a>
-        </article>
-
-        <article class="startup-card">
-          <div class="startup-header">
-            <img src="img/logo-patamed.png" alt="PataMed Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
-            <div>
-              <h3>PataMed</h3>
-              <span class="status-badge warning">Em Desenvolvimento</span>
-            </div>
-          </div>
-          <p class="startup-desc">Plataforma tecnológica focada em centralizar e simplificar o acesso a dados de saúde e atendimento veterinário.</p>
-          <div class="startup-details">
-            <div class="detail-item"><strong>O Problema:</strong> Histórico fragmentado entre tutores e clínicas.</div>
-            <div class="detail-item"><strong>A Solução:</strong> Prontuário eletrônico e app de gestão de saúde.</div>
-            <div class="detail-item tech-tags">
-              <span class="tech-tag">HealthTech</span>
-              <span class="tech-tag">App Mobile</span>
-            </div>
-          </div>
-          <a href="/startups/patamed/" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem; background: #0EA5E9; color: #fff !important; border-color: #0EA5E9;">Conhecer a PataMed</a>
-        </article>
-
-        <article class="startup-card">
-          <div class="startup-header">
-            <img src="img/logo-chamala.png" alt="ChamaLá Logo" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover;">
-            <div>
-              <h3>ChamaLá</h3>
-              <span class="status-badge warning">Ideação / MVP</span>
-            </div>
-          </div>
-          <p class="startup-desc">Aplicativo de intermediação de serviços rápidos, conectando demandas urgentes a profissionais qualificados em tempo real.</p>
-          <div class="startup-details">
-            <div class="detail-item"><strong>O Problema:</strong> Fricção e demora na contratação de serviços sob demanda.</div>
-            <div class="detail-item"><strong>A Solução:</strong> Match instantâneo com geolocalização e reputação.</div>
-            <div class="detail-item tech-tags">
-              <span class="tech-tag">Marketplace</span>
-              <span class="tech-tag">Geolocalização</span>
-            </div>
-          </div>
-          <a href="https://renato0503.github.io/ChamaLaSite/" target="_blank" class="btn-secondary" style="margin-top: 24px; padding: 12px; font-size: 1rem; background: #F97316; color: #fff !important; border-color: #F97316;">Acessar ChamaLá</a>
-        </article>
       </div>
-    </div>
+  </section>
+
+  <section class="startup-lamina theme-chamala" id="chamala">
+      <div class="lamina-container">
+          <div class="lamina-content">
+              <div class="startup-logo-box">
+                  <img src="img/logo-chamala.png" alt="ChamaLá Logo">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">ChamaLá</h2>
+                  <span class="status-badge warning" style="margin: 0; background: #ffedd5; color: #ea580c; border: 1px solid #fed7aa;">Ideação / MVP</span>
+              </div>
+              <p class="lamina-desc">Aplicativo de intermediação de serviços rápidos, conectando demandas urgentes a profissionais qualificados em tempo real. A ponte entre o problema doméstico e a solução.</p>
+              
+              <a href="/startups/chamala/" class="btn-lamina">Conhecer o ChamaLá</a>
+          </div>
+          
+          <div class="lamina-visual">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>Extrema fricção, insegurança e demora na contratação de profissionais para serviços domésticos sob demanda.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Match instantâneo com prestadores de serviço utilizando algoritmos de geolocalização e sistema de reputação.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">Marketplace</span>
+                      <span class="lamina-tag">Geolocalização</span>
+                      <span class="lamina-tag">Gig Economy</span>
+                  </div>
+              </div>
+          </div>
+      </div>
   </section>
 
   <section class="section process-section">
