@@ -18,139 +18,48 @@
   <link rel="stylesheet" href="css/footer.css">
 
   <style>
-      .hero-logo-wrapper img {
-          max-width: 320px;
-          width: 100%;
-          height: auto;
-          margin: 0 auto;
-          display: block;
-      }
-
-      .hero-tech {
-          padding: 80px 0 60px;
-          background: #fff;
-      }
+      .hero-logo-wrapper img { max-width: 320px; width: 100%; height: auto; margin: 0 auto; display: block; }
+      .hero-tech { padding: 80px 0 60px; background: #fff; }
 
       /* --- ESTRUTURA DAS LÂMINAS GOVTECH --- */
-      .gov-lamina {
-          padding: 90px 0;
-          overflow: hidden;
-          border-top: 1px solid rgba(0,0,0,0.05);
-      }
-
-      .lamina-container {
-          display: flex;
-          align-items: center;
-          gap: 60px;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-      }
-
+      .gov-lamina { padding: 90px 0; overflow: hidden; border-top: 1px solid rgba(0,0,0,0.05); }
+      .lamina-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
       .lamina-reverse { flex-direction: row-reverse; }
       .lamina-content { flex: 1.1; }
       .lamina-visual { flex: 0.9; position: relative; }
 
       /* Ícone Estilo App */
       .gov-app-icon {
-          width: 85px;
-          height: 85px;
-          border-radius: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 3rem;
-          margin-bottom: 24px;
-          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+          width: 85px; height: 85px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
+          font-size: 3rem; margin-bottom: 24px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);
       }
 
-      .lamina-subtitle {
-          font-size: 0.9rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          margin-bottom: 8px;
-          display: block;
-      }
-
-      .lamina-title {
-          font-size: 2.5rem;
-          font-weight: 800;
-          margin: 0 0 20px 0;
-          line-height: 1.1;
-      }
-
-      .lamina-desc {
-          font-size: 1.15rem;
-          line-height: 1.6;
-          margin-bottom: 35px;
-      }
+      .lamina-subtitle { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
+      .lamina-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 20px 0; line-height: 1.1; }
+      .lamina-desc { font-size: 1.15rem; line-height: 1.6; margin-bottom: 35px; }
 
       /* Painel Dinâmico: Dor vs Solução */
       .lamina-interactive-panel {
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(12px);
-          border-radius: 24px;
-          padding: 40px;
-          box-shadow: 0 25px 50px rgba(0,0,0,0.08);
-          border: 1px solid rgba(255,255,255,0.4);
-          transition: transform 0.3s ease;
+          background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-radius: 24px; padding: 40px;
+          box-shadow: 0 25px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,255,255,0.4); transition: transform 0.3s ease;
       }
-
-      .lamina-interactive-panel:hover {
-          transform: translateY(-5px);
-      }
+      .lamina-interactive-panel:hover { transform: translateY(-5px); }
 
       .pain-block { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid rgba(0,0,0,0.08); }
       .solution-block { margin-bottom: 0; }
-
-      .interactive-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.85rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 10px;
-      }
-
+      .interactive-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
       .interactive-label.dor { color: #e11d48; }
       .interactive-label.solucao { color: #059669; }
-
-      .interactive-text {
-          font-size: 1.05rem;
-          line-height: 1.5;
-          margin: 0;
-          font-weight: 500;
-      }
+      .interactive-text { font-size: 1.05rem; line-height: 1.5; margin: 0; font-weight: 500; }
 
       /* Tags Tecnológicas */
-      .gov-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-top: 30px;
-      }
-
-      .gov-tags span {
-          font-size: 0.8rem;
-          font-weight: 700;
-          padding: 6px 14px;
-          border-radius: 50px;
-      }
+      .gov-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+      .gov-tags span { font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 50px; }
 
       /* Botão Genérico Lâmina */
       .btn-lamina {
-          display: inline-block;
-          padding: 16px 36px;
-          border-radius: 50px;
-          font-weight: 800;
-          font-size: 1.05rem;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
+          display: inline-block; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1.05rem;
+          text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
       }
 
       /* --- TEMAS DE CORES (CLAROS E ESCUROS) --- */
@@ -295,7 +204,7 @@
               <h2 class="lamina-title">Cerrado Mobility</h2>
               <p class="lamina-desc">A experiência de um app de transporte privado, mas construído exclusivamente para a frota oficial da prefeitura ou corporação. Comunicação em tempo real.</p>
               
-              <a href="https://www.cerradofinancas.com.br/solucoes/mobility/" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/mobility/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>App Android/iOS</span>
@@ -327,7 +236,7 @@
               <h2 class="lamina-title">Cerrado Edu</h2>
               <p class="lamina-desc">Sistema com mais de 28 módulos cobrindo 100% da vida acadêmica municipal. Da chamada digital feita pelo professor até o controle de despensa da merenda.</p>
               
-              <a href="https://www.cerradofinancas.com.br/solucoes/edu/" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/edu/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>Conselho Digital</span>
@@ -359,7 +268,7 @@
               <h2 class="lamina-title">Cerrado GovRH</h2>
               <p class="lamina-desc">Processamento de folha ultrarrápido, seguro e à prova de falhas. Focado em manter a prefeitura blindada contra passivos trabalhistas.</p>
               
-              <a href="https://www.cerradofinancas.com.br/solucoes/govrh/" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/govrh/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>Fórmulas Visuais</span>
@@ -391,7 +300,7 @@
               <h2 class="lamina-title">Cerrado Docs</h2>
               <p class="lamina-desc">Aposente a sala do arquivo morto. Nossa nuvem não apenas guarda PDFs, ela "lê" os documentos para que você possa conversar com eles usando Inteligência Artificial.</p>
               
-              <a href="https://www.cerradofinancas.com.br/solucoes/docs/" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/docs/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>Chat com PDF</span>
@@ -423,7 +332,7 @@
               <h2 class="lamina-title">Cerrado Prev</h2>
               <p class="lamina-desc">Um sistema centralizado e integrado em tempo real para gerir Institutos de Previdência Própria (RPPS) com segurança jurídica e compliance.</p>
               
-              <a href="https://www.cerradofinancas.com.br/solucoes/prev/" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/prev/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>Concessão em Lote</span>
@@ -455,7 +364,7 @@
               <h2 class="lamina-title">Cerrado Privacy</h2>
               <p class="lamina-desc">Plataforma SaaS com 15+ módulos e serviços especializados (DPO as a Service) para adequação e governança total de dados segundo a Lei 13.709/2018.</p>
               
-              <a href="https://www.cerradofinancas.com.br/solucoes/privacy/" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/privacy/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>Mapeamento ROPA</span>
@@ -487,7 +396,7 @@
               <h2 class="lamina-title">Cerrado Social</h2>
               <p class="lamina-desc">Sistema integrado focado no SUAS, conectando toda a rede de acolhimento (CRAS, CREAS) e transformando a gestão de dados vulneráveis em políticas públicas efetivas.</p>
               
-              <a href="#" class="btn-lamina">Conhecer Plataforma</a>
+              <a href="/solucoes/social/" class="btn-lamina">Conhecer Plataforma</a>
 
               <div class="gov-tags">
                   <span>Prontuário Eletrônico</span>
