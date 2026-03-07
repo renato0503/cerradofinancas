@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/footer.css">
 
   <style>
-      /* --- NOVO HERO GOVTECH --- */
+      /* --- HERO GOVTECH --- */
       .hero-gov {
           padding: 120px 0 80px;
           background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
@@ -75,98 +75,79 @@
 
       /* --- PLATAFORMAS (CARROSSEL) --- */
       .platforms-section { padding: 100px 0; background: #f8fafc; }
-      .plat-header { text-align: center; margin-bottom: 50px; }
-      .plat-header h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
+      .plat-header { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+      .plat-header-text h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 10px; }
+      .plat-header-text p { font-size: 1.15rem; color: #64748b; margin: 0; }
+      
+      /* Controles de navegação ao lado do título (Estilo Desktop) */
+      .carousel-controls { display: flex; gap: 10px; }
+      .carousel-btn { background: #fff; border: 1px solid #cbd5e1; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: #0f172a; font-size: 18px; transition: 0.3s; }
+      .carousel-btn:hover { background: #0f172a; color: #fff; border-color: #0f172a; }
+      @media (max-width: 768px) { .plat-header { flex-direction: column; align-items: flex-start; gap: 20px; } .carousel-controls { display: none; } }
 
-      .carousel-wrapper { position: relative; max-width: 1300px; margin: 0 auto; padding: 0 20px; }
-      .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 30px; padding-bottom: 40px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+      .carousel-wrapper { position: relative; width: 100%; padding-left: max(20px, calc((100% - 1200px) / 2)); /* Alinha a esquerda com o container, mas deixa vazar na direita */ overflow: hidden; }
+      .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; padding-bottom: 40px; padding-right: 40px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
       .carousel-track::-webkit-scrollbar { display: none; }
 
-      /* Setas do Carrossel */
-      .carousel-btn { position: absolute; top: 40%; transform: translateY(-50%); background: #fff; border: 1px solid #cbd5e1; border-radius: 50%; width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 10; color: #0f172a; font-size: 20px; font-weight: bold; transition: 0.3s; }
-      .carousel-btn:hover { background: #0f172a; color: #fff; border-color: #0f172a; transform: translateY(-50%) scale(1.1); }
-      .carousel-btn.prev { left: -10px; }
-      .carousel-btn.next { right: -10px; }
-      @media (max-width: 1024px) { .carousel-btn { display: none; } }
+      /* Cards do Carrossel Ajustados (Menores) */
+      .plat-card { flex: 0 0 320px; scroll-snap-align: start; background: #fff; border-radius: 20px; border: 1px solid #e2e8f0; padding: 30px 24px; display: flex; flex-direction: column; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.02); position: relative; overflow: hidden; }
+      .plat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #cbd5e1; }
+      @media (max-width: 768px) { .plat-card { flex: 0 0 85vw; } } /* No mobile, o card ocupa 85% da tela, deixando 15% pro proximo aparecer */
 
-      /* Cards do Carrossel */
-      .plat-card { flex: 0 0 400px; scroll-snap-align: start; background: #fff; border-radius: 24px; border: 1px solid #e2e8f0; padding: 40px; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; overflow: hidden; }
-      .plat-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: #cbd5e1; }
-      @media (max-width: 768px) { .plat-card { flex: 0 0 88vw; padding: 30px; } }
-
-      .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
-      .card-header .icon { font-size: 2.2rem; width: 60px; height: 60px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 16px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+      .card-header { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
       .card-header-text { display: flex; flex-direction: column; }
-      .card-header-text span { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px; }
-      .card-header h3 { font-size: 1.5rem; font-weight: 900; color: #0f172a; margin: 0; line-height: 1.1; letter-spacing: -0.5px;}
+      .card-header-text span { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px; }
+      .card-header h3 { font-size: 1.3rem; font-weight: 900; color: #0f172a; margin: 0; line-height: 1.1; letter-spacing: -0.5px;}
 
-      /* Área de SVG Viva */
-      .card-svg-area { border-radius: 16px; height: 180px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; padding: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative;}
+      /* Área de SVG Viva - Ajustada */
+      .card-svg-area { border-radius: 12px; height: 140px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; padding: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative;}
       .card-svg-area svg { height: 100%; max-width: 100%; z-index: 2; position: relative; }
       
-      .plat-desc { font-size: 1.05rem; color: #475569; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+      .plat-desc { font-size: 0.95rem; color: #475569; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
 
-      .card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; padding-top: 20px; border-top: 1px dashed #e2e8f0; }
-      .card-tags span { background: #f8fafc; color: #334155; font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 6px; border: 1px solid #e2e8f0; }
+      .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 25px; padding-top: 15px; border-top: 1px dashed #e2e8f0; }
+      .card-tags span { background: #f8fafc; color: #334155; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0; }
 
-      .btn-card-plat { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; padding: 18px 0; border-radius: 14px; font-weight: 800; font-size: 1.05rem; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+      .btn-card-plat { display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; padding: 14px 0; border-radius: 10px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
 
       /* ANIMAÇÕES SVG NATIVAS */
       @keyframes pulse-glow { 0% { opacity: 0.4; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0.4; transform: scale(0.9); } }
       @keyframes float-up-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
       @keyframes draw-line { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
-      @keyframes spin-slow { 100% { transform: rotate(360deg); } }
       @keyframes slide-right { 0% { transform: translateX(-20px); opacity: 0;} 50% { opacity: 1;} 100% { transform: translateX(20px); opacity: 0;} }
 
       /* --- TEMAS DOS CARDS --- */
-      
-      /* GovDash (Azul Escuro/Laranja) */
-      .theme-govdash .card-header .icon { background: #e0f2fe; color: #0284c7; }
       .theme-govdash .card-svg-area { background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); }
-      .theme-govdash .btn-card-plat { background: #0284c7; color: #fff; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2); }
-      .theme-govdash .btn-card-plat:hover { background: #0369a1; transform: translateY(-3px); }
-      
-      /* Mobility (Azul Marinho) */
-      .theme-mobility .card-header .icon { background: #eff6ff; color: #2563eb; }
+      .theme-govdash .btn-card-plat { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+      .theme-govdash .btn-card-plat:hover { background: #0284c7; color: #fff; }
+
       .theme-mobility .card-svg-area { background: radial-gradient(circle at center, #1e3a8a 0%, #172554 100%); }
-      .theme-mobility .btn-card-plat { background: #2563eb; color: #fff; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2); }
-      .theme-mobility .btn-card-plat:hover { background: #1d4ed8; transform: translateY(-3px); }
+      .theme-mobility .btn-card-plat { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+      .theme-mobility .btn-card-plat:hover { background: #2563eb; color: #fff; }
 
-      /* Edu (Índigo/Roxo) */
-      .theme-edu .card-header .icon { background: #e0e7ff; color: #4f46e5; }
       .theme-edu .card-svg-area { background: radial-gradient(circle at center, #312e81 0%, #1e1b4b 100%); }
-      .theme-edu .btn-card-plat { background: #4f46e5; color: #fff; box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2); }
-      .theme-edu .btn-card-plat:hover { background: #4338ca; transform: translateY(-3px); }
+      .theme-edu .btn-card-plat { background: #e0e7ff; color: #4f46e5; border: 1px solid #c7d2fe; }
+      .theme-edu .btn-card-plat:hover { background: #4f46e5; color: #fff; }
 
-      /* GovRH (Esmeralda/Teal) */
-      .theme-govrh .card-header .icon { background: #ccfbf1; color: #0d9488; }
       .theme-govrh .card-svg-area { background: radial-gradient(circle at center, #134e4a 0%, #064e3b 100%); }
-      .theme-govrh .btn-card-plat { background: #0d9488; color: #fff; box-shadow: 0 8px 20px rgba(13, 148, 136, 0.2); }
-      .theme-govrh .btn-card-plat:hover { background: #0f766e; transform: translateY(-3px); }
+      .theme-govrh .btn-card-plat { background: #f0fdfa; color: #0d9488; border: 1px solid #ccfbf1; }
+      .theme-govrh .btn-card-plat:hover { background: #0d9488; color: #fff; }
 
-      /* Prev (Ouro/Azul Escuro) */
-      .theme-prev .card-header .icon { background: #fef3c7; color: #d97706; }
       .theme-prev .card-svg-area { background: radial-gradient(circle at center, #1e293b 0%, #020617 100%); }
-      .theme-prev .btn-card-plat { background: #d97706; color: #fff; box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2); }
-      .theme-prev .btn-card-plat:hover { background: #b45309; transform: translateY(-3px); }
+      .theme-prev .btn-card-plat { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+      .theme-prev .btn-card-plat:hover { background: #d97706; color: #fff; }
 
-      /* Privacy (Cyber Cyan) */
-      .theme-privacy .card-header .icon { background: #cffafe; color: #0891b2; }
       .theme-privacy .card-svg-area { background: radial-gradient(circle at center, #083344 0%, #000000 100%); }
-      .theme-privacy .btn-card-plat { background: #0891b2; color: #fff; box-shadow: 0 8px 20px rgba(8, 145, 178, 0.2); }
-      .theme-privacy .btn-card-plat:hover { background: #0e7490; transform: translateY(-3px); }
+      .theme-privacy .btn-card-plat { background: #ecfeff; color: #0891b2; border: 1px solid #cffafe; }
+      .theme-privacy .btn-card-plat:hover { background: #0891b2; color: #fff; }
 
-      /* Social (Violeta/Fuchsia) */
-      .theme-social .card-header .icon { background: #fae8ff; color: #c026d3; }
       .theme-social .card-svg-area { background: radial-gradient(circle at center, #4c1d95 0%, #2e1065 100%); }
-      .theme-social .btn-card-plat { background: #c026d3; color: #fff; box-shadow: 0 8px 20px rgba(192, 38, 211, 0.2); }
-      .theme-social .btn-card-plat:hover { background: #a21caf; transform: translateY(-3px); }
+      .theme-social .btn-card-plat { background: #fdf4ff; color: #c026d3; border: 1px solid #f5d0fe; }
+      .theme-social .btn-card-plat:hover { background: #c026d3; color: #fff; }
 
-      /* Docs (Sky Blue / Cloud) */
-      .theme-docs .card-header .icon { background: #f1f5f9; color: #0284c7; }
       .theme-docs .card-svg-area { background: radial-gradient(circle at center, #0ea5e9 0%, #0369a1 100%); }
-      .theme-docs .btn-card-plat { background: #0284c7; color: #fff; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2); }
-      .theme-docs .btn-card-plat:hover { background: #0369a1; transform: translateY(-3px); }
+      .theme-docs .btn-card-plat { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+      .theme-docs .btn-card-plat:hover { background: #0369a1; color: #fff; }
 
   </style>
 </head>
@@ -233,22 +214,22 @@
   </section>
 
   <section class="platforms-section">
-      <div class="container">
-          <div class="plat-header">
+      <div class="plat-header">
+          <div class="plat-header-text">
               <h2>Nossas Plataformas (Prateleira)</h2>
-              <p style="font-size: 1.15rem; color: #64748b; max-width: 600px; margin: 10px auto 0;">Explore nosso ecossistema de soluções prontas para acelerar a gestão do seu órgão.</p>
+              <p>Explore nosso ecossistema de soluções prontas para acelerar a gestão.</p>
+          </div>
+          <div class="carousel-controls">
+              <button class="carousel-btn" onclick="scrollCarousel('platTrack', -1)">&#10094;</button>
+              <button class="carousel-btn" onclick="scrollCarousel('platTrack', 1)">&#10095;</button>
           </div>
       </div>
 
       <div class="carousel-wrapper">
-          <button class="carousel-btn prev" onclick="scrollCarousel('platTrack', -1)">&#10094;</button>
-          <button class="carousel-btn next" onclick="scrollCarousel('platTrack', 1)">&#10095;</button>
-
           <div class="carousel-track" id="platTrack">
               
               <div class="plat-card theme-govdash">
                   <div class="card-header">
-                      <div class="icon">📊</div>
                       <div class="card-header-text">
                           <span>Inteligência de Dados</span>
                           <h3>Cerrado GovDash</h3>
@@ -270,12 +251,11 @@
                       <span>Painel Executivo</span>
                       <span>Integração ETL</span>
                   </div>
-                  <a href="/solucoes/govdash/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
 
               <div class="plat-card theme-mobility">
                   <div class="card-header">
-                      <div class="icon">🚗</div>
                       <div class="card-header-text">
                           <span>Frotas e Telemetria</span>
                           <h3>Cerrado Mobility</h3>
@@ -290,7 +270,7 @@
                           <path d="M170 120 C 170 120 160 105 160 95 C 160 85 180 85 180 95 C 180 105 170 120 170 120 Z" fill="#10b981"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, roteirização OSRM, controle antifraude de combustível e automação de multas com API do SERPRO.</p>
+                  <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, roteirização OSRM, controle antifraude de combustível e automação de multas.</p>
                   <div class="card-tags">
                       <span>App Android/iOS</span>
                       <span>Cálculo km/L</span>
@@ -301,7 +281,6 @@
 
               <div class="plat-card theme-edu">
                   <div class="card-header">
-                      <div class="icon">🎓</div>
                       <div class="card-header-text">
                           <span>Gestão Educacional</span>
                           <h3>Cerrado Edu</h3>
@@ -318,18 +297,17 @@
                           <path d="M50 30 L100 40 L150 20" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="4 4"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">O fim do diário de papel. Sistema 100% web com 28 módulos cobrindo merenda PNAE, conselho de classe e IA (Random Forest) que prevê evasão escolar.</p>
+                  <p class="plat-desc">Sistema de Gestão Escolar com IA Nativa. Diário eletrônico, controle de merenda PNAE e algoritmos que preveem a evasão de alunos.</p>
                   <div class="card-tags">
                       <span>Diário Eletrônico</span>
                       <span>IA Preditiva</span>
-                      <span>Merenda/Transporte</span>
+                      <span>Merenda PNAE</span>
                   </div>
                   <a href="/solucoes/edu/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
 
               <div class="plat-card theme-govrh">
                   <div class="card-header">
-                      <div class="icon">💼</div>
                       <div class="card-header-text">
                           <span>Recursos Humanos</span>
                           <h3>Cerrado GovRH</h3>
@@ -344,18 +322,17 @@
                           <path d="M140 80 L147 87 L162 72" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas, adequação à EC 103/2019 e layouts nativos homologados para o eSocial e TCEs.</p>
+                  <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas, adequação à EC 103/2019 e layouts nativos homologados para o eSocial.</p>
                   <div class="card-tags">
-                      <span>Motor Visão (No-Code)</span>
+                      <span>Motor No-Code</span>
                       <span>Validador TCE</span>
-                      <span>Simulador Impacto IA</span>
+                      <span>Simulador Folha</span>
                   </div>
                   <a href="/solucoes/govrh/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
 
               <div class="plat-card theme-prev">
                   <div class="card-header">
-                      <div class="icon">🛡️</div>
                       <div class="card-header-text">
                           <span>Regime Previdenciário</span>
                           <h3>Cerrado Prev</h3>
@@ -366,24 +343,22 @@
                           <rect x="70" y="30" width="60" height="80" rx="4" fill="#cbd5e1" class="anim-float"/>
                           <rect x="80" y="50" width="40" height="4" fill="#94a3b8" class="anim-float"/>
                           <rect x="80" y="60" width="20" height="4" fill="#94a3b8" class="anim-float"/>
-                          
                           <path d="M100 20 L150 40 V80 C150 110 100 140 100 140 C100 140 50 110 50 80 V40 L100 20 Z" fill="rgba(217, 119, 6, 0.8)" stroke="#fbbf24" stroke-width="4"/>
                           <circle cx="100" cy="70" r="16" fill="#fff"/>
                           <path d="M93 70 L98 75 L108 64" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação integrada ao COMPREV e portal do segurado 24/7 (Pró-Gestão).</p>
+                  <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação integrada ao COMPREV e portal do segurado 24/7.</p>
                   <div class="card-tags">
-                      <span>Concessão Automática</span>
+                      <span>Concessão Auto</span>
                       <span>Integração COMPREV</span>
-                      <span>Perícia Médica IA</span>
+                      <span>Perícia IA</span>
                   </div>
                   <a href="/solucoes/prev/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
 
               <div class="plat-card theme-privacy">
                   <div class="card-header">
-                      <div class="icon">🔒</div>
                       <div class="card-header-text">
                           <span>Compliance LGPD</span>
                           <h3>Cerrado Privacy</h3>
@@ -398,9 +373,9 @@
                           <line x1="140" y1="100" x2="180" y2="100" stroke="#0891b2" stroke-width="4" stroke-linecap="round" style="animation: slide-right 2s infinite 0.5s;"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">SaaS e DPO as a Service. Mapeamento de dados via IA, geração automática de ROPA/RIPD, Canal do Titular e plataforma EAD nativa para servidores.</p>
+                  <p class="plat-desc">SaaS e DPO as a Service. Mapeamento de dados via IA, geração automática de relatórios ROPA/RIPD e plataforma EAD nativa.</p>
                   <div class="card-tags">
-                      <span>Geração de ROPA</span>
+                      <span>Gerador ROPA</span>
                       <span>Gestão Incidentes</span>
                       <span>Módulo EAD LGPD</span>
                   </div>
@@ -409,7 +384,6 @@
 
               <div class="plat-card theme-social">
                   <div class="card-header">
-                      <div class="icon">🤝</div>
                       <div class="card-header-text">
                           <span>Assistência Social</span>
                           <h3>Cerrado Social</h3>
@@ -424,18 +398,17 @@
                           <circle cx="100" cy="100" r="6" fill="#fff" class="anim-float"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">Prontuário Social Eletrônico. Zera filas físicas com regulação inteligente, mapa de calor de vulnerabilidade e cruza dados do Bolsa Família e CadÚnico.</p>
+                  <p class="plat-desc">Prontuário Social Eletrônico. Zera filas com regulação inteligente, mapa de vulnerabilidade e cruza dados com CadÚnico.</p>
                   <div class="card-tags">
                       <span>Prontuário Único</span>
                       <span>Georreferenciamento</span>
-                      <span>Fim das Filas SUAS</span>
+                      <span>Regulação SUAS</span>
                   </div>
                   <a href="/solucoes/social/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
 
               <div class="plat-card theme-docs">
                   <div class="card-header">
-                      <div class="icon">📂</div>
                       <div class="card-header-text">
                           <span>Gestão Documental</span>
                           <h3>Cerrado Docs</h3>
@@ -448,11 +421,11 @@
                           <path d="M40 80 L60 120 H140 L160 80" fill="rgba(56, 189, 248, 0.2)" style="animation: float-up-down 2s linear infinite;"/>
                       </svg>
                   </div>
-                  <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura digital e o motor de IA que permite "conversar" com seus PDFs (RAG).</p>
+                  <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura e motor de IA para "conversar" com PDFs (RAG).</p>
                   <div class="card-tags">
                       <span>Chat com PDF (IA)</span>
                       <span>Busca OCR</span>
-                      <span>Assinatura ICP-Brasil</span>
+                      <span>Assinatura Digital</span>
                   </div>
                   <a href="/solucoes/docs/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
@@ -476,8 +449,8 @@
   <script>
       function scrollCarousel(trackId, direction) {
           const track = document.getElementById(trackId);
-          // Largura do card + gap aproxima a rolagem perfeita (400 + 30)
-          const scrollAmount = 430 * direction; 
+          // Largura do card (320) + gap (24) = 344px por rolagem manual
+          const scrollAmount = 344 * direction; 
           track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       }
   </script>
