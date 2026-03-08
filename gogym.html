@@ -55,8 +55,9 @@ permalink: /startups/gogym/
         #gogym-header .brand img { border-radius: 8px; height: 44px; object-fit: cover; }
         #gogym-header .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; font-size: 1.25rem; color: var(--white); }
         
-        #gogym-header .desktop-menu a { color: #ccc; }
-        #gogym-header .desktop-menu a:hover { color: var(--gogym-primary); }
+        #gogym-header .desktop-menu { display: flex; gap: 30px; align-items: center; }
+        #gogym-header .desktop-menu a.nav-link { color: #ccc; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        #gogym-header .desktop-menu a.nav-link:hover { color: var(--gogym-primary); }
 
         .btn-header-gogym {
             background: var(--gogym-primary);
@@ -68,6 +69,12 @@ permalink: /startups/gogym/
             transition: 0.3s;
         }
         .btn-header-gogym:hover { background: #e63e00; transform: scale(1.05); }
+
+        /* MOBILE HEADER */
+        @media (max-width: 768px) {
+            #gogym-header .desktop-menu a.nav-link { display: none; } /* Oculta os links secundarios no mobile para dar espaco */
+            #gogym-header .brand span { display: none; } /* Oculta a palavra GoGymStore para caber o botão no mobile */
+        }
 
         /* --- Hero Section GoGym --- */
         .gogym-hero {
@@ -92,16 +99,16 @@ permalink: /startups/gogym/
             letter-spacing: 1px;
         }
 
-        .gogym-hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900; margin: 0 0 20px 0; text-transform: uppercase; letter-spacing: -2px; line-height: 1.1; color: var(--white); }
+        .gogym-hero h1 { font-size: clamp(2rem, 8vw, 5rem); font-weight: 900; margin: 0 0 20px 0; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; color: var(--white); }
         .gogym-hero .destaque { color: var(--gogym-primary); text-shadow: 0 0 20px rgba(255, 69, 0, 0.5); }
-        .gogym-hero p { font-size: 1.25rem; color: #aaa; max-width: 750px; margin: 0 auto 40px; }
+        .gogym-hero p { font-size: clamp(1rem, 4vw, 1.25rem); color: #aaa; max-width: 750px; margin: 0 auto 40px; padding: 0 15px;}
 
         .btn-gogym-main {
             background: var(--gogym-primary);
             color: var(--white);
-            padding: 20px 50px;
+            padding: 18px 40px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 4vw, 1.2rem);
             font-weight: 800;
             text-decoration: none;
             text-transform: uppercase;
@@ -115,16 +122,16 @@ permalink: /startups/gogym/
 
         /* --- A Vantagem Logística (Dark Store & Last Mile) --- */
         .advantage-section { padding: 100px 0; background: var(--gogym-dark); }
-        .section-title { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; text-transform: uppercase; color: var(--white); }
+        .section-title { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; margin-bottom: 20px; text-transform: uppercase; color: var(--white); }
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #888; max-width: 700px; margin: 0 auto 60px; }
 
-        .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
         .adv-card {
             background: var(--gogym-card);
             border: 1px solid var(--gogym-gray);
             border-radius: 20px;
-            padding: 40px;
+            padding: 40px 30px;
             transition: 0.3s;
         }
         .adv-card:hover { transform: translateY(-5px); border-color: var(--gogym-primary); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
@@ -135,7 +142,7 @@ permalink: /startups/gogym/
 
         /* --- Categorias (O que vendemos) --- */
         .categorias-section { padding: 80px 0; background: #050505; border-top: 1px solid #111; border-bottom: 1px solid #111; }
-        .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .cat-box { background: var(--gogym-dark); padding: 30px; border-radius: 16px; text-align: center; border: 1px solid #222; }
         .cat-box h4 { font-size: 1.2rem; color: var(--gogym-primary); margin-bottom: 10px; text-transform: uppercase; font-weight: 800;}
         .cat-box p { color: #888; font-size: 0.95rem; margin: 0; }
@@ -150,18 +157,22 @@ permalink: /startups/gogym/
             border: 1px solid var(--gogym-gray);
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        @media (max-width: 992px) { .map-container { flex-direction: column; } }
+        @media (max-width: 992px) { 
+            .map-container { flex-direction: column; } 
+            .map-info { padding: 40px 30px !important; }
+            .map-iframe { min-height: 300px !important; }
+        }
 
         .map-info { flex: 1; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-        .map-info h3 { font-size: 2rem; color: var(--white); margin-bottom: 20px; font-weight: 800; text-transform: uppercase; }
+        .map-info h3 { font-size: clamp(1.6rem, 5vw, 2rem); color: var(--white); margin-bottom: 20px; font-weight: 800; text-transform: uppercase; }
         .map-info p { color: #aaa; font-size: 1.1rem; margin-bottom: 30px; }
         
-        .address-box { background: #000; padding: 20px; border-radius: 12px; border-left: 4px solid var(--gogym-primary); margin-bottom: 30px; }
+        .address-box { background: #000; padding: 20px; border-radius: 12px; border-left: 4px solid var(--gogym-primary); margin-bottom: 30px; word-break: break-word;}
         .address-box strong { color: var(--white); display: block; margin-bottom: 5px; font-size: 1.1rem; }
         .address-box span { color: #888; font-size: 0.95rem; }
 
-        .map-iframe { flex: 1.2; min-height: 400px; background: #222; }
-        .map-iframe iframe { width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg); /* Truque css para deixar o mapa escuro */ }
+        .map-iframe { flex: 1.2; min-height: 400px; background: #222; width: 100%;}
+        .map-iframe iframe { width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg); }
 
         /* --- Footer Exclusivo GoGym --- */
         .gogym-footer { background-color: #000; padding: 60px 20px 40px; text-align: center; border-top: 1px solid #111; }
@@ -180,9 +191,9 @@ permalink: /startups/gogym/
             <span>GoGym Store</span>
         </a>
 
-        <nav class="desktop-menu" style="display: flex; gap: 30px; align-items: center;">
-            <a href="/startups.html" style="text-decoration: none; font-weight: 600;">← Voltar ao Ecossistema</a>
-            <a href="#vantagem" style="text-decoration: none; font-weight: 600;">O Diferencial</a>
+        <nav class="desktop-menu">
+            <a href="/startups.html" class="nav-link">← Voltar ao Ecossistema</a>
+            <a href="#vantagem" class="nav-link">O Diferencial</a>
             <a href="https://gogymapp-5bd6f.web.app/" target="_blank" class="btn-header-gogym">Acessar Loja Oficial</a>
         </nav>
     </div>
@@ -266,7 +277,7 @@ permalink: /startups/gogym/
 
                 <div class="map-iframe">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.9577773687033!2d-56.095560299999995!3d-15.593904600000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db3ea9ff52c27%3A0x642cefd3f21e7c05!2sCerrado%20Finan%C3%A7as!5e0!3m2!1spt-BR!2sbr!4v1772896602753!5m2!1spt-BR!2sbr" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15354.76483584883!2d-56.108608!3d-15.603682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db1b9fb172c91%3A0xc3df3c96f2a243d4!2sPorto%2C%20Cuiab%C3%A1%20-%20MT!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
