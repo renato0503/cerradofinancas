@@ -8,12 +8,12 @@
     left: 0;
     width: 100%;
     z-index: 9999;
-    height: 90px; /* Mais alto para acomodar a logo grande */
+    height: 90px;
     display: flex;
     align-items: center;
     
     /* Efeito Vidro (Glassmorphism) */
-    background: rgba(10, 15, 30, 0.65) !important; /* Fundo escuro translúcido */
+    background: rgba(10, 15, 30, 0.65) !important;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -37,7 +37,7 @@
 
   /* Logo Ampliada com Efeito Hover */
   #header .brand img {
-    height: 68px !important; /* Logo Gigante */
+    height: 68px !important; /* Logo Gigante no Desktop */
     width: auto;
     border-radius: 8px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
@@ -48,7 +48,7 @@
     filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
   }
 
-  /* Links de Navegação com Traço Animado */
+  /* ================= DESKTOP MENU ================= */
   #header .desktop-menu {
     display: flex;
     gap: 32px;
@@ -67,10 +67,10 @@
   }
 
   #header .desktop-menu a:not(.btn-primary):hover {
-    color: #fecb00; /* Cor Ouro da Cerrado ao passar o mouse */
+    color: #fecb00;
   }
 
-  /* O Traço que desliza debaixo dos links */
+  /* Traço animado nos links */
   #header .desktop-menu a:not(.btn-primary)::after {
     content: '';
     position: absolute;
@@ -105,23 +105,82 @@
     background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
   }
 
-  /* Menu Mobile Icone */
+  /* Esconde o botão do menu no computador */
+  @media (min-width: 993px) {
+    #header .mobile-toggle {
+      display: none;
+    }
+  }
+
+  /* Botão do menu mobile */
   #header .mobile-toggle {
     background: transparent;
     border: none;
     color: #f8fafc;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #header .mobile-toggle:hover {
     transform: scale(1.1);
     color: #fecb00;
   }
 
-  /* Ajustes para Telas Menores */
+  /* ================= MOBILE MENU (CELULAR) ================= */
   @media (max-width: 992px) {
-    #header { height: 80px; }
-    #header .brand img { height: 55px !important; }
+    #header { 
+      height: 80px; 
+    }
+    #header .brand img { 
+      height: 55px !important; /* Logo um pouco menor no celular */
+    }
+
+    /* Esconde o menu e transforma em uma caixa que desce */
+    #header .desktop-menu {
+      position: absolute;
+      top: 80px; /* Fica exatamente abaixo da barra do header */
+      left: 0;
+      width: 100%;
+      background: rgba(10, 15, 30, 0.98); /* Fundo quase sólido para leitura */
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      
+      /* Estado Fechado */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Estado Aberto (Controlado pelo JavaScript abaixo) */
+    #header .desktop-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Ajustes visuais dos links no Mobile */
+    #header .desktop-menu a:not(.btn-primary) {
+      font-size: 1.15rem;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    #header .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      padding: 16px;
+      font-size: 1.1rem;
+    }
   }
 </style>
 
@@ -132,15 +191,15 @@
       <img src="/img/logoheader.png" alt="Logo Cerrado Finanças">
     </a>
 
-    <button class="mobile-toggle" aria-label="Abrir menu">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <button class="mobile-toggle" id="btnMenuToggle" aria-label="Abrir menu">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="18" x2="21" y2="18"></line>
       </svg>
     </button>
 
-    <nav class="desktop-menu">
+    <nav class="desktop-menu" id="navMenu">
       <a href="/index.html">Início</a>
       <a href="/index.html#maturidade">Metodologia</a>
       <a href="/contabilidade.html">Contabilidade</a>
@@ -152,3 +211,16 @@
     </nav>
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnToggle = document.getElementById('btnMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (btnToggle && navMenu) {
+      btnToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  });
+</script>
