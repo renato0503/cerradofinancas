@@ -50,7 +50,7 @@
 
   /* ================= DESKTOP MENU ================= */
   #header .desktop-menu {
-    display: flex;
+    display: flex !important; /* Força exibir no desktop */
     gap: 32px;
     align-items: center;
   }
@@ -64,6 +64,7 @@
     letter-spacing: 0.3px;
     transition: color 0.3s ease;
     padding-bottom: 5px;
+    display: inline-block;
   }
 
   #header .desktop-menu a:not(.btn-primary):hover {
@@ -97,6 +98,7 @@
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(254, 203, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
   }
   
   #header .btn-primary:hover {
@@ -105,10 +107,10 @@
     background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
   }
 
-  /* Esconde o botão do menu no computador */
+  /* Esconde o botão do menu no computador DENTRO DESTA REGRA */
   @media (min-width: 993px) {
     #header .mobile-toggle {
-      display: none;
+      display: none !important; /* Força ocultar o ícone no PC */
     }
   }
 
@@ -137,49 +139,53 @@
       height: 55px !important; /* Logo um pouco menor no celular */
     }
 
-    /* Esconde o menu e transforma em uma caixa que desce */
-    #header .desktop-menu {
-      position: absolute;
-      top: 80px; /* Fica exatamente abaixo da barra do header */
-      left: 0;
-      width: 100%;
-      background: rgba(10, 15, 30, 0.98); /* Fundo quase sólido para leitura */
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      flex-direction: column;
-      padding: 30px 20px;
-      gap: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      
-      /* Estado Fechado */
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-20px);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    #header .mobile-toggle {
+        display: flex !important; /* Garante que o ícone aparece no celular */
     }
 
-    /* Estado Aberto (Controlado pelo JavaScript abaixo) */
-    #header .desktop-menu.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+    /* Esconde o menu e transforma em uma caixa que desce */
+    #header .desktop-menu {
+      position: absolute !important;
+      top: 80px !important; /* Fica exatamente abaixo da barra do header */
+      left: 0 !important;
+      width: 100% !important;
+      background: rgba(10, 15, 30, 0.98) !important; /* Fundo quase sólido para leitura */
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      flex-direction: column !important;
+      padding: 30px 20px !important;
+      gap: 20px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+      
+      /* Estado Fechado */
+      display: none !important; /* Começa escondido fisicamente */
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Estado Aberto (Controlado pela classe JS) */
+    #header .desktop-menu.menu-aberto {
+      display: flex !important; /* Mostra os blocos */
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     /* Ajustes visuais dos links no Mobile */
     #header .desktop-menu a:not(.btn-primary) {
-      font-size: 1.15rem;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
+      font-size: 1.15rem !important;
+      width: 100% !important;
+      text-align: center !important;
+      padding: 10px 0 !important;
     }
 
     #header .btn-primary {
-      width: 100%;
-      text-align: center;
-      margin-top: 15px;
-      padding: 16px;
-      font-size: 1.1rem;
+      width: 100% !important;
+      text-align: center !important;
+      margin-top: 15px !important;
+      padding: 16px !important;
+      font-size: 1.1rem !important;
     }
   }
 </style>
@@ -191,7 +197,7 @@
       <img src="/img/logoheader.png" alt="Logo Cerrado Finanças">
     </a>
 
-    <button class="mobile-toggle" id="btnMenuToggle" aria-label="Abrir menu">
+    <button class="mobile-toggle" aria-label="Abrir menu" onclick="toggleMobileMenu()">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -213,14 +219,10 @@
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btnToggle = document.getElementById('btnMenuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    if (btnToggle && navMenu) {
-      btnToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-      });
-    }
-  });
+  // Função direta e simples para alternar o menu
+  function toggleMobileMenu() {
+    var menu = document.getElementById("navMenu");
+    // Se a classe existir, remove. Se não, adiciona.
+    menu.classList.toggle("menu-aberto");
+  }
 </script>
