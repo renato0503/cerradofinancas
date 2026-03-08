@@ -1,7 +1,6 @@
 <style>
   /* ================= APPLE GLASSMORPHISM HEADER ================= */
   
-  /* Reset de altura do container para caber a logo maior */
   #header {
     position: fixed;
     top: 0;
@@ -11,14 +10,10 @@
     height: 90px;
     display: flex;
     align-items: center;
-    
-    /* Efeito Vidro (Glassmorphism) */
-    background: rgba(10, 15, 30, 0.65) !important;
+    background: rgba(10, 15, 30, 0.65); /* Fundo escuro translúcido */
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    
-    /* Animação de entrada */
     animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
@@ -29,19 +24,19 @@
     align-items: center;
   }
 
-  /* Animação de Descida do Header */
   @keyframes headerSlideDown {
     from { transform: translateY(-100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
 
-  /* Logo Ampliada com Efeito Hover */
+  /* ================= LOGO GIGANTE ================= */
   #header .brand img {
-    height: 68px !important; /* Logo Gigante no Desktop */
+    height: 70px; /* Aumentado para chamar mais atenção */
     width: auto;
     border-radius: 8px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    display: block;
   }
   #header .brand:hover img {
     transform: scale(1.05) translateY(-2px);
@@ -50,7 +45,7 @@
 
   /* ================= DESKTOP MENU ================= */
   #header .desktop-menu {
-    display: flex !important; /* Força exibir no desktop */
+    display: flex;
     gap: 32px;
     align-items: center;
   }
@@ -91,101 +86,97 @@
   /* Botão CTA Principal */
   #header .btn-primary {
     background: linear-gradient(135deg, #fecb00 0%, #eab308 100%);
-    color: #001f5c !important;
+    color: #001f5c;
     padding: 12px 28px;
     border-radius: 50px;
     font-weight: 800;
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(254, 203, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s ease;
     display: inline-block;
   }
   
   #header .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 10px 25px rgba(254, 203, 0, 0.4);
-    background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
   }
 
-  /* Esconde o botão do menu no computador DENTRO DESTA REGRA */
-  @media (min-width: 993px) {
-    #header .mobile-toggle {
-      display: none !important; /* Força ocultar o ícone no PC */
-    }
-  }
-
-  /* Botão do menu mobile */
+  /* ================= BOTÃO MOBILE (PADRÃO ESCONDIDO NO PC) ================= */
   #header .mobile-toggle {
+    display: none; /* Escondido no Computador */
     background: transparent;
     border: none;
     color: #f8fafc;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   #header .mobile-toggle:hover {
     transform: scale(1.1);
     color: #fecb00;
   }
 
-  /* ================= MOBILE MENU (CELULAR) ================= */
+  /* ================= RESPONSIVO (CELULAR E TABLET) ================= */
   @media (max-width: 992px) {
     #header { 
       height: 80px; 
     }
+    
     #header .brand img { 
-      height: 55px !important; /* Logo um pouco menor no celular */
+      height: 55px; /* Proporção ideal para mobile */
     }
 
+    /* Revela o botão sanduíche no celular */
     #header .mobile-toggle {
-        display: flex !important; /* Garante que o ícone aparece no celular */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* Esconde o menu e transforma em uma caixa que desce */
+    /* Transforma o menu Desktop em Dropdown */
     #header .desktop-menu {
-      position: absolute !important;
-      top: 80px !important; /* Fica exatamente abaixo da barra do header */
-      left: 0 !important;
-      width: 100% !important;
-      background: rgba(10, 15, 30, 0.98) !important; /* Fundo quase sólido para leitura */
-      backdrop-filter: blur(20px) !important;
-      -webkit-backdrop-filter: blur(20px) !important;
-      flex-direction: column !important;
-      padding: 30px 20px !important;
-      gap: 20px !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+      position: absolute;
+      top: 80px; 
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background: rgba(10, 15, 30, 0.98); 
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 30px 20px;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       
-      /* Estado Fechado */
-      display: none !important; /* Começa escondido fisicamente */
+      /* Estado 1: Fechado (Invisível, mas animável) */
+      visibility: hidden;
       opacity: 0;
       transform: translateY(-20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none; /* Evita cliques invisíveis */
     }
 
-    /* Estado Aberto (Controlado pela classe JS) */
+    /* Estado 2: Aberto (Injetado via JS) */
     #header .desktop-menu.menu-aberto {
-      display: flex !important; /* Mostra os blocos */
-      opacity: 1 !important;
-      transform: translateY(0) !important;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto; /* Permite os cliques */
     }
 
-    /* Ajustes visuais dos links no Mobile */
+    /* Ajustes das fontes dos links no Mobile */
     #header .desktop-menu a:not(.btn-primary) {
-      font-size: 1.15rem !important;
-      width: 100% !important;
-      text-align: center !important;
-      padding: 10px 0 !important;
+      font-size: 1.15rem;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
     }
 
     #header .btn-primary {
-      width: 100% !important;
-      text-align: center !important;
-      margin-top: 15px !important;
-      padding: 16px !important;
-      font-size: 1.1rem !important;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      padding: 16px;
+      font-size: 1.1rem;
     }
   }
 </style>
@@ -207,11 +198,11 @@
 
     <nav class="desktop-menu" id="navMenu">
       <a href="/index.html">Início</a>
-      <a href="/index.html#maturidade">Metodologia</a>
       <a href="/contabilidade.html">Contabilidade</a>
       <a href="/solucoes.html">Fábrica de Software</a>
       <a href="/startups.html">Startups</a>
       <a href="/parceiros.html">Parceiros</a>
+      <a href="/data-driven.html">Somos Data Driven</a>
       
       <a href="https://api.whatsapp.com/send?phone=5567993515206" target="_blank" class="btn-primary">Falar com Especialista</a>
     </nav>
@@ -219,10 +210,9 @@
 </header>
 
 <script>
-  // Função direta e simples para alternar o menu
+  // Função limpa e direta para abrir e fechar a caixa do menu
   function toggleMobileMenu() {
     var menu = document.getElementById("navMenu");
-    // Se a classe existir, remove. Se não, adiciona.
     menu.classList.toggle("menu-aberto");
   }
 </script>
