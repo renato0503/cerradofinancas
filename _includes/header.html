@@ -1,7 +1,135 @@
+<style>
+  /* ================= APPLE GLASSMORPHISM HEADER ================= */
+  
+  /* Reset de altura do container para caber a logo maior */
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 90px; /* Mais alto para acomodar a logo grande */
+    display: flex;
+    align-items: center;
+    
+    /* Efeito Vidro (Glassmorphism) */
+    background: rgba(10, 15, 30, 0.65) !important; /* Fundo escuro translúcido */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    
+    /* Animação de entrada */
+    animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Animação de Descida do Header */
+  @keyframes headerSlideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Logo Ampliada com Efeito Hover */
+  #header .brand img {
+    height: 68px !important; /* Logo Gigante */
+    width: auto;
+    border-radius: 8px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+  #header .brand:hover img {
+    transform: scale(1.05) translateY(-2px);
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
+  }
+
+  /* Links de Navegação com Traço Animado */
+  #header .desktop-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  #header .desktop-menu a:not(.btn-primary) {
+    position: relative;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+  }
+
+  #header .desktop-menu a:not(.btn-primary):hover {
+    color: #fecb00; /* Cor Ouro da Cerrado ao passar o mouse */
+  }
+
+  /* O Traço que desliza debaixo dos links */
+  #header .desktop-menu a:not(.btn-primary)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fecb00;
+    border-radius: 2px;
+    transition: width 0.3s ease-out;
+  }
+
+  #header .desktop-menu a:not(.btn-primary):hover::after {
+    width: 100%;
+  }
+
+  /* Botão CTA Principal */
+  #header .btn-primary {
+    background: linear-gradient(135deg, #fecb00 0%, #eab308 100%);
+    color: #001f5c !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(254, 203, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  #header .btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(254, 203, 0, 0.4);
+    background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
+  }
+
+  /* Menu Mobile Icone */
+  #header .mobile-toggle {
+    background: transparent;
+    border: none;
+    color: #f8fafc;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  #header .mobile-toggle:hover {
+    transform: scale(1.1);
+    color: #fecb00;
+  }
+
+  /* Ajustes para Telas Menores */
+  @media (max-width: 992px) {
+    #header { height: 80px; }
+    #header .brand img { height: 55px !important; }
+  }
+</style>
+
 <header id="header">
   <div class="container nav-container">
+    
     <a href="/index.html" class="brand">
-      <img src="/img/logoheader.png" alt="Logo Cerrado Finanças" style="height: 46px; width: auto; border-radius: 8px;">
+      <img src="/img/logoheader.png" alt="Logo Cerrado Finanças">
     </a>
 
     <button class="mobile-toggle" aria-label="Abrir menu">
