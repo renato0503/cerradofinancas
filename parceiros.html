@@ -90,48 +90,62 @@ layout: null
         .calc-section { padding: 100px 0 60px; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; color: #0f172a; margin-bottom: 15px; letter-spacing: -1px;}
-        .section-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+        .section-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; padding: 0 15px;}
 
         .calculator-container {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             background: #fff;
             border-radius: 24px;
             padding: 40px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
+            align-items: flex-start;
         }
+        
         @media (max-width: 992px) {
-            .calculator-container { flex-direction: column; padding: 25px; }
+            .calculator-container { flex-direction: column; padding: 20px; gap: 20px;}
         }
 
-        .calc-inputs { flex: 1.5; display: flex; flex-direction: column; gap: 20px;}
+        /* Área de Inputs com Scroll Interno para não estourar a tela */
+        .calc-inputs { 
+            flex: 1.5; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px;
+            width: 100%;
+        }
         
         .calc-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #f8fafc;
-            padding: 20px;
+            padding: 15px 20px;
             border-radius: 16px;
             border: 1px solid #e2e8f0;
             transition: 0.3s;
         }
         .calc-item:hover { border-color: #cbd5e1; background: #fff;}
+        
+        /* Ajuste Fino para Mobile */
         @media (max-width: 500px) {
-            .calc-item { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .calc-item { padding: 15px; flex-direction: column; align-items: flex-start; gap: 12px; }
+            .calc-controls { width: 100%; justify-content: space-between; }
         }
 
-        .calc-info h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;}
+        .calc-info h4 { margin: 0 0 4px 0; font-size: 1.05rem; color: #0f172a; font-weight: 800;}
         .calc-info p { margin: 0; font-size: 0.85rem; color: #64748b; }
         
-        .calc-controls { display: flex; align-items: center; gap: 15px; background: #fff; padding: 5px; border-radius: 50px; border: 1px solid #cbd5e1;}
+        .calc-controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; padding: 5px; border-radius: 50px; border: 1px solid #cbd5e1; min-width: 110px;}
         .calc-btn { width: 35px; height: 35px; border-radius: 50%; border: none; background: #f1f5f9; color: #0f172a; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.2s;}
         .calc-btn:hover { background: #e2e8f0; }
-        .calc-value { font-size: 1.2rem; font-weight: 800; width: 30px; text-align: center; color: #001f5c;}
+        .calc-value { font-size: 1.1rem; font-weight: 800; width: 25px; text-align: center; color: #001f5c;}
 
+        /* Painel Lateral de Resultados Fixado */
         .calc-results {
             flex: 1;
+            width: 100%;
             background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%);
             border-radius: 20px;
             padding: 40px 30px;
@@ -139,23 +153,30 @@ layout: null
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
+            position: sticky;
+            top: 100px; /* Mantém na tela enquanto rola os itens */
             overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 31, 92, 0.2);
         }
+        
+        @media (max-width: 992px) {
+            .calc-results { position: relative; top: 0; padding: 30px 20px;}
+        }
+
         .calc-results::before {
             content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(254, 203, 0, 0.1); border-radius: 50%;
         }
 
         .result-box { margin-bottom: 30px; }
         .result-box:last-child { margin-bottom: 0; }
-        .result-title { font-size: 0.95rem; color: #cbd5e1; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; display: flex; align-items: center; gap: 8px;}
-        .result-value { font-size: 3rem; font-weight: 900; color: #fecb00; line-height: 1; margin: 0;}
-        .result-value span { font-size: 1.2rem; color: #94a3b8; font-weight: 500;}
+        .result-title { font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;}
+        .result-value { font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 900; color: #fecb00; line-height: 1; margin: 0; display: flex; align-items: baseline;}
+        .result-value span { font-size: 1.2rem; color: #94a3b8; font-weight: 500; margin-left: 5px;}
 
         /* --- CTA FINAL --- */
         .cta-parceiro {
             background: #fff;
-            padding: 80px 40px;
+            padding: 80px 20px;
             text-align: center;
             border-radius: 24px;
             margin: 60px auto 100px;
@@ -170,18 +191,20 @@ layout: null
         .btn-whatsapp-premium {
             background: #25D366;
             color: #fff;
-            padding: 20px 50px;
+            padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            flex-wrap: wrap;
         }
 
         .btn-whatsapp-premium:hover {
@@ -227,7 +250,7 @@ layout: null
     <section class="calc-section">
         <div class="section-header">
             <h2>Simule seus Ganhos</h2>
-            <p>Selecione a quantidade estimada de vendas por mês no painel abaixo e descubra quanto você pode faturar indicando nossas soluções.</p>
+            <p>Selecione a quantidade estimada de vendas por mês de todo o nosso ecossistema e descubra o seu potencial de faturamento.</p>
         </div>
 
         <div class="calculator-container">
@@ -235,20 +258,8 @@ layout: null
                 
                 <div class="calc-item">
                     <div class="calc-info">
-                        <h4>Consultoria & Diagnóstico</h4>
-                        <p>Vendas Únicas (Ticket: R$ 2.200)</p>
-                    </div>
-                    <div class="calc-controls">
-                        <button class="calc-btn" onclick="updateCalc('diag', -1)">-</button>
-                        <span class="calc-value" id="val-diag">0</span>
-                        <button class="calc-btn" onclick="updateCalc('diag', 1)">+</button>
-                    </div>
-                </div>
-
-                <div class="calc-item">
-                    <div class="calc-info">
-                        <h4>BPO & Acompanhamento</h4>
-                        <p>Contratos Mensais (Ticket: R$ 900/mês)</p>
+                        <h4>BPO Financeiro</h4>
+                        <p>Terceirização Mensal (Ticket Médio: R$ 1.500/mês)</p>
                     </div>
                     <div class="calc-controls">
                         <button class="calc-btn" onclick="updateCalc('bpo', -1)">-</button>
@@ -259,8 +270,44 @@ layout: null
 
                 <div class="calc-item">
                     <div class="calc-info">
-                        <h4>Plataformas (SaaS / BI)</h4>
-                        <p>Licenciamento Mensal (Ticket: R$ 1.500/mês)</p>
+                        <h4>Power BI e Dashboards</h4>
+                        <p>Implantação (R$ 3.000) + Licença Mensal</p>
+                    </div>
+                    <div class="calc-controls">
+                        <button class="calc-btn" onclick="updateCalc('bi', -1)">-</button>
+                        <span class="calc-value" id="val-bi">0</span>
+                        <button class="calc-btn" onclick="updateCalc('bi', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="calc-item">
+                    <div class="calc-info">
+                        <h4>Contabilidade Digital</h4>
+                        <p>Contrato PME/MEI (Ticket Médio: R$ 500/mês)</p>
+                    </div>
+                    <div class="calc-controls">
+                        <button class="calc-btn" onclick="updateCalc('contab', -1)">-</button>
+                        <span class="calc-value" id="val-contab">0</span>
+                        <button class="calc-btn" onclick="updateCalc('contab', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="calc-item">
+                    <div class="calc-info">
+                        <h4>Consultoria & Diagnóstico</h4>
+                        <p>Projeto Único (Ticket Médio: R$ 2.200)</p>
+                    </div>
+                    <div class="calc-controls">
+                        <button class="calc-btn" onclick="updateCalc('diag', -1)">-</button>
+                        <span class="calc-value" id="val-diag">0</span>
+                        <button class="calc-btn" onclick="updateCalc('diag', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="calc-item">
+                    <div class="calc-info">
+                        <h4>SaaS / Plataformas B2B</h4>
+                        <p>Licenciamento (Ticket Médio: R$ 2.000/mês)</p>
                     </div>
                     <div class="calc-controls">
                         <button class="calc-btn" onclick="updateCalc('saas', -1)">-</button>
@@ -271,8 +318,20 @@ layout: null
 
                 <div class="calc-item">
                     <div class="calc-info">
-                        <h4>Formação e Mentorias</h4>
-                        <p>Turmas e In-Company (Ticket: R$ 800)</p>
+                        <h4>Fábrica de Software</h4>
+                        <p>Projetos Customizados (Ticket Médio: R$ 15.000)</p>
+                    </div>
+                    <div class="calc-controls">
+                        <button class="calc-btn" onclick="updateCalc('fabrica', -1)">-</button>
+                        <span class="calc-value" id="val-fabrica">0</span>
+                        <button class="calc-btn" onclick="updateCalc('fabrica', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="calc-item">
+                    <div class="calc-info">
+                        <h4>Cursos e Mentorias</h4>
+                        <p>Formação Executiva (Ticket Médio: R$ 800)</p>
                     </div>
                     <div class="calc-controls">
                         <button class="calc-btn" onclick="updateCalc('curso', -1)">-</button>
@@ -290,7 +349,7 @@ layout: null
                         Comissão Imediata (À vista)
                     </div>
                     <p class="result-value">R$ <span id="res-pontual" style="font-size: inherit; font-weight: inherit; color: inherit;">0</span></p>
-                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #94a3b8;">Pago no fechamento do contrato.</p>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #94a3b8;">Pago no fechamento do contrato.</p>
                 </div>
                 
                 <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 10px 0 25px;"></div>
@@ -301,7 +360,7 @@ layout: null
                         Renda Recorrente Mensal
                     </div>
                     <p class="result-value">R$ <span id="res-recorrente" style="font-size: inherit; font-weight: inherit; color: inherit;">0</span><span>/mês</span></p>
-                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #94a3b8;">Ganhos cumulativos mês a mês.</p>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #94a3b8;">Ganhos cumulativos mês a mês.</p>
                 </div>
             </div>
         </div>
@@ -316,31 +375,29 @@ layout: null
             Fechar Parceria pelo WhatsApp
         </a>
         
-        <p style="margin-top: 30px; font-size: 0.85rem; color: #94a3b8;">*Os valores simulados na calculadora são estimativas brutas (20% a 21% de margem base) para demonstração. Valores exatos sujeitos a impostos de nota fiscal.</p>
+        <p style="margin-top: 30px; font-size: 0.85rem; color: #94a3b8;">*Os valores simulados na calculadora são estimativas brutas (15% a 20% de margem base dependendo do serviço) para demonstração de capacidade. Valores exatos sujeitos a impostos e regras de contrato.</p>
     </section>
 </div>
 
 {% include footer.html %}
 
 <script>
-    // Valores de Comissão por Item (21% de Comissão Base usada como exemplo na sua tabela antiga)
+    // Valores baseados em uma taxa média conservadora de comissão de 15% a 20%
     const comissoes = {
-        diag: { pontual: 462, recorrente: 0 },
-        bpo: { pontual: 0, recorrente: 189 },
-        saas: { pontual: 0, recorrente: 315 },
-        curso: { pontual: 168, recorrente: 0 }
+        bpo: { pontual: 0, recorrente: 250 },      // Base 1.500
+        bi: { pontual: 500, recorrente: 80 },      // Base implantação 3k + recorrente
+        contab: { pontual: 0, recorrente: 80 },    // Base 500
+        diag: { pontual: 450, recorrente: 0 },     // Base 2.200
+        saas: { pontual: 0, recorrente: 350 },     // Base 2.000
+        fabrica: { pontual: 2500, recorrente: 0 }, // Base 15k
+        curso: { pontual: 150, recorrente: 0 }     // Base 800
     };
 
-    // Estado das Vendas
     let vendas = {
-        diag: 0,
-        bpo: 0,
-        saas: 0,
-        curso: 0
+        bpo: 0, bi: 0, contab: 0, diag: 0, saas: 0, fabrica: 0, curso: 0
     };
 
     function updateCalc(item, variacao) {
-        // Impede numero negativo
         if (vendas[item] + variacao >= 0) {
             vendas[item] += variacao;
             document.getElementById('val-' + item).innerText = vendas[item];
@@ -357,7 +414,7 @@ layout: null
             totalRecorrente += vendas[item] * comissoes[item].recorrente;
         }
 
-        // Formata os numeros para padrao brasileiro de moeda
+        // Atualiza UI com formatacao BR
         document.getElementById('res-pontual').innerText = totalPontual.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         document.getElementById('res-recorrente').innerText = totalRecorrente.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
