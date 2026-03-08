@@ -46,15 +46,45 @@
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= HERO SECTION COM VÍDEO ================= */
         .cont-hero {
-            background: linear-gradient(135deg, var(--cont-darker) 0%, var(--cont-dark) 100%);
-            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
+            position: relative;
+            padding: 120px 0 100px;
+            color: #fff;
             border-bottom: 4px solid var(--cont-green);
+            overflow: hidden;
+            /* Fallback caso o vídeo não carregue */
+            background-color: var(--cont-darker);
         }
-        .cont-hero::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(58, 133, 61, 0.1) 0%, transparent 60%); pointer-events: none;
+
+        /* O Vídeo rodando no fundo */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        /* Camada escura por cima do vídeo para contraste */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 43, 94, 0.85) 0%, rgba(0, 69, 139, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .cont-hero .container {
+            position: relative;
+            z-index: 2; /* Mantém o conteúdo acima do vídeo e overlay */
         }
 
         .cont-split-layout { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
@@ -200,6 +230,13 @@
     {% include header.html titulo="Cerrado Contabilidade" %}
 
     <section class="cont-hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="{{ '/video/timelapse.mp4' | relative_url }}" type="video/mp4">
+            Seu navegador não suporta vídeos em HTML5.
+        </video>
+        
+        <div class="hero-overlay"></div>
+
         <div class="container">
             <div class="cont-split-layout">
                 
@@ -220,7 +257,7 @@
 
                 <div class="cont-visual-content fade-up">
                     <div class="hero-app-icon">
-                        <img src="img/contabilidade.png" alt="Cerrado Contabilidade Logo" onerror="this.src='img/contabilidade.png'">
+                        <img src="img/contabilidade.jpg" alt="Cerrado Contabilidade Logo" onerror="this.src='img/contabilidade.png'">
                     </div>
                 </div>
 
@@ -367,7 +404,7 @@
                     <h3>O Poder do Ecossistema Cerrado</h3>
                     <p>Diferente das contabilidades tradicionais, nós somos uma consultoria estratégica completa. Ao ser cliente da <strong>Cerrado Contabilidade</strong>, você ganha <strong>Status VIP</strong> e garante <strong>descontos agressivos</strong> para implantar nossos Painéis de Business Intelligence (Power BI) ou terceirizar toda a sua gestão financeira (BPO). Escale sua empresa sem precisar trocar de parceiro.</p>
                     <a href="/index.html" class="btn-cross">
-                        Conhecer os Painéis de B.I.
+                        Conheça as soluções de Inteligência.
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
                 </div>
