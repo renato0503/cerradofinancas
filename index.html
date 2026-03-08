@@ -41,7 +41,7 @@
           height: auto;
           transform: translate(-50%, -50%);
           z-index: 0;
-          object-fit: cover; /* Garante que o vídeo cubra toda a área sem distorcer */
+          object-fit: cover;
       }
 
       /* Camada escura/gradiente por cima do vídeo para dar leitura ao texto */
@@ -232,7 +232,7 @@
   <section class="hero-enhanced" id="inicio">
     
     <video autoplay loop muted playsinline class="hero-video">
-        <source src="video/video.mp4" type="video/mp4">
+        <source src="{{ '/video/video.mp4' | relative_url }}" type="video/mp4">
         Seu navegador não suporta vídeos em HTML5.
     </video>
     
@@ -411,7 +411,9 @@
             </div>
             
             <div class="service-card">
-              <div class="icon-wrapper" style="background: #f3e8ff; color: #4f46e5;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg></div>
+              <div class="icon-wrapper" style="background: #f3e8ff; color: #4f46e5;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
               <h3>Mentoria e Treinamento</h3>
               <p>Capacitamos o seu time interno de finanças e diretoria para analisar dados, gerir o fluxo de caixa e operar o ERP com máxima eficiência técnica.</p>
             </div>
@@ -500,6 +502,7 @@
   <script>
       function scrollCarousel(trackId, direction) {
           const track = document.getElementById(trackId);
+          // O Card tem 340px e o gap é 24px
           const scrollAmount = 364 * direction; 
           track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       }
