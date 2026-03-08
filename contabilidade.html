@@ -8,7 +8,7 @@
     <title>Cerrado Finanças | Contabilidade Digital para PMEs e MEI</title>
     <meta name="description" content="Contabilidade digital, abertura de empresas, gestão do Simples Nacional e folha de pagamento para pequenas e médias empresas.">
     
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION (SPLIT LAYOUT) ================= */
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
         .cont-hero {
             background: linear-gradient(135deg, var(--cont-darker) 0%, var(--cont-dark) 100%);
             color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
@@ -54,24 +54,27 @@
         .cont-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
         .cont-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
 
-        /* Ícone Gigante Estilo App iOS (Com a Logo da Cerrado) */
+        /* Ícone Gigante Estilo App iOS (LIMPO - SEM FUNDO DUPLO) */
         .hero-app-icon {
             width: 100%;
             max-width: 320px;
             aspect-ratio: 1 / 1;
-            background: #fff;
-            border-radius: 60px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 2px 5px rgba(255,255,255,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px;
             transform: rotate(-3deg);
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); }
+        
+        .hero-app-icon img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 60px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
             border: 1px solid rgba(255,255,255,0.1);
         }
-        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); box-shadow: 0 40px 80px rgba(254, 203, 0, 0.2); }
-        .hero-app-icon img { max-width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));}
 
         .hero-tag { background: rgba(254, 203, 0, 0.15); color: #fecb00; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(254, 203, 0, 0.3); text-transform: uppercase; letter-spacing: 1px; }
         .cont-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
@@ -87,7 +90,8 @@
             .cont-split-layout { flex-direction: column-reverse; text-align: center; gap: 40px; }
             .cont-text-content { text-align: center; }
             .btn-outline { margin-left: 0; margin-top: 15px; }
-            .hero-app-icon { max-width: 220px; transform: none; border-radius: 40px; padding: 25px;}
+            .hero-app-icon { max-width: 220px; transform: none; }
+            .hero-app-icon img { border-radius: 40px; }
         }
 
         /* ================= DESTAQUES NUMÉRICOS ================= */
@@ -166,7 +170,7 @@
                 <div class="cont-text-content">
                     <span class="hero-tag fade-up delay-1">Contabilidade Consultiva & Digital</span>
                     <h1 class="fade-up delay-1">A contabilidade que <br>faz sua empresa crescer.</h1>
-                    <p class="fade-up delay-2">Foque no que você faz de melhor: vender e atender clientes. Deixe que a Cerrado Finanças cuide da burocracia, reduzindo seus impostos de forma legal e protegendo seu caixa.</p>
+                    <p class="fade-up delay-2">Foque no que você faz de melhor: vender e atender clientes. Deixe que a Cerrado Finanças cuide da burocracia, reduzindo seus impostos de forma legal e protegendo seu caixa com soluções ágeis e acessíveis.</p>
                     <div class="fade-up delay-3">
                         <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de falar com um contador sobre a minha empresa." target="_blank" class="btn-action">
                             Falar com um Contador
@@ -180,7 +184,7 @@
 
                 <div class="cont-visual-content fade-up">
                     <div class="hero-app-icon">
-                        <img src="img/logo.png" alt="Cerrado Finanças Logo">
+                        <img src="img/contabilidade.png" alt="Cerrado Contabilidade" onerror="this.src='img/logo.png'">
                     </div>
                 </div>
 
@@ -193,11 +197,11 @@
             <div class="stats-grid fade-up">
                 <div class="stat-item">
                     <h3>100%</h3>
-                    <p>Digital e Sem Papel</p>
+                    <p>Digital e Ágil</p>
                 </div>
                 <div class="stat-item">
-                    <h3>Zero</h3>
-                    <p>Taxa de Abertura*</p>
+                    <h3>Acessível</h3>
+                    <p>Preços Abaixo do Mercado</p>
                 </div>
                 <div class="stat-item">
                     <h3>Humanizado</h3>
@@ -211,7 +215,7 @@
         <div class="container">
             <div class="demo-header fade-up">
                 <h2>Soluções para cada etapa do seu negócio.</h2>
-                <p>Oferecemos suporte técnico de excelência desde o momento em que você decide empreender até a maturação da sua empresa.</p>
+                <p>Oferecemos suporte técnico de excelência desde o momento em que você decide empreender até a maturação financeira da sua empresa.</p>
             </div>
 
             <div class="feature-grid">
@@ -221,14 +225,13 @@
                         <div class="feat-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
                         </div>
-                        <h3>Abertura de Empresa Grátis*</h3>
-                        <p>Vai abrir o seu primeiro CNPJ? Nós cuidamos de tudo. Elaboramos o contrato social, registramos na Junta Comercial, Receita Federal e Prefeitura. Escolhemos o CNAE e o regime tributário correto para você começar pagando o menor imposto possível por lei.</p>
+                        <h3>Abertura de Empresa Descomplicada</h3>
+                        <p>Vai abrir o seu primeiro CNPJ? Nós cuidamos de tudo. Elaboramos o contrato social, registramos na Junta Comercial, Receita Federal e Prefeitura. Escolhemos o CNAE e o regime tributário correto para você começar a operar o mais rápido possível e com o menor imposto previsto por lei.</p>
                         <div class="feat-tags">
                             <span>CNPJ Rápido</span>
                             <span>Escolha de CNAEs</span>
                             <span>Alvarás e Licenças</span>
                         </div>
-                        <p style="font-size: 0.8rem; margin-top: 15px; color: #94a3b8;">*Gratuidade referente aos honorários contábeis de abertura na contratação do plano anual. Taxas do governo não inclusas.</p>
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration anim-float" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +323,7 @@
     <section style="padding: 80px 0; background: #fff; text-align: center; border-top: 1px solid #e2e8f0;">
         <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--cont-dark);">Troque de contador sem dor de cabeça.</h2>
-            <p style="font-size: 1.15rem; color: #64748b; max-width: 650px; margin: 0 auto 40px;">Se você já tem uma empresa e está insatisfeito com a demora no atendimento da sua contabilidade atual, nós fazemos toda a migração para a Cerrado Finanças de forma digital e gratuita.</p>
+            <p style="font-size: 1.15rem; color: #64748b; max-width: 650px; margin: 0 auto 40px;">Se você já tem uma empresa e está insatisfeito com a demora no atendimento da sua contabilidade atual, nós fazemos toda a migração para a Cerrado Finanças de forma digital. Tenha um serviço premium com preços abaixo do mercado.</p>
             <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero transferir minha contabilidade para a Cerrado Finanças." target="_blank" class="btn-action" style="background: var(--cont-dark); color: #fff; box-shadow: 0 10px 20px rgba(0, 31, 92, 0.2);">
                 Solicitar Migração Contábil
             </a>
