@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerrado Finanças | Contabilidade Digital para PMEs e MEI</title>
-    <meta name="description" content="Contabilidade digital, abertura de empresas, gestão do Simples Nacional e folha de pagamento para pequenas e médias empresas.">
+    <title>Cerrado Contabilidade | Inteligência Fiscal para PMEs e MEI</title>
+    <meta name="description" content="Contabilidade consultiva, abertura de empresas, gestão do Simples Nacional e inteligência financeira para o seu negócio crescer em Mato Grosso e no Brasil.">
     
-    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    <link rel="icon" type="image/jpeg" href="{{ '/img/contabilidade.jpg' | relative_url }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +21,13 @@
     <style>
         /* ================= CORES E VARIÁVEIS CONTABILIDADE ================= */
         :root {
-            --cont-dark: #001f5c; /* Azul Escuro Cerrado */
-            --cont-darker: #001030;
-            --cont-primary: #0044cc; /* Azul Médio */
-            --cont-accent: #fecb00; /* Ouro Cerrado */
+            --cont-dark: #00458b; /* Azul da Logo */
+            --cont-darker: #002b5e;
+            --cont-primary: #006ebc; /* Azul Claro da Logo */
+            --cont-accent: #fecb00; /* Amarelo da Estrela */
+            --cont-green: #3a853d; /* Verde das Folhas da Logo */
             --dash-bg: #f8fafc;
             --text-muted: #64748b;
-            --success: #10b981;
         }
 
         body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
@@ -39,22 +39,22 @@
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
+        /* ================= HERO SECTION ================= */
         .cont-hero {
             background: linear-gradient(135deg, var(--cont-darker) 0%, var(--cont-dark) 100%);
             color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
-            border-bottom: 4px solid var(--cont-accent);
+            border-bottom: 4px solid var(--cont-green);
         }
         .cont-hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(254, 203, 0, 0.08) 0%, transparent 60%); pointer-events: none;
+            background: radial-gradient(circle, rgba(58, 133, 61, 0.1) 0%, transparent 60%); pointer-events: none;
         }
 
         .cont-split-layout { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
         .cont-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
         .cont-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
 
-        /* Ícone Gigante Estilo App iOS (LIMPO - SEM FUNDO DUPLO) */
+        /* Ícone da Cerrado Contabilidade (Limpo) */
         .hero-app-icon {
             width: 100%;
             max-width: 320px;
@@ -62,26 +62,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: rotate(-3deg);
+            transform: rotate(-2deg);
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-10px) scale(1.02); }
         
         .hero-app-icon img { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            border-radius: 60px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
-            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 40px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
         .hero-tag { background: rgba(254, 203, 0, 0.15); color: #fecb00; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(254, 203, 0, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-        .cont-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cont-hero h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
         .cont-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
         
-        .btn-action { background: var(--cont-accent); color: var(--cont-darker); padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(254, 203, 0, 0.3); border: none; cursor: pointer; }
-        .btn-action:hover { background: #ffd733; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(254, 203, 0, 0.4); }
+        .btn-action { background: var(--cont-green); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(58, 133, 61, 0.3); border: none; cursor: pointer; }
+        .btn-action:hover { background: #2f6b31; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(58, 133, 61, 0.4); }
         
         .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); padding: 16px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; text-decoration: none; display: inline-flex; transition: 0.3s; margin-left: 15px;}
         .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
@@ -91,7 +90,7 @@
             .cont-text-content { text-align: center; }
             .btn-outline { margin-left: 0; margin-top: 15px; }
             .hero-app-icon { max-width: 220px; transform: none; }
-            .hero-app-icon img { border-radius: 40px; }
+            .hero-app-icon img { border-radius: 30px; }
         }
 
         /* ================= DESTAQUES NUMÉRICOS ================= */
@@ -100,7 +99,7 @@
         .stat-item h3 { font-size: 2.5rem; color: var(--cont-dark); font-weight: 900; margin: 0 0 5px 0; }
         .stat-item p { margin: 0; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* ================= FUNCIONALIDADES / SERVIÇOS (CARROSSEL NO MOBILE) ================= */
+        /* ================= FUNCIONALIDADES / SERVIÇOS ================= */
         .features-section { padding: 100px 0; background: #f8fafc; }
         .demo-header { text-align: center; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;}
         .demo-header h2 { color: var(--cont-dark); font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
@@ -109,7 +108,7 @@
         .feature-grid { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; padding: 0 20px; }
         
         .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 50px 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
-        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,31,92,0.08); border-color: #cbd5e1; }
+        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,69,139,0.08); border-color: #cbd5e1; }
         .feat-row:nth-child(even) { flex-direction: row-reverse; }
         
         .feat-content { flex: 1.2; }
@@ -121,13 +120,11 @@
         .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--cont-accent); border-radius: 50%; }
         
         .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(0, 31, 92, 0.1)); }
+        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(0, 69, 139, 0.1)); }
 
-        /* Animações SVGs Internos */
         @keyframes float-up { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .anim-float { animation: float-up 3s ease-in-out infinite; }
 
-        /* Ajuste Mobile: Transforma as Features em Carrossel (Scroll Horizontal) */
         @media (max-width: 992px) { 
             .feature-grid {
                 flex-direction: row;
@@ -141,7 +138,7 @@
             .feature-grid::-webkit-scrollbar { display: none; }
             
             .feat-row {
-                flex: 0 0 85vw; /* Deixa uma ponta do proximo card visível */
+                flex: 0 0 85vw; 
                 flex-direction: column !important; 
                 padding: 40px 30px;
                 scroll-snap-align: center;
@@ -149,14 +146,33 @@
             .feat-content h3 { font-size: 1.6rem; }
         }
 
-        /* ================= PÚBLICO ALVO ================= */
-        .target-section { padding: 100px 0; background: var(--cont-dark); color: #fff; }
+        /* ================= PÚBLICO ALVO COM IMAGEM DE FUNDO ================= */
+        .target-section { 
+            padding: 100px 0; 
+            background: linear-gradient(135deg, rgba(0, 69, 139, 0.95) 0%, rgba(0, 43, 94, 0.95) 100%), 
+                        url('img/escritorio.jpeg') center/cover no-repeat fixed;
+            color: #fff; 
+        }
         .target-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .target-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 40px 30px; border-radius: 20px; text-align: center; transition: 0.3s; }
-        .target-card:hover { background: rgba(255,255,255,0.1); border-color: var(--cont-accent); transform: translateY(-5px); }
+        .target-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 40px 30px; border-radius: 20px; text-align: center; transition: 0.3s; }
+        .target-card:hover { background: rgba(255,255,255,0.15); border-color: var(--cont-accent); transform: translateY(-5px); }
         .target-card h4 { font-size: 1.4rem; color: var(--cont-accent); margin-bottom: 15px; font-weight: 800; }
-        .target-card p { color: #cbd5e1; font-size: 1rem; margin: 0; line-height: 1.6; }
+        .target-card p { color: #e2e8f0; font-size: 1rem; margin: 0; line-height: 1.6; }
 
+        /* ================= CROSS SELL CERRADO FINANÇAS ================= */
+        .cross-sell-section { padding: 80px 0; background: #fff; }
+        .cross-card {
+            max-width: 1000px; margin: 0 auto; background: #f8fafc; border-radius: 24px; padding: 50px;
+            display: flex; align-items: center; gap: 40px; border: 1px solid #e2e8f0; border-left: 6px solid var(--cont-green);
+        }
+        .cross-icon { font-size: 4rem; }
+        .cross-text h3 { font-size: 2rem; color: var(--cont-dark); font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px;}
+        .cross-text p { font-size: 1.1rem; color: #475569; margin-bottom: 20px; line-height: 1.6;}
+        
+        @media (max-width: 768px) {
+            .cross-card { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .cross-text h3 { font-size: 1.6rem; }
+        }
     </style>
 </head>
 <body>
@@ -168,23 +184,23 @@
             <div class="cont-split-layout">
                 
                 <div class="cont-text-content">
-                    <span class="hero-tag fade-up delay-1">Contabilidade Consultiva & Digital</span>
+                    <span class="hero-tag fade-up delay-1">Contabilidade Consultiva Premium</span>
                     <h1 class="fade-up delay-1">A contabilidade que <br>faz sua empresa crescer.</h1>
-                    <p class="fade-up delay-2">Foque no que você faz de melhor: vender e atender clientes. Deixe que a Cerrado Finanças cuide da burocracia, reduzindo seus impostos de forma legal e protegendo seu caixa com soluções ágeis e acessíveis.</p>
+                    <p class="fade-up delay-2">Foque no que você faz de melhor: vender e atender clientes. A Cerrado Contabilidade cuide da burocracia, elabora o seu planejamento tributário legal e protege o seu caixa com preços abaixo do mercado e alto valor agregado.</p>
                     <div class="fade-up delay-3">
-                        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de falar com um contador sobre a minha empresa." target="_blank" class="btn-action">
-                            Falar com um Contador
+                        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de uma cotação para os serviços da Cerrado Contabilidade." target="_blank" class="btn-action">
+                            Solicitar Proposta
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         </a>
                         <a href="#servicos" class="btn-outline">
-                            Ver Serviços
+                            Ver Soluções
                         </a>
                     </div>
                 </div>
 
                 <div class="cont-visual-content fade-up">
                     <div class="hero-app-icon">
-                        <img src="img/contabilidade.png" alt="Cerrado Contabilidade" onerror="this.src='img/logo.png'">
+                        <img src="img/contabilidade.jpg" alt="Cerrado Contabilidade Logo" onerror="this.src='img/logo.png'">
                     </div>
                 </div>
 
@@ -197,15 +213,15 @@
             <div class="stats-grid fade-up">
                 <div class="stat-item">
                     <h3>100%</h3>
-                    <p>Digital e Ágil</p>
+                    <p>Digital e em Nuvem</p>
                 </div>
                 <div class="stat-item">
-                    <h3>Acessível</h3>
-                    <p>Preços Abaixo do Mercado</p>
+                    <h3>Rápido</h3>
+                    <p>Abertura de Empresa Ágil</p>
                 </div>
                 <div class="stat-item">
-                    <h3>Humanizado</h3>
-                    <p>Atendimento via WhatsApp</p>
+                    <h3>Humano</h3>
+                    <p>Suporte Direto no WhatsApp</p>
                 </div>
             </div>
         </div>
@@ -214,8 +230,8 @@
     <section id="servicos" class="features-section">
         <div class="container">
             <div class="demo-header fade-up">
-                <h2>Soluções para cada etapa do seu negócio.</h2>
-                <p>Oferecemos suporte técnico de excelência desde o momento em que você decide empreender até a maturação financeira da sua empresa.</p>
+                <h2>Burocracia é o nosso trabalho.</h2>
+                <p>Entregamos um serviço consultivo desde o momento em que você decide empreender até a emissão da folha de pagamento da sua equipe.</p>
             </div>
 
             <div class="feature-grid">
@@ -226,20 +242,20 @@
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
                         </div>
                         <h3>Abertura de Empresa Descomplicada</h3>
-                        <p>Vai abrir o seu primeiro CNPJ? Nós cuidamos de tudo. Elaboramos o contrato social, registramos na Junta Comercial, Receita Federal e Prefeitura. Escolhemos o CNAE e o regime tributário correto para você começar a operar o mais rápido possível e com o menor imposto previsto por lei.</p>
+                        <p>Vai abrir o seu primeiro CNPJ? Nós cuidamos de absolutamente tudo. Elaboramos o contrato social, registramos na Junta Comercial, Receita Federal e Prefeitura. Estudamos a fundo a sua atividade para escolher o <strong>CNAE</strong> correto, garantindo que você inicie a operação pagando a menor carga tributária possível pela lei.</p>
                         <div class="feat-tags">
                             <span>CNPJ Rápido</span>
-                            <span>Escolha de CNAEs</span>
-                            <span>Alvarás e Licenças</span>
+                            <span>Estudo de CNAE</span>
+                            <span>Alvarás e Inscrição Municipal</span>
                         </div>
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration anim-float" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="40" y="30" width="120" height="150" rx="12" fill="#fff" stroke="#001f5c" stroke-width="4"/>
+                            <rect x="40" y="30" width="120" height="150" rx="12" fill="#fff" stroke="#00458b" stroke-width="4"/>
                             <rect x="70" y="60" width="60" height="8" rx="4" fill="#cbd5e1"/>
                             <rect x="70" y="80" width="40" height="8" rx="4" fill="#cbd5e1"/>
                             <circle cx="100" cy="130" r="25" fill="#fecb00"/>
-                            <path d="M92 130 L98 136 L110 124" stroke="#001f5c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M92 130 L98 136 L110 124" stroke="#00458b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                 </div>
@@ -249,18 +265,18 @@
                         <div class="feat-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                         </div>
-                        <h3>Gestão do MEI e Simples Nacional</h3>
-                        <p>Especialistas em Pequenas Empresas e Profissionais Autônomos (Médicos, TI, Engenheiros, Representantes). Cuidamos do seu enquadramento no Simples Nacional, apuração do DAS mensal, emissão de notas fiscais e obrigações acessórias, garantindo que você não caia na malha fina.</p>
+                        <h3>Gestão de Impostos (Simples e MEI)</h3>
+                        <p>Especialistas em Pequenas Empresas, E-commerces e Profissionais Autônomos (Médicos, Desenvolvedores de TI, Engenheiros e Representantes). Fazemos a apuração exata do seu <strong>Simples Nacional</strong> ou guia DAS mensal, gerimos a emissão das suas notas fiscais e entregamos todas as declarações (DEFIS, DIRF) para blindar seu CNPJ contra a malha fina.</p>
                         <div class="feat-tags">
                             <span>Apuração de Impostos</span>
-                            <span>Fator R (Clínicas)</span>
-                            <span>Emissão de NFe</span>
+                            <span>Fator R (Redução para 6%)</span>
+                            <span>Obrigações Acessórias</span>
                         </div>
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration anim-float" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="30" y="40" width="190" height="120" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4"/>
-                            <path d="M50 120 L90 70 L130 90 L180 40" stroke="#0044cc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M50 120 L90 70 L130 90 L180 40" stroke="#3a853d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
                             <circle cx="180" cy="40" r="8" fill="#fecb00"/>
                             <rect x="50" y="140" width="150" height="6" rx="3" fill="#cbd5e1"/>
                         </svg>
@@ -273,21 +289,21 @@
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         </div>
                         <h3>Folha de Pagamento e eSocial</h3>
-                        <p>Contratou um funcionário? A legislação trabalhista brasileira é um campo minado. Assumimos toda a geração de contracheques (holerites), cálculo de férias, 13º salário, rescisões, guias de INSS/FGTS e a transmissão oficial para o eSocial. Durma tranquilo sabendo que seu RH está em conformidade.</p>
+                        <p>Vai contratar o primeiro funcionário? A legislação trabalhista brasileira muda constantemente. Nós assumimos o processo de admissão, geramos os contracheques mensais (holerites), calculamos férias, 13º salário, guias de INSS/FGTS e fazemos a transmissão obrigatória para o Governo (eSocial). Tranquilidade total para o empregador.</p>
                         <div class="feat-tags">
-                            <span>Holerites</span>
-                            <span>Admissão/Demissão</span>
-                            <span>eSocial Em Dia</span>
+                            <span>Emissão de Holerites</span>
+                            <span>Admissão/Rescisão</span>
+                            <span>Transmissão eSocial</span>
                         </div>
                     </div>
                     <div class="feat-visual">
                         <svg class="svg-illustration anim-float" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="30" width="100" height="140" rx="8" fill="#fff" stroke="#001f5c" stroke-width="4"/>
+                            <rect x="50" y="30" width="100" height="140" rx="8" fill="#fff" stroke="#00458b" stroke-width="4"/>
                             <rect x="70" y="60" width="60" height="6" rx="3" fill="#cbd5e1"/>
                             <rect x="70" y="80" width="40" height="6" rx="3" fill="#cbd5e1"/>
-                            <path d="M120 110 L150 150 H90 Z" fill="#0044cc" opacity="0.1"/>
+                            <path d="M120 110 L150 150 H90 Z" fill="#006ebc" opacity="0.1"/>
                             <circle cx="150" cy="110" r="25" fill="#fecb00"/>
-                            <path d="M140 110 L145 115 L160 100" stroke="#001f5c" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M140 110 L145 115 L160 100" stroke="#00458b" stroke-width="4" stroke-linecap="round"/>
                         </svg>
                     </div>
                 </div>
@@ -296,25 +312,38 @@
         </div>
     </section>
 
-    <section class="target-section">
-        <div class="container fade-up">
+    <section class="target-section fade-up">
+        <div class="container">
             <div class="section-header text-center">
                 <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Para quem é a Cerrado Contabilidade?</h2>
-                <p style="color: #cbd5e1;">Atendemos o setor de serviços e comércio com precisão.</p>
+                <p style="color: #cbd5e1;">Atendemos empresas do setor de serviços e comércio com precisão cirúrgica.</p>
             </div>
             
             <div class="target-grid">
                 <div class="target-card">
                     <h4>👨‍💻 Prestadores de Serviço</h4>
-                    <p>Agências, Desenvolvedores de Software, Engenheiros e Consultores. Otimizamos seu CNAE para pagar menos impostos.</p>
+                    <p>Agências de Marketing, Desenvolvedores de Software, Engenheiros e Consultores PJ. Otimizamos sua tributação para você faturar mais.</p>
                 </div>
                 <div class="target-card">
                     <h4>🩺 Profissionais da Saúde</h4>
-                    <p>Médicos, Dentistas, Psicólogos e Clínicas. Aplicamos a regra do Fator R no Simples Nacional para reduzir sua alíquota de 15.5% para 6%.</p>
+                    <p>Médicos, Dentistas, Psicólogos e Clínicas de Especialidades. Aplicamos o benefício do Fator R no Simples Nacional para reduzir drasticamente sua alíquota de impostos.</p>
                 </div>
                 <div class="target-card">
                     <h4>🏬 Comércio e E-commerce</h4>
-                    <p>Lojas físicas e virtuais. Gestão de notas fiscais, controle de ICMS, substituição tributária e balanços para manter sua operação saudável.</p>
+                    <p>Lojas físicas e virtuais. Gestão rigorosa de notas fiscais, controle de ICMS, ST e balanços patrimoniais para manter a sua operação comercial 100% legalizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cross-sell-section">
+        <div class="container fade-up">
+            <div class="cross-card">
+                <div class="cross-icon">💡</div>
+                <div class="cross-text">
+                    <h3>O Poder do Ecossistema Cerrado</h3>
+                    <p>Ao se tornar cliente da <strong>Cerrado Contabilidade</strong>, sua empresa passa a ter condições exclusivas e acesso direto aos serviços avançados da <strong>Cerrado Finanças</strong>. Quando sua empresa crescer, nós podemos implantar os Painéis de Power BI e assumir a Terceirização do seu Financeiro (BPO).</p>
+                    <a href="/index.html" style="color: var(--cont-dark); font-weight: 800; text-decoration: underline;">Conhecer a Cerrado Finanças</a>
                 </div>
             </div>
         </div>
@@ -323,8 +352,8 @@
     <section style="padding: 80px 0; background: #fff; text-align: center; border-top: 1px solid #e2e8f0;">
         <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--cont-dark);">Troque de contador sem dor de cabeça.</h2>
-            <p style="font-size: 1.15rem; color: #64748b; max-width: 650px; margin: 0 auto 40px;">Se você já tem uma empresa e está insatisfeito com a demora no atendimento da sua contabilidade atual, nós fazemos toda a migração para a Cerrado Finanças de forma digital. Tenha um serviço premium com preços abaixo do mercado.</p>
-            <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero transferir minha contabilidade para a Cerrado Finanças." target="_blank" class="btn-action" style="background: var(--cont-dark); color: #fff; box-shadow: 0 10px 20px rgba(0, 31, 92, 0.2);">
+            <p style="font-size: 1.15rem; color: #64748b; max-width: 650px; margin: 0 auto 40px;">Se você já tem uma empresa e está insatisfeito com a demora no atendimento ou com as falhas da sua contabilidade atual, nós fazemos toda a migração para a Cerrado de forma transparente e digital.</p>
+            <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero conversar sobre os planos da Cerrado Contabilidade para a minha empresa." target="_blank" class="btn-action" style="background: var(--cont-dark); color: #fff; box-shadow: 0 10px 20px rgba(0, 69, 139, 0.2);">
                 Solicitar Migração Contábil
             </a>
         </div>
