@@ -9,10 +9,11 @@ permalink: /startups/gogym/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoGym Store | Alta Performance e Logística</title>
     
+    <link rel="icon" type="image/png" href="{{ '/img/logo-gogym.png' | relative_url }}">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
 
     <style>
         :root {
@@ -37,7 +38,7 @@ permalink: /startups/gogym/
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Estilos do Cabeçalho Customizado da GoGym */
+        /* ================= HEADER GOGYM ================= */
         #gogym-header {
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
@@ -51,9 +52,16 @@ permalink: /startups/gogym/
             display: flex;
             align-items: center;
         }
+        
+        .header-content {
+            width: 100%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
 
-        #gogym-header .brand img { border-radius: 8px; height: 44px; object-fit: cover; }
         #gogym-header .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; font-size: 1.25rem; color: var(--white); }
+        #gogym-header .brand img { border-radius: 8px; height: 44px; object-fit: contain; } /* Sem fundo/borda extra */
         
         #gogym-header .desktop-menu { display: flex; gap: 30px; align-items: center; }
         #gogym-header .desktop-menu a.nav-link { color: #ccc; text-decoration: none; font-weight: 600; transition: 0.3s; }
@@ -67,16 +75,18 @@ permalink: /startups/gogym/
             text-decoration: none;
             font-weight: 700;
             transition: 0.3s;
+            white-space: nowrap; /* Impede quebra de linha no botão */
         }
         .btn-header-gogym:hover { background: #e63e00; transform: scale(1.05); }
 
-        /* MOBILE HEADER */
+        /* Ajustes Mobile do Header */
         @media (max-width: 768px) {
-            #gogym-header .desktop-menu a.nav-link { display: none; } /* Oculta os links secundarios no mobile para dar espaco */
-            #gogym-header .brand span { display: none; } /* Oculta a palavra GoGymStore para caber o botão no mobile */
+            #gogym-header .desktop-menu a.nav-link { display: none; } /* Esconde os links textuais */
+            #gogym-header .brand span { display: none; } /* Esconde o texto "GoGym Store" mantendo a logo */
+            .btn-header-gogym { padding: 8px 16px; font-size: 0.85rem; } /* Diminui o botão um pouco para caber certinho */
         }
 
-        /* --- Hero Section GoGym --- */
+        /* ================= HERO SECTION GOGYM ================= */
         .gogym-hero {
             background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(20, 20, 20, 0.8) 100%), 
                         url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80') center/cover no-repeat;
@@ -120,7 +130,7 @@ permalink: /startups/gogym/
         }
         .btn-gogym-main:hover { background: #e63e00; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255, 69, 0, 0.5); }
 
-        /* --- A Vantagem Logística (Dark Store & Last Mile) --- */
+        /* ================= A VANTAGEM LOGÍSTICA ================= */
         .advantage-section { padding: 100px 0; background: var(--gogym-dark); }
         .section-title { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; margin-bottom: 20px; text-transform: uppercase; color: var(--white); }
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #888; max-width: 700px; margin: 0 auto 60px; }
@@ -140,14 +150,14 @@ permalink: /startups/gogym/
         .adv-card h3 { font-size: 1.4rem; color: var(--white); margin-bottom: 15px; font-weight: 700; }
         .adv-card p { color: #aaa; font-size: 1rem; margin: 0; }
 
-        /* --- Categorias (O que vendemos) --- */
+        /* ================= CATEGORIAS ================= */
         .categorias-section { padding: 80px 0; background: #050505; border-top: 1px solid #111; border-bottom: 1px solid #111; }
         .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .cat-box { background: var(--gogym-dark); padding: 30px; border-radius: 16px; text-align: center; border: 1px solid #222; }
         .cat-box h4 { font-size: 1.2rem; color: var(--gogym-primary); margin-bottom: 10px; text-transform: uppercase; font-weight: 800;}
         .cat-box p { color: #888; font-size: 0.95rem; margin: 0; }
 
-        /* --- MAPA E ENDEREÇO --- */
+        /* ================= MAPA E ENDEREÇO ================= */
         .map-section { padding: 100px 0; background: var(--gogym-dark); }
         .map-container {
             display: flex;
@@ -174,9 +184,9 @@ permalink: /startups/gogym/
         .map-iframe { flex: 1.2; min-height: 400px; background: #222; width: 100%;}
         .map-iframe iframe { width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg); }
 
-        /* --- Footer Exclusivo GoGym --- */
+        /* ================= FOOTER EXCLUSIVO GOGYM ================= */
         .gogym-footer { background-color: #000; padding: 60px 20px 40px; text-align: center; border-top: 1px solid #111; }
-        .gogym-footer img { height: 45px; margin-bottom: 20px; opacity: 0.9; }
+        .gogym-footer img { height: 45px; margin-bottom: 20px; opacity: 0.9; border-radius: 6px; object-fit: contain;}
         .gogym-footer p { color: #666; font-size: 0.95rem; margin-bottom: 5px; }
         .gogym-footer .creditos { margin-top: 30px; font-size: 0.85rem; color: #444; border-top: 1px solid #111; padding-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
         .gogym-footer .creditos a { color: var(--gogym-primary); font-weight: 700; text-decoration: none; }
@@ -185,7 +195,7 @@ permalink: /startups/gogym/
 <body>
 
 <header id="gogym-header">
-    <div class="container" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+    <div class="container header-content">
         <a href="/startups/gogym/" class="brand">
             <img src="{{ '/img/logo-gogym.png' | relative_url }}" alt="GoGym Logo">
             <span>GoGym Store</span>
@@ -277,7 +287,10 @@ permalink: /startups/gogym/
 
                 <div class="map-iframe">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15354.76483584883!2d-56.108608!3d-15.603682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db1b9fb172c91%3A0xc3df3c96f2a243d4!2sPorto%2C%20Cuiab%C3%A1%20-%20MT!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d611.6728244764049!2d-56.09583809999198!3d-15.59394703979606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db3ea9ff52c27%3A0x642cefd3f21e7c05!2sCerrado%20Finan%C3%A7as!5e0!3m2!1spt-BR!2sbr!4v1772928881263!5m2!1spt-BR!2sbr" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
