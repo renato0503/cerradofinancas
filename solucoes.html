@@ -1,12 +1,13 @@
 ---
+layout: null
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cerrado Tech | Fábrica de Software e GovTech</title>
-  <meta name="description" content="Fábrica de Software e Plataformas Governamentais da Cerrado Tech.">
+  <title>Cerrado Tech | Fábrica de Software e B2B</title>
+  <meta name="description" content="Fábrica de Software, Plataformas Governamentais e Soluções Corporativas da Cerrado Tech.">
   
   <link rel="icon" type="image/png" href="img/folinha.png">
   
@@ -19,12 +20,12 @@
   <link rel="stylesheet" href="css/footer.css">
 
   <style>
-      /* --- HERO GOVTECH --- */
-      .hero-gov {
-          padding: 120px 0 80px;
+      /* --- HERO DA PÁGINA --- */
+      .hero-solutions {
+          padding: 140px 0 80px;
           background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
           color: #fff;
-          border-bottom: 4px solid #0ea5e9;
+          border-bottom: 4px solid #10b981;
       }
 
       .gov-split-layout { display: flex; align-items: center; gap: 60px; }
@@ -40,9 +41,9 @@
 
       .gov-text-content { flex: 1.2; text-align: left; }
       .gov-hero-tag {
-          background: rgba(14, 165, 233, 0.15); color: #38bdf8; padding: 8px 20px; border-radius: 50px;
+          background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 8px 20px; border-radius: 50px;
           font-weight: 800; font-size: 0.85rem; display: inline-block; margin-bottom: 24px;
-          border: 1px solid rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1px;
+          border: 1px solid rgba(16, 185, 129, 0.3); text-transform: uppercase; letter-spacing: 1px;
       }
       .gov-hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
       .gov-hero-subtitle { font-size: 1.15rem; color: #cbd5e1; max-width: 700px; line-height: 1.6; margin: 0; }
@@ -60,7 +61,7 @@
       .fabrica-content { flex: 1.2; }
       .fabrica-visual { flex: 0.8; }
       
-      .fabrica-icon { width: 70px; height: 70px; border-radius: 16px; background: #f0f9ff; color: #0ea5e9; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; border: 1px solid #bae6fd;}
+      .fabrica-icon { width: 70px; height: 70px; border-radius: 16px; background: #f0fdf4; color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; border: 1px solid #bbf7d0;}
       .fabrica-title { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; line-height: 1.1; letter-spacing: -0.5px;}
       .fabrica-desc { font-size: 1.15rem; color: #475569; line-height: 1.6; margin-bottom: 30px; }
 
@@ -70,15 +71,43 @@
       .fabrica-interactive-panel { background: #0f172a; border-radius: 24px; padding: 40px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); border: 1px solid #1e293b; color: #fff;}
       .fabrica-svg-wrapper { text-align: center; margin-bottom: 30px; height: 160px; display: flex; justify-content: center; align-items: center; }
       
-      /* Animacao Factory SVG */
       @keyframes float-svg { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
       @keyframes draw-line { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
       .anim-float { animation: float-svg 4s ease-in-out infinite; }
 
       @media (max-width: 992px) { .fabrica-container { flex-direction: column; } .fabrica-content, .fabrica-visual { width: 100%; } }
 
-      /* --- PLATAFORMAS (CARROSSEL COM LOGOS APP-STYLE) --- */
-      .platforms-section { padding: 100px 0; background: #f8fafc; }
+      /* --- DIVISOR DE SESSÕES --- */
+      .section-divider {
+          text-align: center;
+          margin: 80px 0 50px;
+          position: relative;
+      }
+      .section-divider::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: #e2e8f0;
+          z-index: 1;
+      }
+      .section-divider span {
+          background: #f8fafc;
+          padding: 0 20px;
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: #0f172a;
+          position: relative;
+          z-index: 2;
+          display: inline-block;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      /* --- PLATAFORMAS (CARROSSEL) --- */
+      .platforms-section { padding: 40px 0 100px; background: #f8fafc; }
       .plat-header { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; }
       .plat-header-text h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 10px; }
       .plat-header-text p { font-size: 1.15rem; color: #64748b; margin: 0; }
@@ -88,20 +117,19 @@
       .carousel-btn:hover { background: #0f172a; color: #fff; border-color: #0f172a; }
       @media (max-width: 768px) { .plat-header { flex-direction: column; align-items: flex-start; gap: 20px; } .carousel-controls { display: none; } }
 
-      .carousel-wrapper { position: relative; width: 100%; padding-left: max(20px, calc((100% - 1200px) / 2)); overflow: hidden; }
+      .carousel-wrapper { position: relative; width: 100%; padding-left: max(20px, calc((100% - 1200px) / 2)); overflow: hidden; margin-bottom: 40px;}
       .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; padding-bottom: 40px; padding-right: 40px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
       .carousel-track::-webkit-scrollbar { display: none; }
 
-      /* Cards Reduzidos para melhor UX Mobile */
       .plat-card { flex: 0 0 300px; scroll-snap-align: start; background: #fff; border-radius: 20px; border: 1px solid #e2e8f0; padding: 30px 24px; display: flex; flex-direction: column; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.02); position: relative; }
       .plat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #cbd5e1; }
       @media (max-width: 768px) { .plat-card { flex: 0 0 82vw; } }
 
-      /* Ícone Estilo App iOS (Squircle com Logo) */
+      /* Ícone Estilo App iOS */
       .app-icon-box {
           width: 80px; height: 80px; background: #ffffff; border-radius: 22px; 
           box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04);
-          display: flex; align-items: center; justify-content: center; margin-bottom: 20px; padding: 12px;
+          display: flex; align-items: center; justify-content: center; margin-bottom: 20px; padding: 12px; overflow: hidden;
       }
       .app-icon-box img { width: 100%; height: 100%; object-fit: contain; }
 
@@ -116,30 +144,37 @@
 
       .btn-card-plat { display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; padding: 14px 0; border-radius: 10px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
 
-      /* --- CORES DOS BOTÕES POR TEMA --- */
+      /* --- CORES DOS BOTÕES --- */
+      /* B2G (Governo) */
       .theme-govdash .btn-card-plat { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
       .theme-govdash .btn-card-plat:hover { background: #0284c7; color: #fff; }
-
       .theme-mobility .btn-card-plat { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
       .theme-mobility .btn-card-plat:hover { background: #2563eb; color: #fff; }
-
       .theme-edu .btn-card-plat { background: #e0e7ff; color: #4f46e5; border: 1px solid #c7d2fe; }
       .theme-edu .btn-card-plat:hover { background: #4f46e5; color: #fff; }
-
       .theme-govrh .btn-card-plat { background: #f0fdfa; color: #0d9488; border: 1px solid #ccfbf1; }
       .theme-govrh .btn-card-plat:hover { background: #0d9488; color: #fff; }
-
       .theme-prev .btn-card-plat { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
       .theme-prev .btn-card-plat:hover { background: #d97706; color: #fff; }
-
       .theme-privacy .btn-card-plat { background: #ecfeff; color: #0891b2; border: 1px solid #cffafe; }
       .theme-privacy .btn-card-plat:hover { background: #0891b2; color: #fff; }
-
       .theme-social .btn-card-plat { background: #fdf4ff; color: #c026d3; border: 1px solid #f5d0fe; }
       .theme-social .btn-card-plat:hover { background: #c026d3; color: #fff; }
-
       .theme-docs .btn-card-plat { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
       .theme-docs .btn-card-plat:hover { background: #0369a1; color: #fff; }
+
+      /* B2B (Mercado Privado) */
+      .theme-cartorio .btn-card-plat { background: #064e3b; color: #fff; border: none; }
+      .theme-cartorio .btn-card-plat:hover { background: #10b981; }
+      
+      .theme-leidobem .btn-card-plat { background: #1e3a8a; color: #fff; border: none; }
+      .theme-leidobem .btn-card-plat:hover { background: #3b82f6; }
+
+      .theme-broker .btn-card-plat { background: #ffd60a; color: #000; border: none; }
+      .theme-broker .btn-card-plat:hover { background: #000; color: #ffd60a; }
+
+      /* Ajuste logo provisória (fallback em texto) */
+      .app-icon-text { font-size: 1.5rem; font-weight: 900; line-height: 1; text-align: center; }
 
   </style>
 </head>
@@ -147,18 +182,18 @@
 
   {% include header.html titulo="Cerrado Tech" %}
 
-  <section class="hero-gov">
+  <section class="hero-solutions">
     <div class="container">
       <div class="gov-split-layout">
         <div class="gov-visual-content">
           <div class="gov-logo-card">
-            <img src="img/cerradogov.png" alt="Cerrado Gov Logo">
+            <img src="img/cerradogov.png" alt="Cerrado Gov Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<h3 style=\'color:#10b981; font-size:2.5rem; margin:0;\'>CERRADO<br>TECH</h3>'">
           </div>
         </div>
         <div class="gov-text-content">
-          <span class="gov-hero-tag">GovTech & Corporate Software</span>
-          <h1 class="gov-hero-title">O Ecossistema de Gestão Pública.</h1>
-          <p class="gov-hero-subtitle">Transformamos a complexidade da gestão municipal e corporativa em plataformas digitais blindadas, transparentes e escaláveis. Construímos sob demanda ou fornecemos nossas soluções de prateleira.</p>
+          <span class="gov-hero-tag">GovTech & Mercado B2B</span>
+          <h1 class="gov-hero-title">A Fábrica de Software.</h1>
+          <p class="gov-hero-subtitle">Transformamos a complexidade em plataformas digitais blindadas e escaláveis. Construímos arquiteturas sob demanda ou integramos o seu negócio através de nossas soluções de prateleira B2B e Governamentais.</p>
         </div>
       </div>
     </div>
@@ -168,19 +203,19 @@
       <div class="fabrica-container">
           <div class="fabrica-content">
               <div class="fabrica-icon">💻</div>
-              <h2 class="fabrica-title">Fábrica de Software Cerrado</h2>
-              <p class="fabrica-desc">Não somos apenas um produto, somos o <strong>motor</strong>. Nosso braço de engenharia de alta performance atua sob demanda para arquitetar, integrar e desenvolver os projetos mais críticos de prefeituras e corporações de grande porte.</p>
+              <h2 class="fabrica-title">Engenharia de Alta Performance</h2>
+              <p class="fabrica-desc">Não somos apenas um fornecedor, somos o motor de desenvolvimento da sua corporação. Nossa equipe estrutura o backoffice tecnológico e cria ecossistemas web complexos.</p>
               
               <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
-                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Squads Completos:</strong> POs, Scrum Masters, Arquitetos Cloud e QA.</li>
-                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>SLA Rigoroso:</strong> Resposta garantida de até 4 horas para incidentes.</li>
-                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Segurança de Dados:</strong> Códigos 100% testados e aderentes à LGPD.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Squads Completos:</strong> Scrum Masters, Devs Plenos/Sêniores e QA.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Bancos Parametrizáveis:</strong> Dashboards modulares e integrações via API.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Inteligência Artificial:</strong> Integração com LLMs como OpenAI e Groq.</li>
               </ul>
 
               <div class="fabrica-tags">
-                  <span>Arquitetura AWS / Azure</span>
+                  <span>Python & React</span>
                   <span>APIs REST</span>
-                  <span>Docker / Kubernetes</span>
+                  <span>Web Apps (PWA)</span>
               </div>
           </div>
           
@@ -188,172 +223,205 @@
               <div class="fabrica-interactive-panel">
                   <div class="fabrica-svg-wrapper">
                       <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="20" y="20" width="160" height="110" rx="12" fill="#0f172a" stroke="#0ea5e9" stroke-width="3"/>
+                          <rect x="20" y="20" width="160" height="110" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="3"/>
                           <path d="M20 40 H180" stroke="#1e293b" stroke-width="2"/>
                           <circle cx="35" cy="30" r="4" fill="#ef4444"/>
                           <circle cx="50" cy="30" r="4" fill="#f59e0b"/>
                           <circle cx="65" cy="30" r="4" fill="#10b981"/>
-                          <path d="M40 70 L55 55 L40 85" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="anim-float"/>
-                          <line x1="70" y1="85" x2="130" y2="85" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation: draw-line 2s infinite alternate;"/>
+                          <path d="M40 70 L55 55 L40 85" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="anim-float"/>
+                          <line x1="70" y1="85" x2="130" y2="85" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation: draw-line 2s infinite alternate;"/>
                           <line x1="40" y1="105" x2="100" y2="105" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
                       </svg>
                   </div>
-                  <h3 style="font-size: 1.3rem; color: #38bdf8; margin: 0 0 10px 0; font-weight: 800;">Desenvolvimento Ágil e Seguro</h3>
-                  <p style="font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Entregas contínuas utilizando Scrum/Kanban para escalar a transformação digital do seu governo de forma sustentável.</p>
+                  <h3 style="font-size: 1.3rem; color: #34d399; margin: 0 0 10px 0; font-weight: 800;">Ecossistema Seguro</h3>
+                  <p style="font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Entregas contínuas e seguras focadas na aderência estrita à LGPD e provimentos legais.</p>
               </div>
           </div>
       </div>
   </section>
 
-  <section class="platforms-section">
+  <section class="platforms-section" style="background: #fff;">
+      
+      <div class="section-divider" style="margin-top: 0; margin-bottom: 60px;">
+          <span style="background: #fff; color: #10b981;">Mercado Privado (B2B)</span>
+      </div>
+
       <div class="plat-header">
           <div class="plat-header-text">
-              <h2>Nossas Plataformas</h2>
-              <p>Explore nosso ecossistema de soluções prontas para acelerar a gestão.</p>
+              <h2>Soluções Corporativas</h2>
+              <p>Ferramentas robustas que automatizam processos, garantem conformidade e geram lucro.</p>
           </div>
           <div class="carousel-controls">
-              <button class="carousel-btn" onclick="scrollCarousel('platTrack', -1)">&#10094;</button>
-              <button class="carousel-btn" onclick="scrollCarousel('platTrack', 1)">&#10095;</button>
+              <button class="carousel-btn" onclick="scrollCarousel('b2bTrack', -1)">&#10094;</button>
+              <button class="carousel-btn" onclick="scrollCarousel('b2bTrack', 1)">&#10095;</button>
           </div>
       </div>
 
       <div class="carousel-wrapper">
-          <div class="carousel-track" id="platTrack">
+          <div class="carousel-track" id="b2bTrack">
+              
+              <div class="plat-card theme-cartorio" style="border-color: #10b981;">
+                  <div class="app-icon-box" style="background: #022c22;">
+                      <span class="app-icon-text" style="color:#10b981;">C<span style="color:#fff">C</span></span>
+                  </div>
+                  <div class="card-header-text">
+                      <span>Automação & IA</span>
+                      <h3>ChatCartório</h3>
+                  </div>
+                  <p class="plat-desc">Um bot de WhatsApp com IA capaz de ler provimentos legais, responder dúvidas semânticas e agendar videoconferências de forma autônoma.</p>
+                  <div class="card-tags">
+                      <span>IA Semântica</span>
+                      <span>Checklists</span>
+                      <span>Prov. 49/24</span>
+                  </div>
+                  <a href="/solucoes/chatcartorio.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-leidobem" style="border-color: #3b82f6;">
+                  <div class="app-icon-box" style="background: #1e3a8a;">
+                      <span class="app-icon-text" style="color:#38bdf8;">L<span style="color:#fff">B</span></span>
+                  </div>
+                  <div class="card-header-text">
+                      <span>Consultoria Tributária</span>
+                      <h3>Plataforma Lei do Bem</h3>
+                  </div>
+                  <p class="plat-desc">Software SaaS de diagnóstico automatizado. Calcula incentivos fiscais de inovação e gera laudo de aderência utilizando IA Generativa (LLaMA).</p>
+                  <div class="card-tags">
+                      <span>Cálculo IRPJ</span>
+                      <span>Desoneração</span>
+                      <span>IA Generativa</span>
+                  </div>
+                  <a href="/solucoes/leidobem.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-broker" style="border-color: #ffd60a;">
+                  <div class="app-icon-box" style="background: #000;">
+                      <span class="app-icon-text" style="color:#ffd60a;">B<span style="color:#fff">L</span></span>
+                  </div>
+                  <div class="card-header-text">
+                      <span>Logística & Atacado</span>
+                      <h3>Broker Logístico ERP</h3>
+                  </div>
+                  <p class="plat-desc">Simulador estratégico Mobile. Avalie o Break-Even de rotas, acompanhe metas de RCA's e controle o risco de churn da carteira de clientes B2B.</p>
+                  <div class="card-tags">
+                      <span>Simulador Frete</span>
+                      <span>PWA Mobile</span>
+                      <span>Gestão RCA</span>
+                  </div>
+                  <a href="/solucoes/brokerlogistico.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+          </div>
+      </div>
+  </section>
+
+
+  <section class="platforms-section">
+      
+      <div class="section-divider" style="margin-top: 0; margin-bottom: 60px;">
+          <span>Governo & Gestão Pública (B2G)</span>
+      </div>
+
+      <div class="plat-header">
+          <div class="plat-header-text">
+              <h2>Módulos Governamentais</h2>
+              <p>O ecossistema definitivo para a gestão de prefeituras e câmaras.</p>
+          </div>
+          <div class="carousel-controls">
+              <button class="carousel-btn" onclick="scrollCarousel('govTrack', -1)">&#10094;</button>
+              <button class="carousel-btn" onclick="scrollCarousel('govTrack', 1)">&#10095;</button>
+          </div>
+      </div>
+
+      <div class="carousel-wrapper">
+          <div class="carousel-track" id="govTrack">
               
               <div class="plat-card theme-govdash">
-                  <div class="app-icon-box">
-                      <img src="img/govdash.png" alt="GovDash Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/govdash.png" alt="GovDash" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#0284c7\'>GD</span>'"></div>
                   <div class="card-header-text">
                       <span>Inteligência de Dados</span>
                       <h3>Cerrado GovDash</h3>
                   </div>
-                  <p class="plat-desc">O "Cockpit" do prefeito. Transforma dados em painéis de decisão em tempo real, alertando sobre limites da LRF (54%), saúde e andamento de obras.</p>
-                  <div class="card-tags">
-                      <span>Termômetro LRF</span>
-                      <span>Painel Executivo</span>
-                      <span>Integração ETL</span>
-                  </div>
-                  <a href="/solucoes/govdash/" target="_blank" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">O "Cockpit" do prefeito. Transforma dados em painéis de decisão em tempo real, alertando sobre limites da LRF (54%), saúde e obras.</p>
+                  <div class="card-tags"><span>Termômetro LRF</span><span>Painel Executivo</span></div>
+                  <a href="/solucoes/govdash/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-mobility">
-                  <div class="app-icon-box">
-                      <img src="img/mobility.png" alt="Mobility Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/mobility.png" alt="Mobility" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#2563eb\'>CM</span>'"></div>
                   <div class="card-header-text">
                       <span>Frotas e Telemetria</span>
                       <h3>Cerrado Mobility</h3>
                   </div>
-                  <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, roteirização OSRM, controle antifraude de combustível e automação de multas.</p>
-                  <div class="card-tags">
-                      <span>App Android/iOS</span>
-                      <span>Cálculo km/L</span>
-                      <span>API SERPRO</span>
-                  </div>
-                  <a href="/solucoes/mobility/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, controle antifraude de combustível e automação de multas e rotas.</p>
+                  <div class="card-tags"><span>App Mobile</span><span>Cálculo km/L</span></div>
+                  <a href="/solucoes/mobility/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-edu">
-                  <div class="app-icon-box">
-                      <img src="img/edu.png" alt="Edu Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/edu.png" alt="Edu" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#4f46e5\'>ED</span>'"></div>
                   <div class="card-header-text">
                       <span>Gestão Educacional</span>
                       <h3>Cerrado Edu</h3>
                   </div>
-                  <p class="plat-desc">Sistema de Gestão Escolar com IA Nativa. Diário eletrônico, controle de merenda PNAE e algoritmos que preveem a evasão de alunos.</p>
-                  <div class="card-tags">
-                      <span>Diário Eletrônico</span>
-                      <span>IA Preditiva</span>
-                      <span>Merenda PNAE</span>
-                  </div>
-                  <a href="/solucoes/edu/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">Sistema de Gestão Escolar com IA Nativa. Diário eletrônico, controle de merenda PNAE e algoritmos preditivos anti-evasão.</p>
+                  <div class="card-tags"><span>Diário Eletrônico</span><span>Merenda PNAE</span></div>
+                  <a href="/solucoes/edu/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-govrh">
-                  <div class="app-icon-box">
-                      <img src="img/rh.png" alt="GovRH Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/rh.png" alt="GovRH" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#0d9488\'>RH</span>'"></div>
                   <div class="card-header-text">
                       <span>Recursos Humanos</span>
                       <h3>Cerrado GovRH</h3>
                   </div>
-                  <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas, adequação à EC 103/2019 e layouts nativos homologados para o eSocial.</p>
-                  <div class="card-tags">
-                      <span>Motor No-Code</span>
-                      <span>Validador TCE</span>
-                      <span>Simulador Folha</span>
-                  </div>
-                  <a href="/solucoes/govrh/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas de vencimento e layouts nativos homologados para o eSocial.</p>
+                  <div class="card-tags"><span>Motor No-Code</span><span>eSocial</span></div>
+                  <a href="/solucoes/govrh/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-prev">
-                  <div class="app-icon-box">
-                      <img src="img/prev.png" alt="Prev Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/prev.png" alt="Prev" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#d97706\'>PR</span>'"></div>
                   <div class="card-header-text">
                       <span>Regime Previdenciário</span>
                       <h3>Cerrado Prev</h3>
                   </div>
-                  <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação integrada ao COMPREV e portal do segurado 24/7.</p>
-                  <div class="card-tags">
-                      <span>Concessão Auto</span>
-                      <span>Integração COMPREV</span>
-                      <span>Perícia IA</span>
-                  </div>
-                  <a href="/solucoes/prev/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação e portal do segurado online.</p>
+                  <div class="card-tags"><span>Concessão Auto</span><span>Integração COMPREV</span></div>
+                  <a href="/solucoes/prev/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-privacy">
-                  <div class="app-icon-box">
-                      <img src="img/privacy.png" alt="Privacy Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/privacy.png" alt="Privacy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#0891b2\'>LG</span>'"></div>
                   <div class="card-header-text">
                       <span>Compliance LGPD</span>
                       <h3>Cerrado Privacy</h3>
                   </div>
-                  <p class="plat-desc">SaaS e DPO as a Service. Mapeamento de dados via IA, geração automática de relatórios ROPA/RIPD e plataforma EAD nativa.</p>
-                  <div class="card-tags">
-                      <span>Gerador ROPA</span>
-                      <span>Gestão Incidentes</span>
-                      <span>Módulo EAD LGPD</span>
-                  </div>
-                  <a href="/solucoes/privacy/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">DPO as a Service. Mapeamento de dados via IA, geração de relatórios ROPA/RIPD e plataforma EAD de treinamento.</p>
+                  <div class="card-tags"><span>Gerador ROPA</span><span>EAD LGPD</span></div>
+                  <a href="/solucoes/privacy/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-social">
-                  <div class="app-icon-box">
-                      <img src="img/social.png" alt="Social Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/social.png" alt="Social" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#c026d3\'>CS</span>'"></div>
                   <div class="card-header-text">
                       <span>Assistência Social</span>
                       <h3>Cerrado Social</h3>
                   </div>
-                  <p class="plat-desc">Prontuário Social Eletrônico. Zera filas com regulação inteligente, mapa de vulnerabilidade e cruza dados com CadÚnico.</p>
-                  <div class="card-tags">
-                      <span>Prontuário Único</span>
-                      <span>Georreferenciamento</span>
-                      <span>Regulação SUAS</span>
-                  </div>
-                  <a href="/solucoes/social/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">Prontuário Social Eletrônico. Reduz filas com regulação inteligente e cruzamento automático de dados com o CadÚnico.</p>
+                  <div class="card-tags"><span>Prontuário Único</span><span>Regulação SUAS</span></div>
+                  <a href="/solucoes/social/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-docs">
-                  <div class="app-icon-box">
-                      <img src="img/docs.png" alt="Docs Logo" onerror="this.src='img/logo.png'">
-                  </div>
+                  <div class="app-icon-box"><img src="img/docs.png" alt="Docs" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\' style=\'color:#0284c7\'>DC</span>'"></div>
                   <div class="card-header-text">
                       <span>Gestão Documental</span>
                       <h3>Cerrado Docs</h3>
                   </div>
-                  <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura e motor de IA para "conversar" com PDFs (RAG).</p>
-                  <div class="card-tags">
-                      <span>Chat com PDF (IA)</span>
-                      <span>Busca OCR</span>
-                      <span>Assinatura Digital</span>
-                  </div>
-                  <a href="/solucoes/docs/" class="btn-card-plat">Simular Plataforma <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                  <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura e motor de IA para "conversar" com PDFs.</p>
+                  <div class="card-tags"><span>Chat com PDF (IA)</span><span>Assinatura Digital</span></div>
+                  <a href="/solucoes/docs/" class="btn-card-plat">Página do App</a>
               </div>
 
           </div>
@@ -362,9 +430,9 @@
 
   <section class="section section-dark text-center" style="border-top: 1px solid rgba(255,255,255,0.1); background: #020617; padding: 100px 0;">
     <div class="container">
-      <h2 class="title" style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;">A evolução do seu município começa aqui.</h2>
-      <p class="subtitle" style="color: #cbd5e1; max-width: 650px; margin: 0 auto 40px; font-size: 1.15rem;">Nossos arquitetos de software estão prontos para desenhar a infraestrutura ideal de tecnologia para o seu instituto, secretaria ou prefeitura.</p>
-      <a href="/index.html#contato" style="display: inline-block; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; text-transform: uppercase; background: #0ea5e9; color: #fff; box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3); transition: 0.3s;">Agendar Reunião de Engenharia</a>
+      <h2 class="title" style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;">A evolução do seu negócio começa aqui.</h2>
+      <p class="subtitle" style="color: #cbd5e1; max-width: 650px; margin: 0 auto 40px; font-size: 1.15rem;">Nossos arquitetos de software estão prontos para desenhar a infraestrutura ideal de tecnologia para a sua corporação, secretaria ou prefeitura.</p>
+      <a href="/index.html#contato" style="display: inline-block; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; text-transform: uppercase; background: #10b981; color: #022c22; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); transition: 0.3s;">Agendar Reunião de Engenharia</a>
     </div>
   </section>
 
@@ -373,9 +441,9 @@
   <script src="js/main.js"></script>
 
   <script>
+      // Separei a função de scroll para aceitar trackIds diferentes (B2B ou Gov)
       function scrollCarousel(trackId, direction) {
           const track = document.getElementById(trackId);
-          // Largura do card (300) + gap (24) = 324px por rolagem manual
           const scrollAmount = 324 * direction; 
           track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       }

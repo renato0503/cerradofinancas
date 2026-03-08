@@ -1,0 +1,390 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCartório | Automação e IA para Cartórios</title>
+    <meta name="description" content="Reduza filas, automatize o atendimento via WhatsApp e use Inteligência Artificial para tirar dúvidas de clientes em tempo real no seu Cartório.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animações */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* --- HERO CHATCARTÓRIO --- */
+        .cc-hero {
+            background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+            color: #fff;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #10b981;
+        }
+
+        .cc-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .cc-hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .cc-hero-grid { flex-direction: column; text-align: center; }
+        }
+
+        .cc-text { flex: 1.2; }
+        
+        .cc-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .cc-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cc-text p { font-size: 1.15rem; color: #a7f3d0; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-wpp {
+            background: #25D366;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            border: none;
+        }
+        .btn-wpp:hover { background: #1eb954; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4); }
+
+        /* Mockup do Celular */
+        .cc-visual { flex: 0.8; display: flex; justify-content: center; }
+        
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: #111b21;
+            border-radius: 40px;
+            border: 12px solid #0f172a;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), inset 0 0 0 2px #334155;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: rotate(5deg);
+            transition: transform 0.5s ease;
+        }
+        .phone-mockup:hover { transform: rotate(0deg) scale(1.05); }
+
+        .phone-notch {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 120px; height: 25px;
+            background: #0f172a;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+
+        .phone-header {
+            background: #1f2c33;
+            padding: 35px 15px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #2a3a43;
+        }
+        .ph-avatar { width: 40px; height: 40px; background: #005c4b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; font-size: 1.2rem;}
+        .ph-info h4 { margin: 0; color: #fff; font-size: 1rem; }
+        .ph-info p { margin: 0; color: #8696a0; font-size: 0.75rem; }
+
+        .phone-chat {
+            flex: 1;
+            padding: 15px;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") #0b141a;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .msg-bubble {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            position: relative;
+        }
+        .msg-them { background: #202c33; color: #e9edef; align-self: flex-start; border-top-left-radius: 2px; }
+        .msg-me { background: #005c4b; color: #e9edef; align-self: flex-end; border-top-right-radius: 2px; }
+        .msg-btn { background: #233138; color: #34d399; border: 1px solid #2c3c43; border-radius: 20px; padding: 6px 12px; font-size: 0.75rem; display: inline-block; margin-top: 5px; font-weight: bold;}
+
+        /* --- FEATURES SECTION --- */
+        .features-section { padding: 100px 0; background: #fff; }
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #0f172a; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto;}
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 40px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #10b981; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: #fff;}
+
+        .fc-icon { width: 60px; height: 60px; background: #dcfce7; color: #059669; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .fc-icon svg { width: 30px; height: 30px; }
+        
+        .f-card h3 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 15px;}
+        .f-card p { font-size: 1.05rem; color: #475569; line-height: 1.6; margin: 0;}
+
+        /* --- DATA TABLE PREVIEW --- */
+        .data-section { padding: 80px 0; background: #f1f5f9; border-top: 1px solid #e2e8f0;}
+        .data-wrapper { background: #fff; border-radius: 24px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;}
+        
+        .data-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;}
+        .data-header h3 { font-size: 1.8rem; font-weight: 800; color: #0f172a; margin: 0;}
+        
+        .mock-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+        .mock-table th { background: #f8fafc; padding: 15px; color: #475569; font-weight: 700; border-bottom: 2px solid #e2e8f0; }
+        .mock-table td { padding: 15px; border-bottom: 1px solid #f1f5f9; color: #334155; font-weight: 500;}
+        .mock-table tr:hover td { background: #f8fafc; }
+        .status-badge { padding: 6px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 700;}
+        .sb-green { background: #dcfce7; color: #059669; }
+        .sb-blue { background: #dbeafe; color: #0284c7; }
+
+        @media (max-width: 768px) {
+            .data-wrapper { padding: 20px; }
+            .mock-table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+
+        /* --- CTA --- */
+        .cta-bottom { background: #0f172a; padding: 80px 0; text-align: center; color: #fff;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="cc-hero">
+    <div class="container">
+        <div class="cc-hero-grid">
+            
+            <div class="cc-text fade-up">
+                <div class="cc-badge">Solução B2B Exclusiva</div>
+                <h1>O Atendimento do seu Cartório 100% Automatizado.</h1>
+                <p>Reduza o congestionamento telefônico. A nossa Inteligência Artificial entende a demanda do cidadão, informa preços, gera checklists de documentos e agenda chamadas de vídeo de forma autônoma pelo WhatsApp.</p>
+                
+                <div class="btn-group fade-up delay-1">
+                    <a href="https://renato0503.github.io/ChatBotCartorio/" target="_blank" class="btn-wpp">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        Testar o Bot Interativo Agora
+                    </a>
+                </div>
+            </div>
+
+            <div class="cc-visual fade-up delay-2">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-header">
+                        <div class="ph-avatar">C</div>
+                        <div class="ph-info">
+                            <h4>Cartório Oficial</h4>
+                            <p>Número verificado ✓</p>
+                        </div>
+                    </div>
+                    <div class="phone-chat">
+                        <div class="msg-bubble msg-me">Gostaria de saber os documentos para Casamento.</div>
+                        <div class="msg-bubble msg-them">
+                            *Casamento*<br>
+                            Setor: Registro Civil<br>
+                            Valor: R$ 501,90<br><br>
+                            *Documentos:*<br>
+                            • RG e CPF.<br>
+                            • Certidão de nascimento.<br>
+                            • Comprovante de residência.<br>
+                            <span class="msg-btn">Baixar Checklist (PDF)</span>
+                        </div>
+                        <div class="msg-bubble msg-me">Qual a chave PIX para pagamento?</div>
+                        <div class="msg-bubble msg-them">
+                            *Chave PIX Oficial:*<br>
+                            CNPJ: 41.567.424/0001-10<br>
+                            Banco do Brasil
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Por que implantar o ChatCartório?</h2>
+            <p>O sistema foi treinado com as regras reais dos Provimentos e Tabelas de Emolumentos para garantir segurança jurídica na informação prestada ao cliente.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M21.18 8.02c-1-2.3-2.85-4.17-5.16-5.18"></path></svg>
+                </div>
+                <h3>Motor de IA Semântica</h3>
+                <p>O cliente não precisa digitar o nome exato do serviço. Se ele escrever "quero casar" ou "valor para juntar os panos", a IA compreende a intenção e direciona para "Casamento - Registro Civil".</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <h3>Checklists Automáticos</h3>
+                <p>O bot gera e envia documentos de texto (.txt) formatados com a lista exata de documentos que o cidadão precisa levar ao balcão, reduzindo as filas por falta de documentação.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                </div>
+                <h3>Agendamento de Videoconferência</h3>
+                <p>Atendimento integrado ao Provimento N. 49/2024. O usuário valida a Ordem de Serviço e o CPF diretamente no WhatsApp e visualiza a grade de horários disponíveis para agendar a vídeo-chamada.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="data-section">
+    <div class="container fade-up">
+        <div class="data-wrapper">
+            <div class="data-header">
+                <h3>Banco de Dados Parametrizável</h3>
+                <p style="color: #64748b; margin:0;">A estrutura lê arquivos de dados padronizados (Tabelionato, Notas, Registro) e atualiza os preços e prazos do bot instantaneamente.</p>
+            </div>
+            
+            <table class="mock-table">
+                <thead>
+                    <tr>
+                        <th>Setor</th>
+                        <th>Serviço</th>
+                        <th>Valor (R$)</th>
+                        <th>Prazo</th>
+                        <th>Digital?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tabelionato de Notas</td>
+                        <td>Procuração Pública</td>
+                        <td>R$ 120,00</td>
+                        <td>1 dia útil</td>
+                        <td><span class="status-badge sb-green">Sim</span></td>
+                    </tr>
+                    <tr>
+                        <td>Registro Civil</td>
+                        <td>Casamento</td>
+                        <td>R$ 501,90</td>
+                        <td>Imediato</td>
+                        <td><span class="status-badge sb-blue">Não</span></td>
+                    </tr>
+                    <tr>
+                        <td>Reconhecimento</td>
+                        <td>Abertura de Firma</td>
+                        <td>R$ 11,10</td>
+                        <td>Imediato</td>
+                        <td><span class="status-badge sb-blue">Não</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Acelere a serventia do seu Cartório.</h2>
+        <a href="https://renato0503.github.io/ChatBotCartorio/" target="_blank" class="btn-wpp" style="padding: 20px 40px; font-size: 1.2rem;">
+            Acessar o Ambiente de Teste
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

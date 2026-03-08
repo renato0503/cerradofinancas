@@ -1,0 +1,308 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broker Logístico ERP | Cerrado Tech</title>
+    <meta name="description" content="Plataforma Mobile de Sales Intelligence. Gestão logística, controle de comissões e performance comercial em tempo real.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #000000; /* Apple Dark Mode Base */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animações */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* --- HERO BROKER LOGÍSTICO --- */
+        .cm-hero {
+            background: linear-gradient(135deg, #1c1c1e 0%, #000000 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #2c2c2e;
+        }
+
+        .cm-hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .cm-hero-grid { flex-direction: column; text-align: center; }
+        }
+
+        .cm-text { flex: 1.2; }
+        
+        .cm-badge {
+            background: linear-gradient(135deg, rgba(255, 214, 10, 0.1), rgba(255, 214, 10, 0.2));
+            color: #ffd60a;
+            border: 1px solid rgba(255, 214, 10, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .cm-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cm-text p { font-size: 1.15rem; color: #8e8e93; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-gold {
+            background: #ffd60a;
+            color: #000;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255, 214, 10, 0.2);
+            border: none;
+        }
+        .btn-gold:hover { background: #eab308; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255, 214, 10, 0.4); }
+
+        /* Mockup do Celular */
+        .cm-visual { flex: 0.8; display: flex; justify-content: center; }
+        
+        .phone-mockup {
+            width: 320px;
+            height: 640px;
+            background: #1c1c1e;
+            border-radius: 40px;
+            border: 12px solid #2c2c2e;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), inset 0 0 0 2px #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: rotate(-5deg);
+            transition: transform 0.5s ease;
+        }
+        .phone-mockup:hover { transform: rotate(0deg) scale(1.05); }
+
+        .phone-notch {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 120px; height: 25px;
+            background: #2c2c2e;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            flex: 1;
+            padding: 40px 15px 15px;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .mock-logo { width: 40px; height: 40px; background: linear-gradient(135deg, #1f2937, #0f172a); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffd60a; font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;}
+        .mock-kpi-row { display: flex; gap: 10px; }
+        .mock-kpi { flex: 1; background: #1c1c1e; border-radius: 12px; padding: 12px; border-top: 2px solid #0a84ff; }
+        .mock-kpi:nth-child(2) { border-color: #30d158; }
+        .mock-kpi span { display: block; font-size: 9px; color: #8e8e93; text-transform: uppercase;}
+        .mock-kpi strong { display: block; font-size: 16px; color: #fff; margin-top: 2px;}
+
+        .mock-chart { height: 120px; background: #1c1c1e; border-radius: 12px; padding: 15px; position: relative;}
+        .mock-line { position: absolute; bottom: 15px; left: 15px; right: 15px; height: 40px; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,100 L20,60 L40,80 L60,30 L80,50 L100,10" fill="none" stroke="%23ffd60a" stroke-width="4" vector-effect="non-scaling-stroke"/></svg>') no-repeat; background-size: 100% 100%;}
+
+        /* --- FEATURES SECTION --- */
+        .features-section { padding: 100px 0; background: #000; border-top: 1px solid #1c1c1e;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: #8e8e93; max-width: 700px; margin: 0 auto;}
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #1c1c1e;
+            border: 1px solid #2c2c2e;
+            padding: 40px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #ffd60a; box-shadow: 0 10px 30px rgba(255, 214, 10, 0.1);}
+
+        .fc-icon { width: 50px; height: 50px; background: #2c2c2e; color: #ffd60a; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem;}
+        
+        .f-card h3 { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .f-card p { font-size: 1.05rem; color: #8e8e93; line-height: 1.6; margin: 0;}
+
+        /* --- CTA --- */
+        .cta-bottom { background: #1c1c1e; padding: 80px 0; text-align: center; border-top: 1px solid #2c2c2e;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; color: #fff;}
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="cm-hero">
+    <div class="container">
+        <div class="cm-hero-grid">
+            
+            <div class="cm-text fade-up">
+                <div class="cm-badge">App Nativo (PWA)</div>
+                <h1>A Inteligência Comercial do Atacado na palma da mão.</h1>
+                <p>O Broker Logístico ERP é um simulador estratégico e dashboard de <em>Sales Intelligence</em> projetado para distribuidoras. Monitore o <em>break-even</em> de rotas e fretes, calcule comissões de RCA's e previna o risco de churn da carteira de clientes em tempo real.</p>
+                
+                <div class="btn-group fade-up delay-1">
+                    <a href="https://renato0503.github.io/Mobile_CasaM_Menu/" target="_blank" class="btn-gold">
+                        Testar o App Mobile
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cm-visual fade-up delay-2">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="mock-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                        <div style="color: #fff; font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;">Sales Intel</div>
+                        
+                        <div class="mock-kpi-row">
+                            <div class="mock-kpi">
+                                <span>Faturamento</span>
+                                <strong>R$ 381.000</strong>
+                            </div>
+                            <div class="mock-kpi">
+                                <span>Margem</span>
+                                <strong style="color: #30d158;">R$ 80.000</strong>
+                            </div>
+                        </div>
+
+                        <div class="mock-chart">
+                            <span style="font-size: 10px; color: #8e8e93; text-transform: uppercase;">Evolução de Vendas</span>
+                            <div class="mock-line"></div>
+                        </div>
+
+                        <div style="background: #1c1c1e; border-radius: 12px; padding: 15px; margin-top: 10px;">
+                            <span style="font-size: 10px; color: #8e8e93; text-transform: uppercase; display: block; margin-bottom: 10px;">Alerta de Churn (Crítico)</span>
+                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2c2c2e; padding-bottom: 8px; margin-bottom: 8px;">
+                                <span style="font-size: 12px; color: #fff;">Padaria Pão Dourado</span>
+                                <span style="font-size: 12px; color: #ff453a; font-weight: bold;">48d inativo</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 12px; color: #fff;">Mercado Central</span>
+                                <span style="font-size: 12px; color: #ff453a; font-weight: bold;">35d inativo</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Módulos da Plataforma</h2>
+            <p>O Broker Logístico ERP foi desenvolvido com foco em usabilidade mobile (Dark Mode nativo), permitindo que diretores comerciais e gestores tomem decisões rápidas diretamente no campo.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                </div>
+                <h3>Simulador de Rotas</h3>
+                <p>Calcule instantaneamente o custo vazio e o <em>Break-Even</em> de uma rota considerando quilometragem, consumo do caminhão (VUC, Toco, Carreta), pedágios e manutenção.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3>Sales Performance</h3>
+                <p>Acompanhe o faturamento líquido da empresa em tempo real. A Matriz de Eficiência cruza Vendas x Margem para identificar quais rotas e clientes sustentam o fluxo de caixa.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3>Gestão de Equipe (RCA)</h3>
+                <p>Monitore o atingimento de metas individuais de cada representante. O módulo financeiro realiza o cálculo automático de comissões, gerencia vales e exporta recibos oficiais.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Poder de decisão no seu bolso.</h2>
+        <p style="color: #8e8e93; margin-bottom: 30px;">O aplicativo web (PWA) permite salvar cenários logísticos offline e possui interface desenhada para o ecossistema iOS/Android.</p>
+        <a href="https://renato0503.github.io/Mobile_CasaM_Menu/" target="_blank" class="btn-gold" style="padding: 20px 40px; font-size: 1.2rem;">
+            Acessar o App Broker Logístico
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>
