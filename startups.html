@@ -20,12 +20,44 @@
   <link rel="stylesheet" href="css/startups.css"> 
 
   <style>
-      /* --- NOVO HERO CERRADO TECH (INSPIRADO NA REFERÊNCIA) --- */
+      /* --- NOVO HERO CERRADO TECH COM VÍDEO DE FUNDO --- */
       .hero-tech {
-          padding: 100px 0 80px;
-          background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+          position: relative;
+          padding: 140px 0 100px;
           color: #fff;
           border-bottom: 4px solid #10b981;
+          overflow: hidden;
+          background-color: #0f172a; /* Fallback */
+      }
+
+      /* Vídeo Background */
+      .hero-video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          transform: translate(-50%, -50%);
+          z-index: 0;
+          object-fit: cover;
+      }
+
+      /* Overlay Escuro e Esverdeado para Leitura */
+      .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(2, 6, 23, 0.90) 0%, rgba(15, 23, 42, 0.85) 100%);
+          z-index: 1;
+      }
+
+      .hero-tech .container {
+          position: relative;
+          z-index: 2;
       }
 
       .tech-split-layout {
@@ -40,27 +72,29 @@
           justify-content: center;
       }
 
-      /* O Card Branco Flutuante com a Logo */
+      /* O Card Branco Flutuante com a Logo (App Icon Limpo) */
       .tech-logo-card {
           background: #ffffff;
           padding: 40px;
-          border-radius: 30px;
-          box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+          border-radius: 60px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+          border: 1px solid rgba(255,255,255,0.1);
           width: 100%;
-          max-width: 380px;
-          aspect-ratio: 1 / 1; /* Garante que fique quadrado como na sua imagem */
+          max-width: 320px;
+          aspect-ratio: 1 / 1; 
           display: flex;
           align-items: center;
           justify-content: center;
-          transform: rotate(-2deg);
-          transition: transform 0.4s ease;
+          transform: rotate(-3deg);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      .tech-logo-card:hover { transform: rotate(0deg) translateY(-10px); }
+      .tech-logo-card:hover { transform: rotate(0deg) translateY(-10px) scale(1.02); box-shadow: 0 40px 80px rgba(16, 185, 129, 0.3); }
 
       .tech-logo-card img {
           max-width: 100%;
           height: auto;
           display: block;
+          filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
       }
 
       .tech-text-content {
@@ -83,7 +117,7 @@
       }
 
       .tech-title {
-          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-size: clamp(2.5rem, 5vw, 4.2rem);
           font-weight: 900;
           line-height: 1.1;
           margin-bottom: 24px;
@@ -92,7 +126,7 @@
       }
 
       .tech-subtitle {
-          font-size: 1.15rem;
+          font-size: 1.2rem;
           color: #cbd5e1;
           max-width: 700px;
           line-height: 1.6;
@@ -103,7 +137,7 @@
           .tech-split-layout { flex-direction: column; text-align: center; gap: 40px; }
           .tech-text-content { text-align: center; }
           .tech-subtitle { margin: 0 auto; }
-          .tech-logo-card { transform: none; aspect-ratio: auto; padding: 30px; }
+          .tech-logo-card { transform: none; aspect-ratio: 1/1; padding: 30px; max-width: 220px; border-radius: 40px;}
       }
 
       /* --- ESTRUTURA DAS LÂMINAS DE STARTUPS --- */
@@ -226,6 +260,14 @@
           transform: translateY(-3px);
       }
 
+      /* --- PROCESSO DE CRIAÇÃO --- */
+      .process-section { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 80px 0; }
+      .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+      .process-step { background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center; }
+      .step-icon { width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px; }
+      .process-step h4 { font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800; }
+      .process-step p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
   </style>
 </head>
 <body>
@@ -233,19 +275,26 @@
   {% include header.html titulo="Cerrado Tech" %}
 
   <section class="hero-tech">
+    <video autoplay loop muted playsinline class="hero-video">
+        <source src="{{ '/video/cerradotech.mp4' | relative_url }}" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+    
+    <div class="hero-overlay"></div>
+
     <div class="container">
       <div class="tech-split-layout">
         
-        <div class="tech-visual-content">
+        <div class="tech-visual-content fade-up">
           <div class="tech-logo-card">
             <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
           </div>
         </div>
 
         <div class="tech-text-content">
-          <span class="tech-tag">Venture Builder</span>
-          <h1 class="tech-title">Ecossistema de Inovação Próprio.</h1>
-          <p class="tech-subtitle">Nascidas sob o guarda-chuva e a expertise da <strong>Cerrado Finanças</strong>, nossas startups são operações de mercado independentes que compartilham a mesma inteligência de negócios, backoffice corporativo e infraestrutura tecnológica de ponta desenvolvida pela Cerrado Tech.</p>
+          <span class="tech-tag fade-up delay-1">Venture Builder</span>
+          <h1 class="tech-title fade-up delay-1">Ecossistema de Inovação Próprio.</h1>
+          <p class="tech-subtitle fade-up delay-2">Nascidas sob o guarda-chuva e a expertise da <strong>Cerrado Finanças</strong>, nossas startups são operações de mercado independentes que compartilham a mesma inteligência de negócios, backoffice corporativo e infraestrutura tecnológica de ponta desenvolvida pela Cerrado Tech.</p>
         </div>
 
       </div>
@@ -254,7 +303,7 @@
 
   <section class="startup-lamina theme-gogym" id="gogym">
       <div class="lamina-container">
-          <div class="lamina-content">
+          <div class="lamina-content fade-up">
               <div class="startup-logo-box">
                   <img src="img/logo-gogym.png" alt="GoGym Logo">
               </div>
@@ -267,7 +316,7 @@
               <a href="/startups/gogym/" class="btn-lamina">Acessar GoGym Store</a>
           </div>
           
-          <div class="lamina-visual">
+          <div class="lamina-visual fade-up delay-1">
               <div class="lamina-info-card">
                   <div class="info-block">
                       <h4>O Problema</h4>
@@ -289,7 +338,7 @@
 
   <section class="startup-lamina theme-patamed lamina-reverse" id="patamed">
       <div class="lamina-container lamina-reverse">
-          <div class="lamina-content">
+          <div class="lamina-content fade-up">
               <div class="startup-logo-box">
                   <img src="img/logo-patamed.png" alt="PataMed Logo">
               </div>
@@ -302,7 +351,7 @@
               <a href="/startups/patamed/" class="btn-lamina">Conhecer a PataMed</a>
           </div>
           
-          <div class="lamina-visual">
+          <div class="lamina-visual fade-up delay-1">
               <div class="lamina-info-card">
                   <div class="info-block">
                       <h4>O Problema</h4>
@@ -324,7 +373,7 @@
 
   <section class="startup-lamina theme-chamala" id="chamala">
       <div class="lamina-container">
-          <div class="lamina-content">
+          <div class="lamina-content fade-up">
               <div class="startup-logo-box">
                   <img src="img/logo-chamala.png" alt="ChamaLá Logo">
               </div>
@@ -337,7 +386,7 @@
               <a href="/startups/chamala/" class="btn-lamina">Conhecer o ChamaLá</a>
           </div>
           
-          <div class="lamina-visual">
+          <div class="lamina-visual fade-up delay-1">
               <div class="lamina-info-card">
                   <div class="info-block">
                       <h4>O Problema</h4>
@@ -357,35 +406,35 @@
       </div>
   </section>
 
-  <section class="section process-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 80px 0;">
-    <div class="container">
+  <section class="section process-section">
+    <div class="container fade-up">
       <div class="section-header" style="text-align: center; margin-bottom: 50px;">
         <span class="tag" style="background: #e0f2fe; color: #0284c7; padding: 6px 16px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #bae6fd;">Como Criamos</span>
         <h2 class="title" style="margin: 15px auto 0; font-size: 2.2rem; font-weight: 800; color: #0f172a;">Do Papel à Escala</h2>
       </div>
       
-      <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-        <div class="process-step" style="background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center;">
-          <div class="step-icon" style="width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px;">1</div>
-          <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">Validação e Dores</h4>
-          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Identificamos ineficiências reais no mercado. Não codificamos nada antes de ter certeza matemática de que o problema existe e as pessoas pagariam pela solução.</p>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-icon">1</div>
+          <h4>Validação e Dores</h4>
+          <p>Identificamos ineficiências reais no mercado. Não codificamos nada antes de ter certeza matemática de que o problema existe e as pessoas pagariam pela solução.</p>
         </div>
-        <div class="process-step" style="background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center;">
-          <div class="step-icon" style="width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px;">2</div>
-          <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">Construção do MVP</h4>
-          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Utilizamos arquitetura de software ágil e integrações de API para construir a primeira versão do produto no menor tempo possível para testes reais.</p>
+        <div class="process-step">
+          <div class="step-icon">2</div>
+          <h4>Construção do MVP</h4>
+          <p>Utilizamos arquitetura de software ágil e integrações de API para construir a primeira versão do produto no menor tempo possível para testes reais.</p>
         </div>
-        <div class="process-step" style="background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center;">
-          <div class="step-icon" style="width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px;">3</div>
-          <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">Tração e Spin-off</h4>
-          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">Uma vez que o produto prova seu valor, estruturamos a governança, a contabilidade corporativa e a inteligência de dados para que a startup ganhe vida própria.</p>
+        <div class="process-step">
+          <div class="step-icon">3</div>
+          <h4>Tração e Spin-off</h4>
+          <p>Uma vez que o produto prova seu valor, estruturamos a governança, a contabilidade corporativa e a inteligência de dados para que a startup ganhe vida própria.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="incubator-section">
-      <div class="container">
+      <div class="container fade-up">
           <div class="incubator-box">
               <span class="incubator-icon">💡</span>
               <h2 class="incubator-title">Você tem uma ideia de negócio, mas não sabe como executar?</h2>
@@ -403,5 +452,23 @@
   {% include footer.html %}
   
   <script src="js/main.js"></script>
+  <script>
+      // Animação de rolagem (Fade Up)
+      document.addEventListener("DOMContentLoaded", function() {
+          const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('visible');
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, observerOptions);
+
+          document.querySelectorAll('.fade-up').forEach((el) => {
+              observer.observe(el);
+          });
+      });
+  </script>
 </body>
 </html>
