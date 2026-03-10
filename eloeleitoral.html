@@ -23,9 +23,9 @@ layout: null
 
     <style>
         :root {
-            --elo-primary: #1e1b4b; /* Indigo Escuro */
-            --elo-accent: #4f46e5;  /* Indigo Primário */
-            --elo-success: #10b981; /* Verde Sucesso */
+            --elo-primary: #1e1b4b; 
+            --elo-accent: #4f46e5;  
+            --elo-success: #10b981; 
             --text-main: #334155;
             --text-muted: #64748b;
             --bg-color: #f8fafc;
@@ -44,18 +44,18 @@ layout: null
             line-height: 1.6;
         }
 
-        /* Animações */
+        /* Animações Suaves */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
 
-        /* Botões Personalizados */
+        /* Botões Modernos */
         .btn-elo {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             padding: 16px 32px;
             border-radius: 12px;
             font-weight: 800;
@@ -65,94 +65,136 @@ layout: null
             border: none;
             cursor: pointer;
         }
-        .btn-elo-primary { background: var(--elo-accent); color: white; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2); }
-        .btn-elo-primary:hover { background: #3730a3; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4); color: white;}
+        .btn-elo-primary { background: var(--elo-accent); color: white; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
+        .btn-elo-primary:hover { background: #3730a3; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(79, 70, 229, 0.5); color: white;}
         
         .btn-elo-outline { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);}
-        .btn-elo-outline:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: white;}
+        .btn-elo-outline:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); color: white;}
 
-        .btn-elo-white { background: white; color: var(--elo-primary); }
-        .btn-elo-white:hover { background: #f8fafc; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+        .btn-elo-white { background: white; color: var(--elo-primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .btn-elo-white:hover { background: #f8fafc; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); }
 
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero-elo { 
-            background: linear-gradient(135deg, var(--elo-primary) 0%, #312e81 100%); 
+            background: linear-gradient(135deg, #111827 0%, var(--elo-primary) 100%); 
             color: white; 
-            padding: 100px 5% 120px; 
+            padding: 100px 5% 160px; 
             position: relative;
             overflow: hidden;
             border-bottom: 4px solid var(--elo-accent);
         }
+        
+        /* Efeito de Brilho no Fundo */
         .hero-elo::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.3) 0%, transparent 50%);
-            pointer-events: none;
+            content: ''; position: absolute; top: -20%; left: -10%; width: 60%; height: 60%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.25) 0%, transparent 70%);
+            pointer-events: none; filter: blur(40px);
         }
 
-        .hero-split { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2;}
+        .hero-split { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 60px; 
+            align-items: center; 
+            position: relative; 
+            z-index: 2;
+        }
         
-        .elo-logo-img { height: 50px; width: auto; margin-bottom: 30px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+        /* Bloco de Logo Estilo App (A grande mudança visual) */
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .app-big-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
         
         .elo-badge {
             background: rgba(79, 70, 229, 0.2); color: #a5b4fc; border: 1px solid rgba(79, 70, 229, 0.4);
             padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 20px;
+            text-transform: uppercase; letter-spacing: 1px; display: inline-block;
         }
 
-        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px; }
-        .hero-text h1 span { color: #818cf8; }
-        .hero-text p { font-size: 1.15rem; margin-bottom: 40px; color: #c7d2fe; line-height: 1.7; max-width: 600px;}
+        .hero-text h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1.5px; }
+        .hero-text h1 span { color: #818cf8; display: block; }
+        .hero-text p { font-size: 1.15rem; margin-bottom: 40px; color: #cbd5e1; line-height: 1.7; max-width: 550px;}
         .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
         
-        /* Stats Section */
+        /* --- ESTATÍSTICAS (Sem sobreposição quebrada) --- */
         .stats-section { 
-            display: flex; justify-content: center; gap: 80px; padding: 50px 5%; 
-            background: white; flex-wrap: wrap; box-shadow: var(--shadow-sm); 
-            position: relative; z-index: 10; max-width: 1000px; margin: -50px auto 0; border-radius: 24px;
-            border: 1px solid var(--border-color);
+            display: flex; justify-content: center; gap: 60px; padding: 40px 5%; 
+            background: white; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+            position: relative; z-index: 10; max-width: 1000px; 
+            margin: -70px auto 80px auto; /* Margin bottom garante que não encavale com o conteúdo abaixo */
+            border-radius: 24px; border: 1px solid var(--border-color);
         }
-        .stat-item { text-align: center; }
-        .stat-item h2 { font-size: 3rem; color: var(--elo-primary); margin: 0 0 5px 0; line-height: 1; font-weight: 900; letter-spacing: -1px;}
+        .stat-item { text-align: center; flex: 1; min-width: 200px;}
+        .stat-item h2 { font-size: 3.5rem; color: var(--elo-primary); margin: 0 0 5px 0; line-height: 1; font-weight: 900; letter-spacing: -2px;}
         .stat-item p { color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin:0;}
 
-        /* Showcase */
-        .showcase { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        /* --- SHOWCASE SECTION --- */
+        .showcase { padding: 40px 5% 100px; max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; color: var(--elo-primary); letter-spacing: -1px;}
-        .section-header p { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+        .section-header h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; color: var(--elo-primary); letter-spacing: -1px;}
+        .section-header p { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.6;}
 
-        .showcase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; }
+        .showcase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; }
         .showcase-row.reverse { grid-template-columns: 1fr 1fr; direction: rtl; }
         .showcase-row.reverse > * { direction: ltr; }
         
         .showcase-text h3 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; color: var(--elo-primary); display: flex; align-items: center; gap: 15px; letter-spacing: -0.5px;}
         .showcase-text h3 i { background: #e0e7ff; color: var(--elo-accent); padding: 15px; border-radius: 16px; }
-        .showcase-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+        .showcase-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
+        
         .showcase-text ul { list-style: none; padding: 0; margin-bottom: 30px; }
-        .showcase-text ul li { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-weight: 600; color: var(--text-main); font-size: 1.05rem;}
-        .showcase-text ul li i { color: var(--elo-accent); font-size: 1.4rem; }
+        .showcase-text ul li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-weight: 600; color: var(--text-main); font-size: 1.05rem; line-height: 1.4;}
+        .showcase-text ul li i { color: var(--elo-accent); font-size: 1.5rem; margin-top: 2px;}
 
         /* SVGs */
-        .svg-container { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid var(--border-color); text-align: center; position: relative;}
-        .svg-container svg { max-width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.05)); transition: transform 0.3s ease; }
+        .svg-container { background: white; padding: 40px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); border: 1px solid var(--border-color); text-align: center; position: relative;}
+        .svg-container svg { max-width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.05)); transition: transform 0.4s ease; }
         .svg-container:hover svg { transform: translateY(-10px); }
 
         /* Impact Box */
-        .impact-box { background: linear-gradient(135deg, #eef2ff 0%, white 100%); border: 1px solid #c7d2fe; padding: 30px; border-radius: var(--radius-lg); margin-top: 20px; border-left: 4px solid var(--elo-accent);}
+        .impact-box { background: linear-gradient(135deg, #eef2ff 0%, white 100%); border: 1px solid #c7d2fe; padding: 30px; border-radius: 20px; margin-top: 20px; border-left: 5px solid var(--elo-accent); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.05);}
         .impact-box h4 { color: var(--elo-accent); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 800;}
         .impact-box p { font-size: 1rem; color: var(--text-main); margin-bottom: 0; line-height: 1.6;}
 
-        /* CTA Section */
+        /* --- CTA SECTION --- */
         .cta-section { background: var(--elo-primary); color: white; padding: 100px 5%; text-align: center; border-top: 4px solid var(--elo-accent);}
-        .cta-section h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; color: white; letter-spacing:-1px;}
+        .cta-section h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; color: white; letter-spacing:-1px;}
         .cta-section p { color: #c7d2fe; font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px; line-height: 1.6;}
 
-        @media (max-width: 900px) {
-            .hero-split, .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .hero-split, .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+            .app-branding { align-items: center; }
             .showcase-text h3 { justify-content: center; }
-            .showcase-text ul li { justify-content: center; }
+            .showcase-text ul li { text-align: left; }
             .hero-buttons { justify-content: center; }
-            .stats-section { margin-top: 0; border-radius: 0; box-shadow: none; border-left: none; border-right: none; gap: 40px;}
+            .stats-section { margin: -30px 20px 60px 20px; padding: 30px 20px; gap: 30px; border-radius: 20px;}
+            .impact-box { text-align: left; }
+            .svg-container { padding: 20px; border-radius: 20px; }
         }
     </style>
 </head>
@@ -163,11 +205,17 @@ layout: null
     <header class="hero-elo">
         <div class="hero-split">
             <div class="hero-text fade-up">
-                <img src="{{ '/img/eloeleitoral.png' | relative_url }}" alt="EloEleitoral Logo" class="elo-logo-img" onerror="this.style.display='none'">
                 
-                <div class="elo-badge">CRM Governamental B2B</div>
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <img src="img/eloeleitoral.png" alt="EloEleitoral Logo" onerror="this.style.display='none'">
+                    </div>
+                    <div class="elo-badge">CRM Governamental B2B</div>
+                </div>
+                
                 <h1>Política baseada em <span>dados reais.</span></h1>
                 <p>Uma plataforma inteligente para captar demandas da cidade, classificar prioridades com IA e fornecer um painel de gestão para seu gabinete tomar decisões e prestar contas.</p>
+                
                 <div class="hero-buttons fade-up delay-1">
                     <a href="https://renato0503.github.io/plataformapolitico/painel.html" target="_blank" class="btn-elo btn-elo-primary">
                         <i class="ph ph-chart-line-up" style="font-size: 1.4rem;"></i> Painel Gerencial
@@ -317,7 +365,7 @@ layout: null
         <div class="fade-up">
             <h2>Pronto para profissionalizar seu mandato?</h2>
             <p>Acesse as áreas interativas agora mesmo para testar o fluxo completo de captação e gestão de demandas.</p>
-            <div class="hero-buttons" style="justify-content: center; margin-top: 20px;">
+            <div class="hero-buttons" style="justify-content: center; margin-top: 30px;">
                 <a href="https://renato0503.github.io/plataformapolitico/dialogo.html" target="_blank" class="btn-elo btn-elo-white">
                     <i class="ph ph-device-mobile" style="font-size: 1.4rem;"></i> Simular como Eleitor
                 </a>
