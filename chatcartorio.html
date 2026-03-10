@@ -6,8 +6,8 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartór.IO | Inteligência e Governança para Serventias</title>
-    <meta name="description" content="A plataforma SaaS definitiva para cartórios modernos. CRM, IA Notarial, OCR e automação de emolumentos.">
+    <title>Cartór.IO | Atendimento Digital para Cartórios</title>
+    <meta name="description" content="A plataforma B2B definitiva para serventias. CRM, IA para triagem, automação de pagamentos e gestão de documentos em um só lugar.">
     
     <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
@@ -23,7 +23,6 @@ layout: null
         :root {
             --primary: #10b981;
             --primary-dark: #059669;
-            --primary-light: #34d399;
             --bg-dark: #0f172a;
             --bg-card: #f8fafc;
             --text-main: #334155;
@@ -34,10 +33,12 @@ layout: null
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
+            /* Espaçamento para o seu header global da Cerrado Tech */
             padding-top: 80px; 
             background-color: #f8fafc;
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -47,10 +48,6 @@ layout: null
         .fade-up.visible { opacity: 1; transform: translateY(0); }
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
-
-        /* --- LOGO ESTILO --- */
-        .logo-img { height: 45px; width: auto; transition: transform 0.3s ease; }
-        .logo-img:hover { transform: scale(1.05); }
 
         /* --- HERO SECTION --- */
         .cc-hero {
@@ -66,7 +63,7 @@ layout: null
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
         }
 
@@ -74,138 +71,162 @@ layout: null
         @media (max-width: 992px) { .cc-hero-grid { flex-direction: column; text-align: center; } }
 
         .cc-text { flex: 1.2; }
-        .cc-badge { background: rgba(16, 185, 129, 0.2); color: var(--primary-light); border: 1px solid rgba(16, 185, 129, 0.4); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 20px; }
-        .cc-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
-        .cc-text h1 span { color: var(--primary-light); }
-        .cc-text p { font-size: 1.25rem; color: #d1fae5; margin-bottom: 40px; line-height: 1.6; max-width: 650px; }
+        
+        /* Estilo da Logo Destacada no Banner */
+        .hero-logo {
+            max-width: 240px;
+            height: auto;
+            margin-bottom: 25px;
+            display: block;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+        .hero-logo:hover { transform: scale(1.02); }
+        @media (max-width: 992px) { .hero-logo { margin: 0 auto 25px auto; } }
 
-        .btn-wpp { background: #25D366; color: #fff !important; padding: 18px 36px; border-radius: 14px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); border: none; cursor: pointer; }
-        .btn-wpp:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4); }
+        .cc-badge { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 20px; }
+        .cc-text h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cc-text p { font-size: 1.15rem; color: #a7f3d0; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-wpp { background: #25D366; color: #fff; padding: 16px 32px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); border: none; cursor: pointer; }
+        .btn-wpp:hover { background: #1eb954; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4); color: #fff; }
 
         /* Mockup do Celular */
         .cc-visual { flex: 0.8; display: flex; justify-content: center; position: relative; }
-        .phone-mockup { width: 300px; height: 610px; background: #111b21; border-radius: 45px; border: 12px solid #0f172a; box-shadow: 0 30px 60px -12px rgba(0,0,0,0.7); position: relative; overflow: hidden; display: flex; flex-direction: column; transform: rotate(3deg); transition: transform 0.6s ease; }
-        .phone-mockup:hover { transform: rotate(0deg) scale(1.02); }
+        .phone-mockup { width: 300px; height: 600px; background: #111b21; border-radius: 40px; border: 12px solid #0f172a; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), inset 0 0 0 2px #334155; position: relative; overflow: hidden; display: flex; flex-direction: column; transform: rotate(4deg); transition: transform 0.5s ease; }
+        .phone-mockup:hover { transform: rotate(0deg) scale(1.03); }
         .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #0f172a; border-radius: 0 0 15px 15px; z-index: 10; }
-        
         .phone-header { background: #1f2c33; padding: 35px 15px 15px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #2a3a43; }
-        .ph-avatar-logo { width: 40px; height: 40px; background: #fff; border-radius: 50%; padding: 4px; object-fit: contain; }
-        .ph-info h4 { margin: 0; color: #fff; font-size: 0.95rem; }
-        .ph-info p { margin: 0; color: #34d399; font-size: 0.7rem; font-weight: 600; }
-
-        .phone-chat { flex: 1; padding: 15px; background: #0b141a; display: flex; flex-direction: column; gap: 12px; }
-        .msg-bubble { max-width: 85%; padding: 12px 16px; border-radius: 15px; font-size: 0.85rem; line-height: 1.4; position: relative; }
+        .ph-avatar { width: 40px; height: 40px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 5px; box-sizing: border-box; }
+        .ph-avatar img { max-width: 100%; height: auto; }
+        .ph-info h4 { margin: 0; color: #fff; font-size: 1rem; }
+        .ph-info p { margin: 0; color: #8696a0; font-size: 0.75rem; }
+        .phone-chat { flex: 1; padding: 15px; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") #0b141a; display: flex; flex-direction: column; gap: 10px; }
+        .msg-bubble { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 0.85rem; line-height: 1.4; position: relative; }
         .msg-them { background: #202c33; color: #e9edef; align-self: flex-start; border-top-left-radius: 2px; }
         .msg-me { background: #005c4b; color: #e9edef; align-self: flex-end; border-top-right-radius: 2px; }
         
-        /* Floating Badges */
-        .float-badge { position: absolute; background: #fff; color: #0f172a; padding: 12px 18px; border-radius: 14px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 15px 35px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 10px; z-index: 20; border-left: 4px solid var(--primary); }
-        .fb-1 { top: 15%; left: -40px; }
-        .fb-2 { bottom: 15%; right: -30px; }
-        .fb-icon { color: var(--primary); display: grid; place-items: center; }
+        /* Floating Badges no Hero */
+        .float-badge { position: absolute; background: #fff; color: #0f172a; padding: 10px 15px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 8px; z-index: 20; }
+        .fb-1 { top: 15%; left: -30px; transform: rotate(-5deg); animation: float 6s ease-in-out infinite; }
+        .fb-2 { bottom: 20%; right: -20px; transform: rotate(5deg); animation: float 6s ease-in-out infinite reverse; }
+        .fb-icon { background: #dcfce7; color: #059669; padding: 5px; border-radius: 50%; display: grid; place-items: center; }
+        @keyframes float { 0% { transform: translateY(0) rotate(var(--r)); } 50% { transform: translateY(-15px) rotate(var(--r)); } 100% { transform: translateY(0) rotate(var(--r)); } }
 
-        /* --- JORNADA --- */
+        /* --- JORNADA DO CLIENTE --- */
         .journey-section { padding: 100px 0; background: #fff; }
-        .sec-title { text-align: center; margin-bottom: 70px; }
-        .sec-title h2 { font-size: 2.8rem; font-weight: 900; color: #0f172a; margin-bottom: 20px; letter-spacing: -1px;}
-        .sec-title p { font-size: 1.2rem; color: var(--text-light); max-width: 750px; margin: 0 auto;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #0f172a; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: var(--text-light); max-width: 700px; margin: 0 auto;}
 
-        .journey-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 25px; position: relative; }
+        .journey-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; position: relative; }
         @media (max-width: 992px) { .journey-grid { grid-template-columns: 1fr; gap: 40px; } }
         
         .j-step { text-align: center; position: relative; z-index: 2; }
-        .j-icon { width: 80px; height: 80px; background: #fff; border: 4px solid #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: var(--primary-dark); font-size: 1.8rem; font-weight: 900; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; }
-        .j-step:hover .j-icon { border-color: var(--primary); transform: scale(1.1); color: var(--primary); }
-        .j-step h4 { font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 12px; }
-        .j-step p { font-size: 0.95rem; color: var(--text-light); }
+        @media (max-width: 992px) { .j-step { text-align: left; display: flex; align-items: flex-start; gap: 20px; } }
         
-        .j-line { position: absolute; top: 40px; left: 10%; right: 10%; height: 4px; background: #f1f5f9; z-index: 1; }
+        .j-icon { width: 70px; height: 70px; background: #fff; border: 3px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary-dark); font-size: 1.5rem; font-weight: 800; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.15); }
+        .j-step h4 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
+        .j-step p { font-size: 0.9rem; color: var(--text-light); line-height: 1.5; }
+        
+        .j-line { position: absolute; top: 35px; left: 10%; right: 10%; height: 3px; background: #e2e8f0; z-index: 1; }
+        .j-line-fill { width: 100%; height: 100%; background: var(--primary); }
+        @media (max-width: 992px) { .j-line { display: none; } }
 
-        /* --- FEATURES --- */
-        .features-section { padding: 100px 0; background: #f1f5f9; }
-        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .f-card { background: #fff; border: 1px solid #e2e8f0; padding: 45px; border-radius: 28px; transition: all 0.4s ease; }
-        .f-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--primary-light); }
-        .fc-icon { width: 64px; height: 64px; background: #dcfce7; color: #059669; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; }
-        .f-card h3 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 18px;}
+        /* --- FEATURES SECTION --- */
+        .features-section { padding: 80px 0; background: #f1f5f9; border-top: 1px solid #e2e8f0; }
+        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .f-card { background: #fff; border: 1px solid #e2e8f0; padding: 40px; border-radius: 24px; transition: 0.3s; }
+        .f-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .fc-icon { width: 60px; height: 60px; background: #dcfce7; color: #059669; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .fc-icon svg { width: 30px; height: 30px; }
+        .f-card h3 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 15px;}
+        .f-card p { font-size: 1rem; color: var(--text-light); line-height: 1.6; margin: 0;}
 
-        /* --- CRM SECTION --- */
-        .crm-section { padding: 120px 0; background: #fff; }
-        .crm-wrapper { background: #fff; border-radius: 24px; box-shadow: 0 40px 80px -15px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; overflow: hidden; }
-        .crm-header { background: #0f172a; padding: 25px 35px; color: #fff; display: flex; justify-content: space-between; align-items: center; }
-        .mock-table { width: 100%; border-collapse: collapse; }
-        .mock-table th { background: #f8fafc; padding: 20px 30px; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; }
-        .mock-table td { padding: 20px 30px; border-bottom: 1px solid #f1f5f9; font-weight: 500; }
-        .status-badge { padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; }
-        .sb-green { background: #dcfce7; color: #166534; }
-        .sb-yellow { background: #fef9c3; color: #854d0e; }
+        /* --- CRM / MOCKUP SECTION --- */
+        .crm-section { padding: 100px 0; background: #fff; }
+        .crm-wrapper { background: #fff; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; }
+        
+        .crm-header { background: #0f172a; padding: 20px 30px; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+        .crm-header h3 { margin: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        
+        .mock-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+        .mock-table th { background: #f8fafc; padding: 15px 30px; color: #475569; font-weight: 700; border-bottom: 2px solid #e2e8f0; }
+        .mock-table td { padding: 15px 30px; border-bottom: 1px solid #f1f5f9; color: var(--text-main); font-weight: 500;}
+        .mock-table tr:hover td { background: #f8fafc; }
+        .status-badge { padding: 6px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 700;}
+        .sb-green { background: #dcfce7; color: #059669; }
+        .sb-yellow { background: #fef08a; color: #854d0e; }
+        .sb-blue { background: #dbeafe; color: #0284c7; }
+
+        @media (max-width: 768px) {
+            .mock-table { display: block; overflow-x: auto; white-space: nowrap; }
+            .crm-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
 
         /* --- CTA --- */
-        .cta-bottom { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 120px 0; text-align: center; color: #fff;}
-        .cta-bottom h2 { font-size: 3rem; font-weight: 900; margin-bottom: 25px; letter-spacing: -1px;}
+        .cta-bottom { background: #0f172a; padding: 100px 0; text-align: center; color: #fff;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
+        .cta-bottom p { font-size: 1.15rem; color: #94a3b8; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;}
     </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-        <img src="{{ '/img/cartorio.png' | relative_url }}" alt="Cartór.IO" class="logo-img">
-        <nav>
-            <a href="#solucoes" style="margin-right: 25px; text-decoration: none; color: var(--text-main); font-weight: 600;">Soluções</a>
-            <a href="https://renato0503.github.io/ChatBotCartorio/" target="_blank" class="btn-wpp" style="padding: 10px 20px; font-size: 0.9rem;">Demonstração</a>
-        </nav>
-    </div>
-</header>
+{% include header.html titulo="Cerrado Tech" %}
 
 <section class="cc-hero">
     <div class="container">
         <div class="cc-hero-grid">
             
             <div class="cc-text fade-up">
-                <div class="cc-badge">O Futuro das Serventias Extrajudiciais</div>
-                <h1>A Plataforma de Gestão <span>Fígital</span> do seu Cartório.</h1>
-                <p>Integre o WhatsApp ao seu Backoffice. Triagem com Inteligência Artificial, validação de documentos via OCR e liquidação financeira automática em um único ecossistema.</p>
+                
+                <img src="{{ '/img/cartorio.png' | relative_url }}" alt="Logo Cartór.IO" class="hero-logo">
+
+                <div class="cc-badge">SaaS B2B para Serventias</div>
+                <h1>A Plataforma Definitiva de Atendimento Digital.</h1>
+                <p>Do primeiro "Olá" no WhatsApp à assinatura da escritura. Automatize a triagem com Inteligência Artificial, gerencie chamados no CRM, valide documentos via OCR e receba via Pix automaticamente.</p>
                 
                 <div class="btn-group fade-up delay-1">
-                    <a href="https://renato0503.github.io/ChatBotCartorio/" target="_blank" class="btn-wpp">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                        Testar Atendimento Inteligente
+                    <a href="#testar" class="btn-wpp">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        Testar o Bot Interativo
                     </a>
                 </div>
             </div>
 
             <div class="cc-visual fade-up delay-2">
-                <div class="float-badge fb-1">
-                    <div class="fb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                    <span>Emolumentos Pagos (Pix)</span>
+                <div class="float-badge fb-1" style="--r: -5deg;">
+                    <div class="fb-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    Pagamento Pix Confirmado
                 </div>
-                <div class="float-badge fb-2">
-                    <div class="fb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg></div>
-                    <span>Dados Extraídos via OCR</span>
+                <div class="float-badge fb-2" style="--r: 5deg;">
+                    <div class="fb-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+                    RG Validado por OCR
                 </div>
 
                 <div class="phone-mockup">
                     <div class="phone-notch"></div>
                     <div class="phone-header">
-                        <img src="{{ '/img/cartorio.png' | relative_url }}" class="ph-avatar-logo" alt="Logo">
+                        <div class="ph-avatar">
+                            <img src="{{ '/img/cartorio.png' | relative_url }}" alt="Cartór.IO" />
+                        </div>
                         <div class="ph-info">
-                            <h4>Cartór.IO Notarial</h4>
-                            <p>● Online agora</p>
+                            <h4>Cartór.IO Oficial</h4>
+                            <p>Número verificado ✓</p>
                         </div>
                     </div>
                     <div class="phone-chat">
-                        <div class="msg-bubble msg-me">Quais os documentos para uma Escritura de Compra e Venda?</div>
-                        <div class="msg-them">
-                            Olá! Com base no <b>Provimento 149 do CNJ</b>, você precisará de:<br><br>
-                            1. Matrícula Atualizada<br>
-                            2. Certidões Negativas<br>
-                            3. Guia de ITBI paga<br><br>
-                            Deseja que eu analise suas fotos agora?
+                        <div class="msg-bubble msg-me">Preciso de uma procuração para venda de imóvel.</div>
+                        <div class="msg-bubble msg-them">
+                            Ótimo! Para a <b>Procuração Pública</b>, o valor estimado é R$ 120,00.<br><br>
+                            Por favor, envie uma foto nítida do seu RG ou CNH para iniciarmos a triagem.
                         </div>
-                        <div class="msg-bubble msg-me">Sim, seguem as fotos...</div>
-                        <div class="msg-them">
-                            <b>Análise Concluída!</b> ✔️<br>
-                            Identificamos o imóvel na Rua das Flores e o comprador João Silva. Deseja gerar o boleto de custas?
+                        <div class="msg-bubble msg-me">📷 [Foto CNH anexada]</div>
+                        <div class="msg-bubble msg-them">
+                            Documento lido com sucesso (OCR)! ✔️<br>
+                            Nome: João da Silva<br>
+                            CPF: ***.456.789-**<br><br>
+                            Seu protocolo <b>#ATD-9012</b> foi criado. Realize o pagamento pelo Pix abaixo para o escrevente assumir o caso.
                         </div>
                     </div>
                 </div>
@@ -215,40 +236,40 @@ layout: null
     </div>
 </section>
 
-<section class="journey-section" id="solucoes">
+<section class="journey-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>Governança de Ponta a Ponta</h2>
-            <p>Sua serventia escalável: reduza o custo operacional e aumente a produtividade da sua equipe de escreventes.</p>
+            <h2>A Jornada do Cartório 100% Digital</h2>
+            <p>O fluxo perfeito que reduz filas físicas e zera o congestionamento no WhatsApp da sua serventia.</p>
         </div>
 
         <div class="journey-grid fade-up delay-1">
-            <div class="j-line"></div>
+            <div class="j-line"><div class="j-line-fill"></div></div>
             
             <div class="j-step">
                 <div class="j-icon">1</div>
-                <h4>Captura Ágil</h4>
-                <p>O cidadão inicia o serviço pelo WhatsApp de forma autônoma e guiada.</p>
+                <h4>Contato Inicial</h4>
+                <p>O cidadão chama no número oficial. A IA entende a demanda em linguagem natural.</p>
             </div>
             <div class="j-step">
                 <div class="j-icon">2</div>
-                <h4>Triagem IA</h4>
-                <p>Nossa IA jurídica valida a demanda e faz o checklist documental automaticamente.</p>
+                <h4>Triagem & OCR</h4>
+                <p>Envio de documentos via chat. O sistema extrai dados e verifica a validade na hora.</p>
             </div>
             <div class="j-step">
                 <div class="j-icon">3</div>
-                <h4>Liquidação</h4>
-                <p>Cálculo de custas e emissão de Pix Copia e Cola com baixa imediata.</p>
+                <h4>Cobrança Pix</h4>
+                <p>Orçamento gerado pela tabela de emolumentos e cobrança via API bancária automática.</p>
             </div>
             <div class="j-step">
                 <div class="j-icon">4</div>
-                <h4>Gestão CRM</h4>
-                <p>O escrevente assume apenas casos prontos para a lavratura do ato.</p>
+                <h4>Painel CRM</h4>
+                <p>O escrevente recebe o chamado pronto no painel web, já pago e com docs validados.</p>
             </div>
             <div class="j-step">
                 <div class="j-icon">5</div>
-                <h4>Fé Pública</h4>
-                <p>Finalização por videoconferência ou agendamento físico otimizado.</p>
+                <h4>Videoconferência</h4>
+                <p>Agendamento e realização da chamada de vídeo gravada com validade jurídica.</p>
             </div>
         </div>
     </div>
@@ -256,29 +277,34 @@ layout: null
 
 <section class="features-section">
     <div class="container">
-        <div class="f-grid">
-            <div class="f-card fade-up">
+        <div class="sec-title fade-up">
+            <h2>Por que evoluir para nossa Plataforma?</h2>
+            <p>Mais do que um chatbot, um ecossistema completo para a gestão operacional extrajudicial.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+            <div class="f-card">
                 <div class="fc-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M21.18 8.02c-1-2.3-2.85-4.17-5.16-5.18"></path></svg>
                 </div>
-                <h3>Inteligência Notarial</h3>
-                <p>Treinada com Provimentos e o Código de Normas. Respostas seguras e precisas para o cidadão 24/7.</p>
+                <h3>Inteligência Artificial (RAG)</h3>
+                <p>Consultas baseadas nos Provimentos da CGJ. A IA tira dúvidas jurídicas complexas do cidadão gerando checklists precisos sem erro humano.</p>
             </div>
 
-            <div class="f-card fade-up delay-1">
+            <div class="f-card">
                 <div class="fc-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
-                <h3>Backoffice de Elite</h3>
-                <p>Abandone o WhatsApp Web. Tenha um CRM desenhado para o fluxo de um cartório real.</p>
+                <h3>Fila de Chamados (CRM)</h3>
+                <p>Caixa de entrada compartilhada. Distribua protocolos entre escreventes, adicione notas internas e acompanhe o SLA de cada atendimento.</p>
             </div>
 
-            <div class="f-card fade-up delay-2">
+            <div class="f-card">
                 <div class="fc-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 </div>
-                <h3>Compliance & LGPD</h3>
-                <p>Segurança de dados de nível bancário e conformidade total com as normas da Corregedoria.</p>
+                <h3>Automação de Pagamentos</h3>
+                <p>Integração bancária via API. O sistema emite o Pix, faz a conciliação instantânea e avisa a equipe que o ato já pode ser lavrado.</p>
             </div>
         </div>
     </div>
@@ -287,58 +313,64 @@ layout: null
 <section class="crm-section">
     <div class="container fade-up">
         <div class="sec-title">
-            <h2>Painel de Controle do Escrevente</h2>
-            <p>Visão clara de produtividade e controle de SLA para a diretoria da serventia.</p>
+            <h2>Gestão à Vista (Backoffice)</h2>
+            <p>Seus escreventes não usam WhatsApp Web. Eles usam uma plataforma profissional de controle.</p>
         </div>
 
         <div class="crm-wrapper">
             <div class="crm-header">
-                <h3>Monitor de Protocolos Ativos</h3>
-                <span style="background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">6 Operações em Curso</span>
+                <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Fila de Protocolos - Setor de Notas</h3>
+                <span style="background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">4 Atendimentos Aguardando</span>
             </div>
             
-            <div style="overflow-x: auto;">
-                <table class="mock-table">
-                    <thead>
-                        <tr>
-                            <th>Protocolo</th>
-                            <th>Requerente</th>
-                            <th>Ato Notarial</th>
-                            <th>Documentação</th>
-                            <th>Financeiro</th>
-                            <th>SLA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><b>#NOT-2024</b></td>
-                            <td>Ricardo Oliveira</td>
-                            <td>Procuração</td>
-                            <td><span class="status-badge sb-green">Validado OCR</span></td>
-                            <td><span class="status-badge sb-green">Pago (Pix)</span></td>
-                            <td><span style="color: var(--primary-dark)">● No prazo</span></td>
-                        </tr>
-                        <tr>
-                            <td><b>#ESC-5091</b></td>
-                            <td>Helena Soares</td>
-                            <td>Divórcio Consensual</td>
-                            <td><span class="status-badge sb-yellow">Pendente Certidão</span></td>
-                            <td><span class="status-badge sb-yellow">Aguardando</span></td>
-                            <td><span style="color: #eab308">● Atenção</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="mock-table">
+                <thead>
+                    <tr>
+                        <th>Protocolo</th>
+                        <th>Cidadão</th>
+                        <th>Serviço Solicitado</th>
+                        <th>Status Docs (OCR)</th>
+                        <th>Financeiro</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>#ATD-9012</b></td>
+                        <td>João da Silva</td>
+                        <td>Procuração Pública</td>
+                        <td><span class="status-badge sb-green">Validados (100%)</span></td>
+                        <td><span class="status-badge sb-green">Pix Confirmado</span></td>
+                        <td><a href="#" style="color: var(--primary-dark); font-weight: bold; text-decoration: none;">Assumir Chat →</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>#ATD-9013</b></td>
+                        <td>Maria Fernanda</td>
+                        <td>Escritura de Compra e Venda</td>
+                        <td><span class="status-badge sb-yellow">Falta Guia ITBI</span></td>
+                        <td><span class="status-badge sb-yellow">Aguardando Pagto</span></td>
+                        <td><a href="#" style="color: var(--text-light); text-decoration: none;">Ver Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>#ATD-9014</b></td>
+                        <td>Carlos Eduardo</td>
+                        <td>Ata Notarial</td>
+                        <td><span class="status-badge sb-green">Validados (100%)</span></td>
+                        <td><span class="status-badge sb-blue">Orçamento Gerado</span></td>
+                        <td><a href="#" style="color: var(--text-light); text-decoration: none;">Ver Detalhes</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
 <section class="cta-bottom">
     <div class="container fade-up">
-        <h2>Pronto para liderar a transformação digital?</h2>
-        <p>Leve a inteligência do Cartór.IO para a sua serventia e elimine o gargalo do atendimento humano inicial.</p>
-        <a href="https://renato0503.github.io/ChatBotCartorio/" target="_blank" class="btn-wpp" style="padding: 22px 45px; font-size: 1.3rem;">
-            Agendar Demonstração com Cerrado Tech
+        <h2>Transforme o Balcão do seu Cartório.</h2>
+        <p>Acelere a serventia, elimine passivos trabalhistas com documentação física e aumente a conversão de orçamentos com metodologia ágil.</p>
+        <a href="https://renato0503.github.io/ChatBotCartorio/" target="_blank" class="btn-wpp" style="padding: 20px 40px; font-size: 1.2rem;">
+            Falar com um Especialista da CerradoTech
         </a>
     </div>
 </section>
@@ -348,16 +380,19 @@ layout: null
 <script src="{{ '/js/main.js' | relative_url }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
     });
 </script>
 
