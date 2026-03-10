@@ -69,6 +69,33 @@ layout: null
 
         .ldb-text { flex: 1.2; }
         
+        /* Bloco de Logo Estilo App em Destaque */
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.1);
+            padding: 0; 
+            margin-bottom: 20px;
+            border: 1px solid rgba(59,130,246,0.3); /* Borda Azul Suave */
+            overflow: hidden;
+        }
+        .app-big-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .ldb-badge {
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
@@ -80,7 +107,6 @@ layout: null
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 20px;
         }
 
         .ldb-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
@@ -102,6 +128,10 @@ layout: null
             border: none;
         }
         .btn-ldb:hover { background: #059669; color: #fff; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4); }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+        }
 
         /* Mockup do Dashboard */
         .ldb-visual { flex: 0.8; display: flex; justify-content: center; }
@@ -181,7 +211,14 @@ layout: null
         <div class="ldb-hero-grid">
             
             <div class="ldb-text fade-up">
-                <div class="ldb-badge">Consultoria Fiscal & IA</div>
+                
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <img src="img/leidobem.png" alt="Lei do Bem Logo" onerror="this.style.display='none'">
+                    </div>
+                    <div class="ldb-badge">Consultoria Fiscal & IA</div>
+                </div>
+
                 <h1>Diagnóstico de Aderência à Lei do Bem.</h1>
                 <p>Descubra se a sua empresa é elegível aos incentivos fiscais de inovação. Nossa plataforma utiliza Inteligência Artificial para analisar o seu projeto e calcular o potencial de retorno tributário de forma instantânea.</p>
                 
