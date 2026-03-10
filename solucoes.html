@@ -129,9 +129,10 @@ layout: null
       .app-icon-box {
           width: 80px; height: 80px; background: #ffffff; border-radius: 22px; 
           box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04);
-          display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden;
+          display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; position: relative;
       }
-      .app-icon-box img { width: 100%; height: 100%; object-fit: cover; }
+      .app-icon-box svg.logo-svg { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; padding: 15px; }
+      .app-icon-box img.logo-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 2; border-radius: 22px; }
 
       .card-header-text { display: flex; flex-direction: column; margin-bottom: 15px;}
       .card-header-text span { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px; }
@@ -262,91 +263,107 @@ layout: null
           <div class="carousel-track" id="govTrack">
               
               <div class="plat-card theme-govdash">
-                  <div class="app-icon-box" style="background: #0f172a; color: #0284c7;"><img src="img/govdash.png" alt="GovDash" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>GD</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #0284c7;">
+                      <img src="img/govdash.png" alt="GovDash" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>GD</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Inteligência de Dados</span>
                       <h3>Cerrado GovDash</h3>
                   </div>
                   <p class="plat-desc">O "Cockpit" do prefeito. Transforma dados em painéis de decisão em tempo real, alertando sobre limites da LRF (54%), saúde e obras.</p>
                   <div class="card-tags"><span>Termômetro LRF</span><span>Painel Executivo</span></div>
-                  <a href="/govdash.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/govdash/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-mobility">
-                  <div class="app-icon-box" style="background: #0f172a; color: #2563eb;"><img src="img/mobility.png" alt="Mobility" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>CM</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #2563eb;">
+                      <img src="img/mobility.png" alt="Mobility" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>CM</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Frotas e Telemetria</span>
                       <h3>Cerrado Mobility</h3>
                   </div>
                   <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, controle antifraude de combustível e automação de multas e rotas.</p>
                   <div class="card-tags"><span>App Mobile</span><span>Cálculo km/L</span></div>
-                  <a href="/mobility.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/mobility/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-edu">
-                  <div class="app-icon-box" style="background: #0f172a; color: #4f46e5;"><img src="img/edu.png" alt="Edu" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>ED</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #4f46e5;">
+                      <img src="img/edu.png" alt="Edu" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>ED</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Gestão Educacional</span>
                       <h3>Cerrado Edu</h3>
                   </div>
                   <p class="plat-desc">Sistema de Gestão Escolar com IA Nativa. Diário eletrônico, controle de merenda PNAE e algoritmos preditivos anti-evasão.</p>
                   <div class="card-tags"><span>Diário Eletrônico</span><span>Merenda PNAE</span></div>
-                  <a href="/edu.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/edu/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-govrh">
-                  <div class="app-icon-box" style="background: #0f172a; color: #0d9488;"><img src="img/rh.png" alt="GovRH" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>RH</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #0d9488;">
+                      <img src="img/rh.png" alt="GovRH" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>RH</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Recursos Humanos</span>
                       <h3>Cerrado GovRH</h3>
                   </div>
                   <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas de vencimento e layouts nativos homologados para o eSocial.</p>
                   <div class="card-tags"><span>Motor No-Code</span><span>eSocial</span></div>
-                  <a href="/govrh.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/govrh/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-prev">
-                  <div class="app-icon-box" style="background: #0f172a; color: #d97706;"><img src="img/prev.png" alt="Prev" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>PR</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #d97706;">
+                      <img src="img/prev.png" alt="Prev" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>PR</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Regime Previdenciário</span>
                       <h3>Cerrado Prev</h3>
                   </div>
                   <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação e portal do segurado online.</p>
                   <div class="card-tags"><span>Concessão Auto</span><span>Integração COMPREV</span></div>
-                  <a href="/prev.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/prev/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-privacy">
-                  <div class="app-icon-box" style="background: #0f172a; color: #0891b2;"><img src="img/privacy.png" alt="Privacy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>LG</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #0891b2;">
+                      <img src="img/privacy.png" alt="Privacy" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>LG</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Compliance LGPD</span>
                       <h3>Cerrado Privacy</h3>
                   </div>
                   <p class="plat-desc">DPO as a Service. Mapeamento de dados via IA, geração de relatórios ROPA/RIPD e plataforma EAD de treinamento.</p>
                   <div class="card-tags"><span>Gerador ROPA</span><span>EAD LGPD</span></div>
-                  <a href="/privacy.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/privacy/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-social">
-                  <div class="app-icon-box" style="background: #0f172a; color: #c026d3;"><img src="img/social.png" alt="Social" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>CS</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #c026d3;">
+                      <img src="img/social.png" alt="Social" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>CS</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Assistência Social</span>
                       <h3>Cerrado Social</h3>
                   </div>
                   <p class="plat-desc">Prontuário Social Eletrônico. Reduz filas com regulação inteligente e cruzamento automático de dados com o CadÚnico.</p>
                   <div class="card-tags"><span>Prontuário Único</span><span>Regulação SUAS</span></div>
-                  <a href="/social.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/social/" class="btn-card-plat">Página do App</a>
               </div>
 
               <div class="plat-card theme-docs">
-                  <div class="app-icon-box" style="background: #0f172a; color: #0284c7;"><img src="img/docs.png" alt="Docs" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>DC</span>'"></div>
+                  <div class="app-icon-box" style="background: #0f172a; color: #0284c7;">
+                      <img src="img/docs.png" alt="Docs" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>DC</span>'">
+                  </div>
                   <div class="card-header-text">
                       <span>Gestão Documental</span>
                       <h3>Cerrado Docs</h3>
                   </div>
                   <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura e motor de IA para "conversar" com PDFs.</p>
                   <div class="card-tags"><span>Chat com PDF (IA)</span><span>Assinatura Digital</span></div>
-                  <a href="/docs.html" class="btn-card-plat">Página do App</a>
+                  <a href="/solucoes/docs/" class="btn-card-plat">Página do App</a>
               </div>
 
           </div>
@@ -374,8 +391,15 @@ layout: null
           <div class="carousel-track" id="b2bTrack">
               
               <div class="plat-card theme-cartorio" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#e2e8f0'">
-                  <div class="app-icon-box" style="background: #022c22; color: #10b981;">
-                      <img src="img/cartorio.png" alt="Carto.IO Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>C.IO</span>'">
+                  <div class="app-icon-box" style="background: #022c22; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#022c22" />
+                          <path d="M30 35h40M30 50h25" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+                          <path d="M70 65l-10-10H30V30h40v35z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round" />
+                          <circle cx="75" cy="75" r="15" fill="#10b981" />
+                          <path d="M70 75h10M75 70v10" stroke="#022c22" stroke-width="3" stroke-linecap="round" />
+                      </svg>
+                      <img src="img/cartorio.png" alt="Cartor.IO Logo" class="logo-img" onerror="this.style.display='none'">
                   </div>
                   <div class="card-header-text">
                       <span>Automação & IA</span>
@@ -391,8 +415,17 @@ layout: null
               </div>
 
               <div class="plat-card theme-elo" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#4f46e5'" onmouseout="this.style.borderColor='#e2e8f0'">
-                  <div class="app-icon-box" style="background: #1e1b4b; color: #818cf8;">
-                      <img src="img/eloeleitoral.png" alt="EloEleitoral Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>ELO</span>'">
+                  <div class="app-icon-box" style="background: #1e1b4b; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#1e1b4b" />
+                          <path d="M25 35 C25 25, 75 25, 75 35 C75 45, 25 45, 25 35 Z" fill="#4f46e5" opacity="0.8"/>
+                          <path d="M30 43 L25 55 L38 44" fill="#4f46e5" opacity="0.8"/>
+                          <circle cx="40" cy="65" r="6" fill="#818cf8"/>
+                          <circle cx="65" cy="55" r="8" fill="#fff"/>
+                          <circle cx="75" cy="75" r="5" fill="#818cf8"/>
+                          <path d="M40 65 L65 55 L75 75" fill="none" stroke="#818cf8" stroke-width="3"/>
+                      </svg>
+                      <img src="img/eloeleitoral.png" alt="EloEleitoral Logo" class="logo-img" onerror="this.style.display='none'">
                   </div>
                   <div class="card-header-text">
                       <span>Gestão de Mandato</span>
@@ -408,8 +441,15 @@ layout: null
               </div>
 
               <div class="plat-card theme-leidobem" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#3b82f6'" onmouseout="this.style.borderColor='#e2e8f0'">
-                  <div class="app-icon-box" style="background: #1e3a8a; color: #38bdf8;">
-                      <img src="img/leidobem.png" alt="Lei do Bem Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>LB</span>'">
+                  <div class="app-icon-box" style="background: #1e3a8a; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#1e3a8a" />
+                          <path d="M50 25l25 40H25z" fill="#38bdf8" opacity="0.8" />
+                          <path d="M50 20v60M30 40h40M30 60h40" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                          <circle cx="50" cy="50" r="12" fill="#fff" />
+                          <path d="M45 50l3 3 7-7" stroke="#1e3a8a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <img src="img/leidobem.png" alt="Lei do Bem Logo" class="logo-img" onerror="this.style.display='none'">
                   </div>
                   <div class="card-header-text">
                       <span>Consultoria Tributária</span>
@@ -425,8 +465,15 @@ layout: null
               </div>
 
               <div class="plat-card theme-broker" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#ffd60a'" onmouseout="this.style.borderColor='#e2e8f0'">
-                  <div class="app-icon-box" style="background: #000; color: #ffd60a;">
-                      <img src="img/brokerlogistico.png" alt="Broker Logístico Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>BL</span>'">
+                  <div class="app-icon-box" style="background: #000; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#000" />
+                          <path d="M20 40h40v30H20zM60 50h15l5 10v10h-20z" fill="#ffd60a" />
+                          <circle cx="30" cy="75" r="6" fill="#fff" />
+                          <circle cx="70" cy="75" r="6" fill="#fff" />
+                          <path d="M25 50h30M25 60h20" stroke="#000" stroke-width="3" stroke-linecap="round" />
+                      </svg>
+                      <img src="img/brokerlogistico.png" alt="Broker Logístico Logo" class="logo-img" onerror="this.style.display='none'">
                   </div>
                   <div class="card-header-text">
                       <span>Logística & Atacado</span>
@@ -458,6 +505,7 @@ layout: null
   <script src="js/main.js"></script>
 
   <script>
+      // Função para o Carrossel interativo
       function scrollCarousel(trackId, direction) {
           const track = document.getElementById(trackId);
           const scrollAmount = 324 * direction; 
