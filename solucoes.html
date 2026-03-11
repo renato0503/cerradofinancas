@@ -164,17 +164,20 @@ layout: null
       .theme-docs .btn-card-plat:hover { background: #0369a1; color: #fff; }
 
       /* --- CORES DOS BOTÕES B2B --- */
-      .theme-cartorio .btn-card-plat { background: #064e3b; color: #fff; border: none; }
-      .theme-cartorio .btn-card-plat:hover { background: #10b981; }
+      .theme-cartorio .btn-card-plat { background: #064e3b; color: #fff; border: 1px solid #064e3b; }
+      .theme-cartorio .btn-card-plat:hover { background: #10b981; border-color: #10b981; }
       
-      .theme-elo .btn-card-plat { background: #4f46e5; color: #fff; border: none; }
-      .theme-elo .btn-card-plat:hover { background: #3730a3; }
+      .theme-elo .btn-card-plat { background: #4f46e5; color: #fff; border: 1px solid #4f46e5; }
+      .theme-elo .btn-card-plat:hover { background: #3730a3; border-color: #3730a3; }
 
-      .theme-leidobem .btn-card-plat { background: #1e3a8a; color: #fff; border: none; }
-      .theme-leidobem .btn-card-plat:hover { background: #3b82f6; }
+      .theme-leidobem .btn-card-plat { background: #1e3a8a; color: #fff; border: 1px solid #1e3a8a; }
+      .theme-leidobem .btn-card-plat:hover { background: #3b82f6; border-color: #3b82f6; }
 
-      .theme-broker .btn-card-plat { background: #ffd60a; color: #000; border: none; }
-      .theme-broker .btn-card-plat:hover { background: #000; color: #ffd60a; }
+      .theme-broker .btn-card-plat { background: #ffd60a; color: #000; border: 1px solid #ffd60a; }
+      .theme-broker .btn-card-plat:hover { background: #000; color: #ffd60a; border-color: #000; }
+      
+      .theme-cerraflow .btn-card-plat { background: #0ea5e9; color: #fff; border: 1px solid #0ea5e9; }
+      .theme-cerraflow .btn-card-plat:hover { background: #0284c7; border-color: #0284c7; }
 
       .app-icon-text { font-size: 1.5rem; font-weight: 900; line-height: 1; text-align: center; }
 
@@ -389,6 +392,28 @@ layout: null
 
       <div class="carousel-wrapper">
           <div class="carousel-track" id="b2bTrack">
+
+              <div class="plat-card theme-cerraflow" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#0ea5e9'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #0f172a; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#0f172a" />
+                          <circle cx="50" cy="50" r="25" fill="none" stroke="#0ea5e9" stroke-width="4"/>
+                          <path d="M35 50h30M50 35v30" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                      </svg>
+                      <img src="img/cerraflow.png" alt="Cerraflow Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>CRM & Embedded Finance</span>
+                      <h3>Cerraflow</h3>
+                  </div>
+                  <p class="plat-desc">Ecossistema comercial com Esteira de Crédito nativa. Conecte clientes sem capital diretamente a financeiras e resgate vendas perdidas.</p>
+                  <div class="card-tags">
+                      <span>Esteira de Crédito</span>
+                      <span>Kanban de Vendas</span>
+                      <span>PWA</span>
+                  </div>
+                  <a href="/cerraflow.html" class="btn-card-plat">Página do App</a>
+              </div>
               
               <div class="plat-card theme-cartorio" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#e2e8f0'">
                   <div class="app-icon-box" style="background: #022c22; padding: 0;">
