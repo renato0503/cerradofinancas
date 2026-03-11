@@ -1,0 +1,477 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerraPlan 5W2H - Gestão de Conformidade | Cerrado Tech</title>
+    <meta name="description" content="Plataforma corporativa para gestão de Planos de Ação 5W2H. Workflow completo com aprovação de compliance, Kanban e auditoria de evidências.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animações */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* --- HERO SPLIT --- */
+        .cp-hero {
+            display: flex;
+            align-items: stretch;
+            min-height: 80vh;
+            background: #ffffff; 
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #10b981; /* Emerald 500 */
+        }
+
+        .hero-left {
+            flex: 1.2;
+            padding: 100px 5% 100px 10%;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-right {
+            flex: 0.8;
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            position: relative;
+        }
+
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 992px) {
+            .cp-hero { flex-direction: column; }
+            .hero-left { padding: 80px 20px; text-align: center; }
+            .hero-right { padding: 60px 20px; }
+        }
+
+        /* Branding SVG + Tipografia (Sem Imagem) */
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .app-banner-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #0f172a, #022c22);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.4); 
+        }
+        
+        .logo-svg-wrapper {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+        }
+        
+        .app-banner-logo h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            font-family: 'Inter', sans-serif;
+        }
+        .app-banner-logo h2 span {
+            color: #10b981;
+        }
+
+        .cp-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+            .app-banner-logo { flex-direction: column; text-align: center; gap: 10px; padding: 25px 40px;}
+        }
+
+        .hero-left h1 { 
+            font-size: clamp(2.5rem, 4vw, 3.5rem); 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            color: #0f172a; 
+            letter-spacing: -1px; 
+        }
+        .hero-left p { 
+            font-size: 1.15rem; 
+            color: #475569; 
+            margin-bottom: 40px; 
+            line-height: 1.7; 
+            max-width: 600px; 
+        }
+
+        /* Botões */
+        .btn-group-hero {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 992px) { .btn-group-hero { justify-content: center; } }
+
+        .btn-emerald {
+            background: #10b981;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            border: none;
+        }
+        .btn-emerald:hover { background: #059669; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5); }
+
+        .btn-outline {
+            background: transparent;
+            color: #0f172a;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid #cbd5e1;
+        }
+        .btn-outline:hover { background: #f1f5f9; border-color: #94a3b8; transform: translateY(-3px); }
+
+        /* Mockup Compliance Check */
+        .compliance-mockup {
+            width: 100%;
+            max-width: 400px;
+            background: #0f172a;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+            overflow: hidden;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+        }
+        
+        .cm-header { padding: 15px 20px; background: #1e293b; border-bottom: 1px solid #334155; display: flex; align-items: center; justify-content: space-between;}
+        .cm-body { padding: 20px; }
+        
+        .cm-item { display: flex; gap: 15px; margin-bottom: 15px; align-items: center; padding-bottom: 15px; border-bottom: 1px dashed #1e293b;}
+        .cm-icon { width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;}
+        .cm-icon.check { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+        .cm-icon.wait { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        
+        .cm-text h4 { margin: 0 0 5px 0; font-size: 0.95rem; color: #fff;}
+        .cm-text p { margin: 0; font-size: 0.8rem; color: #94a3b8;}
+
+        /* --- THE PROBLEM SECTION --- */
+        .pain-section { padding: 100px 0; background: #f8fafc; color: #0f172a; border-bottom: 1px solid #e2e8f0; }
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; letter-spacing: -1px;}
+        .sec-title p { font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.6;}
+        
+        .pain-section .sec-title h2 { color: #0f172a; }
+        .pain-section .sec-title p { color: #475569; }
+
+        /* --- FEATURES GRID --- */
+        .features-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b;}
+        .features-section .sec-title h2 { color: #fff; }
+        .features-section .sec-title p { color: #94a3b8; }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .tech-card:hover { transform: translateY(-5px); border-color: #10b981; box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);}
+
+        .tc-icon { width: 56px; height: 56px; background: #064e3b; color: #34d399; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 1.8rem; border: 1px solid #047857;}
+        
+        .tech-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .tech-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
+
+        /* --- CORPORATE SOLUTION STRATEGY --- */
+        .wl-section { padding: 80px 0; background: #0b0f19; border-top: 1px solid #1e293b;}
+        .wl-box {
+            display: flex;
+            background: #0f172a;
+            border-radius: 24px;
+            border: 1px solid #334155;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 768px) { .wl-box { flex-direction: column; } }
+        
+        .wl-half { flex: 1; padding: 50px 40px; }
+        .wl-left { border-right: 1px solid #334155; background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.1), transparent 50%); }
+        @media (max-width: 768px) { .wl-left { border-right: none; border-bottom: 1px solid #334155; } }
+        
+        .wl-half h3 { font-size: 1.6rem; color: #fff; font-weight: 800; margin-bottom: 15px;}
+        .wl-half p { color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;}
+
+        /* --- CTA --- */
+        .cta-bottom { background: linear-gradient(135deg, #064e3b 0%, #020617 100%); padding: 100px 0; text-align: center; color: #fff; border-top: 1px solid #10b981;}
+        .cta-bottom h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px;}
+        .cta-bottom p { font-size: 1.2rem; color: #a7f3d0; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto;}
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="cp-hero">
+    <div class="hero-left">
+        <div class="fade-up">
+            <div class="app-branding">
+                <div class="app-banner-logo">
+                    <div class="logo-svg-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                    </div>
+                    <h2>Cerra<span>Plan</span></h2>
+                </div>
+                <div class="cp-badge">Plataforma SaaS Corporativa</div>
+            </div>
+
+            <h1>A execução estratégica da sua empresa, à prova de falhas.</h1>
+            <p>Apontamentos de auditoria não podem morrer numa troca de e-mails. O CerraPlan é o Workflow definitivo para criar, monitorizar e validar Planos de Ação (Metodologia 5W2H) de forma estruturada, com trilha de auditoria e painéis gerenciais nativos.</p>
+            
+            <div class="btn-group-hero fade-up delay-1">
+                <a href="#funcionalidades" class="btn-emerald">
+                    Ver Funcionalidades
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </a>
+                <a href="https://solicitacaoplanodeacao.web.app/" target="_blank" class="btn-outline">
+                    Testar na Prática (Ao Vivo)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="fade-up delay-2">
+            <div class="compliance-mockup">
+                <div class="cm-header">
+                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Plano de Ação #PA-094</span>
+                    <span style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">EM VALIDAÇÃO</span>
+                </div>
+                <div class="cm-body">
+                    <div class="cm-item">
+                        <div class="cm-icon check">✓</div>
+                        <div class="cm-text">
+                            <h4>Matriz 5W2H Preenchida</h4>
+                            <p>Responsável: Área de TI</p>
+                        </div>
+                    </div>
+                    <div class="cm-item">
+                        <div class="cm-icon check">✓</div>
+                        <div class="cm-text">
+                            <h4>Evidência Anexada (PDF)</h4>
+                            <p>Data: Hoje, 14:30</p>
+                        </div>
+                    </div>
+                    <div class="cm-item" style="border: none;">
+                        <div class="cm-icon wait">⌛</div>
+                        <div class="cm-text">
+                            <h4>Validação do Compliance</h4>
+                            <p>Aguardando aprovação final da Diretoria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pain-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>O Problema da "Falsa Execução"</h2>
+            <p>A auditoria aponta o erro. A área promete resolver. O tempo passa, e na auditoria seguinte o erro repete-se. Porque é que os planos de ação falham?</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;" class="fade-up delay-1">
+            <div style="background: #fff; padding: 30px; border-radius: 16px; border-left: 4px solid #ef4444; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; margin-top: 0;">Dispersão de Dados</h4>
+                <p style="color: #475569; font-size: 1rem; margin: 0;">O plano de ação nasce numa reunião, é registado numa folha de cálculo partilhada e o acompanhamento é feito por WhatsApp. Ninguém sabe a versão atual do documento.</p>
+            </div>
+            <div style="background: #fff; padding: 30px; border-radius: 16px; border-left: 4px solid #f59e0b; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; margin-top: 0;">Falta de Evidências</h4>
+                <p style="color: #475569; font-size: 1rem; margin: 0;">O funcionário marca a tarefa como "Concluída", mas não há um repositório centralizado que obrigue o envio do ficheiro ou link comprovativo da resolução.</p>
+            </div>
+            <div style="background: #fff; padding: 30px; border-radius: 16px; border-left: 4px solid #3b82f6; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h4 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; margin-top: 0;">Prazos Fantasmas</h4>
+                <p style="color: #475569; font-size: 1rem; margin: 0;">Sem um Cronograma Visual (Gantt) ou alertas automatizados, as tarefas acumulam-se e a empresa perde certificações por quebra de compliance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>O Workflow Completo e Automatizado</h2>
+            <p>O CerraPlan obriga as equipas a seguirem as regras do jogo. Da abertura do chamado à trilha de auditoria.</p>
+        </div>
+
+        <div class="tech-grid fade-up delay-1">
+            <div class="tech-card">
+                <div class="tc-icon">📋</div>
+                <h3>Metodologia 5W2H Nativa</h3>
+                <p>Formulários estruturados que obrigam as áreas a preencherem o O quê, Por quê, Onde, Quando, Quem, Como e Quanto Custa para cada problema identificado.</p>
+            </div>
+            <div class="tech-card" style="border-color: #10b981;">
+                <div class="tc-icon" style="background: #10b981; color: #fff;">🔒</div>
+                <h3 style="color: #34d399;">Aprovação de Compliance</h3>
+                <p>Nenhuma tarefa é "Concluída" apenas porque a área decidiu. O sistema envia a evidência para a equipa de Auditoria/Direção, que pode <strong>Aceitar</strong> ou <strong>Rejeitar</strong> o trabalho.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tc-icon">📊</div>
+                <h3>Kanban & Gráficos de Gantt</h3>
+                <p>O painel de controle transforma tarefas num Funil Kanban visual (Aguardando, Validação, Execução) e gera automaticamente cronogramas Gantt mensais.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tc-icon">⏳</div>
+                <h3>Controle de Dilatação</h3>
+                <p>Atrasos acontecem. Mas agora eles são documentados. Se uma área não consegue cumprir o prazo, deve solicitar a "Dilatação" com justificação formal via sistema.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tc-icon">📂</div>
+                <h3>Gestão de Evidências (Storage)</h3>
+                <p>Upload direto de PDFs ou Links (Drive/SharePoint) integrados ao chamado. A prova de execução fica eternamente ligada ao histórico do Plano de Ação.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tc-icon">👁️</div>
+                <h3>Trilha de Auditoria Geral</h3>
+                <p>O <em>"Log"</em> imutável. Saiba exatamente qual utilizador (e-mail e perfil) alterou o estado de um plano, aprovou uma evidência ou rejeitou uma tarefa, segundo a segundo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="wl-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2 style="color: #fff;">Arquitetura Escalável</h2>
+            <p style="color: #94a3b8;">Um produto construído para suportar operações corporativas complexas.</p>
+        </div>
+
+        <div class="wl-box fade-up delay-1">
+            <div class="wl-half wl-left">
+                <h3>Desenvolvimento Personalizado</h3>
+                <p>Como uma Fábrica de Software, a Cerrado Tech não vende apenas a licença do produto. Nós parametrizamos o banco de dados, configuramos as hierarquias de utilizadores (Acesso por Área vs. Acesso Admin) e ajustamos as nomenclaturas às necessidades da sua organização.</p>
+            </div>
+            <div class="wl-half">
+                <h3>Segurança Cloud e Governança</h3>
+                <p>Alojado na infraestrutura Google Cloud (Firebase), o CerraPlan garante disponibilidade em tempo real, base de dados NoSQL ultrarrápida e autenticação blindada para que os dados estratégicos da sua empresa nunca vazem.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Controlo absoluto sobre a sua estratégia.</h2>
+        <p>Acabe com os apontamentos ignorados. Implemente o sistema de Gestão 5W2H definitivo na sua empresa.</p>
+        
+        <a href="https://wa.me/5567993515206?text=Ol%C3%A1,%20gostaria%20de%20conhecer%20e%20implementar%20o%20sistema%20CerraPlan%205W2H%20na%20minha%20empresa." target="_blank" class="btn-emerald" style="background: #ffffff; color: #064e3b; padding: 20px 40px; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Agendar Implementação
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>
