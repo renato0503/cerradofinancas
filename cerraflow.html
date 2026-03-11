@@ -205,6 +205,50 @@ layout: null
         .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
         .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
 
+        /* --- STRATEGY SECTION (EMBEDDED FINANCE) --- */
+        .strategy-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b;}
+        
+        .strategy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .strategy-item {
+            display: flex;
+            gap: 25px;
+            background: #0f172a;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid #0ea5e9;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .strategy-item:hover { transform: translateX(10px); border-left-color: #38bdf8; }
+        
+        @media (max-width: 768px) {
+            .strategy-item { flex-direction: column; gap: 15px; }
+        }
+
+        .strategy-icon {
+            flex: 0 0 60px;
+            height: 60px;
+            background: rgba(14, 165, 233, 0.1);
+            color: #38bdf8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+
+        .strategy-text h3 { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 10px 0;}
+        .strategy-text p { font-size: 1.05rem; color: #cbd5e1; margin: 0;}
+        .strategy-text strong { color: #38bdf8; }
+
         /* --- CTA --- */
         .cta-bottom { background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%); padding: 80px 0; text-align: center; color: #fff;}
         .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
@@ -225,7 +269,7 @@ layout: null
                     <div class="app-big-icon">
                         <img src="img/cerraflow.png" alt="Cerraflow Logo" onerror="this.style.display='none'">
                     </div>
-                    <div class="cf-badge">CRM & Financiamento B2B</div>
+                    <div class="cf-badge">CRM & Embedded Finance</div>
                 </div>
 
                 <h1>Onde a venda perdida se torna um contrato assinado.</h1>
@@ -290,7 +334,7 @@ layout: null
     <div class="container">
         <div class="sec-title fade-up">
             <h2>Engenharia Comercial de Ponta</h2>
-            <p>Construído com tecnologia PWA, o Cerraflow roda liso no celular do vendedor no campo, com infraestrutura cloud blindada no Firebase.</p>
+            <p>Construído com tecnologia PWA, o Cerraflow roda liso no telemóvel do vendedor no campo, com infraestrutura cloud blindada.</p>
         </div>
 
         <div class="f-grid fade-up delay-1">
@@ -300,7 +344,7 @@ layout: null
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
                 <h3>CRM Base & Portfólio</h3>
-                <p>Gestão completa da sua carteira de clientes. Cadastre leads, cruze dados de contato e gira o catálogo de produtos e serviços em tempo real.</p>
+                <p>Gestão completa da sua carteira de clientes. Cadastre leads, cruze dados de contacto e faça a gestão do catálogo de produtos e serviços em tempo real.</p>
             </div>
 
             <div class="f-card">
@@ -316,7 +360,7 @@ layout: null
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                 </div>
                 <h3 style="color: #38bdf8;">A Esteira de Crédito</h3>
-                <p>O grande diferencial: o cliente não tem caixa? O orçamento recusado é enviado para um módulo seguro que capta documentos (CNH/RG via Cloud Storage) e integra o perfil via API à instituição financeira parceira.</p>
+                <p>O grande diferencial: o cliente não tem caixa? O orçamento recusado é enviado para um módulo seguro que capta documentos via Cloud Storage e integra o perfil via API à financeira parceira.</p>
             </div>
 
             <div class="f-card">
@@ -324,7 +368,60 @@ layout: null
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                 </div>
                 <h3>Mobile-First & PWA</h3>
-                <p>A ferramenta não prende o vendedor no escritório. Construído como PWA, opera como um app nativo no celular, com carregamento ultrarrápido e arquitetura de dados descentralizada.</p>
+                <p>A ferramenta não prende o vendedor no escritório. Construído como PWA, opera como uma app nativa no telemóvel, com arquitetura de dados descentralizada para uso no terreno.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="strategy-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Muito além de um CRM</h2>
+            <p>Com o motor de <em>Embedded Finance</em> (Finanças Embutidas) do Cerraflow, a sua empresa desbloqueia novas estratégias de tração de vendas e geração de receita.</p>
+        </div>
+
+        <div class="strategy-list fade-up delay-1">
+            
+            <div class="strategy-item">
+                <div class="strategy-icon">💸</div>
+                <div class="strategy-text">
+                    <h3>1. "Fintechização" e Dupla Receita</h3>
+                    <p>Ao originar crédito diretamente pela plataforma, a sua empresa pode atuar como correspondente bancário. <strong>Lucra na venda do seu produto e ganha o "Rebate" (comissão) da financeira</strong> pela aprovação do contrato.</p>
+                </div>
+            </div>
+
+            <div class="strategy-item">
+                <div class="strategy-icon">🎯</div>
+                <div class="strategy-text">
+                    <h3>2. Marketing de Parcela (Ancoragem)</h3>
+                    <p>O "valor total" afasta clientes. Ao utilizar o Cerraflow, o seu marketing muda: em vez de "Serviço por R$ 10.000", anuncie <strong>"O seu projeto a partir de 36x de R$ 380"</strong>. Se o cliente aceitar a parcela, o sistema viabiliza o crédito.</p>
+                </div>
+            </div>
+
+            <div class="strategy-item">
+                <div class="strategy-icon">📈</div>
+                <div class="strategy-text">
+                    <h3>3. Upsell Baseado em Limite Aprovado</h3>
+                    <p>Se o orçamento era de R$ 5.000 e a financeira retornar um pré-aprovado de R$ 8.000, o vendedor recebe um alerta para aplicar <strong>Upsell imediato</strong>, incluindo garantias ou produtos premium na venda.</p>
+                </div>
+            </div>
+
+            <div class="strategy-item">
+                <div class="strategy-icon">♻️</div>
+                <div class="strategy-text">
+                    <h3>4. Reciclagem do "Cemitério de Leads"</h3>
+                    <p>Toda empresa tem centenas de vendas perdidas por "falta de dinheiro". Importe essa base para o Cerraflow e dispare a campanha: <strong>"Agora parcelamos sem entrada via financeira."</strong> Transforme leads antigos em faturamento.</p>
+                </div>
+            </div>
+
+            <div class="strategy-item">
+                <div class="strategy-icon">🚀</div>
+                <div class="strategy-text">
+                    <h3>5. Empoderamento de Vendas Externas</h3>
+                    <p>Contrate representantes de rua e ofereça-lhes a app PWA. O vendedor está na casa do cliente, faz o orçamento e, perante a objeção de preço, tira a foto do RG/CNH na hora. <strong>A venda é aprovada no terreno</strong>, sem dar tempo ao cliente para desistir.</p>
+                </div>
             </div>
 
         </div>
@@ -334,7 +431,7 @@ layout: null
 <section class="cta-bottom">
     <div class="container fade-up">
         <h2>Pare de perder negócios por falta de capital.</h2>
-        <p>Potencialize a conversão da sua equipe de vendas entregando a solução financeira juntamente com o seu produto.</p>
+        <p>Potencialize a conversão da sua equipa de vendas entregando a solução financeira juntamente com o seu produto.</p>
         <a href="/index.html#contato" class="btn-cyan" style="background: #ffffff; color: #0284c7; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
             Falar com a Engenharia
         </a>
