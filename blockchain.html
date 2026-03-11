@@ -31,6 +31,8 @@ layout: null
             overflow-x: hidden;
         }
 
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
         /* Animações */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -40,12 +42,12 @@ layout: null
         /* --- HERO SPLIT (METADE BRANCA, METADE ESCURA) --- */
         .bc-hero {
             display: flex;
-            align-items: stretch; /* Estica para preencher a altura */
+            align-items: stretch;
             min-height: 80vh;
-            background: #ffffff; /* Cor de fundo base para o lado esquerdo */
+            background: #ffffff; 
             position: relative;
             overflow: hidden;
-            border-bottom: 2px solid #6366f1; /* Indigo 500 */
+            border-bottom: 2px solid #6366f1;
         }
 
         .hero-left {
@@ -67,7 +69,6 @@ layout: null
             position: relative;
         }
 
-        /* Efeito de brilho na parte escura */
         .hero-right::before {
             content: '';
             position: absolute;
@@ -92,7 +93,7 @@ layout: null
 
         .raw-logo {
             width: 100%;
-            max-width: 450px; /* Bem grandona */
+            max-width: 450px;
             height: auto;
             margin-bottom: 20px;
             display: block;
@@ -127,7 +128,7 @@ layout: null
             font-weight: 900; 
             line-height: 1.1; 
             margin-bottom: 20px; 
-            color: #0f172a; /* Texto Escuro no Fundo Branco */
+            color: #0f172a; 
             letter-spacing: -1px; 
         }
         .hero-left p { 
@@ -173,7 +174,6 @@ layout: null
             padding: 20px;
         }
 
-        /* Keyframes para animação do SVG da Blockchain */
         @keyframes pulse-node {
             0% { r: 6; fill: #6366f1; opacity: 1; box-shadow: 0 0 10px #6366f1;}
             50% { r: 9; fill: #a5b4fc; opacity: 0.8; }
@@ -195,20 +195,38 @@ layout: null
             animation: dash-line 2s linear infinite;
         }
 
-        /* --- RESTO DA PÁGINA (Escuro) --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* --- THE PROBLEM SECTION (Light Background) --- */
+        .pain-section { padding: 100px 0; background: #f8fafc; color: #0f172a; border-bottom: 1px solid #e2e8f0; }
+        .pain-section .sec-title h2 { color: #0f172a; }
+        .pain-section .sec-title p { color: #475569; }
         
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .pain-card {
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 16px;
+            border-left: 4px solid #ef4444; /* Destaque vermelho (A Dor) */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .pain-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .pain-card h4 { font-size: 1.3rem; color: #0f172a; margin-bottom: 15px; font-weight: 800;}
+        .pain-card p { font-size: 1rem; color: #475569; line-height: 1.6; margin: 0;}
+
+        /* --- TECHNOLOGY / CONCEPTS SECTION --- */
         .explanation-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e1b4b;}
         .sec-title { text-align: center; margin-bottom: 60px; }
-        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; letter-spacing: -1px;}
-        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 800px; margin: 0 auto; line-height: 1.6;}
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; letter-spacing: -1px;}
+        .sec-title p { font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.6;}
 
-        /* --- CARDS DE ATUAÇÃO E TECNOLOGIA --- */
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-bottom: 80px;
         }
 
         .tech-card {
@@ -236,6 +254,24 @@ layout: null
         .tech-card h3 { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
         .tech-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0; flex-grow: 1;}
 
+        /* --- CASOS DE USO ESTRATÉGICOS --- */
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .use-case-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .use-case-card:hover { border-color: #818cf8; background: #0f172a;}
+        .use-case-card h4 { font-size: 1.25rem; color: #fff; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;}
+        .use-case-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.5; margin: 0;}
+        .use-case-card strong { color: #a5b4fc; display: block; margin-top: 10px; font-size: 0.9rem;}
+
         /* --- ABORDAGEM DE IMPLEMENTAÇÃO --- */
         .approach-section { padding: 80px 0; background: #0b0f19; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b;}
         .approach-box {
@@ -259,27 +295,30 @@ layout: null
         .app-half h3 span { background: #6366f1; color: #fff; font-size: 0.8rem; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;}
         .app-half p { color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;}
 
-        /* --- CASOS DE USO --- */
-        .use-case-grid {
+        /* --- ROI SECTION --- */
+        .roi-section { padding: 100px 0; background: #020617; }
+        .roi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        .use-case-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid #1e293b;
-            padding: 30px;
+        .roi-card {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            padding: 40px 30px;
             border-radius: 20px;
+            border: 1px solid #047857;
+            text-align: center;
             transition: 0.3s;
         }
-        .use-case-card:hover { border-color: #818cf8; background: #0f172a;}
-        .use-case-card h4 { font-size: 1.25rem; color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;}
-        .use-case-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.5; margin: 0;}
+        .roi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2); border-color: #10b981;}
+        .roi-icon { font-size: 2.5rem; margin-bottom: 20px; color: #34d399; }
+        .roi-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.3rem; font-weight: 800;}
+        .roi-card p { color: #a7f3d0; font-size: 1rem; line-height: 1.5; margin: 0;}
 
         /* --- CTA --- */
         .cta-bottom { background: linear-gradient(135deg, #312e81 0%, #0f172a 100%); padding: 100px 0; text-align: center; color: #fff; border-top: 1px solid #4f46e5;}
         .cta-bottom h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px;}
-        .cta-bottom p { font-size: 1.2rem; color: #a5b4fc; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto;}
+        .cta-bottom p { font-size: 1.2rem; color: #a5b4fc; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;}
     </style>
 </head>
 <body>
@@ -287,7 +326,6 @@ layout: null
 {% include header.html titulo="Cerrado Tech" %}
 
 <section class="bc-hero">
-    
     <div class="hero-left">
         <div class="fade-up">
             <div class="app-branding">
@@ -297,11 +335,11 @@ layout: null
                 <div class="bc-badge">Consultoria Web3 Corporativa</div>
             </div>
 
-            <h1>Onde a confiança se torna código imutável.</h1>
-            <p>Implementamos ambientes de troca de informação à prova de fraudes utilizando a rede Blockchain. Traga transparência, descentralização e auditoria em tempo real para os processos internos da sua empresa ou consórcio B2B.</p>
+            <h1>A confiança como código imutável.</h1>
+            <p>Por décadas, o mercado corporativo operou sob um modelo centralizado. Nós transferimos a confiança das mãos de uma única entidade para a matemática e a criptografia. Construímos infraestruturas distribuídas e à prova de fraudes para o mercado B2B.</p>
             
             <div class="fade-up delay-1">
-                <a href="#solucoes" class="btn-indigo" style="margin-top: 10px;">
+                <a href="#dores" class="btn-indigo" style="margin-top: 10px;">
                     Explorar a Tecnologia
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </a>
@@ -324,7 +362,8 @@ layout: null
 
                     <circle cx="50" cy="40" r="6" />
                     <circle cx="150" cy="40" r="6" />
-                    <circle cx="100" cy="75" r="8" fill="#a5b4fc" /> <circle cx="50" cy="110" r="6" />
+                    <circle cx="100" cy="75" r="8" fill="#a5b4fc" />
+                    <circle cx="50" cy="110" r="6" />
                     <circle cx="150" cy="110" r="6" />
                     
                     <rect x="70" y="52" width="6" height="6" fill="#10b981" rx="2">
@@ -343,42 +382,99 @@ layout: null
             </div>
         </div>
     </div>
-
 </section>
 
-<section id="solucoes" class="explanation-section">
+<section id="dores" class="pain-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>Porquê utilizar Blockchain no mercado B2B?</h2>
-            <p>Esqueça o mercado das criptomoedas especulativas. Para corporações, a Blockchain é uma infraestrutura de dados distribuída onde informações registadas não podem ser apagadas ou modificadas secretamente. É a garantia tecnológica da verdade.</p>
+            <h2>As Dores do Mercado B2B</h2>
+            <p>Se a sua empresa partilha dados com parceiros, a pergunta é sempre a mesma: "No banco de dados de quem vamos confiar?" Falhas arquiteturais geram prejuízos milionários.</p>
+        </div>
+
+        <div class="pain-grid fade-up delay-1">
+            <div class="pain-card">
+                <h4>Auditorias Lentas e Caras</h4>
+                <p>Rever milhares de documentos e transações em bancos de dados relacionais (SQL) demora meses. Não há garantia matemática de que nada foi alterado secretamente.</p>
+            </div>
+            <div class="pain-card">
+                <h4>Gargalos em Consórcios</h4>
+                <p>Disputas e litígios entre empresas parceiras sobre quem detém a versão "correta" e atualizada de um contrato, transação ou apólice financeira.</p>
+            </div>
+            <div class="pain-card">
+                <h4>Pontos Cegos na Logística</h4>
+                <p>A falta de transparência na Cadeia de Suprimentos impede que uma empresa prove a origem sustentável ou as condições de transporte de um produto (ESG).</p>
+            </div>
+            <div class="pain-card">
+                <h4>Execução Manual</h4>
+                <p>Extrema dependência de intermediários humanos e burocracia para libertar pagamentos, aprovar remessas ou validar assinaturas após a conclusão de um serviço.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explanation-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2 style="color: #fff;">A Tecnologia: A Verdade Descentralizada</h2>
+            <p style="color: #94a3b8;">A Cerrado Tech utiliza a arquitetura mais segura do mundo para entregar três pilares intransponíveis à sua corporação.</p>
         </div>
 
         <div class="tech-grid fade-up delay-1">
-            
             <div class="tech-card">
                 <div class="tc-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
-                <h3>Transparência e Imutabilidade</h3>
-                <p>Documentos, contratos e movimentações logísticas são criptografados e distribuídos pela rede. Uma vez registado o dado, nenhum utilizador (nem mesmo o administrador) o consegue adulterar sem o consenso da rede.</p>
+                <h3>1. Imutabilidade</h3>
+                <p>Uma vez que um dado (contrato, nota fiscal) é gravado na Blockchain, recebe uma assinatura criptográfica (Hash). Nunca mais pode ser apagado ou alterado de forma oculta.</p>
             </div>
 
             <div class="tech-card" style="border-color: #6366f1; background: #1e1b4b;">
                 <div class="tc-icon" style="background: #312e81; color: #c7d2fe; border-color: #4f46e5;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 12 12 22 22 12 12 2"></polygon><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="2 12 12 17 22 12"></polyline></svg>
                 </div>
-                <h3 style="color: #a5b4fc;">Arquitetura Ethereum</h3>
-                <p>Construímos a sua rede sobre a arquitetura da EVM (Ethereum Virtual Machine). Garantimos o uso da infraestrutura de descentralização mais testada, auditada e segura do mundo corporativo global.</p>
+                <h3 style="color: #a5b4fc;">2. Redes B2B (EVM)</h3>
+                <p>O banco de dados é replicado em vários "Nós" espalhados pelas empresas parceiras. A verdade é um consenso da rede (Ethereum Virtual Machine), não o monopólio de um servidor.</p>
             </div>
 
             <div class="tech-card">
                 <div class="tc-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                 </div>
-                <h3>Smart Contracts (Solidity)</h3>
-                <p>Automatizamos regras de negócio. Utilizando a linguagem <strong>Solidity</strong>, criamos "Contratos Inteligentes" que executam ações sozinhos (ex: libertar um pagamento) assim que uma condição do mundo real for satisfeita.</p>
+                <h3>3. Smart Contracts</h3>
+                <p>Códigos programados em <strong>Solidity</strong> que executam regras automaticamente. Ex: <em>"Se o GPS confirmar a entrega no porto, liberte 50% do pagamento."</em> Sem intervenção humana.</p>
             </div>
+        </div>
+    </div>
+</section>
 
+<section class="explanation-section" style="background: #0b0f19; border-top: 1px solid #1e293b; padding-top: 80px;">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2 style="color: #fff;">Possibilidades Estratégicas de Uso</h2>
+            <p style="color: #94a3b8;">A infraestrutura Blockchain B2B abre portas para modelos de negócios totalmente inovadores.</p>
+        </div>
+        
+        <div class="use-case-grid fade-up delay-1">
+            <div class="use-case-card">
+                <h4>📦 Supply Chain Sustentável</h4>
+                <p>Rastreie a origem de um produto de ponta a ponta. Do produtor primário ao consumidor final, cada etapa é registada.</p>
+                <strong>Estratégia: Provar a origem e gerar um Passaporte Digital do Produto (ESG).</strong>
+            </div>
+            <div class="use-case-card">
+                <h4>🤝 Consórcios de Dados Seguros</h4>
+                <p>Empresas que concorrem entre si podem criar um ambiente neutro de troca de dados (ex: histórico de fraudes).</p>
+                <strong>Estratégia: Nenhuma empresa é dona do servidor, evitando manipulação de dados.</strong>
+            </div>
+            <div class="use-case-card">
+                <h4>🔐 Auditoria e Cartório Digital</h4>
+                <p>Grave o "Hash" (impressão digital) de relatórios financeiros e contratos diariamente na Blockchain.</p>
+                <strong>Estratégia: Prova matemática incontestável perante a Receita Federal ou investidores.</strong>
+            </div>
+            <div class="use-case-card">
+                <h4>💳 Tokenização de Ativos (RWA)</h4>
+                <p>Transforme ativos reais e ilíquidos (maquinaria, imóveis, recebíveis) em "Tokens" digitais na rede Ethereum.</p>
+                <strong>Estratégia: Fracionar o valor da dívida em tokens e vendê-los, gerando liquidez imediata.</strong>
+            </div>
         </div>
     </div>
 </section>
@@ -386,45 +482,45 @@ layout: null
 <section class="approach-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>Como operamos na sua empresa</h2>
-            <p>Adaptamo-nos ao seu modelo de governança tecnológica.</p>
+            <h2>Nossos Modelos de Implementação</h2>
+            <p>Adaptamo-nos à maturidade tecnológica da sua corporação.</p>
         </div>
 
         <div class="approach-box fade-up delay-1">
             <div class="app-half app-left">
-                <h3>Implementação Cerrado Tech <span>Turnkey</span></h3>
-                <p>Nós assumimos a obra. Os nossos arquitetos e engenheiros desenham a topologia da rede, desenvolvem os Smart Contracts em Solidity, realizam a auditoria de segurança do código e efetuam o <em>Deploy</em> completo da plataforma Blockchain para o seu consórcio ou operação interna.</p>
+                <h3>Modelo Cerrado Tech <span>Turnkey</span></h3>
+                <p><strong>Nós assumimos a obra inteira.</strong> Desenhamos a arquitetura da rede, programamos os Smart Contracts em Solidity, realizamos a auditoria rigorosa de segurança do código (Testes de Intrusão) e efetuamos o deploy final da plataforma para os seus utilizadores.</p>
             </div>
             <div class="app-half">
-                <h3>Consultoria e Assessoria de TI <span>Advisory</span></h3>
-                <p>A sua empresa já possui um forte departamento de Engenharia de Software? Excelente. A Cerrado atua como conselheira especializada. Treinamos a sua equipa, fornecemos a documentação arquitetural e orientamos o seu departamento de TI em todo o processo de implementação descentralizada.</p>
+                <h3>Modelo de Consultoria <span>Advisory</span></h3>
+                <p><strong>Para empresas com um departamento robusto de TI.</strong> A Cerrado atua como Conselheira Chefe. Desenhamos a documentação técnica, capacitamos a sua equipa interna de programadores na arquitetura Web3 e validamos o código produzido antes do lançamento.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="explanation-section" style="background: #020617; padding-top: 60px; padding-bottom: 80px;">
+<section class="roi-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2 style="font-size: 2rem;">Casos de Uso Corporativos</h2>
+            <h2 style="color: #fff;">O Retorno sobre o Investimento (ROI)</h2>
+            <p style="color: #cbd5e1;">Adotar a Blockchain corporativa não é um ensaio de inovação. É uma decisão financeira estratégica.</p>
         </div>
-        
-        <div class="use-case-grid fade-up delay-1">
-            <div class="use-case-card">
-                <h4>📦 Cadeia de Suprimentos</h4>
-                <p>Rastreie um produto desde o fabricante primário até ao cliente final. Todos os parceiros da cadeia registam as movimentações num registo único e incorruptível.</p>
+
+        <div class="roi-grid fade-up delay-1">
+            <div class="roi-card">
+                <div class="roi-icon">⚖️</div>
+                <h3>Redução de Custos Legais</h3>
+                <p>Queda drástica em custos de litígio, reconciliação e auditoria, pois a "verdade" da transação já está criptograficamente validada pela rede.</p>
             </div>
-            <div class="use-case-card">
-                <h4>🤝 Redes B2B & Consórcios</h4>
-                <p>Troque informações sensíveis ou dados financeiros com empresas parceiras num ambiente onde nenhuma empresa é a "dona absoluta" da base de dados.</p>
+            <div class="roi-card">
+                <div class="roi-icon">⚡</div>
+                <h3>Eficiência Operacional</h3>
+                <p>Eliminação completa de intermediários operacionais e financeiros. Os Smart Contracts executam os pagamentos e liberações instantaneamente.</p>
             </div>
-            <div class="use-case-card">
-                <h4>🔐 Auditoria em Tempo Real</h4>
-                <p>Registe hashes de documentos legais e relatórios financeiros na Blockchain. Uma prova matemática de que aquele documento existia naquele formato naquela exata data.</p>
-            </div>
-            <div class="use-case-card">
-                <h4>💳 Tokenização de Ativos</h4>
-                <p>Transforme ativos reais (como imóveis, recebíveis ou cotas de empresas) em *Tokens* digitais dentro da blockchain, facilitando a liquidez e fracionamento.</p>
+            <div class="roi-card">
+                <div class="roi-icon">📈</div>
+                <h3>Aumento de Valuation</h3>
+                <p>Geração de níveis extremos de Governança e Conformidade (GRC / ESG), elevando o valor da sua empresa perante fundos de investimento internacionais.</p>
             </div>
         </div>
     </div>
@@ -432,12 +528,12 @@ layout: null
 
 <section class="cta-bottom">
     <div class="container fade-up">
-        <h2>Pronto para descentralizar?</h2>
-        <p>Eleve a sua operação empresarial aos padrões de segurança da Web3. Agende uma consultoria técnica com os nossos engenheiros de arquitetura Blockchain.</p>
+        <h2>Vamos Descentralizar a sua Operação?</h2>
+        <p>A confiança não tem de ser uma promessa verbal. Ela pode ser construída em código. Agende uma reunião de viabilidade técnica com os nossos Arquitetos de Soluções Web3.</p>
         
-        <a href="https://wa.me/5567993515206?text=Ol%C3%A1,%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20Consultoria%20Blockchain." target="_blank" class="btn-indigo" style="background: #ffffff; color: #312e81; padding: 20px 40px; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 10px 30px rgba(255,255,255,0.2);">
+        <a href="https://wa.me/5567993515206?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20com%20um%20Arquiteto%20de%20Solu%C3%A7%C3%B5es%20Web3%20sobre%20Blockchain." target="_blank" class="btn-indigo" style="background: #ffffff; color: #312e81; padding: 20px 40px; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 10px 30px rgba(255,255,255,0.2);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            Falar com um Especialista
+            Falar com a Engenharia
         </a>
     </div>
 </section>
