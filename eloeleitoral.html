@@ -1,351 +1,223 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EloEleitoral | Cerrado Tech</title>
-    <meta name="description" content="Plataforma inteligente para captar demandas da cidade, classificar prioridades com IA e fornecer um painel de gestão para seu gabinete.">
+    <title>EloEleitoral — Conexão Direta e Gestão Inteligente</title>
     
-    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
-    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
-        :root {
-            --elo-primary: #1e1b4b; 
-            --elo-accent: #4f46e5;  
-            --elo-success: #10b981; 
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --bg-color: #f8fafc;
-            --border-color: #e2e8f0;
-            --radius-lg: 16px;
-            --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            padding-top: 80px; 
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Animações Suaves */
-        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-
-        /* Botões Modernos */
-        .btn-elo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-elo-primary { background: var(--elo-accent); color: white; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
-        .btn-elo-primary:hover { background: #3730a3; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(79, 70, 229, 0.5); color: white;}
+        /* Estilos da Landing Page SaaS */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--surface-color); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--accent-color); font-size: 1.8rem; }
         
-        .btn-elo-outline { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);}
-        .btn-elo-outline:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); color: white;}
-
-        .btn-elo-white { background: white; color: var(--elo-primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .btn-elo-white:hover { background: #f8fafc; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); }
-
-        /* --- HERO SECTION --- */
-        .hero-elo { 
-            background: linear-gradient(135deg, #111827 0%, var(--elo-primary) 100%); 
-            color: white; 
-            padding: 100px 5% 160px; 
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid var(--elo-accent);
-        }
-        
-        /* Efeito de Brilho no Fundo */
-        .hero-elo::before {
-            content: ''; position: absolute; top: -20%; left: -10%; width: 60%; height: 60%;
-            background: radial-gradient(circle, rgba(79, 70, 229, 0.25) 0%, transparent 70%);
-            pointer-events: none; filter: blur(40px);
-        }
-
-        .hero-split { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 60px; 
-            align-items: center; 
-            position: relative; 
-            z-index: 2;
-        }
-        
-        /* Bloco de Logo Estilo App (A grande mudança visual) */
-        .app-branding {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-        .app-big-icon {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .app-big-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-        }
-        
-        .elo-badge {
-            background: rgba(79, 70, 229, 0.2); color: #a5b4fc; border: 1px solid rgba(79, 70, 229, 0.4);
-            padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; display: inline-block;
-        }
-
-        .hero-text h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1.5px; }
-        .hero-text h1 span { color: #818cf8; display: block; }
-        .hero-text p { font-size: 1.15rem; margin-bottom: 40px; color: #cbd5e1; line-height: 1.7; max-width: 550px;}
+        .hero { background: linear-gradient(135deg, var(--primary-color) 0%, #2A4365 100%); color: white; padding: 80px 5%; overflow: hidden; }
+        .hero-split { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .hero-text h1 { color: white; font-size: 3.2rem; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px; }
+        .hero-text h1 span { color: var(--accent-color); }
+        .hero-text p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; line-height: 1.6; }
         .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+        .hero-buttons .btn { padding: 14px 28px; font-size: 1.1rem; border-radius: var(--radius-lg); }
         
-        /* --- ESTATÍSTICAS (Sem sobreposição quebrada) --- */
-        .stats-section { 
-            display: flex; justify-content: center; gap: 60px; padding: 40px 5%; 
-            background: white; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
-            position: relative; z-index: 10; max-width: 1000px; 
-            margin: -70px auto 80px auto; /* Margin bottom garante que não encavale com o conteúdo abaixo */
-            border-radius: 24px; border: 1px solid var(--border-color);
-        }
-        .stat-item { text-align: center; flex: 1; min-width: 200px;}
-        .stat-item h2 { font-size: 3.5rem; color: var(--elo-primary); margin: 0 0 5px 0; line-height: 1; font-weight: 900; letter-spacing: -2px;}
-        .stat-item p { color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin:0;}
+        /* Prova Social / Stats */
+        .stats-section { display: flex; justify-content: center; gap: 60px; padding: 40px 5%; background: white; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; box-shadow: var(--shadow-sm); position: relative; z-index: 10;}
+        .stat-item { text-align: center; }
+        .stat-item h2 { font-size: 2.8rem; color: var(--primary-color); margin-bottom: 5px; line-height: 1; }
+        .stat-item p { color: var(--text-muted); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-        /* --- SHOWCASE SECTION --- */
-        .showcase { padding: 40px 5% 100px; max-width: 1200px; margin: 0 auto; }
+        /* Mockups & Explicação (A Visão do Político e Eleitor) */
+        .showcase { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; color: var(--elo-primary); letter-spacing: -1px;}
-        .section-header p { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.6;}
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-color); }
+        .section-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
 
-        .showcase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; }
+        .showcase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; }
         .showcase-row.reverse { grid-template-columns: 1fr 1fr; direction: rtl; }
         .showcase-row.reverse > * { direction: ltr; }
         
-        .showcase-text h3 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; color: var(--elo-primary); display: flex; align-items: center; gap: 15px; letter-spacing: -0.5px;}
-        .showcase-text h3 i { background: #e0e7ff; color: var(--elo-accent); padding: 15px; border-radius: 16px; }
-        .showcase-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
-        
+        .showcase-text h3 { font-size: 2rem; margin-bottom: 20px; color: var(--primary-color); display: flex; align-items: center; gap: 15px; }
+        .showcase-text h3 i { background: #EBF8FF; color: var(--primary-color); padding: 15px; border-radius: 16px; }
+        .showcase-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
         .showcase-text ul { list-style: none; padding: 0; margin-bottom: 30px; }
-        .showcase-text ul li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-weight: 600; color: var(--text-main); font-size: 1.05rem; line-height: 1.4;}
-        .showcase-text ul li i { color: var(--elo-accent); font-size: 1.5rem; margin-top: 2px;}
+        .showcase-text ul li { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-weight: 500; color: var(--text-main); }
+        .showcase-text ul li i { color: var(--accent-color); font-size: 1.4rem; }
 
-        /* SVGs */
-        .svg-container { background: white; padding: 40px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); border: 1px solid var(--border-color); text-align: center; position: relative;}
-        .svg-container svg { max-width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.05)); transition: transform 0.4s ease; }
+        /* Estilização dos SVGs */
+        .svg-container { background: var(--bg-color); padding: 40px; border-radius: 24px; box-shadow: inset 0 0 20px rgba(0,0,0,0.05); text-align: center; position: relative;}
+        .svg-container svg { max-width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1)); transition: transform 0.3s ease; }
         .svg-container:hover svg { transform: translateY(-10px); }
 
-        /* Impact Box */
-        .impact-box { background: linear-gradient(135deg, #eef2ff 0%, white 100%); border: 1px solid #c7d2fe; padding: 30px; border-radius: 20px; margin-top: 20px; border-left: 5px solid var(--elo-accent); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.05);}
-        .impact-box h4 { color: var(--elo-accent); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 800;}
-        .impact-box p { font-size: 1rem; color: var(--text-main); margin-bottom: 0; line-height: 1.6;}
+        /* Impacto Box */
+        .impact-box { background: linear-gradient(135deg, #EBF8FF 0%, white 100%); border: 1px solid #BEE3F8; padding: 30px; border-radius: var(--radius-lg); margin-top: 20px; }
+        .impact-box h4 { color: #2B6CB0; margin-bottom: 10px; font-size: 1.2rem; }
+        .impact-box p { font-size: 1rem; color: var(--text-main); margin-bottom: 0; }
 
-        /* --- CTA SECTION --- */
-        .cta-section { background: var(--elo-primary); color: white; padding: 100px 5%; text-align: center; border-top: 4px solid var(--elo-accent);}
-        .cta-section h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; color: white; letter-spacing:-1px;}
-        .cta-section p { color: #c7d2fe; font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px; line-height: 1.6;}
+        /* CTA Final */
+        .cta-section { background: var(--primary-color); color: white; padding: 80px 5%; text-align: center; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; color: white; }
+        .cta-section p { color: #E2E8F0; margin-bottom: 40px; font-size: 1.2rem; max-width: 600px; margin: 0 auto;}
+        
+        footer { background: var(--surface-color); padding: 40px 5%; text-align: center; border-top: 1px solid var(--border-color); }
+        .footer-admin-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-weight: 600; margin-top: 20px; padding: 10px 20px; border-radius: var(--radius-md); background: var(--bg-color); transition: background 0.2s; }
+        .footer-admin-link:hover { background: #E2E8F0; color: var(--primary-color); }
 
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 992px) {
-            .hero-split, .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 50px; text-align: center; }
-            .app-branding { align-items: center; }
+        @media (max-width: 900px) {
+            .hero-split, .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .showcase-text h3 { justify-content: center; }
-            .showcase-text ul li { text-align: left; }
+            .showcase-text ul li { justify-content: center; }
             .hero-buttons { justify-content: center; }
-            .stats-section { margin: -30px 20px 60px 20px; padding: 30px 20px; gap: 30px; border-radius: 20px;}
-            .impact-box { text-align: left; }
-            .svg-container { padding: 20px; border-radius: 20px; }
         }
     </style>
 </head>
 <body>
 
-    {% include header.html titulo="Cerrado Tech" %}
+    <nav class="navbar">
+        <div class="logo">
+            <i class="ph-fill ph-chat-circle-text"></i> EloEleitoral
+        </div>
+        <div>
+            <a href="dialogo.html" class="btn btn-outline" style="border-radius: var(--radius-lg);">Portal do Cidadão</a>
+        </div>
+    </nav>
 
-    <header class="hero-elo">
+    <header class="hero">
         <div class="hero-split">
-            <div class="hero-text fade-up">
-                
-                <div class="app-branding">
-                    <div class="app-big-icon">
-                        <img src="img/eloeleitoral.png" alt="EloEleitoral Logo" onerror="this.style.display='none'">
-                    </div>
-                    <div class="elo-badge">CRM Governamental B2B</div>
-                </div>
-                
+            <div class="hero-text">
                 <h1>Política baseada em <span>dados reais.</span></h1>
                 <p>Uma plataforma inteligente para captar demandas da cidade, classificar prioridades com IA e fornecer um painel de gestão para seu gabinete tomar decisões e prestar contas.</p>
-                
-                <div class="hero-buttons fade-up delay-1">
-                    <a href="https://renato0503.github.io/plataformapolitico/painel.html" target="_blank" class="btn-elo btn-elo-primary">
-                        <i class="ph ph-chart-line-up" style="font-size: 1.4rem;"></i> Painel Gerencial
+                <div class="hero-buttons">
+                    <a href="painel.html" class="btn btn-success">
+                        <i class="ph ph-chart-line-up" style="margin-right: 8px; font-size: 1.2rem;"></i> Ver Demonstração do Painel
                     </a>
-                    <a href="#como-funciona" class="btn-elo btn-elo-outline">
+                    <a href="#como-funciona" class="btn" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.2);">
                         Como Funciona
                     </a>
                 </div>
             </div>
             
-            <div class="svg-container fade-up delay-2" style="background: transparent; box-shadow: none; border: none; padding: 0;">
+            <div class="svg-container" style="background: transparent; box-shadow: none;">
                 <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="50" width="460" height="300" rx="15" fill="#FFFFFF" opacity="0.05"/>
-                    <rect x="0" y="70" width="460" height="300" rx="15" fill="#1e1b4b" stroke="#4f46e5" stroke-width="2"/>
-                    <rect x="0" y="70" width="120" height="300" rx="15" fill="#312e81"/>
-                    <circle cx="60" cy="110" r="20" fill="#4f46e5" opacity="0.5"/>
-                    <rect x="20" y="150" width="80" height="10" rx="5" fill="#4f46e5"/>
-                    <rect x="20" y="180" width="60" height="10" rx="5" fill="#4f46e5"/>
-                    <rect x="140" y="90" width="300" height="20" rx="10" fill="#312e81"/>
-                    <rect x="140" y="140" width="140" height="100" rx="10" fill="#312e81"/>
-                    <rect x="155" y="180" width="20" height="40" rx="3" fill="#818cf8"/>
-                    <rect x="185" y="160" width="20" height="60" rx="3" fill="#c7d2fe"/>
-                    <rect x="215" y="190" width="20" height="30" rx="3" fill="#4f46e5"/>
-                    <rect x="245" y="150" width="20" height="70" rx="3" fill="#10b981"/>
-                    <rect x="300" y="140" width="140" height="100" rx="10" fill="#312e81"/>
-                    <circle cx="370" cy="190" r="30" fill="transparent" stroke="#10b981" stroke-width="15" stroke-dasharray="100 40"/>
-                    <circle cx="370" cy="190" r="30" fill="transparent" stroke="#4f46e5" stroke-width="15" stroke-dasharray="40 100" stroke-dashoffset="-100"/>
-                    <rect x="140" y="260" width="300" height="15" rx="5" fill="#312e81"/>
-                    <rect x="140" y="290" width="300" height="15" rx="5" fill="#312e81"/>
-                    <rect x="140" y="320" width="200" height="15" rx="5" fill="#312e81"/>
+                    <rect x="20" y="50" width="460" height="300" rx="15" fill="#FFFFFF" opacity="0.1"/>
+                    <rect x="0" y="70" width="460" height="300" rx="15" fill="#FFFFFF" stroke="#38A169" stroke-width="2"/>
+                    <rect x="0" y="70" width="120" height="300" rx="15" fill="#F7FAFC"/>
+                    <circle cx="60" cy="110" r="20" fill="#1A365D" opacity="0.2"/>
+                    <rect x="20" y="150" width="80" height="10" rx="5" fill="#E2E8F0"/>
+                    <rect x="20" y="180" width="60" height="10" rx="5" fill="#E2E8F0"/>
+                    <rect x="140" y="90" width="300" height="20" rx="10" fill="#E2E8F0"/>
+                    <rect x="140" y="140" width="140" height="100" rx="10" fill="#EBF8FF"/>
+                    <rect x="155" y="180" width="20" height="40" rx="3" fill="#3182CE"/>
+                    <rect x="185" y="160" width="20" height="60" rx="3" fill="#1A365D"/>
+                    <rect x="215" y="190" width="20" height="30" rx="3" fill="#38A169"/>
+                    <rect x="245" y="150" width="20" height="70" rx="3" fill="#D69E2E"/>
+                    <rect x="300" y="140" width="140" height="100" rx="10" fill="#F0FFF4"/>
+                    <circle cx="370" cy="190" r="30" fill="transparent" stroke="#38A169" stroke-width="15" stroke-dasharray="100 40"/>
+                    <circle cx="370" cy="190" r="30" fill="transparent" stroke="#1A365D" stroke-width="15" stroke-dasharray="40 100" stroke-dashoffset="-100"/>
+                    <rect x="140" y="260" width="300" height="15" rx="5" fill="#E2E8F0"/>
+                    <rect x="140" y="290" width="300" height="15" rx="5" fill="#E2E8F0"/>
+                    <rect x="140" y="320" width="200" height="15" rx="5" fill="#E2E8F0"/>
                 </svg>
             </div>
         </div>
     </header>
 
-    <section class="stats-section fade-up delay-1">
+    <section class="stats-section">
         <div class="stat-item">
-            <h2>+500</h2>
+            <h2 id="stat-cidadaos">+500</h2>
             <p>Demandas Captadas</p>
         </div>
         <div class="stat-item">
-            <h2>42</h2>
+            <h2 id="stat-bairros">42</h2>
             <p>Bairros Mapeados</p>
         </div>
         <div class="stat-item">
-            <h2 style="color: var(--elo-success);">85%</h2>
+            <h2 id="stat-taxa" style="color: var(--accent-color);">85%</h2>
             <p>Taxa de Resolução</p>
         </div>
     </section>
 
     <section id="como-funciona" class="showcase">
-        <div class="section-header fade-up">
+        <div class="section-header">
             <h2>Por Dentro da Plataforma</h2>
             <p>Como a tecnologia conecta o problema na rua com a solução na mesa do gestor.</p>
         </div>
 
         <div class="showcase-row">
-            <div class="svg-container fade-up">
+            <div class="svg-container">
                 <svg viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="20" width="260" height="560" rx="35" fill="#FFFFFF" stroke="#1e1b4b" stroke-width="12"/>
-                    <rect x="20" y="20" width="260" height="120" rx="30" fill="#1e1b4b"/>
-                    <rect x="20" y="100" width="260" height="40" fill="#1e1b4b"/> 
-                    <text x="150" y="85" font-family="Arial" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">EloEleitoral</text>
+                    <rect x="20" y="20" width="260" height="560" rx="35" fill="#FFFFFF" stroke="#2D3748" stroke-width="12"/>
+                    <rect x="20" y="20" width="260" height="120" rx="30" fill="#1A365D"/>
+                    <rect x="20" y="100" width="260" height="40" fill="#1A365D"/> <text x="150" y="90" font-family="Arial" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">EloEleitoral</text>
                     <rect x="40" y="160" width="220" height="15" rx="5" fill="#E2E8F0"/>
-                    <rect x="40" y="185" width="220" height="40" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                    <rect x="40" y="185" width="220" height="40" rx="8" fill="#F7FAFC" stroke="#CBD5E0" stroke-width="2"/>
                     
                     <rect x="40" y="250" width="220" height="15" rx="5" fill="#E2E8F0"/>
-                    <rect x="40" y="275" width="220" height="40" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                    <rect x="40" y="275" width="220" height="40" rx="8" fill="#F7FAFC" stroke="#CBD5E0" stroke-width="2"/>
                     
                     <rect x="40" y="340" width="220" height="15" rx="5" fill="#E2E8F0"/>
-                    <rect x="40" y="365" width="220" height="80" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                    <rect x="40" y="365" width="220" height="80" rx="8" fill="#F7FAFC" stroke="#CBD5E0" stroke-width="2"/>
                     
-                    <rect x="40" y="480" width="220" height="50" rx="12" fill="#4f46e5"/>
-                    <text x="150" y="510" font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Enviar Demanda</text>
+                    <rect x="40" y="480" width="220" height="50" rx="25" fill="#38A169"/>
+                    <text x="150" y="512" font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Enviar Demanda</text>
                 </svg>
             </div>
             
-            <div class="showcase-text fade-up delay-1">
+            <div class="showcase-text">
                 <h3><i class="ph-fill ph-device-mobile"></i> A Visão do Cidadão</h3>
                 <p>O eleitor não quer burocracia. O portal foi desenhado com o conceito "Mobile-First", rodando liso em qualquer smartphone, sem precisar baixar aplicativos.</p>
                 <ul>
-                    <li><i class="ph-bold ph-check-circle"></i> Acesso via link direto ou QR Code na campanha.</li>
-                    <li><i class="ph-bold ph-check-circle"></i> Bairros e regiões pré-cadastrados no sistema.</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Acesso via link direto ou QR Code no material de campanha.</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Bairros pré-cadastrados (Ex: CPA, Coxipó, Tijucal).</li>
                     <li><i class="ph-bold ph-check-circle"></i> Inteligência Artificial classifica a mensagem automaticamente.</li>
                 </ul>
                 <div class="impact-box">
                     <h4>Qual o impacto para a Campanha?</h4>
-                    <p>Ao dar voz ao cidadão de forma fácil, você constrói uma <strong>base de contatos segmentada (CRM Eleitoral)</strong> e validada. Você sabe exatamente quem pediu o quê e onde.</p>
+                    <p>Ao dar voz ao cidadão de forma fácil, você constrói uma <strong>base de contatos segmentada (CRM Eleitoral)</strong> validada. Você sabe exatamente quem pediu o quê e onde.</p>
                 </div>
             </div>
         </div>
 
         <div class="showcase-row reverse">
-            <div class="svg-container fade-up">
+            <div class="svg-container">
                 <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
                     <rect x="10" y="10" width="580" height="380" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
-                    <rect x="10" y="10" width="580" height="40" rx="10" fill="#F8FAFC"/>
-                    <circle cx="30" cy="30" r="5" fill="#ef4444"/>
-                    <circle cx="50" cy="30" r="5" fill="#f59e0b"/>
-                    <circle cx="70" cy="30" r="5" fill="#10b981"/>
+                    <rect x="10" y="10" width="580" height="40" rx="10" fill="#F7FAFC"/>
+                    <circle cx="30" cy="30" r="5" fill="#E53E3E"/>
+                    <circle cx="50" cy="30" r="5" fill="#D69E2E"/>
+                    <circle cx="70" cy="30" r="5" fill="#38A169"/>
                     
-                    <rect x="10" y="50" width="120" height="340" fill="#1e1b4b"/>
+                    <rect x="10" y="50" width="120" height="340" fill="#1A365D"/>
                     <rect x="25" y="80" width="90" height="15" rx="5" fill="#FFFFFF" opacity="0.2"/>
                     <rect x="25" y="110" width="90" height="15" rx="5" fill="#FFFFFF" opacity="0.2"/>
                     <rect x="25" y="140" width="90" height="15" rx="5" fill="#FFFFFF" opacity="0.5"/>
                     
-                    <rect x="150" y="70" width="130" height="60" rx="8" fill="#eef2ff"/>
-                    <text x="165" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="#4f46e5">1.240</text>
+                    <rect x="150" y="70" width="130" height="60" rx="8" fill="#EBF8FF"/>
+                    <text x="165" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="#2B6CB0">1.240</text>
                     
-                    <rect x="295" y="70" width="130" height="60" rx="8" fill="#fffbeb"/>
-                    <text x="310" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="#d97706">85</text>
+                    <rect x="295" y="70" width="130" height="60" rx="8" fill="#FEFCBF"/>
+                    <text x="310" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="#B7791F">85</text>
                     
-                    <rect x="440" y="70" width="130" height="60" rx="8" fill="#ecfdf5"/>
-                    <text x="455" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="#059669">1.155</text>
+                    <rect x="440" y="70" width="130" height="60" rx="8" fill="#F0FFF4"/>
+                    <text x="455" y="100" font-family="Arial" font-size="24" font-weight="bold" fill="#2F855A">1.155</text>
                     
-                    <rect x="150" y="150" width="420" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
-                    <rect x="180" y="190" width="25" height="60" rx="4" fill="#1e1b4b"/>
-                    <rect x="230" y="160" width="25" height="90" rx="4" fill="#10b981"/>
-                    <rect x="280" y="210" width="25" height="40" rx="4" fill="#4f46e5"/>
-                    <rect x="330" y="170" width="25" height="80" rx="4" fill="#ef4444"/>
-                    <rect x="380" y="200" width="25" height="50" rx="4" fill="#f59e0b"/>
+                    <rect x="150" y="150" width="420" height="120" rx="8" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="2"/>
+                    <rect x="180" y="190" width="25" height="60" rx="4" fill="#1A365D"/>
+                    <rect x="230" y="160" width="25" height="90" rx="4" fill="#38A169"/>
+                    <rect x="280" y="210" width="25" height="40" rx="4" fill="#3182CE"/>
+                    <rect x="330" y="170" width="25" height="80" rx="4" fill="#E53E3E"/>
+                    <rect x="380" y="200" width="25" height="50" rx="4" fill="#D69E2E"/>
                     
-                    <rect x="150" y="290" width="420" height="30" rx="5" fill="#f1f5f9"/>
-                    <rect x="150" y="330" width="420" height="30" rx="5" fill="#f1f5f9"/>
-                    <rect x="480" y="295" width="80" height="20" rx="10" fill="#10b981"/>
-                    <rect x="480" y="335" width="80" height="20" rx="10" fill="#10b981"/>
+                    <rect x="150" y="290" width="420" height="30" rx="5" fill="#EDF2F7"/>
+                    <rect x="150" y="330" width="420" height="30" rx="5" fill="#EDF2F7"/>
+                    <rect x="480" y="295" width="80" height="20" rx="10" fill="#38A169"/>
+                    <rect x="480" y="335" width="80" height="20" rx="10" fill="#38A169"/>
                 </svg>
             </div>
 
-            <div class="showcase-text fade-up delay-1">
+            <div class="showcase-text">
                 <h3><i class="ph-fill ph-chart-pie-slice"></i> A Visão do Gabinete</h3>
                 <p>Enquanto o eleitor envia os dados, sua equipe gerencia tudo através de um Painel de Controle (Dashboard) focado em inteligência visual e resposta ágil.</p>
                 <ul>
@@ -361,40 +233,70 @@ layout: null
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="fade-up">
-            <h2>Pronto para profissionalizar seu mandato?</h2>
-            <p>Acesse as áreas interativas agora mesmo para testar o fluxo completo de captação e gestão de demandas.</p>
-            <div class="hero-buttons" style="justify-content: center; margin-top: 30px;">
-                <a href="https://renato0503.github.io/plataformapolitico/dialogo.html" target="_blank" class="btn-elo btn-elo-white">
-                    <i class="ph ph-device-mobile" style="font-size: 1.4rem;"></i> Simular como Eleitor
-                </a>
-                <a href="https://renato0503.github.io/plataformapolitico/painel.html" target="_blank" class="btn-elo btn-elo-primary" style="background: var(--elo-success); box-shadow: none;">
-                    <i class="ph ph-chart-bar" style="font-size: 1.4rem;"></i> Acessar Painel
-                </a>
+    <section id="funcionalidades-premium" class="showcase" style="background-color: var(--bg-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 80px 5%; margin-top: -50px;">
+        <div class="section-header">
+            <h2>Gestão Completa de Campanha</h2>
+            <p>Muito mais do que captar demandas. Uma suíte inteira de inteligência e operação.</p>
+        </div>
+
+        <div class="showcase-row">
+            <div class="svg-container" style="background: white;">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Radar Bot Mockup -->
+                    <circle cx="200" cy="150" r="100" fill="transparent" stroke="#E2E8F0" stroke-width="2"/>
+                    <circle cx="200" cy="150" r="60" fill="transparent" stroke="#E2E8F0" stroke-width="2"/>
+                    <circle cx="200" cy="150" r="20" fill="#3182CE"/>
+                    <path d="M 200 150 L 280 70" stroke="#3182CE" stroke-width="4" opacity="0.6"/>
+                    <circle cx="280" cy="70" r="8" fill="#38A169"/>
+                    <path d="M 200 150 L 120 230" stroke="#3182CE" stroke-width="4" opacity="0.6"/>
+                    <circle cx="120" cy="230" r="8" fill="#E53E3E"/>
+                    <!-- Tags -->
+                    <rect x="250" y="40" width="80" height="20" rx="10" fill="#F0FFF4"/>
+                    <text x="290" y="54" font-family="Arial" font-size="10" font-weight="bold" fill="#2F855A" text-anchor="middle">Instagram</text>
+                    <rect x="50" y="240" width="80" height="20" rx="10" fill="#FFF5F5"/>
+                    <text x="90" y="254" font-family="Arial" font-size="10" font-weight="bold" fill="#C53030" text-anchor="middle">Twitter</text>
+                </svg>
+            </div>
+            
+            <div class="showcase-text">
+                <h3><i class="ph-fill ph-radar"></i> Bot de Monitoramento Social</h3>
+                <p>Nossa mais nova Inteligência Artificial rastreia a internet 24h por dia para saber o que o eleitor raiz está falando sobre seu nome e sua campanha.</p>
+                <ul>
+                    <li><i class="ph-bold ph-check-circle"></i> Gráfico de sentimento (Positivo, Neutro, Negativo).</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Termômetro de palavras-chave e hashtags.</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Feed em tempo real puxando menções do Twitter e Instagram.</li>
+                </ul>
+                <div class="impact-box">
+                    <h4>Prevenção de Crise</h4>
+                    <p>Ao monitorar a temperatura das redes em tempo real, você apaga "incêndios" de fama negativa antes que eles se espalhem em grupos de WhatsApp.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    {% include footer.html %}
+    <section class="cta-section">
+        <h2>Pronto para profissionalizar seu mandato?</h2>
+        <p>Acesse as áreas interativas agora mesmo para testar o fluxo completo de captação e gestão de demandas.</p>
+        <div class="hero-buttons" style="justify-content: center; margin-top: 20px;">
+            <a href="dialogo.html" class="btn" style="background: white; color: var(--primary-color);">Simular como Eleitor</a>
+            <a href="painel.html" class="btn btn-success">Acessar Painel Gerencial</a>
+        </div>
+    </section>
 
-    <script src="{{ '/js/main.js' | relative_url }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+    <footer>
+        <div style="margin-bottom: 20px; color: var(--primary-color); font-weight: bold; font-size: 1.2rem;">
+            <i class="ph-fill ph-chat-circle-text"></i> EloEleitoral
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+            © 2026 EloEleitoral. Desenvolvido com inteligência por CerradoTech.<br>
+            Tecnologia a serviço de campanhas e mandatos modernos.
+        </p>
+        
+        <a href="configuracoes.html" class="footer-admin-link">
+            <i class="ph-fill ph-gear"></i> Configurações do Sistema
+        </a>
+    </footer>
 
-            document.querySelectorAll('.fade-up').forEach((el) => {
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script type="module" src="js/pages/index-controller.js"></script>
 </body>
 </html>
