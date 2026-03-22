@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerradoMobility - Simulador de Gestão de Frotas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --secondary: #0d9488;
+            --dark: #1e293b;
+            --darker: #0f172a;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--darker); }
+        .gradient-text { background: linear-gradient(135deg, #22c55e, #0d9488); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2); }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .slide-in { animation: slideIn 0.5s ease-out; }
+        @keyframes slideIn { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .map-container { height: 400px; border-radius: 12px; overflow: hidden; }
+        .sidebar { width: 280px; transition: all 0.3s ease; }
+        .sidebar.collapsed { width: 80px; }
+        .vehicle-marker { background: #22c55e; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .stat-card { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9)); }
+        .btn-primary { background: linear-gradient(135deg, #22c55e, #16a34a); transition: all 0.3s ease; }
+        .btn-primary:hover { background: linear-gradient(135deg, #16a34a, #15803d); transform: scale(1.02); }
+        .tab-active { border-bottom: 3px solid #22c55e; color: #22c55e; }
+        .progress-bar { transition: width 1s ease-in-out; }
+        .notification { animation: slideInRight 0.3s ease-out; }
+        @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .status-online { background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+        .status-warning { background: #f59e0b; box-shadow: 0 0 10px #f59e0b; }
+        .status-offline { background: #ef4444; box-shadow: 0 0 10px #ef4444; }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen">
+    <div id="app" class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar glass min-h-screen p-4 fixed left-0 top-0 z-50">
+            <div class="flex items-center gap-3 mb-8 pt-2">
+                <img src="https://www.cerradofinancas.com.br/img/mobility.png" alt="CerradoMobility" class="w-12 h-12 rounded-xl">
+                <div>
+                    <h1 class="font-bold text-lg gradient-text">CerradoMobility</h1>
+                    <p class="text-xs text-gray-400">Gestão de Frotas</p>
+                </div>
+            </div>
+            
+            <nav class="space-y-2">
+                <button onclick="showSection('dashboard')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="dashboard">
+                    <i class="fas fa-th-large text-green-500"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button onclick="showSection('map')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="map">
+                    <i class="fas fa-map-marked-alt text-teal-500"></i>
+                    <span>Rastreamento</span>
+                </button>
+                <button onclick="showSection('vehicles')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="vehicles">
+                    <i class="fas fa-car text-blue-500"></i>
+                    <span>Veículos</span>
+                </button>
+                <button onclick="showSection('fuel')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="fuel">
+                    <i class="fas fa-gas-pump text-orange-500"></i>
+                    <span>Combustível</span>
+                </button>
+                <button onclick="showSection('fines')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="fines">
+                    <i class="fas fa-exclamation-triangle text-red-500"></i>
+                    <span>Multas</span>
+                </button>
+                <button onclick="showSection('maintenance')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="maintenance">
+                    <i class="fas fa-tools text-purple-500"></i>
+                    <span>Manutenção</span>
+                </button>
+                <button onclick="showSection('reports')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="reports">
+                    <i class="fas fa-chart-bar text-yellow-500"></i>
+                    <span>Relatórios</span>
+                </button>
+                <button onclick="showSection('drivers')" class="nav-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-800 flex items-center gap-3 transition" data-section="drivers">
+                    <i class="fas fa-users text-pink-500"></i>
+                    <span>Motoristas</span>
+                </button>
+            </nav>
+            
+            <div class="mt-8 p-4 bg-gray-800/50 rounded-lg">
+                <p class="text-xs text-gray-400 mb-2">Frota Online</p>
+                <div class="flex items-center gap-2">
+                    <div class="status-dot status-online"></div>
+                    <span class="text-2xl font-bold" id="onlineCount">47</span>
+                    <span class="text-gray-400">/ 52</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 ml-72 p-6">
+            <!-- Header -->
+            <header class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold" id="sectionTitle">Dashboard</h2>
+                    <p class="text-gray-400" id="sectionSubtitle">Visão geral da sua gestão de frotas</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="glass px-4 py-2 rounded-lg flex items-center gap-3">
+                        <div class="text-right">
+                            <p class="text-xs text-gray-400">Prefeitura Municipal</p>
+                            <p class="font-semibold">Secretaria de Educação</p>
+                        </div>
+                        <i class="fas fa-building text-green-500 text-xl"></i>
+                    </div>
+                    <button class="glass w-10 h-10 rounded-lg flex items-center justify-center hover:bg-gray-700">
+                        <i class="fas fa-bell text-gray-300"></i>
+                    </button>
+                    <div class="glass w-10 h-10 rounded-lg flex items-center justify-center hover:bg-gray-700 cursor-pointer">
+                        <i class="fas fa-user-circle text-gray-300 text-xl"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="section-content">
+                <!-- KPIs -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="card-hover glass p-6 rounded-xl stat-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-400 text-sm">Veículos Ativos</p>
+                                <p class="text-3xl font-bold mt-2" id="kpi-vehicles">52</p>
+                                <p class="text-green-500 text-sm mt-1"><i class="fas fa-arrow-up"></i> 12% vs mês anterior</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+                                <i class="fas fa-car text-green-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-hover glass p-6 rounded-xl stat-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-400 text-sm">Km Rodados (Mês)</p>
+                                <p class="text-3xl font-bold mt-2" id="kpi-km">128.450</p>
+                                <p class="text-green-500 text-sm mt-1"><i class="fas fa-arrow-up"></i> 8% vs mês anterior</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center">
+                                <i class="fas fa-route text-teal-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-hover glass p-6 rounded-xl stat-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-400 text-sm">Gastos Combustível</p>
+                                <p class="text-3xl font-bold mt-2" id="kpi-fuel">R$ 84.320</p>
+                                <p class="text-red-500 text-sm mt-1"><i class="fas fa-arrow-up"></i> 5% vs mês anterior</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center">
+                                <i class="fas fa-gas-pump text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-hover glass p-6 rounded-xl stat-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-gray-400 text-sm">Multas Pendentes</p>
+                                <p class="text-3xl font-bold mt-2" id="kpi-fines">18</p>
+                                <p class="text-gray-400 text-sm mt-1">R$ 12.450 em multas</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
+                                <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="font-semibold mb-4">Custos por Categoria</h3>
+                        <canvas id="costChart"></canvas>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="font-semibold mb-4">Utilização da Frota</h3>
+                        <canvas id="utilizationChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Map Preview -->
+                <div class="glass p-6 rounded-xl mb-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-semibold">Mapa em Tempo Real</h3>
+                        <button onclick="showSection('map')" class="text-green-500 hover:text-green-400 text-sm">Ver mapa completo <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div id="miniMap" class="map-container"></div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="font-semibold mb-4">Últimas Viagens</h3>
+                        <div class="space-y-4" id="recentTrips"></div>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="font-semibold mb-4">Alertas e Notificações</h3>
+                        <div class="space-y-4" id="alerts"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Map Section -->
+            <section id="section-map" class="section-content hidden">
+                <div class="glass rounded-xl overflow-hidden">
+                    <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+                        <div class="flex gap-4">
+                            <button class="px-4 py-2 bg-green-600 rounded-lg text-sm"><i class="fas fa-car"></i> Veículos</button>
+                            <button class="px-4 py-2 bg-gray-700 rounded-lg text-sm hover:bg-gray-600"><i class="fas fa-route"></i> Rotas</button>
+                            <button class="px-4 py-2 bg-gray-700 rounded-lg text-sm hover:bg-gray-600"><i class="fas fa-draw-polygon"></i> Geofences</button>
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Buscar veículo..." class="bg-gray-800 px-4 py-2 rounded-lg text-sm w-64">
+                            <button class="glass px-4 py-2 rounded-lg"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div id="fullMap" style="height: 600px;"></div>
+                </div>
+            </section>
+            
+            <!-- Vehicles Section -->
+            <section id="section-vehicles" class="section-content hidden">
+                <div class="glass rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-semibold text-xl">Gestão de Veículos</h3>
+                        <button class="btn-primary px-4 py-2 rounded-lg text-sm"><i class="fas fa-plus"></i> Novo Veículo</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Veículo</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Placa</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Status</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Km Atual</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Última Viagem</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vehiclesTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Fuel Section -->
+            <section id="section-fuel" class="section-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Total Abastecimentos</p>
+                        <p class="text-2xl font-bold mt-2">342</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Volume Total</p>
+                        <p class="text-2xl font-bold mt-2">4.850 L</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Custo Médio/km</p>
+                        <p class="text-2xl font-bold mt-2">R$ 0,66</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-semibold text-xl">Registro de Abastecimentos</h3>
+                        <button class="btn-primary px-4 py-2 rounded-lg text-sm"><i class="fas fa-plus"></i> Novo Abastecimento</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Data</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Veículo</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Litros</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Valor</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">km/L</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fuelTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Fines Section -->
+            <section id="section-fines" class="section-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Multas Pendentes</p>
+                        <p class="text-2xl font-bold mt-2 text-red-500">18</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Multas Pagas</p>
+                        <p class="text-2xl font-bold mt-2 text-green-500">45</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Valor Total em Multas</p>
+                        <p class="text-2xl font-bold mt-2">R$ 24.850</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-semibold text-xl">Gestão de Multas</h3>
+                        <button class="btn-primary px-4 py-2 rounded-lg text-sm"><i class="fas fa-sync"></i> Sincronizar com DETRAN</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Data</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Veículo</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Infração</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Valor</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Status</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="finesTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Maintenance Section -->
+            <section id="section-maintenance" class="section-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-6">
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Próximas Revisões</p>
+                        <p class="text-2xl font-bold mt-2">8</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Em Oficina</p>
+                        <p class="text-2xl font-bold mt-2">3</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Alertas de km</p>
+                        <p class="text-2xl font-bold mt-2 text-yellow-500">12</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <p class="text-gray-400 text-sm">Custo Mês</p>
+                        <p class="text-2xl font-bold mt-2">R$ 18.450</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-semibold text-xl">Agenda de Manutenção</h3>
+                        <button class="btn-primary px-4 py-2 rounded-lg text-sm"><i class="fas fa-plus"></i> Nova Manutenção</button>
+                    </div>
+                    <div class="space-y-4" id="maintenanceList"></div>
+                </div>
+            </section>
+            
+            <!-- Reports Section -->
+            <section id="section-reports" class="section-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-6">
+                    <button class="glass p-6 rounded-xl text-left hover:bg-gray-800 transition">
+                        <i class="fas fa-file-alt text-3xl text-green-500 mb-3"></i>
+                        <p class="font-semibold">Relatório Mensal</p>
+                        <p class="text-xs text-gray-400">Resumo de custos e atividades</p>
+                    </button>
+                    <button class="glass p-6 rounded-xl text-left hover:bg-gray-800 transition">
+                        <i class="fas fa-car text-3xl text-blue-500 mb-3"></i>
+                        <p class="font-semibold">Por Veículo</p>
+                        <p class="text-xs text-gray-400">Análise detalhada por veículo</p>
+                    </button>
+                    <button class="glass p-6 rounded-xl text-left hover:bg-gray-800 transition">
+                        <i class="fas fa-chart-line text-3xl text-purple-500 mb-3"></i>
+                        <p class="font-semibold">Auditoria</p>
+                        <p class="text-xs text-gray-400">Log de todas as ações</p>
+                    </button>
+                    <button class="glass p-6 rounded-xl text-left hover:bg-gray-800 transition">
+                        <i class="fas fa-leaf text-3xl text-teal-500 mb-3"></i>
+                        <p class="font-semibold">Sustentabilidade</p>
+                        <p class="text-xs text-gray-400">Emissões e impacto ambiental</p>
+                    </button>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <h3 class="font-semibold text-xl mb-6">Relatórios Personalizados</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2">Custos Operacionais</h4>
+                            <p class="text-xs text-gray-400 mb-3">Comparativo de custos por período</p>
+                            <button class="text-green-500 text-sm">Gerar relatório <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2">Utilização da Frota</h4>
+                            <p class="text-xs text-gray-400 mb-3">Taxa de utilização por veículo</p>
+                            <button class="text-green-500 text-sm">Gerar relatório <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-2">Multas e Infrações</h4>
+                            <p class="text-xs text-gray-400 mb-3">Relatório de infrações por veículo</p>
+                            <button class="text-green-500 text-sm">Gerar relatório <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Drivers Section -->
+            <section id="section-drivers" class="section-content hidden">
+                <div class="glass rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-semibold text-xl">Gestão de Motoristas</h3>
+                        <button class="btn-primary px-4 py-2 rounded-lg text-sm"><i class="fas fa-plus"></i> Novo Motorista</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Motorista</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">SIAPE</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">CNH</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Status</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Pontos CNH</th>
+                                    <th class="text-left py-3 px-4 text-gray-400 font-medium">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="driversTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        // Data
+        const vehicles = [
+            { id: 1, model: 'Toyota Hilux', plate: 'ABC-1234', status: 'online', km: 85420, lastTrip: '12:30', driver: 'João Silva' },
+            { id: 2, model: 'Ford Ranger', plate: 'DEF-5678', status: 'online', km: 67890, lastTrip: '11:45', driver: 'Maria Santos' },
+            { id: 3, model: 'Chevrolet Spin', plate: 'GHI-9012', status: 'maintenance', km: 45670, lastTrip: 'Ontem', driver: 'Pedro Costa' },
+            { id: 4, model: 'VW Voyage', plate: 'JKL-3456', status: 'online', km: 123450, lastTrip: '10:15', driver: 'Ana Oliveira' },
+            { id: 5, model: ' Fiat Uno', plate: 'MNO-7890', status: 'offline', km: 98760, lastTrip: 'Ontem', driver: 'Carlos Lima' },
+            { id: 6, model: 'Renault Master', plate: 'PQR-1122', status: 'online', km: 34200, lastTrip: '09:30', driver: 'José Alves' },
+            { id: 7, model: 'Mercedes Sprinter', plate: 'STU-3344', status: 'online', km: 56780, lastTrip: '08:00', driver: 'Paulo Ferreira' },
+            { id: 8, model: 'Ford Transit', plate: 'VWX-5566', status: 'warning', km: 78900, lastTrip: 'Ontem', driver: 'Roberto Souza' },
+        ];
+        
+        const fuelRecords = [
+            { date: '22/03/2026', vehicle: 'ABC-1234', liters: 65, value: 455, kmL: 12.5, status: 'ok' },
+            { date: '21/03/2026', vehicle: 'DEF-5678', liters: 58, value: 406, kmL: 11.8, status: 'ok' },
+            { date: '20/03/2026', vehicle: 'GHI-9012', liters: 72, value: 504, kmL: 9.2, status: 'alert' },
+            { date: '19/03/2026', vehicle: 'JKL-3456', liters: 45, value: 315, kmL: 13.1, status: 'ok' },
+            { date: '18/03/2026', vehicle: 'MNO-7890', liters: 52, value: 364, kmL: 11.2, status: 'ok' },
+        ];
+        
+        const fines = [
+            { date: '15/03/2026', vehicle: 'ABC-1234', infraction: 'Excesso de velocidade', value: 880, status: 'pending' },
+            { date: '10/03/2026', vehicle: 'DEF-5678', infraction: 'Estacionamento irregular', value: 293, status: 'paid' },
+            { date: '05/03/2026', vehicle: 'JKL-3456', infraction: 'Farol desligado', value: 195, status: 'pending' },
+            { date: '01/03/2026', vehicle: 'MNO-7890', infraction: 'Transite em faixa exclusiva', value: 880, status: 'pending' },
+        ];
+        
+        const maintenance = [
+            { vehicle: 'ABC-1234', type: 'Troca de óleo', km: 90000, date: '25/03/2026', status: 'scheduled' },
+            { vehicle: 'GHI-9012', type: 'Revisão geral', km: 50000, date: '28/03/2026', status: 'scheduled' },
+            { vehicle: 'STU-3344', type: 'Troca de pneus', km: 60000, date: '30/03/2026', status: 'scheduled' },
+        ];
+        
+        const drivers = [
+            { name: 'João Silva', siape: '1234567', cnh: '05987462301', status: 'active', points: 0 },
+            { name: 'Maria Santos', siape: '2345678', cnh: '06874531290', status: 'active', points: 3 },
+            { name: 'Pedro Costa', siape: '3456789', cnh: '07412364589', status: 'active', points: 0 },
+            { name: 'Ana Oliveira', siape: '4567890', cnh: '08125647392', status: 'inactive', points: 5 },
+            { name: 'Carlos Lima', siape: '5678901', cnh: '09234781654', status: 'active', points: 0 },
+        ];
+        
+        const recentTrips = [
+            { vehicle: 'ABC-1234', driver: 'João Silva', destination: 'Secretaria de Educação', time: '12:30', status: 'em andamento' },
+            { vehicle: 'DEF-5678', driver: 'Maria Santos', destination: 'Posto de Saúde Central', time: '11:45', status: 'concluída' },
+            { vehicle: 'PQR-1122', driver: 'José Alves', destination: 'Prefeitura Municipal', time: '09:30', status: 'concluída' },
+            { vehicle: 'STU-3344', driver: 'Paulo Ferreira', destination: 'Centro de Eventos', time: '08:00', status: 'concluída' },
+        ];
+        
+        const alerts = [
+            { type: 'warning', message: 'Veículo STU-3344 com manutenção atrasada', time: '10 min' },
+            { type: 'danger', message: 'Excesso de velocidade - ABC-1234', time: '25 min' },
+            { type: 'info', message: 'Geofence violado - MNO-7890', time: '1 hora' },
+            { type: 'success', message: 'Abastecimento registrado - DEF-5678', time: '2 horas' },
+        ];
+        
+        // Initialize
+        let miniMap, fullMap;
+        
+        function init() {
+            renderVehicles();
+            renderFuel();
+            renderFines();
+            renderMaintenance();
+            renderDrivers();
+            renderRecentTrips();
+            renderAlerts();
+            initCharts();
+            initMaps();
+        }
+        
+        function renderVehicles() {
+            const tbody = document.getElementById('vehiclesTable');
+            tbody.innerHTML = vehicles.map(v => `
+                <tr class="border-b border-gray-800 hover:bg-gray-800/50">
+                    <td class="py-3 px-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                                <i class="fas fa-car text-blue-500"></i>
+                            </div>
+                            <span>${v.model}</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-mono">${v.plate}</td>
+                    <td class="py-3 px-4">
+                        <span class="px-2 py-1 rounded-full text-xs ${v.status === 'online' ? 'bg-green-500/20 text-green-500' : v.status === 'offline' ? 'bg-red-500/20 text-red-500' : v.status === 'warning' ? 'bg-yellow-500/20 text-yellow-500' : 'bg-purple-500/20 text-purple-500'}">
+                            ${v.status === 'online' ? 'Online' : v.status === 'offline' ? 'Offline' : v.status === 'warning' ? 'Atenção' : 'Manutenção'}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4">${v.km.toLocaleString()} km</td>
+                    <td class="py-3 px-4">${v.lastTrip}</td>
+                    <td class="py-3 px-4">
+                        <button class="text-gray-400 hover:text-white"><i class="fas fa-ellipsis-v"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function renderFuel() {
+            const tbody = document.getElementById('fuelTable');
+            tbody.innerHTML = fuelRecords.map(f => `
+                <tr class="border-b border-gray-800 hover:bg-gray-800/50">
+                    <td class="py-3 px-4">${f.date}</td>
+                    <td class="py-3 px-4 font-mono">${f.vehicle}</td>
+                    <td class="py-3 px-4">${f.litros} L</td>
+                    <td class="py-3 px-4">R$ ${f.value}</td>
+                    <td class="py-3 px-4 ${f.kmL < 10 ? 'text-red-500' : 'text-green-500'}">${f.kmL} km/L</td>
+                    <td class="py-3 px-4">
+                        <span class="px-2 py-1 rounded-full text-xs ${f.status === 'ok' ? 'bg-green-500/20 text-green-500' : 'bg-yellow-500/20 text-yellow-500'}">
+                            ${f.status === 'ok' ? 'Normal' : 'Alerta'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function renderFines() {
+            const tbody = document.getElementById('finesTable');
+            tbody.innerHTML = fines.map(f => `
+                <tr class="border-b border-gray-800 hover:bg-gray-800/50">
+                    <td class="py-3 px-4">${f.date}</td>
+                    <td class="py-3 px-4 font-mono">${f.vehicle}</td>
+                    <td class="py-3 px-4">${f.infraction}</td>
+                    <td class="py-3 px-4">R$ ${f.value}</td>
+                    <td class="py-3 px-4">
+                        <span class="px-2 py-1 rounded-full text-xs ${f.status === 'paid' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}">
+                            ${f.status === 'paid' ? 'Paga' : 'Pendente'}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4">
+                        ${f.status === 'pending' ? '<button class="text-green-500 text-sm hover:text-green-400">Pagar</button>' : '<button class="text-gray-400 text-sm">Ver</button>'}
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function renderMaintenance() {
+            const list = document.getElementById('maintenanceList');
+            list.innerHTML = maintenance.map(m => `
+                <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                            <i class="fas fa-tools text-purple-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">${m.type}</p>
+                            <p class="text-sm text-gray-400">Veículo ${m.vehicle} • ${m.km.toLocaleString()} km</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm text-gray-400">${m.date}</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-yellow-500/20 text-yellow-500">Agendado</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderDrivers() {
+            const tbody = document.getElementById('driversTable');
+            tbody.innerHTML = drivers.map(d => `
+                <tr class="border-b border-gray-800 hover:bg-gray-800/50">
+                    <td class="py-3 px-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                <i class="fas fa-user text-green-500"></i>
+                            </div>
+                            <span>${d.name}</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-mono">${d.siape}</td>
+                    <td class="py-3 px-4 font-mono">${d.cnh}</td>
+                    <td class="py-3 px-4">
+                        <span class="px-2 py-1 rounded-full text-xs ${d.status === 'active' ? 'bg-green-500/20 text-green-500' : 'bg-gray-500/20 text-gray-500'}">
+                            ${d.status === 'active' ? 'Ativo' : 'Inativo'}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4 ${d.points > 0 ? 'text-red-500' : 'text-green-500'}">${d.points} pontos</td>
+                    <td class="py-3 px-4">
+                        <button class="text-gray-400 hover:text-white"><i class="fas fa-ellipsis-v"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function renderRecentTrips() {
+            const container = document.getElementById('recentTrips');
+            container.innerHTML = recentTrips.map(t => `
+                <div class="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full ${t.status === 'em andamento' ? 'bg-green-500' : 'bg-gray-500'} flex items-center justify-center">
+                            <i class="fas fa-${t.status === 'em andamento' ? 'route' : 'check'} text-white text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium">${t.vehicle} - ${t.driver}</p>
+                            <p class="text-xs text-gray-400">${t.destination}</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-gray-400">${t.time}</p>
+                        <p class="text-xs ${t.status === 'em andamento' ? 'text-green-500' : 'text-gray-400'}">${t.status}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderAlerts() {
+            const container = document.getElementById('alerts');
+            container.innerHTML = alerts.map(a => `
+                <div class="flex items-center gap-3 p-3 bg-gray-800/50 rounded-lg">
+                    <div class="w-2 h-2 rounded-full ${a.type === 'danger' ? 'bg-red-500' : a.type === 'warning' ? 'bg-yellow-500' : a.type === 'success' ? 'bg-green-500' : 'bg-blue-500'}"></div>
+                    <div class="flex-1">
+                        <p class="text-sm">${a.message}</p>
+                        <p class="text-xs text-gray-400">${a.time}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function initCharts() {
+            // Cost Chart
+            const costCtx = document.getElementById('costChart').getContext('2d');
+            new Chart(costCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Combustível', 'Manutenção', 'Multas', 'Seguro', 'Outros'],
+                    datasets: [{
+                        data: [45, 25, 15, 10, 5],
+                        backgroundColor: ['#22c55e', '#0d9488', '#ef4444', '#8b5cf6', '#6b7280'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#9ca3af', padding: 20 }
+                        }
+                    }
+                }
+            });
+            
+            // Utilization Chart
+            const utilCtx = document.getElementById('utilizationChart').getContext('2d');
+            new Chart(utilCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                    datasets: [{
+                        label: 'Km Rodados',
+                        data: [4500, 5200, 4800, 5100, 4900, 2200, 800],
+                        backgroundColor: '#22c55e',
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: '#9ca3af' } },
+                        y: { grid: { color: '#374151' }, ticks: { color: '#9ca3af' } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+        
+        function initMaps() {
+            // Mini Map
+            setTimeout(() => {
+                miniMap = L.map('miniMap').setView([-15.7801, -47.9292], 12);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '© OpenStreetMap'
+                }).addTo(miniMap);
+                
+                // Add vehicle markers
+                const positions = [
+                    [-15.7801, -47.9292], [-15.7901, -47.9392], [-15.7701, -47.9192],
+                    [-15.7601, -47.9492], [-15.8001, -47.9092]
+                ];
+                positions.forEach((pos, i) => {
+                    L.circleMarker(pos, {
+                        radius: 8,
+                        fillColor: '#22c55e',
+                        color: '#fff',
+                        weight: 2,
+                        fillOpacity: 0.8
+                    }).addTo(miniMap);
+                });
+            }, 100);
+            
+            // Full Map
+            setTimeout(() => {
+                fullMap = L.map('fullMap').setView([-15.7801, -47.9292], 12);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '© OpenStreetMap'
+                }).addTo(fullMap);
+                
+                vehicles.forEach((v, i) => {
+                    const pos = [-15.78 + (Math.random() - 0.5) * 0.05, -47.93 + (Math.random() - 0.5) * 0.05];
+                    const icon = L.divIcon({
+                        html: `<div class="vehicle-marker">${i + 1}</div>`,
+                        className: 'custom-marker'
+                    });
+                    L.marker(pos, { icon }).addTo(fullMap).bindPopup(`
+                        <div class="text-gray-800">
+                            <p class="font-bold">${v.model}</p>
+                            <p class="text-sm">${v.plate}</p>
+                            <p class="text-sm">Motorista: ${v.driver}</p>
+                            <p class="text-sm">Status: ${v.status}</p>
+                        </div>
+                    `);
+                });
+            }, 200);
+        }
+        
+        function showSection(section) {
+            document.querySelectorAll('.section-content').forEach(s => s.classList.add('hidden'));
+            document.getElementById(`section-${section}`).classList.remove('hidden');
+            
+            const titles = {
+                dashboard: { title: 'Dashboard', subtitle: 'Visão geral da sua gestão de frotas' },
+                map: { title: 'Rastreamento GPS', subtitle: 'Localização em tempo real de todos os veículos' },
+                vehicles: { title: 'Veículos', subtitle: 'Gestão completa da frota' },
+                fuel: { title: 'Combustível', subtitle: 'Controle antifraude de abastecimentos' },
+                fines: { title: 'Multas', subtitle: 'Gestão de infrações e defesas' },
+                maintenance: { title: 'Manutenção', subtitle: 'Agenda de manutenções preventivas' },
+                reports: { title: 'Relatórios', subtitle: 'Analytics e exportação de dados' },
+                drivers: { title: 'Motoristas', subtitle: 'Gestão de motoristas e CNH' }
+            };
+            
+            document.getElementById('sectionTitle').textContent = titles[section].title;
+            document.getElementById('sectionSubtitle').textContent = titles[section].subtitle;
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-gray-800', 'text-green-500');
+                if (btn.dataset.section === section) {
+                    btn.classList.add('bg-gray-800', 'text-green-500');
+                }
+            });
+            
+            // Resize maps when shown
+            if (section === 'map') {
+                setTimeout(() => fullMap.invalidateSize(), 300);
+            }
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', init);
+        
+        // Simulate real-time updates
+        setInterval(() => {
+            const online = Math.floor(Math.random() * 5) + 45;
+            document.getElementById('onlineCount').textContent = online;
+        }, 5000);
+    </script>
+</body>
+</html>
