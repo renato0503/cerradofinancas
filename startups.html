@@ -1,0 +1,589 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerrado Tech | Nossas Startups</title>
+  <meta name="description" content="Conheça o portfólio de startups desenvolvidas pela Cerrado Tech.">
+  
+  <link rel="icon" type="image/png" href="img/folinha.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/startups.css"> 
+
+  <style>
+      /* --- NOVO HERO CERRADO TECH COM VÍDEO DE FUNDO --- */
+      .hero-tech {
+          position: relative;
+          padding: 140px 0 100px;
+          color: #fff;
+          border-bottom: 4px solid #10b981;
+          overflow: hidden;
+          background-color: #0f172a; /* Fallback */
+      }
+
+      .hero-video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          transform: translate(-50%, -50%);
+          z-index: 0;
+          object-fit: cover;
+      }
+
+      .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(2, 6, 23, 0.90) 0%, rgba(15, 23, 42, 0.85) 100%);
+          z-index: 1;
+      }
+
+      .hero-tech .container {
+          position: relative;
+          z-index: 2;
+      }
+
+      .tech-split-layout {
+          display: flex;
+          align-items: center;
+          gap: 60px;
+      }
+
+      .tech-visual-content {
+          flex: 0.8;
+          display: flex;
+          justify-content: center;
+      }
+
+      .tech-logo-card {
+          background: #ffffff;
+          padding: 40px;
+          border-radius: 60px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+          border: 1px solid rgba(255,255,255,0.1);
+          width: 100%;
+          max-width: 320px;
+          aspect-ratio: 1 / 1; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(-3deg);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .tech-logo-card:hover { transform: rotate(0deg) translateY(-10px) scale(1.02); box-shadow: 0 40px 80px rgba(16, 185, 129, 0.3); }
+
+      .tech-logo-card img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
+      }
+
+      .tech-text-content {
+          flex: 1.2;
+          text-align: left;
+      }
+
+      .tech-tag {
+          background: rgba(16, 185, 129, 0.15);
+          color: #34d399;
+          padding: 8px 20px;
+          border-radius: 50px;
+          font-weight: 800;
+          font-size: 0.85rem;
+          display: inline-block;
+          margin-bottom: 24px;
+          border: 1px solid rgba(16, 185, 129, 0.3);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      .tech-title {
+          font-size: clamp(2.5rem, 5vw, 4.2rem);
+          font-weight: 900;
+          line-height: 1.1;
+          margin-bottom: 24px;
+          letter-spacing: -1px;
+          color: #fff;
+      }
+
+      .tech-subtitle {
+          font-size: 1.2rem;
+          color: #cbd5e1;
+          max-width: 700px;
+          line-height: 1.6;
+          margin: 0;
+      }
+
+      @media (max-width: 992px) {
+          .tech-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+          .tech-text-content { text-align: center; }
+          .tech-subtitle { margin: 0 auto; }
+          .tech-logo-card { transform: none; aspect-ratio: 1/1; padding: 30px; max-width: 220px; border-radius: 40px;}
+      }
+
+      /* --- ESTRUTURA DAS LÂMINAS DE STARTUPS --- */
+      .startup-lamina { padding: 100px 0; overflow: hidden; }
+      .lamina-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+      .lamina-reverse { flex-direction: row-reverse; }
+      .lamina-content { flex: 1.1; }
+      .lamina-visual { flex: 0.9; position: relative; }
+
+      /* Design Padrão de App Icon Nativo */
+      .startup-logo-box {
+          background: #ffffff; 
+          width: 140px; 
+          height: 140px;
+          padding: 20px; 
+          border-radius: 32px; /* Formato iOS Squircle */
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+          display: inline-flex; 
+          align-items: center; 
+          justify-content: center; 
+          margin-bottom: 30px; 
+          border: 1px solid rgba(0,0,0,0.05);
+          overflow: hidden;
+      }
+      .startup-logo-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+      .lamina-title-wrapper { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+      .lamina-title { font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.1; }
+      .lamina-desc { font-size: 1.15rem; line-height: 1.6; margin-bottom: 30px; }
+
+      .lamina-info-card {
+          background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.2);
+      }
+      .info-block { margin-bottom: 24px; }
+      .info-block:last-child { margin-bottom: 0; }
+      .info-block h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 8px; }
+      .info-block p { font-size: 1rem; margin: 0; color: #334155; }
+
+      .lamina-tech-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.05); }
+      .lamina-tag { font-size: 0.8rem; font-weight: 700; padding: 6px 14px; border-radius: 50px; letter-spacing: 0.5px; }
+      .btn-lamina { display: inline-block; padding: 16px 32px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; margin-top: 10px; }
+
+      /* --- TEMAS INDIVIDUAIS --- */
+      /* GoGym */
+      .theme-gogym { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); color: #ffffff; }
+      .theme-gogym .lamina-title { color: #ffffff; }
+      .theme-gogym .lamina-desc { color: #a1a1aa; }
+      .theme-gogym .lamina-info-card { background: rgba(30, 30, 30, 0.6); border-color: #333; }
+      .theme-gogym .info-block h4 { color: #ff4500; }
+      .theme-gogym .info-block p { color: #e4e4e7; }
+      .theme-gogym .lamina-tag { background: rgba(255, 69, 0, 0.1); color: #ff4500; border: 1px solid rgba(255, 69, 0, 0.2); }
+      .theme-gogym .btn-lamina { background: #ff4500; color: #fff; border: none; }
+      .theme-gogym .btn-lamina:hover { background: #e63e00; box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3); color: #fff; }
+
+      /* MTData */
+      .theme-mtdata { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #f8fafc; border-top: 1px solid #1e293b;}
+      .theme-mtdata .lamina-title { color: #f8fafc; }
+      .theme-mtdata .lamina-desc { color: #cbd5e1; }
+      .theme-mtdata .startup-logo-box { background: #020617; border: 1px solid rgba(16, 185, 129, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.5); padding: 15px;}
+      .theme-mtdata .lamina-info-card { background: rgba(15, 23, 42, 0.6); border-color: #334155; }
+      .theme-mtdata .info-block h4 { color: #10b981; }
+      .theme-mtdata .info-block h4:first-child { color: #ef4444; }
+      .theme-mtdata .info-block p { color: #94a3b8; }
+      .theme-mtdata .lamina-tag { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+      .theme-mtdata .btn-lamina { background: #10b981; color: #0f172a; border: none; }
+      .theme-mtdata .btn-lamina:hover { background: #059669; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); color: #fff; }
+
+      /* PataMed */
+      .theme-patamed { background: linear-gradient(135deg, #f4fcf9 0%, #e0f2eb 100%); color: #054D3F; }
+      .theme-patamed .lamina-title { color: #054D3F; }
+      .theme-patamed .lamina-desc { color: #1b4035; }
+      .theme-patamed .info-block h4 { color: #F29479; }
+      .theme-patamed .lamina-tag { background: rgba(5, 77, 63, 0.1); color: #054D3F; border: 1px solid rgba(5, 77, 63, 0.2); }
+      .theme-patamed .btn-lamina { background: #F29479; color: #fff; border: none; }
+      .theme-patamed .btn-lamina:hover { background: #e07a5f; box-shadow: 0 10px 20px rgba(242, 148, 121, 0.3); color: #fff; }
+
+      /* Global Ready */
+      .theme-globalready { background: linear-gradient(135deg, #1e293b 0%, #020617 100%); color: #f8fafc; border-top: 1px solid #1e293b;}
+      .theme-globalready .lamina-title { color: #f8fafc; }
+      .theme-globalready .lamina-desc { color: #cbd5e1; }
+      .theme-globalready .startup-logo-box { background: #0f172a; border: 1px solid rgba(250, 204, 21, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.5); padding: 15px;}
+      .theme-globalready .lamina-info-card { background: rgba(255, 255, 255, 0.05); border-color: #334155; }
+      .theme-globalready .info-block h4 { color: #facc15; }
+      .theme-globalready .info-block h4:first-child { color: #f87171; }
+      .theme-globalready .info-block p { color: #e2e8f0; }
+      .theme-globalready .lamina-tag { background: rgba(250, 204, 21, 0.1); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.2); }
+      .theme-globalready .btn-lamina { background: #facc15; color: #0f172a; border: none; }
+      .theme-globalready .btn-lamina:hover { background: #eab308; box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3); }
+
+      /* ChamaLá */
+      .theme-chamala { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); color: #431407; }
+      .theme-chamala .lamina-title { color: #431407; }
+      .theme-chamala .lamina-desc { color: #9a3412; }
+      .theme-chamala .info-block h4 { color: #F97316; }
+      .theme-chamala .lamina-tag { background: rgba(249, 115, 22, 0.1); color: #ea580c; border: 1px solid rgba(249, 115, 22, 0.2); }
+      .theme-chamala .btn-lamina { background: #F97316; color: #fff; border: none; }
+      .theme-chamala .btn-lamina:hover { background: #ea580c; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); color: #fff; }
+
+      /* Responsivo */
+      @media (max-width: 992px) {
+          .lamina-container, .lamina-container.lamina-reverse { flex-direction: column; gap: 40px; }
+          .lamina-title { font-size: 2rem; }
+          .lamina-visual { width: 100%; }
+      }
+
+      /* --- PROCESSO DE CRIAÇÃO --- */
+      .process-section { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 80px 0; }
+      .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+      .process-step { background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; text-align: center; }
+      .step-icon { width: 50px; height: 50px; background: #0f172a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px; }
+      .process-step h4 { font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 800; }
+      .process-step p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
+      /* --- NOVA SEÇÃO: INCUBADORA FULL-SCREEN --- */
+      .incubator-hero {
+          position: relative;
+          padding: 150px 0;
+          background: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+          text-align: center;
+          color: #fff;
+          border-top: 4px solid #10b981;
+      }
+
+      .incubator-hero::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: linear-gradient(135deg, rgba(2, 6, 23, 0.95) 0%, rgba(16, 185, 129, 0.85) 100%);
+      }
+
+      .incubator-hero .container {
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+      }
+
+      .incubator-icon {
+          font-size: 4rem;
+          margin-bottom: 20px;
+          display: block;
+          text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      }
+      
+      .incubator-title {
+          font-size: clamp(2.2rem, 5vw, 3.5rem);
+          font-weight: 900;
+          color: #fff;
+          margin-bottom: 20px;
+          line-height: 1.1;
+          letter-spacing: -1px;
+      }
+      
+      .incubator-desc {
+          font-size: 1.2rem;
+          color: #d1fae5;
+          margin-bottom: 40px;
+          line-height: 1.6;
+      }
+      
+      .btn-incubator {
+          background: #fff;
+          color: #0f172a;
+          padding: 20px 40px;
+          border-radius: 50px;
+          font-size: 1.1rem;
+          font-weight: 800;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: inline-block;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      }
+      .btn-incubator:hover {
+          background: #10b981;
+          color: #fff;
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+      }
+
+  </style>
+</head>
+<body>
+
+  {% include header.html titulo="Cerrado Tech" %}
+
+  <section class="hero-tech">
+    <video autoplay loop muted playsinline class="hero-video">
+        <source src="{{ '/video/cerradotech.mp4' | relative_url }}" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+    
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="tech-split-layout">
+        
+        <div class="tech-visual-content fade-up">
+          <div class="tech-logo-card">
+            <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
+          </div>
+        </div>
+
+        <div class="tech-text-content">
+          <span class="tech-tag fade-up delay-1">Venture Builder</span>
+          <h1 class="tech-title fade-up delay-1">Ecossistema de Inovação Próprio.</h1>
+          <p class="tech-subtitle fade-up delay-2">Apoiadas na infraestrutura e conhecimento da <strong>Cerrado Finanças</strong>, nossas startups operam no mercado de forma independente. Desse modo, elas utilizam a mesma inteligência estratégica, governança corporativa e tecnologia desenvolvida internamente pela nossa fábrica de software.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="startup-lamina theme-gogym" id="gogym">
+      <div class="lamina-container">
+          <div class="lamina-content fade-up">
+              <div class="startup-logo-box">
+                  <img src="img/logo-gogym.png" alt="GoGym Logo">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">GoGym Store</h2>
+                  <span class="status-badge success" style="margin: 0; background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.3); padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Em Operação</span>
+              </div>
+              <p class="lamina-desc">A empresa estrutura sua operação no modelo logístico de Dark Store para otimizar a distribuição de ponta a ponta. Como resultado, construímos um comércio eletrônico dedicado exclusivamente a produtos de alta performance física e saúde.</p>
+              
+              <a href="/startups/gogym/" class="btn-lamina">Acessar GoGym Store</a>
+          </div>
+          
+          <div class="lamina-visual fade-up delay-1">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>As lojas físicas tradicionais de suplementação sofrem com altos custos de vitrine e crônicos gargalos logísticos. Consequentemente, o produto final chega mais caro ao consumidor.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Implementamos um centro de distribuição otimizado. Adicionalmente, utilizamos a gestão de estoque baseada em dados reais e inteligência preditiva para suprir a demanda da região rapidamente.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">Logística</span>
+                      <span class="lamina-tag">Dark Store</span>
+                      <span class="lamina-tag">E-commerce</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="startup-lamina theme-mtdata lamina-reverse" id="mtdata">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content fade-up">
+              <div class="startup-logo-box">
+                  <img src="img/mtdata.png" alt="MTData Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<h3 style=\'color:#10b981; font-size:2rem; font-weight:900; margin:0; line-height:1;\'>MT<span style=\'color:#fff;\'>Data</span></h3>'">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">MTData Intelligence</h2>
+                  <span class="status-badge success" style="margin: 0; background: rgba(16,185,129,0.2); color: #10b981; border: 1px solid rgba(16,185,129,0.3); padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">MVP Validado</span>
+              </div>
+              <p class="lamina-desc">A plataforma atua como um sistema centralizado de Business Intelligence alimentado por pesquisas de campo ativas. Dessa forma, ela soluciona a escassez de informações confiáveis para o planejamento governamental e privado no setor de turismo e eventos no estado.</p>
+              
+              <a href="/mtdata.html" class="btn-lamina">Conhecer o MTData</a>
+          </div>
+          
+          <div class="lamina-visual fade-up delay-1">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>A falta de dados primários sobre o comportamento do público gera investimentos desalinhados. Dessa maneira, as políticas públicas acabam não atingindo a eficiência desejada no fomento ao comércio local.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Organizamos uma rede de estudantes treinados para realizar a coleta de dados de forma ágil durante os eventos. Em seguida, essas informações são processadas e exibidas em painéis visuais interativos equipados com inteligência preditiva.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">Big Data</span>
+                      <span class="lamina-tag">GovTech</span>
+                      <span class="lamina-tag">SaaS</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="startup-lamina theme-patamed" id="patamed">
+      <div class="lamina-container">
+          <div class="lamina-content fade-up">
+              <div class="startup-logo-box">
+                  <img src="img/logo-patamed.png" alt="PataMed Logo">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">PataMed</h2>
+                  <span class="status-badge warning" style="margin: 0; background: #fff0eb; color: #d96d50; border: 1px solid #ffdacc; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Em Desenvolvimento</span>
+              </div>
+              <p class="lamina-desc">O projeto centraliza o acesso ao histórico médico veterinário através de uma aplicação simples e acessível. Com isso, buscamos modernizar a relação entre clínicas, veterinários e tutores para garantir o bem-estar animal de forma preventiva.</p>
+              
+              <a href="/startups/patamed/" class="btn-lamina">Conhecer a PataMed</a>
+          </div>
+          
+          <div class="lamina-visual fade-up delay-1">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>As informações de saúde animal costumam ficar espalhadas em papéis e carteiras de vacinação facilmente perdidas. Portanto, ocorre uma desconexão evidente na continuidade do cuidado médico quando o tutor troca de profissional.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Criamos um sistema de prontuário eletrônico na nuvem que consolida todas as passagens clínicas. Além disso, o aplicativo móvel permite que o tutor acompanhe prazos de vacinas e medicações de maneira automatizada.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">HealthTech</span>
+                      <span class="lamina-tag">App Mobile</span>
+                      <span class="lamina-tag">Medicina Veterinária</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="startup-lamina theme-globalready lamina-reverse" id="globalready">
+      <div class="lamina-container lamina-reverse">
+          <div class="lamina-content fade-up">
+              <div class="startup-logo-box">
+                  <img src="img/globalready.png" alt="Global Ready Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<h3 style=\'color:#facc15; font-size:1.8rem; margin:0;\'>Global<br>Ready</h3>'">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">Global Ready</h2>
+                  <span class="status-badge warning" style="margin: 0; background: rgba(250, 204, 21, 0.15); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.3); padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Validação / Piloto</span>
+              </div>
+              <p class="lamina-desc">A startup oferece uma metodologia de certificação aliada a uma plataforma E-Learning exclusiva. O propósito é qualificar a rede hoteleira e o setor de serviços de Mato Grosso para receber delegações corporativas internacionais no padrão exigido pelo mercado.</p>
+              
+              <a href="/globalready.html" class="btn-lamina">Conhecer a Global Ready</a>
+          </div>
+          
+          <div class="lamina-visual fade-up delay-1">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>O estado recebe um fluxo massivo de investidores em razão do agronegócio, porém, os estabelecimentos esbarram na barreira do idioma. Isso gera desconfortos em relação ao protocolo asiático, o que pode prejudicar o fechamento de negociações de alto valor.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>Aplicamos uma auditoria técnica profunda baseada em parâmetros mundiais. Em paralelo, a equipe do estabelecimento é treinada e recebe a concessão do Selo de Excelência para destacar sua adequação aos investidores.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">EdTech</span>
+                      <span class="lamina-tag">Certificadora</span>
+                      <span class="lamina-tag">B2B</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="startup-lamina theme-chamala" id="chamala">
+      <div class="lamina-container">
+          <div class="lamina-content fade-up">
+              <div class="startup-logo-box">
+                  <img src="img/logo-chamala.png" alt="ChamaLá Logo">
+              </div>
+              <div class="lamina-title-wrapper">
+                  <h2 class="lamina-title">ChamaLá</h2>
+                  <span class="status-badge warning" style="margin: 0; background: #ffedd5; color: #ea580c; border: 1px solid #fed7aa; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">Ideação / MVP</span>
+              </div>
+              <p class="lamina-desc">Nossa aplicação intermedeia a contratação rápida de serviços domésticos e de manutenção. A ferramenta atua como a ponte segura entre o cliente que precisa resolver um problema urgente e o profissional autônomo qualificado para a tarefa.</p>
+              
+              <a href="/startups/chamala/" class="btn-lamina">Conhecer o ChamaLá</a>
+          </div>
+          
+          <div class="lamina-visual fade-up delay-1">
+              <div class="lamina-info-card">
+                  <div class="info-block">
+                      <h4>O Problema</h4>
+                      <p>Encontrar prestadores de serviço confiáveis para reparos rápidos gera atrito, atrasos e insegurança. Além do mais, as indicações informais nem sempre garantem a resolução do problema com a urgência requerida pela rotina moderna.</p>
+                  </div>
+                  <div class="info-block">
+                      <h4>A Solução</h4>
+                      <p>O sistema processa conexões instantâneas entre demanda e oferta utilizando ferramentas de geolocalização. O profissional é acionado rapidamente, enquanto o cliente se baseia no histórico de avaliações da plataforma para tomar sua decisão com segurança.</p>
+                  </div>
+                  <div class="lamina-tech-tags">
+                      <span class="lamina-tag">Marketplace</span>
+                      <span class="lamina-tag">Geolocalização</span>
+                      <span class="lamina-tag">Gig Economy</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="section process-section">
+    <div class="container fade-up">
+      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+        <span class="tag" style="background: #e0f2fe; color: #0284c7; padding: 6px 16px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #bae6fd;">Como Criamos</span>
+        <h2 class="title" style="margin: 15px auto 0; font-size: 2.2rem; font-weight: 800; color: #0f172a;">Do Papel à Escala</h2>
+      </div>
+      
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-icon">1</div>
+          <h4>Validação de Dores</h4>
+          <p>Inicialmente, identificamos as ineficiências latentes no mercado. Evitamos o início da programação sem antes comprovar de forma analítica que o problema é real e que o público possui disposição para pagar pela solução proposta.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon">2</div>
+          <h4>Construção do MVP</h4>
+          <p>Em seguida, nos apoiamos na arquitetura de desenvolvimento ágil e na integração de módulos prontos. Desse modo, o produto base ganha funcionalidade no menor tempo possível para que os testes de campo comecem imediatamente.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-icon">3</div>
+          <h4>Tração e Governança</h4>
+          <p>Por fim, quando a ideia prova o seu valor comercial, estruturamos a operação administrativa. A contabilidade e a organização financeira são inseridas nos processos internos para garantir que o crescimento da startup ocorra com segurança fiscal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="incubator-hero">
+      <div class="container fade-up">
+          <span class="incubator-icon">💡</span>
+          <h2 class="incubator-title">Você possui o conhecimento técnico, mas não tem como executá-lo?</h2>
+          <p class="incubator-desc">
+              Tirar uma ideia promissora do papel e transformá-la em uma companhia rentável demanda um rigor administrativo intenso. Além disso, é imprescindível contar com inteligência financeira sólida e recursos de desenvolvimento digital de ponta. 
+              <strong>Nesse cenário, a Cerrado Tech posiciona-se como o parceiro estrutural ideal para o seu projeto.</strong>
+          </p>
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Tenho uma ideia de negócio e gostaria de conversar sobre como a Cerrado Tech atua como Venture Builder." target="_blank" class="btn-incubator">
+              Estruture o seu negócio conosco
+          </a>
+      </div>
+  </section>
+
+  {% include footer.html %}
+  
+  <script src="js/main.js"></script>
+  <script>
+      // Animação de rolagem (Fade Up)
+      document.addEventListener("DOMContentLoaded", function() {
+          const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('visible');
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, observerOptions);
+
+          document.querySelectorAll('.fade-up').forEach((el) => {
+              observer.observe(el);
+          });
+      });
+  </script>
+</body>
+</html>

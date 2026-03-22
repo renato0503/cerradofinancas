@@ -1,0 +1,563 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria Blockchain B2B | Cerrado Tech</title>
+    <meta name="description" content="Implementação de redes Blockchain corporativas. Transparência, imutabilidade e Smart Contracts baseados em Ethereum e Solidity.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #020617; /* Slate 950 */
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animações */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* --- HERO SPLIT (METADE BRANCA, METADE ESCURA) --- */
+        .bc-hero {
+            display: flex;
+            align-items: stretch;
+            min-height: 80vh;
+            background: #ffffff; 
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #6366f1;
+        }
+
+        .hero-left {
+            flex: 1;
+            padding: 100px 5% 100px 10%;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-right {
+            flex: 1;
+            background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            position: relative;
+        }
+
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 992px) {
+            .bc-hero { flex-direction: column; }
+            .hero-left { padding: 80px 20px; text-align: center; }
+            .hero-right { padding: 60px 20px; }
+        }
+
+        /* Destaque da Logo (Sem Borda/Sem Fundo) */
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .raw-logo {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .raw-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .bc-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: #4f46e5;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+            .raw-logo { max-width: 320px; }
+        }
+
+        .hero-left h1 { 
+            font-size: clamp(2.5rem, 4vw, 3.8rem); 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            color: #0f172a; 
+            letter-spacing: -1px; 
+        }
+        .hero-left p { 
+            font-size: 1.15rem; 
+            color: #475569; 
+            margin-bottom: 40px; 
+            line-height: 1.7; 
+            max-width: 600px; 
+        }
+
+        .btn-indigo {
+            background: #6366f1;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-indigo:hover { background: #4f46e5; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(99, 102, 241, 0.5); }
+
+        /* Mockup Blockchain Node SVG */
+        .node-container {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 24px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        @keyframes pulse-node {
+            0% { r: 6; fill: #6366f1; opacity: 1; box-shadow: 0 0 10px #6366f1;}
+            50% { r: 9; fill: #a5b4fc; opacity: 0.8; }
+            100% { r: 6; fill: #6366f1; opacity: 1; }
+        }
+        @keyframes dash-line {
+            to { stroke-dashoffset: -20; }
+        }
+
+        .svg-nodes circle { animation: pulse-node 3s infinite ease-in-out; }
+        .svg-nodes circle:nth-child(2) { animation-delay: 0.5s; }
+        .svg-nodes circle:nth-child(3) { animation-delay: 1s; }
+        .svg-nodes circle:nth-child(4) { animation-delay: 1.5s; }
+        
+        .svg-nodes line {
+            stroke: rgba(99, 102, 241, 0.4);
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            animation: dash-line 2s linear infinite;
+        }
+
+        /* --- THE PROBLEM SECTION (Light Background) --- */
+        .pain-section { padding: 100px 0; background: #f8fafc; color: #0f172a; border-bottom: 1px solid #e2e8f0; }
+        .pain-section .sec-title h2 { color: #0f172a; }
+        .pain-section .sec-title p { color: #475569; }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .pain-card {
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 16px;
+            border-left: 4px solid #ef4444; /* Destaque vermelho (A Dor) */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .pain-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .pain-card h4 { font-size: 1.3rem; color: #0f172a; margin-bottom: 15px; font-weight: 800;}
+        .pain-card p { font-size: 1rem; color: #475569; line-height: 1.6; margin: 0;}
+
+        /* --- TECHNOLOGY / CONCEPTS SECTION --- */
+        .explanation-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e1b4b;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; letter-spacing: -1px;}
+        .sec-title p { font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.6;}
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .tech-card::after {
+            content: ''; position: absolute; top: 0; right: 0; width: 150px; height: 150px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            transition: all 0.4s ease;
+        }
+        .tech-card:hover { transform: translateY(-8px); border-color: #6366f1; box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);}
+        .tech-card:hover::after { transform: scale(1.5); }
+
+        .tc-icon { width: 56px; height: 56px; background: #1e1b4b; color: #a5b4fc; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 1.8rem; border: 1px solid #312e81; transition: 0.3s;}
+        .tech-card:hover .tc-icon { background: #6366f1; color: #fff; border-color: #818cf8; transform: scale(1.1); }
+        
+        .tech-card h3 { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .tech-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0; flex-grow: 1;}
+
+        /* --- CASOS DE USO ESTRATÉGICOS --- */
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .use-case-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .use-case-card:hover { border-color: #818cf8; background: #0f172a;}
+        .use-case-card h4 { font-size: 1.25rem; color: #fff; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;}
+        .use-case-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.5; margin: 0;}
+        .use-case-card strong { color: #a5b4fc; display: block; margin-top: 10px; font-size: 0.9rem;}
+
+        /* --- ABORDAGEM DE IMPLEMENTAÇÃO --- */
+        .approach-section { padding: 80px 0; background: #0b0f19; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b;}
+        .approach-box {
+            display: flex;
+            background: #0f172a;
+            border-radius: 24px;
+            border: 1px solid #334155;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 768px) { .approach-box { flex-direction: column; } }
+        
+        .app-half { flex: 1; padding: 50px 40px; position: relative; transition: 0.3s; }
+        .app-half:hover { background: #1e1b4b; }
+        .app-left { border-right: 1px solid #334155; }
+        @media (max-width: 768px) { .app-left { border-right: none; border-bottom: 1px solid #334155; } }
+        
+        .app-half h3 { font-size: 1.6rem; color: #fff; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;}
+        .app-half h3 span { background: #6366f1; color: #fff; font-size: 0.8rem; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;}
+        .app-half p { color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;}
+
+        /* --- ROI SECTION --- */
+        .roi-section { padding: 100px 0; background: #020617; }
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .roi-card {
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid #047857;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .roi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2); border-color: #10b981;}
+        .roi-icon { font-size: 2.5rem; margin-bottom: 20px; color: #34d399; }
+        .roi-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.3rem; font-weight: 800;}
+        .roi-card p { color: #a7f3d0; font-size: 1rem; line-height: 1.5; margin: 0;}
+
+        /* --- CTA --- */
+        .cta-bottom { background: linear-gradient(135deg, #312e81 0%, #0f172a 100%); padding: 100px 0; text-align: center; color: #fff; border-top: 1px solid #4f46e5;}
+        .cta-bottom h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px;}
+        .cta-bottom p { font-size: 1.2rem; color: #a5b4fc; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;}
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="bc-hero">
+    <div class="hero-left">
+        <div class="fade-up">
+            <div class="app-branding">
+                <div class="raw-logo">
+                    <img src="img/blockchain.png" alt="Blockchain Consulting Logo" onerror="this.style.display='none'">
+                </div>
+                <div class="bc-badge">Consultoria Web3 Corporativa</div>
+            </div>
+
+            <h1>A confiança como código imutável.</h1>
+            <p>Por décadas, o mercado corporativo operou sob um modelo centralizado. Nós transferimos a confiança das mãos de uma única entidade para a matemática e a criptografia. Construímos infraestruturas distribuídas e à prova de fraudes para o mercado B2B.</p>
+            
+            <div class="fade-up delay-1">
+                <a href="#dores" class="btn-indigo" style="margin-top: 10px;">
+                    Explorar a Tecnologia
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="fade-up delay-2" style="width: 100%; display: flex; justify-content: center;">
+            <div class="node-container">
+                <svg class="svg-nodes" width="100%" height="100%" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="50" y1="40" x2="100" y2="75" />
+                    <line x1="150" y1="40" x2="100" y2="75" />
+                    <line x1="50" y1="110" x2="100" y2="75" />
+                    <line x1="150" y1="110" x2="100" y2="75" />
+                    <line x1="50" y1="40" x2="150" y2="40" />
+                    <line x1="50" y1="110" x2="150" y2="110" />
+                    <line x1="50" y1="40" x2="50" y2="110" />
+                    <line x1="150" y1="40" x2="150" y2="110" />
+
+                    <circle cx="50" cy="40" r="6" />
+                    <circle cx="150" cy="40" r="6" />
+                    <circle cx="100" cy="75" r="8" fill="#a5b4fc" />
+                    <circle cx="50" cy="110" r="6" />
+                    <circle cx="150" cy="110" r="6" />
+                    
+                    <rect x="70" y="52" width="6" height="6" fill="#10b981" rx="2">
+                        <animate attributeName="x" values="50;100;50" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="y" values="40;75;40" dur="3s" repeatCount="indefinite"/>
+                    </rect>
+                    <rect x="120" y="85" width="6" height="6" fill="#f59e0b" rx="2">
+                        <animate attributeName="x" values="100;150;100" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="y" values="75;110;75" dur="4s" repeatCount="indefinite"/>
+                    </rect>
+                    <rect x="80" y="90" width="6" height="6" fill="#0ea5e9" rx="2">
+                        <animate attributeName="x" values="50;100;50" dur="2.5s" repeatCount="indefinite"/>
+                        <animate attributeName="y" values="110;75;110" dur="2.5s" repeatCount="indefinite"/>
+                    </rect>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="dores" class="pain-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>As Dores do Mercado B2B</h2>
+            <p>Se a sua empresa partilha dados com parceiros, a pergunta é sempre a mesma: "No banco de dados de quem vamos confiar?" Falhas arquiteturais geram prejuízos milionários.</p>
+        </div>
+
+        <div class="pain-grid fade-up delay-1">
+            <div class="pain-card">
+                <h4>Auditorias Lentas e Caras</h4>
+                <p>Rever milhares de documentos e transações em bancos de dados relacionais (SQL) demora meses. Não há garantia matemática de que nada foi alterado secretamente.</p>
+            </div>
+            <div class="pain-card">
+                <h4>Gargalos em Consórcios</h4>
+                <p>Disputas e litígios entre empresas parceiras sobre quem detém a versão "correta" e atualizada de um contrato, transação ou apólice financeira.</p>
+            </div>
+            <div class="pain-card">
+                <h4>Pontos Cegos na Logística</h4>
+                <p>A falta de transparência na Cadeia de Suprimentos impede que uma empresa prove a origem sustentável ou as condições de transporte de um produto (ESG).</p>
+            </div>
+            <div class="pain-card">
+                <h4>Execução Manual</h4>
+                <p>Extrema dependência de intermediários humanos e burocracia para libertar pagamentos, aprovar remessas ou validar assinaturas após a conclusão de um serviço.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explanation-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2 style="color: #fff;">A Tecnologia: A Verdade Descentralizada</h2>
+            <p style="color: #94a3b8;">A Cerrado Tech utiliza a arquitetura mais segura do mundo para entregar três pilares intransponíveis à sua corporação.</p>
+        </div>
+
+        <div class="tech-grid fade-up delay-1">
+            <div class="tech-card">
+                <div class="tc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h3>1. Imutabilidade</h3>
+                <p>Uma vez que um dado (contrato, nota fiscal) é gravado na Blockchain, recebe uma assinatura criptográfica (Hash). Nunca mais pode ser apagado ou alterado de forma oculta.</p>
+            </div>
+
+            <div class="tech-card" style="border-color: #6366f1; background: #1e1b4b;">
+                <div class="tc-icon" style="background: #312e81; color: #c7d2fe; border-color: #4f46e5;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 12 12 22 22 12 12 2"></polygon><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h3 style="color: #a5b4fc;">2. Redes B2B (EVM)</h3>
+                <p>O banco de dados é replicado em vários "Nós" espalhados pelas empresas parceiras. A verdade é um consenso da rede (Ethereum Virtual Machine), não o monopólio de um servidor.</p>
+            </div>
+
+            <div class="tech-card">
+                <div class="tc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h3>3. Smart Contracts</h3>
+                <p>Códigos programados em <strong>Solidity</strong> que executam regras automaticamente. Ex: <em>"Se o GPS confirmar a entrega no porto, liberte 50% do pagamento."</em> Sem intervenção humana.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explanation-section" style="background: #0b0f19; border-top: 1px solid #1e293b; padding-top: 80px;">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2 style="color: #fff;">Possibilidades Estratégicas de Uso</h2>
+            <p style="color: #94a3b8;">A infraestrutura Blockchain B2B abre portas para modelos de negócios totalmente inovadores.</p>
+        </div>
+        
+        <div class="use-case-grid fade-up delay-1">
+            <div class="use-case-card">
+                <h4>📦 Supply Chain Sustentável</h4>
+                <p>Rastreie a origem de um produto de ponta a ponta. Do produtor primário ao consumidor final, cada etapa é registada.</p>
+                <strong>Estratégia: Provar a origem e gerar um Passaporte Digital do Produto (ESG).</strong>
+            </div>
+            <div class="use-case-card">
+                <h4>🤝 Consórcios de Dados Seguros</h4>
+                <p>Empresas que concorrem entre si podem criar um ambiente neutro de troca de dados (ex: histórico de fraudes).</p>
+                <strong>Estratégia: Nenhuma empresa é dona do servidor, evitando manipulação de dados.</strong>
+            </div>
+            <div class="use-case-card">
+                <h4>🔐 Auditoria e Cartório Digital</h4>
+                <p>Grave o "Hash" (impressão digital) de relatórios financeiros e contratos diariamente na Blockchain.</p>
+                <strong>Estratégia: Prova matemática incontestável perante a Receita Federal ou investidores.</strong>
+            </div>
+            <div class="use-case-card">
+                <h4>💳 Tokenização de Ativos (RWA)</h4>
+                <p>Transforme ativos reais e ilíquidos (maquinaria, imóveis, recebíveis) em "Tokens" digitais na rede Ethereum.</p>
+                <strong>Estratégia: Fracionar o valor da dívida em tokens e vendê-los, gerando liquidez imediata.</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="approach-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Nossos Modelos de Implementação</h2>
+            <p>Adaptamo-nos à maturidade tecnológica da sua corporação.</p>
+        </div>
+
+        <div class="approach-box fade-up delay-1">
+            <div class="app-half app-left">
+                <h3>Modelo Cerrado Tech <span>Turnkey</span></h3>
+                <p><strong>Nós assumimos a obra inteira.</strong> Desenhamos a arquitetura da rede, programamos os Smart Contracts em Solidity, realizamos a auditoria rigorosa de segurança do código (Testes de Intrusão) e efetuamos o deploy final da plataforma para os seus utilizadores.</p>
+            </div>
+            <div class="app-half">
+                <h3>Modelo de Consultoria <span>Advisory</span></h3>
+                <p><strong>Para empresas com um departamento robusto de TI.</strong> A Cerrado atua como Conselheira Chefe. Desenhamos a documentação técnica, capacitamos a sua equipa interna de programadores na arquitetura Web3 e validamos o código produzido antes do lançamento.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="roi-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2 style="color: #fff;">O Retorno sobre o Investimento (ROI)</h2>
+            <p style="color: #cbd5e1;">Adotar a Blockchain corporativa não é um ensaio de inovação. É uma decisão financeira estratégica.</p>
+        </div>
+
+        <div class="roi-grid fade-up delay-1">
+            <div class="roi-card">
+                <div class="roi-icon">⚖️</div>
+                <h3>Redução de Custos Legais</h3>
+                <p>Queda drástica em custos de litígio, reconciliação e auditoria, pois a "verdade" da transação já está criptograficamente validada pela rede.</p>
+            </div>
+            <div class="roi-card">
+                <div class="roi-icon">⚡</div>
+                <h3>Eficiência Operacional</h3>
+                <p>Eliminação completa de intermediários operacionais e financeiros. Os Smart Contracts executam os pagamentos e liberações instantaneamente.</p>
+            </div>
+            <div class="roi-card">
+                <div class="roi-icon">📈</div>
+                <h3>Aumento de Valuation</h3>
+                <p>Geração de níveis extremos de Governança e Conformidade (GRC / ESG), elevando o valor da sua empresa perante fundos de investimento internacionais.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Vamos Descentralizar a sua Operação?</h2>
+        <p>A confiança não tem de ser uma promessa verbal. Ela pode ser construída em código. Agende uma reunião de viabilidade técnica com os nossos Arquitetos de Soluções Web3.</p>
+        
+        <a href="https://wa.me/5567993515206?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20com%20um%20Arquiteto%20de%20Solu%C3%A7%C3%B5es%20Web3%20sobre%20Blockchain." target="_blank" class="btn-indigo" style="background: #ffffff; color: #312e81; padding: 20px 40px; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 10px 30px rgba(255,255,255,0.2);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Falar com a Engenharia
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

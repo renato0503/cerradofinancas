@@ -1,0 +1,572 @@
+---
+layout: null
+permalink: /startups/chamala/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ChamaLá - O Super App de Serviços de Cuiabá</title>
+    <link rel="icon" type="image/png" href="{{ '/img/logo-chamala.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= VÁRIAVEIS GLOBAIS (ESCALA DE LARANJA PREMIUM) ================= */
+        :root {
+            --orange-50: #FFF5F2;
+            --orange-100: #FFE6DB;
+            --orange-500: #FF7A00;
+            --orange-600: #F97316; /* Laranja da identidade Cerrado Tech */
+            --orange-700: #ea580c;
+            --orange-900: #7A2200;
+            
+            --dark-bg: #0F0F11;
+            --dark-card: #1A1A1D;
+            --text-main: #1D1D1F;
+            --text-muted: #6B6B70;
+            --bg-light: #F9FAFB;
+            --white: #FFFFFF;
+            
+            --success: #10B981;
+            --border-light: #E5E5EA;
+            
+            --gradient-primary: linear-gradient(135deg, var(--orange-500) 0%, var(--orange-600) 100%);
+            --shadow-btn: 0 8px 20px rgba(249, 115, 22, 0.25);
+            --shadow-card: 0 12px 30px rgba(0,0,0,0.04);
+            --radius-btn: 16px;
+            --radius-card: 24px;
+        }
+
+        /* ================= RESET E BASE (MOBILE FIRST) ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+        body { color: var(--text-main); background-color: var(--white); line-height: 1.5; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ================= TYPOGRAPHY FLUIDA ================= */
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; color: var(--dark-bg); }
+        h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+        h3 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; letter-spacing: -0.01em; }
+        p { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text-muted); line-height: 1.6; }
+
+        /* ================= BOTÕES (ESTILO APP NATIVO) ================= */
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center; gap: 12px; 
+            padding: 18px 32px; border-radius: var(--radius-btn); font-weight: 700; font-size: 1.1rem; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: none; cursor: pointer; text-align: center; 
+        }
+        .btn:active { transform: scale(0.96); } /* Efeito de clique mobile */
+        
+        .btn-primary { background: var(--gradient-primary); color: var(--white); box-shadow: var(--shadow-btn); }
+        .btn-primary:hover { box-shadow: 0 12px 25px rgba(249, 115, 22, 0.35); transform: translateY(-2px); color: var(--white); }
+        
+        .btn-outline { background: var(--white); color: var(--orange-600); border: 2px solid var(--orange-500); }
+        .btn-outline:hover { background: var(--orange-50); transform: translateY(-2px); }
+        
+        .btn-dark { background: var(--dark-bg); color: var(--white); }
+        .btn-dark:hover { background: #000; transform: translateY(-2px); }
+
+        /* ================= HEADER ================= */
+        header { 
+            padding: 15px 0; background: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; 
+            top: 0; z-index: 1000; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); 
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-img { height: clamp(50px, 6vw, 65px); transition: transform 0.3s; object-fit: contain; }
+        .logo-img:hover { transform: scale(1.05); }
+        
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--orange-600); }
+
+        /* ================= HERO SECTION ================= */
+        .hero { 
+            padding: calc(clamp(75px, 8vw, 100px) + 60px) 0 80px; 
+            background: radial-gradient(circle at top right, var(--orange-50) 0%, var(--white) 60%);
+            text-align: center; position: relative; overflow: hidden; 
+        }
+        .hero-title-highlight { 
+            background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;
+        }
+        .hero p { max-width: 700px; margin: 24px auto 40px; }
+        
+        .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        
+        .hero-badges { display: flex; justify-content: center; gap: 16px; margin-top: 50px; flex-wrap: wrap; }
+        .badge { display: flex; align-items: center; gap: 8px; background: var(--white); padding: 12px 20px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; color: var(--text-main); box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid var(--border-light); }
+        .badge svg { width: 18px; height: 18px; fill: var(--success); }
+
+        /* ================= SEÇÕES BASE ================= */
+        .section-padding { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .section-header p { margin-top: 16px; }
+
+        /* ================= ACESSO À PLATAFORMA ================= */
+        .join-ecosystem { background: var(--dark-bg); color: var(--white); position: relative; }
+        .join-ecosystem .section-header h2 { color: var(--white); }
+        .join-ecosystem .section-header p { color: #A1A1AA; }
+        
+        .join-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .join-card { 
+            background: var(--dark-card); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-card); 
+            padding: 40px 30px; text-align: center; transition: all 0.3s ease; display: flex; flex-direction: column; 
+            position: relative; overflow: hidden;
+        }
+        .join-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+        .join-card:hover::before { opacity: 1; }
+        .join-card:hover { transform: translateY(-8px); border-color: rgba(249,115,22,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        
+        .join-icon { width: 80px; height: 80px; background: rgba(249, 115, 22, 0.1); border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; transform: rotate(-5deg); transition: 0.3s; }
+        .join-card:hover .join-icon { transform: rotate(0deg) scale(1.1); background: var(--gradient-primary); }
+        .join-card:hover .join-icon svg { fill: var(--white); }
+        .join-icon svg { width: 40px; height: 40px; fill: var(--orange-500); transition: 0.3s; }
+        
+        .join-card h3 { color: var(--white); margin-bottom: 16px; }
+        .join-card p { color: #A1A1AA; margin-bottom: 30px; flex-grow: 1; font-size: 1.05rem; }
+        .join-card .btn { width: 100%; font-size: 1.1rem; }
+
+        /* ================= FLUXO (COMO FUNCIONA) ================= */
+        .flow-section { background: var(--bg-light); }
+        .flow-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+        .flow-step { 
+            display: flex; align-items: center; gap: 30px; background: var(--white); padding: 40px; 
+            border-radius: var(--radius-card); box-shadow: var(--shadow-card); transition: all 0.3s ease; 
+        }
+        .flow-step:hover { transform: translateX(10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        
+        .step-number { 
+            flex-shrink: 0; width: 70px; height: 70px; background: var(--orange-50); color: var(--orange-600); 
+            border-radius: 20px; display: flex; align-items: center; justify-content: center; 
+            font-size: 2rem; font-weight: 900; 
+        }
+        .step-content { flex: 1; }
+        .step-content h3 { color: var(--dark-bg); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .step-tag { font-size: 0.85rem; background: var(--dark-bg); color: var(--white); padding: 4px 12px; border-radius: 50px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+        .step-tag.orange { background: var(--gradient-primary); }
+        .step-content p { margin-bottom: 0; }
+
+        /* ================= SEGURANÇA (ESCROW) ================= */
+        .security-mega { background: var(--white); }
+        .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .security-content h3 { color: var(--orange-600); margin-bottom: 20px; }
+        
+        .security-list { display: flex; flex-direction: column; gap: 20px; }
+        .security-item { 
+            background: var(--bg-light); padding: 24px; border-radius: 20px; 
+            border-left: 6px solid var(--orange-500); display: flex; gap: 20px; align-items: flex-start; 
+        }
+        .sec-icon { width: 48px; height: 48px; background: var(--white); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .sec-icon svg { width: 24px; height: 24px; fill: var(--orange-600); }
+        .security-item h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--dark-bg); }
+        .security-item p { font-size: 0.95rem; margin: 0; }
+
+        /* ================= CATEGORIAS ================= */
+        .categories-mega { background: var(--dark-bg); color: var(--white); }
+        .categories-mega .section-header h2 { color: var(--white); }
+        .categories-mega .section-header p { color: #A1A1AA; }
+        .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .cat-box { 
+            background: var(--dark-card); border-radius: var(--radius-card); padding: 32px; 
+            transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); 
+        }
+        .cat-box:hover { background: #222225; border-color: rgba(249, 115, 22, 0.4); }
+        .cat-box h4 { font-size: 1.3rem; color: var(--white); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+        .cat-box h4 svg { width: 28px; height: 28px; fill: var(--orange-500); }
+        .cat-list { list-style: none; }
+        .cat-list li { font-size: 1rem; color: #A1A1AA; margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .cat-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--orange-500); }
+
+        /* ================= FAQ ================= */
+        .faq-section { background: var(--bg-light); }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--white); border-radius: 16px; margin-bottom: 16px; box-shadow: var(--shadow-card); overflow: hidden; }
+        .faq-question { 
+            width: 100%; padding: 24px; text-align: left; background: none; border: none; 
+            font-size: 1.15rem; font-weight: 700; color: var(--dark-bg); cursor: pointer; 
+            display: flex; justify-content: space-between; align-items: center; transition: 0.3s;
+        }
+        .faq-question svg { width: 24px; height: 24px; transition: transform 0.3s; fill: var(--text-main); }
+        .faq-question.active { color: var(--orange-600); }
+        .faq-question.active svg { transform: rotate(180deg); fill: var(--orange-600); }
+        .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; }
+        .faq-answer p { color: var(--text-muted); padding-bottom: 24px; font-size: 1.05rem; margin: 0; }
+
+        /* ================= FOOTER EXCLUSIVO DA STARTUP ================= */
+        footer { background: #000; color: var(--white); padding: 80px 0 40px; border-top: 4px solid var(--orange-600); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-about img { height: 50px; background: #fff; padding: 5px 15px; border-radius: 8px; margin-bottom: 24px; object-fit: contain; }
+        .footer-about p { color: #A1A1AA; font-size: 1.05rem; max-width: 450px; }
+        .footer-links h4 { font-size: 1.2rem; margin-bottom: 24px; color: var(--white); font-weight: 800; }
+        .footer-links ul { list-style: none; }
+        .footer-links ul li { margin-bottom: 16px; }
+        .footer-links ul li a { color: #A1A1AA; text-decoration: none; transition: 0.2s; font-size: 1.05rem; font-weight: 500; }
+        .footer-links ul li a:hover { color: var(--orange-500); padding-left: 8px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: #71717A; font-size: 0.95rem; }
+
+        /* ================= MOBILE OPTIMIZATIONS ================= */
+        @media (max-width: 992px) {
+            .security-grid { grid-template-columns: 1fr; gap: 50px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; } 
+            .hero { padding: 160px 0 60px; }
+            
+            .hero-actions { flex-direction: column; width: 100%; gap: 16px; }
+            .hero-actions .btn { width: 100%; padding: 20px; font-size: 1.2rem; }
+            
+            .hero-badges { flex-direction: column; align-items: stretch; }
+            .badge { justify-content: center; padding: 16px; }
+            
+            .section-padding { padding: 80px 0; }
+            .flow-step { flex-direction: column; align-items: flex-start; padding: 30px 20px; gap: 20px; }
+            .step-number { width: 60px; height: 60px; font-size: 1.5rem; }
+            
+            .join-card { padding: 40px 20px; }
+            .join-card .btn { padding: 20px; font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <a href="/startups/chamala/">
+                <img src="{{ '/img/logo-chamala.png' | relative_url }}" alt="ChamaLá Logo" class="logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="/startups.html">← Voltar para Startups Cerrado</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#seguranca">A Garantia Escrow</a>
+                <a href="#profissoes">Serviços</a>
+                <a href="https://chamala-app.web.app/prestador.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">Seja um Profissional</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Sua obra e manutenção sem dor de cabeça.<br><span class="hero-title-highlight">A solução definitiva.</span></h1>
+            <p>Conectamos você aos profissionais mais qualificados e às lojas com os melhores preços de Cuiabá. Um ecossistema blindado para proteger o seu patrimônio do início ao fim.</p>
+            
+            <div class="hero-actions">
+                <a href="https://chamala-app.web.app/" class="btn btn-primary">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    Quero Contratar um Serviço
+                </a>
+                <a href="https://chamala-app.web.app/prestador.html" class="btn btn-outline">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                    Quero Trabalhar no App
+                </a>
+            </div>
+
+            <div class="hero-badges">
+                <div class="badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    Profissionais 100% Verificados
+                </div>
+                <div class="badge">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    Dinheiro Retido e Seguro
+                </div>
+                <div class="badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Foco Total em Cuiabá e Região
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; padding: 15px; background: var(--orange-50); border: 1px dashed var(--orange-500); border-radius: 12px; display: inline-block;">
+                <p style="margin: 0; font-size: 0.95rem; color: var(--orange-900); font-weight: 600;">
+                    🎁 Dica: Use o código <strong style="font-size: 1.1rem; color: var(--orange-600);">BEMVINDA</strong> no app e ganhe 10% OFF no primeiro serviço!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadastro" class="section-padding join-ecosystem">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selecione o seu Perfil</h2>
+                <p>Baixe o app ou acesse a plataforma web que está mudando a forma como construímos, reformamos e mantemos nossos lares.</p>
+            </div>
+
+            <div class="join-grid">
+                <div class="join-card">
+                    <div class="join-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <h3>Sou Cliente</h3>
+                    <p>Precisa de um profissional agora? Crie sua conta gratuita, publique seu pedido e deixe que os melhores prestadores disputem para atender você com o menor preço.</p>
+                    <a href="https://chamala-app.web.app/" class="btn btn-primary">Acessar App do Cliente</a>
+                </div>
+
+                <div class="join-card" style="border-top: 4px solid var(--orange-500);">
+                    <div class="join-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    </div>
+                    <h3>Sou Profissional</h3>
+                    <p>Diga adeus ao calote. Tenha uma agenda cheia, receba seus pagamentos garantidos direto na conta bancária após a conclusão e construa sua reputação na cidade.</p>
+                    <a href="https://chamala-app.web.app/prestador.html" class="btn btn-primary">Aplicativo ChamaLá PRO</a>
+                </div>
+
+                <div class="join-card">
+                    <div class="join-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
+                    </div>
+                    <h3>Sou Lojista</h3>
+                    <p>Transforme sua loja física em um fornecedor digital. Receba listas de materiais de dezenas de obras ativas pelo app diariamente e faça o seu lance de vendas.</p>
+                    <a href="https://chamala-app.web.app/loja.html" class="btn btn-primary">Painel ChamaLá Business</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="section-padding flow-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>A engenharia por trás do app</h2>
+                <p>Desenhamos um fluxo inteligente para eliminar orçamentos abusivos, atrasos constantes e o risco de calote. É assim que garantimos a sua paz de espírito.</p>
+            </div>
+
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>O Pedido <span class="step-tag">Você</span></h3>
+                        <p>Abra o app, escolha a categoria (ex: Elétrica) e descreva o problema. Nosso algoritmo notifica imediatamente os melhores profissionais num raio próximo à sua casa.</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Os Lances <span class="step-tag">Profissionais</span></h3>
+                        <p>Os prestadores analisam o seu pedido e enviam orçamentos padronizados diretamente na plataforma. Você compara preços, lê avaliações e checa os selos de verificação.</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Pagamento Protegido <span class="step-tag orange">ChamaLá</span></h3>
+                        <p>Ao escolher o prestador, você paga no cartão ou Pix. <strong>O dinheiro fica retido e seguro com o ChamaLá.</strong> O profissional é notificado e se desloca com 100% de certeza de recebimento.</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Aprovação e Repasse <span class="step-tag">Você</span></h3>
+                        <p>Serviço finalizado? Você inspeciona o trabalho e dá o "Aceite" no app. Somente neste momento destravamos o dinheiro e repassamos ao profissional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seguranca" class="section-padding security-mega">
+        <div class="container">
+            <div class="security-grid">
+                <div class="security-content">
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800; color: var(--dark-bg); line-height: 1.1; margin-bottom: 20px;">Segurança de ponta a ponta.</h2>
+                    <p>Muitos problemas em obras começam no dinheiro. O cliente paga 50% adiantado e o prestador some. Ou o prestador faz o serviço inteiro e o cliente não paga.</p>
+                    <p><strong>Nós resolvemos isso com a tecnologia de Custódia (Escrow).</strong> Quando você contrata, seu pagamento fica protegido no nosso cofre digital. O prestador trabalha tranquilo e você dorme em paz sabendo que só pagará pelo que foi entregue.</p>
+                    <a href="https://chamala-app.web.app/" class="btn btn-primary mt-4">Experimente a Segurança</a>
+                </div>
+
+                <div class="security-list">
+                    <div class="security-item">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Verificação de Identidade (KYC)</h4>
+                            <p>Nenhum prestador atende pelo app sem antes enviar selfie, foto do documento e comprovante de residência. Validamos quem entra na sua casa.</p>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Validação na Receita Federal</h4>
+                            <p>Consultamos automaticamente a situação cadastral do CNPJ/MEI do profissional para garantir notas fiscais e prestação de serviço legal.</p>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Reputação 100% Imutável</h4>
+                            <p>É impossível comprar avaliações falsas no ChamaLá. A nota é calculada exclusivamente por clientes reais que pagaram pelo app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profissoes" class="section-padding categories-mega">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que você precisa hoje?</h2>
+                <p>Somos o maior hub de serviços de Mato Grosso. Encontre especialistas avaliados para qualquer necessidade.</p>
+            </div>
+
+            <div class="cat-grid">
+                <div class="cat-box">
+                    <h4><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg> Construção Civil</h4>
+                    <ul class="cat-list">
+                        <li>Pedreiro e Mestre de Obras</li>
+                        <li>Armador e Carpinteiro</li>
+                        <li>Gesseiro (Drywall e Placas)</li>
+                        <li>Colocador de Porcelanato</li>
+                        <li>Impermeabilização</li>
+                    </ul>
+                </div>
+
+                <div class="cat-box">
+                    <h4><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Manutenção & Reparos</h4>
+                    <ul class="cat-list">
+                        <li>Eletricista Residencial e Predial</li>
+                        <li>Encanador (Caça Vazamentos)</li>
+                        <li>Instalação de Chuveiros</li>
+                        <li>Desentupidora Profissional</li>
+                        <li>Manutenção de Bombas</li>
+                    </ul>
+                </div>
+
+                <div class="cat-box">
+                    <h4><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h-2v5H6v2h2v5h2v-5h2v-2zm4 5h-2v-5h-2V9h2V7h2v2h2v2h-2v5z"/></svg> Tecnologia & Clima</h4>
+                    <ul class="cat-list">
+                        <li>Limpeza de Ar Condicionado</li>
+                        <li>Técnico Linha Branca (Geladeira)</li>
+                        <li>Instalador de Câmeras CFTV</li>
+                        <li>Automação Residencial (Alexa)</li>
+                        <li>Técnico de Redes Wi-Fi</li>
+                    </ul>
+                </div>
+
+                <div class="cat-box">
+                    <h4><svg viewBox="0 0 24 24"><path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72M5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 8.83L14.67 16.27L12.58 21.15C10.34 20.81 7.94 19.58 5.93 17.57Z"/></svg> Limpeza & Acabamento</h4>
+                    <ul class="cat-list">
+                        <li>Pintor Residencial (Texturas)</li>
+                        <li>Marceneiro (Móveis Planejados)</li>
+                        <li>Diarista e Faxina Pesada</li>
+                        <li>Limpeza Pós-Obra Especializada</li>
+                        <li>Higienização de Sofás e Tapetes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O ChamaLá cobra para eu solicitar um orçamento?
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não. Para o cliente final, criar a conta e solicitar orçamentos é 100% gratuito. Você só paga o valor do serviço que for acordado diretamente com o prestador.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        E se o prestador estragar algo na minha casa?
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O dinheiro do serviço só é liberado para o prestador após a sua aprovação final. Se houver danos, você pode abrir uma <strong>Disputa</strong> direto no app para nossa equipe mediar e reembolsar o valor retido.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Sou Profissional. Como o ChamaLá ganha dinheiro?
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não cobramos mensalidade dos profissionais. Cobramos apenas uma Taxa de Plataforma percentual sobre os serviços fechados e concluídos com sucesso. Se não fechar, não paga nada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="{{ '/img/logo-chamala.png' | relative_url }}" alt="ChamaLá Logo">
+                    <p>O ecossistema que conecta moradores, prestadores e lojas de materiais em Mato Grosso, com tecnologia baseada em pagamentos em custódia (escrow).</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Nossas Soluções</h4>
+                    <ul>
+                        <li><a href="https://chamala-app.web.app/">App do Cliente</a></li>
+                        <li><a href="https://chamala-app.web.app/prestador.html">App do Profissional (PRO)</a></li>
+                        <li><a href="https://chamala-app.web.app/loja.html">Painel de Lojistas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="/startups.html">Sobre a Cerrado Tech</a></li>
+                        <li><a href="/index.html">Consultoria Empresarial</a></li>
+                        <li><a href="/parceiros.html">Programa de Parceiros</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChamaLá Tecnologia e Serviços. Todos os direitos reservados.</p>
+                <p style="margin-top: 5px; font-size: 0.85rem; color: #52525B;">
+                    Desenvolvido por <a href="/startups.html" style="color: var(--orange-500); font-weight: bold; text-decoration: none;">Cerrado Tech</a>, braço de inovação da Cerrado Finanças e Gestão Empresarial.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.style.maxHeight = null;
+                        q.nextElementSibling.style.paddingBottom = '0';
+                    });
+                    
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 40 + "px";
+                        answer.style.paddingBottom = '24px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

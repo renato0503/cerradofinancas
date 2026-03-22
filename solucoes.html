@@ -1,0 +1,619 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerrado Tech | Fábrica de Software e B2B</title>
+  <meta name="description" content="Fábrica de Software, Plataformas Governamentais e Soluções Corporativas da Cerrado Tech.">
+  
+  <link rel="icon" type="image/png" href="img/folinha.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+      /* --- HERO DA PÁGINA --- */
+      .hero-solutions {
+          padding: 140px 0 80px;
+          background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+          color: #fff;
+          border-bottom: 4px solid #10b981;
+      }
+
+      .gov-split-layout { display: flex; align-items: center; gap: 60px; }
+      .gov-visual-content { flex: 0.8; display: flex; justify-content: center; }
+      
+      .gov-logo-card {
+          background: #ffffff; padding: 40px; border-radius: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+          width: 100%; max-width: 380px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+          transform: rotate(-2deg); transition: transform 0.4s ease;
+      }
+      .gov-logo-card:hover { transform: rotate(0deg) translateY(-10px); box-shadow: 0 35px 60px rgba(14, 165, 233, 0.2); }
+      .gov-logo-card img { max-width: 100%; height: auto; display: block; }
+
+      .gov-text-content { flex: 1.2; text-align: left; }
+      .gov-hero-tag {
+          background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 8px 20px; border-radius: 50px;
+          font-weight: 800; font-size: 0.85rem; display: inline-block; margin-bottom: 24px;
+          border: 1px solid rgba(16, 185, 129, 0.3); text-transform: uppercase; letter-spacing: 1px;
+      }
+      .gov-hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+      .gov-hero-subtitle { font-size: 1.15rem; color: #cbd5e1; max-width: 700px; line-height: 1.6; margin: 0; }
+
+      @media (max-width: 992px) {
+          .gov-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+          .gov-text-content { text-align: center; }
+          .gov-hero-subtitle { margin: 0 auto; }
+          .gov-logo-card { transform: none; padding: 30px; }
+      }
+
+      /* --- FÁBRICA DE SOFTWARE --- */
+      .fabrica-section { padding: 100px 0; background: #fff; border-bottom: 1px solid rgba(0,0,0,0.05); }
+      .fabrica-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+      .fabrica-content { flex: 1.2; }
+      .fabrica-visual { flex: 0.8; }
+      
+      .fabrica-icon { width: 70px; height: 70px; border-radius: 16px; background: #f0fdf4; color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 20px; border: 1px solid #bbf7d0;}
+      .fabrica-title { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; line-height: 1.1; letter-spacing: -0.5px;}
+      .fabrica-desc { font-size: 1.15rem; color: #475569; line-height: 1.6; margin-bottom: 30px; }
+
+      .fabrica-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+      .fabrica-tags span { font-size: 0.85rem; font-weight: 700; padding: 8px 16px; border-radius: 50px; background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; }
+
+      .fabrica-interactive-panel { background: #0f172a; border-radius: 24px; padding: 40px; box-shadow: 0 25px 50px rgba(0,0,0,0.1); border: 1px solid #1e293b; color: #fff;}
+      .fabrica-svg-wrapper { text-align: center; margin-bottom: 30px; height: 160px; display: flex; justify-content: center; align-items: center; }
+      
+      @keyframes float-svg { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+      @keyframes draw-line { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
+      .anim-float { animation: float-svg 4s ease-in-out infinite; }
+
+      @media (max-width: 992px) { .fabrica-container { flex-direction: column; } .fabrica-content, .fabrica-visual { width: 100%; } }
+
+      /* --- DIVISOR DE SESSÕES --- */
+      .section-divider {
+          text-align: center;
+          margin: 80px 0 50px;
+          position: relative;
+      }
+      .section-divider::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: #e2e8f0;
+          z-index: 1;
+      }
+      .section-divider span {
+          background: #f8fafc;
+          padding: 0 20px;
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: #0f172a;
+          position: relative;
+          z-index: 2;
+          display: inline-block;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      /* --- PLATAFORMAS (CARROSSEL) --- */
+      .platforms-section { padding: 40px 0 100px; background: #f8fafc; }
+      .plat-header { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+      .plat-header-text h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 10px; }
+      .plat-header-text p { font-size: 1.15rem; color: #64748b; margin: 0; }
+      
+      .carousel-controls { display: flex; gap: 10px; }
+      .carousel-btn { background: #fff; border: 1px solid #cbd5e1; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: #0f172a; font-size: 18px; transition: 0.3s; }
+      .carousel-btn:hover { background: #0f172a; color: #fff; border-color: #0f172a; }
+      @media (max-width: 768px) { .plat-header { flex-direction: column; align-items: flex-start; gap: 20px; } .carousel-controls { display: none; } }
+
+      .carousel-wrapper { position: relative; width: 100%; padding-left: max(20px, calc((100% - 1200px) / 2)); overflow: hidden; margin-bottom: 40px;}
+      .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; padding-bottom: 40px; padding-right: 40px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+      .carousel-track::-webkit-scrollbar { display: none; }
+
+      .plat-card { flex: 0 0 300px; scroll-snap-align: start; background: #fff; border-radius: 20px; border: 1px solid #e2e8f0; padding: 30px 24px; display: flex; flex-direction: column; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.02); position: relative; }
+      .plat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #cbd5e1; }
+      @media (max-width: 768px) { .plat-card { flex: 0 0 82vw; } }
+
+      /* Ícone Estilo App iOS */
+      .app-icon-box {
+          width: 80px; height: 80px; background: #ffffff; border-radius: 22px; 
+          box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04);
+          display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; position: relative;
+      }
+      .app-icon-box svg.logo-svg { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; padding: 15px; }
+      .app-icon-box img.logo-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 2; border-radius: 22px; }
+
+      .card-header-text { display: flex; flex-direction: column; margin-bottom: 15px;}
+      .card-header-text span { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px; }
+      .card-header-text h3 { font-size: 1.4rem; font-weight: 900; color: #0f172a; margin: 0; line-height: 1.1; letter-spacing: -0.5px;}
+
+      .plat-desc { font-size: 0.95rem; color: #475569; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
+
+      .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 25px; padding-top: 15px; border-top: 1px dashed #e2e8f0; }
+      .card-tags span { background: #f8fafc; color: #334155; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0; }
+
+      .btn-card-plat { display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; padding: 14px 0; border-radius: 10px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+
+      /* --- CORES DOS BOTÕES B2G --- */
+      .theme-govdash .btn-card-plat { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+      .theme-govdash .btn-card-plat:hover { background: #0284c7; color: #fff; }
+      .theme-mobility .btn-card-plat { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+      .theme-mobility .btn-card-plat:hover { background: #2563eb; color: #fff; }
+      .theme-edu .btn-card-plat { background: #e0e7ff; color: #4f46e5; border: 1px solid #c7d2fe; }
+      .theme-edu .btn-card-plat:hover { background: #4f46e5; color: #fff; }
+      .theme-govrh .btn-card-plat { background: #f0fdfa; color: #0d9488; border: 1px solid #ccfbf1; }
+      .theme-govrh .btn-card-plat:hover { background: #0d9488; color: #fff; }
+      .theme-prev .btn-card-plat { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+      .theme-prev .btn-card-plat:hover { background: #d97706; color: #fff; }
+      .theme-privacy .btn-card-plat { background: #ecfeff; color: #0891b2; border: 1px solid #cffafe; }
+      .theme-privacy .btn-card-plat:hover { background: #0891b2; color: #fff; }
+      .theme-social .btn-card-plat { background: #fdf4ff; color: #c026d3; border: 1px solid #f5d0fe; }
+      .theme-social .btn-card-plat:hover { background: #c026d3; color: #fff; }
+      .theme-docs .btn-card-plat { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+      .theme-docs .btn-card-plat:hover { background: #0369a1; color: #fff; }
+
+      /* --- CORES DOS BOTÕES B2B --- */
+      .theme-cartorio .btn-card-plat { background: #064e3b; color: #fff; border: none; }
+      .theme-cartorio .btn-card-plat:hover { background: #10b981; }
+      
+      .theme-elo .btn-card-plat { background: #4f46e5; color: #fff; border: none; }
+      .theme-elo .btn-card-plat:hover { background: #3730a3; }
+
+      .theme-leidobem .btn-card-plat { background: #1e3a8a; color: #fff; border: none; }
+      .theme-leidobem .btn-card-plat:hover { background: #3b82f6; }
+
+      .theme-broker .btn-card-plat { background: #ffd60a; color: #000; border: none; }
+      .theme-broker .btn-card-plat:hover { background: #000; color: #ffd60a; }
+      
+      .theme-cerraflow .btn-card-plat { background: #0ea5e9; color: #fff; border: none; }
+      .theme-cerraflow .btn-card-plat:hover { background: #0284c7; }
+
+      .theme-blockchain .btn-card-plat { background: #1e1b4b; color: #a5b4fc; border: 1px solid #6366f1; }
+      .theme-blockchain .btn-card-plat:hover { background: #6366f1; color: #fff; border-color: #6366f1; }
+
+      .theme-cerraplan .btn-card-plat { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+      .theme-cerraplan .btn-card-plat:hover { background: #10b981; color: #fff; border-color: #10b981; }
+
+      .theme-cerrabi .btn-card-plat { background: #022c22; color: #34d399; border: 1px solid #064e3b; }
+      .theme-cerrabi .btn-card-plat:hover { background: #10b981; color: #fff; border-color: #10b981; }
+
+      .app-icon-text { font-size: 1.5rem; font-weight: 900; line-height: 1; text-align: center; }
+
+  </style>
+</head>
+<body>
+
+  {% include header.html titulo="Cerrado Tech" %}
+
+  <section class="hero-solutions">
+    <div class="container">
+      <div class="gov-split-layout">
+        <div class="gov-visual-content">
+          <div class="gov-logo-card">
+            <img src="img/cerradogov.png" alt="Cerrado Gov Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<h3 style=\'color:#10b981; font-size:2.5rem; margin:0;\'>CERRADO<br>TECH</h3>'">
+          </div>
+        </div>
+        <div class="gov-text-content">
+          <span class="gov-hero-tag">GovTech & Mercado B2B</span>
+          <h1 class="gov-hero-title">A Fábrica de Software.</h1>
+          <p class="gov-hero-subtitle">Transformamos a complexidade em plataformas digitais blindadas e escaláveis. Construímos arquiteturas sob demanda ou integramos o seu negócio através de nossas soluções de prateleira B2B e Governamentais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fabrica-section">
+      <div class="fabrica-container">
+          <div class="fabrica-content">
+              <div class="fabrica-icon">💻</div>
+              <h2 class="fabrica-title">Engenharia de Alta Performance</h2>
+              <p class="fabrica-desc">Não somos apenas um fornecedor, somos o motor de desenvolvimento da sua corporação. Nossa equipe estrutura o backoffice tecnológico e cria ecossistemas web complexos.</p>
+              
+              <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Squads Completos:</strong> Scrum Masters, Devs Plenos/Sêniores e QA.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Bancos Parametrizáveis:</strong> Dashboards modulares e integrações via API.</li>
+                  <li style="margin-bottom: 12px; color: #334155; font-size: 1.05rem;">✅ <strong>Inteligência Artificial:</strong> Integração com LLMs como OpenAI e Groq.</li>
+              </ul>
+
+              <div class="fabrica-tags">
+                  <span>Python & React</span>
+                  <span>APIs REST</span>
+                  <span>Web Apps (PWA)</span>
+              </div>
+          </div>
+          
+          <div class="fabrica-visual">
+              <div class="fabrica-interactive-panel">
+                  <div class="fabrica-svg-wrapper">
+                      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="20" y="20" width="160" height="110" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="3"/>
+                          <path d="M20 40 H180" stroke="#1e293b" stroke-width="2"/>
+                          <circle cx="35" cy="30" r="4" fill="#ef4444"/>
+                          <circle cx="50" cy="30" r="4" fill="#f59e0b"/>
+                          <circle cx="65" cy="30" r="4" fill="#10b981"/>
+                          <path d="M40 70 L55 55 L40 85" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="anim-float"/>
+                          <line x1="70" y1="85" x2="130" y2="85" stroke="#34d399" stroke-width="4" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" style="animation: draw-line 2s infinite alternate;"/>
+                          <line x1="40" y1="105" x2="100" y2="105" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+                      </svg>
+                  </div>
+                  <h3 style="font-size: 1.3rem; color: #34d399; margin: 0 0 10px 0; font-weight: 800;">Ecossistema Seguro</h3>
+                  <p style="font-size: 1rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Entregas contínuas e seguras focadas na aderência estrita à LGPD e provimentos legais.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="platforms-section" style="background: #f8fafc;">
+      
+      <div class="section-divider" style="margin-top: 0; margin-bottom: 60px;">
+          <span style="background: #f8fafc;">Governo & Gestão Pública (B2G)</span>
+      </div>
+
+      <div class="plat-header">
+          <div class="plat-header-text">
+              <h2>Módulos Governamentais</h2>
+              <p>O ecossistema definitivo para a gestão de prefeituras e câmaras.</p>
+          </div>
+          <div class="carousel-controls">
+              <button class="carousel-btn" onclick="scrollCarousel('govTrack', -1)">&#10094;</button>
+              <button class="carousel-btn" onclick="scrollCarousel('govTrack', 1)">&#10095;</button>
+          </div>
+      </div>
+
+      <div class="carousel-wrapper">
+          <div class="carousel-track" id="govTrack">
+              
+              <div class="plat-card theme-govdash">
+                  <div class="app-icon-box" style="background: #0f172a; color: #0284c7;">
+                      <img src="img/govdash.png" alt="GovDash" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>GD</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Inteligência de Dados</span>
+                      <h3>Cerrado GovDash</h3>
+                  </div>
+                  <p class="plat-desc">O "Cockpit" do prefeito. Transforma dados em painéis de decisão em tempo real, alertando sobre limites da LRF (54%), saúde e obras.</p>
+                  <div class="card-tags"><span>Termômetro LRF</span><span>Painel Executivo</span></div>
+                  <a href="/solucoes/govdash/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-mobility">
+                  <div class="app-icon-box" style="background: #0f172a; color: #2563eb;">
+                      <img src="img/mobility.png" alt="Mobility" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>CM</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Frotas e Telemetria</span>
+                      <h3>Cerrado Mobility</h3>
+                  </div>
+                  <p class="plat-desc">App estilo Uber para uso oficial. Rastreio via GPS nativo, controle antifraude de combustível e automação de multas e rotas.</p>
+                  <div class="card-tags"><span>App Mobile</span><span>Cálculo km/L</span></div>
+                  <a href="/solucoes/mobility/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-edu">
+                  <div class="app-icon-box" style="background: #0f172a; color: #4f46e5;">
+                      <img src="img/edu.png" alt="Edu" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>ED</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Gestão Educacional</span>
+                      <h3>Cerrado Edu</h3>
+                  </div>
+                  <p class="plat-desc">Sistema de Gestão Escolar com IA Nativa. Diário eletrônico, controle de merenda PNAE e algoritmos preditivos anti-evasão.</p>
+                  <div class="card-tags"><span>Diário Eletrônico</span><span>Merenda PNAE</span></div>
+                  <a href="/solucoes/edu/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-govrh">
+                  <div class="app-icon-box" style="background: #0f172a; color: #0d9488;">
+                      <img src="img/rh.png" alt="GovRH" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>RH</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Recursos Humanos</span>
+                      <h3>Cerrado GovRH</h3>
+                  </div>
+                  <p class="plat-desc">Folha de pagamento blindada. Motor No-Code para criar fórmulas de vencimento e layouts nativos homologados para o eSocial.</p>
+                  <div class="card-tags"><span>Motor No-Code</span><span>eSocial</span></div>
+                  <a href="/solucoes/govrh/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-prev">
+                  <div class="app-icon-box" style="background: #0f172a; color: #d97706;">
+                      <img src="img/prev.png" alt="Prev" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>PR</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Regime Previdenciário</span>
+                      <h3>Cerrado Prev</h3>
+                  </div>
+                  <p class="plat-desc">Hub para RPPS. Automação completa de concessões, cálculo de paridade, arrecadação e portal do segurado online.</p>
+                  <div class="card-tags"><span>Concessão Auto</span><span>Integração COMPREV</span></div>
+                  <a href="/solucoes/prev/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-privacy">
+                  <div class="app-icon-box" style="background: #0f172a; color: #0891b2;">
+                      <img src="img/privacy.png" alt="Privacy" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>LG</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Compliance LGPD</span>
+                      <h3>Cerrado Privacy</h3>
+                  </div>
+                  <p class="plat-desc">DPO as a Service. Mapeamento de dados via IA, geração de relatórios ROPA/RIPD e plataforma EAD de treinamento.</p>
+                  <div class="card-tags"><span>Gerador ROPA</span><span>EAD LGPD</span></div>
+                  <a href="/solucoes/privacy/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-social">
+                  <div class="app-icon-box" style="background: #0f172a; color: #c026d3;">
+                      <img src="img/social.png" alt="Social" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>CS</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Assistência Social</span>
+                      <h3>Cerrado Social</h3>
+                  </div>
+                  <p class="plat-desc">Prontuário Social Eletrônico. Reduz filas com regulação inteligente e cruzamento automático de dados com o CadÚnico.</p>
+                  <div class="card-tags"><span>Prontuário Único</span><span>Regulação SUAS</span></div>
+                  <a href="/solucoes/social/" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-docs">
+                  <div class="app-icon-box" style="background: #0f172a; color: #0284c7;">
+                      <img src="img/docs.png" alt="Docs" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'app-icon-text\'>DC</span>'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Gestão Documental</span>
+                      <h3>Cerrado Docs</h3>
+                  </div>
+                  <p class="plat-desc">Plataforma Cloud Paperless. Extração de texto em imagens (OCR), workflow com assinatura e motor de IA para "conversar" com PDFs.</p>
+                  <div class="card-tags"><span>Chat com PDF (IA)</span><span>Assinatura Digital</span></div>
+                  <a href="/solucoes/docs/" class="btn-card-plat">Página do App</a>
+              </div>
+
+          </div>
+      </div>
+  </section>
+
+  <section class="platforms-section" style="background: #fff;">
+      
+      <div class="section-divider" style="margin-top: 0; margin-bottom: 60px;">
+          <span style="background: #fff; color: #10b981;">Mercado Privado (B2B)</span>
+      </div>
+
+      <div class="plat-header">
+          <div class="plat-header-text">
+              <h2>Soluções Corporativas</h2>
+              <p>Ferramentas robustas que automatizam processos, garantem conformidade e geram lucro.</p>
+          </div>
+          <div class="carousel-controls">
+              <button class="carousel-btn" onclick="scrollCarousel('b2bTrack', -1)">&#10094;</button>
+              <button class="carousel-btn" onclick="scrollCarousel('b2bTrack', 1)">&#10095;</button>
+          </div>
+      </div>
+
+      <div class="carousel-wrapper">
+          <div class="carousel-track" id="b2bTrack">
+
+              <div class="plat-card theme-cerraflow" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#0ea5e9'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #0f172a; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#0f172a" />
+                          <circle cx="50" cy="50" r="25" fill="none" stroke="#0ea5e9" stroke-width="4"/>
+                          <path d="M35 50h30M50 35v30" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                      </svg>
+                      <img src="img/cerraflow.png" alt="Cerraflow Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>CRM & Embedded Finance</span>
+                      <h3>Cerraflow</h3>
+                  </div>
+                  <p class="plat-desc">Ecossistema comercial com Esteira de Crédito nativa. Conecte clientes sem capital diretamente a financeiras e resgate vendas perdidas.</p>
+                  <div class="card-tags">
+                      <span>Esteira de Crédito</span>
+                      <span>Kanban de Vendas</span>
+                      <span>PWA</span>
+                  </div>
+                  <a href="/cerraflow.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-cerrabi" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #022c22; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#022c22" />
+                          <rect x="20" y="55" width="15" height="25" rx="3" fill="#10b981"/>
+                          <rect x="40" y="40" width="15" height="40" rx="3" fill="#34d399"/>
+                          <rect x="60" y="25" width="15" height="55" rx="3" fill="#6ee7b7"/>
+                          <line x1="15" y1="82" x2="85" y2="82" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+                      </svg>
+                      <img src="img/cerrabi.png" alt="CerraBI Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Business Intelligence & FP&A</span>
+                      <h3>CerraBI</h3>
+                  </div>
+                  <p class="plat-desc">Plataforma White-Label que transforma balancetes do Domínio e Alterdata em dashboards gerenciais interativos com a marca do escritório.</p>
+                  <div class="card-tags">
+                      <span>DRE Interativo</span>
+                      <span>White-Label</span>
+                      <span>FP&A</span>
+                  </div>
+                  <a href="/cerrabi.html" class="btn-card-plat">Página do App</a>
+              </div>
+              
+              <div class="plat-card theme-blockchain" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #020617; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#020617" />
+                          <circle cx="50" cy="50" r="15" fill="none" stroke="#6366f1" stroke-width="4" stroke-dasharray="5 5"/>
+                          <circle cx="50" cy="50" r="6" fill="#a5b4fc" />
+                          <line x1="30" y1="30" x2="40" y2="40" stroke="#6366f1" stroke-width="3"/>
+                          <line x1="70" y1="70" x2="60" y2="60" stroke="#6366f1" stroke-width="3"/>
+                      </svg>
+                      <img src="img/blockchain2.png" alt="Blockchain Logo" class="logo-img" style="object-fit: contain; padding: 10px;" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Consultoria Web3</span>
+                      <h3>Blockchain Corporativo</h3>
+                  </div>
+                  <p class="plat-desc">Implementação de redes descentralizadas. Traga transparência, imutabilidade e Smart Contracts (Ethereum/Solidity) para a sua empresa.</p>
+                  <div class="card-tags">
+                      <span>Ethereum</span>
+                      <span>Solidity</span>
+                      <span>Smart Contracts</span>
+                  </div>
+                  <a href="/blockchain.html" class="btn-card-plat">Acessar Consultoria</a>
+              </div>
+              
+              <div class="plat-card theme-cerraplan" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #022c22; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#022c22" />
+                          <path d="M30 45 L45 60 L75 30" fill="none" stroke="#10b981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                          <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="#34d399" stroke-width="3"/>
+                      </svg>
+                      <img src="img/cerraplan.png" alt="CerraPlan Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Workflow & Conformidade</span>
+                      <h3>CerraPlan 5W2H</h3>
+                  </div>
+                  <p class="plat-desc">Plataforma corporativa para gestão de Planos de Ação. Workflow completo com aprovação de compliance, Kanban e auditoria de evidências.</p>
+                  <div class="card-tags">
+                      <span>5W2H</span>
+                      <span>SaaS Corporativo</span>
+                      <span>Auditoria</span>
+                  </div>
+                  <a href="/cerraplan.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-cartorio" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #022c22; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#022c22" />
+                          <path d="M30 35h40M30 50h25" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+                          <path d="M70 65l-10-10H30V30h40v35z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round" />
+                          <circle cx="75" cy="75" r="15" fill="#10b981" />
+                          <path d="M70 75h10M75 70v10" stroke="#022c22" stroke-width="3" stroke-linecap="round" />
+                      </svg>
+                      <img src="img/cartorio.png" alt="Cartor.IO Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Automação & IA</span>
+                      <h3>Cartor.IO</h3>
+                  </div>
+                  <p class="plat-desc">Um bot de WhatsApp com IA capaz de ler provimentos legais, responder dúvidas semânticas e agendar videoconferências de forma autônoma.</p>
+                  <div class="card-tags">
+                      <span>IA Semântica</span>
+                      <span>Checklists</span>
+                      <span>Prov. 49/24</span>
+                  </div>
+                  <a href="/chatcartorio.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-elo" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#4f46e5'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #1e1b4b; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#1e1b4b" />
+                          <path d="M25 35 C25 25, 75 25, 75 35 C75 45, 25 45, 25 35 Z" fill="#4f46e5" opacity="0.8"/>
+                          <path d="M30 43 L25 55 L38 44" fill="#4f46e5" opacity="0.8"/>
+                          <circle cx="40" cy="65" r="6" fill="#818cf8"/>
+                          <circle cx="65" cy="55" r="8" fill="#fff"/>
+                          <circle cx="75" cy="75" r="5" fill="#818cf8"/>
+                          <path d="M40 65 L65 55 L75 75" fill="none" stroke="#818cf8" stroke-width="3"/>
+                      </svg>
+                      <img src="img/eloeleitoral.png" alt="EloEleitoral Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Gestão de Mandato</span>
+                      <h3>EloEleitoral</h3>
+                  </div>
+                  <p class="plat-desc">Plataforma inteligente para captar demandas da cidade, classificar prioridades com IA e fornecer um painel gerencial de CRM Eleitoral.</p>
+                  <div class="card-tags">
+                      <span>CRM Eleitoral</span>
+                      <span>Dashboard</span>
+                      <span>IA Semântica</span>
+                  </div>
+                  <a href="/eloeleitoral.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-leidobem" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#3b82f6'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #1e3a8a; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#1e3a8a" />
+                          <path d="M50 25l25 40H25z" fill="#38bdf8" opacity="0.8" />
+                          <path d="M50 20v60M30 40h40M30 60h40" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+                          <circle cx="50" cy="50" r="12" fill="#fff" />
+                          <path d="M45 50l3 3 7-7" stroke="#1e3a8a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <img src="img/leidobem.png" alt="Lei do Bem Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Consultoria Tributária</span>
+                      <h3>Plataforma Lei do Bem</h3>
+                  </div>
+                  <p class="plat-desc">Software SaaS de diagnóstico automatizado. Calcula incentivos fiscais de inovação e gera laudo de aderência utilizando IA Generativa (LLaMA).</p>
+                  <div class="card-tags">
+                      <span>Cálculo IRPJ</span>
+                      <span>Desoneração</span>
+                      <span>IA Generativa</span>
+                  </div>
+                  <a href="/leidobem.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+              <div class="plat-card theme-broker" style="border-color: #e2e8f0; transition: 0.3s;" onmouseover="this.style.borderColor='#ffd60a'" onmouseout="this.style.borderColor='#e2e8f0'">
+                  <div class="app-icon-box" style="background: #000; padding: 0;">
+                      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="22" fill="#000" />
+                          <path d="M20 40h40v30H20zM60 50h15l5 10v10h-20z" fill="#ffd60a" />
+                          <circle cx="30" cy="75" r="6" fill="#fff" />
+                          <circle cx="70" cy="75" r="6" fill="#fff" />
+                          <path d="M25 50h30M25 60h20" stroke="#000" stroke-width="3" stroke-linecap="round" />
+                      </svg>
+                      <img src="img/broker.png" alt="Broker Logístico Logo" class="logo-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="card-header-text">
+                      <span>Logística & Atacado</span>
+                      <h3>Broker Logístico ERP</h3>
+                  </div>
+                  <p class="plat-desc">Simulador estratégico Mobile. Avalie o Break-Even de rotas, acompanhe metas de RCA's e controle o risco de churn da carteira de clientes B2B.</p>
+                  <div class="card-tags">
+                      <span>Simulador Frete</span>
+                      <span>PWA Mobile</span>
+                      <span>Gestão RCA</span>
+                  </div>
+                  <a href="/brokerlogistico.html" class="btn-card-plat">Página do App</a>
+              </div>
+
+          </div>
+      </div>
+  </section>
+
+  <section class="section section-dark text-center" style="border-top: 1px solid rgba(255,255,255,0.1); background: #020617; padding: 100px 0;">
+    <div class="container">
+      <h2 class="title" style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;">A evolução do seu negócio começa aqui.</h2>
+      <p class="subtitle" style="color: #cbd5e1; max-width: 650px; margin: 0 auto 40px; font-size: 1.15rem;">Nossos arquitetos de software estão prontos para desenhar a infraestrutura ideal de tecnologia para a sua corporação, secretaria ou prefeitura.</p>
+      <a href="/index.html#contato" style="display: inline-block; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; text-transform: uppercase; background: #10b981; color: #022c22; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); transition: 0.3s;">Agendar Reunião de Engenharia</a>
+    </div>
+  </section>
+
+  {% include footer.html %}
+  
+  <script src="js/main.js"></script>
+
+  <script>
+      function scrollCarousel(trackId, direction) {
+          const track = document.getElementById(trackId);
+          const scrollAmount = 324 * direction; 
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+  </script>
+</body>
+</html>

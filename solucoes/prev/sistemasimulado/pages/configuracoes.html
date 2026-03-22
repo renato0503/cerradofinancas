@@ -1,0 +1,209 @@
+<!-- CONFIGURAÇÕES -->
+<div class="grid-2 mb-3">
+    <div class="card">
+        <div class="card-header">
+            <h3>🏛️ Dados do RPPS</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">Nome do Instituto</label>
+                <input type="text" class="form-input" value="Instituto de Prev. Municipal de Cuiaba">
+            </div>
+            <div class="form-group">
+                <label class="form-label">CNPJ</label>
+                <input type="text" class="form-input" value="12.345.678/0001-90">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Endereço</label>
+                <input type="text" class="form-input" value="Av. Historiador Rubens de Mendonça, 1000">
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Cidade</label>
+                    <input type="text" class="form-input" value="Cuiabá">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">UF</label>
+                    <select class="form-select">
+                        <option value="MT" selected>MT</option>
+                        <option value="SP">SP</option>
+                        <option value="MG">MG</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Telefone</label>
+                    <input type="text" class="form-input" value="(65) 3614-0000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" class="form-input" value="prev@cuiaba.mt.gov.br">
+                </div>
+            </div>
+            <button class="btn btn-primary">💾 Salvar Alterações</button>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>📊 Parâmetros Atuariais</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">Data Base do Cálculo</label>
+                <input type="date" class="form-input" value="2025-12-31">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Índice de Reajuste</label>
+                <select class="form-select">
+                    <option value="inpc" selected>INPC</option>
+                    <option value="ipca">IPCA</option>
+                    <option value="pensionista">100% do INPC</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Tábua de Mortalidade</label>
+                <select class="form-select">
+                    <option value="at-2000" selected>AT-2000 (Suavisada)</option>
+                    <option value="br-ems">BR-EMS</option>
+                    <option value="ibge">IBGE 2020</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Taxa de Juros Real</label>
+                <input type="text" class="form-input" value="4,5% a.a.">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Crescimento Salarial</label>
+                <input type="text" class="form-input" value="3,0% a.a.">
+            </div>
+            <button class="btn btn-secondary">💾 Salvar Parâmetros</button>
+        </div>
+    </div>
+</div>
+
+<div class="grid-2 mb-3">
+    <div class="card">
+        <div class="card-header">
+            <h3>💰 Alíquotas de Contribuição</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">Alíquota Patronal (%)</label>
+                <input type="number" class="form-input" value="14.0">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Alíquota do Servidor (%)</label>
+                <input type="number" class="form-input" value="11.0">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Taxa de Administração (%)</label>
+                <input type="number" class="form-input" value="2.0">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Custo Suplementar (%)</label>
+                <input type="number" class="form-input" value="0.0">
+            </div>
+            
+            <div class="alert alert-info mb-2">
+                <div class="alert-icon">ℹ️</div>
+                <div class="alert-content">
+                    <div class="alert-title">Alíquota Total</div>
+                    <div class="alert-message">25.0% sobre a remuneração de contribuição</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary">💾 Atualizar Alíquotas</button>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>📋 Regras de Concessão</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">Idade Mínima Homens</label>
+                <input type="number" class="form-input" value="65">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Idade Mínima Mulheres</label>
+                <input type="number" class="form-input" value="62">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Tempo Mín. Contribuição</label>
+                <input type="number" class="form-input" value="15">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Tempo Magistério (Especial)</label>
+                <input type="number" class="form-input" value="25">
+            </div>
+            
+            <div class="alert alert-warning mb-2">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <div class="alert-title">EC 103/2019</div>
+                    <div class="alert-message">As regras estão em conformidade com a Emenda Constitucional.</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-secondary">💾 Salvar Regras</button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3>👥 Gestão de Usuários</h3>
+        <button class="btn btn-sm btn-primary">➕ Novo Usuário</button>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Perfil</th>
+                    <th>Status</th>
+                    <th>Último Acesso</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Renato Rosa</strong></td>
+                    <td>renato@cerradofinancas.com.br</td>
+                    <td><span class="badge badge-danger">Administrador</span></td>
+                    <td><span class="badge badge-success">✅ Ativo</span></td>
+                    <td>22/03/2026 14:30</td>
+                    <td><button class="btn-table edit">✏️</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Maria da Conceição</strong></td>
+                    <td>maria@prev.cuiaba.mt.gov.br</td>
+                    <td><span class="badge badge-info">Concessor</span></td>
+                    <td><span class="badge badge-success">✅ Ativo</span></td>
+                    <td>22/03/2026 10:15</td>
+                    <td><button class="btn-table edit">✏️</button></td>
+                </tr>
+                <tr>
+                    <td><strong>João Pereira</strong></td>
+                    <td>joao@prev.cuiaba.mt.gov.br</td>
+                    <td><span class="badge badge-warning">Financeiro</span></td>
+                    <td><span class="badge badge-success">✅ Ativo</span></td>
+                    <td>21/03/2026 16:45</td>
+                    <td><button class="btn-table edit">✏️</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Ana Carolina</strong></td>
+                    <td>ana@prev.cuiaba.mt.gov.br</td>
+                    <td><span class="badge badge-info">Consultor</span></td>
+                    <td><span class="badge badge-pending">⏳ Inativo</span></td>
+                    <td>15/03/2026 09:00</td>
+                    <td><button class="btn-table edit">✏️</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

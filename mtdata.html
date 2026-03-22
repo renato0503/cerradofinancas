@@ -1,0 +1,426 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTData | Plataforma de Inteligência Estratégica</title>
+    <meta name="description" content="Inteligência de mercado e políticas públicas baseadas em dados primários. Dashboards interativos para o setor de turismo, eventos e planejamento em Mato Grosso.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        /* --- ESTILIZAÇÃO ESPECÍFICA MTDATA (THEME DARK/DATA) --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #0f172a; /* Fundo Escuro para vibe Data Science */
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animações */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* --- HERO MTDATA --- */
+        .mtdata-hero {
+            position: relative;
+            padding: 120px 0 100px;
+            overflow: hidden;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+        }
+
+        /* Efeito visual de fundo (Grades de Dados) */
+        .mtdata-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(30, 41, 59, 0.8) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 41, 59, 0.8) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Brilho de fundo (Glow) */
+        .hero-glow {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text { flex: 1.2; }
+        .hero-visual { flex: 0.8; display: flex; justify-content: center; }
+
+        /* Logo do MTData no Hero */
+        .mtdata-main-logo {
+            height: 90px;
+            width: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+        }
+
+        .mt-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        .mt-badge span { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite;}
+        
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+
+        .mtdata-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #f8fafc, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .mtdata-hero p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        /* Botões Ação */
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
+        
+        .btn-primary-mt {
+            background: #10b981;
+            color: #022c22;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+        .btn-primary-mt:hover { background: #059669; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.3); color: #fff;}
+
+        .btn-outline-mt {
+            background: rgba(30, 41, 59, 0.5);
+            color: #f8fafc;
+            border: 1px solid #475569;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .btn-outline-mt:hover { background: rgba(51, 65, 85, 0.8); border-color: #64748b; }
+
+        /* Dashboard Preview Mockup */
+        .dashboard-mockup {
+            width: 100%;
+            max-width: 500px;
+            background: #1e293b;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+        .dashboard-mockup:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02); }
+        
+        .mockup-header { background: #0f172a; padding: 12px; display: flex; gap: 6px; border-bottom: 1px solid #334155;}
+        .mockup-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-r { background: #ef4444; } .dot-y { background: #eab308; } .dot-g { background: #10b981; }
+        
+        .mockup-body { padding: 20px; }
+        .mockup-chart { height: 150px; background: linear-gradient(to top, rgba(16, 185, 129, 0.2), transparent); border-bottom: 2px solid #10b981; position: relative; margin-bottom: 20px; border-radius: 4px;}
+        .mockup-line { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,100 L20,60 L40,80 L60,30 L80,50 L100,10" fill="none" stroke="%2310b981" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>') no-repeat; background-size: 100% 100%;}
+        .mockup-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 15px;}
+        .m-kpi { background: #0f172a; padding: 15px; border-radius: 8px; border: 1px solid #334155;}
+        .m-kpi-val { font-size: 1.5rem; font-weight: bold; color: #f8fafc;}
+        .m-kpi-lbl { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;}
+
+        @media (max-width: 992px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .mtdata-hero p { margin: 0 auto 40px; }
+            .btn-group { justify-content: center; }
+            .dashboard-mockup { transform: none; max-width: 400px; }
+            .dashboard-mockup:hover { transform: none; }
+        }
+
+        /* --- THE PROBLEM & SOLUTION SECTION --- */
+        .value-section { padding: 100px 0; background: #0f172a; }
+        
+        .split-features { display: flex; gap: 40px; align-items: stretch; margin-bottom: 50px;}
+        @media (max-width: 768px) { .split-features { flex-direction: column; } }
+
+        .problem-box {
+            flex: 1;
+            background: rgba(220, 38, 38, 0.05);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+        }
+        .solution-box {
+            flex: 1;
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .box-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
+        .problem-box .box-title { color: #f87171; }
+        .solution-box .box-title { color: #34d399; }
+        
+        .box-text { color: #cbd5e1; font-size: 1.1rem; line-height: 1.6; }
+
+        /* Impacto Regional Caixa Especial */
+        .impact-mt-box {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border-left: 6px solid #10b981;
+            padding: 50px;
+            border-radius: 0 20px 20px 0;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .impact-mt-box h3 { color: #f8fafc; font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.5px;}
+        .impact-mt-box p { color: #cbd5e1; font-size: 1.15rem; line-height: 1.7; margin-bottom: 20px; }
+        .impact-mt-box p:last-child { margin-bottom: 0; }
+        .impact-mt-box strong { color: #10b981; }
+
+        /* --- DIFERENCIAIS (HOW IT WORKS) --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 40px 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .feature-card:hover { border-color: #10b981; background: rgba(30, 41, 59, 0.8); transform: translateY(-5px);}
+        
+        .f-icon { width: 50px; height: 50px; background: #0f172a; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid #334155;}
+        .f-icon svg { color: #10b981; width: 24px; height: 24px; }
+        
+        .feature-card h3 { font-size: 1.3rem; color: #f8fafc; margin-bottom: 15px; font-weight: 700;}
+        .feature-card p { color: #94a3b8; font-size: 1rem; line-height: 1.6; margin: 0;}
+
+        /* --- CTA FOOTER --- */
+        .mtdata-cta {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #0f172a, #020617);
+            text-align: center;
+            border-top: 1px solid #1e293b;
+        }
+        .mtdata-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: #fff;}
+        .mtdata-cta p { color: #94a3b8; max-width: 600px; margin: 0 auto 40px; font-size: 1.15rem;}
+
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="mtdata-hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+        <div class="hero-content">
+            
+            <div class="hero-text fade-up">
+                <img src="{{ '/img/mtdata.png' | relative_url }}" alt="Logo MTData" class="mtdata-main-logo" onerror="this.style.display='none'">
+                
+                <div class="mt-badge">
+                    <span></span> Startup do Ecossistema Cerrado
+                </div>
+                <h1>Plataforma de Inteligência e <br>Mapeamento Estratégico</h1>
+                <p>Transformamos a escassez de dados do Governo e das Empresas de Mato Grosso em painéis vivos. Conheça a ferramenta SaaS que mapeia o comportamento do consumidor, o impacto financeiro de grandes eventos e guia políticas públicas.</p>
+                
+                <div class="btn-group fade-up delay-1">
+                    <a href="https://renato0503.github.io/MTData---MVP/" target="_blank" class="btn-primary-mt">
+                        Acessar MVP Interativo
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                    <a href="#solucao" class="btn-outline-mt">Como Funciona</a>
+                </div>
+            </div>
+
+            <div class="hero-visual fade-up delay-2">
+                <div class="dashboard-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dot dot-r"></div>
+                        <div class="mockup-dot dot-y"></div>
+                        <div class="mockup-dot dot-g"></div>
+                    </div>
+                    <div class="mockup-body">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                            <span style="color: #f8fafc; font-weight: bold;">Análise: Show Nacional</span>
+                            <span style="color: #10b981; font-size: 0.8rem; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 4px;">Em Tempo Real</span>
+                        </div>
+                        <div class="mockup-chart">
+                            <div class="mockup-line"></div>
+                        </div>
+                        <div class="mockup-kpis">
+                            <div class="m-kpi">
+                                <div class="m-kpi-lbl">Gasto Turista</div>
+                                <div class="m-kpi-val">R$ 1.450</div>
+                            </div>
+                            <div class="m-kpi">
+                                <div class="m-kpi-lbl">Público Ext.</div>
+                                <div class="m-kpi-val">42%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="solucao" class="value-section">
+    <div class="container">
+        
+        <div class="split-features fade-up">
+            <div class="problem-box">
+                <h3 class="box-title">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    A Cegueira Informacional
+                </h3>
+                <p class="box-text">
+                    Secretarias de governo e empresas de turismo em MT enfrentam a escassez crítica de dados primários e granularizados. As decisões de alocação de recursos, estruturação de eventos e políticas públicas são frequentemente baseadas em dados genéricos, desatualizados ou no puro "achismo", resultando em investimentos ineficientes.
+                </p>
+            </div>
+            
+            <div class="solution-box delay-1">
+                <h3 class="box-title">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    Conhecimento Estratégico
+                </h3>
+                <p class="box-text">
+                    Nossa solução ataca a raiz do problema: combinamos uma rede treinada de pesquisadores universitários (coleta ágil de dados em campo) com uma Plataforma SaaS de Business Intelligence. Transformamos dados soltos em um ativo estratégico visual, respondendo exatamente <em>quem</em> compra, <em>quanto</em> gasta e <em>por que</em> visita.
+                </p>
+            </div>
+        </div>
+
+        <div class="impact-mt-box fade-up">
+            <h3>O Impacto Direto na Economia de Mato Grosso</h3>
+            <p>Grandes realizações, como o Festival de Inverno de Chapada dos Guimarães, etapas da Stock Car em Cuiabá ou mega shows nacionais na Arena Pantanal, movimentam dezenas de milhões de reais em poucos dias. No entanto, sem a coleta de <strong>dados primários na ponta</strong>, prefeituras e a iniciativa privada não conseguem rastrear o destino real desse capital.</p>
+            <p>O MTData preenche exatamente esse vácuo logístico. Ao mapearmos de onde os visitantes vêm, quanto tempo permanecem e quanto gastam na rede hoteleira, gastronômica e de transporte, entregamos nas mãos dos gestores o poder de tomar decisões fundamentadas. O resultado é a capacidade de direcionar orçamentos de segurança, mobilidade urbana e campanhas de marketing com <strong>precisão cirúrgica</strong>, fomentando o desenvolvimento sustentável e o fortalecimento de todas as regiões turísticas do estado.</p>
+        </div>
+
+        <div class="section-title text-center mb-12 fade-up">
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 15px;">Diferenciais da Tecnologia</h2>
+            <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Por que a MTData é superior aos relatórios de consultorias tradicionais?</p>
+        </div>
+
+        <div class="features-grid fade-up delay-2">
+            <div class="feature-card">
+                <div class="f-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3>Plataforma Viva (SaaS BI)</h3>
+                <p>Em vez de entregar um PDF estático de 100 páginas que ninguém lê, entregamos acesso a um Dashboard Interativo. O cliente filtra datas, cruza dados de cidades e descobre insights por conta própria em tempo real.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="f-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3>Rede Universitária (Capilaridade)</h3>
+                <p>Nossa metodologia de campo envolve parcerias com as Instituições de Ensino Superior de MT. Uma rede treinada de acadêmicos realiza a coleta na ponta, garantindo o melhor custo-benefício e alcance seguro em todo o estado.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="f-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <h3>Inteligência Artificial (GenAI)</h3>
+                <p>O MVP já integra motores avançados de Inteligência Artificial para gerar "Insights Estratégicos" textuais instantâneos. O sistema lê os dados matemáticos do painel e entrega diagnósticos acionáveis que facilitam a vida do gestor público.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="mtdata-cta">
+    <div class="container fade-up">
+        <h2>Teste a ferramenta na prática.</h2>
+        <p>Acesse o Produto Mínimo Viável (MVP) hospedado publicamente e simule análises em tempo real sobre os eventos de turismo e impacto de consumo no Estado de Mato Grosso.</p>
+        <a href="https://renato0503.github.io/MTData---MVP/" target="_blank" class="btn-primary-mt" style="font-size: 1.2rem; padding: 18px 40px;">
+            Abrir MVP do MTData
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    // Animação de rolagem (Fade Up)
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

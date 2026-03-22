@@ -1,0 +1,207 @@
+<!-- COMPREV -->
+<div class="stats-grid mb-3">
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon blue">💰</div>
+        </div>
+        <div class="stat-value">R$ 1.450.000</div>
+        <div class="stat-label">A Receber COMPREV</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon green">✅</div>
+        </div>
+        <div class="stat-value">R$ 890.000</div>
+        <div class="stat-label">Compensações Processadas</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon orange">⏳</div>
+        </div>
+        <div class="stat-value">23</div>
+        <div class="stat-label">Processos em Andamento</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon red">⚠️</div>
+        </div>
+        <div class="stat-value">5</div>
+        <div class="stat-label">Pendentes de Análise</div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h3>📋 Compensações Registradas</h3>
+        <div class="d-flex gap-1">
+            <button class="btn btn-sm btn-secondary" onclick="exportTable('comprev', 'excel')">📥 Exportar</button>
+            <button class="btn btn-sm btn-primary">➕ Novo Requerimento</button>
+        </div>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Protocolo</th>
+                    <th>CPF</th>
+                    <th>Nome</th>
+                    <th>Vlr. Compensar</th>
+                    <th>Data Reqv.</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#2026030001</td>
+                    <td>123.456.789-00</td>
+                    <td><strong>Maria da Conceição Oliveira</strong></td>
+                    <td>R$ 45.000</td>
+                    <td>18/03/2026</td>
+                    <td><span class="badge badge-info">⏳ Análise</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn-table view">👁️</button>
+                            <button class="btn-table edit">✏️</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#2026030002</td>
+                    <td>987.654.321-00</td>
+                    <td><strong>João Pereira dos Santos</strong></td>
+                    <td>R$ 32.500</td>
+                    <td>17/03/2026</td>
+                    <td><span class="badge badge-success">✅ Aprovado</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn-table view">👁️</button>
+                            <button class="btn-table edit">✏️</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#2026030003</td>
+                    <td>456.789.123-00</td>
+                    <td><strong>Ana Carolina Silva</strong></td>
+                    <td>R$ 28.000</td>
+                    <td>15/03/2026</td>
+                    <td><span class="badge badge-warning">⚠️ Documentos</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn-table view">👁️</button>
+                            <button class="btn-table edit">✏️</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#2026030004</td>
+                    <td>321.654.987-00</td>
+                    <td><strong>Carlos Mendes Costa</strong></td>
+                    <td>R$ 55.200</td>
+                    <td>12/03/2026</td>
+                    <td><span class="badge badge-success">✅ Concluído</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn-table view">👁️</button>
+                            <button class="btn-table edit">✏️</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="card">
+        <div class="card-header">
+            <h3>📄 Certidões CTC (Tempo de Contribuição)</h3>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning mb-2">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <div class="alert-title">2 CTCs pendentes</div>
+                    <div class="alert-message">Aguardando conclusão do processo no RGPS.</div>
+                </div>
+            </div>
+            
+            <table style="font-size: 0.9rem;">
+                <thead>
+                    <tr>
+                        <th>CTC</th>
+                        <th>Servidor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#CTC-2026-001</td>
+                        <td>Maria da Conceição O.</td>
+                        <td><span class="badge badge-warning">⏳ Aguardando</span></td>
+                    </tr>
+                    <tr>
+                        <td>#CTC-2026-002</td>
+                        <td>João Pereira S.</td>
+                        <td><span class="badge badge-warning">⏳ Aguardando</span></td>
+                    </tr>
+                    <tr>
+                        <td>#CTC-2025-045</td>
+                        <td>Ana Carolina S.</td>
+                        <td><span class="badge badge-success">✅ Emitida</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>📊 Histórico de Compensações</h3>
+        </div>
+        <div class="card-body">
+            <div class="chart-placeholder" style="height: 200px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem;">📈</div>
+                    <p>Gráfico de Evolução - Valores Compensados</p>
+                </div>
+            </div>
+            
+            <div class="mt-2">
+                <div class="metric-bar">
+                    <div class="metric-bar-header">
+                        <span class="metric-bar-label">Taxa de Sucesso</span>
+                        <span class="metric-bar-value">94.5%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar success" style="width: 94.5%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h3>🔗 Integração com COMPREV Federal</h3>
+    </div>
+    <div class="card-body">
+        <div class="grid-3">
+            <div class="stat-card text-center">
+                <div style="font-size: 2rem; margin-bottom: 10px;">🟢</div>
+                <div class="stat-label">Status da Conexão</div>
+                <strong class="text-success">ONLINE</strong>
+            </div>
+            <div class="stat-card text-center">
+                <div class="stat-value">45</div>
+                <div class="stat-label">Requisições Hoje</div>
+            </div>
+            <div class="stat-card text-center">
+                <div class="stat-value">0.2s</div>
+                <div class="stat-label">Tempo Médio Resposta</div>
+            </div>
+        </div>
+    </div>
+</div>

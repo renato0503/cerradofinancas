@@ -1,0 +1,222 @@
+/* ==========================================================================
+   STARTUPS PAGE (CERRADO TECH) - INNOVATION STYLE
+   ========================================================================== */
+
+:root {
+  --tech-bg-deep: #060912;
+  --tech-bg-accent: #0A0F1E;
+  --tech-glow: rgba(16, 185, 129, 0.3);
+}
+
+/* ==========================================================================
+   HERO TECH (BANNER INICIAL)
+   ========================================================================== */
+.hero-tech {
+  position: relative;
+  padding: 160px 0 120px;
+  background: radial-gradient(circle at center, var(--primary-light) 0%, var(--tech-bg-deep) 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-tech::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.03) 75%, rgba(255, 255, 255, 0.03) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.03) 75%, rgba(255, 255, 255, 0.03) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  z-index: 1;
+}
+
+.hero-tech .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* NOVO: Fundo claro e Logo maior para destacar a logo-tech.png */
+.hero-logo-wrapper {
+  background: #ffffff;
+  display: inline-block;
+  padding: 24px 48px;
+  border-radius: 32px; /* Deixei mais arredondado para combinar com sua logo */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  margin-bottom: 40px;
+}
+
+.hero-logo-wrapper img {
+  height: 220px; /* <--- ALTERE ESTE VALOR AQUI PARA TESTAR O TAMANHO (ex: 180px, 250px, 300px) */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-tech h1.title {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  background: linear-gradient(135deg, #fff 0%, #a1a1a1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-tech p.subtitle {
+  color: #94A3B8;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   PORTFÓLIO E CARDS
+   ========================================================================== */
+#portfolio {
+  background-color: var(--tech-bg-accent);
+}
+
+#portfolio .section-header .title {
+  color: #fff;
+}
+
+.startups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.startup-card {
+  background: #0D1117;
+  border: 1px solid #1E293B;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.startup-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), 0 0 15px var(--tech-glow);
+}
+
+.startup-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.startup-header h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.startup-desc {
+  color: #94A3B8;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.startup-details {
+  border-top: 1px solid #1E293B;
+  padding-top: 20px;
+}
+
+.detail-item {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.detail-item strong {
+  color: #E2E8F0;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tech-tag {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   SEÇÃO "COMO CRIAMOS" (CARDS LATERAIS)
+   ========================================================================== */
+.process-section {
+  background-color: #F8FAFC; /* Fundo mais claro para destacar os cards */
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.process-step {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.process-step h4 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.process-step p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-tech { padding: 120px 0 80px; }
+  .hero-logo-wrapper img { height: 140px; /* Um pouco menor no celular para não quebrar a tela */ }
+  .process-grid { grid-template-columns: 1fr; }
+}

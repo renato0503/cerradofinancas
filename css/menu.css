@@ -1,0 +1,90 @@
+/* ==========================================================================
+   HEADER E NAVEGAÇÃO
+   ========================================================================== */
+header {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95); 
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); 
+  transition: var(--transition);
+}
+
+.nav-container { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  height: 80px; 
+}
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark {
+  display: grid; place-items: center; width: 40px; height: 40px;
+  border-radius: var(--radius-sm); 
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  color: var(--primary);
+}
+.brand-txt { font-weight: 800; font-size: 1.25rem; color: var(--primary); letter-spacing: -0.5px; }
+
+/* MENU DESKTOP (COMPUTADOR) */
+.desktop-menu { display: flex; gap: 32px; align-items: center; }
+.desktop-menu a {
+  font-weight: 600; 
+  font-size: 0.95rem; 
+  color: var(--text-muted); 
+  text-decoration: none;
+  transition: var(--transition);
+}
+.desktop-menu a:hover, .desktop-menu a.active { color: var(--primary); }
+
+/* BOTÃO MOBILE (ESCONDIDO NO PC) */
+.mobile-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+/* ==========================================================================
+   REGRAS PARA CELULAR (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Esconde o menu horizontal padrão */
+  .desktop-menu { 
+    display: none; 
+    /* Estilos para quando o menu abrir no mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Altura do header */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    gap: 20px;
+    text-align: center;
+  }
+
+  /* Mostra o menu quando a classe .active for adicionada pelo JS */
+  .desktop-menu.active {
+    display: flex;
+  }
+
+  /* Mostra o botão hambúrguer */
+  .mobile-toggle { 
+    display: block; 
+  }
+
+  .desktop-menu a {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 10px 0;
+  }
+}

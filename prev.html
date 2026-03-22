@@ -1,0 +1,520 @@
+---
+layout: null
+permalink: /solucoes/prev/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Prev | Hub de Gestão para RPPS</title>
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        /* ================= CORES E VARIÁVEIS CERRADO PREV ================= */
+        :root {
+            --prev-dark: #172554; /* Blue 950 */
+            --prev-primary: #1e3a8a; /* Blue 900 */
+            --prev-primary-light: #2563eb; /* Blue 500 */
+            --prev-accent: #d97706; /* Amber 600 (Ouro) */
+            --prev-accent-light: #f59e0b; /* Amber 500 */
+            --dash-bg: #0f172a;
+            --dash-panel: #1e293b;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+        }
+
+        body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
+        
+        /* Animações Dinâmicas */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
+        .prev-hero {
+            background: linear-gradient(135deg, #020617 0%, var(--prev-dark) 100%);
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
+            border-bottom: 4px solid var(--prev-accent);
+        }
+        .prev-hero::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 60%); pointer-events: none;
+        }
+
+        .prev-split-layout { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        .prev-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .prev-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS (LIMPO) */
+        .hero-app-icon {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); }
+        
+        .hero-app-icon img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 60px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-tag { background: rgba(217, 119, 6, 0.15); color: #fcd34d; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(217, 119, 6, 0.3); text-transform: uppercase; letter-spacing: 1px; }
+        .prev-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .prev-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
+        .btn-action { background: var(--prev-accent); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3); border: none; cursor: pointer; }
+        .btn-action:hover { background: var(--prev-accent-light); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(217, 119, 6, 0.4); }
+
+        @media(max-width: 992px){ 
+            .prev-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .prev-text-content { text-align: center; }
+            .hero-app-icon { max-width: 220px; transform: none; }
+            .hero-app-icon img { border-radius: 40px; }
+        }
+
+        /* ================= SIMULADOR CONCESSÃO RPPS ================= */
+        .demo-section { padding: 100px 0; background: #fff; }
+        .demo-header { text-align: center; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;}
+        .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+        
+        .demo-workspace {
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; position: relative; max-width: 1200px; margin: 0 auto;
+        }
+
+        /* Ajuste do Simulador para Mobile: quebra a linha em telas menores */
+        @media(max-width: 992px) {
+            .demo-workspace { flex-direction: column; padding: 20px; border-radius: 20px; margin: 0 20px; }
+        }
+
+        /* Mockup Requerimento (Esquerda) */
+        .demo-request {
+            flex: 0 0 320px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column; position: relative; overflow: hidden;
+        }
+        @media(max-width: 992px) {
+            .demo-request { flex: none; width: 100%; max-width: 100%; margin: 0 auto; }
+        }
+
+        .req-header { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+        .req-header h4 { margin: 0; color: #fff; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        
+        .server-card { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.05);}
+        .server-card h5 { color: var(--prev-accent-light); margin: 0 0 5px 0; font-size: 1.05rem; }
+        .server-card p { color: #cbd5e1; font-size: 0.85rem; margin: 0; line-height: 1.5; }
+        .server-data { margin-top: 15px; display: flex; flex-direction: column; gap: 8px; }
+        .server-data span { display: flex; justify-content: space-between; font-size: 0.85rem; color: #94a3b8; }
+        .server-data strong { color: #f8fafc; }
+
+        .app-btn { background: var(--prev-primary-light); width: 100%; border: none; padding: 16px; border-radius: 12px; color: #fff; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: auto; display: flex; justify-content: center; align-items: center; gap: 8px;}
+        .app-btn:hover { background: #3b82f6; }
+        .app-btn:disabled { background: #334155; cursor: not-allowed; color: #94a3b8; }
+
+        /* Mockup Processamento (Direita) */
+        .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 10px;}
+        
+        .ai-status-badge { background: #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .ai-status-badge.scanning { background: rgba(217, 119, 6, 0.15); color: #fcd34d; border: 1px solid rgba(217, 119, 6, 0.3); }
+        
+        .ai-console { flex: 1; background: #020617; border-radius: 20px; padding: 30px; font-family: monospace; color: #93c5fd; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; min-height: 250px;}
+        .console-line { opacity: 0.7; margin-bottom: 10px; font-size: 0.95rem; display: none; }
+        .console-line.visible { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Resultado Concessão */
+        .ai-result { display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 25px; margin-top: 20px; animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .ai-result h4 { color: #34d399; font-family: 'Inter', sans-serif; font-size: 1.3rem; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px; }
+        
+        .doc-files { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+        .doc-file { background: #fff; color: #0f172a; padding: 10px 15px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: 0.2s;}
+        .doc-file:hover { background: #f8fafc; transform: translateY(-2px); }
+
+        /* ================= FUNCIONALIDADES (CARROSSEL NO MOBILE) ================= */
+        .features-section { padding: 100px 0; background: #f8fafc; }
+        
+        .feature-grid { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; padding: 0 20px; }
+        
+        .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
+        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+        .feat-row:nth-child(even) { flex-direction: row-reverse; }
+        
+        .feat-content { flex: 1.2; }
+        .feat-icon { width: 64px; height: 64px; background: #eff6ff; color: var(--prev-primary-light); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #bfdbfe; }
+        .feat-content h3 { font-size: 2rem; color: #0f172a; font-weight: 800; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+        .feat-content p { font-size: 1.1rem; color: #475569; margin-bottom: 24px; line-height: 1.7; }
+        .feat-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
+        .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--prev-accent); border-radius: 50%; }
+        
+        .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(37, 99, 235, 0.15)); }
+
+        /* Ajuste Mobile: Transforma as Features em Carrossel (Scroll Horizontal) */
+        @media (max-width: 992px) { 
+            .feature-grid {
+                flex-direction: row;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 30px;
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+            }
+            .feature-grid::-webkit-scrollbar { display: none; }
+            
+            .feat-row {
+                flex: 0 0 75vw; /* Reduzido para mostrar claramente que tem outro card ao lado */
+                flex-direction: column !important; 
+                padding: 40px 30px;
+                scroll-snap-align: center; /* Centraliza o card na tela do celular */
+            }
+            .feat-content h3 { font-size: 1.5rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="Cerrado Tech" %}
+
+    <section class="prev-hero">
+        <div class="container">
+            <div class="prev-split-layout">
+                
+                <div class="prev-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/prev.png' | relative_url }}" alt="Prev Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+                    </div>
+                </div>
+
+                <div class="prev-text-content">
+                    <span class="hero-tag fade-up delay-1">GovTech | Regime Próprio de Previdência</span>
+                    <h1 class="fade-up delay-1">Cerrado Prev</h1>
+                    <p class="fade-up delay-2">Um hub centralizado e em tempo real para gerir Institutos de Previdência Própria (RPPS). Automação desde a arrecadação até a concessão, garantindo compliance absoluto com o Pró-Gestão e o CRP.</p>
+                    <div class="fade-up delay-3">
+                        <a href="sistemasimulado/" class="btn-action" style="background: #10b981; margin-right: 10px;">
+                            🖥️ Sistema Simulado
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </a>
+                        <a href="#simulador" class="btn-action">
+                            Testar Motor de Concessão RPPS
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="demo-section">
+        <div class="demo-header fade-up">
+            <h2>O fim das planilhas de transição.</h2>
+            <p>Clique em <strong>Calcular e Conceder</strong>. O sistema varre automaticamente o tempo de contribuição, aplica as emendas constitucionais e gera a memória de cálculo pronta para o Tribunal de Contas.</p>
+        </div>
+
+        <div class="demo-workspace fade-up delay-1">
+            
+            <div class="demo-request">
+                <div class="req-header">
+                    <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Requerimento Pendente</h4>
+                </div>
+                
+                <div class="server-card">
+                    <h5>Maria Oliveira</h5>
+                    <p>Matrícula: 10455-2 | Cargo: Professora</p>
+                    <div class="server-data">
+                        <span>Idade Atual: <strong>57 anos</strong></span>
+                        <span>Tempo de Contribuição: <strong>25 anos</strong></span>
+                        <span>Data de Admissão: <strong>14/02/1998</strong></span>
+                        <span>Regra Aplicável: <strong>Analisar EC 103/19</strong></span>
+                    </div>
+                </div>
+
+                <button class="app-btn" id="btnRunPrev" onclick="runPrevSimulation()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Calcular e Conceder Benefício
+                </button>
+            </div>
+
+            <div class="demo-dash">
+                <div class="dash-header">
+                    <div>
+                        <strong style="font-size: 1.1rem;">Motor de Regras Previdenciárias</strong>
+                        <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Auditoria Ativa via COMPREV</span>
+                    </div>
+                    <div class="ai-status-badge" id="aiStatus">Aguardando Comando</div>
+                </div>
+
+                <div class="ai-console">
+                    <div id="consoleText">
+                        <span style="opacity: 0.3;">> Insira um requerimento para iniciar a análise atuarial e legal...</span>
+                    </div>
+                    
+                    <div class="ai-result" id="aiResultBox">
+                        <h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            Concessão Aprovada (Paridade Integral)
+                        </h4>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #cbd5e1;">A servidora atinge os requisitos de idade mínima e tempo de contribuição especial (Magistério). <strong>Proventos fixados com paridade e integralidade.</strong></p>
+                        
+                        <div class="doc-files">
+                            <div class="doc-file">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                Memória de Cálculo.pdf
+                            </div>
+                            <div class="doc-file">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                Minuta_Portaria_012.pdf
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="demo-header fade-up">
+            <h2>Um RPPS blindado e eficiente.</h2>
+            <p>Automatizamos a arrecadação, aposentamos os cálculos manuais de paridade e inserimos Inteligência Artificial para agilizar a perícia médica.</p>
+        </div>
+
+        <div class="feature-grid">
+            
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                    </div>
+                    <h3>Motor de Concessão e Folha</h3>
+                    <p>Automação completa na concessão de aposentadorias e pensões. O sistema gera imediatamente a memória de cálculo, pareceres jurídicos e a minuta da portaria. A folha de pagamento do RPPS gerencia automaticamente as regras de paridade, reajustes anuais, margem consignável e arquivos de remessa bancária.</p>
+                    <div class="feat-tags">
+                        <span>Cálculo Automático</span>
+                        <span>Gestão de Paridade</span>
+                        <span>Folha Integrada</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="80" y="20" width="100" height="140" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="4"/>
+                        <rect x="100" y="50" width="60" height="6" rx="3" fill="#94a3b8"/>
+                        <rect x="100" y="70" width="40" height="6" rx="3" fill="#94a3b8"/>
+                        <rect x="20" y="50" width="100" height="130" rx="12" fill="#fff" stroke="#1e3a8a" stroke-width="4"/>
+                        <rect x="35" y="65" width="70" height="30" rx="4" fill="#eff6ff"/>
+                        <path d="M40 115 H50 M65 115 H75 M90 115 H100" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M40 135 H50 M65 135 H75 M90 135 H100" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M40 155 H50 M65 155 H75" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+                        <rect x="90" y="145" width="10" height="10" rx="2" fill="#d97706"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    </div>
+                    <h3>Arrecadação e Integração (COMPREV)</h3>
+                    <p>O coração financeiro do instituto. Cálculo exato de alíquotas patronais e do servidor, emissão ágil de guias, conciliação bancária automática e gestão inteligente de parcelamentos e inadimplência da prefeitura. Possui integração nativa com o sistema federal COMPREV para compensação previdenciária.</p>
+                    <div class="feat-tags">
+                        <span>Conciliação Bancária</span>
+                        <span>Integração COMPREV</span>
+                        <span>Gestão de Parcelamentos</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="30" y="100" width="100" height="30" rx="6" fill="#fff" stroke="#1e3a8a" stroke-width="4"/>
+                        <circle cx="50" cy="115" r="4" fill="#10b981"/>
+                        <rect x="30" y="140" width="100" height="30" rx="6" fill="#fff" stroke="#1e3a8a" stroke-width="4"/>
+                        <circle cx="50" cy="155" r="4" fill="#10b981"/>
+                        
+                        <rect x="160" y="40" width="60" height="130" rx="8" fill="#1e3a8a"/>
+                        <path d="M175 60 H205 M175 80 H205 M175 100 H205" stroke="#eff6ff" stroke-width="4" stroke-linecap="round"/>
+                        
+                        <path d="M100 70 L140 70 L130 60" stroke="#d97706" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M150 90 L110 90 L120 100" stroke="#d97706" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <h3>Perícia Médica com IA</h3>
+                    <p>Agendamento inteligente de avaliações médicas e emissão de laudos com assinatura digital (ICP-Brasil). A plataforma conta com um Assistente de Inteligência Artificial que analisa atestados anexados e sugere o enquadramento do CID correto para o perito, acelerando a fila de concessões por invalidez.</p>
+                    <div class="feat-tags">
+                        <span>Sugestão de CID via IA</span>
+                        <span>Assinatura ICP-Brasil</span>
+                        <span>Agendamento Inteligente</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="60" fill="#eff6ff" stroke="#2563eb" stroke-width="4" stroke-dasharray="10 10"/>
+                        <path d="M90 70 H110 V90 H130 V110 H110 V130 H90 V110 H70 V90 H90 V70 Z" fill="#2563eb"/>
+                        <circle cx="150" cy="50" r="8" fill="#d97706"/>
+                        <circle cx="40" cy="140" r="6" fill="#d97706"/>
+                        <circle cx="160" cy="150" r="10" fill="#d97706"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="feat-row fade-up">
+                <div class="feat-content">
+                    <div class="feat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Portal do Servidor e Compliance</h3>
+                    <p>O portal de autoatendimento 24/7 empodera o servidor público. Ele pode acessar o contracheque, emitir sua Certidão de Tempo de Contribuição (CTC) e simular a aposentadoria. O sistema possui o recurso "Chat com PDF", onde o servidor ou gestor tira dúvidas sobre as leis normativas interagindo direto com a IA. Tudo aderente ao Pró-Gestão, CRP e LGPD.</p>
+                    <div class="feat-tags">
+                        <span>Simulador de Aposentadoria</span>
+                        <span>Chatbot Normativo (IA)</span>
+                        <span>Compliance Pró-Gestão</span>
+                    </div>
+                </div>
+                <div class="feat-visual">
+                    <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="20" width="90" height="160" rx="12" fill="#fff" stroke="#1e3a8a" stroke-width="4"/>
+                        <circle cx="85" cy="50" r="15" fill="#e2e8f0"/>
+                        <rect x="60" y="80" width="50" height="6" rx="3" fill="#e2e8f0"/>
+                        <rect x="60" y="100" width="30" height="6" rx="3" fill="#e2e8f0"/>
+                        <path d="M130 80 L180 60 L230 80 V120 C230 150 180 180 180 180 C180 180 130 150 130 120 V80 Z" fill="#fff" stroke="#10b981" stroke-width="4"/>
+                        <path d="M165 120 L175 130 L195 105" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: var(--prev-dark); text-align: center; color: #fff;">
+        <div class="container fade-up">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Elimine o déficit do seu RPPS.</h2>
+            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Garanta o Certificado de Regularidade Previdenciária (CRP) automatizando a arrecadação e a folha. Fale com um arquiteto de soluções Cerrado Tech.</p>
+            <a href="/index.html#contato" class="btn-action" style="background: var(--prev-accent); color: #fff; box-shadow: 0 10px 20px rgba(217, 119, 6, 0.2);">Agendar Reunião Técnica</a>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+
+    <script>
+        // Animação de rolagem (Fade Up)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Lógica do Simulador RPPS
+        function runPrevSimulation() {
+            const btn = document.getElementById('btnRunPrev');
+            const statusBadge = document.getElementById('aiStatus');
+            const consoleBox = document.getElementById('consoleText');
+            const resultBox = document.getElementById('aiResultBox');
+
+            if(btn.disabled) return;
+            
+            // Reset state
+            btn.disabled = true;
+            btn.innerHTML = 'Analisando Requisitos...';
+            resultBox.style.display = 'none';
+            consoleBox.innerHTML = '';
+            
+            statusBadge.innerText = 'Buscando Dados COMPREV...';
+            statusBadge.className = 'ai-status-badge scanning';
+
+            // Etapas de Análise (Logs do Console)
+            const steps = [
+                "> Conectando ao barramento federal (COMPREV)...",
+                "> Extraindo tempo de contribuição averbado: 25 anos validados.",
+                "> Verificando enquadramento funcional: Quadro do Magistério.",
+                "> Aplicando regras de transição da EC 103/2019 (Pedágio 100%)...",
+                "> Validando direito à integralidade e paridade...",
+                "> Requisitos atingidos. Gerando minuta e memória de cálculo."
+            ];
+
+            let stepIndex = 0;
+
+            const interval = setInterval(() => {
+                if (stepIndex < steps.length) {
+                    const line = document.createElement('div');
+                    line.className = 'console-line visible';
+                    line.innerText = steps[stepIndex];
+                    consoleBox.appendChild(line);
+                    
+                    if(stepIndex === 3) statusBadge.innerText = 'Processando EC 103/2019...';
+                    if(stepIndex === 5) statusBadge.innerText = 'Emitindo Portaria...';
+
+                    stepIndex++;
+                } else {
+                    clearInterval(interval);
+                    showSuccessResult();
+                }
+            }, 600); 
+
+            function showSuccessResult() {
+                statusBadge.innerText = 'Concessão Deferida';
+                statusBadge.className = 'ai-status-badge';
+                statusBadge.style.background = 'rgba(16, 185, 129, 0.2)';
+                statusBadge.style.color = '#34d399';
+                statusBadge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+                
+                resultBox.style.display = 'block';
+                btn.innerHTML = 'Finalizado com Sucesso';
+
+                // Reset after 8 seconds
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Calcular Próximo Benefício';
+                    btn.style.background = 'var(--prev-primary-light)';
+                    
+                    statusBadge.innerText = 'Aguardando Comando';
+                    statusBadge.className = 'ai-status-badge';
+                    statusBadge.style = ''; // reset inline styles
+                    
+                    consoleBox.innerHTML = '<span style="opacity: 0.3;">> Sistema redefinido. Insira um requerimento para iniciar a análise atuarial e legal...</span>';
+                    resultBox.style.display = 'none';
+                }, 8000);
+            }
+        }
+    </script>
+</body>
+</html>

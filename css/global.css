@@ -1,0 +1,74 @@
+/* ==========================================================================
+   VARIÁVEIS GERAIS E PALETA DE CORES (Cerrado Tech)
+   ========================================================================== */
+:root {
+  --primary: #0F172A; /* Slate 900 */
+  --primary-light: #1E293B;
+  --secondary: #D4AF37; /* Gold */
+  --accent: #10B981; /* Emerald 500 */
+  --danger: #EF4444; /* Red 500 */
+  
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --bg: #F1F5F9;
+  
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+  
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset Básico */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--surface-alt);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilitários */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+.section { padding: 100px 0; }
+.section-bg { background-color: var(--surface); }
+.section-dark { background-color: var(--primary); color: #fff; }
+
+.section-header { text-align: center; max-width: 800px; margin: 0 auto 64px; }
+h2.title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px; color: var(--primary); }
+p.subtitle { font-size: 1.125rem; color: var(--text-muted); }
+
+.tag {
+  display: inline-block; padding: 6px 16px; background: rgba(16, 185, 129, 0.1);
+  color: var(--accent); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+  letter-spacing: 1.5px; border-radius: var(--radius-full); margin-bottom: 16px;
+}
+
+/* Botões Globais */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--primary); color: #fff !important; padding: 12px 24px;
+  border-radius: var(--radius-full); font-weight: 600; text-decoration: none;
+  transition: var(--transition); border: 2px solid var(--primary);
+}
+.btn-primary:hover { background: transparent; color: var(--primary) !important; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--secondary); color: var(--primary) !important; padding: 16px 32px;
+  border-radius: var(--radius-full); font-weight: 700; font-size: 1.1rem;
+  text-decoration: none; transition: var(--transition); border: 2px solid var(--secondary);
+}
+.btn-secondary:hover { background: transparent; color: var(--secondary) !important; }

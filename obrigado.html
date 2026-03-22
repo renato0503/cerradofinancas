@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagnóstico Solicitado | Cerrado Finanças</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/global.css">
+  
+  <style>
+    /* ==========================================================================
+       ESTILOS EXCLUSIVOS DA PÁGINA DE SUCESSO (OBRIGADO)
+       ========================================================================== */
+    body {
+      background-color: var(--primary); /* Fundo escuro para elegância */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .success-card {
+      background: var(--surface);
+      color: var(--text-main);
+      max-width: 540px;
+      width: 100%;
+      padding: 48px 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      text-align: center;
+      border-top: 6px solid var(--accent);
+      animation: slideUp 0.6s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: #D1FAE5; /* Emerald 100 */
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .icon-wrapper svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .success-card h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .success-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Como a tag a do btn-whatsapp/linkedin não pega a classe .btn-primary diretamente, ajustei aqui */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 24px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: #fff !important;
+      border: 1px solid var(--whatsapp);
+    }
+    .btn-whatsapp:hover { 
+      background: #1da851; 
+      border-color: #1da851; 
+      transform: translateY(-2px); 
+    }
+
+    .btn-linkedin {
+      background: #f1f5f9;
+      color: var(--linkedin) !important;
+      border: 1px solid var(--border);
+    }
+    .btn-linkedin:hover { 
+      background: #e2e8f0; 
+    }
+
+    .btn-back {
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding: 10px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-back:hover { 
+      color: var(--primary); 
+      text-decoration: underline; 
+    }
+
+    @media (max-width: 480px) {
+      .success-card { padding: 40px 24px; }
+      .success-card h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-card">
+    <div class="icon-wrapper">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    
+    <h1>Diagnóstico solicitado com sucesso!</h1>
+    <p>Os dados da sua empresa foram recebidos com segurança. Em até 24 horas úteis, nossa equipe fará contato para agendar nossa reunião estratégica.</p>
+    
+    <div class="actions">
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Acabei%20de%20solicitar%20um%20diagn%C3%B3stico%20pelo%20site%20e%20gostaria%20de%20adiantar%20o%20assunto." target="_blank" class="btn btn-whatsapp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Precisa de urgência? Chame no WhatsApp
+      </a>
+      
+      <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank" class="btn btn-linkedin">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        Conectar com Renato no LinkedIn
+      </a>
+
+      <a href="/" class="btn-back">Voltar para a página inicial</a>
+    </div>
+  </div>
+
+</body>
+</html>

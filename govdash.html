@@ -1,0 +1,527 @@
+---
+layout: null
+permalink: /solucoes/govdash/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado GovDash | Business Intelligence Municipal</title>
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        /* ================= CORES E VARIÁVEIS CERRADO GOVDASH ================= */
+        :root {
+            --gd-dark: #0f172a; /* Slate 900 */
+            --gd-primary: #0284c7; /* Sky 600 */
+            --gd-primary-dark: #0369a1; /* Sky 700 */
+            --gd-accent: #f97316; /* Laranja Executivo */
+            --gd-accent-light: #fb923c; 
+            --dash-bg: #1e293b; /* Fundo do Dashboard */
+            --dash-panel: #0f172a; /* Painel Interno */
+            --text-muted: #94a3b8;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+
+        body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
+        
+        /* Animações Dinâmicas */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ================= HERO SECTION (SPLIT LAYOUT & APP ICON) ================= */
+        .gd-hero {
+            background: linear-gradient(135deg, #020617 0%, var(--gd-dark) 100%);
+            color: #fff; padding: 120px 0 100px; position: relative; overflow: hidden;
+            border-bottom: 4px solid var(--gd-primary);
+        }
+        .gd-hero::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, transparent 60%); pointer-events: none;
+        }
+
+        .gd-split-layout { display: flex; align-items: center; gap: 60px; }
+        .gd-visual-content { flex: 0.8; display: flex; justify-content: center; position: relative; z-index: 2; }
+        .gd-text-content { flex: 1.2; text-align: left; position: relative; z-index: 2; }
+
+        /* Ícone Gigante Estilo App iOS */
+        .hero-app-icon {
+            background: #ffffff;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            border-radius: 60px; /* Squircle Apple */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            transform: rotate(-3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-app-icon:hover { transform: rotate(0deg) translateY(-15px) scale(1.02); box-shadow: 0 40px 80px rgba(2, 132, 199, 0.3); }
+        .hero-app-icon img { max-width: 90%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));}
+
+        .hero-tag { background: rgba(2, 132, 199, 0.2); color: #7dd3fc; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(2, 132, 199, 0.4); text-transform: uppercase; letter-spacing: 1px; }
+        .gd-hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .gd-hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 850px; margin-bottom: 40px; font-weight: 300; line-height: 1.6; }
+        
+        .btn-action { background: var(--gd-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.3); border: none; cursor: pointer; }
+        .btn-action:hover { background: var(--gd-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(2, 132, 199, 0.4); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); padding: 16px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; text-decoration: none; display: inline-flex; transition: 0.3s; margin-left: 15px;}
+        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+        @media(max-width: 992px){ 
+            .gd-split-layout { flex-direction: column; text-align: center; gap: 40px; }
+            .gd-text-content { text-align: center; }
+            .btn-outline { margin-left: 0; margin-top: 15px; }
+            .hero-app-icon { max-width: 220px; border-radius: 40px; transform: none; }
+        }
+
+        /* ================= SIMULADOR DASHBOARD LRF ================= */
+        .demo-section { padding: 100px 0; background: #fff; }
+        .demo-header { text-align: center; margin-bottom: 60px; }
+        .demo-header h2 { color: #0f172a; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .demo-header p { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+        
+        .demo-workspace {
+            display: flex; gap: 30px; background: var(--dash-bg); padding: 40px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid #334155; flex-wrap: wrap; position: relative;
+        }
+
+        /* Mockup Glass Sidebar */
+        .demo-sidebar {
+            flex: 0 0 250px; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px 20px; display: flex; flex-direction: column;
+        }
+        @media(max-width: 992px){ .demo-sidebar { display: none; } }
+        .side-logo { margin-bottom: 40px; color: #fff; font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .side-menu { display: flex; flex-direction: column; gap: 15px; }
+        .side-item { padding: 12px 15px; border-radius: 10px; color: #94a3b8; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: 0.2s; cursor: pointer; }
+        .side-item.active { background: rgba(2, 132, 199, 0.2); color: #38bdf8; border: 1px solid rgba(2, 132, 199, 0.3); }
+
+        /* Mockup Painel Principal */
+        .demo-dash { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 24px; }
+        .dash-header { display: flex; justify-content: space-between; color: #fff; align-items: center; padding: 20px 24px; background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        .ai-status-badge { background: #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .ai-status-badge.scanning { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+        
+        /* Gráfico de Termômetro LRF */
+        .chart-box { background: var(--dash-panel); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); padding: 30px; display: flex; flex-direction: column;}
+        .chart-title { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;}
+        
+        .lrf-meter-container { width: 100%; height: 30px; background: #334155; border-radius: 15px; position: relative; margin-bottom: 20px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5); }
+        .lrf-bar { height: 100%; width: 35%; background: var(--success); border-radius: 15px; transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s; }
+        
+        /* Marcadores do Gráfico */
+        .marker { position: absolute; top: -30px; font-size: 0.8rem; font-weight: 700; color: #94a3b8; transform: translateX(-50%); }
+        .marker.m-51 { left: 51.3%; color: #f59e0b; } /* Prudencial */
+        .marker.m-54 { left: 54%; color: #ef4444; } /* Máximo */
+        .marker-line { position: absolute; top: 0; bottom: -10px; width: 2px; background: rgba(255,255,255,0.2); }
+        .marker-line.l-51 { left: 51.3%; background: rgba(245, 158, 11, 0.5); }
+        .marker-line.l-54 { left: 54%; background: rgba(239, 68, 68, 0.5); }
+
+        .lrf-value { font-size: 3rem; font-weight: 900; color: #fff; text-align: center; margin-top: 10px; font-variant-numeric: tabular-nums;}
+        .lrf-value span { font-size: 1.2rem; color: #94a3b8; }
+
+        .app-btn { background: var(--gd-primary); width: 100%; border: none; padding: 18px; border-radius: 14px; color: #fff; font-weight: 800; font-size: 1.05rem; cursor: pointer; transition: 0.3s; margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 8px;}
+        .app-btn:hover { background: var(--gd-primary-dark); }
+        .app-btn:disabled { background: #334155; cursor: not-allowed; color: #94a3b8; }
+
+        /* ================= FUNCIONALIDADES ================= */
+        .features-section { padding: 100px 0; background: #f8fafc; }
+        .feature-grid { display: flex; flex-direction: column; gap: 60px; }
+        
+        .feat-row { display: flex; gap: 60px; align-items: center; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
+        .feat-row:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+        .feat-row:nth-child(even) { flex-direction: row-reverse; }
+        @media (max-width: 992px) { .feat-row, .feat-row:nth-child(even) { flex-direction: column; padding: 40px 30px; gap: 40px; } }
+        
+        .feat-content { flex: 1.2; }
+        .feat-icon { width: 64px; height: 64px; background: #f0f9ff; color: var(--gd-primary); font-size: 28px; display: flex; align-items: center; justify-content: center; border-radius: 16px; margin-bottom: 24px; border: 1px solid #bae6fd; }
+        .feat-content h3 { font-size: 2rem; color: #0f172a; font-weight: 800; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+        .feat-content p { font-size: 1.1rem; color: #475569; margin-bottom: 24px; line-height: 1.7; }
+        .feat-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .feat-tags span { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
+        .feat-tags span::before { content: ''; width: 6px; height: 6px; background: var(--gd-accent); border-radius: 50%; }
+        
+        .feat-visual { flex: 0.8; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .svg-illustration { width: 100%; max-width: 350px; height: auto; filter: drop-shadow(0 20px 30px rgba(2, 132, 199, 0.15)); }
+
+        /* Animações dos SVGs */
+        @keyframes slideRight { 0% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(20px); opacity: 0; } }
+        @keyframes slideUp { 0% { transform: translateY(10px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        @keyframes pulseAlert { 0% { fill: #ef4444; stroke: #fef2f2; } 50% { fill: #b91c1c; stroke: #fee2e2; } 100% { fill: #ef4444; stroke: #fef2f2; } }
+
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="Cerrado Tech" %}
+
+    <section class="gd-hero">
+        <div class="container">
+            <div class="gd-split-layout">
+                
+                <div class="gd-visual-content fade-up">
+                    <div class="hero-app-icon">
+                        <img src="{{ '/img/govdash.png' | relative_url }}" alt="GovDash Logo" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+                    </div>
+                </div>
+
+                <div class="gd-text-content">
+                    <span class="hero-tag fade-up delay-1">GovTech | Business Intelligence Municipal</span>
+                    <h1 class="fade-up delay-1">Cerrado GovDash</h1>
+                    <p class="fade-up delay-2">O painel de controle do executivo. Transforma volumes massivos de planilhas contábeis e legadas em KPIs visuais em tempo real. Governe com foco, transparência e velocidade.</p>
+                    <div class="fade-up delay-3">
+                        <a href="#simulador" class="btn-action">
+                            Testar Motor de Compliance
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </a>
+                        <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-outline">
+                            Acessar Web App
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="demo-section">
+        <div class="container">
+            <div class="demo-header fade-up">
+                <h2>Nunca mais seja pego de surpresa.</h2>
+                <p>Clique em <strong>Sincronizar Contabilidade</strong>. O GovDash extrai os dados do sistema legado e calcula instantaneamente o seu Limite de Gastos com Pessoal da LRF.</p>
+            </div>
+
+            <div class="demo-workspace fade-up delay-1">
+                
+                <div class="demo-sidebar">
+                    <div class="side-logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gd-primary)" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                        GovDash
+                    </div>
+                    <div class="side-menu">
+                        <div class="side-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> Visão Geral</div>
+                        <div class="side-item active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Finanças e LRF</div>
+                        <div class="side-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Saúde (REMUME)</div>
+                        <div class="side-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> Educação Escolar</div>
+                    </div>
+                </div>
+
+                <div class="demo-dash">
+                    <div class="dash-header">
+                        <div>
+                            <strong style="font-size: 1.1rem;">Gabinete do Prefeito</strong>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Dados desatualizados há 30 dias.</span>
+                        </div>
+                        <div class="ai-status-badge" id="etlStatus">Aguardando Extração</div>
+                    </div>
+
+                    <div class="chart-box">
+                        <div class="chart-title">
+                            <span>Despesa de Pessoal (LRF) vs RCL</span>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Meta: Ficar abaixo de 54%</span>
+                        </div>
+
+                        <div class="lrf-meter-container">
+                            <div class="marker m-51">51.3% (Prudencial)</div>
+                            <div class="marker-line l-51"></div>
+                            
+                            <div class="marker m-54">54% (Máximo)</div>
+                            <div class="marker-line l-54"></div>
+
+                            <div class="lrf-bar" id="lrfBar"></div>
+                        </div>
+
+                        <div class="lrf-value" id="lrfValueText">
+                            35.0 <span>% da Receita Corrente Líquida</span>
+                        </div>
+                        <p id="lrfAlert" style="text-align: center; color: #94a3b8; font-weight: 600; margin-top: 10px; font-size: 1.1rem;">Fechamento Mensal Seguro.</p>
+
+                        <button class="app-btn" id="btnSync" onclick="runETL()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                            Sincronizar Contabilidade (ETL)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="demo-header fade-up">
+                <h2>O fim do achismo na administração pública.</h2>
+                <p>O GovDash consolida os dados dispersos das secretarias, entregando um panorama unificado, visual e acionável para o chefe do executivo.</p>
+            </div>
+
+            <div class="feature-grid">
+                
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3>Foco Executivo e UX Premium</h3>
+                        <p>Desenvolvido exclusivamente para Prefeitos, Gabinete, Secretários (Fazenda, Saúde, Educação, Infraestrutura) e Controladoria Geral (CGM). Substitui as antigas interfaces cinzas defasadas por um design moderno e em nuvem, com menus laterais em <em>Apple Glassmorphism</em>, focando na agilidade de leitura de dados.</p>
+                        <div class="feat-tags">
+                            <span>Apple Glassmorphism</span>
+                            <span>Design em Nuvem</span>
+                            <span>Dashboard Executivo</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="210" height="160" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+                            <rect x="20" y="20" width="60" height="160" rx="16" fill="rgba(2, 132, 199, 0.1)" stroke="#bae6fd" stroke-width="2"/>
+                            <rect x="35" y="40" width="30" height="8" rx="4" fill="#0284c7"/>
+                            <rect x="35" y="60" width="20" height="6" rx="3" fill="#94a3b8"/>
+                            <rect x="35" y="80" width="25" height="6" rx="3" fill="#94a3b8"/>
+                            <rect x="100" y="50" width="110" height="100" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4" style="animation: slideUp 2s infinite alternate;"/>
+                            <circle cx="120" cy="70" r="8" fill="#f59e0b"/>
+                            <rect x="140" y="66" width="50" height="8" rx="4" fill="#cbd5e1"/>
+                            <path d="M120 120 L140 100 L160 110 L190 80" stroke="#10b981" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3>Finanças e Compliance (LRF)</h3>
+                        <p>Monitoramento exato do ciclo do dinheiro público. Acompanha a evolução de Receitas (próprias vs. transferências) e Despesas (Empenhado, Liquidado e Pago). Inclui um termômetro visual que vigia a Dívida Consolidada e emite alertas (amarelo, laranja e vermelho) caso a folha se aproxime dos 54% da RCL.</p>
+                        <div class="feat-tags">
+                            <span>Termômetro LRF 54%</span>
+                            <span>Receitas x Despesas</span>
+                            <span>Ciclo de Empenhos</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="30" width="200" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+                            <path d="M25 130 H225" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4"/>
+                            <rect x="60" y="80" width="25" height="50" rx="4" fill="#0284c7"/>
+                            <rect x="110" y="50" width="25" height="80" rx="4" fill="#38bdf8"/>
+                            <rect x="160" y="30" width="25" height="100" rx="4" fill="#ef4444" style="animation: pulseAlert 2s infinite;"/>
+                            <path d="M25 60 H225" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 6"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                        </div>
+                        <h3>Saúde Pública e Epidemiologia</h3>
+                        <p>Controle de produtividade das UBSs, tamanho de filas do SUS e cobertura vacinal. Acompanha o estoque da Farmácia Básica (REMUME) com alertas para medicamentos zerados/críticos. Monitora surtos epidemiológicos cruzando dados de casos confirmados com o LIRAa (índice da Dengue e arboviroses).</p>
+                        <div class="feat-tags">
+                            <span>Fila do SUS</span>
+                            <span>Estoque REMUME</span>
+                            <span>Monitoramento LIRAa</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="105" y="40" width="40" height="120" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+                            <rect x="65" y="80" width="120" height="40" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+                            <path d="M40 100 L80 100 L95 70 L120 130 L140 100 L180 100" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <circle cx="180" cy="100" r="4" fill="#10b981"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        </div>
+                        <h3>Educação e Operação Escolar</h3>
+                        <p>Censo analítico em tempo real demonstrando taxas de matrículas ativas, evasão escolar histórica e fila por vagas em creches. Na infraestrutura da secretaria, monitora o custo/km da frota do transporte escolar e o estoque da merenda por unidade, disparando alertas de baixas no PNAE para escolas específicas.</p>
+                        <div class="feat-tags">
+                            <span>Censo em Tempo Real</span>
+                            <span>Fila de Creches</span>
+                            <span>Estoque Merenda (PNAE)</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M125 30 L200 60 L125 90 L50 60 Z" fill="#0284c7"/>
+                            <path d="M80 75 V115 C80 130 125 140 125 140 C125 140 170 130 170 115 V75" fill="none" stroke="#0284c7" stroke-width="8" stroke-linecap="round"/>
+                            <circle cx="180" cy="130" r="25" fill="#fff" stroke="#e2e8f0" stroke-width="6"/>
+                            <path d="M180 105 A25 25 0 1 1 155 130" stroke="#f59e0b" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>Engenharia, Contratos e Almoxarifado</h3>
+                        <p>Portfólio visual de Obras (licitando, no prazo, atrasadas ou paralisadas). A plataforma cruza os dados de Medições Físico-Financeiras para identificar falhas entre o avanço real da obra e os pagamentos. Gerencia o vencimento de contratos, aditivos e aplica a Curva ABC no Almoxarifado para guiar compras.</p>
+                        <div class="feat-tags">
+                            <span>Medição Físico-Financeira</span>
+                            <span>Avisos de Aditivos</span>
+                            <span>Curva ABC (Estoque)</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="60" y="80" width="80" height="80" fill="#e2e8f0" stroke="#0f172a" stroke-width="4"/>
+                            <rect x="75" y="100" width="15" height="20" fill="#0284c7"/>
+                            <rect x="110" y="100" width="15" height="20" fill="#0284c7"/>
+                            <rect x="75" y="140" width="15" height="20" fill="#0284c7"/>
+                            <rect x="110" y="140" width="15" height="20" fill="#f59e0b"/>
+                            <line x1="140" y1="160" x2="140" y2="40" stroke="#f59e0b" stroke-width="8"/>
+                            <line x1="140" y1="40" x2="70" y2="40" stroke="#f59e0b" stroke-width="8"/>
+                            <line x1="90" y1="40" x2="90" y2="60" stroke="#64748b" stroke-width="3"/>
+                            <rect x="80" y="60" width="20" height="15" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="feat-row fade-up">
+                    <div class="feat-content">
+                        <div class="feat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>Motor de Integração Nativo (ETL)</h3>
+                        <p>O coração tecnológico da plataforma. Chega de digitação dupla e planilhas soltas. O sistema possui ferramentas de ETL que permitem o upload de arquivos CSV pelos servidores ou a conexão 100% automatizada com bancos de dados (SQL) legados, mantendo todos os dashboards vivos sem esforço manual.</p>
+                        <div class="feat-tags">
+                            <span>Conexão SQL Server</span>
+                            <span>Upload Automatizado</span>
+                            <span>Integração de Legados</span>
+                        </div>
+                    </div>
+                    <div class="feat-visual">
+                        <svg class="svg-illustration" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="60" width="50" height="80" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="4" stroke-dasharray="4 4"/>
+                            <rect x="180" y="50" width="50" height="100" rx="8" fill="#0284c7" stroke="#0369a1" stroke-width="4"/>
+                            <path d="M70 100 Q 125 50 180 100" stroke="#38bdf8" stroke-width="4" fill="none"/>
+                            <circle cx="125" cy="75" r="6" fill="#38bdf8" style="animation: slideRight 2s linear infinite;"/>
+                            <circle cx="125" cy="120" r="25" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="4"/>
+                            <path d="M125 110 V130 M115 120 H135" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: var(--gd-dark); text-align: center; color: #fff;">
+        <div class="container fade-up">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Ligue a luz da sua gestão.</h2>
+            <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma demonstração técnica e descubra como grandes municípios estão tomando decisões milionárias baseadas em dados seguros e consolidados.</p>
+            <a href="/index.html#contato" class="btn-action" style="background: var(--gd-accent); color: #fff; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);">Agendar Reunião Técnica</a>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        function runETL() {
+            const btn = document.getElementById('btnSync');
+            const statusBadge = document.getElementById('etlStatus');
+            const lrfBar = document.getElementById('lrfBar');
+            const lrfValueText = document.getElementById('lrfValueText');
+            const lrfAlert = document.getElementById('lrfAlert');
+
+            if(btn.disabled) return;
+            
+            btn.disabled = true;
+            btn.innerHTML = 'Extraindo dados contábeis...';
+            
+            statusBadge.innerHTML = '<span style="width:8px;height:8px;background:#fb923c;border-radius:50%;display:inline-block;"></span> Processando ETL';
+            statusBadge.className = 'ai-status-badge scanning';
+
+            // Animação do Gráfico
+            setTimeout(() => {
+                lrfBar.style.width = '53.8%'; // Risco Quase Máximo
+                lrfBar.style.background = '#ef4444'; 
+                
+                let currentVal = 35.0;
+                const countInterval = setInterval(() => {
+                    currentVal += 0.5;
+                    lrfValueText.innerHTML = currentVal.toFixed(1) + ' <span>% da Receita Corrente Líquida</span>';
+                    
+                    if(currentVal >= 53.8) {
+                        clearInterval(countInterval);
+                        lrfValueText.innerHTML = '53.8 <span>% da Receita Corrente Líquida</span>';
+                        lrfValueText.style.color = '#ef4444';
+                        
+                        lrfAlert.innerHTML = '⚠️ Risco Iminente! Limite Prudencial Ultrapassado.';
+                        lrfAlert.style.color = '#ef4444';
+
+                        statusBadge.innerHTML = 'Sincronizado (Alerta LRF)';
+                        statusBadge.className = 'ai-status-badge';
+                        statusBadge.style.background = 'rgba(239, 68, 68, 0.15)';
+                        statusBadge.style.color = '#f87171';
+                        statusBadge.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+
+                        btn.innerHTML = 'Painel Atualizado';
+                        
+                        setTimeout(() => {
+                            btn.disabled = false;
+                            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg> Sincronizar Contabilidade (ETL)';
+                            
+                            lrfBar.style.width = '35%';
+                            lrfBar.style.background = 'var(--success)';
+                            
+                            lrfValueText.innerHTML = '35.0 <span>% da Receita Corrente Líquida</span>';
+                            lrfValueText.style.color = '#fff';
+                            
+                            lrfAlert.innerHTML = 'Fechamento Mensal Seguro.';
+                            lrfAlert.style.color = '#94a3b8';
+
+                            statusBadge.innerHTML = 'Aguardando Extração';
+                            statusBadge.style = '';
+                            statusBadge.className = 'ai-status-badge';
+                        }, 7000);
+                    }
+                }, 40);
+
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>

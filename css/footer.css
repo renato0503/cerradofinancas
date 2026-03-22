@@ -1,0 +1,89 @@
+/* ==========================================================================
+   FOOTER (RODAPÉ GLOBAL)
+   ========================================================================== */
+footer {
+  background: #020617; /* Um tom ainda mais escuro que o primary para dar profundidade */
+  color: #94A3B8; /* Slate 400 - Texto legível e suave */
+  padding: 80px 0 40px;
+  font-size: 0.95rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .brand-txt { 
+  color: #FFFFFF; 
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 16px; 
+  display: block; 
+  letter-spacing: -0.5px;
+}
+
+.footer-brand p {
+  line-height: 1.6;
+  max-width: 400px;
+}
+  
+.footer-links h4 {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.footer-links ul { 
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li { 
+  margin-bottom: 12px; 
+}
+
+.footer-links a { 
+  color: #94A3B8;
+  text-decoration: none;
+  transition: var(--transition); 
+}
+
+.footer-links a:hover { 
+  color: var(--secondary); /* Fica dourado ao passar o mouse */
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid #1E293B; /* Linha sutil separando o copyright */
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE DO FOOTER
+   ========================================================================== */
+@media (max-width: 992px) {
+  .footer-grid { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+  }
+  .footer-brand {
+    grid-column: 1 / -1; /* Faz a marca ocupar a linha inteira no tablet */
+  }
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 60px 0 30px;
+  }
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+}

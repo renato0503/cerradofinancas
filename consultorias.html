@@ -1,0 +1,616 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorias | Cerrado Finanças</title>
+    <meta name="description" content="Consultorias especializadas: CSC, BPO Financeiro, Controladoria, Planejamento Tributário, Governança, Venture Building, GovTech e mais. Estruturação financeira de alto nível para empresas e governos.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        .hero-consultorias {
+            background: linear-gradient(135deg, #020617 0%, #064e3b 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #fecb00;
+        }
+        .hero-consultorias::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(254, 203, 0, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 992px) {
+            .hero-grid { flex-direction: column; text-align: center; }
+        }
+        .hero-text { flex: 1.2; }
+        .hero-badge {
+            background: rgba(254, 203, 0, 0.1);
+            color: #facc15;
+            border: 1px solid rgba(254, 203, 0, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-text h1 span { color: #fecb00; }
+        .hero-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-gold {
+            background: #fecb00;
+            color: #0f172a;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(254, 203, 0, 0.3);
+        }
+        .btn-gold:hover { background: #fbbf24; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(254, 203, 0, 0.5); }
+
+        .hero-visual { flex: 0.8; display: flex; justify-content: center; }
+        .hero-icon-main {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #0f172a, #064e3b);
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border: 2px solid rgba(254, 203, 0, 0.3);
+            flex-direction: column;
+            gap: 10px;
+        }
+        .hero-icon-main svg { width: 100px; height: 100px; color: #fecb00; }
+        .hero-icon-main span { font-size: 0.9rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; }
+
+        .intro-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
+        .intro-content { max-width: 900px; margin: 0 auto; text-align: center; }
+        .intro-content h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+        .intro-content p { font-size: 1.15rem; color: #94a3b8; line-height: 1.8; margin-bottom: 40px; }
+        .intro-stats { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: 900; color: #fecb00; }
+        .stat-label { font-size: 0.9rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        .consultorias-section { padding: 80px 0 100px; background: #020617; border-top: 1px solid #1e293b; }
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+
+        .cons-grid { display: flex; flex-direction: column; gap: 30px; }
+
+        .cons-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            padding: 50px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .cons-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-color, #fecb00);
+        }
+        .cons-card:hover { transform: translateX(10px); border-color: var(--accent-color, #fecb00); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        @media (max-width: 768px) {
+            .cons-card { flex-direction: column; gap: 25px; padding: 30px 25px; }
+        }
+
+        .cons-icon-wrap { flex: 0 0 100px; }
+        .cons-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--accent-color, #fecb00);
+            background: var(--accent-bg, rgba(254, 203, 0, 0.1));
+        }
+        .cons-icon svg { width: 40px; height: 40px; color: var(--accent-color, #fecb00); }
+
+        .cons-content { flex: 1; }
+        .cons-content h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+        .cons-content .cons-what { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: var(--accent-color, #fecb00); }
+        .cons-content p { font-size: 1.05rem; color: #94a3b8; line-height: 1.7; margin-bottom: 15px; }
+        .cons-content .cons-deliver { font-size: 1rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+        .cons-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .cons-tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #334155;
+            color: #94a3b8;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .cons-action { flex: 0 0 auto; }
+        .btn-cons {
+            background: var(--accent-color, #fecb00);
+            color: #0f172a;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .btn-cons:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+        .cta-section { background: linear-gradient(135deg, #fecb00 0%, #d97706 100%); padding: 80px 0; text-align: center; color: #0f172a; }
+        .cta-section h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.15rem; color: rgba(15, 23, 42, 0.8); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-dark { background: #0f172a; color: #fff; padding: 16px 32px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .btn-dark:hover { background: #1e293b; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Finanças" %}
+
+<!-- HERO -->
+<section class="hero-consultorias">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-text fade-up">
+                <span class="hero-badge">Consultoria Estratégica</span>
+                <h1>Inteligência Financeira que <span>Transforma</span> Organizações.</h1>
+                <p>Da estruturação de Centro de Serviços Compartilhados à governança corporativa de alto nível. A Cerrado Finanças desenha a arquitetura que sustenta o crescimento lucrativo de empresas e governos.</p>
+                <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de saber mais sobre as consultorias da Cerrado Finanças." target="_blank" class="btn-gold">
+                    Falar com um Consultor
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </a>
+            </div>
+            <div class="hero-visual fade-up delay-1">
+                <div class="hero-icon-main">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span>Estratégia</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+    <div class="container">
+        <div class="intro-content fade-up">
+            <h2>Consultoria com Rigor Acadêmico e Validação de Mercado</h2>
+            <p>Nossa abordagem combina metodologia científica com anos de experiência na operação real de empresas brasileiras. Não entregamos planilhas genéricas. Desenhamos estruturas que funcionam no chão de fábrica e geram resultado mensurável no caixa.</p>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projetos Entregues</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">R$2Bi+</div>
+                    <div class="stat-label">Em Faturamento Assessorado</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Anos de Mercado</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONSULTORIAS -->
+<section class="consultorias-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Portfólio de Consultorias</h2>
+            <p>Cada projeto é único. Conheça as linhas de atuação que já estruturaram empresas e governos.</p>
+        </div>
+
+        <div class="cons-grid">
+
+            <!-- 1. CSC Strategy -->
+            <div class="cons-card fade-up" style="--accent-color: #fecb00; --accent-bg: rgba(254, 203, 0, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>CSC Strategy</h3>
+                    <div class="cons-what">Centro de Serviços Compartilhados</div>
+                    <p class="cons-deliver">Desenho e implementação de Centros de Serviços Compartilhados para grupos empresariais e holdings. Centralizamos processos financeiros, fiscais e administrativos num hub único, eliminando redundâncias e garantindo padronização total.</p>
+                    <p>Reduzimos custos operacionais em até 40% e asseguramos que todas as unidades de negócio sigam o mesmo padrão de excelência.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Shared Services</span>
+                        <span class="cons-tag">Automação Processual</span>
+                        <span class="cons-tag">Redução de Custos</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="/csc-strategy.html" class="btn-cons">Ver Plataforma →</a>
+                </div>
+            </div>
+
+            <!-- 2. BPO Financeiro -->
+            <div class="cons-card fade-up" style="--accent-color: #10b981; --accent-bg: rgba(16, 185, 129, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>BPO Financeiro</h3>
+                    <div class="cons-what">Terceirização de Alta Performance</div>
+                    <p class="cons-deliver">Assumimos a operação financeira do seu negócio de ponta a ponta. A nossa equipe executa o fechamento contábil, a conciliação bancária, o faturamento, contas a pagar/receber e a gestão de crédito e cobrança.</p>
+                    <p>A sua diretoria mantém o foco estratégico nas vendas e na expansão, enquanto nós entregamos números limpos, auditados e em dia.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Contabilidade Digital</span>
+                        <span class="cons-tag">Conciliação</span>
+                        <span class="cons-tag">FP&A</span>
+                        <span class="cons-tag">Crédito e Cobrança</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber mais sobre BPO Financeiro." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 3. Controladoria Estruturada -->
+            <div class="cons-card fade-up" style="--accent-color: #0ea5e9; --accent-bg: rgba(14, 165, 233, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                            <line x1="3" y1="20" x2="21" y2="20"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Controladoria Estruturada</h3>
+                    <div class="cons-what">CFO Digital para PMEs</div>
+                    <p class="cons-deliver">Construção da arquitetura de controladoria necessária para escalar com segurança. Atuamos como o seu CFO Digital, implementando DRE Gerencial detalhada, Orçamento Base Zero (OBZ), painéis de indicadores (KPIs) de alta precisão e processos rígidos de auditoria interna.</p>
+                    <p>Paramos o vazamento de caixa invisível na operação.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">DRE Gerencial</span>
+                        <span class="cons-tag">Orçamento Base Zero</span>
+                        <span class="cons-tag">KPIs</span>
+                        <span class="cons-tag">Auditoria Interna</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero estruturar a controladoria da minha empresa." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 4. Planejamento Tributário -->
+            <div class="cons-card fade-up" style="--accent-color: #8b5cf6; --accent-bg: rgba(139, 92, 246, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Planejamento Tributário e Inovação</h3>
+                    <div class="cons-what">Lei do Bem e Incentivos Fiscais</div>
+                    <p class="cons-deliver">Diagnóstico avançado da carga tributária e apuração de incentivos à inovação. Cruzamos a sua contabilidade com Inteligência Artificial (Plataforma Lei do Bem) para encontrar oportunidades de desoneração de IRPJ/CSLL.</p>
+                    <p>Realizamos a reestruturação do mix de tributação (Simples, Presumido, Real), aplicação de Fator R, recuperação de créditos e defesa ativa em contenciosos administrativos.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Incentivos Fiscais</span>
+                        <span class="cons-tag">Fator R</span>
+                        <span class="cons-tag">Lucro Presumido</span>
+                        <span class="cons-tag">Contencioso</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero fazer um planejamento tributário." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 5. Governança & M&A -->
+            <div class="cons-card fade-up" style="--accent-color: #f59e0b; --accent-bg: rgba(245, 158, 11, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Governança, Risco e Compliance</h3>
+                    <div class="cons-what">GRC e Mitigação de Riscos</div>
+                    <p class="cons-deliver">Mitigação de riscos jurídicos, operacionais e de execução. Implementamos a plataforma CerraPlan (Workflow 5W2H) para garantir que apontamentos de auditoria sejam resolvidos e evidenciados.</p>
+                    <p>Atuamos como DPO as a Service (Cerrado Privacy), mapeando dados com IA para adequação total à LGPD, incluindo a geração de relatórios ROPA/RIPD.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">DPO as a Service</span>
+                        <span class="cons-tag">LGPD</span>
+                        <span class="cons-tag">Compliance 5W2H</span>
+                        <span class="cons-tag">Matriz de Risco</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber sobre Governança e Compliance." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 6. Venture Building -->
+            <div class="cons-card fade-up" style="--accent-color: #ec4899; --accent-bg: rgba(236, 72, 153, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Venture Building</h3>
+                    <div class="cons-what">Criação de Startups</div>
+                    <p class="cons-deliver">Atuamos como o seu Sócio Operacional e Tecnológico (Tech Partner). Co-criamos startups do zero, fornecendo a arquitetura financeira, societária e tecnológica para transformar uma ideia num negócio rentável.</p>
+                    <p>Desenvolvemos o MVP (Produto Mínimo Viável), preparamos o Pitch Deck financeiro e ajudamos na captação de rodadas Seed / Series A.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Criação de MVP</span>
+                        <span class="cons-tag">Seed / Series A</span>
+                        <span class="cons-tag">Pitch Deck</span>
+                        <span class="cons-tag">Tech Partner</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="/startups.html" class="btn-cons">Ver Detalhes →</a>
+                </div>
+            </div>
+
+            <!-- 7. Consultoria GovTech -->
+            <div class="cons-card fade-up" style="--accent-color: #06b6d4; --accent-bg: rgba(6, 182, 212, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Consultoria GovTech</h3>
+                    <div class="cons-what">Gestão Pública</div>
+                    <p class="cons-deliver">Assessoria especializada para Prefeituras, Câmaras e Órgãos Públicos. Apoiamos o setor público na contratação, implementação e gestão de sistemas tecnológicos.</p>
+                    <p>Fazemos o levantamento de requisitos, avaliação de Editais de TI, gestão de projetos via PMBOK e garantimos a aderência rigorosa à Nova Lei de Licitações e à LGPD.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Gestão Pública</span>
+                        <span class="cons-tag">PMBOK</span>
+                        <span class="cons-tag">Editais TI</span>
+                        <span class="cons-tag">Transformação Digital</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero uma consultoria GovTech." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 8. Web3 & Blockchain -->
+            <div class="cons-card fade-up" style="--accent-color: #6366f1; --accent-bg: rgba(99, 102, 241, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            <line x1="12" y1="12" x2="12" y2="16"></line>
+                            <line x1="10" y1="14" x2="14" y2="14"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Web3 e Blockchain Corporativo</h3>
+                    <div class="cons-what">Infraestrutura Descentralizada</div>
+                    <p class="cons-deliver">Transição de infraestruturas centralizadas para redes B2B descentralizadas. Desenhamos redes seguras para consórcios de empresas.</p>
+                    <p>Desenvolvemos Smart Contracts (Ethereum/Solidity) para automatizar liberações de pagamentos e estruturamos operações de Cadeias de Suprimentos (Supply Chain) 100% rastreáveis e imutáveis.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Ethereum / Solidity</span>
+                        <span class="cons-tag">Smart Contracts</span>
+                        <span class="cons-tag">Auditoria Imutável</span>
+                        <span class="cons-tag">Supply Chain</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="/blockchain.html" class="btn-cons">Ver Detalhes →</a>
+                </div>
+            </div>
+
+            <!-- 9. Engenharia de Software / IT Advisory -->
+            <div class="cons-card fade-up" style="--accent-color: #14b8a6; --accent-bg: rgba(20, 184, 166, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="22"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Engenharia de Software</h3>
+                    <div class="cons-what">IT Advisory e Mentoria</div>
+                    <p class="cons-deliver">Mentoria e auditoria de alto nível para o seu departamento interno de TI. A Cerrado atua como Conselheira Chefe de Tecnologia.</p>
+                    <p>Desenhamos a arquitetura em nuvem (Cloud/NoSQL), treinamos as suas equipes internas em metodologias ágeis (Scrum, Python, React) e realizamos Code Review rigoroso e Testes de Intrusão em sistemas de produção antes do lançamento oficial.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Cloud Architecture</span>
+                        <span class="cons-tag">Code Review</span>
+                        <span class="cons-tag">SecOps</span>
+                        <span class="cons-tag">Scrum Mastery</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber sobre IT Advisory e Engenharia de Software." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 10. Contabilidade Digital -->
+            <div class="cons-card fade-up" style="--accent-color: #84cc16; --accent-bg: rgba(132, 204, 22, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Contabilidade Digital e BPO Financeiro</h3>
+                    <div class="cons-what">Terceirização Contábil de Alta Performance</div>
+                    <p class="cons-deliver">A nossa equipe assume o fechamento contábil, a conciliação bancária, a gestão de contas a pagar/receber e o faturamento. Transformamos a contabilidade num instrumento de gestão em tempo real.</p>
+                    <p>A sua diretoria mantém o foco estratégico nas vendas, enquanto nós entregamos os números limpos, auditados e em dia.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Contabilidade Consultiva</span>
+                        <span class="cons-tag">Conciliação Bancária</span>
+                        <span class="cons-tag">FP&A</span>
+                        <span class="cons-tag">Crédito e Cobrança</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber mais sobre Contabilidade Digital e BPO." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 11. Implementação B2B -->
+            <div class="cons-card fade-up" style="--accent-color: #f97316; --accent-bg: rgba(249, 115, 22, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Ecossistema Cerrado Tech - Implementação B2B</h3>
+                    <div class="cons-what">Transformação Digital com Nossas Plataformas</div>
+                    <p class="cons-deliver">Não apenas fornecemos o software — nós parametrizamos a tecnologia para a sua realidade. Implementamos e personalizamos as plataformas proprietárias da Cerrado Tech na sua empresa.</p>
+                    <p>Cerraflow (CRM com Financiamento Embutido), Cartor.IO (Bot de IA para automação semântica de WhatsApp), Broker Logístico ERP (simulador de fretes e metas), EloEleitoral (CRM de captação de demandas e gestão de mandatos) e CerraBI (BI e FP&A White-Label).</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">SaaS Corporativo</span>
+                        <span class="cons-tag">Automação com IA</span>
+                        <span class="cons-tag">CRM Inteligente</span>
+                        <span class="cons-tag">Mobile-First</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="/solucoes.html" class="btn-cons">Ver Soluções →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container fade-up">
+        <h2>Pronto para estruturar sua operação?</h2>
+        <p>Cada consultoria é desenhada sob medida. Agende uma sessão de diagnóstico e conheça o roadmap ideal para o seu caso.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de agendar uma sessão de diagnóstico." target="_blank" class="btn-dark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Agendar Diagnóstico Gratuito
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    });
+</script>
+
+</body>
+</html>
