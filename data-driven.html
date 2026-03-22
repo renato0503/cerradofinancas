@@ -25,12 +25,12 @@ layout: null
             margin: 0;
             padding: 0;
             padding-top: 80px; 
-            background-color: #f1f5f9; 
-            color: #334155;
+            background-color: #020617; 
+            color: #ffffff;
             line-height: 1.6;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; } /* Reduzido para centralizar melhor os artigos */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* Animações */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -40,13 +40,23 @@ layout: null
 
         /* --- HERO MANIFESTO --- */
         .manifesto-hero {
-            background: linear-gradient(135deg, rgba(0, 31, 92, 0.95), rgba(0, 10, 30, 0.98)), 
-                        url('{{ "/img/escritorio.jpeg" | relative_url }}') no-repeat center/cover fixed;
+            background: linear-gradient(135deg, #020617 0%, #0b0f19 100%);
             color: #fff;
             padding: 140px 0 100px;
             text-align: center;
             border-bottom: 4px solid #fecb00;
+            position: relative;
         }
+
+        .manifesto-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(254, 203, 0, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .manifesto-hero .container { position: relative; z-index: 2; }
         .manifesto-hero h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
         .manifesto-hero .highlight { color: #fecb00; }
         .manifesto-hero p { font-size: clamp(1.1rem, 4vw, 1.3rem); color: #cbd5e1; max-width: 800px; margin: 0 auto; font-weight: 300; }
@@ -54,7 +64,7 @@ layout: null
         /* --- INSTITUCIONAL (QUEM SOMOS) --- */
         .about-section {
             padding: 100px 0;
-            background: #fff;
+            background: #020617;
         }
         .about-grid {
             display: flex;
@@ -66,8 +76,8 @@ layout: null
         }
 
         .about-text { flex: 1.2; }
-        .about-text h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.2; }
-        .about-text p { font-size: 1.15rem; color: #475569; margin-bottom: 20px; line-height: 1.7; }
+        .about-text h2 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.2; }
+        .about-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 20px; line-height: 1.7; }
         
         .about-visual {
             flex: 0.8;
@@ -106,22 +116,23 @@ layout: null
         /* --- ARTIGOS (SEO) --- */
         .insights-section {
             padding: 80px 0 120px;
-            background: #f8fafc;
+            background: #0b0f19;
+            border-top: 1px solid #1e293b;
         }
         .insights-header {
             text-align: center;
             margin-bottom: 80px;
         }
-        .insights-header h2 { font-size: 2.8rem; font-weight: 900; color: #001f5c; margin-bottom: 15px; letter-spacing: -1px; }
-        .insights-header p { font-size: 1.15rem; color: #64748b; max-width: 600px; margin: 0 auto; }
+        .insights-header h2 { font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 15px; letter-spacing: -1px; }
+        .insights-header p { font-size: 1.15rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
 
         .article-card {
-            background: #fff;
+            background: #0f172a;
             border-radius: 24px;
             padding: 60px;
             margin-bottom: 50px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 1px solid #1e293b;
             position: relative;
         }
         @media (max-width: 768px) {
@@ -134,46 +145,59 @@ layout: null
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 30px;
         }
-        .icon-blue { background: #e0f2fe; color: #0284c7; }
-        .icon-green { background: #dcfce7; color: #16a34a; }
-        .icon-gold { background: #fef3c7; color: #ca8a04; }
-        .icon-purple { background: #f3e8ff; color: #7e22ce; }
-        .icon-red { background: #fee2e2; color: #e11d48; }
+        .icon-blue { background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); }
+        .icon-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .icon-gold { background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
+        .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .icon-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
 
-        .article-header { border-bottom: 2px solid #f1f5f9; padding-bottom: 30px; margin-bottom: 30px; }
-        .article-header h3 { font-size: 2.2rem; font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .article-tag { display: inline-block; padding: 6px 14px; background: #f1f5f9; color: #475569; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .article-header { border-bottom: 2px solid #1e293b; padding-bottom: 30px; margin-bottom: 30px; }
+        .article-header h3 { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .article-tag { display: inline-block; padding: 6px 14px; background: rgba(255,255,255,0.05); color: #94a3b8; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #334155; }
 
-        .article-body p { font-size: 1.15rem; line-height: 1.8; color: #334155; margin-bottom: 20px; }
-        .article-body h4 { font-size: 1.4rem; font-weight: 800; color: #001f5c; margin: 40px 0 15px; }
+        .article-body p { font-size: 1.15rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 20px; }
+        .article-body h4 { font-size: 1.4rem; font-weight: 800; color: #fecb00; margin: 40px 0 15px; }
         
         .article-body ul { margin-bottom: 25px; padding-left: 20px; }
-        .article-body li { font-size: 1.15rem; color: #334155; margin-bottom: 10px; line-height: 1.6; }
+        .article-body li { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 10px; line-height: 1.6; }
 
         /* Destaques dentro do texto */
         .highlight-box {
-            background: #f8fafc;
+            background: rgba(254, 203, 0, 0.05);
             border-left: 4px solid #fecb00;
             padding: 20px 25px;
             border-radius: 0 12px 12px 0;
             margin: 30px 0;
             font-weight: 500;
-            color: #0f172a;
+            color: #fecb00;
             font-size: 1.1rem;
         }
 
         .cta-article {
             margin-top: 40px;
             padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #1e293b;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
         }
-        .btn-ler { background: #001f5c; color: #fff; padding: 15px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; display: inline-block;}
-        .btn-ler:hover { background: #003399; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0, 31, 92, 0.2); }
+        .btn-ler { background: #fecb00; color: #0f172a; padding: 15px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; display: inline-block;}
+        .btn-ler:hover { background: #fbbf24; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(254, 203, 0, 0.3); }
+
+        .btn-consultorias { background: linear-gradient(135deg, #10b981, #059669); color: #fff; padding: 16px 32px; border-radius: 50px; font-weight: 800; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); }
+        .btn-consultorias:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5); }
+
+        /* Consultorias CTA Section */
+        .consultorias-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #020617 0%, #064e3b 100%);
+            border-top: 1px solid #1e293b;
+            text-align: center;
+        }
+        .consultorias-cta h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 20px; }
+        .consultorias-cta p { font-size: 1.15rem; color: #d1fae5; max-width: 600px; margin: 0 auto 40px; }
 
     </style>
 </head>
@@ -414,6 +438,17 @@ layout: null
             </div>
         </article>
 
+    </div>
+</section>
+
+<section class="consultorias-cta">
+    <div class="container fade-up">
+        <h2>Além dos Artigos, Consultoria Real.</h2>
+        <p>A Cerrado Finanças também oferece consultorias especializadas para estruturar financeiramente empresas, governos e projetos de alto impacto.</p>
+        <a href="/consultorias.html" class="btn-consultorias">
+            Conhecer Nossas Consultorias
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
     </div>
 </section>
 
