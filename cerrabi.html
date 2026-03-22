@@ -1,0 +1,743 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerraBI | Business Intelligence e FP&A para Escritórios Contábeis | Cerrado Tech</title>
+    <meta name="description" content="Plataforma White-Label de Business Intelligence e FP&A para escritórios contábeis. Transforme balancetes do Domínio, Alterdata em dashboards gerenciais interativos com a sua marca.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* --- HERO CERRABI --- */
+        .cb-hero {
+            background: linear-gradient(135deg, #020617 0%, #064e3b 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #10b981;
+        }
+
+        .cb-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cb-hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .cb-hero-grid { flex-direction: column; text-align: center; }
+        }
+
+        .cb-text { flex: 1.2; }
+        
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0f172a, #064e3b);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            overflow: hidden;
+        }
+        .app-big-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cb-badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .cb-text h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cb-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-emerald {
+            background: #10b981;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            border: none;
+        }
+        .btn-emerald:hover { background: #059669; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5); }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+        }
+
+        /* Dashboard Mockup Split */
+        .cb-visual { flex: 0.8; display: flex; justify-content: center; width: 100%; }
+        
+        .dashboard-mockup {
+            width: 100%;
+            max-width: 520px;
+            background: #0f172a;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+        .dashboard-mockup:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02); }
+
+        .db-header {
+            background: #1e293b;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        .db-dots { display: flex; gap: 6px; }
+        .db-dot { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
+
+        .db-body { padding: 20px; }
+
+        .db-split {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .db-source {
+            flex: 1;
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px dashed #334155;
+        }
+        .db-source-title {
+            font-size: 0.65rem;
+            color: #ef4444;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .db-excel-row { display: flex; gap: 5px; margin-bottom: 4px; }
+        .db-cell { height: 8px; border-radius: 2px; background: #334155; }
+        .db-cell.header { background: #475569; height: 10px; }
+        .db-cell.accent { background: #10b981; }
+
+        .db-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #10b981;
+        }
+
+        .db-dashboard {
+            flex: 1.2;
+            background: #064e3b;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .db-dash-title {
+            font-size: 0.65rem;
+            color: #34d399;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .db-kpis {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .db-kpi {
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            padding: 8px;
+        }
+        .db-kpi-label { font-size: 0.5rem; color: #6ee7b7; margin-bottom: 3px; }
+        .db-kpi-value { font-size: 0.7rem; font-weight: 800; color: #fff; }
+        .db-kpi-change { font-size: 0.5rem; }
+        .db-kpi-change.up { color: #10b981; }
+        .db-kpi-change.down { color: #ef4444; }
+
+        .db-chart {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 12px;
+        }
+        .db-chart-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 40px;
+        }
+        .db-bar {
+            flex: 1;
+            background: #10b981;
+            border-radius: 2px 2px 0 0;
+            min-height: 8px;
+        }
+        .db-bar.secondary { background: #059669; }
+
+        /* --- PAIN SECTION --- */
+        .pain-section {
+            padding: 100px 0;
+            background: #0b0f19;
+            border-top: 1px solid #1e293b;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .pain-grid { grid-template-columns: 1fr; text-align: center; }
+            .pain-arrow { transform: rotate(90deg); }
+        }
+
+        .pain-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .pain-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; }
+        .pain-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.7; margin: 0; }
+
+        .pain-card.old h3 { color: #ef4444; }
+        .pain-card.new h3 { color: #10b981; }
+
+        .pain-arrow { font-size: 3rem; color: #10b981; }
+
+        /* --- HOW IT WORKS --- */
+        .how-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto;}
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+
+        .step-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+        }
+        .step-card:hover { transform: translateY(-5px); border-color: #10b981; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);}
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .step-icon svg { width: 32px; height: 32px; color: #34d399; }
+
+        .step-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .step-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
+
+        /* --- FEATURES SECTION --- */
+        .features-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b;}
+        
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #10b981; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);}
+
+        .fc-icon { width: 50px; height: 50px; background: #1e293b; color: #34d399; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; border: 1px solid #334155;}
+        
+        .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
+
+        /* --- BUSINESS CASE SECTION --- */
+        .upsell-section { padding: 100px 0; background: linear-gradient(135deg, #020617 0%, #064e3b 100%); border-top: 1px solid #1e293b;}
+        
+        .upsell-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .upsell-formula {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        @media (max-width: 768px) {
+            .upsell-formula { grid-template-columns: 1fr; text-align: center; }
+            .upsell-op { transform: rotate(90deg); margin: 10px 0; }
+        }
+
+        .formula-box {
+            background: #0f172a;
+            border: 2px solid #1e293b;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .formula-box.highlight { border-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+        .formula-box.result { border-color: #10b981; box-shadow: 0 0 30px rgba(16, 185, 129, 0.2); }
+
+        .formula-label { font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px; text-transform: uppercase; font-weight: 700; }
+        .formula-value { font-size: 1.5rem; font-weight: 900; color: #fff; }
+        .formula-value small { font-size: 1rem; color: #94a3b8; }
+
+        .upsell-op { font-size: 2rem; color: #10b981; font-weight: 900; }
+
+        .upsell-result {
+            background: linear-gradient(135deg, #10b981, #059669);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .upsell-result .formula-value { color: #fff; font-size: 2rem; }
+        .upsell-result .formula-label { color: rgba(255,255,255,0.8); }
+
+        /* --- ABOUT SECTION --- */
+        .about-section { padding: 80px 0; background: #020617; border-top: 1px solid #1e293b;}
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .about-content { flex-direction: column; text-align: center; }
+        }
+
+        .about-text { flex: 1; }
+        .about-text h2 { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 20px;}
+        .about-text p { font-size: 1.1rem; color: #94a3b8; line-height: 1.8; margin-bottom: 15px;}
+
+        .about-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+        .about-badge span { color: #34d399; font-weight: 700; }
+
+        /* --- CTA --- */
+        .cta-bottom { background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 80px 0; text-align: center; color: #fff;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
+        .cta-bottom p { font-size: 1.15rem; color: #d1fae5; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;}
+    </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<!-- HERO SECTION -->
+<section class="cb-hero">
+    <div class="container">
+        <div class="cb-hero-grid">
+            
+            <div class="cb-text fade-up">
+                
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <img src="img/cerrabi.png" alt="CerraBI Logo">
+                    </div>
+                    <div class="cb-badge">Business Intelligence & FP&A</div>
+                </div>
+
+                <h1>Transforme o Balancete que seu cliente não lê em um serviço de CFO Digital altamente lucrativo.</h1>
+                <p>O <strong>CerraBI</strong> é a plataforma White-Label que transforma as exportações do seu sistema contábil atual (Domínio, Alterdata, Fortes) em <strong>Dashboards Financeiros interativos</strong> com a sua marca. Pare de entregar apenas guias de impostos e comece a vender Consultoria e Previsibilidade.</p>
+                
+                <div class="btn-group fade-up delay-1">
+                    <a href="#contato" class="btn-emerald">
+                        Agendar uma Demonstração
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cb-visual fade-up delay-2">
+                <div class="dashboard-mockup">
+                    <div class="db-header">
+                        <div class="db-dots">
+                            <div class="db-dot"></div>
+                            <div class="db-dot"></div>
+                            <div class="db-dot"></div>
+                        </div>
+                        <span style="font-size: 0.75rem; color: #94a3b8; font-weight: bold;">Seu Escritório Contábil</span>
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #10b981;"></div>
+                    </div>
+                    <div class="db-body">
+                        <div class="db-split">
+                            <div class="db-source">
+                                <div class="db-source-title">Raw Data</div>
+                                <div class="db-excel-row"><div class="db-cell header" style="width:80%"></div></div>
+                                <div class="db-excel-row"><div class="db-cell" style="width:60%"></div><div class="db-cell accent" style="width:30%"></div></div>
+                                <div class="db-excel-row"><div class="db-cell" style="width:70%"></div><div class="db-cell" style="width:25%"></div></div>
+                                <div class="db-excel-row"><div class="db-cell" style="width:55%"></div><div class="db-cell" style="width:35%"></div></div>
+                                <div class="db-excel-row"><div class="db-cell" style="width:65%"></div><div class="db-cell" style="width:28%"></div></div>
+                            </div>
+                            <div class="db-arrow">→</div>
+                            <div class="db-dashboard">
+                                <div class="db-dash-title">Dashboard CerraBI</div>
+                                <div class="db-kpis">
+                                    <div class="db-kpi">
+                                        <div class="db-kpi-label">Receita</div>
+                                        <div class="db-kpi-value">R$ 847K</div>
+                                        <div class="db-kpi-change up">▲ 12%</div>
+                                    </div>
+                                    <div class="db-kpi">
+                                        <div class="db-kpi-label">Margem</div>
+                                        <div class="db-kpi-value">23.4%</div>
+                                        <div class="db-kpi-change up">▲ 3.2pp</div>
+                                    </div>
+                                    <div class="db-kpi">
+                                        <div class="db-kpi-label">Despesas</div>
+                                        <div class="db-kpi-value">R$ 521K</div>
+                                        <div class="db-kpi-change down">▼ 5%</div>
+                                    </div>
+                                    <div class="db-kpi">
+                                        <div class="db-kpi-label">Lucro</div>
+                                        <div class="db-kpi-value">R$ 198K</div>
+                                        <div class="db-kpi-change up">▲ 28%</div>
+                                    </div>
+                                </div>
+                                <div class="db-chart">
+                                    <div class="db-chart-bars">
+                                        <div class="db-bar" style="height:30%"></div>
+                                        <div class="db-bar secondary" style="height:45%"></div>
+                                        <div class="db-bar" style="height:55%"></div>
+                                        <div class="db-bar secondary" style="height:50%"></div>
+                                        <div class="db-bar" style="height:70%"></div>
+                                        <div class="db-bar secondary" style="height:65%"></div>
+                                        <div class="db-bar" style="height:80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PAIN SECTION -->
+<section class="pain-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Seu cliente acha que você só serve para mandar boleto de imposto?</h2>
+            <p>Você passa horas fechando o mês, garantindo a conformidade fiscal, mas na hora de apresentar os números, o pequeno e médio empresário não entende o que é um Balancete ou uma DRE tradicional. O resultado? Ele enxerga a contabilidade como um "mal necessário" e um custo fixo, e não aceita reajustes de honorários.</p>
+        </div>
+
+        <div class="pain-grid fade-up delay-1">
+            <div class="pain-card old">
+                <h3>🚫 O Modelo Antigo</h3>
+                <p>Planilha feia, relatório de 15 páginas, jargão contábil que ninguém entende. O cliente paga o mínimo e ainda reclama do preço.</p>
+            </div>
+            <div class="pain-arrow">→</div>
+            <div class="pain-card new">
+                <h3>✅ O CerraBI</h3>
+                <p>Dashboard bonito, linguagem de negócio, insights automáticos. Sua consultoria vale cada centavo do novo pacote de FP&A.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section class="how-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Inteligência de Dados sem precisar de integrações complexas</h2>
+            <p>O CerraBI foi desenhado para funcionar no dia 1, com qualquer sistema contábil do mercado brasileiro.</p>
+        </div>
+
+        <div class="steps-grid fade-up delay-1">
+            
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </div>
+                <h3>Exporte</h3>
+                <p>Exporte o balancete de verificação ou o razão do seu cliente diretamente do seu ERP contábil em formato padrão (Excel, CSV ou TXT). Sem precisar de APIs caras.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </div>
+                <h3>Mapeie</h3>
+                <p>Faça o upload no CerraBI. Nosso motor inteligente (De-Para) cruza as contas do seu sistema com a nossa DRE Gerencial Padrão. O sistema aprende as regras para automatizar os próximos meses.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3>Impressione</h3>
+                <p>Em minutos, o CerraBI gera um painel executivo preditivo. Envie o link seguro para o WhatsApp do seu cliente e mostre o Ponto de Equilíbrio, Margem de Lucro e Saúde de Caixa.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>A tecnologia do CerraBI trabalhando para o seu escritório</h2>
+            <p>Recursos pensados para que você entregue valor e aumente o ticket médio da sua carteira.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+            
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                </div>
+                <h3>100% White-Label</h3>
+                <p>Sua logo, suas cores, sua autoridade. O cliente final não sabe que o CerraBI existe — ele assina o seu serviço de Consultoria Financeira.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <h3>P&L e DRE Interativos</h3>
+                <p>Chega de PDFs estáticos de 15 páginas. Um dashboard dinâmico onde o cliente clica para entender exatamente onde o dinheiro está vazando.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3>Alertas e Insights em Texto</h3>
+                <p>Nosso motor analisa as variações e gera resumos executivos mastigados. Ex: "Sua despesa com folha subiu 8% neste mês."</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <h3>Universal e Agnóstico</h3>
+                <p>Funciona perfeitamente com dados do Domínio Sistemas, Alterdata, Conta Azul, Omie, ou até planilhas financeiras de BPO.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- UPSELL / BUSINESS CASE SECTION -->
+<section class="upsell-section">
+    <div class="container">
+        <div class="upsell-content">
+            <div class="sec-title fade-up">
+                <h2>Não é um custo para sua operação. É uma nova linha de receita.</h2>
+                <p>Transforme seus honorários de R$ 500 em pacotes de BPO + CFO Digital de R$ 1.500+.</p>
+            </div>
+
+            <div class="upsell-formula fade-up delay-1">
+                <div class="formula-box">
+                    <div class="formula-label">Custo CerraBI</div>
+                    <div class="formula-value">R$ 297<small>/mês</small></div>
+                </div>
+                <div class="upsell-op">+</div>
+                <div class="formula-box highlight">
+                    <div class="formula-label">10 Clientes c/ Upsell</div>
+                    <div class="formula-value">R$ 500<small>/cliente</small></div>
+                </div>
+                <div class="upsell-op">=</div>
+                <div class="upsell-result">
+                    <div class="formula-label">Receita Líquida</div>
+                    <div class="formula-value">+R$ 4.703</div>
+                </div>
+            </div>
+
+            <div class="pain-grid fade-up delay-2">
+                <div class="pain-card old">
+                    <h3>📊 Modelo Tradicional</h3>
+                    <p>Honorários fixos de R$ 500/client × 10 clientes = <strong>R$ 5.000/mês</strong><br>Sem crescimento, sem valor percebido.</p>
+                </div>
+                <div class="pain-arrow">→</div>
+                <div class="pain-card new" style="border-color: #10b981;">
+                    <h3>💎 Modelo CerraBI</h3>
+                    <p>Honorários + Pacote FP&A de R$ 500 = <strong>R$ 1.000/client × 10 clientes = R$ 10.000/mês</strong><br>Custo da plataforma: R$ 297. Lucro: <strong>+R$ 4.703</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-content fade-up">
+            <div class="about-text">
+                <h2>Desenvolvido por quem entende de Finanças e Tecnologia</h2>
+                <p>O CerraBI é uma solução da <strong>Cerrado Finanças / Cerrado Tech</strong>. Nascemos da intersecção entre a contabilidade real, a ciência de dados e a necessidade de entregar controladoria de alto nível para PMEs.</p>
+                <p>Estamos sediados em <strong>Cuiabá/MT</strong>, no coração do agronegócio brasileiro — onde a gestão financeira precisa ser tão precisa quanto a plantação.</p>
+                <div class="about-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Cuiabá, Mato Grosso</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section id="contato" class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Pronto para elevar o nível da sua Contabilidade?</h2>
+        <p>Junte-se aos escritórios que estão trocando a guerra de preços por serviços de alto valor agregado.</p>
+        <a href="/index.html#contato" class="btn-emerald" style="background: #ffffff; color: #059669; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Quero Agendar uma Demo Gratuita
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>
