@@ -6,8 +6,8 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSC Strategy | Centro de Serviços Compartilhados | Cerrado Finanças</title>
-    <meta name="description" content="Consultoria em implementação de Centro de Serviços Compartilhados (CSC). Centralize processos financeiros, fiscais e administrativos e reduza custos em até 40%.">
+    <title>CSC Strategy | Plataforma Completa para Centros de Serviços Compartilhados | Cerrado Tech</title>
+    <meta name="description" content="A primeira plataforma completa para implementação, gestão inteligente e escala de Centros de Serviços Compartilhados (CSC). Do diagnóstico ao BI preditivo em um só lugar.">
     
     <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
@@ -38,628 +38,617 @@ layout: null
         .delay-2 { transition-delay: 0.2s; }
 
         /* --- HERO --- */
-        .csc-hero {
+        .hero {
             background: linear-gradient(135deg, #020617 0%, #0c0a09 100%);
-            padding: 120px 0 100px;
+            padding: 100px 0 80px;
             position: relative;
             overflow: hidden;
-            border-bottom: 4px solid #fecb00;
+            border-bottom: 2px solid #fecb00;
         }
-        .csc-hero::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 50%, rgba(254, 203, 0, 0.1) 0%, transparent 60%);
+            background: radial-gradient(circle at 80% 50%, rgba(254, 203, 0, 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
-        .csc-hero-grid {
+        .hero-grid {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: 50px;
             position: relative;
             z-index: 2;
         }
         @media (max-width: 992px) {
-            .csc-hero-grid { flex-direction: column; text-align: center; }
+            .hero-grid { flex-direction: column; text-align: center; }
         }
-        .csc-text { flex: 1.2; }
-        .csc-badge {
+        .hero-text { flex: 1.1; }
+        .hero-badge {
             background: rgba(254, 203, 0, 0.1);
             color: #facc15;
             border: 1px solid rgba(254, 203, 0, 0.3);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 20px;
         }
-        .csc-text h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
-        .csc-text h1 span { color: #fecb00; }
-        .csc-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+        .hero-text h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-text h1 span { color: #fecb00; }
+        .hero-text p { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 35px; line-height: 1.7; max-width: 560px; }
+
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
+        @media (max-width: 992px) { .btn-group { justify-content: center; } }
 
         .btn-gold {
             background: #fecb00;
             color: #0f172a;
-            padding: 16px 32px;
-            border-radius: 12px;
+            padding: 14px 28px;
+            border-radius: 10px;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(254, 203, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(254, 203, 0, 0.25);
         }
-        .btn-gold:hover { background: #fbbf24; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(254, 203, 0, 0.5); }
+        .btn-gold:hover { background: #fbbf24; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(254, 203, 0, 0.4); }
 
-        .csc-visual { flex: 0.8; display: flex; justify-content: center; }
+        .btn-outline {
+            background: transparent;
+            color: #fecb00;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid #fecb00;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover { background: rgba(254, 203, 0, 0.1); transform: translateY(-2px); }
 
-        .csc-mockup {
+        .hero-visual { flex: 0.9; display: flex; justify-content: center; }
+        .hero-img-wrap {
             width: 100%;
-            max-width: 480px;
-            background: #0f172a;
+            max-width: 520px;
             border-radius: 20px;
+            overflow: hidden;
             border: 1px solid #1e293b;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            transition: transform 0.5s ease;
+        }
+        .hero-img-wrap:hover { transform: scale(1.02); }
+        .hero-img-wrap img { width: 100%; height: auto; display: block; }
+
+        /* --- PAIN SECTION --- */
+        .pain-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.4rem; font-weight: 900; color: #fff; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .sec-title p { font-size: 1.1rem; color: #94a3b8; max-width: 650px; margin: 0 auto; }
+
+        .pain-text { text-align: center; max-width: 800px; margin: 0 auto 50px; }
+        .pain-text p { font-size: 1.15rem; color: #94a3b8; line-height: 1.8; }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .pain-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .pain-card:hover { transform: translateY(-5px); border-color: #ef4444; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.1); }
+        .pain-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .pain-card h3 { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .pain-card p { font-size: 0.95rem; color: #64748b; line-height: 1.5; margin: 0; }
+
+        /* --- 3 PILARES --- */
+        .pilares-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
+        .pilares-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        @media (max-width: 992px) { .pilares-grid { grid-template-columns: 1fr; } }
+
+        .pilar-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
             overflow: hidden;
         }
-        .csc-header {
-            background: #1e293b;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 1px solid #334155;
-        }
-        .csc-dots { display: flex; gap: 6px; }
-        .csc-dot { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
-        .csc-dot.y { background: #fecb00; }
-        .csc-title { font-size: 0.8rem; font-weight: 700; color: #fecb00; flex: 1; }
-        .csc-body { padding: 20px; }
-
-        .csc-org-chart {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .csc-node {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: 0.3s;
-        }
-        .csc-node:hover { border-color: #fecb00; transform: translateX(5px); }
-        .csc-node.hub { background: rgba(254, 203, 0, 0.1); border-color: #fecb00; }
-        .csc-node-icon {
-            width: 36px; height: 36px;
-            border-radius: 10px;
-            background: rgba(254, 203, 0, 0.1);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
-        }
-        .csc-node-text { flex: 1; }
-        .csc-node-text strong { font-size: 0.85rem; color: #fff; display: block; }
-        .csc-node-text span { font-size: 0.7rem; color: #64748b; }
-        .csc-node.connected::before {
-            content: '';
-            display: block;
-            width: 2px;
-            height: 12px;
-            background: #334155;
-            margin-left: 25px;
-        }
-
-        /* --- PROBLEMA --- */
-        .problema-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
-        .problema-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        @media (max-width: 768px) {
-            .problema-grid { grid-template-columns: 1fr; }
-        }
-        .prob-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 40px;
-            border-radius: 20px;
-        }
-        .prob-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; }
-        .prob-card li { font-size: 1.05rem; color: #94a3b8; margin-bottom: 10px; line-height: 1.6; }
-        .prob-card.before h3 { color: #ef4444; }
-        .prob-card.after h3 { color: #10b981; }
-
-        /* --- O QUE É CSC --- */
-        .oque-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
-        .sec-title { text-align: center; margin-bottom: 60px; }
-        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
-        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
-
-        .csc-explain {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .csc-explain p { font-size: 1.2rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px; }
-        .csc-explain strong { color: #fecb00; }
-
-        .csc-pillars {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 60px;
-        }
-        @media (max-width: 768px) {
-            .csc-pillars { grid-template-columns: 1fr; }
-        }
-        .pillar-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.3s;
-        }
-        .pillar-card:hover { border-color: #fecb00; transform: translateY(-5px); }
-        .pillar-icon {
-            width: 60px; height: 60px;
-            background: rgba(254, 203, 0, 0.1);
-            border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px;
-            border: 1px solid rgba(254, 203, 0, 0.3);
-        }
-        .pillar-icon svg { width: 28px; height: 28px; color: #fecb00; }
-        .pillar-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
-        .pillar-card p { font-size: 1rem; color: #94a3b8; line-height: 1.6; margin: 0; }
-
-        /* --- COMO ENTREGAMOS --- */
-        .entrega-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
-
-        .entrega-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .entrega-timeline::before {
+        .pilar-card::after {
             content: '';
             position: absolute;
-            left: 28px;
-            top: 0; bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #fecb00, #1e293b);
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--pilar-color, #fecb00);
         }
-        @media (max-width: 768px) {
-            .entrega-timeline::before { left: 20px; }
+        .pilar-card:hover { transform: translateY(-8px); border-color: var(--pilar-color, #fecb00); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+
+        .pilar-num {
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.04);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+        }
+        .pilar-icon {
+            width: 70px; height: 70px;
+            border-radius: 20px;
+            background: var(--pilar-bg, rgba(254, 203, 0, 0.1));
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 25px;
+            border: 1px solid var(--pilar-border, rgba(254, 203, 0, 0.3));
+        }
+        .pilar-icon svg { width: 32px; height: 32px; color: var(--pilar-color, #fecb00); }
+
+        .pilar-card h3 { font-size: 1.3rem; font-weight: 900; color: var(--pilar-color, #fecb00); margin-bottom: 12px; }
+        .pilar-card .pilar-title { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .pilar-card p { font-size: 1rem; color: #94a3b8; line-height: 1.7; margin-bottom: 20px; }
+        .pilar-list { text-align: left; }
+        .pilar-list li { font-size: 0.95rem; color: #cbd5e1; margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .pilar-list li::before { content: '→'; position: absolute; left: 0; color: var(--pilar-color, #fecb00); font-weight: 700; }
+
+        /* --- FEATURES GRID --- */
+        .features-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feat-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 35px 25px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .feat-card:hover { transform: translateY(-5px); border-color: #fecb00; }
+        .feat-icon {
+            width: 50px; height: 50px;
+            border-radius: 14px;
+            background: rgba(254, 203, 0, 0.1);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(254, 203, 0, 0.3);
+        }
+        .feat-icon svg { width: 24px; height: 24px; color: #fecb00; }
+        .feat-card h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .feat-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+        /* --- HOW IT WORKS --- */
+        .how-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+        .how-steps::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(to right, #fecb00, #10b981, #0ea5e9, #8b5cf6);
+        }
+        @media (max-width: 992px) {
+            .how-steps { grid-template-columns: 1fr 1fr; }
+            .how-steps::before { display: none; }
+        }
+        @media (max-width: 600px) {
+            .how-steps { grid-template-columns: 1fr; }
         }
 
-        .timeline-item {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 50px;
+        .step-card {
+            text-align: center;
             position: relative;
-        }
-        .timeline-dot {
-            flex: 0 0 58px;
-            display: flex;
-            justify-content: center;
-        }
-        .timeline-dot-inner {
-            width: 58px; height: 58px;
-            border-radius: 50%;
-            background: #fecb00;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: #0f172a;
-            box-shadow: 0 0 0 6px #0b0f19;
             z-index: 2;
-            position: relative;
         }
-        @media (max-width: 768px) {
-            .timeline-dot { flex: 0 0 42px; }
-            .timeline-dot-inner { width: 42px; height: 42px; font-size: 1rem; }
+        .step-circle {
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .timeline-content {
-            flex: 1;
+        .step-card:nth-child(1) .step-circle { background: linear-gradient(135deg, #fecb00, #fbbf24); color: #0f172a; }
+        .step-card:nth-child(2) .step-circle { background: linear-gradient(135deg, #10b981, #34d399); color: #0f172a; }
+        .step-card:nth-child(3) .step-circle { background: linear-gradient(135deg, #0ea5e9, #38bdf8); color: #fff; }
+        .step-card:nth-child(4) .step-circle { background: linear-gradient(135deg, #8b5cf6, #a78bfa); color: #fff; }
+
+        .step-card h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .step-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+        /* --- SOCIAL PROOF --- */
+        .proof-section { padding: 80px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
+        .proof-content { text-align: center; }
+        .proof-label { font-size: 0.85rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+        .proof-logos { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .proof-logo-item {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #475569;
+            transition: 0.3s;
+        }
+        .proof-logo-item:hover { border-color: #fecb00; color: #fecb00; }
+        .proof-authority { max-width: 700px; margin: 50px auto 0; text-align: center; }
+        .proof-authority p { font-size: 1.1rem; color: #cbd5e1; line-height: 1.8; font-style: italic; }
+        .proof-authority strong { color: #fecb00; }
+        .proof-authority .proof-role { font-size: 0.9rem; color: #64748b; margin-top: 10px; font-style: normal; }
+
+        /* --- FAQ --- */
+        .faq-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
+        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .faq-item {
             background: #0f172a;
             border: 1px solid #1e293b;
             border-radius: 16px;
-            padding: 30px;
+            overflow: hidden;
+            transition: 0.3s;
         }
-        .timeline-content h3 { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
-        .timeline-content p { font-size: 1.05rem; color: #94a3b8; line-height: 1.7; margin: 0; }
-        .timeline-content .timeline-tag { display: inline-block; margin-top: 12px; background: rgba(254, 203, 0, 0.1); color: #facc15; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-
-        /* --- BENEFÍCIOS --- */
-        .beneficios-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
-        .benef-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .benef-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 40px 30px;
-            border-radius: 20px;
+        .faq-item:hover { border-color: #334155; }
+        .faq-q {
+            padding: 25px 30px;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
             gap: 20px;
-            align-items: flex-start;
-            transition: 0.3s;
         }
-        .benef-card:hover { border-color: #10b981; transform: translateY(-3px); }
-        .benef-icon {
-            flex: 0 0 50px;
-            width: 50px; height: 50px;
-            border-radius: 14px;
-            background: rgba(16, 185, 129, 0.1);
-            display: flex; align-items: center; justify-content: center;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-        .benef-icon svg { width: 24px; height: 24px; color: #34d399; }
-        .benef-text h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
-        .benef-text p { font-size: 1rem; color: #94a3b8; line-height: 1.6; margin: 0; }
-
-        /* --- PARA QUEM --- */
-        .para-quem-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
-        .pq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .pq-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.3s;
-        }
-        .pq-card:hover { border-color: #fecb00; }
-        .pq-icon { font-size: 3rem; margin-bottom: 20px; }
-        .pq-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
-        .pq-card p { font-size: 1rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+        .faq-q h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0; }
+        .faq-q .faq-toggle { color: #fecb00; font-size: 1.5rem; font-weight: 300; transition: transform 0.3s; flex-shrink: 0; }
+        .faq-item.open .faq-toggle { transform: rotate(45deg); }
+        .faq-a { padding: 0 30px 25px; display: none; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-a p { font-size: 1rem; color: #94a3b8; line-height: 1.7; margin: 0; }
 
         /* --- CTA --- */
-        .cta-bottom { background: linear-gradient(135deg, #fecb00 0%, #d97706 100%); padding: 80px 0; text-align: center; color: #0f172a; }
-        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
-        .cta-bottom p { font-size: 1.15rem; color: rgba(15, 23, 42, 0.8); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .btn-dark { background: #0f172a; color: #fff; padding: 16px 32px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .cta-section { background: linear-gradient(135deg, #fecb00 0%, #d97706 100%); padding: 80px 0; text-align: center; color: #0f172a; }
+        .cta-section h2 { font-size: 2.4rem; font-weight: 900; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.1rem; color: rgba(15, 23, 42, 0.8); margin-bottom: 40px; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .btn-dark { background: #0f172a; color: #fff; padding: 16px 32px; border-radius: 12px; font-weight: 800; font-size: 1.05rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
         .btn-dark:hover { background: #1e293b; transform: translateY(-3px); }
     </style>
 </head>
 <body>
 
-{% include header.html titulo="Cerrado Finanças" %}
+{% include header.html titulo="Cerrado Tech" %}
 
 <!-- HERO -->
-<section class="csc-hero">
+<section class="hero">
     <div class="container">
-        <div class="csc-hero-grid">
-            <div class="csc-text fade-up">
-                <span class="csc-badge">Consultoria Estratégica</span>
-                <h1>CSC Strategy: O Hub que <span>Centraliza</span> e Multiplica sua Eficiência.</h1>
-                <p>Centro de Serviços Compartilhados é a arquitetura que transforma processos fragmentados em um motor padronizado, escalável e de baixo custo. Da teoria à operação em 90 dias.</p>
-                <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber mais sobre CSC Strategy." target="_blank" class="btn-gold">
-                    Solicitar Proposal
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
+        <div class="hero-grid">
+            <div class="hero-text fade-up">
+                <span class="hero-badge">SaaS Corporativo</span>
+                <h1>Transforme o Backoffice de n Empresas em uma Operação de <span>Alta Performance</span>.</h1>
+                <p>A primeira plataforma completa para implementação, gestão inteligente e escala de Centros de Serviços Compartilhados (CSC). Do diagnóstico ao BI preditivo em um só lugar.</p>
+                <div class="btn-group">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero agendar uma demonstração do CSC Strategy." target="_blank" class="btn-gold">
+                        Agendar Demonstração
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#funcionalidades" class="btn-outline">
+                        Ver Funcionalidades
+                    </a>
+                </div>
             </div>
-            <div class="csc-visual fade-up delay-1">
-                <div class="csc-mockup">
-                    <div class="csc-header">
-                        <div class="csc-dots">
-                            <div class="csc-dot"></div>
-                            <div class="csc-dot"></div>
-                            <div class="csc-dot y"></div>
-                        </div>
-                        <span class="csc-title">CSC - Arquitetura Organizacional</span>
-                    </div>
-                    <div class="csc-body">
-                        <div class="csc-org-chart">
-                            <div class="csc-node hub">
-                                <div class="csc-node-icon">🏢</div>
-                                <div class="csc-node-text">
-                                    <strong>CSC Central</strong>
-                                    <span>Hub de Serviços Compartilhados</span>
-                                </div>
-                            </div>
-                            <div class="csc-node connected">
-                                <div class="csc-node-icon">💰</div>
-                                <div class="csc-node-text">
-                                    <strong>Financeiro</strong>
-                                    <span>Contabilidade, Tesouraria, FP&A</span>
-                                </div>
-                            </div>
-                            <div class="csc-node connected">
-                                <div class="csc-node-icon">📋</div>
-                                <div class="csc-node-text">
-                                    <strong>Fiscal</strong>
-                                    <span>SPED, GFIP, DCTF, Obrigações</span>
-                                </div>
-                            </div>
-                            <div class="csc-node connected">
-                                <div class="csc-node-icon">👥</div>
-                                <div class="csc-node-text">
-                                    <strong>RH</strong>
-                                    <span>Folha, Benefícios, eSocial</span>
-                                </div>
-                            </div>
-                            <div class="csc-node connected">
-                                <div class="csc-node-icon">⚙️</div>
-                                <div class="csc-node-text">
-                                    <strong>Jurídico</strong>
-                                    <span>Contratos, Contenciosos, Compliance</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="hero-visual fade-up delay-1">
+                <div class="hero-img-wrap">
+                    <img src="img/cscstrategy.png" alt="CSC Strategy - Dashboard de Gestão">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- O PROBLEMA -->
-<section class="problema-section">
+<!-- PAIN POINTS -->
+<section class="pain-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>Você reconhece algum desses cenários?</h2>
-            <p>Cada empresa que cresce organicamente chega a um ponto onde a fragmentação de processos se torna o maior obstáculo ao lucro.</p>
+            <h2>Gerenciar múltiplos processos em diferentes unidades é um caos sem o método certo.</h2>
         </div>
-        <div class="problema-grid fade-up delay-1">
-            <div class="prob-card before">
-                <h3>🚫 Cenário Atual (Sem CSC)</h3>
-                <ul>
-                    <li>Cada filial ou empresa do grupo tem seu próprio contador, time financeiro e processos.</li>
-                    <li>Redundância de funções: 10 empresas = 10x o custo de cada área.</li>
-                    <li>Inconsistência de dados: cada unidade usa um padrão diferente de planilha.</li>
-                    <li>Gestor perde tempo homologando o mesmo trabalho 10 vezes.</li>
-                    <li>Impossibilidade de escalar sem multiplicar a estrutura na mesma proporção.</li>
-                    <li>Auditoria e compliance fragmentados geram riscos fiscais.</li>
-                </ul>
+        <div class="pain-text fade-up delay-1">
+            <p>A ausência de uma estrutura centralizada transforma a operação em uma Corrida de obstáculos. Cada filial pede seu próprio relatório, cada SLA é cumprido no escuro, e cada plano de ação morre em uma planilha esquecida.</p>
+        </div>
+        <div class="pain-grid fade-up delay-2">
+            <div class="pain-card">
+                <div class="pain-icon">📋</div>
+                <h3>Falta de Padronização</h3>
+                <p>Cada filial opera do seu jeito. O que é feito na unidade A nunca é igual na unidade B.</p>
             </div>
-            <div class="prob-card after">
-                <h3>✅ Cenário com CSC Implementado</h3>
-                <ul>
-                    <li>Um único hub centraliza todos os processos financeiros, fiscais e administrativos.</li>
-                    <li>Economia de escala: custo unitário cai drasticamente com volume.</li>
-                    <li>Padronização total: um padrão, um formato, um processo.</li>
-                    <li>Gestores liberam tempo para estratégia, não para operação.</li>
-                    <li>Escala infinita: adiciona empresas sem multiplicar custos.</li>
-                    <li>Compliance integrado e auditoria simplificada em tempo real.</li>
-                </ul>
+            <div class="pain-card">
+                <div class="pain-icon">🌑</div>
+                <h3>SLA no Escuro</h3>
+                <p>Você não sabe onde está o gargalo. Só descobre quando o prazo já estourou.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">📉</div>
+                <h3>ROI Impossível de Medir</h3>
+                <p>Sem visibilidade de dados, é impossível provar o valor da centralização para a diretoria.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">💀</div>
+                <h3>Planos de Ação Morrem em Planilhas</h3>
+                <p>Ações corretivas são abertas mas nunca acompanhadas. O problema se repete todo mês.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- O QUE É CSC -->
-<section class="oque-section">
+<!-- 3 PILARES -->
+<section class="pilares-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>O que é um Centro de Serviços Compartilhados?</h2>
+            <h2>A Solução: Os 3 Pilares do CSC Strategy</h2>
+            <p>Uma plataforma que atua nas três fases críticas: Implementação, Operação e Intelligence.</p>
         </div>
-        <div class="csc-explain fade-up delay-1">
-            <p>Um <strong>Centro de Serviços Compartilhados (CSC)</strong> é uma estrutura organizacional que consolida atividades repetitivas e de alto volume em uma única unidade operacional. Em vez de cada empresa ou filial manter seu próprio time de contabilidade, fiscal e financeiro, todas as operações convergem para um <strong>hub centralizado</strong>.</p>
-            <p>Essa prática é utilizada pelas maiores corporações do mundo — de multinacionais a grupos empresariais familiares — e é o modelo que permite <strong>escalar um negócio sem multiplicar proporcionalmente os custos fixos</strong>.</p>
-        </div>
+        <div class="pilares-grid">
 
-        <div class="csc-pillars fade-up delay-2">
-            <div class="pillar-card">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <div class="pilar-card fade-up" style="--pilar-color: #fecb00; --pilar-bg: rgba(254, 203, 0, 0.1); --pilar-border: rgba(254, 203, 0, 0.3);">
+                <div class="pilar-num">01</div>
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
                 </div>
-                <h3>Padronização</h3>
-                <p>Um processo, um padrão, um resultado. Elimina a variação que gera erros, retrabalho e riscos fiscais.</p>
+                <h3>Framework de Implementação</h3>
+                <p class="pilar-title">The Roadmap</p>
+                <p>Siga um passo a passo metodológico à risca. Diagnóstico de maturidade, migração de processos e configuração de governança — tudo guiado e auditado.</p>
+                <ul class="pilar-list">
+                    <li>Diagnóstico de Maturidade por unidade</li>
+                    <li>Playbook de Migração (Lift & Shift)</li>
+                    <li>Configuração de SLA/OLA</li>
+                    <li>Governança e RACI definidos</li>
+                </ul>
             </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+
+            <div class="pilar-card fade-up delay-1" style="--pilar-color: #10b981; --pilar-bg: rgba(16, 185, 129, 0.1); --pilar-border: rgba(16, 185, 129, 0.3);">
+                <div class="pilar-num">02</div>
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
                 </div>
-                <h3>Redução de Custos</h3>
-                <p>Economia de escala imediata. Ativos compartilhados, equipes especializadas e processos otimizados cortam gastos em até 40%.</p>
+                <h3>Cockpit de Gestão Operacional</h3>
+                <p class="pilar-title">O Hub Central</p>
+                <p>Gestão de projetos, checklists de fechamento e planos de ação (5W2H) integrados. Se o SLA cair, o sistema alerta e exige a correção na hora.</p>
+                <ul class="pilar-list">
+                    <li>Workflow Engine de tarefas recorrentes</li>
+                    <li>Central de POPs e procedimentos</li>
+                    <li>Kaban de Planos de Ação 5W2H</li>
+                    <li>Alertas automáticos de SLA</li>
+                </ul>
             </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">
+
+            <div class="pilar-card fade-up delay-2" style="--pilar-color: #8b5cf6; --pilar-bg: rgba(139, 92, 246, 0.1); --pilar-border: rgba(139, 92, 246, 0.3);">
+                <div class="pilar-num">03</div>
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <h3>Intelligence & Analytics</h3>
+                <p class="pilar-title">BI Preditivo com IA</p>
+                <p>BI nativo com Python. Dashboards multi-empresa, análise de custo por transação e previsibilidade de demanda com Machine Learning. Seu diferencial competitivo.</p>
+                <ul class="pilar-list">
+                    <li>Dashboard consolidado n empresas</li>
+                    <li>Benchmarking interno (A vs B)</li>
+                    <li>Modelo preditivo de demanda</li>
+                    <li>IA Generativa para insights</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES GRID -->
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Funcionalidades de Destaque</h2>
+            <p>Cada módulo foi desenhado para resolver um problema real da operação de CSC.</p>
+        </div>
+        <div class="features-grid fade-up delay-1">
+
+            <div class="feat-card">
+                <div class="feat-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                 </div>
-                <h3>Escalabilidade</h3>
-                <p>Adicionar CNPJs ou filiais não significa recomeçar do zero. O CSC absorve o volume sem degradação de qualidade.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COMO ENTREGAMOS -->
-<section class="entrega-section">
-    <div class="container">
-        <div class="sec-title fade-up">
-            <h2>Como a Cerrado Finanças implementa o seu CSC</h2>
-            <p>Metodologia proprietária validada em grupos empresariais de diversos portes e segmentos.</p>
-        </div>
-
-        <div class="entrega-timeline">
-            
-            <div class="timeline-item fade-up">
-                <div class="timeline-dot"><div class="timeline-dot-inner">1</div></div>
-                <div class="timeline-content">
-                    <h3>Diagnóstico e Mapeamento</h3>
-                    <p>Auditamos todos os processos existentes — contabilidade, fiscal, financeiro, RH e jurídico. Levantamos o plano de contas, os fluxos de trabalho, os sistemas em uso e os pontos de dor. Geramos um relatório completo com o As-Is da operação.</p>
-                    <span class="timeline-tag">2-3 semanas</span>
-                </div>
+                <h3>SLA Dinâmico</h3>
+                <p>Monitoramento em tempo real de prazos e qualidade de cada serviço prestado pelo CSC às unidades.</p>
             </div>
 
-            <div class="timeline-item fade-up">
-                <div class="timeline-dot"><div class="timeline-dot-inner">2</div></div>
-                <div class="timeline-content">
-                    <h3>Design Organizacional</h3>
-                    <p>Desenhamos a arquitetura ideal do CSC: qual estrutura, quais processos ficam no hub, quais ficam nas unidades de negócio, como é a governança, quem reporta a quem. Definimos o SLA interno de cada serviço prestado pelo CSC às operações.</p>
-                    <span class="timeline-tag">2 semanas</span>
-                </div>
-            </div>
-
-            <div class="timeline-item fade-up">
-                <div class="timeline-dot"><div class="timeline-dot-inner">3</div></div>
-                <div class="timeline-content">
-                    <h3>Parametrização e Integração</h3>
-                    <p>Selecionamos e implementamos (ou otimizamos) o ERP/Sistema que sustentará o CSC. Parametrizamos o plano de contas unificado, os módulos de faturamento, conciliação, folha e SPED. Conectamos via API as pontas soltas da operação.</p>
-                    <span class="timeline-tag">3-4 semanas</span>
-                </div>
-            </div>
-
-            <div class="timeline-item fade-up">
-                <div class="timeline-dot"><div class="timeline-dot-inner">4</div></div>
-                <div class="timeline-content">
-                    <h3>Migração e Go-Live</h3>
-                    <p>Executamos a transição gradual — empresa por empresa ou processo por processo. Treinamos as equipes do hub e das unidades. Implementamos os dashboards de acompanhamento em tempo real. O CSC entra em operação.</p>
-                    <span class="timeline-tag">4-6 semanas</span>
-                </div>
-            </div>
-
-            <div class="timeline-item fade-up">
-                <div class="timeline-dot"><div class="timeline-dot-inner">5</div></div>
-                <div class="timeline-content">
-                    <h3>Otimização Contínua</h3>
-                    <p>Acompanhamos os primeiros 6 meses de operação com Reports quinzenais. Medimos KPIs de eficiência (custo por transação, tempo de fechamento, taxa de erro) e implementamos melhorias contínuas. A Cerrado permanece como parceira estratégica.</p>
-                    <span class="timeline-tag">6 meses +</span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- BENEFÍCIOS -->
-<section class="beneficios-section">
-    <div class="container">
-        <div class="sec-title fade-up">
-            <h2>Os resultados que você pode esperar</h2>
-            <p>Métricas reais observadas em projetos de CSC implementados pela Cerrado Finanças.</p>
-        </div>
-
-        <div class="benef-grid fade-up delay-1">
-            <div class="benef-card">
-                <div class="benef-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                </div>
-                <div class="benef-text">
-                    <h3>Redução de 30% a 40% nos custos fixos</h3>
-                    <p>Eliminar redundâncias e otimizar processos reduz o custo por transação financeiramente processada.</p>
-                </div>
-            </div>
-            <div class="benef-card">
-                <div class="benef-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                </div>
-                <div class="benef-text">
-                    <h3>Fechamento mensal 50% mais rápido</h3>
-                    <p>Processos padronizados e centralizados eliminam o gargalo de consistência entre unidades.</p>
-                </div>
-            </div>
-            <div class="benef-card">
-                <div class="benef-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="benef-text">
-                    <h3>Zero riscos de compliance fragmentado</h3>
-                    <p>Uma equipe especializada e atualizada, em vez de 10 equipes isoladas cometendo erros por falta de atualização.</p>
-                </div>
-            </div>
-            <div class="benef-card">
-                <div class="benef-icon">
+            <div class="feat-card">
+                <div class="feat-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                 </div>
-                <div class="benef-text">
-                    <h3>Decisões baseadas em dados reais</h3>
-                    <p>Um único source of truth. A diretoria acessa o painel consolidado da operação inteira em tempo real.</p>
-                </div>
+                <h3>Benchmarks Internos</h3>
+                <p>Compare a eficiência da Unidade A vs Unidade B instantaneamente. Identifique onde está o vazamento de tempo e dinheiro.</p>
             </div>
-            <div class="benef-card">
-                <div class="benef-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
-                <div class="benef-text">
-                    <h3>Gestores livres para strategar</h3>
-                    <p>Libere a energia mental dos gestores das filiais para focar em crescimento, vendas e resultado — não em processo.</p>
-                </div>
+                <h3>Central de Compliance</h3>
+                <p>Repositório de POPs (Procedimentos Operacionais Padrão) dinâmicos. Todos fazem igual, sempre.</p>
             </div>
-            <div class="benef-card">
-                <div class="benef-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
                 </div>
-                <div class="benef-text">
-                    <h3>Base sólida para crescimento</h3>
-                    <p>Com o CSC rodando, a empresa está pronta para duplicar de tamanho sem precisar duplicar a estrutura administrativa.</p>
+                <h3>Integração Facilitada</h3>
+                <p>API pronta para ler dados dos principais ERPs do mercado. Conecte Domínio, SAP, Totvs ou qualquer sistema via REST API.</p>
+            </div>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
                 </div>
+                <h3>Workflow Engine</h3>
+                <p>Motor de tarefas para atividades recorrentes: fechamento contábil, processamento de folha, emissão de relatórios — automatizado.</p>
+            </div>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3>IA para Insights Gerados</h3>
+                <p>Assistente de IA que analisa os dados de produtividade e sugere melhorias automaticamente. Ex: "Etapa de aprovação manual está acima da média".</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Como Funciona</h2>
+            <p>Da avaliação inicial à operação otimizada por IA — em quatro fases metodológicas.</p>
+        </div>
+        <div class="how-steps fade-up delay-1">
+            <div class="step-card">
+                <div class="step-circle">1</div>
+                <h3>Diagnóstico</h3>
+                <p>Avaliamos o nível de maturidade de cada empresa/unidade com nosso framework proprietário.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-circle">2</div>
+                <h3>Migração</h3>
+                <p>Executamos o Lift & Shift guiado pela plataforma. Cada etapa é auditada e documentada.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-circle">3</div>
+                <h3>Operação</h3>
+                <p>Centralização das atividades com monitoramento de SLA em tempo real e alertas automáticos.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-circle">4</div>
+                <h3>Evolução</h3>
+                <p>Aplicação de IA e BI para redução contínua de custos e otimização preditiva.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PARA QUEM -->
-<section class="para-quem-section">
+<!-- SOCIAL PROOF -->
+<section class="proof-section">
+    <div class="container">
+        <div class="proof-content fade-up">
+            <div class="proof-label">Ideal para</div>
+            <div class="proof-logos">
+                <div class="proof-logo-item">🏢 Grupos Empresariais</div>
+                <div class="proof-logo-item">🏭 Franquias</div>
+                <div class="proof-logo-item">🌾 Agro & Cooperativas</div>
+                <div class="proof-logo-item">🏛️ Órgãos Públicos</div>
+                <div class="proof-logo-item">💼 Consultorias de Gestão</div>
+            </div>
+            <div class="proof-authority">
+                <p>"Desenvolvido por especialistas em <strong>Contabilidade, Controladoria, Gestão</strong> e <strong>Data Science</strong>. A mesma metodologia que sustenta grupos empresariais de alto nível, agora acessível como plataforma SaaS."</p>
+                <p class="proof-role">— Equipe Cerrado Tech / Cerrado Finanças</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>Para quem é o CSC Strategy?</h2>
-            <p>O CSC Strategy é indicado para organizações que já sentem o peso da complexidade operacional.</p>
+            <h2>Perguntas Frequentes</h2>
         </div>
+        <div class="faq-list fade-up delay-1">
 
-        <div class="pq-grid fade-up delay-1">
-            <div class="pq-card">
-                <div class="pq-icon">🏢</div>
-                <h3>Grupos Empresariais</h3>
-                <p>Holdings e grupos com 3 ou mais empresas/CNPJs que mantêm estruturas redundantes em cada unidade.</p>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>O CSC Strategy substitui o meu ERP?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Não. O CSC Strategy é a <strong>camada de gestão e inteligência</strong> que consome os dados do seu ERP existente. Ele não substitui o sistema contábil — ele potencializa o que já está lá, agregando governança, visibilidade e automação por cima.</p>
+                </div>
             </div>
-            <div class="pq-card">
-                <div class="pq-icon">🏭</div>
-                <h3>Franquias e Redes</h3>
-                <p>Redes de franquias ou filiais que precisam de padronização fiscal, financeira e de processos em escala.</p>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Para quantas empresas o sistema é indicado?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Escalável de 2 a n unidades. A metodologia foi desenhada para funcionar tanto em um grupo de 3 CNPJs quanto em uma holding com 50 filiais. O custo de operação do CSC cai exponencialmente conforme o volume aumenta.</p>
+                </div>
             </div>
-            <div class="pq-card">
-                <div class="pq-icon">📈</div>
-                <h3>PMEs em Crescimento</h3>
-                <p>Empresas que passaram do primeiro milhão e sentem que a operação está consumindo mais atenção do que a estratégia.</p>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Quanto tempo leva para implementar?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>O diagnóstico inicial leva de 2 a 3 semanas. A fase de implementação completa — incluindo migração e go-live — pode variar de 60 a 90 dias, dependendo da complexidade da operação e do número de unidades. A partir do go-live, a fase de otimização é contínua.</p>
+                </div>
             </div>
-            <div class="pq-card">
-                <div class="pq-icon">🌾</div>
-                <h3> Agro & Cooperativas</h3>
-                <p>Grupos do agronegócio com múltiplas propriedades ou unidades de negócio que precisam de controle centralizado.</p>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Preciso de equipe interna de TI?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Não. A Cerrado Tech oferece implementação completa como serviço. Nossa equipe realiza a configuração, integração e treinamento. Você foca no negócio; nós cuidamos da tecnologia.</p>
+                </div>
             </div>
-            <div class="pq-card">
-                <div class="pq-icon">🏛️</div>
-                <h3>Governos e Autarquias</h3>
-                <p>Órgãos públicos que precisam centralizar a gestão administrativa e financeira para reduzir redundâncias entre secretarias.</p>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Posso licenciar a plataforma para usar com meus próprios clientes?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Sim. O CSC Strategy opera em dois modelos: <strong>direto para empresas</strong> que querem centralizar sua própria operação, e <strong>licença para consultores</strong> que desejam usar a plataforma como ferramenta de entrega com seus clientes. Cada cenário tem um plano personalizado.</p>
+                </div>
             </div>
-            <div class="pq-card">
-                <div class="pq-icon">💼</div>
-                <h3>Fundos e Investidores</h3>
-                <p>Veículos de investimento (FIIs, FIIS, Private Equity) que precisam de relatórios consolidados e auditados em tempo real.</p>
-            </div>
+
         </div>
     </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-bottom">
+<section class="cta-section">
     <div class="container fade-up">
-        <h2>Pronto para ter uma operação realmente escalável?</h2>
-        <p>Agende uma sessão de diagnóstico de 30 minutos com nossa equipe. Sem compromisso. Vamos mapear o potencial do CSC na sua operação.</p>
-        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero agendar um diagnóstico de CSC para minha empresa." target="_blank" class="btn-dark">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Agendar Diagnóstico Gratuito
+        <h2>Pronto para transformar sua operação?</h2>
+        <p>Agende uma demonstração personalizada de 30 minutos. Sem compromisso. Mostramos o CSC Strategy funcionando ao vivo.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero agendar uma demonstração do CSC Strategy." target="_blank" class="btn-dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Agendar Demonstração Gratuita
         </a>
     </div>
 </section>
