@@ -7,7 +7,7 @@ layout: null
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultorias | Cerrado Finanças</title>
-    <meta name="description" content="Consultorias especializadas em CSC, BPO Financeiro, Controladoria, Planejamento Tributário, Governança e M&A. Estruturação financeira de alto nível para empresas e governos.">
+    <meta name="description" content="Consultorias especializadas: CSC, BPO Financeiro, Controladoria, Planejamento Tributário, Governança, Venture Building, GovTech e mais. Estruturação financeira de alto nível para empresas e governos.">
     
     <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
@@ -37,7 +37,6 @@ layout: null
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
 
-        /* --- HERO --- */
         .hero-consultorias {
             background: linear-gradient(135deg, #020617 0%, #064e3b 100%);
             padding: 120px 0 100px;
@@ -113,7 +112,6 @@ layout: null
         .hero-icon-main svg { width: 100px; height: 100px; color: #fecb00; }
         .hero-icon-main span { font-size: 0.9rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* --- INTRO --- */
         .intro-section { padding: 100px 0; background: #0b0f19; border-top: 1px solid #1e293b; }
         .intro-content { max-width: 900px; margin: 0 auto; text-align: center; }
         .intro-content h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
@@ -123,7 +121,6 @@ layout: null
         .stat-number { font-size: 3rem; font-weight: 900; color: #fecb00; }
         .stat-label { font-size: 0.9rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- CONSULTORIAS LISTA --- */
         .consultorias-section { padding: 80px 0 100px; background: #020617; border-top: 1px solid #1e293b; }
         .sec-title { text-align: center; margin-bottom: 60px; }
         .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
@@ -171,7 +168,9 @@ layout: null
 
         .cons-content { flex: 1; }
         .cons-content h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
-        .cons-content p { font-size: 1.05rem; color: #94a3b8; line-height: 1.7; margin-bottom: 20px; }
+        .cons-content .cons-what { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: var(--accent-color, #fecb00); }
+        .cons-content p { font-size: 1.05rem; color: #94a3b8; line-height: 1.7; margin-bottom: 15px; }
+        .cons-content .cons-deliver { font-size: 1rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 18px; font-style: italic; }
         .cons-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .cons-tag {
             background: rgba(255,255,255,0.05);
@@ -200,7 +199,6 @@ layout: null
         }
         .btn-cons:hover { filter: brightness(1.1); transform: translateY(-2px); }
 
-        /* --- CTA --- */
         .cta-section { background: linear-gradient(135deg, #fecb00 0%, #d97706 100%); padding: 80px 0; text-align: center; color: #0f172a; }
         .cta-section h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
         .cta-section p { font-size: 1.15rem; color: rgba(15, 23, 42, 0.8); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
@@ -244,7 +242,7 @@ layout: null
     <div class="container">
         <div class="intro-content fade-up">
             <h2>Consultoria com Rigor Acadêmico e Validação de Mercado</h2>
-            <p>Nossa abordagem combina методология científica com anos de experiência na operação real de empresas brasileiras. Não entregamospptx genéricos. Desenhamos estruturas que funcionam no chão de fábrica e geram resultado no caixa.</p>
+            <p>Nossa abordagem combina metodologia científica com anos de experiência na operação real de empresas brasileiras. Não entregamos planilhas genéricas. Desenhamos estruturas que funcionam no chão de fábrica e geram resultado mensurável no caixa.</p>
             <div class="intro-stats">
                 <div class="stat-item">
                     <div class="stat-number">50+</div>
@@ -273,38 +271,34 @@ layout: null
 
         <div class="cons-grid">
 
+            <!-- 1. CSC Strategy -->
             <div class="cons-card fade-up" style="--accent-color: #fecb00; --accent-bg: rgba(254, 203, 0, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                            <line x1="6" y1="8" x2="6" y2="8.01"></line>
-                            <line x1="10" y1="8" x2="18" y2="8"></line>
-                            <line x1="6" y1="11" x2="18" y2="11"></line>
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
                         </svg>
                     </div>
                 </div>
                 <div class="cons-content">
                     <h3>CSC Strategy</h3>
-                    <p>Plataforma SaaS para implementação, gestão inteligente e escala de Centros de Serviços Compartilhados. Do diagnóstico de maturidade ao BI preditivo com IA — tudo em um lugar.</p>
+                    <div class="cons-what">Centro de Serviços Compartilhados</div>
+                    <p class="cons-deliver">Desenho e implementação de Centros de Serviços Compartilhados para grupos empresariais e holdings. Centralizamos processos financeiros, fiscais e administrativos num hub único, eliminando redundâncias e garantindo padronização total.</p>
+                    <p>Reduzimos custos operacionais em até 40% e asseguramos que todas as unidades de negócio sigam o mesmo padrão de excelência.</p>
                     <div class="cons-tags">
-                        <span class="cons-tag">BI Preditivo</span>
-                        <span class="cons-tag">Workflow Engine</span>
-                        <span class="cons-tag">Benchmarks</span>
-                        <span class="cons-tag">IA Generativa</span>
+                        <span class="cons-tag">Shared Services</span>
+                        <span class="cons-tag">Automação Processual</span>
+                        <span class="cons-tag">Redução de Custos</span>
                     </div>
                 </div>
                 <div class="cons-action">
                     <a href="/csc-strategy.html" class="btn-cons">Ver Plataforma →</a>
                 </div>
-                </div>
-                <div class="cons-action">
-                    <a href="/csc-strategy.html" class="btn-cons">Saiba Mais →</a>
-                </div>
             </div>
 
+            <!-- 2. BPO Financeiro -->
             <div class="cons-card fade-up" style="--accent-color: #10b981; --accent-bg: rgba(16, 185, 129, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
@@ -317,7 +311,9 @@ layout: null
                 </div>
                 <div class="cons-content">
                     <h3>BPO Financeiro</h3>
-                    <p>Terceirização completa da operação financeira. Nossa equipe assume o fechamento contábil, a conciliação bancária, o faturamento e a gestão de crédito e cobrança. Você mantém o foco na venda enquanto entregamos números limpos e em dia.</p>
+                    <div class="cons-what">Terceirização de Alta Performance</div>
+                    <p class="cons-deliver">Assumimos a operação financeira do seu negócio de ponta a ponta. A nossa equipe executa o fechamento contábil, a conciliação bancária, o faturamento, contas a pagar/receber e a gestão de crédito e cobrança.</p>
+                    <p>A sua diretoria mantém o foco estratégico nas vendas e na expansão, enquanto nós entregamos números limpos, auditados e em dia.</p>
                     <div class="cons-tags">
                         <span class="cons-tag">Contabilidade Digital</span>
                         <span class="cons-tag">Conciliação</span>
@@ -330,6 +326,7 @@ layout: null
                 </div>
             </div>
 
+            <!-- 3. Controladoria Estruturada -->
             <div class="cons-card fade-up" style="--accent-color: #0ea5e9; --accent-bg: rgba(14, 165, 233, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
@@ -343,12 +340,14 @@ layout: null
                 </div>
                 <div class="cons-content">
                     <h3>Controladoria Estruturada</h3>
-                    <p>Construímos a架构 de controladoria que a sua empresa precisa para escalar com segurança. Implantamos DRE Gerencial, Orçamento Base Zero, indicadores KPI e processos de auditoria interna. O CFO digital que toda PME precisa ter.</p>
+                    <div class="cons-what">CFO Digital para PMEs</div>
+                    <p class="cons-deliver">Construção da arquitetura de controladoria necessária para escalar com segurança. Atuamos como o seu CFO Digital, implementando DRE Gerencial detalhada, Orçamento Base Zero (OBZ), painéis de indicadores (KPIs) de alta precisão e processos rígidos de auditoria interna.</p>
+                    <p>Paramos o vazamento de caixa invisível na operação.</p>
                     <div class="cons-tags">
                         <span class="cons-tag">DRE Gerencial</span>
                         <span class="cons-tag">Orçamento Base Zero</span>
                         <span class="cons-tag">KPIs</span>
-                        <span class="cons-tag">Auditoria</span>
+                        <span class="cons-tag">Auditoria Interna</span>
                     </div>
                 </div>
                 <div class="cons-action">
@@ -356,6 +355,7 @@ layout: null
                 </div>
             </div>
 
+            <!-- 4. Planejamento Tributário -->
             <div class="cons-card fade-up" style="--accent-color: #8b5cf6; --accent-bg: rgba(139, 92, 246, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
@@ -365,10 +365,12 @@ layout: null
                     </div>
                 </div>
                 <div class="cons-content">
-                    <h3>Planejamento Tributário</h3>
-                    <p>Diagnóstico completo da carga tributária e reestruturação legal domix de tributação. Aplicação de benefícios fiscais, مانیز (Fator R, SCD, ECED), recuperação de créditos e defense em contenciosos administrativos. Economia real no bolso.</p>
+                    <h3>Planejamento Tributário e Inovação</h3>
+                    <div class="cons-what">Lei do Bem e Incentivos Fiscais</div>
+                    <p class="cons-deliver">Diagnóstico avançado da carga tributária e apuração de incentivos à inovação. Cruzamos a sua contabilidade com Inteligência Artificial (Plataforma Lei do Bem) para encontrar oportunidades de desoneração de IRPJ/CSLL.</p>
+                    <p>Realizamos a reestruturação do mix de tributação (Simples, Presumido, Real), aplicação de Fator R, recuperação de créditos e defesa ativa em contenciosos administrativos.</p>
                     <div class="cons-tags">
-                        <span class="cons-tag">Simples/Simples</span>
+                        <span class="cons-tag">Incentivos Fiscais</span>
                         <span class="cons-tag">Fator R</span>
                         <span class="cons-tag">Lucro Presumido</span>
                         <span class="cons-tag">Contencioso</span>
@@ -379,6 +381,7 @@ layout: null
                 </div>
             </div>
 
+            <!-- 5. Governança & M&A -->
             <div class="cons-card fade-up" style="--accent-color: #f59e0b; --accent-bg: rgba(245, 158, 11, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
@@ -391,20 +394,23 @@ layout: null
                     </div>
                 </div>
                 <div class="cons-content">
-                    <h3>Governança & M&A</h3>
-                    <p>Estruturação de governança corporativa para empresas familiares ou em processo de fusão e aquisição. Due diligence financeira, valuation, estruturação de deals e definição de holdCo/opCo. Preparamos sua empresa para receber investimento ou ser vendida pelo preço justo.</p>
+                    <h3>Governança, Risco e Compliance</h3>
+                    <div class="cons-what">GRC e Mitigação de Riscos</div>
+                    <p class="cons-deliver">Mitigação de riscos jurídicos, operacionais e de execução. Implementamos a plataforma CerraPlan (Workflow 5W2H) para garantir que apontamentos de auditoria sejam resolvidos e evidenciados.</p>
+                    <p>Atuamos como DPO as a Service (Cerrado Privacy), mapeando dados com IA para adequação total à LGPD, incluindo a geração de relatórios ROPA/RIPD.</p>
                     <div class="cons-tags">
-                        <span class="cons-tag">Due Diligence</span>
-                        <span class="cons-tag">Valuation</span>
-                        <span class="cons-tag">Family Business</span>
-                        <span class="cons-tag">Deal Structure</span>
+                        <span class="cons-tag">DPO as a Service</span>
+                        <span class="cons-tag">LGPD</span>
+                        <span class="cons-tag">Compliance 5W2H</span>
+                        <span class="cons-tag">Matriz de Risco</span>
                     </div>
                 </div>
                 <div class="cons-action">
-                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber sobre Governança e M&A." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber sobre Governança e Compliance." target="_blank" class="btn-cons">Falar com Consultor →</a>
                 </div>
             </div>
 
+            <!-- 6. Venture Building -->
             <div class="cons-card fade-up" style="--accent-color: #ec4899; --accent-bg: rgba(236, 72, 153, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
@@ -415,12 +421,14 @@ layout: null
                 </div>
                 <div class="cons-content">
                     <h3>Venture Building</h3>
-                    <p>Co-criação de startups do zero. Fornecemos a arquitetura financeira, contábil e tecnológica para transformar uma ideia em empresa. Estruturação societária, captação de seed/Series A, desenvolvimento de MVP e go-to-market strategy. A Cerrado Tech como sócia operacional.</p>
+                    <div class="cons-what">Criação de Startups</div>
+                    <p class="cons-deliver">Atuamos como o seu Sócio Operacional e Tecnológico (Tech Partner). Co-criamos startups do zero, fornecendo a arquitetura financeira, societária e tecnológica para transformar uma ideia num negócio rentável.</p>
+                    <p>Desenvolvemos o MVP (Produto Mínimo Viável), preparamos o Pitch Deck financeiro e ajudamos na captação de rodadas Seed / Series A.</p>
                     <div class="cons-tags">
-                        <span class="cons-tag">MVP</span>
+                        <span class="cons-tag">Criação de MVP</span>
                         <span class="cons-tag">Seed / Series A</span>
                         <span class="cons-tag">Pitch Deck</span>
-                        <span class="cons-tag">Valuation</span>
+                        <span class="cons-tag">Tech Partner</span>
                     </div>
                 </div>
                 <div class="cons-action">
@@ -428,6 +436,7 @@ layout: null
                 </div>
             </div>
 
+            <!-- 7. Consultoria GovTech -->
             <div class="cons-card fade-up" style="--accent-color: #06b6d4; --accent-bg: rgba(6, 182, 212, 0.1);">
                 <div class="cons-icon-wrap">
                     <div class="cons-icon">
@@ -440,16 +449,133 @@ layout: null
                 </div>
                 <div class="cons-content">
                     <h3>Consultoria GovTech</h3>
-                    <p>Assessoria especializada para prefeituras e órgãos públicos na contratação, implementação e gestão de sistemasGovTech. Levanta requisitos, avalia Editais, faz gestão de projetos com metodologia PMBOK e garante a aderência à LGPD e à IN 05/SEGES.</p>
+                    <div class="cons-what">Gestão Pública</div>
+                    <p class="cons-deliver">Assessoria especializada para Prefeituras, Câmaras e Órgãos Públicos. Apoiamos o setor público na contratação, implementação e gestão de sistemas tecnológicos.</p>
+                    <p>Fazemos o levantamento de requisitos, avaliação de Editais de TI, gestão de projetos via PMBOK e garantimos a aderência rigorosa à Nova Lei de Licitações e à LGPD.</p>
                     <div class="cons-tags">
                         <span class="cons-tag">Gestão Pública</span>
                         <span class="cons-tag">PMBOK</span>
-                        <span class="cons-tag">LGPD</span>
-                        <span class="cons-tag">Editais</span>
+                        <span class="cons-tag">Editais TI</span>
+                        <span class="cons-tag">Transformação Digital</span>
                     </div>
                 </div>
                 <div class="cons-action">
                     <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero uma consultoria GovTech." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 8. Web3 & Blockchain -->
+            <div class="cons-card fade-up" style="--accent-color: #6366f1; --accent-bg: rgba(99, 102, 241, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            <line x1="12" y1="12" x2="12" y2="16"></line>
+                            <line x1="10" y1="14" x2="14" y2="14"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Web3 e Blockchain Corporativo</h3>
+                    <div class="cons-what">Infraestrutura Descentralizada</div>
+                    <p class="cons-deliver">Transição de infraestruturas centralizadas para redes B2B descentralizadas. Desenhamos redes seguras para consórcios de empresas.</p>
+                    <p>Desenvolvemos Smart Contracts (Ethereum/Solidity) para automatizar liberações de pagamentos e estruturamos operações de Cadeias de Suprimentos (Supply Chain) 100% rastreáveis e imutáveis.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Ethereum / Solidity</span>
+                        <span class="cons-tag">Smart Contracts</span>
+                        <span class="cons-tag">Auditoria Imutável</span>
+                        <span class="cons-tag">Supply Chain</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="/blockchain.html" class="btn-cons">Ver Detalhes →</a>
+                </div>
+            </div>
+
+            <!-- 9. Engenharia de Software / IT Advisory -->
+            <div class="cons-card fade-up" style="--accent-color: #14b8a6; --accent-bg: rgba(20, 184, 166, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="22"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Engenharia de Software</h3>
+                    <div class="cons-what">IT Advisory e Mentoria</div>
+                    <p class="cons-deliver">Mentoria e auditoria de alto nível para o seu departamento interno de TI. A Cerrado atua como Conselheira Chefe de Tecnologia.</p>
+                    <p>Desenhamos a arquitetura em nuvem (Cloud/NoSQL), treinamos as suas equipes internas em metodologias ágeis (Scrum, Python, React) e realizamos Code Review rigoroso e Testes de Intrusão em sistemas de produção antes do lançamento oficial.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Cloud Architecture</span>
+                        <span class="cons-tag">Code Review</span>
+                        <span class="cons-tag">SecOps</span>
+                        <span class="cons-tag">Scrum Mastery</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber sobre IT Advisory e Engenharia de Software." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 10. Contabilidade Digital -->
+            <div class="cons-card fade-up" style="--accent-color: #84cc16; --accent-bg: rgba(132, 204, 22, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Contabilidade Digital e BPO Financeiro</h3>
+                    <div class="cons-what">Terceirização Contábil de Alta Performance</div>
+                    <p class="cons-deliver">A nossa equipe assume o fechamento contábil, a conciliação bancária, a gestão de contas a pagar/receber e o faturamento. Transformamos a contabilidade num instrumento de gestão em tempo real.</p>
+                    <p>A sua diretoria mantém o foco estratégico nas vendas, enquanto nós entregamos os números limpos, auditados e em dia.</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">Contabilidade Consultiva</span>
+                        <span class="cons-tag">Conciliação Bancária</span>
+                        <span class="cons-tag">FP&A</span>
+                        <span class="cons-tag">Crédito e Cobrança</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber mais sobre Contabilidade Digital e BPO." target="_blank" class="btn-cons">Falar com Consultor →</a>
+                </div>
+            </div>
+
+            <!-- 11. Implementação B2B -->
+            <div class="cons-card fade-up" style="--accent-color: #f97316; --accent-bg: rgba(249, 115, 22, 0.1);">
+                <div class="cons-icon-wrap">
+                    <div class="cons-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cons-content">
+                    <h3>Ecossistema Cerrado Tech - Implementação B2B</h3>
+                    <div class="cons-what">Transformação Digital com Nossas Plataformas</div>
+                    <p class="cons-deliver">Não apenas fornecemos o software — nós parametrizamos a tecnologia para a sua realidade. Implementamos e personalizamos as plataformas proprietárias da Cerrado Tech na sua empresa.</p>
+                    <p>Cerraflow (CRM com Financiamento Embutido), Cartor.IO (Bot de IA para automação semântica de WhatsApp), Broker Logístico ERP (simulador de fretes e metas), EloEleitoral (CRM de captação de demandas e gestão de mandatos) e CerraBI (BI e FP&A White-Label).</p>
+                    <div class="cons-tags">
+                        <span class="cons-tag">SaaS Corporativo</span>
+                        <span class="cons-tag">Automação com IA</span>
+                        <span class="cons-tag">CRM Inteligente</span>
+                        <span class="cons-tag">Mobile-First</span>
+                    </div>
+                </div>
+                <div class="cons-action">
+                    <a href="/solucoes.html" class="btn-cons">Ver Soluções →</a>
                 </div>
             </div>
 
