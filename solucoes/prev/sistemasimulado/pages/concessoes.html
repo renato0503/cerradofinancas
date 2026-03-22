@@ -1,0 +1,201 @@
+<!-- CONCESSÕES -->
+<div class="card mb-3">
+    <div class="card-header">
+        <h3>📋 Gestão de Concessões</h3>
+        <div class="d-flex gap-1">
+            <button class="btn btn-sm btn-secondary" onclick="exportTable('concessoes', 'excel')">
+                📥 Exportar
+            </button>
+            <button class="btn btn-sm btn-primary" data-modal="modal-concessao">
+                ➕ Novo Requerimento
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="filters-bar">
+            <div class="filter-group">
+                <label>Status</label>
+                <select class="form-select">
+                    <option value="">Todos</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="analise">Em Análise</option>
+                    <option value="deferida">Deferida</option>
+                    <option value="indeferida">Indeferida</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Tipo</label>
+                <select class="form-select">
+                    <option value="">Todos</option>
+                    <option value="aposentadoria-idade">Aposentadoria por Idade</option>
+                    <option value="aposentadoria-especial">Aposentadoria Especial</option>
+                    <option value="aposentadoria-invalidez">Aposentadoria por Invalidez</option>
+                    <option value="pensao">Pensão por Morte</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Período</label>
+                <input type="date" class="form-input">
+            </div>
+            <div class="filter-group" style="flex: 2;">
+                <label>Buscar</label>
+                <input type="text" class="form-input" placeholder="Buscar por nome ou matrícula...">
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Servidor</th>
+                        <th>Matrícula</th>
+                        <th>Tipo</th>
+                        <th>Data Solicitação</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>
+                            <strong>Maria da Conceição Oliveira</strong>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Professora Nível II</div>
+                        </td>
+                        <td>10455-2</td>
+                        <td>Apos. Especial</td>
+                        <td>20/03/2026</td>
+                        <td><span class="badge badge-success">✅ Deferida</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button class="btn-table view" onclick="alert('Visualizando concessão #001')">👁️</button>
+                                <button class="btn-table edit" onclick="alert('Editando concessão #001')">✏️</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>
+                            <strong>João Pereira dos Santos</strong>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Auxiliar Administrativo</div>
+                        </td>
+                        <td>8764-1</td>
+                        <td>Pensão por Morte</td>
+                        <td>21/03/2026</td>
+                        <td><span class="badge badge-info">⏳ Análise</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button class="btn-table view" onclick="alert('Visualizando concessão #002')">👁️</button>
+                                <button class="btn-table edit" onclick="alert('Editando concessão #002')">✏️</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#003</td>
+                        <td>
+                            <strong>Ana Carolina Silva</strong>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Enfermeira</div>
+                        </td>
+                        <td>7234-5</td>
+                        <td>Apos. Idade</td>
+                        <td>19/03/2026</td>
+                        <td><span class="badge badge-warning">⚠️ Pendente Docs</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button class="btn-table view" onclick="alert('Visualizando concessão #003')">👁️</button>
+                                <button class="btn-table edit" onclick="alert('Editando concessão #003')">✏️</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#004</td>
+                        <td>
+                            <strong>Carlos Mendes Costa</strong>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Motorista</div>
+                        </td>
+                        <td>4521-8</td>
+                        <td>Apos. Invalidez</td>
+                        <td>18/03/2026</td>
+                        <td><span class="badge badge-pending">📝 Aguardando</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button class="btn-table view" onclick="alert('Visualizando concessão #004')">👁️</button>
+                                <button class="btn-table edit" onclick="alert('Editando concessão #004')">✏️</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#005</td>
+                        <td>
+                            <strong>Patricia Almeida Ferreira</strong>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Professora Nível I</div>
+                        </td>
+                        <td>9987-3</td>
+                        <td>Apos. Especial</td>
+                        <td>17/03/2026</td>
+                        <td><span class="badge badge-danger">❌ Indeferida</span></td>
+                        <td>
+                            <div class="table-actions">
+                                <button class="btn-table view" onclick="alert('Visualizando concessão #005')">👁️</button>
+                                <button class="btn-table edit" onclick="alert('Editando concessão #005')">✏️</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="card">
+        <div class="card-header">
+            <h3>📊 Estatísticas do Módulo</h3>
+        </div>
+        <div class="card-body">
+            <div class="stat-card" style="margin-bottom: 15px;">
+                <div class="stat-value text-success">287</div>
+                <div class="stat-label">Deferidas (2026)</div>
+                <div class="progress mt-1">
+                    <div class="progress-bar success" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="stat-card" style="margin-bottom: 15px;">
+                <div class="stat-value text-warning">23</div>
+                <div class="stat-label">Em Análise</div>
+                <div class="progress mt-1">
+                    <div class="progress-bar warning" style="width: 12%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value text-danger">8</div>
+                <div class="stat-label">Indeferidas</div>
+                <div class="progress mt-1">
+                    <div class="progress-bar danger" style="width: 3%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>⚙️ Simulador de Concessão</h3>
+        </div>
+        <div class="card-body">
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                Teste o motor de regras previdenciárias. O sistema analisa automaticamente os requisitos e gera a memória de cálculo.
+            </p>
+            <div class="alert alert-info mb-2">
+                <div class="alert-icon">💡</div>
+                <div class="alert-content">
+                    <div class="alert-title">Simulação Demo</div>
+                    <div class="alert-message">Clique no botão para ver o motor de regras em ação.</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="openModal('modal-simulador')">
+                ▶️ Executar Simulação
+            </button>
+        </div>
+    </div>
+</div>

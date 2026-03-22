@@ -1,0 +1,149 @@
+<!-- PORTAL DO SERVIDOR -->
+<div class="alert alert-info mb-3">
+    <div class="alert-icon">👁️</div>
+    <div class="alert-content">
+        <div class="alert-title">Preview do Portal do Servidor</div>
+        <div class="alert-message">Esta é uma prévia de como o portal de autoatendimento aparecerá para os servidores.</div>
+    </div>
+</div>
+
+<div class="card mb-3" style="background: linear-gradient(135deg, var(--prev-primary) 0%, var(--prev-primary-light) 100%); color: white;">
+    <div class="card-body" style="display: flex; align-items: center; gap: 20px; padding: 30px;">
+        <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+            👤
+        </div>
+        <div style="flex: 1;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 5px;">Portal do Servidor</h2>
+            <p style="opacity: 0.9;">Autoatendimento 24 horas - Aposentados e Pensionistas</p>
+        </div>
+        <div>
+            <div style="font-size: 0.8rem; opacity: 0.8;">CRP Valido até</div>
+            <div style="font-size: 1.2rem; font-weight: 700;">15/08/2026</div>
+        </div>
+    </div>
+</div>
+
+<h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--text-secondary);">ESCOLHA UM SERVIÇO</h3>
+
+<div class="tiles-grid mb-3">
+    <div class="tile" onclick="alert('Abrindo Meu Cadastro...')">
+        <div class="tile-icon blue">👤</div>
+        <h4>Meu Cadastro</h4>
+        <p>Verificar e atualizar dados pessoais</p>
+    </div>
+    <div class="tile" onclick="alert('Abrindo Contracheque...')">
+        <div class="tile-icon green">💰</div>
+        <h4>Contracheque</h4>
+        <p>Visualizar holerites e histórico</p>
+    </div>
+    <div class="tile" onclick="alert('Abrindo Simulador...')">
+        <div class="tile-icon orange">🧮</div>
+        <h4>Simulador</h4>
+        <p>Calcular aposentadoria</p>
+    </div>
+    <div class="tile" onclick="alert('Emitindo 2ª Via...')">
+        <div class="tile-icon purple">📄</div>
+        <h4>2ª Via</h4>
+        <p>Baixar contracheque em PDF</p>
+    </div>
+    <div class="tile" onclick="alert('Solicitando Certidão...')">
+        <div class="tile-icon teal">📜</div>
+        <h4>Certidões</h4>
+        <p>CTC eTempo de Contribuição</p>
+    </div>
+    <div class="tile" onclick="openChatPortal()">
+        <div class="tile-icon red">💬</div>
+        <h4>Chat com IA</h4>
+        <p>Tire dúvidas sobre normas</p>
+    </div>
+    <div class="tile" onclick="alert('Extrato COMPREV...')">
+        <div class="tile-icon blue">🔄</div>
+        <h4>COMPREV</h4>
+        <p>Extrato de compensação</p>
+    </div>
+    <div class="tile" onclick="alert('Atualizar Senha...')">
+        <div class="tile-icon green">🔐</div>
+        <h4>Segurança</h4>
+        <p>Alterar senha e configurações</p>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="card">
+        <div class="card-header">
+            <h3>📊 Dados do Segurado Exemplo</h3>
+        </div>
+        <div class="card-body">
+            <table style="font-size: 0.9rem;">
+                <tr>
+                    <td style="color: var(--text-secondary); width: 40%;">Nome:</td>
+                    <td><strong>Maria da Conceição Oliveira</strong></td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text-secondary);">Matrícula:</td>
+                    <td>10455-2</td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text-secondary);">CPF:</td>
+                    <td>123.456.789-00</td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text-secondary);">Cargo:</td>
+                    <td>Professora Nível II</td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text-secondary);">Orgão:</td>
+                    <td>Prefeitura Municipal</td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text-secondary);">Tempo Contrib.:</td>
+                    <td>25 anos</td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text-secondary);">Tipo Benefício:</td>
+                    <td><span class="badge badge-success">Aposentada</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>💬 Chat com IA Normativa</h3>
+        </div>
+        <div class="card-body" style="padding: 0;">
+            <div class="chat-container">
+                <div class="chat-messages" style="height: 200px;">
+                    <div class="chat-message bot">
+                        <div class="chat-message-avatar">🤖</div>
+                        <div class="chat-message-content">
+                            Olá! Sou o assistente virtual do CerradoPrev. Como posso ajudá-lo hoje?
+                        </div>
+                    </div>
+                    <div class="chat-message user">
+                        <div class="chat-message-avatar">👤</div>
+                        <div class="chat-message-content">
+                            Quais os requisitos para aposentadoria especial do magistério?
+                        </div>
+                    </div>
+                    <div class="chat-message bot">
+                        <div class="chat-message-avatar">🤖</div>
+                        <div class="chat-message-content">
+                            Para aposentadoria especial do magistério, você precisa de 25 anos de efetivo exercício no cargo de professor. A idade mínima é 57 anos (mulheres) ou 60 anos (homens). Posso ajudar com mais alguma dúvida?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Digite sua dúvida...">
+                    <button class="chat-send" id="chat-send">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openChatPortal() {
+    alert('Abrindo Chat com IA Normativa...\n\nO servidor pode tirar dúvidas sobre:\n- Legislação previdenciária\n- Regras de concessão\n- Cálculos e benefícios\n- Normas do RPPS');
+}
+</script>

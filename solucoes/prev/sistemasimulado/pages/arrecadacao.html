@@ -1,0 +1,180 @@
+<!-- ARRECADAÇÃO -->
+<div class="stats-grid mb-3">
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon green">💵</div>
+        </div>
+        <div class="stat-value">R$ 2.850.000</div>
+        <div class="stat-label">Total Arrecadado (Mar/26)</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon blue">🏛️</div>
+        </div>
+        <div class="stat-value">R$ 1.850.000</div>
+        <div class="stat-label">Repasse Patronal</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon orange">👤</div>
+        </div>
+        <div class="stat-value">R$ 950.000</div>
+        <div class="stat-label">Contrib. Servidores</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon red">⚠️</div>
+            <span class="stat-trend down">↑ 2.1%</span>
+        </div>
+        <div class="stat-value">R$ 45.200</div>
+        <div class="stat-label">Inadimplência</div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h3>📋 Repasses Mensais</h3>
+        <div class="d-flex gap-1">
+            <button class="btn btn-sm btn-secondary" onclick="exportTable('repasses', 'pdf')">📄 PDF</button>
+            <button class="btn btn-sm btn-primary">📄 Gerar Guia GPS</button>
+        </div>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Competência</th>
+                    <th>Vlr. Patronal</th>
+                    <th>Vlr. Servidor</th>
+                    <th>Total</th>
+                    <th>Data Repasse</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Março/2026</td>
+                    <td>R$ 1.850.000</td>
+                    <td>R$ 950.000</td>
+                    <td><strong>R$ 2.800.000</strong></td>
+                    <td>20/03/2026</td>
+                    <td><span class="badge badge-success">✅ Confirmado</span></td>
+                </tr>
+                <tr>
+                    <td>Fevereiro/2026</td>
+                    <td>R$ 1.780.000</td>
+                    <td>R$ 920.000</td>
+                    <td><strong>R$ 2.700.000</strong></td>
+                    <td>20/02/2026</td>
+                    <td><span class="badge badge-success">✅ Confirmado</span></td>
+                </tr>
+                <tr>
+                    <td>Janeiro/2026</td>
+                    <td>R$ 1.750.000</td>
+                    <td>R$ 910.000</td>
+                    <td><strong>R$ 2.660.000</strong></td>
+                    <td>20/01/2026</td>
+                    <td><span class="badge badge-success">✅ Confirmado</span></td>
+                </tr>
+                <tr>
+                    <td>Dezembro/2025</td>
+                    <td>R$ 1.720.000</td>
+                    <td>R$ 890.000</td>
+                    <td><strong>R$ 2.610.000</strong></td>
+                    <td>20/12/2025</td>
+                    <td><span class="badge badge-success">✅ Confirmado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="card">
+        <div class="card-header">
+            <h3>📈 Arrecadação Mensal (Últimos 12 meses)</h3>
+        </div>
+        <div class="card-body">
+            <div class="chart-placeholder" style="height: 250px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem;">📊</div>
+                    <p>Gráfico de Barras - Valores em Milhares</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>🔄 Conciliação Bancária</h3>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-success mb-2">
+                <div class="alert-icon">✅</div>
+                <div class="alert-content">
+                    <div class="alert-title">Conciliação OK</div>
+                    <div class="alert-message">Todas as entradas dos últimos 30 dias foram conciliadas.</div>
+                </div>
+            </div>
+            
+            <h4 style="font-size: 0.9rem; margin: 15px 0 10px; color: var(--text-secondary);">RESUMO</h4>
+            <table style="font-size: 0.85rem;">
+                <tr>
+                    <td>Total Arrecadado</td>
+                    <td class="text-right font-bold">R$ 2.850.000</td>
+                </tr>
+                <tr>
+                    <td>Repasses Confirmados</td>
+                    <td class="text-right font-bold text-success">R$ 2.800.000</td>
+                </tr>
+                <tr>
+                    <td style="color: var(--prev-danger);">Diferença</td>
+                    <td class="text-right font-bold text-danger">R$ 50.000</td>
+                </tr>
+            </table>
+            
+            <button class="btn btn-secondary mt-2" style="width: 100%;">
+                🔄 Realizar Nova Conciliação
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h3>📋 Parcelamentos</h3>
+        <button class="btn btn-sm btn-primary">➕ Novo Parcelamento</button>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Contrato</th>
+                    <th>Orgão</th>
+                    <th>Valor Total</th>
+                    <th>Parcelas Pagas</th>
+                    <th>Parcelas Restantes</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#PAR-2024-001</td>
+                    <td>Prefeitura Municipal</td>
+                    <td>R$ 5.200.000</td>
+                    <td>12 / 60</td>
+                    <td>48</td>
+                    <td><span class="badge badge-success">✅ Regular</span></td>
+                </tr>
+                <tr>
+                    <td>#PAR-2025-002</td>
+                    <td>Câmara Municipal</td>
+                    <td>R$ 1.800.000</td>
+                    <td>6 / 36</td>
+                    <td>30</td>
+                    <td><span class="badge badge-success">✅ Regular</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

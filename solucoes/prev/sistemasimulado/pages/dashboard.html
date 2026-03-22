@@ -1,0 +1,155 @@
+<!-- DASHBOARD COMPLETO -->
+<div class="mb-3">
+    <div class="alert alert-info">
+        <div class="alert-icon">💡</div>
+        <div class="alert-content">
+            <div class="alert-title">Modo Simulação</div>
+            <div class="alert-message">Este é um protótipo interativo. Todos os dados são simulados.</div>
+        </div>
+    </div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon blue">👥</div>
+            <span class="stat-trend up">↑ 3.2%</span>
+        </div>
+        <div class="stat-value">1.245</div>
+        <div class="stat-label">Total de Segurados</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon green">🎓</div>
+            <span class="stat-trend up">↑ 5</span>
+        </div>
+        <div class="stat-value">342</div>
+        <div class="stat-label">Benefícios Concedidos</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon orange">💵</div>
+            <span class="stat-trend up">↑ 8.5%</span>
+        </div>
+        <div class="stat-value">R$ 2,85M</div>
+        <div class="stat-label">Arrecadação Mensal</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon green">✅</div>
+        </div>
+        <div class="stat-value">98.5%</div>
+        <div class="stat-label">Taxa Sucesso CRP</div>
+    </div>
+</div>
+
+<div class="grid-2 mb-3">
+    <div class="card">
+        <div class="card-header">
+            <h3>⚠️ Alertas em Tempo Real</h3>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <div class="alert-title">3 requerimentos pendentes</div>
+                    <div class="alert-message">Aguardando análise há mais de 5 dias úteis.</div>
+                </div>
+            </div>
+            <div class="alert alert-danger">
+                <div class="alert-icon">🔴</div>
+                <div class="alert-content">
+                    <div class="alert-title">2 Certidões CTC pendentes</div>
+                    <div class="alert-message">Processos aguardando conclusão no COMPREV.</div>
+                </div>
+            </div>
+            <div class="alert alert-success">
+                <div class="alert-icon">✅</div>
+                <div class="alert-content">
+                    <div class="alert-title">CRP válido até 15/08/2026</div>
+                    <div class="alert-message">146 dias restantes para renovação.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>📋 Últimas Concessões</h3>
+            <button class="btn btn-sm btn-secondary" onclick="navigateTo('concessoes')">Ver Todas</button>
+        </div>
+        <div class="card-body" style="padding: 0;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servidor</th>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Maria S. Oliveira</strong></td>
+                        <td>Apos. Idade</td>
+                        <td>22/03</td>
+                        <td><span class="badge badge-success">✅ Deferida</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>João P. Santos</strong></td>
+                        <td>Pensão</td>
+                        <td>21/03</td>
+                        <td><span class="badge badge-success">✅ Deferida</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ana C. Silva</strong></td>
+                        <td>Apos. Especial</td>
+                        <td>20/03</td>
+                        <td><span class="badge badge-pending">⏳ Análise</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Carlos M. Costa</strong></td>
+                        <td>Invalidez</td>
+                        <td>19/03</td>
+                        <td><span class="badge badge-warning">⚠️ Pendente</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="card">
+        <div class="card-header">
+            <h3>📈 Evolução de Despesas com Pessoal</h3>
+        </div>
+        <div class="card-body">
+            <div class="chart-placeholder">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">📊</div>
+                    <p>Gráfico de Linha - Evolução 12 meses</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Valores em milhões (R$)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3>🥧 Distribuição de Benefícios</h3>
+        </div>
+        <div class="card-body">
+            <div class="chart-placeholder">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🥧</div>
+                    <p>Gráfico de Pizza - Tipos de Benefícios</p>
+                    <div style="margin-top: 15px; font-size: 0.85rem;">
+                        <span style="color: var(--prev-primary-light);">●</span> Aposentadorias: 72% 
+                        <span style="color: var(--prev-accent); margin-left: 10px;">●</span> Pensões: 22%
+                        <span style="color: var(--prev-danger); margin-left: 10px;">●</span> Invalidez: 6%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

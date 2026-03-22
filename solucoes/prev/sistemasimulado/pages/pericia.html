@@ -1,0 +1,166 @@
+<!-- PERÍCIA MÉDICA -->
+<div class="grid-2 mb-3">
+    <div class="card">
+        <div class="card-header">
+            <h3>📅 Agenda de Perícias</h3>
+            <button class="btn btn-sm btn-primary">➕ Agendar</button>
+        </div>
+        <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Dom</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Seg</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Ter</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Qua</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Qui</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Sex</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Sáb</div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; margin-top: 10px;">
+                <div></div>
+                <div></div>
+                <div class="calendar-day" style="padding: 8px; background: var(--surface-alt); border-radius: 8px; cursor: pointer;">1</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">2</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">3</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">4</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">5</div>
+                <div class="calendar-day" style="padding: 8px; background: #dbeafe; cursor: pointer; border: 2px solid var(--prev-primary-light);">6</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">7</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">8</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">9</div>
+                <div class="calendar-day" style="padding: 8px; background: #fef3c7; cursor: pointer;">10</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">11</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">12</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">13</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">14</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">15</div>
+                <div class="calendar-day" style="padding: 8px; background: #bbf7d0; cursor: pointer;">16</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">17</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">18</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">19</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">20</div>
+                <div class="calendar-day" style="padding: 8px; background: #fecaca; cursor: pointer;">21</div>
+                <div class="calendar-day" style="padding: 8px; background: var(--prev-primary-light); color: white; font-weight: 700; border-radius: 8px;">22</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">23</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">24</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">25</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">26</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">27</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">28</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">29</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">30</div>
+                <div class="calendar-day" style="padding: 8px; cursor: pointer;">31</div>
+            </div>
+            
+            <div style="margin-top: 15px; font-size: 0.8rem; display: flex; gap: 15px; flex-wrap: wrap;">
+                <span><span style="display: inline-block; width: 12px; height: 12px; background: var(--prev-primary-light); border-radius: 2px; margin-right: 4px;"></span>Hoje</span>
+                <span><span style="display: inline-block; width: 12px; height: 12px; background: #bbf7d0; border-radius: 2px; margin-right: 4px;"></span>Com Perícia</span>
+                <span><span style="display: inline-block; width: 12px; height: 12px; background: #fef3c7; border-radius: 2px; margin-right: 4px;"></span>Parcial</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>🤖 AI Assistente - Análise de CID</h3>
+        </div>
+        <div class="card-body">
+            <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                Anexe um atestado médico e deixe a IA sugerir o CID correto para análise do perito.
+            </p>
+            
+            <div class="form-group">
+                <label class="form-label">Anexar Atestado (PDF/Imagem)</label>
+                <input type="file" class="form-input" accept=".pdf,.jpg,.png" style="padding: 8px;">
+            </div>
+            
+            <button class="btn btn-primary" style="width: 100%;" id="analyze-pericia" onclick="analyzeAtestado()">
+                🔍 Analisar com IA
+            </button>
+            
+            <div id="pericia-result" class="mt-2">
+                <div class="alert alert-info">
+                    <div class="alert-icon">💡</div>
+                    <div class="alert-content">
+                        <div class="alert-title">Aguardando arquivo</div>
+                        <div class="alert-message">Anexe um atestado para iniciar a análise.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h3>📋 Laudos Recentes</h3>
+        <button class="btn btn-sm btn-secondary" onclick="exportTable('laudos', 'pdf')">📄 Exportar</button>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>CID</th>
+                    <th>Diagnóstico</th>
+                    <th>Perito</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Carlos Mendes Costa</strong></td>
+                    <td><span class="badge badge-info">J44.9</span></td>
+                    <td>DPOC</td>
+                    <td>Dr. Roberto Silva</td>
+                    <td>22/03/2026</td>
+                    <td><span class="badge badge-success">✅ Assinado</span></td>
+                    <td><button class="btn-table view">👁️</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Patricia Almeida</strong></td>
+                    <td><span class="badge badge-warning">M54.5</span></td>
+                    <td>Lombalgia</td>
+                    <td>Dr. Roberto Silva</td>
+                    <td>21/03/2026</td>
+                    <td><span class="badge badge-warning">⏳ Pendente</span></td>
+                    <td><button class="btn-table view">👁️</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Fernando Gomes</strong></td>
+                    <td><span class="badge badge-info">I10</span></td>
+                    <td>Hipertensão</td>
+                    <td>Dra. Carla Santos</td>
+                    <td>20/03/2026</td>
+                    <td><span class="badge badge-success">✅ Assinado</span></td>
+                    <td><button class="btn-table view">👁️</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="grid-3">
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon blue">📅</div>
+        </div>
+        <div class="stat-value">45</div>
+        <div class="stat-label">Perícias Marcadas (Mar)</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon green">✅</div>
+        </div>
+        <div class="stat-value">38</div>
+        <div class="stat-label">Laudos Emitidos</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon orange">⏳</div>
+        </div>
+        <div class="stat-value">7</div>
+        <div class="stat-label">Aguardando Assinatura</div>
+    </div>
+</div>
