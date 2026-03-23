@@ -86,6 +86,9 @@ permalink: /solucoes/edu/
         
         .btn-action { background: var(--edu-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--edu-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4); }
+        .btn-action.outline { background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff; box-shadow: none; }
+        .btn-action.outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-3px); }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
 
         @media(max-width: 992px){ 
             .edu-split-layout { flex-direction: column; text-align: center; gap: 40px; }
@@ -215,10 +218,14 @@ permalink: /solucoes/edu/
                     <span class="hero-tag fade-up delay-1">Plataforma GovTech Educacional</span>
                     <h1 class="fade-up delay-1">Cerrado Edu</h1>
                     <p class="fade-up delay-2">O Sistema de Gestão Escolar definitivo para redes municipais e estaduais. 100% web, estruturado em mais de 28 módulos e equipado com Inteligência Artificial para predição de evasão escolar e surtos epidemiológicos.</p>
-                    <div class="fade-up delay-3">
+                    <div class="hero-btns fade-up delay-3">
                         <a href="#simulador" class="btn-action">
-                            Testar Motor de Inteligência Artificial
+                            Testar IA Preditiva
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </a>
+                        <a href="/solucoes/edu/simuladoredu/" class="btn-action outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                            Explorar Sistema Completo
                         </a>
                     </div>
                 </div>
@@ -428,7 +435,13 @@ permalink: /solucoes/edu/
         <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Digitalize sua Secretaria de Educação.</h2>
             <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma apresentação técnica e descubra como o Cerrado Edu pode reduzir a evasão e automatizar a prestação de contas do seu município.</p>
-            <a href="/index.html#contato" class="btn-action" style="background: var(--edu-accent); color: var(--dash-panel); box-shadow: 0 10px 20px rgba(254, 203, 0, 0.2);">Solicitar Demonstração Gratuita</a>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="/index.html#contato" class="btn-action" style="background: var(--edu-accent); color: var(--dash-panel); box-shadow: 0 10px 20px rgba(254, 203, 0, 0.2);">Solicitar Demonstração Gratuita</a>
+                <a href="/solucoes/edu/simuladoredu/" class="btn-action outline">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Explorar o Simulador
+                </a>
+            </div>
         </div>
     </section>
 

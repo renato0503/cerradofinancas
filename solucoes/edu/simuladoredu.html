@@ -1,7 +1,4 @@
----
-layout: null
-permalink: /solucoes/edu/simuladoredu/
----
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,15 +7,13 @@ permalink: /solucoes/edu/simuladoredu/
     <title>Simulador Cerrado Edu | Demonstração Interativa do Sistema</title>
     <meta name="description" content="Teste todos os módulos do Cerrado Edu: gestão escolar, diário do professor, IA preditiva, matrículas e muito mais.">
     
-    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    <link rel="icon" type="image/png" href="https://www.cerradofinancas.com.br/img/folinha.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
 
     <style>
         :root {
@@ -35,12 +30,14 @@ permalink: /solucoes/edu/simuladoredu/
             --surface: #f8fafc;
         }
 
+        * { box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--surface);
             color: #334155;
             line-height: 1.6;
-            padding-top: 80px;
+            padding-top: 0;
+            margin: 0;
             overflow-x: hidden;
         }
 
@@ -133,13 +130,67 @@ permalink: /solucoes/edu/simuladoredu/
             color: #fff;
         }
 
+        /* APP TOPBAR */
+        .app-topbar {
+            background: linear-gradient(135deg, var(--edu-dark) 0%, #1e1b4b 100%);
+            padding: 0 20px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .app-topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .app-topbar-brand img {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+        }
+        .app-topbar-brand span {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .app-topbar-brand small {
+            font-size: 0.75rem;
+            color: #a5b4fc;
+            font-weight: 500;
+            display: block;
+            line-height: 1;
+        }
+        .app-topbar-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #e2e8f0;
+            font-size: 0.85rem;
+        }
+        .app-topbar-user .avatar {
+            width: 34px;
+            height: 34px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #fff;
+        }
         /* NAVIGATION TABS */
         .sim-nav {
             background: #fff;
             border-bottom: 1px solid #e2e8f0;
             padding: 0;
             position: sticky;
-            top: 80px;
+            top: 56px;
             z-index: 100;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
@@ -201,7 +252,7 @@ permalink: /solucoes/edu/simuladoredu/
             border: 1px solid #e2e8f0;
             height: fit-content;
             position: sticky;
-            top: 160px;
+            top: 130px;
         }
         .sidebar-section { margin-bottom: 20px; }
         .sidebar-title {
@@ -762,7 +813,20 @@ permalink: /solucoes/edu/simuladoredu/
 </head>
 <body>
 
-    {% include header.html titulo="Cerrado Tech" %}
+    <!-- APP TOPBAR -->
+    <div class="app-topbar">
+        <div class="app-topbar-brand">
+            <img src="https://www.cerradofinancas.com.br/img/edu.png" alt="Cerrado Edu" onerror="this.src='https://www.cerradofinancas.com.br/img/logo.png'">
+            <div>
+                <span>Cerrado Edu</span>
+                <small>Sistema de Gestão Escolar</small>
+            </div>
+        </div>
+        <div class="app-topbar-user">
+            <span>🏫 Escola Modelo</span>
+            <div class="avatar">MA</div>
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="sim-hero">
@@ -777,13 +841,13 @@ permalink: /solucoes/edu/simuladoredu/
                             Explorar Módulos
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
-                        <a href="/solucoes/edu/" class="btn-demo secondary">
+                        <a href="https://www.cerradofinancas.com.br/solucoes/edu/" class="btn-demo secondary" target="_blank">
                             Voltar à Landing
                         </a>
                     </div>
                 </div>
                 <div class="fade-up delay-2" style="flex-shrink: 0;">
-                    <img src="{{ '/img/edu.png' | relative_url }}" alt="Cerrado Edu" style="width: 140px; height: 140px; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+            <img src="https://www.cerradofinancas.com.br/img/edu.png" alt="Cerrado Edu" style="width: 140px; height: 140px; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
                 </div>
             </div>
         </div>
@@ -1756,9 +1820,7 @@ permalink: /solucoes/edu/simuladoredu/
         </div>
     </main>
 
-    {% include footer.html %}
 
-    <script src="{{ '/js/main.js' | relative_url }}"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
