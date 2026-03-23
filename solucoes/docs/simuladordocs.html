@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Docs | Simulador de Inteligência Documental</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --docs-bg: #020617;
+            --docs-sidebar: #0f172a;
+            --docs-primary: #0ea5e9;
+            --docs-primary-glow: rgba(14, 165, 233, 0.4);
+            --docs-secondary: #6366f1;
+            --docs-accent: #22d3ee;
+            --docs-text: #f8fafc;
+            --docs-text-muted: #94a3b8;
+            --docs-surface: rgba(30, 41, 59, 0.6);
+            --docs-border: rgba(51, 65, 85, 0.5);
+            --docs-card-bg: #1e293b;
+            --docs-success: #10b981;
+            --docs-warning: #f59e0b;
+            --docs-danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--docs-bg);
+            color: var(--docs-text);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--docs-sidebar);
+            border-right: 1px solid var(--docs-border);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .brand {
+            padding: 0 24px 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--docs-primary), var(--docs-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px var(--docs-primary-glow);
+        }
+
+        .brand h2 {
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--docs-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 0 12px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 12px;
+            text-decoration: none;
+            color: var(--docs-text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-item i {
+            width: 20px;
+            height: 20px;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover {
+            color: var(--docs-text);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-item.active {
+            color: var(--docs-primary);
+            background: rgba(14, 165, 233, 0.1);
+            font-weight: 700;
+        }
+
+        .nav-item.active i {
+            color: var(--docs-primary);
+            filter: drop-shadow(0 0 5px var(--docs-primary-glow));
+        }
+
+        .sidebar-footer {
+            padding: 24px;
+            border-top: 1px solid var(--docs-border);
+        }
+
+        .user-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--docs-card-bg);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--docs-border);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--docs-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .user-info span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .user-info small {
+            color: var(--docs-text-muted);
+            font-size: 0.75rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        header {
+            height: 72px;
+            padding: 0 40px;
+            border-bottom: 1px solid var(--docs-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+
+        .page-title h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .search-bar {
+            background: var(--docs-sidebar);
+            border: 1px solid var(--docs-border);
+            padding: 8px 16px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 320px;
+        }
+
+        .search-bar input {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 0.9rem;
+            width: 100%;
+            outline: none;
+        }
+
+        /* Content Modules */
+        .module {
+            padding: 40px;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .module.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Dashboard UI */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--docs-card-bg);
+            border: 1px solid var(--docs-border);
+            padding: 24px;
+            border-radius: 16px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            border-color: var(--docs-primary);
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            color: var(--docs-primary);
+            margin-bottom: 16px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            color: var(--docs-text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-trend {
+            font-size: 0.75rem;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-trend.up { color: var(--docs-success); }
+
+        .dashboard-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .panel-card {
+            background: var(--docs-card-bg);
+            border: 1px solid var(--docs-border);
+            padding: 32px;
+            border-radius: 16px;
+            height: 100%;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .panel-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .action-btn {
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid var(--docs-primary);
+            color: var(--docs-primary);
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background: var(--docs-primary);
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        /* Activities */
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--docs-border);
+        }
+
+        .activity-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .activity-content p {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .activity-content small {
+            font-size: 0.75rem;
+            color: var(--docs-text-muted);
+        }
+
+        /* Economy Visual */
+        .savings-visual {
+            background: linear-gradient(to bottom right, #1e293b, #0f172a);
+            border: 1px solid var(--docs-border);
+            padding: 24px;
+            border-radius: 16px;
+            margin-top: 24px;
+        }
+
+        .savings-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .savings-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--docs-accent);
+        }
+
+        .savings-progress {
+            height: 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .savings-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--docs-primary), var(--docs-accent));
+            width: 78%;
+        }
+
+        /* Repository UI */
+        .repo-container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            height: calc(100vh - 200px);
+        }
+
+        .folder-tree {
+            background: var(--docs-sidebar);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--docs-border);
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            color: var(--docs-text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .tree-item:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .tree-item.active { color: var(--docs-primary); background: rgba(14, 165, 233, 0.1); }
+
+        .file-explorer {
+            background: var(--docs-card-bg);
+            border: 1px solid var(--docs-border);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .explorer-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--docs-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .file-table th {
+            text-align: left;
+            padding: 12px 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--docs-text-muted);
+            border-bottom: 1px solid var(--docs-border);
+        }
+
+        .file-table td {
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--docs-border);
+        }
+
+        .file-row:hover { background: rgba(255,255,255,0.02); cursor: pointer; }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .status-badge.indexed { background: rgba(16, 185, 129, 0.1); color: var(--docs-success); border: 1px solid var(--docs-success); }
+        .status-badge.pending { background: rgba(245, 158, 11, 0.1); color: var(--docs-warning); border: 1px solid var(--docs-warning); }
+
+        /* OCR Module */
+        .ocr-workspace {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .scan-simulator {
+            background: #0f172a;
+            border: 2px dashed var(--docs-primary);
+            border-radius: 16px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--docs-primary);
+            box-shadow: 0 0 15px var(--docs-primary);
+            display: none;
+            z-index: 10;
+        }
+
+        .scanning .scan-line {
+            display: block;
+            animation: scanMove 2s infinite linear;
+        }
+
+        @keyframes scanMove {
+            0% { top: 0; }
+            50% { top: 100%; }
+            100% { top: 0; }
+        }
+
+        .ocr-results {
+            background: var(--docs-card-bg);
+            border: 1px solid var(--docs-border);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .extracted-field {
+            background: rgba(255,255,255,0.03);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--docs-primary);
+        }
+
+        .extracted-field label {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--docs-text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .extracted-field span {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--docs-accent);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--docs-primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-primary:hover { background: #0284c7; }
+
+        /* RAG Search UI */
+        .rag-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .search-hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .search-hero h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #fff, var(--docs-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .rag-search-box {
+            position: relative;
+            background: var(--docs-card-bg);
+            border: 2px solid var(--docs-border);
+            border-radius: 20px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .rag-search-box:focus-within {
+            border-color: var(--docs-primary);
+            box-shadow: 0 0 30px var(--docs-primary-glow);
+        }
+
+        .rag-search-box input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: #fff;
+            padding: 16px 24px;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        .ai-response {
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px solid var(--docs-primary);
+            border-radius: 16px;
+            padding: 32px;
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .response-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: var(--docs-primary);
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .response-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: #e2e8f0;
+        }
+
+        .citation-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--docs-border);
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .citation-card:hover { background: rgba(255,255,255,0.1); border-color: var(--docs-primary); }
+
+        /* Chat Module */
+        .chat-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 24px;
+            height: calc(100vh - 180px);
+        }
+
+        .doc-viewer {
+            background: #1e293b;
+            border-radius: 16px;
+            border: 1px solid var(--docs-border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .viewer-header {
+            padding: 12px 20px;
+            background: var(--docs-sidebar);
+            border-bottom: 1px solid var(--docs-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pdf-page {
+            flex: 1;
+            background: #cbd5e1;
+            margin: 20px;
+            border-radius: 4px;
+            padding: 40px;
+            color: #1e293b;
+            font-family: serif;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .pdf-highlight {
+            position: absolute;
+            background: rgba(234, 179, 8, 0.3);
+            border: 1px solid #eab308;
+            pointer-events: none;
+        }
+
+        .chat-sidebar {
+            background: var(--docs-sidebar);
+            border-radius: 16px;
+            border: 1px solid var(--docs-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .msg { padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; max-width: 85%; }
+        .msg.ai { background: rgba(255,255,255,0.05); border: 1px solid var(--docs-border); align-self: flex-start; }
+        .msg.user { background: var(--docs-primary); color: #fff; align-self: flex-end; }
+
+        .chat-input {
+            padding: 16px;
+            border-top: 1px solid var(--docs-border);
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--docs-border);
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+        }
+
+        /* Workflow UI */
+        .workflow-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px 0 60px;
+        }
+
+        .workflow-timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--docs-border);
+            z-index: 1;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 120px;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--docs-sidebar);
+            border: 2px solid var(--docs-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--docs-text-muted);
+            transition: 0.3s;
+        }
+
+        .step-item.active .step-circle {
+            background: var(--docs-primary);
+            color: #fff;
+            border-color: var(--docs-primary);
+            box-shadow: 0 0 20px var(--docs-primary-glow);
+        }
+
+        .step-item.completed .step-circle {
+            background: var(--docs-success);
+            color: #fff;
+            border-color: var(--docs-success);
+        }
+
+        .step-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--docs-text-muted);
+        }
+
+        .step-item.active .step-label { color: #fff; }
+
+        /* Signature UI */
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .signer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .signer-card {
+            background: var(--docs-card-bg);
+            border: 1px solid var(--docs-border);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .signer-info { display: flex; gap: 16px; align-items: center; }
+        .signer-status { font-size: 0.75rem; font-weight: 800; }
+
+        .btn-signature {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid var(--docs-primary);
+            color: #fff;
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-signature:hover { border-color: var(--docs-accent); box-shadow: 0 0 30px rgba(34, 211, 238, 0.2); }
+
+        /* Relatórios UI */
+        .report-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        /* Auditoria UI */
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .audit-table th { text-align: left; padding: 12px; border-bottom: 2px solid var(--docs-border); color: var(--docs-text-muted); }
+        .audit-table td { padding: 12px; border-bottom: 1px solid var(--docs-border); }
+
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">
+                <i data-lucide="file-text" style="color:#fff"></i>
+            </div>
+            <h2>Cerrado Docs</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a onclick="showModule('dashboard')" class="nav-item active" id="btn-dashboard">
+                <i data-lucide="layout-dashboard"></i>
+                Dashboard
+            </a>
+            <a onclick="showModule('repositorio')" class="nav-item" id="btn-repositorio">
+                <i data-lucide="folder"></i>
+                Repositório Cloud
+            </a>
+            <a onclick="showModule('busca')" class="nav-item" id="btn-busca">
+                <i data-lucide="sparkles"></i>
+                Busca Vetorial (RAG)
+            </a>
+            <a onclick="showModule('ocr')" class="nav-item" id="btn-ocr">
+                <i data-lucide="scan-text"></i>
+                OCR & Indexação
+            </a>
+            <a onclick="showModule('chat')" class="nav-item" id="btn-chat">
+                <i data-lucide="message-square"></i>
+                Chat com Documentos
+            </a>
+            <a onclick="showModule('workflow')" class="nav-item" id="btn-workflow">
+                <i data-lucide="git-branch"></i>
+                Workflow & Processos
+            </a>
+            <a onclick="showModule('assinatura')" class="nav-item" id="btn-assinatura">
+                <i data-lucide="pen-tool"></i>
+                Assinatura Digital
+            </a>
+            <a onclick="showModule('relatorios')" class="nav-item" id="btn-relatorios">
+                <i data-lucide="bar-chart-3"></i>
+                Relatórios
+            </a>
+            <a onclick="showModule('auditoria')" class="nav-item" id="btn-auditoria">
+                <i data-lucide="lock"></i>
+                Auditoria
+            </a>
+            <a onclick="showModule('config')" class="nav-item" id="btn-config">
+                <i data-lucide="settings"></i>
+                Configurações
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="user-avatar">AD</div>
+                <div class="user-info">
+                    <span>Admin Docs</span>
+                    <small>Prefeitura Municipal</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main id="app-content">
+        <header>
+            <div class="page-title">
+                <h1 id="module-title">Dashboard Executivo</h1>
+            </div>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i data-lucide="search" size="18" color="#94a3b8"></i>
+                    <input type="text" placeholder="Buscar em 12.450 documentos...">
+                </div>
+                <div style="position:relative">
+                    <i data-lucide="bell" style="cursor:pointer"></i>
+                    <span style="position:absolute; top:-5px; right:-5px; width:10px; height:10px; background:var(--docs-danger); border-radius:50%; border:2px solid var(--docs-bg)"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD MODULE -->
+        <section id="dashboard" class="module active">
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="files" size="28"></i></div>
+                    <div class="stat-value">12.450</div>
+                    <div class="stat-label">Documentos Totais</div>
+                    <div class="stat-trend up"><i data-lucide="trending-up" size="14"></i> +12% este mês</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="activity" size="28" style="color:var(--docs-secondary)"></i></div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-label">Processos em Fluxo</div>
+                    <div class="stat-trend" style="color:var(--docs-warning)">12 urgentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="pen-tool" size="28" style="color:var(--docs-warning)"></i></div>
+                    <div class="stat-value">23</div>
+                    <div class="stat-label">Pendentes Assinatura</div>
+                    <div class="stat-trend up">Aguardando você</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);">
+                    <div class="stat-icon"><i data-lucide="leaf" size="28" style="color:var(--docs-success)"></i></div>
+                    <div class="stat-value">R$ 42k</div>
+                    <div class="stat-label">Economia Estimada</div>
+                    <div class="stat-trend up">8.400 páginas poupadas</div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <div class="panel-title"><i data-lucide="history"></i> Atividades Recentes</div>
+                        <button style="background:none; border:none; color:var(--docs-primary); cursor:pointer; font-weight:600">Ver tudo</button>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon"><i data-lucide="upload-cloud" size="16"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Novo Edital:</strong> Upload realizado por <i>Maria Silva</i></p>
+                                <small>há 10 minutos em /Licitações/2026</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon"><i data-lucide="check-circle" size="16" style="color:var(--docs-success)"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Assinatura Concluída:</strong> Contrato de Prestação #442</p>
+                                <small>há 45 minutos • 3 signatários</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon"><i data-lucide="git-pull-request" size="16" style="color:var(--docs-secondary)"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Processo Encaminhado:</strong> De <i>Jurídico</i> para <i>Gabinete</i></p>
+                                <small>há 2 horas • Ref: Reajuste Salarial</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="savings-visual">
+                        <div class="savings-header">
+                            <p style="text-transform:uppercase; font-size:0.7rem; letter-spacing:2px; color:var(--docs-text-muted)">Meta Paperless 2026</p>
+                            <div class="savings-value">78%</div>
+                            <p style="font-size:0.85rem">Da prefeitura já opera sem papel físico.</p>
+                        </div>
+                        <div class="savings-progress"><div class="savings-fill"></div></div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--docs-text-muted)">
+                            <span>Jan / 2026</span>
+                            <span>Dez / 2026 (Meta 90%)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <div class="panel-title"><i data-lucide="zap"></i> Atalhos</div>
+                    </div>
+                    <div class="quick-actions">
+                        <div class="action-btn" onclick="showModule('repositorio')">
+                            <i data-lucide="upload"></i>
+                            Upload
+                        </div>
+                        <div class="action-btn" onclick="showModule('workflow')">
+                            <i data-lucide="plus-circle"></i>
+                            Novo Processo
+                        </div>
+                        <div class="action-btn" onclick="showModule('busca')" style="grid-column: span 2; background:var(--docs-primary); color:#fff">
+                            <i data-lucide="sparkles"></i>
+                            Perguntar à IA (RAG)
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top:32px;">
+                        <div class="panel-title" style="margin-bottom:16px"><i data-lucide="pie-chart"></i> Armazenamento</div>
+                        <div style="background:rgba(255,255,255,0.05); padding:16px; border-radius:12px">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.85rem">
+                                <span>Used: 1.2 TB</span>
+                                <span>Limit: 5 TB</span>
+                            </div>
+                            <div class="savings-progress" style="height:6px; margin:0"><div class="savings-fill" style="width:24%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPOSITÓRIO MODULE -->
+        <section id="repositorio" class="module">
+            <div class="repo-container">
+                <div class="folder-tree">
+                    <p style="font-size:0.75rem; color:var(--docs-text-muted); margin-bottom:16px; text-transform:uppercase; letter-spacing:1px">Meus Arquivos</p>
+                    <div class="tree-item active"><i data-lucide="folder"></i> Licitações 2026</div>
+                    <div class="tree-item"><i data-lucide="folder"></i> Recursos Humanos</div>
+                    <div class="tree-item"><i data-lucide="folder"></i> Contratos Sociais</div>
+                    <div class="tree-item"><i data-lucide="folder"></i> Leis Municipais</div>
+                    <div class="tree-item" style="padding-left:24px"><i data-lucide="folder"></i> Decretos</div>
+                    <div class="tree-item" style="padding-left:24px"><i data-lucide="folder"></i> Portarias</div>
+                    <div class="tree-item"><i data-lucide="folder"></i> Financeiro</div>
+                </div>
+
+                <div class="file-explorer">
+                    <div class="explorer-header">
+                        <div class="breadcrumb" style="font-size:0.9rem; font-weight:600; color:var(--docs-text-muted)">
+                            <span style="color:var(--docs-primary)">Raiz</span> / Licitações 2026
+                        </div>
+                        <div style="display:flex; gap:12px">
+                            <button class="btn-primary" onclick="simulateUpload()"><i data-lucide="plus"></i> Novo Documento</button>
+                        </div>
+                    </div>
+                    <table class="file-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data Modificação</th>
+                                <th>Tamanho</th>
+                                <th>Status IA</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="file-list">
+                            <tr class="file-row">
+                                <td><i data-lucide="file-text" size="16"></i> Edital_042_Licitação.pdf</td>
+                                <td>10/03/2026 14:30</td>
+                                <td>2.4 MB</td>
+                                <td><span class="status-badge indexed">INDEXADO</span></td>
+                                <td><i data-lucide="more-vertical"></i></td>
+                            </tr>
+                            <tr class="file-row">
+                                <td><i data-lucide="file-text" size="16"></i> Contrato_Sistemas_Z.pdf</td>
+                                <td>09/03/2026 10:15</td>
+                                <td>1.1 MB</td>
+                                <td><span class="status-badge indexed">INDEXADO</span></td>
+                                <td><i data-lucide="more-vertical"></i></td>
+                            </tr>
+                            <tr class="file-row">
+                                <td><i data-lucide="file-text" size="16"></i> Planilha_Custos_Refeicão.xlsx</td>
+                                <td>08/03/2026 16:20</td>
+                                <td>430 KB</td>
+                                <td><span class="status-badge pending">PROCESSANDO OCR</span></td>
+                                <td><i data-lucide="more-vertical"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- OCR MODULE -->
+        <section id="ocr" class="module">
+            <div class="ocr-workspace">
+                <div class="scan-simulator" id="ocr-simulation-box">
+                    <div class="scan-line"></div>
+                    <i data-lucide="file-search" size="64" style="color:var(--docs-primary); opacity:0.3"></i>
+                    <p style="margin-top:24px; color:var(--docs-text-muted)">Aguardando documento para digitalização cognitiva...</p>
+                    <button class="btn-primary" style="margin-top:24px" onclick="startOCRSimulation()">Simular OCR Avançado</button>
+                </div>
+
+                <div class="ocr-results">
+                    <div class="panel-title"><i data-lucide="database"></i> Dados Extraídos (Metadados IA)</div>
+                    <div id="ocr-metadata-list">
+                        <div class="extracted-field">
+                            <label>Tipo de Documento</label>
+                            <span>--</span>
+                        </div>
+                        <div class="extracted-field">
+                            <label>CNPJ Extraído</label>
+                            <span>--</span>
+                        </div>
+                        <div class="extracted-field">
+                            <label>Data de Emissão</label>
+                            <span>--</span>
+                        </div>
+                        <div class="extracted-field">
+                            <label>Valor Total</label>
+                            <span>--</span>
+                        </div>
+                        <div class="extracted-field">
+                            <label>Vetor de Embedding</label>
+                            <span style="font-size:0.6rem; word-break:break-all; opacity:0.5">[ 0.1244, -0.4552, 0.9881, 0.2312, ... ]</span>
+                        </div>
+                    </div>
+                    <div style="background:rgba(16, 185, 129, 0.1); padding:12px; border-radius:8px; border:1px solid var(--docs-success); color:var(--docs-success); font-size:0.8rem; display:none" id="ocr-success-msg">
+                        <i data-lucide="check-circle" size="14"></i> Documento pronto para busca vetorial RAG.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- RAG MODULE -->
+        <section id="busca" class="module">
+            <div class="rag-container">
+                <div class="search-hero">
+                    <p style="text-transform:uppercase; font-size:0.75rem; color:var(--docs-primary); font-weight:800; letter-spacing:3px">Motor de Busca Semântica (RAG)</p>
+                    <h2>O que você deseja saber hoje?</h2>
+                </div>
+
+                <div class="rag-search-box">
+                    <i data-lucide="sparkles" style="margin-left:24px; color:var(--docs-primary)"></i>
+                    <input type="text" id="rag-input" placeholder="Ex: 'Qual a multa por atraso no edital de licitação?'" onkeypress="if(event.key === 'Enter') simulateRAGSearch()">
+                    <button class="btn-primary" style="margin-right:8px" onclick="simulateRAGSearch()">Consultar IA</button>
+                </div>
+
+                <div class="ai-response" id="rag-result">
+                    <div class="response-header"><i data-lucide="bot"></i> Resposta da Inteligência Artificial</div>
+                    <p class="response-text" id="rag-response-text"></p>
+                    
+                    <p style="font-size:0.75rem; color:var(--docs-text-muted); margin-bottom:12px; text-transform:uppercase">Fontes Utilizadas:</p>
+                    <div class="citation-card" onclick="showModule('chat')">
+                        <div class="activity-icon" style="background:var(--docs-primary)"><i data-lucide="file-text" size="16"></i></div>
+                        <div style="flex:1">
+                            <p style="font-size:0.85rem; font-weight:700">Edital_042_Licitação.pdf</p>
+                            <small id="rag-citation-meta">Página 14 • Trecho: "Cláusula 12.4 - Penalidades"</small>
+                        </div>
+                        <i data-lucide="external-link" size="16" style="color:var(--docs-text-muted)"></i>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:center; gap:32px; margin-top:40px; color:var(--docs-text-muted); font-size:0.85rem">
+                    <span style="display:flex; align-items:center; gap:8px"><i data-lucide="check-circle" size="14" color="var(--docs-success)"></i> Busca Vetorial Ativa</span>
+                    <span style="display:flex; align-items:center; gap:8px"><i data-lucide="check-circle" size="14" color="var(--docs-success)"></i> 1.2M Embeddings</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAT MODULE -->
+        <section id="chat" class="module">
+            <div class="chat-container">
+                <div class="doc-viewer">
+                    <div class="viewer-header">
+                        <div style="display:flex; align-items:center; gap:12px">
+                            <i data-lucide="file-text" color="var(--docs-primary)"></i>
+                            <span style="font-weight:700; font-size:0.9rem">Edital_042_Licitação.pdf</span>
+                        </div>
+                        <div style="display:flex; gap:16px; color:var(--docs-text-muted)">
+                            <i data-lucide="zoom-in" style="cursor:pointer"></i>
+                            <i data-lucide="zoom-out" style="cursor:pointer"></i>
+                            <i data-lucide="download" style="cursor:pointer"></i>
+                        </div>
+                    </div>
+                    <div class="pdf-page">
+                        <div class="pdf-highlight" style="top:220px; left:40px; width:520px; height:60px"></div>
+                        <h2 style="text-align:center; margin-bottom:20px; text-decoration:underline">EDITAL DE LICITAÇÃO Nº 042/2026</h2>
+                        <p style="font-size:0.8rem; margin-bottom:12px"><strong>CLÁUSULA 12 - DAS PENALIDADES E MULTAS</strong></p>
+                        <p style="font-size:0.75rem; line-height:1.5">12.1. O descumprimento total ou parcial de qualquer das obrigações assumidas pelo contratado sujeitá-lo-á às seguintes sanções, garantida a prévia defesa:</p>
+                        <p style="font-size:0.75rem; line-height:1.5; margin-left:20px">a) Advertência por escrito;</p>
+                        <p style="font-size:0.75rem; line-height:1.5; margin-left:20px">b) Multa de 10% (dez por cento) sobre o valor total do contrato em caso de inexecução total;</p>
+                        <p style="font-size:0.75rem; line-height:1.5; margin-left:20px">c) Suspensão temporária de participação em licitação.</p>
+                        <p style="font-size:0.75rem; line-height:1.5; margin-top:12px">12.2. A multa de mora será de 0,5% (zero vírgula cinco por cento) por dia de atraso injustificado sobre o valor da parcela em atraso, até o limite de 20%.</p>
+                    </div>
+                </div>
+
+                <div class="chat-sidebar">
+                    <div class="panel-header" style="border-bottom:1px solid var(--docs-border); padding:16px 20px">
+                        <div class="panel-title"><i data-lucide="message-square"></i> Chat com IA</div>
+                    </div>
+                    <div class="chat-messages" id="chat-box">
+                        <div class="msg ai">Olá! Estou analisando o <strong>Edital 042</strong>. Como posso ajudar você hoje?</div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="chat-input" placeholder="Pergunte sobre o documento..." onkeypress="if(event.key === 'Enter') sendChatMessage()">
+                        <button class="btn-primary" style="padding:8px" onclick="sendChatMessage()"><i data-lucide="send" size="18"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- WORKFLOW MODULE -->
+        <section id="workflow" class="module">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <div>
+                        <p style="font-size:0.75rem; color:var(--docs-text-muted); text-transform:uppercase">Processo Administrativo #2026-0042</p>
+                        <h2 style="font-size:1.5rem; font-weight:900">Aquisição de Softwares de Gestão</h2>
+                    </div>
+                    <div class="status-badge indexed">EM TRAMITAÇÃO</div>
+                </div>
+
+                <div class="workflow-timeline">
+                    <div class="step-item completed">
+                        <div class="step-circle"><i data-lucide="file-plus"></i></div>
+                        <div class="step-label">Protocolo</div>
+                    </div>
+                    <div class="step-item active" id="wf-step-analise">
+                        <div class="step-circle"><i data-lucide="user-check"></i></div>
+                        <div class="step-label">Análise Técnica</div>
+                    </div>
+                    <div class="step-item" id="wf-step-juridico">
+                        <div class="step-circle"><i data-lucide="scale"></i></div>
+                        <div class="step-label">Jurídico</div>
+                    </div>
+                    <div class="step-item" id="wf-step-assinatura">
+                        <div class="step-circle"><i data-lucide="pen-tool"></i></div>
+                        <div class="step-label">Assinaturas</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle"><i data-lucide="check-circle"></i></div>
+                        <div class="step-label">Aprovado</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-row" style="margin-top:20px">
+                    <div style="background:rgba(255,255,255,0.02); padding:24px; border-radius:12px">
+                        <p style="font-weight:700; margin-bottom:12px">Detalhes da Etapa Atual</p>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon" style="color:var(--docs-primary)"><i data-lucide="clock"></i></div>
+                                <div class="activity-content">
+                                    <p>Aguardando Parecer Técnico</p>
+                                    <small>Responsável: Depto de TI • Prazo: 48h</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:12px">
+                        <button class="btn-primary" onclick="advanceWorkflow('analise')">Aprovar e Avançar</button>
+                        <button class="action-btn" style="border-radius:8px">Solicitar Ajuste</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASSINATURA MODULE -->
+        <section id="assinatura" class="module">
+            <div class="signature-grid">
+                <div class="signer-list">
+                    <div class="signer-card">
+                        <div class="signer-info">
+                            <div class="user-avatar" style="background:var(--docs-success)">RS</div>
+                            <div>
+                                <p style="font-weight:700">Ricardo Santos</p>
+                                <small>Secretário Municipal</small>
+                            </div>
+                        </div>
+                        <div class="signer-status" style="color:var(--docs-success)">ASSINADO</div>
+                    </div>
+                    <div class="signer-card" id="card-signer-2">
+                        <div class="signer-info">
+                            <div class="user-avatar" style="background:var(--docs-primary)">AD</div>
+                            <div>
+                                <p style="font-weight:700">Admin Docs</p>
+                                <small>Diretor Depto</small>
+                            </div>
+                        </div>
+                        <div class="signer-status" style="color:var(--docs-warning)" id="status-signer-2">PENDENTE</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="btn-signature" id="btn-sign-trigger" onclick="simulateSigning()">
+                        <i data-lucide="shield-check" size="48" style="color:var(--docs-primary); margin-bottom:16px"></i>
+                        <h3 style="margin-bottom:8px">Portal de Assinaturas</h3>
+                        <p style="font-size:0.8rem; color:var(--docs-text-muted)">Compatible with ICP-Brasil e Certificados A1/A3</p>
+                        <div style="margin-top:24px; background:var(--docs-primary); padding:12px; border-radius:8px; font-weight:800">ASSINAR AGORA</div>
+                    </div>
+
+                    <div id="signing-success" style="display:none; margin-top:24px; text-align:center; animation:fadeIn 0.5s">
+                        <i data-lucide="check-circle" size="64" style="color:var(--docs-success)"></i>
+                        <h3 style="margin-top:16px">Documento Assinado!</h3>
+                        <p style="font-size:0.8rem; opacity:0.6; margin-top:8px">Integridade verificada via Criptografia SHA-256</p>
+                        <code style="display:block; margin-top:16px; font-size:0.6rem; color:var(--docs-accent)">Hash: 7e6db74eb1a3b7e79a159eb1a3b...</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- RELATÓRIOS MODULE -->
+        <section id="relatorios" class="module">
+            <div class="report-grid">
+                <div class="panel-card">
+                    <div class="panel-title"><i data-lucide="clock"></i> Tempo Médio de Tramitação</div>
+                    <div style="height:200px; display:flex; align-items:flex-end; gap:20px; padding:20px">
+                        <div style="flex:1; background:var(--docs-primary); height:40%; border-radius:4px 4px 0 0" title="Financeiro: 4.2 dias"></div>
+                        <div style="flex:1; background:var(--docs-accent); height:85%; border-radius:4px 4px 0 0" title="Jurídico: 8.5 dias"></div>
+                        <div style="flex:1; background:var(--docs-secondary); height:30%; border-radius:4px 4px 0 0" title="RH: 3.0 dias"></div>
+                        <div style="flex:1; background:var(--docs-primary); height:60%; border-radius:4px 4px 0 0" title="Administração: 6.1 dias"></div>
+                    </div>
+                </div>
+                <div class="panel-card">
+                    <div class="panel-title"><i data-lucide="bar-chart"></i> Documentos por Departamento</div>
+                    <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:0.8rem"><span>Jurídico</span><span>3.2k</span></div>
+                            <div class="savings-progress" style="height:6px; margin:0"><div class="savings-fill" style="width:65%"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:0.8rem"><span>Financeiro</span><span>1.8k</span></div>
+                            <div class="savings-progress" style="height:6px; margin:0"><div class="savings-fill" style="width:35%; background:var(--docs-secondary)"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:24px; display:flex; gap:16px">
+                <button class="btn-primary"><i data-lucide="file-down"></i> Exportar RMA Mensal (PDF)</button>
+                <button class="btn-primary" style="background:var(--docs-sidebar); border:1px solid var(--docs-border)"><i data-lucide="sheet"></i> Download Excel</button>
+            </div>
+        </section>
+
+        <!-- AUDITORIA MODULE -->
+        <section id="auditoria" class="module">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <div class="panel-title"><i data-lucide="shield-check"></i> Trilha de Auditoria Digital</div>
+                    <div class="search-bar" style="width:240px"><i data-lucide="filter" size="14"></i><input type="text" placeholder="Filtrar logs..."></div>
+                </div>
+                <table class="audit-table">
+                    <thead>
+                        <tr>
+                            <th>Data/Hora</th>
+                            <th>Usuário</th>
+                            <th>Ação</th>
+                            <th>Documento</th>
+                            <th>IP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>23/03/2026 17:45</td><td>Admin Docs</td><td>Visualização</td><td>Edital_042_Licitação.pdf</td><td>192.168.1.42</td></tr>
+                        <tr><td>23/03/2026 17:30</td><td>Ricardo Santos</td><td>Assinatura Digital</td><td>Contrato_442_Sistemas.pdf</td><td>187.44.12.10</td></tr>
+                        <tr><td>23/03/2026 16:20</td><td>Maria Silva</td><td>Upload</td><td>Anexo_VII_Planilha.xlsx</td><td>192.168.1.15</td></tr>
+                        <tr><td>23/03/2026 15:10</td><td>Admin Docs</td><td>Login</td><td>--</td><td>192.168.1.42</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CONFIGURAÇÕES MODULE -->
+        <section id="config" class="module">
+            <div class="dashboard-row">
+                <div class="panel-card">
+                    <div class="panel-title">Preferências do Sistema</div>
+                    <div style="margin-top:24px; display:flex; flex-direction:column; gap:20px">
+                        <div style="display:flex; justify-content:space-between; align-items:center">
+                            <div><p style="font-weight:700">OCR Automático</p><small style="color:var(--docs-text-muted)">Processar documentos ao realizar upload</small></div>
+                            <div style="width:40px; height:20px; background:var(--docs-primary); border-radius:10px; position:relative"><div style="position:absolute; right:2px; top:2px; width:16px; height:16px; background:#fff; border-radius:50%"></div></div>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center">
+                            <div><p style="font-weight:700">Indexação Vetorial (RAG)</p><small style="color:var(--docs-text-muted)">Habilitar busca semântica por IA</small></div>
+                            <div style="width:40px; height:20px; background:var(--docs-primary); border-radius:10px; position:relative"><div style="position:absolute; right:2px; top:2px; width:16px; height:16px; background:#fff; border-radius:50%"></div></div>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center">
+                            <div><p style="font-weight:700">Autenticação MFA</p><small style="color:var(--docs-text-muted)">Exigir segundo fator para assinaturas</small></div>
+                            <div style="width:40px; height:20px; background:var(--docs-border); border-radius:10px; position:relative"><div style="position:absolute; left:2px; top:2px; width:16px; height:16px; background:#fff; border-radius:50%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        function showModule(moduleId) {
+            // Hide all modules
+            document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
+            // Remove active class from nav
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            
+            // Show target module
+            const target = document.getElementById(moduleId);
+            if(target) {
+                target.classList.add('active');
+            }
+
+            // Set nav active
+            const btn = document.getElementById('btn-' + moduleId);
+            if(btn) btn.classList.add('active');
+
+            // Update title
+            const titles = {
+                dashboard: 'Dashboard Executivo',
+                repositorio: 'Repositório Cloud',
+                busca: 'Busca Inteligente (RAG)',
+                ocr: 'OCR e Indexação Cognitiva',
+                chat: 'Chat Cognitivo com Documentos',
+                workflow: 'Gestão de Processos (Workflow)',
+                assinatura: 'Assinatura Digital ICP-Brasil',
+                relatorios: 'Relatórios e BI',
+                auditoria: 'Trilha de Auditoria (Logs)',
+                config: 'Configurações do Sistema'
+            };
+            document.getElementById('module-title').innerText = titles[moduleId] || 'Cerrado Docs';
+            
+            // Re-create icons for new modules
+            lucide.createIcons();
+        }
+
+        function startOCRSimulation() {
+            const box = document.getElementById('ocr-simulation-box');
+            const metadata = document.getElementById('ocr-metadata-list');
+            const success = document.getElementById('ocr-success-msg');
+            
+            box.classList.add('scanning');
+            box.querySelector('p').innerText = "Realizando análise semântica e extração de entidades...";
+            
+            setTimeout(() => {
+                metadata.innerHTML = `
+                    <div class="extracted-field">
+                        <label>Tipo de Documento</label>
+                        <span>CONTRATO DE PRESTAÇÃO DE SERVIÇO</span>
+                    </div>
+                    <div class="extracted-field">
+                        <label>CNPJ Extraído</label>
+                        <span>42.123.456/0001-99</span>
+                    </div>
+                    <div class="extracted-field">
+                        <label>Data de Emissão</label>
+                        <span>15/03/2026</span>
+                    </div>
+                    <div class="extracted-field">
+                        <label>Valor Total</label>
+                        <span>R$ 1.250.000,00</span>
+                    </div>
+                    <div class="extracted-field">
+                        <label>Vetor de Embedding</label>
+                        <span style="font-size:0.6rem; word-break:break-all; opacity:0.5">[ 0.8921, -0.1122, 0.3341, 0.0019, 0.7712, ... ]</span>
+                    </div>
+                `;
+                box.classList.remove('scanning');
+                box.querySelector('p').innerText = "Processamento Concluído.";
+                success.style.display = 'block';
+                lucide.createIcons();
+            }, 3000);
+        }
+
+        function simulateUpload() {
+            const list = document.getElementById('file-list');
+            const row = document.createElement('tr');
+            row.className = 'file-row';
+            row.innerHTML = `
+                <td><i data-lucide="file-plus" size="16"></i> Novo_Documento_Upload.pdf</td>
+                <td>Agoro mesmo</td>
+                <td>124 KB</td>
+                <td><span class="status-badge pending">ENVIANDO...</span></td>
+                <td><i data-lucide="more-vertical"></i></td>
+            `;
+            list.prepend(row);
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                row.querySelector('.status-badge').className = 'status-badge pending';
+                row.querySelector('.status-badge').innerText = 'PROCESSANDO OCR';
+            }, 2000);
+        }
+
+        function simulateRAGSearch() {
+            const input = document.getElementById('rag-input');
+            const result = document.getElementById('rag-result');
+            const text = document.getElementById('rag-response-text');
+            
+            if(!input.value) return;
+            
+            result.style.display = 'block';
+            text.innerHTML = '<span style="color:var(--docs-primary)">Consultando base vetorial...</span>';
+            
+            setTimeout(() => {
+                text.innerHTML = `De acordo com o <strong>Edital de Licitação nº 042/2026</strong>, Cláusula 12.1 (item b) e 12.2, a multa por atraso injustificado é de <strong>0,5% ao dia</strong> sobre o valor da parcela em atraso, com limite de 20%. Em caso de inexecução total, a multa é de <strong>10% sobre o valor total</strong> do contrato.`;
+                lucide.createIcons();
+            }, 2000);
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const box = document.getElementById('chat-box');
+            if(!input.value) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg user';
+            userMsg.innerText = input.value;
+            box.appendChild(userMsg);
+
+            const prompt = input.value.toLowerCase();
+            input.value = '';
+            
+            const aiMsg = document.createElement('div');
+            aiMsg.className = 'msg ai';
+            aiMsg.innerText = 'Consultando contexto do edital...';
+            box.appendChild(aiMsg);
+
+            setTimeout(() => {
+                if(prompt.includes('multa') || prompt.includes('atraso')) {
+                    aiMsg.innerText = 'Conforme a Cláusula 12.2 na página 14, a multa por atraso é de 0,5% ao dia sobre a parcela, limitada a 20% do valor total.';
+                } else if(prompt.includes('prazo')) {
+                    aiMsg.innerText = 'O prazo de vigência contratual é de 12 meses, conforme detalhado na Seção 4 do documento.';
+                } else {
+                    aiMsg.innerText = 'Lamento, não encontrei uma menção direta a esse ponto no documento selecionado. Deseja que eu realize uma busca vetorial no repositório completo?';
+                }
+                box.scrollTop = box.scrollHeight;
+            }, 1500);
+        }
+
+        function advanceWorkflow(step) {
+            const current = document.getElementById('wf-step-analise');
+            const next = document.getElementById('wf-step-juridico');
+            
+            current.classList.remove('active');
+            current.classList.add('completed');
+            current.querySelector('.step-circle').innerHTML = '<i data-lucide="check"></i>';
+            
+            next.classList.add('active');
+            lucide.createIcons();
+            
+            alert('Processo encaminhado com sucesso para o Jurídico!');
+        }
+
+        function simulateSigning() {
+            const btn = document.getElementById('btn-sign-trigger');
+            const success = document.getElementById('signing-success');
+            const status = document.getElementById('status-signer-2');
+            const card = document.getElementById('card-signer-2');
+            
+            btn.style.opacity = '0.3';
+            btn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                btn.style.display = 'none';
+                success.style.display = 'block';
+                status.innerText = 'ASSINADO';
+                status.style.color = 'var(--docs-success)';
+                card.style.borderColor = 'var(--docs-success)';
+                lucide.createIcons();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
