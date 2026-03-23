@@ -949,21 +949,21 @@ permalink: /solucoes/edu/simuladoredu/
                     <div class="sidebar-title">Alertas do Sistema</div>
                     <ul class="sidebar-menu">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="#" class="sidebar-link" onclick="openModal('educacenso'); return false;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                                 Prazo Educacenso
                                 <span class="sidebar-badge warning">3 dias</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="#" class="sidebar-link" onclick="openModal('risco'); return false;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                                 5 alunos em risco
                                 <span class="sidebar-badge danger">5</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="#" class="sidebar-link" onclick="openModal('fechamento'); return false;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                                 Fechamento Bimestral
                                 <span class="sidebar-badge success">Aberto</span>
@@ -976,19 +976,19 @@ permalink: /solucoes/edu/simuladoredu/
                     <div class="sidebar-title">Acesso Rápido</div>
                     <ul class="sidebar-menu">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="#" class="sidebar-link" onclick="openModal('boletim'); return false;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                                 Boletim Online
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="#" class="sidebar-link" onclick="openModal('ouvidoria'); return false;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                                 Ouvidoria
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="#" class="sidebar-link" onclick="openModal('config'); return false;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                                 Configurações
                             </a>
@@ -1927,13 +1927,163 @@ permalink: /solucoes/edu/simuladoredu/
         }
 
         function acionarCRAS() {
-            alert('[DEMO] Alerta enviado ao CRAS local via WhatsApp Business API.\n\n Relatório:\n- Aluno: Lucas Gabriel Martins\n- Escola: Escola Modelo\n- Situação: Risco de evasão (87%)');
+            showToast('✅ Alerta enviado ao CRAS local via WhatsApp. Protocolo #2026-0342 gerado.', 'success');
         }
 
         function acionarConselho() {
-            alert('[DEMO] Notificação enviada ao Conselho Tutelar.\n\n Protocolo gerado automaticamente pelo sistema.');
+            showToast('✅ Notificação enviada ao Conselho Tutelar. Protocolo #CT-2026-118 gerado.', 'success');
+        }
+
+        /* ===== MODAL DATA ===== */
+        const modalContents = {
+            educacenso: {
+                title: '⏱️ Prazo Educacenso — 3 dias restantes',
+                html: `<p style="color:#64748b;margin-bottom:16px;">O prazo para envio ao <strong>Educacenso 2026</strong> encerra em <strong>25/03/2026</strong>. Existem pendências críticas.</p>
+                <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:16px;margin-bottom:16px;">
+                    <div style="font-weight:700;color:#92400e;margin-bottom:10px;">📋 Pendências Encontradas</div>
+                    <ul style="list-style:none;padding:0;margin:0;color:#78350f;font-size:0.9rem;display:flex;flex-direction:column;gap:8px;">
+                        <li>🔴 Rafael M. — CPF inválido ou não informado</li>
+                        <li>🟡 Julia O. — Data de Nascimento inconsistente</li>
+                        <li>🟡 Luan T. — NIS não encontrado no CadÚnico</li>
+                    </ul>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <button class="btn-action" onclick="closeModal();document.querySelector('[data-module=compliance]').click();" style="padding:10px 18px;font-size:0.85rem;border-radius:8px;">Ir para Compliance MEC</button>
+                    <button onclick="showToast('📤 Relatório exportado como PDF.','success');closeModal();" style="padding:10px 18px;font-size:0.85rem;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-weight:600;">Exportar Relatório</button>
+                </div>`
+            },
+            risco: {
+                title: '🚨 Alunos em Risco de Evasão',
+                html: `<p style="color:#64748b;margin-bottom:16px;">O algoritmo <strong>Random Forest</strong> identificou <strong>5 alunos</strong> com alta probabilidade de abandono neste bimestre.</p>
+                <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+                    <thead><tr style="background:#f8fafc;"><th style="padding:10px;text-align:left;border-bottom:2px solid #e2e8f0;">Aluno</th><th style="padding:10px;border-bottom:2px solid #e2e8f0;">Risco</th><th style="padding:10px;border-bottom:2px solid #e2e8f0;">Principal Fator</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding:10px;border-bottom:1px solid #f1f5f9;font-weight:600;">Lucas Gabriel M.</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;"><span style="background:#fee2e2;color:#dc2626;padding:2px 8px;border-radius:6px;font-weight:700;">87%</span></td><td style="padding:10px;border-bottom:1px solid #f1f5f9;color:#64748b;">4 faltas + queda de nota</td></tr>
+                        <tr><td style="padding:10px;border-bottom:1px solid #f1f5f9;font-weight:600;">Felipe A. S.</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;"><span style="background:#fee2e2;color:#dc2626;padding:2px 8px;border-radius:6px;font-weight:700;">74%</span></td><td style="padding:10px;border-bottom:1px solid #f1f5f9;color:#64748b;">Perfil CadÚnico</td></tr>
+                        <tr><td style="padding:10px;border-bottom:1px solid #f1f5f9;font-weight:600;">Carla R. M.</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;"><span style="background:#fef3c7;color:#d97706;padding:2px 8px;border-radius:6px;font-weight:700;">68%</span></td><td style="padding:10px;border-bottom:1px solid #f1f5f9;color:#64748b;">Frequência abaixo de 75%</td></tr>
+                        <tr><td style="padding:10px;border-bottom:1px solid #f1f5f9;font-weight:600;">Marcos V. L.</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;"><span style="background:#fef3c7;color:#d97706;padding:2px 8px;border-radius:6px;font-weight:700;">61%</span></td><td style="padding:10px;border-bottom:1px solid #f1f5f9;color:#64748b;">Conflito familiar registrado</td></tr>
+                        <tr><td style="padding:10px;font-weight:600;">Ana P. Costa</td><td style="padding:10px;"><span style="background:#fef3c7;color:#d97706;padding:2px 8px;border-radius:6px;font-weight:700;">55%</span></td><td style="padding:10px;color:#64748b;">Reprovação bimestral</td></tr>
+                    </tbody>
+                </table>
+                <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+                    <button class="btn-action" onclick="showToast('✅ Assistentes sociais notificados via WhatsApp.','success');closeModal();" style="padding:10px 18px;font-size:0.85rem;border-radius:8px;">Notificar CRAS (5 alunos)</button>
+                    <button onclick="closeModal();document.querySelector('[data-module=ia]').click();" style="padding:10px 18px;font-size:0.85rem;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-weight:600;">Ver Cerrado AI</button>
+                </div>`
+            },
+            fechamento: {
+                title: '📊 Fechamento Bimestral — 2º Bimestre Aberto',
+                html: `<p style="color:#64748b;margin-bottom:16px;">O <strong>2º Bimestre/2026</strong> está com lançamento de notas aberto até <strong>31/03/2026</strong>.</p>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+                    ${[['Matemática','87%','#4f46e5'],['Português','92%','#10b981'],['Ciências','78%','#f59e0b'],['História','95%','#10b981'],['Geografia','65%','#ef4444']].map(([d,p,c])=>`
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span style="width:90px;font-size:0.87rem;font-weight:600;color:#334155;">${d}</span>
+                        <div style="flex:1;background:#f1f5f9;border-radius:6px;height:10px;overflow:hidden;"><div style="width:${p};height:100%;background:${c};border-radius:6px;"></div></div>
+                        <span style="font-size:0.85rem;font-weight:700;color:${c};width:36px;">${p}</span>
+                    </div>`).join('')}
+                </div>
+                <div style="background:#dcfce7;border:1px solid #bbf7d0;border-radius:10px;padding:14px;margin-bottom:16px;font-size:0.88rem;color:#166534;">✅ <strong>Média geral da escola: 7.8</strong> — acima da meta municipal de 7.0</div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <button class="btn-action" onclick="showToast('📤 Relatório de fechamento exportado.','success');closeModal();" style="padding:10px 18px;font-size:0.85rem;border-radius:8px;">Exportar Fechamento</button>
+                    <button onclick="showToast('🔒 Período bloqueado. Aguardando aprovação da Secretaria.','info');closeModal();" style="padding:10px 18px;font-size:0.85rem;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-weight:600;">Fechar Período</button>
+                </div>`
+            },
+            boletim: {
+                title: '📄 Boletim Online — Ana Silva',
+                html: `<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:16px;background:linear-gradient(135deg,#4f46e5,#6366f1);border-radius:12px;">
+                    <div style="width:48px;height:48px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.2rem;">AS</div>
+                    <div><div style="color:#fff;font-weight:700;">Ana Silva</div><div style="color:rgba(255,255,255,0.8);font-size:0.82rem;">6º Ano B — Manhã | Matrícula: 202600142</div></div>
+                </div>
+                <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+                    <thead><tr style="background:#f8fafc;"><th style="padding:10px;text-align:left;border-bottom:2px solid #e2e8f0;">Disciplina</th><th style="padding:10px;border-bottom:2px solid #e2e8f0;">1º Bim</th><th style="padding:10px;border-bottom:2px solid #e2e8f0;">2º Bim</th><th style="padding:10px;border-bottom:2px solid #e2e8f0;">Média</th><th style="padding:10px;border-bottom:2px solid #e2e8f0;">Sit.</th></tr></thead>
+                    <tbody>
+                        ${[['Matemática','8.5','9.4','8.9'],['Português','9.0','8.7','8.8'],['Ciências','8.0','9.1','8.5'],['História','9.2','8.5','8.8'],['Geografia','7.8','8.9','8.3'],['Inglês','9.5','9.0','9.2']].map(([d,b1,b2,m])=>`
+                        <tr><td style="padding:10px;border-bottom:1px solid #f1f5f9;font-weight:600;">${d}</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;text-align:center;">${b1}</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;text-align:center;">${b2}</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;text-align:center;font-weight:700;color:#4f46e5;">${m}</td><td style="padding:10px;border-bottom:1px solid #f1f5f9;text-align:center;"><span style="background:#dcfce7;color:#16a34a;padding:2px 8px;border-radius:6px;font-size:0.78rem;font-weight:700;">AP</span></td></tr>`).join('')}
+                    </tbody>
+                </table>
+                <div style="margin-top:14px;padding:12px;background:#f0fdf4;border-radius:8px;font-size:0.87rem;color:#166534;font-weight:600;">✅ Frequência: 96% — Situação: Regular</div>
+                <button class="btn-action" onclick="showToast('📥 Boletim PDF enviado ao WhatsApp dos responsáveis.','success');closeModal();" style="margin-top:12px;padding:10px 18px;font-size:0.85rem;border-radius:8px;width:100%;justify-content:center;">Baixar PDF / Enviar WhatsApp</button>`
+            },
+            ouvidoria: {
+                title: '💬 Ouvidoria Escolar',
+                html: `<p style="color:#64748b;margin-bottom:16px;">Canal oficial de comunicação. Manifestações respondidas em até <strong>5 dias úteis</strong>.</p>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+                    ${[['Infraestrutura','Bebedouro da quadra sem água há 3 dias.','Aberta','#fef3c7','#d97706'],['Pedagógico','Professor de Matemática faltou 4 aulas sem substituto.','Em análise','#dbeafe','#2563eb'],['Transporte','Ônibus escolar atrasando 40 minutos.','Resolvida','#dcfce7','#16a34a']].map(([cat,txt,st,bg,cor])=>`
+                    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                            <span style="font-size:0.78rem;font-weight:700;color:#64748b;text-transform:uppercase;">${cat}</span>
+                            <span style="background:${bg};color:${cor};padding:2px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">${st}</span>
+                        </div>
+                        <div style="font-size:0.88rem;color:#334155;">${txt}</div>
+                    </div>`).join('')}
+                </div>
+                <div style="border-top:1px solid #e2e8f0;padding-top:16px;">
+                    <div style="font-weight:700;margin-bottom:8px;font-size:0.9rem;">Nova Manifestação</div>
+                    <textarea placeholder="Descreva sua manifestação..." style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:0.88rem;resize:none;height:80px;font-family:inherit;box-sizing:border-box;"></textarea>
+                    <button class="btn-action" onclick="showToast('✅ Protocolo #OUV-2026-089 criado. Resposta em 5 dias úteis.','success');closeModal();" style="margin-top:10px;padding:10px 18px;font-size:0.85rem;border-radius:8px;width:100%;justify-content:center;">Enviar Manifestação</button>
+                </div>`
+            },
+            config: {
+                title: '⚙️ Configurações do Sistema',
+                html: `<div style="display:flex;flex-direction:column;gap:12px;">
+                    ${[['Escola','Escola Municipal Modelo','Contagem - MG'],['Ano Letivo','2026','Início: 01/02 | Fim: 15/12'],['Usuário','Maria Aparecida','Diretora | Nível: Gestão Plena'],['Notificações','WhatsApp + E-mail','Habilitadas'],['Autenticação','Login Gov.br (SSO)','Ativo'],['Versão','Cerrado Edu v4.2.1','Atualizado em 20/03/2026']].map(([label,val,sub])=>`
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;">
+                        <div>
+                            <div style="font-weight:700;font-size:0.9rem;color:#0f172a;">${label}: <span style="color:#4f46e5;">${val}</span></div>
+                            <div style="font-size:0.8rem;color:#64748b;">${sub}</div>
+                        </div>
+                        <button onclick="showToast('✏️ Edição disponível apenas na versão de produção.','info');" style="padding:6px 14px;font-size:0.8rem;border:1px solid #e2e8f0;border-radius:6px;background:#fff;cursor:pointer;font-weight:600;">Editar</button>
+                    </div>`).join('')}
+                </div>`
+            }
+        };
+
+        function openModal(id) {
+            const c = modalContents[id];
+            if (!c) return;
+            document.getElementById('modalTitle').textContent = c.title;
+            document.getElementById('modalBody').innerHTML = c.html;
+            document.getElementById('sysModal').classList.add('open');
+        }
+        function closeModal() { document.getElementById('sysModal').classList.remove('open'); }
+        document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+        function showToast(msg, type='success') {
+            const t = document.createElement('div');
+            t.className = 'sys-toast sys-toast-' + type;
+            t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t.classList.add('visible'), 10);
+            setTimeout(() => { t.classList.remove('visible'); setTimeout(() => t.remove(), 400); }, 4000);
         }
     </script>
+
+    <!-- MODAL -->
+    <div id="sysModal" class="sys-modal-overlay" onclick="if(event.target===this)closeModal()">
+        <div class="sys-modal-box">
+            <div class="sys-modal-header">
+                <h3 id="modalTitle" class="sys-modal-title"></h3>
+                <button class="sys-modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div id="modalBody" class="sys-modal-body"></div>
+        </div>
+    </div>
+
+    <style>
+        .sys-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;padding:20px;}
+        .sys-modal-overlay.open{display:flex;animation:fadeInM .2s ease;}
+        @keyframes fadeInM{from{opacity:0}to{opacity:1}}
+        .sys-modal-box{background:#fff;border-radius:20px;width:100%;max-width:700px;max-height:88vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.2);}
+        .sys-modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid #e2e8f0;position:sticky;top:0;background:#fff;border-radius:20px 20px 0 0;z-index:1;}
+        .sys-modal-title{font-size:1.1rem;font-weight:800;color:#0f172a;margin:0;}
+        .sys-modal-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748b;padding:4px 10px;border-radius:8px;line-height:1;transition:background .2s;}
+        .sys-modal-close:hover{background:#f1f5f9;}
+        .sys-modal-body{padding:24px;}
+        .sys-toast{position:fixed;bottom:24px;right:24px;padding:14px 20px;border-radius:12px;font-size:0.9rem;font-weight:600;color:#fff;z-index:99999;opacity:0;transform:translateY(10px);transition:all .3s ease;max-width:400px;box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+        .sys-toast.visible{opacity:1;transform:translateY(0);}
+        .sys-toast-success{background:#10b981;}
+        .sys-toast-info{background:#4f46e5;}
+        .sys-toast-warning{background:#f59e0b;}
+    </style>
 
 </body>
 </html>
