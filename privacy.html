@@ -88,6 +88,9 @@ permalink: /solucoes/privacy/
         
         .btn-action { background: var(--priv-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--priv-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(6, 182, 212, 0.4); }
+        .btn-outline { background: transparent; color: #fff; padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 1.05rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.45); cursor: pointer; }
+        .btn-outline:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); color: #fff; }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 0; }
 
         @media(max-width: 992px){ 
             .priv-split-layout { flex-direction: column; text-align: center; gap: 40px; }
@@ -220,10 +223,14 @@ permalink: /solucoes/privacy/
                     <span class="hero-tag fade-up delay-1">GovTech & Compliance | Lei 13.709/2018</span>
                     <h1 class="fade-up delay-1">Cerrado Privacy</h1>
                     <p class="fade-up delay-2">Plataforma SaaS e serviços especializados (DPO as a Service) para adequação e governança total de dados. Mapeie vulnerabilidades, atenda aos titulares e blinde sua instituição contra multas da ANPD.</p>
-                    <div class="fade-up delay-3">
+                    <div class="hero-btns fade-up delay-3">
                         <a href="#simulador" class="btn-action">
                             Simular Mapeamento de Dados
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </a>
+                        <a href="https://www.cerradofinancas.com.br/solucoes/privacy/simuladorprivacy" class="btn-outline" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Acessar Simulador Interativo
                         </a>
                     </div>
                 </div>
@@ -421,7 +428,13 @@ permalink: /solucoes/privacy/
         <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Evite multas, proteja o cidadão.</h2>
             <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">O prazo de adequação acabou e a ANPD já está multando entes públicos. Agende uma conversa com nosso DPO oficial e inicie o diagnóstico da sua instituição.</p>
-            <a href="/index.html#contato" class="btn-action" style="background: var(--priv-accent); color: #fff; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);">Agendar Reunião de Diagnóstico</a>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="/index.html#contato" class="btn-action" style="background: var(--priv-accent); color: #fff; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);">Agendar Reunião de Diagnóstico</a>
+                <a href="https://www.cerradofinancas.com.br/solucoes/privacy/simuladorprivacy" class="btn-outline" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Ver Simulador Completo
+                </a>
+            </div>
         </div>
     </section>
 
