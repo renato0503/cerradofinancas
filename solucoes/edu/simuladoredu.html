@@ -1,0 +1,1874 @@
+---
+layout: null
+permalink: /solucoes/edu/simuladoredu/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Cerrado Edu | Demonstração Interativa do Sistema</title>
+    <meta name="description" content="Teste todos os módulos do Cerrado Edu: gestão escolar, diário do professor, IA preditiva, matrículas e muito mais.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        :root {
+            --edu-dark: #0f172a;
+            --edu-primary: #4f46e5;
+            --edu-primary-light: #6366f1;
+            --edu-accent: #10b981;
+            --edu-accent-2: #06b6d4;
+            --edu-warning: #f59e0b;
+            --edu-danger: #ef4444;
+            --dash-bg: #1e293b;
+            --dash-panel: #334155;
+            --text-muted: #94a3b8;
+            --surface: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--surface);
+            color: #334155;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* HERO */
+        .sim-hero {
+            background: linear-gradient(135deg, var(--edu-dark) 0%, #1e1b4b 100%);
+            padding: 60px 0;
+            border-bottom: 4px solid var(--edu-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .sim-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .sim-hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .sim-hero-text { flex: 1; }
+        .sim-hero-badge {
+            background: rgba(79, 70, 229, 0.2);
+            color: #a5b4fc;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+            border: 1px solid rgba(79, 70, 229, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sim-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .sim-hero h1 span { color: var(--edu-primary-light); }
+        .sim-hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+        .btn-demo {
+            background: var(--edu-primary);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-demo:hover {
+            background: var(--edu-primary-light);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-demo.secondary {
+            background: transparent;
+            border: 2px solid var(--edu-primary);
+            color: var(--edu-primary-light);
+        }
+        .btn-demo.secondary:hover {
+            background: var(--edu-primary);
+            color: #fff;
+        }
+
+        /* NAVIGATION TABS */
+        .sim-nav {
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .sim-nav-list {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .sim-nav-list::-webkit-scrollbar { display: none; }
+        .sim-nav-item {
+            flex-shrink: 0;
+        }
+        .sim-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 20px;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        .sim-nav-link:hover {
+            color: var(--edu-primary);
+            background: #f8fafc;
+        }
+        .sim-nav-link.active {
+            color: var(--edu-primary);
+            border-bottom-color: var(--edu-primary);
+            background: #f0fdf4;
+        }
+        .sim-nav-link svg { width: 18px; height: 18px; }
+
+        /* MAIN LAYOUT */
+        .sim-main {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            padding: 24px 0;
+            min-height: calc(100vh - 250px);
+        }
+        @media (max-width: 992px) {
+            .sim-main { grid-template-columns: 1fr; }
+        }
+
+        /* SIDEBAR */
+        .sim-sidebar {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            height: fit-content;
+            position: sticky;
+            top: 160px;
+        }
+        .sidebar-section { margin-bottom: 20px; }
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-item {
+            margin-bottom: 4px;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .sidebar-link:hover {
+            background: #f1f5f9;
+            color: var(--edu-primary);
+        }
+        .sidebar-link.active {
+            background: #eef2ff;
+            color: var(--edu-primary);
+            font-weight: 600;
+        }
+        .sidebar-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .sidebar-badge {
+            background: var(--edu-danger);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: auto;
+        }
+        .sidebar-badge.warning { background: var(--edu-warning); }
+        .sidebar-badge.success { background: var(--edu-accent); }
+
+        /* USER INFO */
+        .sim-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--edu-primary) 0%, #6366f1 100%);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .sim-user-avatar {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .sim-user-info h4 { color: #fff; font-size: 1rem; margin: 0; }
+        .sim-user-info p { color: rgba(255,255,255,0.8); font-size: 0.8rem; margin: 4px 0 0; }
+
+        /* CONTENT AREA */
+        .sim-content {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+        }
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .content-title { font-size: 1.5rem; font-weight: 800; color: #0f172a; }
+        .content-actions { display: flex; gap: 8px; }
+        .btn-action {
+            background: var(--edu-primary);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .btn-action:hover { background: var(--edu-primary-light); }
+        .btn-action.success { background: var(--edu-accent); }
+        .btn-action.warning { background: var(--edu-warning); }
+        .btn-action svg { width: 16px; height: 16px; }
+
+        /* MODULE PANELS */
+        .module-panel { display: none; }
+        .module-panel.active { display: block; }
+
+        /* CARDS GRID */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .stat-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stat-card-icon.blue { background: #dbeafe; color: #2563eb; }
+        .stat-card-icon.green { background: #dcfce7; color: #16a34a; }
+        .stat-card-icon.yellow { background: #fef3c7; color: #d97706; }
+        .stat-card-icon.red { background: #fee2e2; color: #dc2626; }
+        .stat-card-icon.purple { background: #ede9fe; color: #7c3aed; }
+        .stat-card-icon svg { width: 22px; height: 22px; }
+        .stat-card-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1;
+        }
+        .stat-card-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .stat-card-change {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .stat-card-change.up { background: #dcfce7; color: #16a34a; }
+        .stat-card-change.down { background: #fee2e2; color: #dc2626; }
+
+        /* TABLES */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .data-table th {
+            background: #f8fafc;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 700;
+            color: #475569;
+            border-bottom: 2px solid #e2e8f0;
+            white-space: nowrap;
+        }
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+        }
+        .data-table tr:hover td { background: #f8fafc; }
+        .data-table .student-cell {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .student-avatar-sm {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--edu-primary) 0%, #818cf8 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .student-name { font-weight: 600; }
+        .student-class { font-size: 0.8rem; color: #94a3b8; }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .badge.success { background: #dcfce7; color: #16a34a; }
+        .badge.warning { background: #fef3c7; color: #d97706; }
+        .badge.danger { background: #fee2e2; color: #dc2626; }
+        .badge.info { background: #dbeafe; color: #2563eb; }
+        .badge.purple { background: #ede9fe; color: #7c3aed; }
+
+        /* AI CONSOLE */
+        .ai-console {
+            background: var(--edu-dark);
+            border-radius: 16px;
+            padding: 24px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            color: #34d399;
+            position: relative;
+            overflow: hidden;
+        }
+        .ai-console-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .ai-console-title {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ai-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .ai-status.idle { background: rgba(100,116,139,0.3); color: #94a3b8; }
+        .ai-status.running { background: rgba(245,158,11,0.2); color: #fbbf24; }
+        .ai-status.alert { background: rgba(239,68,68,0.2); color: #f87171; }
+        .ai-status.success { background: rgba(16,185,129,0.2); color: #34d399; }
+        .ai-console-body {
+            min-height: 200px;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+        .ai-line { margin-bottom: 4px; opacity: 0; transition: opacity 0.3s; }
+        .ai-line.visible { opacity: 1; }
+        .ai-line .cmd { color: #60a5fa; }
+        .ai-line .result { color: #f472b6; }
+        .ai-line .success { color: #34d399; }
+        .ai-line .warning { color: #fbbf24; }
+        .ai-line .error { color: #f87171; }
+
+        /* ALERT BOX */
+        .alert-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 16px;
+            display: none;
+        }
+        .alert-box.show { display: block; animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } }
+        .alert-box.critical {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+        }
+        .alert-box.critical .alert-title { color: #f87171; }
+        .alert-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .alert-text { color: #cbd5e1; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+        .alert-actions { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+        /* MODULE SPECIFIC STYLES */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .module-card {
+            background: #f8fafc;
+            border: 2px dashed #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .module-card:hover {
+            border-color: var(--edu-primary);
+            background: #eef2ff;
+            transform: translateY(-2px);
+        }
+        .module-card.active {
+            border-style: solid;
+            border-color: var(--edu-primary);
+            background: #eef2ff;
+        }
+        .module-card-icon {
+            width: 56px;
+            height: 56px;
+            background: #fff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: var(--edu-primary);
+        }
+        .module-card-icon svg { width: 28px; height: 28px; }
+        .module-card h4 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+        .module-card p { font-size: 0.8rem; color: #64748b; }
+
+        /* FORM ELEMENTS */
+        .form-group { margin-bottom: 16px; }
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--edu-primary);
+            box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+        }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+        /* CALENDAR GRID */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-top: 16px;
+        }
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .calendar-day:hover { background: #f1f5f9; }
+        .calendar-day.present { background: #dcfce7; color: #16a34a; }
+        .calendar-day.absent { background: #fee2e2; color: #dc2626; }
+        .calendar-day.weekend { background: #f1f5f9; color: #94a3b8; }
+        .calendar-header {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-align: center;
+            padding: 8px 0;
+        }
+
+        /* ATTENDANCE SHEET */
+        .attendance-row {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #f1f5f9;
+            transition: background 0.2s;
+        }
+        .attendance-row:hover { background: #f8fafc; }
+        .attendance-toggle {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+        }
+        .toggle-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .toggle-btn.present {
+            background: #e2e8f0;
+            color: #475569;
+        }
+        .toggle-btn.present.active {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .toggle-btn.absent {
+            background: #e2e8f0;
+            color: #475569;
+        }
+        .toggle-btn.absent.active {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        /* XAI EXPLANATION */
+        .xai-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px;
+        }
+        .xai-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .xai-bar {
+            background: #fde68a;
+            border-radius: 6px;
+            height: 24px;
+            margin-bottom: 8px;
+            display: flex;
+            overflow: hidden;
+        }
+        .xai-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            transition: width 0.5s ease;
+        }
+        .xai-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: #92400e;
+        }
+        .xai-legend span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .xai-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+        }
+
+        /* TABS INSIDE MODULES */
+        .inner-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .inner-tab {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #64748b;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .inner-tab:hover { background: #f1f5f9; color: var(--edu-primary); }
+        .inner-tab.active { background: var(--edu-primary); color: #fff; }
+
+        /* QUICK STATS */
+        .quick-stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .quick-stat {
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 150px;
+        }
+        .quick-stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quick-stat-value { font-size: 1.5rem; font-weight: 800; color: #0f172a; }
+        .quick-stat-label { font-size: 0.8rem; color: #64748b; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .sim-hero-content { flex-direction: column; text-align: center; }
+            .sim-nav-link span { display: none; }
+            .sim-sidebar { display: none; }
+            .data-table { font-size: 0.8rem; }
+            .data-table th, .data-table td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="Cerrado Tech" %}
+
+    <!-- HERO -->
+    <section class="sim-hero">
+        <div class="container">
+            <div class="sim-hero-content">
+                <div class="sim-hero-text fade-up">
+                    <span class="sim-hero-badge">Simulador Interativo</span>
+                    <h1>Cerrado <span>Edu</span></h1>
+                    <p>Experimente todos os módulos do sistema de gestão escolar com IA preditiva. Navegue pelos menus e veja como funciona.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="#modulos" class="btn-demo">
+                            Explorar Módulos
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="/solucoes/edu/" class="btn-demo secondary">
+                            Voltar à Landing
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-up delay-2" style="flex-shrink: 0;">
+                    <img src="{{ '/img/edu.png' | relative_url }}" alt="Cerrado Edu" style="width: 140px; height: 140px; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" onerror="this.src='{{ '/img/logo.png' | relative_url }}';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVIGATION -->
+    <nav class="sim-nav" id="modulos">
+        <div class="container">
+            <ul class="sim-nav-list">
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link active" data-module="dashboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="matriculas">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                        <span>Matrículas</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="diario">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        <span>Diário do Professor</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="frequencia">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>Frequência</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="notas">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <span>Notas e Avaliações</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="ia">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        <span>Cerrado AI</span>
+                        <span class="sidebar-badge">Beta</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="infra">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Infraestrutura</span>
+                    </a>
+                </li>
+                <li class="sim-nav-item">
+                    <a href="#" class="sim-nav-link" data-module="compliance">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Compliance MEC</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <div class="sim-main">
+            
+            <!-- SIDEBAR -->
+            <aside class="sim-sidebar">
+                <div class="sim-user">
+                    <div class="sim-user-avatar">MA</div>
+                    <div class="sim-user-info">
+                        <h4>Maria Aparecida</h4>
+                        <p>Diretora - Escola Modelo</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Contexto</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link active">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                Escola Modelo
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                Ano Letivo 2026
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Alertas do Sistema</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                Prazo Educacenso
+                                <span class="sidebar-badge warning">3 dias</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                5 alunos em risco
+                                <span class="sidebar-badge danger">5</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                Fechamento Bimestral
+                                <span class="sidebar-badge success">Aberto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Acesso Rápido</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Boletim Online
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                Ouvidoria
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                Configurações
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- CONTENT AREA -->
+            <div class="sim-content">
+                
+                <!-- MODULE: DASHBOARD -->
+                <div class="module-panel active" id="panel-dashboard">
+                    <div class="content-header">
+                        <h2 class="content-title">Dashboard Executivo</h2>
+                        <div class="content-actions">
+                            <button class="btn-action">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Exportar PDF
+                            </button>
+                            <button class="btn-action success">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                                Atualizar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quick-stats">
+                        <div class="quick-stat">
+                            <div class="quick-stat-icon stat-card-icon blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div>
+                                <div class="quick-stat-value">1.248</div>
+                                <div class="quick-stat-label">Total de Alunos</div>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-icon stat-card-icon green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div>
+                                <div class="quick-stat-value">94.2%</div>
+                                <div class="quick-stat-label">Taxa de Frequência</div>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-icon stat-card-icon yellow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            </div>
+                            <div>
+                                <div class="quick-stat-value">5</div>
+                                <div class="quick-stat-label">Alunos em Risco</div>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-icon stat-card-icon purple">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            </div>
+                            <div>
+                                <div class="quick-stat-value">42</div>
+                                <div class="quick-stat-label">Turmas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a;">Alunos Recentes</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Turma</th>
+                                <th>Média Geral</th>
+                                <th>Frequência</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm">LG</div>
+                                        <div>
+                                            <div class="student-name">Lucas Gabriel M.</div>
+                                            <div class="student-class">8º Ano A</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>8º Ano A - Manhã</td>
+                                <td><strong>4.5</strong></td>
+                                <td>78%</td>
+                                <td><span class="badge danger">Risco Evasão</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">AS</div>
+                                        <div>
+                                            <div class="student-name">Ana Silva</div>
+                                            <div class="student-class">6º Ano B</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>6º Ano B - Manhã</td>
+                                <td><strong>8.7</strong></td>
+                                <td>96%</td>
+                                <td><span class="badge success">Regular</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">JP</div>
+                                        <div>
+                                            <div class="student-name">João Pedro R.</div>
+                                            <div class="student-class">9º Ano A</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>9º Ano A - Tarde</td>
+                                <td><strong>6.2</strong></td>
+                                <td>89%</td>
+                                <td><span class="badge warning">Atenção</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">MC</div>
+                                        <div>
+                                            <div class="student-name">Maria Clara S.</div>
+                                            <div class="student-class">7º Ano A</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>7º Ano A - Manhã</td>
+                                <td><strong>9.1</strong></td>
+                                <td>98%</td>
+                                <td><span class="badge success">Excelente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- MODULE: MATRÍCULAS -->
+                <div class="module-panel" id="panel-matriculas">
+                    <div class="content-header">
+                        <h2 class="content-title">Gestão de Matrículas e Fila da Creche</h2>
+                        <div class="content-actions">
+                            <button class="btn-action success">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                Nova Matrícula
+                            </button>
+                            <button class="btn-action">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                Fila de Espera
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="inner-tabs">
+                        <button class="inner-tab active" data-tab="ativas">Matrículas Ativas</button>
+                        <button class="inner-tab" data-tab="fila">Fila da Creche</button>
+                        <button class="inner-tab" data-tab="transferencias">Transferências</button>
+                    </div>
+
+                    <div class="module-grid">
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                            </div>
+                            <h4>Educação Infantil</h4>
+                            <p>Berçário ao Pré-II</p>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                            </div>
+                            <h4>Ensino Fundamental</h4>
+                            <p>1º ao 9º Ano</p>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                            </div>
+                            <h4>EJA</h4>
+                            <p>Educação de Jovens e Adultos</p>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            </div>
+                            <h4>Educação Especial</h4>
+                            <p>Atendimento Especializado</p>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a;">Fila de Espera - Creche Municipal</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Criança</th>
+                                <th>Responsável</th>
+                                <th>Pontuação</th>
+                                <th>Critérios</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1º</strong></td>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);">BR</div>
+                                        <div>
+                                            <div class="student-name">Beatriz R.</div>
+                                            <div class="student-class">1 ano</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Mãe Solo + Bolsa Família</td>
+                                <td><strong>85 pts</strong></td>
+                                <td><span class="badge purple">Vulnerabilidade</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2º</strong></td>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm">CA</div>
+                                        <div>
+                                            <div class="student-name">Carlos A.</div>
+                                            <div class="student-class">2 anos</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Renda familiar &lt; 1 SM</td>
+                                <td><strong>72 pts</strong></td>
+                                <td><span class="badge info">Renda</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3º</strong></td>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);">LS</div>
+                                        <div>
+                                            <div class="student-name">Luísa S.</div>
+                                            <div class="student-class">1 ano</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Proximidade escola</td>
+                                <td><strong>68 pts</strong></td>
+                                <td><span class="badge info">Geolocalização</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- MODULE: DIÁRIO DO PROFESSOR -->
+                <div class="module-panel" id="panel-diario">
+                    <div class="content-header">
+                        <h2 class="content-title">Diário do Professor</h2>
+                        <div class="content-actions">
+                            <button class="btn-action success">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                                Registrar Aula
+                            </button>
+                            <button class="btn-action">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                                Sincronizar Offline
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                </div>
+                                <span class="badge info">Hoje</span>
+                            </div>
+                            <div class="stat-card-value">8º Ano A</div>
+                            <div class="stat-card-label">Matemática - 07:30 às 08:20</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">32</div>
+                            <div class="stat-card-label">Alunos na Turma</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon yellow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">29</div>
+                            <div class="stat-card-label">Presentes</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon red">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">3</div>
+                            <div class="stat-card-label">Faltas</div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a;">Conteúdo da Aula - Equação do 2º Grau</h3>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Código BNCC</label>
+                                <input type="text" class="form-input" value="EF09MA09" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Habilidade</label>
+                                <input type="text" class="form-input" value="Resolver equações quadráticas" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Registro do Conteúdo</label>
+                            <textarea class="form-input" rows="3" placeholder="Registre aqui o conteúdo lecionado...">Hoje trabalhamos com a fórmula de Bhaskara. Resolvemos 5 exercícios do livro didático páginas 78-79. Participação ativa da turma.</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE: FREQUÊNCIA -->
+                <div class="module-panel" id="panel-frequencia">
+                    <div class="content-header">
+                        <h2 class="content-title">Frequência Digital</h2>
+                        <div class="content-actions">
+                            <button class="btn-action success" onclick="marcarTodosPresent()">
+                                Marcar Todos Presentes
+                            </button>
+                            <button class="btn-action warning" onclick="salvarFrequencia()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                                Salvar Chamada
+                            </button>
+                        </div>
+                    </div>
+
+                    <p style="color: #64748b; margin-bottom: 20px;">Clique em "Presente" ou "Falta" para cada aluno. Dados são salvos automaticamente no servidor.</p>
+
+                    <div class="attendance-row" style="background: #f8fafc; font-weight: 700; border-bottom: 2px solid #e2e8f0;">
+                        <div style="flex: 2;">Aluno</div>
+                        <div style="flex: 1;">Turma</div>
+                        <div style="flex: 1;">Presença</div>
+                    </div>
+                    <div id="attendanceList">
+                        <div class="attendance-row">
+                            <div class="student-cell" style="flex: 2;">
+                                <div class="student-avatar-sm">LG</div>
+                                <div>
+                                    <div class="student-name">Lucas Gabriel Martins</div>
+                                    <div class="student-class">8º Ano A</div>
+                                </div>
+                            </div>
+                            <div style="flex: 1; color: #64748b;">8º Ano A</div>
+                            <div class="attendance-toggle" style="flex: 1;">
+                                <button class="toggle-btn present active" onclick="togglePresence(this)">Presente</button>
+                                <button class="toggle-btn absent" onclick="togglePresence(this)">Falta</button>
+                            </div>
+                        </div>
+                        <div class="attendance-row">
+                            <div class="student-cell" style="flex: 2;">
+                                <div class="student-avatar-sm" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">AS</div>
+                                <div>
+                                    <div class="student-name">Ana Silva</div>
+                                    <div class="student-class">8º Ano A</div>
+                                </div>
+                            </div>
+                            <div style="flex: 1; color: #64748b;">8º Ano A</div>
+                            <div class="attendance-toggle" style="flex: 1;">
+                                <button class="toggle-btn present active" onclick="togglePresence(this)">Presente</button>
+                                <button class="toggle-btn absent" onclick="togglePresence(this)">Falta</button>
+                            </div>
+                        </div>
+                        <div class="attendance-row">
+                            <div class="student-cell" style="flex: 2;">
+                                <div class="student-avatar-sm" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">JP</div>
+                                <div>
+                                    <div class="student-name">João Pedro Rodrigues</div>
+                                    <div class="student-class">8º Ano A</div>
+                                </div>
+                            </div>
+                            <div style="flex: 1; color: #64748b;">8º Ano A</div>
+                            <div class="attendance-toggle" style="flex: 1;">
+                                <button class="toggle-btn present" onclick="togglePresence(this)">Presente</button>
+                                <button class="toggle-btn absent active" onclick="togglePresence(this)">Falta</button>
+                            </div>
+                        </div>
+                        <div class="attendance-row">
+                            <div class="student-cell" style="flex: 2;">
+                                <div class="student-avatar-sm" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">MC</div>
+                                <div>
+                                    <div class="student-name">Maria Clara Santos</div>
+                                    <div class="student-class">8º Ano A</div>
+                                </div>
+                            </div>
+                            <div style="flex: 1; color: #64748b;">8º Ano A</div>
+                            <div class="attendance-toggle" style="flex: 1;">
+                                <button class="toggle-btn present active" onclick="togglePresence(this)">Presente</button>
+                                <button class="toggle-btn absent" onclick="togglePresence(this)">Falta</button>
+                            </div>
+                        </div>
+                        <div class="attendance-row">
+                            <div class="student-cell" style="flex: 2;">
+                                <div class="student-avatar-sm" style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);">BR</div>
+                                <div>
+                                    <div class="student-name">Beatriz Rocha</div>
+                                    <div class="student-class">8º Ano A</div>
+                                </div>
+                            </div>
+                            <div style="flex: 1; color: #64748b;">8º Ano A</div>
+                            <div class="attendance-toggle" style="flex: 1;">
+                                <button class="toggle-btn present active" onclick="togglePresence(this)">Presente</button>
+                                <button class="toggle-btn absent" onclick="togglePresence(this)">Falta</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert-box success" id="freqAlert" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); margin-top: 20px;">
+                        <div class="alert-title" style="color: #10b981;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Frequência Salva com Sucesso
+                        </div>
+                        <div class="alert-text">32 alunos registrados. Pais/notificadores serão notificados automaticamente via WhatsApp.</div>
+                    </div>
+                </div>
+
+                <!-- MODULE: NOTAS -->
+                <div class="module-panel" id="panel-notas">
+                    <div class="content-header">
+                        <h2 class="content-title">Notas e Avaliações</h2>
+                        <div class="content-actions">
+                            <button class="btn-action">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                Nova Avaliação
+                            </button>
+                            <button class="btn-action success">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Calcular Médias
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">2º Bimestre</div>
+                            <div class="stat-card-label">Período Atual</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">87%</div>
+                            <div class="stat-card-label">Notas Lançadas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon yellow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">4</div>
+                            <div class="stat-card-label">Abaixo da Média</div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a;">Lançar Notas - Prova Bimestral</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Prova (40pts)</th>
+                                <th>Trabalho (30pts)</th>
+                                <th>Participação (30pts)</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm">LG</div>
+                                        <div class="student-name">Lucas Gabriel M.</div>
+                                    </div>
+                                </td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="18"></td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="22"></td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="18"></td>
+                                <td><strong style="color: var(--edu-danger);">5.8</strong></td>
+                                <td><span class="badge danger">Reprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">AS</div>
+                                        <div class="student-name">Ana Silva</div>
+                                    </div>
+                                </td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="38"></td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="28"></td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="28"></td>
+                                <td><strong style="color: var(--edu-accent);">9.4</strong></td>
+                                <td><span class="badge success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">JP</div>
+                                        <div class="student-name">João Pedro R.</div>
+                                    </div>
+                                </td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="25"></td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="20"></td>
+                                <td><input type="number" class="form-input" style="width: 70px;" value="22"></td>
+                                <td><strong style="color: var(--edu-warning);">6.7</strong></td>
+                                <td><span class="badge warning">Recuperação</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- MODULE: CERRADO AI -->
+                <div class="module-panel" id="panel-ia">
+                    <div class="content-header">
+                        <h2 class="content-title">Cerrado AI - Motor Preditivo</h2>
+                        <div class="content-actions">
+                            <button class="btn-action" id="btnRunAI" onclick="runAIPrediction()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                Rodar Predição
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon red">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                </div>
+                                <span class="badge danger">5</span>
+                            </div>
+                            <div class="stat-card-value">Alto Risco</div>
+                            <div class="stat-card-label">Prob. > 70%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon yellow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                </div>
+                                <span class="badge warning">12</span>
+                            </div>
+                            <div class="stat-card-value">Médio Risco</div>
+                            <div class="stat-card-label">Prob. 40-70%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <span class="badge success">1.231</span>
+                            </div>
+                            <div class="stat-card-value">Baixo Risco</div>
+                            <div class="stat-card-label">Prob. < 40%</div>
+                        </div>
+                    </div>
+
+                    <div class="ai-console">
+                        <div class="ai-console-header">
+                            <div class="ai-console-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                Console - Random Forest (500 árvores)
+                            </div>
+                            <span class="ai-status idle" id="aiStatusConsole">Aguardando</span>
+                        </div>
+                        <div class="ai-console-body" id="aiConsole">
+                            <div class="ai-line visible"><span class="cmd">> Sistema pronto.</span></div>
+                            <div class="ai-line visible"><span class="success">> Aguardando comando para iniciar análise preditiva...</span></div>
+                        </div>
+                        
+                        <div class="alert-box" id="aiAlertBox">
+                            <div class="alert-title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                ALERTA: Risco de Evasão (87%)
+                            </div>
+                            <div class="alert-text">
+                                <strong>Aluno:</strong> Lucas Gabriel Martins | <strong>Turma:</strong> 8º Ano A<br>
+                                <strong>Padrão Detectado:</strong> Combinação de 4 faltas consecutivas, queda abrupta em Matemática (9.0 → 4.5) e perfil de vulnerabilidade social (CadÚnico).
+                            </div>
+                            <div class="xai-box">
+                                <div class="xai-title">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                    Explicabilidade (XAI) - Por que este aluno está em risco?
+                                </div>
+                                <div class="xai-bar">
+                                    <div class="xai-segment" style="width: 45%; background: #ef4444;">Faltas 45%</div>
+                                    <div class="xai-segment" style="width: 25%; background: #f59e0b;">Notas 25%</div>
+                                    <div class="xai-segment" style="width: 20%; background: #8b5cf6;">Vulnerab. 20%</div>
+                                    <div class="xai-segment" style="width: 10%; background: #64748b;">Outros 10%</div>
+                                </div>
+                                <div class="xai-legend">
+                                    <span><div class="xai-dot" style="background: #ef4444;"></div> Faltas (principal fator)</span>
+                                    <span><div class="xai-dot" style="background: #f59e0b;"></div> Queda de notas</span>
+                                    <span><div class="xai-dot" style="background: #8b5cf6;"></div> Perfil SUAS</span>
+                                    <span><div class="xai-dot" style="background: #64748b;"></div> Outros</span>
+                                </div>
+                            </div>
+                            <div class="alert-actions">
+                                <button class="btn-action" onclick="acionarCRAS()">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    Acionar CRAS
+                                </button>
+                                <button class="btn-action warning" onclick="acionarConselho()">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    Conselho Tutelar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE: INFRAESTRUTURA -->
+                <div class="module-panel" id="panel-infra">
+                    <div class="content-header">
+                        <h2 class="content-title">Gestão de Infraestrutura (FNDE)</h2>
+                        <div class="content-actions">
+                            <button class="btn-action">Estoque Merenda</button>
+                            <button class="btn-action">Transporte</button>
+                            <button class="btn-action">Patrimônio</button>
+                        </div>
+                    </div>
+
+                    <div class="module-grid">
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                            </div>
+                            <h4>Merenda (PNAE)</h4>
+                            <p>Controle de estoque e cardápio</p>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            </div>
+                            <h4>Transporte (PNATE)</h4>
+                            <p>Rotas e manutenção da frota</p>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                            </div>
+                            <h4>Biblioteca</h4>
+                            <p>Acervo e empréstimo</p>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            </div>
+                            <h4>Patrimônio</h4>
+                            <p>Tombamento e QR Code</p>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a;">Estoque de Merenda - PNAE</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantidade</th>
+                                <th>Unidade</th>
+                                <th>Validade</th>
+                                <th>Origem</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Arroz Branco</td>
+                                <td>500 kg</td>
+                                <td>Kg</td>
+                                <td>12/2027</td>
+                                <td>Agricultura Familiar</td>
+                                <td><span class="badge success">OK</span></td>
+                            </tr>
+                            <tr>
+                                <td>Feijão Carioca</td>
+                                <td>200 kg</td>
+                                <td>Kg</td>
+                                <td>08/2026</td>
+                                <td>Agricultura Familiar</td>
+                                <td><span class="badge success">OK</span></td>
+                            </tr>
+                            <tr>
+                                <td>Leite UHT</td>
+                                <td>150 L</td>
+                                <td>Litros</td>
+                                <td>15/04/2026</td>
+                                <td>Fornecedor Local</td>
+                                <td><span class="badge warning">Próximo</span></td>
+                            </tr>
+                            <tr>
+                                <td>Legumes (Mix)</td>
+                                <td>80 kg</td>
+                                <td>Kg</td>
+                                <td>25/03/2026</td>
+                                <td>Agricultura Familiar</td>
+                                <td><span class="badge danger">Vencendo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- MODULE: COMPLIANCE -->
+                <div class="module-panel" id="panel-compliance">
+                    <div class="content-header">
+                        <h2 class="content-title">Central de Compliance MEC/FNDE</h2>
+                        <div class="content-actions">
+                            <button class="btn-action success">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Validar Dados
+                            </button>
+                            <button class="btn-action">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                Exportar Educacenso
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">1.248</div>
+                            <div class="stat-card-label">Alunos no Censo</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon yellow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                </div>
+                                <span class="badge warning">3</span>
+                            </div>
+                            <div class="stat-card-value">Pendências</div>
+                            <div class="stat-card-label">Alunos sem CPF</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-header">
+                                <div class="stat-card-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">3 dias</div>
+                            <div class="stat-card-label">Prazo Final: 25/03</div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a;">Validações do Educacenso</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Problema</th>
+                                <th>Severity</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm">RM</div>
+                                        <div class="student-name">Rafael M.</div>
+                                    </div>
+                                </td>
+                                <td>CPF inválido ou não informado</td>
+                                <td><span class="badge danger">Crítico</span></td>
+                                <td><button class="btn-action" style="padding: 6px 12px; font-size: 0.8rem;">Regularizar</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm">JO</div>
+                                        <div class="student-name">Julia O.</div>
+                                    </div>
+                                </td>
+                                <td>Data de Nascimento inconsistente</td>
+                                <td><span class="badge warning">Alto</span></td>
+                                <td><button class="btn-action" style="padding: 6px 12px; font-size: 0.8rem;">Verificar</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar-sm">LT</div>
+                                        <div class="student-name">Luan T.</div>
+                                    </div>
+                                </td>
+                                <td>NIS não encontrado no CadÚnico</td>
+                                <td><span class="badge warning">Alto</span></td>
+                                <td><button class="btn-action" style="padding: 6px 12px; font-size: 0.8rem;">Verificar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="alert-box" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); margin-top: 20px;">
+                        <div class="alert-title" style="color: #d97706;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            Atenção: Prazo do Educacenso se aproxima
+                        </div>
+                        <div class="alert-text">Você tem 3 pendências que devem ser resolvidas antes do envio. O não envio até 25/03 resultará na perda de repasses do FUNDEB.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    {% include footer.html %}
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+            const navLinks = document.querySelectorAll('.sim-nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    const module = this.dataset.module;
+                    document.querySelectorAll('.module-panel').forEach(p => p.classList.remove('active'));
+                    document.getElementById('panel-' + module).classList.add('active');
+                });
+            });
+
+            const innerTabs = document.querySelectorAll('.inner-tab');
+            innerTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    innerTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+
+        function togglePresence(btn) {
+            const parent = btn.closest('.attendance-toggle');
+            parent.querySelectorAll('.toggle-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+        }
+
+        function marcarTodosPresent() {
+            document.querySelectorAll('.attendance-toggle').forEach(parent => {
+                parent.querySelectorAll('.toggle-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                parent.querySelector('.toggle-btn.present').classList.add('active');
+            });
+        }
+
+        function salvarFrequencia() {
+            const alert = document.getElementById('freqAlert');
+            alert.classList.add('show');
+            setTimeout(() => alert.classList.remove('show'), 4000);
+        }
+
+        function runAIPrediction() {
+            const btn = document.getElementById('btnRunAI');
+            const console = document.getElementById('aiConsole');
+            const status = document.getElementById('aiStatusConsole');
+            const alertBox = document.getElementById('aiAlertBox');
+            
+            if(btn.disabled) return;
+            btn.disabled = true;
+            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Processando...';
+            
+            console.innerHTML = '';
+            alertBox.classList.remove('show');
+            status.className = 'ai-status running';
+            status.textContent = 'Processando';
+
+            const steps = [
+                { text: '> Conectando ao banco de dados...', cls: 'cmd' },
+                { text: '> Carregando 1.248 registros de alunos...', cls: 'success' },
+                { text: '> Aplicando Random Forest (500 árvores)...', cls: 'cmd' },
+                { text: '> 45% - Faltas consecutivas detectadas', cls: 'warning' },
+                { text: '> 25% - Queda de rendimento em Matemática', cls: 'warning' },
+                { text: '> 20% - Perfil de vulnerabilidade (CadÚnico)', cls: 'warning' },
+                { text: '> Cálculo finalizado. 5 alunos em alto risco.', cls: 'success' }
+            ];
+
+            let i = 0;
+            const interval = setInterval(() => {
+                if(i < steps.length) {
+                    const line = document.createElement('div');
+                    line.className = 'ai-line';
+                    line.innerHTML = `<span class="${steps[i].cls}">${steps[i].text}</span>`;
+                    console.appendChild(line);
+                    setTimeout(() => line.classList.add('visible'), 50);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    status.className = 'ai-status alert';
+                    status.textContent = 'Alerta!';
+                    alertBox.classList.add('show');
+                    btn.disabled = false;
+                    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Nova Predição';
+                }
+            }, 600);
+        }
+
+        function acionarCRAS() {
+            alert('[DEMO] Alerta enviado ao CRAS local via WhatsApp Business API.\n\n Relatório:\n- Aluno: Lucas Gabriel Martins\n- Escola: Escola Modelo\n- Situação: Risco de evasão (87%)');
+        }
+
+        function acionarConselho() {
+            alert('[DEMO] Notificação enviada ao Conselho Tutelar.\n\n Protocolo gerado automaticamente pelo sistema.');
+        }
+    </script>
+
+</body>
+</html>
