@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="icon" type="image/png" href="../../img/folinha.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/sistemaprev.css">
     <style>
         .loading {
@@ -18,6 +20,7 @@
             min-height: 300px;
             color: var(--text-muted);
         }
+
         .spinner {
             width: 40px;
             height: 40px;
@@ -27,15 +30,20 @@
             animation: spin 1s linear infinite;
             margin-bottom: 16px;
         }
+
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
+
         .toast-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 9999;
         }
+
         .toast {
             background: var(--surface);
             border-radius: var(--radius);
@@ -49,9 +57,19 @@
             transition: transform 0.3s ease;
             border-left: 4px solid var(--prev-info);
         }
-        .toast.show { transform: translateX(0); }
-        .toast-success { border-left-color: var(--prev-success); }
-        .toast-danger { border-left-color: var(--prev-danger); }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-success {
+            border-left-color: var(--prev-success);
+        }
+
+        .toast-danger {
+            border-left-color: var(--prev-danger);
+        }
+
         .toast button {
             background: none;
             border: none;
@@ -59,6 +77,7 @@
             cursor: pointer;
             color: var(--text-muted);
         }
+
         .welcome-banner {
             background: linear-gradient(135deg, var(--prev-dark) 0%, var(--prev-primary) 100%);
             color: white;
@@ -68,6 +87,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .welcome-banner::before {
             content: '';
             position: absolute;
@@ -77,50 +97,58 @@
             height: 400px;
             background: radial-gradient(circle, rgba(217, 119, 6, 0.2) 0%, transparent 60%);
         }
+
         .welcome-content {
             position: relative;
             z-index: 1;
         }
+
         .welcome-banner h2 {
             font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 8px;
         }
+
         .welcome-banner p {
             font-size: 0.95rem;
             opacity: 0.9;
             max-width: 600px;
         }
+
         .quick-actions {
             display: flex;
             gap: 12px;
             margin-top: 20px;
         }
+
         .quick-actions .btn {
             background: rgba(255, 255, 255, 0.15);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .quick-actions .btn:hover {
             background: var(--prev-accent);
             border-color: var(--prev-accent);
         }
     </style>
 </head>
+
 <body>
     <div class="prev-system">
         <!-- SIDEBAR -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
-                    <img src="../../img/prev.png" alt="Prev Logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23d97706%22 width=%22100%22 height=%22100%22 rx=%2220%22/><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 font-weight=%22bold%22>PR</text></svg>'">
+                    <img src="../../img/prev.png" alt="Prev Logo"
+                        onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23d97706%22 width=%22100%22 height=%22100%22 rx=%2220%22/><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 font-weight=%22bold%22>PR</text></svg>'">
                 </div>
                 <div class="sidebar-brand">
                     <h1>CerradoPrev</h1>
                     <p>Hub RPPS</p>
                 </div>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <div class="nav-section">
                     <div class="nav-section-title">Principal</div>
@@ -135,7 +163,7 @@
                         <span>💰</span> Arrecadação
                     </button>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Integrações</div>
                     <button class="nav-item" data-page="comprev" onclick="navigateTo('comprev')">
@@ -145,7 +173,7 @@
                         <span>🏥</span> Perícia Médica
                     </button>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Gestão</div>
                     <button class="nav-item" data-page="portaldoservidor" onclick="navigateTo('portaldoservidor')">
@@ -161,7 +189,7 @@
                         <span>📊</span> Atuarial
                     </button>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Sistema</div>
                     <button class="nav-item" data-page="configuracoes" onclick="navigateTo('configuracoes')">
@@ -169,7 +197,7 @@
                     </button>
                 </div>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <div class="sidebar-user">
                     <div class="user-avatar">RR</div>
@@ -180,13 +208,14 @@
                 </div>
             </div>
         </aside>
-        
+
         <!-- MAIN CONTENT -->
         <main class="main-content">
             <header class="main-header">
                 <div class="header-left">
                     <button class="mobile-toggle" id="mobile-toggle">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -201,14 +230,16 @@
                 <div class="header-right">
                     <span class="header-time" id="current-time"></span>
                     <button class="header-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                         </svg>
                         <span class="notification-badge"></span>
                     </button>
-                    <button class="header-btn-logout" onclick="window.location.href='../../prev.html'">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <button class="header-btn-logout" onclick="window.location.href='../../prev'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                             <polyline points="16 17 21 12 16 7"></polyline>
                             <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -217,13 +248,14 @@
                     </button>
                 </div>
             </header>
-            
+
             <div class="page-content" id="page-content">
                 <!-- Welcome Banner -->
                 <div class="welcome-banner">
                     <div class="welcome-content">
                         <h2>Bem-vindo ao CerradoPrev Simulado!</h2>
-                        <p>Este é um protótipo interativo do sistema de gestão para RPPS. Explore as funcionalidades clicando nos itens do menu lateral.</p>
+                        <p>Este é um protótipo interativo do sistema de gestão para RPPS. Explore as funcionalidades
+                            clicando nos itens do menu lateral.</p>
                         <div class="quick-actions">
                             <button class="btn" onclick="openNewRequerimento()">
                                 ➕ Novo Requerimento
@@ -237,7 +269,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Stats Grid -->
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -272,7 +304,7 @@
                         <div class="stat-label">Taxa Sucesso CRP</div>
                     </div>
                 </div>
-                
+
                 <div class="grid-2 mb-3">
                     <!-- Alertas -->
                     <div class="card">
@@ -303,12 +335,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Últimas Concessões -->
                     <div class="card">
                         <div class="card-header">
                             <h3>📋 Últimas Concessões</h3>
-                            <button class="btn btn-sm btn-secondary" onclick="navigateTo('concessoes')">Ver Todas</button>
+                            <button class="btn btn-sm btn-secondary" onclick="navigateTo('concessoes')">Ver
+                                Todas</button>
                         </div>
                         <div class="card-body" style="padding: 0;">
                             <table>
@@ -350,7 +383,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Gráficos Placeholder -->
                 <div class="grid-2">
                     <div class="card">
@@ -377,9 +410,11 @@
                                     <div style="font-size: 3rem; margin-bottom: 10px;">🥧</div>
                                     <p>Gráfico de Pizza - Tipos de Benefícios</p>
                                     <div style="margin-top: 15px; font-size: 0.85rem;">
-                                        <span style="color: var(--prev-primary-light);">●</span> Aposentadorias: 72% 
-                                        <span style="color: var(--prev-accent); margin-left: 10px;">●</span> Pensões: 22%
-                                        <span style="color: var(--prev-danger); margin-left: 10px;">●</span> Invalidez: 6%
+                                        <span style="color: var(--prev-primary-light);">●</span> Aposentadorias: 72%
+                                        <span style="color: var(--prev-accent); margin-left: 10px;">●</span> Pensões:
+                                        22%
+                                        <span style="color: var(--prev-danger); margin-left: 10px;">●</span> Invalidez:
+                                        6%
                                     </div>
                                 </div>
                             </div>
@@ -389,9 +424,9 @@
             </div>
         </main>
     </div>
-    
+
     <!-- MODAIS -->
-    
+
     <!-- Modal Nova Concessão -->
     <div class="modal-overlay" id="modal-concessao">
         <div class="modal">
@@ -439,7 +474,8 @@
                     <div class="form-group">
                         <label class="form-label">Documentos Anexados</label>
                         <input type="file" class="form-input" multiple accept=".pdf,.jpg,.png">
-                        <small style="color: var(--text-muted); font-size: 0.8rem;">Formatos aceitos: PDF, JPG, PNG. Máximo 10MB por arquivo.</small>
+                        <small style="color: var(--text-muted); font-size: 0.8rem;">Formatos aceitos: PDF, JPG, PNG.
+                            Máximo 10MB por arquivo.</small>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Observações</label>
@@ -458,7 +494,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Modal Simulador -->
     <div class="modal-overlay" id="modal-simulador">
         <div class="modal" style="max-width: 800px;">
@@ -468,7 +504,8 @@
             </div>
             <div class="modal-body">
                 <div class="simulator-console" id="sim-console">
-                    <div class="console-line" style="opacity: 0.5;">> Clique em "Executar Simulação" para iniciar...</div>
+                    <div class="console-line" style="opacity: 0.5;">> Clique em "Executar Simulação" para iniciar...
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -480,7 +517,8 @@
             </div>
         </div>
     </div>
-    
+
     <script src="js/sistemaprev.js"></script>
 </body>
+
 </html>
