@@ -85,6 +85,9 @@ permalink: /solucoes/govrh/
         
         .btn-action { background: var(--rh-primary); color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(13, 148, 136, 0.3); border: none; cursor: pointer; }
         .btn-action:hover { background: var(--rh-primary-dark); transform: translateY(-3px); color: #fff; box-shadow: 0 15px 35px rgba(13, 148, 136, 0.4); }
+        .btn-outline { background: transparent; color: #fff; padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 1.05rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.45); cursor: pointer; }
+        .btn-outline:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); color: #fff; }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 0; }
 
         @media(max-width: 992px){ 
             .rh-split-layout { flex-direction: column; text-align: center; gap: 40px; }
@@ -215,10 +218,14 @@ permalink: /solucoes/govrh/
                     <span class="hero-tag fade-up delay-1">GovTech | RH e Folha de Pagamento</span>
                     <h1 class="fade-up delay-1">Cerrado GovRH</h1>
                     <p class="fade-up delay-2">Solução de folha de pagamento focada na automação extrema, conformidade legal rigorosa e minimização de passivos trabalhistas para a gestão pública municipal e estadual.</p>
-                    <div class="fade-up delay-3">
+                    <div class="hero-btns fade-up delay-3">
                         <a href="#simulador" class="btn-action">
                             Testar Auditoria de Folha com IA
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </a>
+                        <a href="https://www.cerradofinancas.com.br/solucoes/govrh/simuladorrh" class="btn-outline" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Explorar o Simulador Completo
                         </a>
                     </div>
                 </div>
@@ -418,7 +425,13 @@ permalink: /solucoes/govrh/
         <div class="container fade-up">
             <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Segurança para a sua gestão fiscal.</h2>
             <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 40px;">Agende uma apresentação técnica e descubra como o Cerrado GovRH pode transformar a rotina do seu departamento de recursos humanos.</p>
-            <a href="/index.html#contato" class="btn-action" style="background: var(--rh-accent); color: var(--dash-panel); box-shadow: 0 10px 20px rgba(254, 203, 0, 0.2);">Solicitar Reunião Técnica</a>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="/index.html#contato" class="btn-action" style="background: var(--rh-accent); color: var(--dash-panel); box-shadow: 0 10px 20px rgba(254, 203, 0, 0.2);">Solicitar Reunião Técnica</a>
+                <a href="https://www.cerradofinancas.com.br/solucoes/govrh/simuladorrh" class="btn-outline" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Ver Simulador Interativo
+                </a>
+            </div>
         </div>
     </section>
 
