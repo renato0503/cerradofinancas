@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrado Privacy | Simulador de Conformidade LGPD</title>
+    <link rel="icon" type="image/png" href="https://www.cerradofinancas.com.br/img/folinha.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-deep: #0f172a;
+            --bg-surface: rgba(30, 41, 59, 0.7);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.3);
+            --accent: #14b8a6;
+            --accent-glow: rgba(20, 184, 166, 0.3);
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1e1b4b, #0f172a);
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: rgba(15, 23, 42, 0.8);
+            border-right: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .brand img { width: 32px; height: 32px; }
+        .brand span { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.5px; }
+
+        .nav-menu { list-style: none; flex: 1; overflow-y: auto; }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-item.active i { color: var(--primary); }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .dpo-card {
+            background: linear-gradient(135deg, var(--primary), #4f46e5);
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .dpo-card h4 { margin-bottom: 4px; font-weight: 700; }
+        .dpo-card button {
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-top: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        header {
+            height: 72px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-left h2 { font-size: 1.25rem; font-weight: 700; }
+
+        .header-right { display: flex; align-items: center; gap: 24px; }
+
+        .compliance-score {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-surface);
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .score-val { color: var(--accent); font-weight: 900; font-size: 1.1rem; }
+
+        /* Module View */
+        .module-page {
+            flex: 1;
+            padding: 32px;
+            overflow-y: auto;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .module-page.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .summary-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            padding: 24px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .summary-card i { color: var(--primary); }
+        .summary-card .val { font-size: 2rem; font-weight: 900; }
+        .summary-card .label { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* Radar Plot Mockup */
+        .radar-box {
+            grid-column: span 2;
+            background: var(--bg-surface);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .radar-visual {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .radar-circle {
+            width: 250px;
+            height: 250px;
+            border: 1px dashed var(--text-muted);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .radar-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: scale 0.2s;
+        }
+
+        .radar-node:hover { transform: scale(1.5); }
+        .node-label {
+            position: absolute;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            color: var(--text-muted);
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Alert Box */
+        .alert-panel {
+            grid-column: span 1;
+            background: var(--bg-surface);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .alert-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+
+        .alert-item.danger { background: rgba(239, 68, 68, 0.1); border-left-color: var(--danger); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 10px; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="brand">
+            <img src="https://www.cerradofinancas.com.br/img/folinha.png" alt="Cerrado">
+            <span>Cerrado Privacy</span>
+        </div>
+
+        <div class="nav-menu">
+            <a class="nav-item active" onclick="showModule('dashboard')">
+                <i data-lucide="layout-dashboard"></i>
+                Dashboard
+            </a>
+            <a class="nav-item" onclick="showModule('datamapping')">
+                <i data-lucide="radar"></i>
+                Radar LGPD
+            </a>
+            <a class="nav-item" onclick="showModule('ropa')">
+                <i data-lucide="file-text"></i>
+                ROPA & RIPD
+            </a>
+            <a class="nav-item" onclick="showModule('auditoria')">
+                <i data-lucide="shield-check"></i>
+                Auditoria
+            </a>
+            <a class="nav-item" onclick="showModule('titular')">
+                <i data-lucide="user-check"></i>
+                Canal do Titular
+            </a>
+            <a class="nav-item" onclick="showModule('incidentes')">
+                <i data-lucide="alert-circle"></i>
+                Incidentes
+            </a>
+            <a class="nav-item" onclick="showModule('cookies')">
+                <i data-lucide="cookie"></i>
+                Gestão de Cookies
+            </a>
+            <a class="nav-item" onclick="showModule('ead')">
+                <i data-lucide="graduation-cap"></i>
+                EAD LGPD
+            </a>
+            <a class="nav-item" onclick="showModule('dpo')">
+                <i data-lucide="briefcase"></i>
+                Console DPO
+            </a>
+            <a class="nav-item" onclick="showModule('relatorios')">
+                <i data-lucide="bar-chart-3"></i>
+                Relatórios
+            </a>
+            <a class="nav-item" onclick="showModule('config')">
+                <i data-lucide="settings"></i>
+                Configurações
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="dpo-card">
+                <h4>DPO as a Service</h4>
+                <p>Suporte especializado em conformidade e suporte ANPD.</p>
+                <button>Falar com DPO</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <div class="header-left">
+                <h2 id="current-module-title">Dashboard Executivo</h2>
+            </div>
+            <div class="header-right">
+                <div class="compliance-score">
+                    <span class="label">Compliance Score:</span>
+                    <span class="score-val">84%</span>
+                </div>
+                <div class="user-pill" style="display:flex; align-items:center; gap:8px;">
+                    <div style="width:32px; height:32px; border-radius:50%; background:var(--primary); display:flex; align-items:center; justify-content:center; font-weight:bold;">A</div>
+                    <span style="font-size:0.9rem;">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Module -->
+        <section id="dashboard" class="module-page active">
+            <div class="dashboard-grid">
+                <div class="summary-card">
+                    <i data-lucide="file-search"></i>
+                    <span class="val">42</span>
+                    <span class="label">Processos Mapeados</span>
+                </div>
+                <div class="summary-card">
+                    <i data-lucide="database"></i>
+                    <span class="val">1,2k</span>
+                    <span class="label">Dados Sensíveis Identificados</span>
+                </div>
+                <div class="summary-card">
+                    <i data-lucide="help-circle"></i>
+                    <span class="val">03</span>
+                    <span class="label">Solicitações Pendentes</span>
+                </div>
+
+                <div class="radar-box">
+                    <h3>Maturidade LGPD por Setor</h3>
+                    <div class="radar-visual">
+                        <div class="radar-circle">
+                            <div class="radar-node" style="top:10%; left:50%; background:var(--success);"><span class="node-label">RH</span></div>
+                            <div class="radar-node" style="top:50%; left:90%; background:var(--warning);"><span class="node-label">Saúde</span></div>
+                            <div class="radar-node" style="top:80%; left:20%; background:var(--danger);"><span class="node-label">Sistemas</span></div>
+                            <div class="radar-node" style="top:40%; left:10%; background:var(--success);"><span class="node-label">Educação</span></div>
+                            <div style="width:2px; height:2px; background:#fff; box-shadow:0 0 50px 20px var(--primary-glow);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-panel">
+                    <h3>Alertas Inteligentes</h3>
+                    <div style="margin-top:20px;">
+                        <div class="alert-item danger">
+                            <i data-lucide="alert-triangle"></i>
+                            <div><strong>RIPD Pendente</strong><p>Setor de Saúde necessita de RIPD.</p></div>
+                        </div>
+                        <div class="alert-item">
+                            <i data-lucide="clock"></i>
+                            <div><strong>Solicitação em Transcurso</strong><p>Protocolo #882 vence em 48h.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Radar Module -->
+        <section id="datamapping" class="module-page">
+            <div class="header-actions" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                <h3>Radar de Riscos Institucionais</h3>
+                <button onclick="startMapping()" style="background:var(--primary); border:none; color:#fff; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                    <i data-lucide="plus"></i> Iniciar Mapeamento
+                </button>
+            </div>
+            
+            <div class="radar-container" style="background:var(--bg-surface); padding:40px; border-radius:20px; border:1px solid var(--glass-border); display:flex; gap:40px;">
+                <div class="radar-visual-large" style="flex:1; height:400px; border:2px solid var(--glass-border); border-radius:50%; position:relative; overflow:hidden; background:repeating-radial-gradient(circle, transparent, transparent 40px, var(--glass-border) 40px, var(--glass-border) 41px);">
+                    <div id="radar-scanner" style="position:absolute; width:50%; height:50%; top:0; left:50%; background:linear-gradient(90deg, transparent, var(--primary-glow)); transform-origin:bottom left; animation: rotate 4s linear infinite; display:none;"></div>
+                    <!-- Sector Nodes -->
+                    <div class="sector-point" style="top:20%; left:30%;" data-sector="RH" data-risk="low"></div>
+                    <div class="sector-point" style="top:40%; left:70%;" data-sector="Saúde" data-risk="high"></div>
+                    <div class="sector-point" style="top:70%; left:40%;" data-sector="Educação" data-risk="medium"></div>
+                    <div class="sector-point" style="top:10%; left:60%;" data-sector="Financeiro" data-risk="low"></div>
+                </div>
+                
+                <div class="radar-legend" style="width:300px;">
+                    <h4>Inventário por Setor</h4>
+                    <div id="sector-list" style="margin-top:20px;">
+                        <div class="sector-item" style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.9rem;">
+                            <span>Recursos Humanos</span>
+                            <span class="badge success">Baixo Risco</span>
+                        </div>
+                        <div class="sector-item" style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.9rem;">
+                            <span>Saúde (SUS/E-SUS)</span>
+                            <span class="badge danger">Alto Risco</span>
+                        </div>
+                        <div class="sector-item" style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.9rem;">
+                            <span>Educação</span>
+                            <span class="badge warning">Médio Risco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+                .sector-point { position:absolute; width:16px; height:16px; border-radius:50%; cursor:pointer; box-shadow:0 0 15px currentColor; }
+                .sector-point[data-risk="low"] { color:var(--success); background:var(--success); }
+                .sector-point[data-risk="medium"] { color:var(--warning); background:var(--warning); }
+                .sector-point[data-risk="high"] { color:var(--danger); background:var(--danger); }
+            </style>
+        </section>
+
+        <!-- ROPA Module -->
+        <section id="ropa" class="module-page">
+            <h3>Gerador Automático ROPA & RIPD</h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;">
+                <div class="ropa-form" style="background:var(--bg-surface); padding:24px; border-radius:20px; border:1px solid var(--glass-border);">
+                    <h4 style="margin-bottom:16px;">Configuração de Documento</h4>
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <div>
+                            <label style="font-size:0.8rem; color:var(--text-muted);">Setor Selecionado</label>
+                            <select style="width:100%; background:var(--bg-deep); color:#fff; border:1px solid var(--glass-border); padding:10px; border-radius:8px;">
+                                <option>Saúde - Prontuários Digitais</option>
+                                <option>RH - Folha de Pagamento</option>
+                                <option>Educação - Matrículas</option>
+                            </select>
+                        </div>
+                        <div style="display:flex; gap:12px;">
+                             <button style="flex:1; background:var(--primary); border:none; color:#fff; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer;" onclick="simulateDocGen('ROPA')">Gerar ROPA (PDF)</button>
+                             <button style="flex:1; background:var(--accent); border:none; color:#fff; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer;" onclick="simulateDocGen('RIPD')">Gerar RIPD (PDF)</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ropa-preview" style="background:rgba(0,0,0,0.3); border:2px dashed var(--glass-border); border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--text-muted);">
+                    <i data-lucide="file-text" style="width:48px; height:48px; margin-bottom:16px; opacity:0.5;"></i>
+                    <p id="doc-status">Aguardando geração...</p>
+                    <div id="doc-progress" style="width:80%; height:4px; background:var(--bg-deep); border-radius:10px; margin-top:16px; display:none;">
+                        <div id="doc-bar" style="width:0%; height:100%; background:var(--primary); transition:width 2s linear;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auditoria Module -->
+        <section id="auditoria" class="module-page">
+            <h3>Auditoria de Vulnerabilidades LGPD</h3>
+            <div id="terminal" style="background:#020617; border-radius:12px; padding:20px; margin-top:24px; font-family:'Courier New', monospace; font-size:0.85rem; height:400px; overflow-y:auto; border:1px solid var(--primary-glow); box-shadow:0 0 30px var(--primary-glow);">
+                <div id="terminal-content">
+                    <p style="color:var(--primary);">root@cerradoprivacy:~# <span style="color:#fff;">Aguardando inicialização do scanner de conformidade...</span></p>
+                </div>
+            </div>
+            <div style="margin-top:20px; display:flex; gap:12px;">
+                <button onclick="runAudit()" id="btn-audit" style="background:var(--danger); border:none; color:#fff; padding:12px 24px; border-radius:8px; font-weight:bold; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                    <i data-lucide="shield-alert"></i> Iniciar Auditoria Reversa
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Titular Module -->
+        <section id="titular" class="module-page">
+            <h3>Central de Chamados do Titular</h3>
+            <div style="margin-top:24px; background:var(--bg-surface); border-radius:20px; border:1px solid var(--glass-border); overflow:hidden;">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                    <thead style="background:rgba(0,0,0,0.2); text-align:left;">
+                        <tr>
+                            <th style="padding:16px;">Protocolo</th>
+                            <th>Titular</th>
+                            <th>Tipo</th>
+                            <th>Prazo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:16px;">#882-2024</td>
+                            <td>João Silva</td>
+                            <td>Exclusão de Dados</td>
+                            <td style="color:var(--danger);">48h</td>
+                            <td><span class="badge warning" style="background:rgba(245,158,11,0.2); color:var(--warning); padding:4px 10px; border-radius:12px; font-weight:bold;">Em Análise</span></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px;">#885-2024</td>
+                            <td>Maria Costa</td>
+                            <td>Cópia de Dados</td>
+                            <td>12 dias</td>
+                            <td><span class="badge success" style="background:rgba(16,185,129,0.2); color:var(--success); padding:4px 10px; border-radius:12px; font-weight:bold;">Concluído</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Incidentes Module -->
+        <section id="incidentes" class="module-page">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3>Gestão de Incidentes de Segurança</h3>
+                <div style="background:rgba(239, 68, 68, 0.1); border:1px solid var(--danger); padding:8px 16px; border-radius:8px; color:var(--danger); font-weight:bold; display:flex; align-items:center; gap:8px;">
+                    <i data-lucide="timer"></i> Contador ANPD: <span id="anpd-timer">47:59:59</span>
+                </div>
+            </div>
+            <div style="margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                <div style="background:var(--bg-surface); padding:24px; border-radius:20px; border:1px solid var(--glass-border);">
+                    <h4>Novo Registro de Incidente</h4>
+                    <div style="margin-top:16px; display:flex; flex-direction:column; gap:12px;">
+                        <input type="text" placeholder="Tipo de Incidente (Vazamento, Ransomware...)" style="background:var(--bg-deep); border:1px solid var(--glass-border); color:#fff; padding:12px; border-radius:8px;">
+                        <textarea placeholder="Medidas de contenção tomadas..." style="background:var(--bg-deep); border:1px solid var(--glass-border); color:#fff; padding:12px; border-radius:8px; height:100px;"></textarea>
+                        <button style="background:var(--danger); border:none; color:#fff; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer;" onclick="alert('ANPD Notificada com sucesso!')">Notificar ANPD & Titulares</button>
+                    </div>
+                </div>
+                <div style="background:var(--bg-surface); padding:24px; border-radius:20px; border:1px solid var(--glass-border);">
+                    <h4>Histórico Recente</h4>
+                    <div style="margin-top:16px; color:var(--text-muted); font-size:0.85rem;">
+                        <div style="padding:12px; border-bottom:1px solid var(--glass-border);"><strong>22 Mar 2024</strong>: Acesso não autorizado em servidor legado. (Resolvido)</div>
+                        <div style="padding:12px;"><strong>15 Jan 2024</strong>: Tentativa de Phishing em massa. (Bloqueado)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cookies Module -->
+        <section id="cookies" class="module-page">
+            <h3>Gestão de Consentimento (Cookies)</h3>
+            <div style="margin-top:24px; background:var(--bg-surface); padding:32px; border-radius:20px; border:1px solid var(--glass-border); text-align:center;">
+                <i data-lucide="cookie" style="width:64px; height:64px; color:var(--warning); margin-bottom:16px;"></i>
+                <h4>Gerador de Banner de Cookies</h4>
+                <p style="color:var(--text-muted); margin-bottom:24px;">Configure e integre o banner de consentimento ao seu portal institucional.</p>
+                <div style="display:flex; justify-content:center; gap:20px;">
+                    <button onclick="alert('Script gerado e copiado!')" style="background:var(--primary); border:none; color:#fff; padding:12px 24px; border-radius:10px; font-weight:bold; cursor:pointer;">Gerar Script de Integração</button>
+                    <button style="background:transparent; border:1px solid var(--glass-border); color:#fff; padding:12px 24px; border-radius:10px; font-weight:bold; cursor:pointer;">Visualizar Relatório de Opt-in</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- EAD Module -->
+        <section id="ead" class="module-page">
+            <h3>Plataforma Educacional LGPD</h3>
+            <div style="margin-top:24px; display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px;">
+                <div class="course-card" style="background:var(--bg-surface); border:1px solid var(--glass-border); padding:20px; border-radius:16px;">
+                    <div style="width:40px; height:40px; background:rgba(99, 102, 241, 0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><i data-lucide="book-open"></i></div>
+                    <h4>LGPD para Servidores</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:8px 0 16px;">O básico essencial para todo colaborador público.</p>
+                    <div style="height:6px; background:var(--bg-deep); border-radius:10px; width:100%;"><div style="width:100%; height:100%; background:var(--success); border-radius:10px;"></div></div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; margin-top:8px;"><span>Concluído</span><span>100%</span></div>
+                </div>
+                <div class="course-card" style="background:var(--bg-surface); border:1px solid var(--glass-border); padding:20px; border-radius:16px;">
+                    <div style="width:40px; height:40px; background:rgba(16, 184, 166, 0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><i data-lucide="lock"></i></div>
+                    <h4>Segurança de Senhas</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin:8px 0 16px;">Práticas avançadas de proteção de acesso.</p>
+                    <div style="height:6px; background:var(--bg-deep); border-radius:10px; width:100%;"><div style="width:65%; height:100%; background:var(--primary); border-radius:10px;"></div></div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; margin-top:8px;"><span>Em andamento</span><span>65%</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DPO Console -->
+        <section id="dpo" class="module-page">
+            <h3>Console Estratégico do DPO</h3>
+            <div style="margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                <div style="background:var(--bg-surface); padding:24px; border-radius:20px; border:1px solid var(--glass-border);">
+                    <h4>Painel de Governança</h4>
+                    <ul style="list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:12px;">
+                        <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem;"><i data-lucide="check-square" style="color:var(--success); width:16px;"></i> Revisão de Contratos com Operadores</li>
+                        <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem;"><i data-lucide="check-square" style="color:var(--success); width:16px;"></i> Plano Semestral de Auditoria</li>
+                        <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem;"><i data-lucide="square" style="color:var(--text-muted); width:16px;"></i> Treinamento de Novos Estagiários</li>
+                    </ul>
+                </div>
+                <div style="background:var(--bg-surface); padding:24px; border-radius:20px; border:1px solid var(--glass-border);">
+                    <h4>Pareceres Jurídicos Recentes</h4>
+                    <div style="margin-top:16px; font-size:0.85rem;">
+                        <div style="padding:10px; background:rgba(255,255,255,0.05); border-radius:8px; margin-bottom:10px;">Utilização de dados do SUS para pesquisa estatística.</div>
+                        <div style="padding:10px; background:rgba(255,255,255,0.05); border-radius:8px;">Compartilhamento de base com Consórcio Intermunicipal.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Relatórios Module -->
+        <section id="relatorios" class="module-page">
+            <h3>Relatórios e Indicadores de Conformidade</h3>
+            <div style="margin-top:24px; display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:20px;">
+                <div class="report-card" style="background:var(--bg-surface); padding:20px; border-radius:16px; border:1px solid var(--glass-border); display:flex; flex-direction:column; gap:12px;">
+                    <i data-lucide="file-bar-chart" style="color:var(--primary);"></i>
+                    <h4>Relatório ANPD</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">Pronto para fiscalização.</p>
+                    <button style="border:1px solid var(--primary); background:transparent; color:var(--primary); padding:8px; border-radius:8px; cursor:pointer; font-weight:bold;">Exportar PDF</button>
+                </div>
+                <div class="report-card" style="background:var(--bg-surface); padding:20px; border-radius:16px; border:1px solid var(--glass-border); display:flex; flex-direction:column; gap:12px;">
+                    <i data-lucide="pie-chart" style="color:var(--accent);"></i>
+                    <h4>Mapa de Riscos</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">Consolidado institucional.</p>
+                    <button style="border:1px solid var(--accent); background:transparent; color:var(--accent); padding:8px; border-radius:8px; cursor:pointer; font-weight:bold;">Exportar Excel</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Config Module -->
+        <section id="config" class="module-page">
+            <h3>Configurações e Governança</h3>
+            <div style="margin-top:24px; background:var(--bg-surface); padding:24px; border-radius:20px; border:1px solid var(--glass-border);">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+                    <div>
+                        <h4>Dados do Controlador</h4>
+                        <div style="margin-top:16px; display:flex; flex-direction:column; gap:12px;">
+                            <input type="text" value="Prefeitura Municipal Exemplo" style="background:var(--bg-deep); border:1px solid var(--glass-border); color:#fff; padding:10px; border-radius:8px; width:100%;">
+                            <input type="text" value="Dr. Carlos DPO (Certificado)" style="background:var(--bg-deep); border:1px solid var(--glass-border); color:#fff; padding:10px; border-radius:8px; width:100%;">
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Perfis de Acesso</h4>
+                        <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem;"><input type="checkbox" checked> Administrador TI</label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem;"><input type="checkbox" checked> Equipe Jurídica</label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem;"><input type="checkbox" checked> DPO Externo</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script>
+        lucide.createIcons();
+
+        function showModule(id) {
+            document.querySelectorAll('.module-page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            
+            const target = document.getElementById(id);
+            if(target) {
+                target.classList.add('active');
+                
+                // Update nav item highlighting
+                const navItem = document.querySelector(`.nav-item[onclick*="${id}"]`);
+                if(navItem) {
+                    navItem.classList.add('active');
+                    document.getElementById('current-module-title').innerText = navItem.innerText;
+                }
+            }
+        }
+
+        // Radar Simulation
+        function startMapping() {
+            const scanner = document.getElementById('radar-scanner');
+            scanner.style.display = 'block';
+            setTimeout(() => {
+                scanner.style.display = 'none';
+                alert('Mapeamento concluído! Novos processos identificados em Saúde e RH.');
+            }, 4000);
+        }
+
+        // Auditoria Simulation
+        function runAudit() {
+            const terminal = document.getElementById('terminal-content');
+            const btn = document.getElementById('btn-audit');
+            btn.disabled = true;
+            terminal.innerHTML = '<p style="color:var(--primary);">root@cerradoprivacy:~# <span style="color:#fff;">Iniciando Auditoria de Conformidade...</span></p>';
+            
+            const logs = [
+                "Verificando bancos de dados expostos...",
+                "Analizando criptografia em repouso...",
+                "Buscando CPFs em logs não estruturados...",
+                "[ALERTA] Porta 3306 (MySQL) aberta para externa!",
+                "[OK] Backups de Saúde criptografados.",
+                "Gerando Plano de Adequação ANPD..."
+            ];
+
+            let i = 0;
+            const interval = setInterval(() => {
+                if(i < logs.length) {
+                    const p = document.createElement('p');
+                    p.style.color = logs[i].includes('ALERTA') ? 'var(--danger)' : '#ccc';
+                    p.innerText = '> ' + logs[i];
+                    terminal.appendChild(p);
+                    terminal.scrollTop = terminal.scrollHeight;
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    btn.disabled = false;
+                    const final = document.createElement('p');
+                    final.style.color = 'var(--success)';
+                    final.style.marginTop = '10px';
+                    final.innerText = 'AUDITORIA CONCLUÍDA. PLANO DE AÇÃO DISPONÍVEL.';
+                    terminal.appendChild(final);
+                }
+            }, 800);
+        }
+
+        // Doc Gen Simulation
+        function simulateDocGen(type) {
+            const status = document.getElementById('doc-status');
+            const progress = document.getElementById('doc-progress');
+            const bar = document.getElementById('doc-bar');
+            
+            status.innerText = `Gerando ${type}...`;
+            progress.style.display = 'block';
+            bar.style.width = '100%';
+            
+            setTimeout(() => {
+                status.innerText = `${type} Gerado com Sucesso!`;
+                bar.style.background = 'var(--success)';
+                lucide.createIcons();
+            }, 2000);
+        }
+
+        // Simple Timer Simulation
+        setInterval(() => {
+            const timer = document.getElementById('anpd-timer');
+            if(timer) {
+                let parts = timer.innerText.split(':').map(Number);
+                parts[2]--;
+                if(parts[2] < 0) { parts[2] = 59; parts[1]--; if(parts[1] < 0) { parts[1] = 59; parts[0]--; } }
+                timer.innerText = parts.map(p => String(p).padStart(2, '0')).join(':');
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
