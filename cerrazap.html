@@ -1,0 +1,459 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerraZap | Automação B2B via WhatsApp</title>
+    <meta name="description" content="Automatize seus processos comerciais com bots inteligentes de WhatsApp integrados ao CRM CerraFlow. Atendimento 24/7, qualificação de leads e fechamento automático.">
+    
+    <link rel="icon" type="image/png" href="img/folinha.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <style>
+        :root {
+            --wpp-green: #25D366;
+            --wpp-dark: #075E54;
+            --bg-dark: #0f172a;
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding-top: 80px;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animations */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 100px 0 120px;
+            background: radial-gradient(circle at 70% 30%, rgba(37, 211, 102, 0.1) 0%, transparent 50%),
+                        linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            position: relative;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .hero-grid { display: flex; align-items: center; gap: 60px; }
+        @media (max-width: 992px) { .hero-grid { flex-direction: column; text-align: center; } }
+
+        .hero-content { flex: 1.2; }
+        .hero-badge {
+            background: rgba(37, 211, 102, 0.1);
+            color: var(--wpp-green);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 24px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span { color: var(--wpp-green); }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-main {
+            background: var(--wpp-green);
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
+
+        .hero-visual { flex: 0.8; position: relative; }
+        
+        /* Mockup */
+        .phone-container {
+            width: 300px;
+            height: 600px;
+            background: #111b21;
+            border-radius: 40px;
+            border: 12px solid #1e293b;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            overflow: hidden;
+            position: relative;
+            transform: rotate(-3deg);
+            margin: 0 auto;
+        }
+
+        .phone-screen { height: 100%; display: flex; flex-direction: column; }
+        .chat-header { background: #202c33; padding: 40px 15px 15px; display: flex; align-items: center; gap: 10px; }
+        .avatar { width: 35px; height: 35px; background: var(--wpp-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 12px; color: #fff; }
+        .chat-name h4 { margin: 0; font-size: 0.9rem; color: #fff; }
+        .chat-body { flex: 1; padding: 15px; display: flex; flex-direction: column; gap: 8px; background: #0b141a; }
+        .msg { padding: 8px 12px; border-radius: 10px; font-size: 0.8rem; max-width: 85%; }
+        .msg-them { background: #202c33; color: #e9edef; align-self: flex-start; }
+        .msg-me { background: #005c4b; color: #e9edef; align-self: flex-end; }
+        .msg-btn { margin-top: 5px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 5px; border-radius: 5px; text-align: center; cursor: pointer; color: #53bdeb; font-weight: 700; }
+
+        /* --- ICONES DE CARACTERÍSTICAS --- */
+        .features { padding: 100px 0; background: #fff; color: #020617; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; color: #0f172a; }
+        .section-header p { color: #475569; max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card {
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .f-icon { width: 60px; height: 60px; background: #dcfce7; color: var(--wpp-green); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
+        .feature-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #0f172a; }
+        .feature-card p { color: #475569; line-height: 1.5; font-size: 0.95rem; }
+
+        /* --- ARQUITETURA --- */
+        .arch-section { padding: 100px 0; background: #0f172a; position: relative; overflow: hidden; }
+        .arch-grid { display: flex; align-items: center; gap: 80px; }
+        @media (max-width: 992px) { .arch-grid { flex-direction: column; } }
+        .arch-viz { flex: 1.2; width: 100%; }
+        .arch-text { flex: 0.8; }
+        .arch-text h2 { color: #fff; font-size: 2.2rem; margin-bottom: 20px; font-weight: 800; }
+        .arch-item { margin-bottom: 25px; display: flex; gap: 15px; }
+        .arch-dot { width: 12px; height: 12px; background: var(--wpp-green); border-radius: 50%; margin-top: 8px; flex-shrink: 0; box-shadow: 0 0 10px var(--wpp-green); }
+        .arch-info h4 { margin: 0 0 5px; color: var(--wpp-green); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .arch-info p { margin: 0; color: var(--text-dim); }
+
+        /* --- CERRAFLOW SYNC --- */
+        .sync-section { padding: 100px 0; background: #fff; color: #0f172a; }
+        .sync-card {
+            background: #0f172a;
+            color: #fff;
+            padding: 60px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        @media (max-width: 992px) { .sync-card { flex-direction: column; padding: 40px; text-align: center; } }
+        .sync-info { flex: 1; }
+        .sync-info h2 { color: var(--wpp-green); font-size: 2.5rem; margin-bottom: 20px; }
+        .sync-info ul { list-style: none; padding: 0; }
+        .sync-info li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 1.1rem; }
+        .sync-info li svg { color: var(--wpp-green); }
+        .sync-visual { flex: 0.8; }
+
+        /* --- USE CASES --- */
+        .cases { padding: 100px 0; background: #f8fafc; color: #0f172a; }
+        .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .case-grid { grid-template-columns: 1fr; } }
+        .case-card { background: #fff; padding: 40px; border-radius: 30px; border: 1px solid #e2e8f0; position: relative; height: 100%; box-sizing: border-box;}
+        .case-card h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--wpp-green); margin-bottom: 10px; font-weight: 800; }
+        .case-card h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 15px; }
+        .case-flow { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; border-left: 2px solid #e2e8f0; padding-left: 20px; }
+        .flow-step { font-size: 0.9rem; color: #64748b; }
+        .flow-step b { color: #0f172a; }
+
+        /* --- FOOTER CTA --- */
+        .cta-footer { padding: 100px 0; text-align: center; background: linear-gradient(to bottom, #0f172a, #020617); border-top: 1px solid rgba(255,255,255,0.05); }
+        .cta-footer h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; }
+        .cta-footer p { color: var(--text-dim); max-width: 600px; margin: 0 auto 40px; font-size: 1.2rem; }
+
+        /* --- SECURITY --- */
+        .security { padding: 80px 0; background: #020617; color: #fff; text-align: center; }
+        .secure-tags { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .secure-tags span { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; color: #34d399; }
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="CerraZap" %}
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content fade-up">
+                    <img src="img/cerrazap.png" alt="Logo CerraZap" style="max-width: 180px; margin-bottom: 25px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));">
+                    <div class="hero-badge">Bot IA & Automação Comercial</div>
+                    <h1 class="hero-title">Sua Venda em <span>Piloto Automático.</span></h1>
+                    <p class="hero-subtitle">Transforme seu WhatsApp na máquina de vendas mais potente da sua empresa. Atendimento cognitivo, triagem inteligente e fechamento B2B integrado ao CRM.</p>
+                    
+                    <a href="https://wa.me/5567993515206" target="_blank" class="btn-main">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Quero uma Demonstração
+                    </a>
+                </div>
+
+                <div class="hero-visual fade-up delay-1">
+                    <div class="phone-container">
+                        <div class="phone-screen">
+                            <div class="chat-header">
+                                <div class="avatar" style="background: #fff; padding: 5px; box-sizing: border-box;">
+                                    <img src="img/cerrazap.png" alt="CerraZap" style="max-width: 100%; height: auto; border-radius: 50%;">
+                                </div>
+                                <div class="chat-name">
+                                    <h4>CerraZap Oficial</h4>
+                                    <small style="color: #8696a0; font-size: 0.6rem;">Tempo de resposta: Instantâneo</small>
+                                </div>
+                            </div>
+                            <div class="chat-body">
+                                <div class="msg msg-them">Olá! Bem-vindo à Cerrado. Como posso ajudar sua empresa hoje?</div>
+                                <div class="msg-btn">Consultoria em Software</div>
+                                <div class="msg-btn">Automação com Bots</div>
+                                <div class="msg msg-me">Quero saber sobre os bots de WhatsApp para B2B.</div>
+                                <div class="msg msg-them">Perfeito! O <b>CerraZap</b> automatiza todo o seu funil, desde a triagem até o fechamento.</div>
+                                <div class="msg msg-them">Qual seria o volume médio mensal de leads?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>O Poder da Automação Cognitiva</h2>
+                <p>Muito mais que um chatbot com opções numéricas. Uma IA capaz de entender a necessidade real do seu cliente B2B.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card fade-up delay-1">
+                    <div class="f-icon">🤖</div>
+                    <h3>Inteligência de Triagem</h3>
+                    <p>Qualifique leads automaticamente baseado em orçamento, prazo e autoridade de compra antes de enviar para o vendedor.</p>
+                </div>
+                <div class="feature-card fade-up delay-1">
+                    <div class="f-icon">🛒</div>
+                    <h3>Fechamento Autônomo</h3>
+                    <p>Apresente catálogos, gere orçamentos em PDF e processe pagamentos iniciais diretamente na conversa.</p>
+                </div>
+                <div class="feature-card fade-up delay-2">
+                    <div class="f-icon">🔄</div>
+                    <h3>Sincronização Full CRM</h3>
+                    <p>Histórico completo de conversas e dados de leads sincronizados em tempo real com o CerraFlow CRM.</p>
+                </div>
+                <div class="feature-card fade-up delay-2">
+                    <div class="f-icon">⏱️</div>
+                    <h3>Atendimento 24/7</h3>
+                    <p>Nunca deixe um prospecto esperando. Respostas instantâneas a qualquer hora do dia ou da noite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="arch-section">
+        <div class="container">
+            <div class="arch-grid">
+                <div class="arch-viz fade-up">
+                    <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="150" width="120" height="80" rx="10" fill="#fff" fill-opacity="0.05" stroke="#25D366" stroke-width="2"/>
+                        <text x="110" y="200" fill="#fff" font-size="14" text-anchor="middle" font-weight="700">WhatsApp API</text>
+                        
+                        <path d="M170 190 H280" stroke="#25D366" stroke-width="2" stroke-dasharray="8 4"/>
+                        <circle cx="225" cy="190" r="4" fill="#25D366">
+                            <animate attributeName="r" values="4;6;4" dur="2s" infinite />
+                        </circle>
+
+                        <rect x="280" y="120" width="240" height="140" rx="20" fill="#25D366" fill-opacity="0.1" stroke="#25D366" stroke-width="3"/>
+                        <text x="400" y="170" fill="#25D366" font-size="18" text-anchor="middle" font-weight="900">CerraZap Bot IA</text>
+                        <text x="400" y="200" fill="#fff" font-size="12" text-anchor="middle" opacity="0.7">Motor NLP + Firebase Functions</text>
+
+                        <path d="M400 260 V320 H600" stroke="#64748b" stroke-width="2" stroke-dasharray="5 5"/>
+                        <path d="M520 190 H650" stroke="#0ea5e9" stroke-width="2"/>
+
+                        <rect x="650" y="150" width="120" height="80" rx="10" fill="#0ea5e9" fill-opacity="0.1" stroke="#0ea5e9" stroke-width="2"/>
+                        <text x="710" y="200" fill="#fff" font-size="14" text-anchor="middle" font-weight="700">CerraFlow CRM</text>
+                        
+                        <rect x="600" y="300" width="100" height="60" rx="8" fill="#fff" fill-opacity="0.03" stroke="#64748b" stroke-width="1"/>
+                        <text x="650" y="335" fill="#64748b" font-size="12" text-anchor="middle">Firestore DB</text>
+                    </svg>
+                </div>
+                <div class="arch-text fade-up delay-1">
+                    <h2>Arquitetura sob medida para Escalar</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 40px;">Construído sobre o ecossistema Google Cloud e Meta, o CerraZap garante latência zero e segurança de nível bancário.</p>
+                    
+                    <div class="arch-item">
+                        <div class="arch-dot"></div>
+                        <div class="arch-info">
+                            <h4>Firebase Backend</h4>
+                            <p>Infraestrutura serveless com Cloud Functions e Realtime Database.</p>
+                        </div>
+                    </div>
+                    <div class="arch-item">
+                        <div class="arch-dot"></div>
+                        <div class="arch-info">
+                            <h4>NLP Engine</h4>
+                            <p>Processamento de linguagem natural proprietário para conversas fluidas.</p>
+                        </div>
+                    </div>
+                    <div class="arch-item">
+                        <div class="arch-dot"></div>
+                        <div class="arch-info">
+                            <h4>Sync Nativo</h4>
+                            <p>Integração profunda via webhooks com o CerraFlow CRM.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sync-section">
+        <div class="container">
+            <div class="sync-card fade-up">
+                <div class="sync-info">
+                    <h2>Integração Seamless <span>CerraFlow</span></h2>
+                    <p style="margin-bottom: 30px; opacity: 0.8;">Os dados fluem livremente entre o bot e seu CRM. Chega de copiar e colar informações.</p>
+                    <ul>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Sincronização de conversas e transcrições</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Notificação de "Lead Quente" para o vendedor</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Atualização automática de status de negociação</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Dashboards unificados de performance</li>
+                    </ul>
+                </div>
+                <div class="sync-visual">
+                    <img src="img/cerraflow.png" alt="CerraFlow Logo" style="max-width: 200px; filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.4));">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Cenários de Aplicação</h2>
+                <p>Nossa plataforma se adapta ao seu modelo de negócio, independentemente do setor.</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="case-card fade-up delay-1">
+                    <h4>E-commerce B2C</h4>
+                    <h3>Venda direto no Zap</h3>
+                    <p>O cliente busca o produto, tira dúvidas e finaliza a compra com pagamento Pix, tudo em 2 minutos.</p>
+                    <div class="case-flow">
+                        <span class="flow-step">1. <b>Busca:</b> Mostra catálogo inteligente</span>
+                        <span class="flow-step">2. <b>Venda:</b> Gera link de pagamento</span>
+                        <span class="flow-step">3. <b>Faturamento:</b> Envia confirmação</span>
+                    </div>
+                </div>
+                <div class="case-card fade-up delay-1">
+                    <h4>Agência de Serviços</h4>
+                    <h3>Qualificação de Projetos</h3>
+                    <p>Coleta requisitos detalhados de novos projetos antes de ocupar a agenda dos seus consultores.</p>
+                    <div class="case-flow">
+                        <span class="flow-step">1. <b>Briefing:</b> Coleta escopo e budget</span>
+                        <span class="flow-step">2. <b>Score:</b> Classifica como "Decisor"</span>
+                        <span class="flow-step">3. <b>Agenda:</b> Marca reunião no Google Calendar</span>
+                    </div>
+                </div>
+                <div class="case-card fade-up delay-2">
+                    <h4>Imobiliário</h4>
+                    <h3>Agendamento de Visitas</h3>
+                    <p>Filtra interessados por localização, renda e tipo de imóvel, enviando documentação básica por fotos.</p>
+                    <div class="case-flow">
+                        <span class="flow-step">1. <b>Interesse:</b> Capta telefone e preferências</span>
+                        <span class="flow-step">2. <b>Docs:</b> Coleta fotos de documentos para triagem</span>
+                        <span class="flow-step">3. <b>Visita:</b> Confirma horário via WhatsApp</span>
+                    </div>
+                </div>
+                <div class="case-card fade-up delay-2">
+                    <h4>Suporte ao Cliente</h4>
+                    <h3>Escala de Atendimento</h3>
+                    <p>Resolve 80% das dúvidas comuns via FAQ dinâmico e escala casos complexos para o time humano.</p>
+                    <div class="case-flow">
+                        <span class="flow-step">1. <b>Triagem:</b> Entende o problema técnico</span>
+                        <span class="flow-step">2. <b>Auto-ajuda:</b> Envia tutorial ou tutorial PDF</span>
+                        <span class="flow-step">3. <b>Transbordo:</b> Chama o suporte Nível 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="security">
+        <div class="container fade-up">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Segurança & Conformidade</h2>
+            <p style="color: var(--text-dim);">Blindamos a sua operação com o que há de mais moderno em proteção de dados.</p>
+            <div class="secure-tags">
+                <span>LGPD Compliant ✓</span>
+                <span>GDPR Ready ✓</span>
+                <span>Criptografia E2E ✓</span>
+                <span>Backup Automático ✓</span>
+                <span>ISO 27001 Pattern ✓</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-footer">
+        <div class="container fade-up">
+            <h2>Pronto para zerar o tempo de resposta?</h2>
+            <p>O futuro do atendimento B2B é agora. Junte-se às empresas que já economizam 70% em custos operacionais.</p>
+            <a href="https://wa.me/5567993515206" target="_blank" class="btn-main" style="padding: 20px 50px; font-size: 1.2rem;">
+                Falar com um Especialista da Cerrado
+            </a>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
