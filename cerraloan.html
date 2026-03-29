@@ -1,0 +1,620 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerraLoan | Gestão Inteligente de Microcrédito</title>
+    <meta name="description" content="A plataforma completa para gestores de microcrédito. Controle total, transparência absoluta e portal exclusivo para o tomador.">
+    
+    <link rel="icon" type="image/png" href="img/folinha.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <style>
+        :root {
+            --brand-main: #8b5cf6; /* Violet */
+            --brand-dark: #4c1d95;
+            --brand-light: #ddd6fe;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --primary-gradient: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+            --danger: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding-top: 80px;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Helpers */
+        .text-gradient { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .section-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; text-align: center; }
+        .section-subtitle { text-align: center; color: var(--text-dim); margin-bottom: 60px; max-width: 800px; margin-inline: auto; font-size: 1.1rem; }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 100px 0;
+            background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                        linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .hero-grid { display: flex; align-items: center; gap: 60px; }
+        @media (max-width: 992px) { .hero-grid { flex-direction: column; text-align: center; } }
+        .hero-content { flex: 1.2; }
+        .hero-tag { color: var(--brand-main); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
+        .hero-subtitle { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 40px; }
+        .btn-main { background: var(--primary-gradient); color: #fff; padding: 18px 40px; border-radius: 12px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3); text-transform: uppercase; }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4); }
+
+        /* --- CONTEXT --- */
+        .context { padding: 100px 0; background: #020617; }
+        .context-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        @media (max-width: 768px) { .context-grid { grid-template-columns: 1fr; } }
+        .stat-card { text-align: center; padding: 40px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .stat-card h3 { font-size: 3rem; font-weight: 900; color: var(--brand-main); margin-bottom: 10px; }
+        .stat-card p { font-size: 1.1rem; color: var(--text-dim); font-weight: 500; }
+
+        /* --- PROBLEMS --- */
+        .problems { padding: 100px 0; background: #0f172a; }
+        .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        @media (max-width: 992px) { .problem-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .problem-grid { grid-template-columns: 1fr; } }
+        .problem-card { padding: 40px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .problem-card:hover { border-color: var(--brand-main); transform: translateY(-5px); }
+        .problem-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .problem-card h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: 15px; color: var(--text-main); }
+        .problem-card p { font-size: 0.95rem; color: var(--text-dim); }
+        .quote-box { margin-top: 60px; text-align: center; padding: 40px; background: rgba(139, 92, 246, 0.05); border: 1px dashed var(--brand-main); border-radius: 20px; }
+        .quote-box blockquote { font-size: 1.8rem; font-weight: 800; font-style: italic; color: var(--brand-light); border: none; padding: 0; }
+
+        /* --- SOLUTION --- */
+        .solution-pwa { padding: 100px 0; background: #020617; }
+        .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        @media (max-width: 768px) { .solution-grid { grid-template-columns: 1fr; } }
+        .sol-card { padding: 40px; text-align: center; }
+        .sol-card h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; }
+        .sol-card p { font-size: 0.95rem; color: var(--text-dim); }
+
+        /* --- PORTALS --- */
+        .portals { padding: 100px 0; background: #0f172a; }
+        .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        @media (max-width: 992px) { .dual-grid { grid-template-columns: 1fr; } }
+        .portal-feature { padding: 50px; background: #1e293b; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); }
+        .portal-feature.admin { border-left: 6px solid var(--brand-main); }
+        .portal-feature.client { border-left: 6px solid var(--success); }
+        .portal-feature h3 { font-size: 2rem; font-weight: 900; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .feature-list { list-style: none; padding: 0; margin-top: 20px; }
+        .feature-list li { margin-bottom: 15px; display: flex; align-items: start; gap: 10px; font-size: 1rem; color: var(--text-dim); }
+        .feature-list li::before { content: "✅"; }
+
+        /* --- HOW IT WORKS --- */
+        .how-it-works { padding: 100px 0; background: #020617; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        @media (max-width: 992px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
+        .step-box { padding: 30px; background: rgba(255,255,255,0.02); border-radius: 20px; position: relative; }
+        .step-num { font-size: 3rem; font-weight: 900; opacity: 0.1; position: absolute; top: 10px; right: 20px; }
+        .step-box h4 { font-size: 1.1rem; font-weight: 800; color: var(--brand-main); margin-bottom: 10px; }
+        .step-box p { font-size: 0.9rem; color: var(--text-dim); }
+
+        /* --- CALCULATION ENGINE --- */
+        .engine { padding: 100px 0; background: #0f172a; }
+        .engine-card { background: #1e293b; border-radius: 30px; padding: 50px; border: 1px solid rgba(255,255,255,0.1); }
+        .example-list { background: rgba(0,0,0,0.3); padding: 30px; border-radius: 20px; margin-top: 30px; font-family: 'Courier New', Courier, monospace; }
+        .example-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        /* --- COMPARISON TABLE --- */
+        .comparison { padding: 100px 0; background: #020617; overflow-x: auto; }
+        .comp-table { width: 100%; border-collapse: collapse; min-width: 600px; text-align: left; }
+        .comp-table th, .comp-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .comp-table th { color: var(--text-dim); text-transform: uppercase; font-size: 0.75rem; font-weight: 900; }
+        .comp-table .check { color: var(--success); font-weight: bold; }
+        .comp-table .cross { color: var(--danger); }
+        .comp-table .highlight { background: rgba(139, 92, 246, 0.05); font-weight: bold; }
+
+        /* --- PRICING --- */
+        .pricing { padding: 100px 0; background: #0f172a; }
+        .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        @media (max-width: 992px) { .price-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } }
+        .price-box { padding: 50px 40px; background: #1e293b; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .price-box.featured { border: 2px solid var(--brand-main); transform: scale(1.05); z-index: 2; }
+        .price-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+        .price-val { font-size: 3rem; font-weight: 900; margin-bottom: 30px; }
+        .price-val span { font-size: 1rem; color: var(--text-dim); }
+
+        /* --- FAQ --- */
+        .faq { padding: 100px 0; background: #020617; }
+        .faq-item { margin-bottom: 15px; background: #1e293b; border-radius: 12px; overflow: hidden; }
+        .faq-question { padding: 20px; font-weight: 800; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .faq-question:hover { background: rgba(255,255,255,0.05); }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--text-dim); font-size: 0.95rem; }
+        .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 300px; }
+        .faq-item.active .faq-question { color: var(--brand-main); }
+
+        /* --- DEMO --- */
+        .demo { padding: 80px 0; background: #1e293b; text-align: center; }
+        .demo-box { max-width: 600px; margin: 0 auto; padding: 40px; background: #0f172a; border-radius: 20px; border: 1px solid var(--brand-main); }
+        .cred-list { text-align: left; margin-top: 20px; list-style: none; padding: 0; display: inline-block; }
+        .cred-list li { margin-bottom: 10px; }
+
+    </style>
+</head>
+<body>
+
+    {% include header.html titulo="CerraLoan" %}
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content fade-up">
+                    <span class="hero-tag">Cerrado Tech — Tecnologia que transforma o cerrado digital</span>
+                    <h1 class="hero-title">Gestão Inteligente de <span class="text-gradient">Microcrédito.</span></h1>
+                    <p class="hero-subtitle">A plataforma completa para quem empresta e quem toma emprestado. Controle total, transparência absoluta.</p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                        <a href="https://cerraloan.web.app/" target="_blank" class="btn-main">Testar o App CerraLoan</a>
+                        <a href="https://wa.me/5567993515206" target="_blank" class="btn-main" style="background: rgba(255,255,255,0.05); box-shadow: none;">Falar com Consultor</a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-up delay-1">
+                    <!-- Mobile Mockup Design Premium -->
+                    <div style="background: rgba(139, 92, 246, 0.05); padding: 30px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                        <div style="background: #0f172a; border-radius: 20px; border: 4px solid #334155; padding: 15px; width: 280px; margin: 0 auto;">
+                            <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px;">Saldo Devedor Total</div>
+                            <div style="font-size: 2rem; font-weight: 900; color: #34d399; margin-bottom: 30px;">R$ 11.450,00</div>
+                            
+                            <div style="background: #1e293b; padding: 12px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid #8b5cf6;">
+                                <div style="display: flex; justify-content: space-between; font-weight: 800;">
+                                    <span>Ricardo M.</span>
+                                    <span style="color: #34d399;">R$ 450,00</span>
+                                </div>
+                                <div style="font-size: 0.75rem; color: #94a3b8;">Parcela 2/10 • Juros 0.5% d.</div>
+                            </div>
+                            
+                            <div style="background: #1e293b; padding: 12px; border-radius: 10px; border-left: 4px solid #ef4444;">
+                                <div style="display: flex; justify-content: space-between; font-weight: 800;">
+                                    <span>Julia Costa</span>
+                                    <span style="color: #ef4444;">R$ 1.200,00</span>
+                                </div>
+                                <div style="font-size: 0.75rem; color: #ef4444;">⚠️ Atrasado 12 dias</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="context">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="hero-tag">O Contexto</span>
+                <h2 class="section-title">O Desafio do Microcrédito Informal</h2>
+                <p class="section-subtitle">No Brasil, o microcrédito move bilhões de reais por ano — mas boa parte dessa movimentação acontece fora do radar, sem controle, sem registro e sem transparência. Gestores perdem dinheiro e tempo. Tomadores não sabem quanto devem.</p>
+            </div>
+            <div class="context-grid">
+                <div class="stat-card fade-up">
+                    <h3>70%</h3>
+                    <p>Sem Acesso<br><span style="font-size: 0.9rem; opacity: 0.6; font-weight: 400;">Brasileiros sem crédito formal</span></p>
+                </div>
+                <div class="stat-card fade-up delay-1">
+                    <h3>R$ Bi</h3>
+                    <p>Sem Controle<br><span style="font-size: 0.9rem; opacity: 0.6; font-weight: 400;">Movimentados no informal anualmente</span></p>
+                </div>
+                <div class="stat-card fade-up delay-2">
+                    <h3>20h</h3>
+                    <p>Perdidas<br><span style="font-size: 0.9rem; opacity: 0.6; font-weight: 400;">Semanalmente em controles manuais</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMS -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title fade-up">Problemas que Custam Caro</h2>
+            <p class="section-subtitle fade-up">Se você empresta dinheiro e ainda controla no papel ou no Excel, você está perdendo dinheiro. Veja o que trava o seu crescimento:</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card fade-up">
+                    <span class="problem-icon">📋</span>
+                    <h4>Caderninho de Papel</h4>
+                    <p>Erros de escrita, páginas perdidas, dados ilegíveis e nenhum histórico confiável.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <span class="problem-icon">📱</span>
+                    <h4>WhatsApp Solto</h4>
+                    <p>Cobranças por mensagem sem histórico organizado, sem confirmação e sem rastreio.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <span class="problem-icon">🧮</span>
+                    <h4>Cálculo Manual</h4>
+                    <p>Erros de juros que geram conflitos, desgaste e prejuízo financeiro direto.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <span class="problem-icon">📊</span>
+                    <h4>Sem Visão de Carteira</h4>
+                    <p>O gestor não sabe ao certo quem deve, quanto deve ou o risco de cada cliente.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <span class="problem-icon">🤝</span>
+                    <h4>Falta de Transparência</h4>
+                    <p>O cliente não confia no valor porque não consegue verificar. A dúvida vira atraso.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <span class="problem-icon">⏰</span>
+                    <h4>Cobrança Atrasada</h4>
+                    <p>Sem alerta automático, o gestor perde o timing ideal e o inadimplente some.</p>
+                </div>
+            </div>
+            
+            <div class="quote-box fade-up">
+                <blockquote>"Se você empresta dinheiro e ainda controla no papel ou no Excel, está perdendo dinheiro — todo dia."</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution-pwa">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="hero-tag">A Solução</span>
+                <h2 class="section-title">Apresentamos o CerraLoan</h2>
+                <p class="section-subtitle">Uma plataforma PWA completa, pensada do zero para o gestor moderno. Sem complicação, sem infraestrutura cara, sem instalar nada.</p>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="sol-card fade-up">
+                    <span class="problem-icon">📱</span>
+                    <h4>PWA — Funciona como App</h4>
+                    <p>Acesse pelo navegador e instale na tela inicial. Sem lojas, download obrigatório ou burocracia.</p>
+                </div>
+                <div class="sol-card fade-up">
+                    <span class="problem-icon">🌐</span>
+                    <h4>Qualquer Dispositivo</h4>
+                    <p>Celular, tablet ou computador. Leve, rápido e funcional mesmo com internet limitada.</p>
+                </div>
+                <div class="sol-card fade-up">
+                    <span class="problem-icon">☁️</span>
+                    <h4>Segurança Google Cloud</h4>
+                    <p>Hospedado no Firebase com segurança empresarial, SSL gratuito e dados protegidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTALS -->
+    <section class="portals">
+        <div class="container">
+            <h2 class="section-title fade-up">Dois Portais, Uma Plataforma</h2>
+            <div class="dual-grid">
+                <div class="portal-feature admin fade-up">
+                    <h3>🏦 Para o Gestor (Admin)</h3>
+                    <p>Controle total da sua carteira de crédito em um só lugar.</p>
+                    <ul class="feature-list">
+                        <li>Cadastre clientes e crie empréstimos em segundos</li>
+                        <li>Registre pagamentos e acompanhe saldos em real-time</li>
+                        <li>Cobre via WhatsApp com mensagens automáticas</li>
+                        <li>Exporte relatórios em PDF e Excel com um clique</li>
+                        <li>Dashboard interativo com alertas de atraso</li>
+                    </ul>
+                </div>
+                <div class="portal-feature client fade-up delay-1">
+                    <h3>👤 Para o Tomador (Cliente)</h3>
+                    <p>Transparência total que gera confiança e acelera o pagamento.</p>
+                    <ul class="feature-list">
+                        <li>Portal exclusivo: O cliente vê quanto deve HOJE</li>
+                        <li>Simulador de Quitação: Projete o valor para qualquer data</li>
+                        <li>Custo diário: "Cada dia que passa custa R$ X,XX a mais"</li>
+                        <li>Histórico de pagamentos e extrato em PDF</li>
+                        <li>Solicitação de novo crédito via WhatsApp direto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-up">Simples de Usar, Poderoso nos Resultados</h2>
+            <div class="steps-grid">
+                <div class="step-box fade-up">
+                    <span class="step-num">01</span>
+                    <h4>🔐 Login Seguro</h4>
+                    <p>O sistema identifica se você é gestor ou cliente e exibe a tela correta.</p>
+                </div>
+                <div class="step-box fade-up">
+                    <span class="step-num">02</span>
+                    <h4>👥 Cadastre o Cliente</h4>
+                    <p>Registro rápido com CPF e telefone. O cliente ganha acesso na hora.</p>
+                </div>
+                <div class="step-box fade-up">
+                    <span class="step-num">03</span>
+                    <h4>💰 Crie o Empréstimo</h4>
+                    <p>Defina valor e juros diários. Veja a prévia do custo em 30 dias.</p>
+                </div>
+                <div class="step-box fade-up">
+                    <span class="step-num">04</span>
+                    <h4>📈 Juros Automáticos</h4>
+                    <p>Cálculo em tempo real sobre o saldo remanescente. Zero erro manual.</p>
+                </div>
+                <div class="step-box fade-up">
+                    <span class="step-num">05</span>
+                    <h4>💳 Registre Pagamentos</h4>
+                    <p>Pagamento parcial ou total. Saldo recalculado e recibo gerado prontamente.</p>
+                </div>
+                <div class="step-box fade-up">
+                    <span class="step-num">06</span>
+                    <h4>📲 Cobre via WhatsApp</h4>
+                    <p>Envie link do portal e saldo atualizado com um único clique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENGINE -->
+    <section class="engine">
+        <div class="container">
+            <h2 class="section-title fade-up">Precisão Matemática, Zero Erro Humano</h2>
+            <div class="engine-card fade-up">
+                <p>O CerraLoan calcula <strong>juros simples diários sobre o saldo remanescente</strong>. É justo para o cliente e preciso para o gestor. Os cálculos são feitos em tempo real a cada consulta.</p>
+                
+                <div class="example-list">
+                    <div class="example-item">
+                        <strong>📅 01/Jan — Início</strong><br>
+                        Empréstimo de R$ 1.000,00 a 0,5% ao dia
+                    </div>
+                    <div class="example-item">
+                        <strong>📅 10/Jan — Dia 10 (Saldo R$ 1.050,00)</strong><br>
+                        10 dias × 0,5% = R$ 50 de juros
+                    </div>
+                    <div class="example-item">
+                        <strong>💳 10/Jan — Pagamento Parcial de R$ 300,00</strong><br>
+                        Novo saldo: R$ 750,00
+                    </div>
+                    <div class="example-item">
+                        <strong>📅 20/Jan — Dia 20 (Saldo R$ 787,50)</strong><br>
+                        Juros agora incidem apenas sobre o remanescente de R$ 750
+                    </div>
+                    <div style="color: var(--success); font-weight: 800;">
+                        ✅ 20/Jan — Quitado! Empréstimo encerrado automaticamente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title fade-up">Por que o CerraLoan é Diferente?</h2>
+            <div class="fade-up">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Funcionalidade</th>
+                            <th>Caderninho</th>
+                            <th>Excel</th>
+                            <th class="highlight">CerraLoan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cálculo automático de juros</td>
+                            <td class="cross">❌</td>
+                            <td>⚠️ Manual</td>
+                            <td class="check">✅ Tempo real</td>
+                        </tr>
+                        <tr>
+                            <td>Portal do cliente Exclusivo</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="check">✅ Completo</td>
+                        </tr>
+                        <tr>
+                            <td>Simulador de quitação interativo</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="check">✅ Dinâmico</td>
+                        </tr>
+                        <tr>
+                            <td>Cobrança WhatsApp Automatizada</td>
+                            <td class="cross">❌</td>
+                            <td class="cross">❌</td>
+                            <td class="check">✅ 1 Clique</td>
+                        </tr>
+                        <tr>
+                            <td>Segurança e Redundância</td>
+                            <td class="cross">❌ Perda total</td>
+                            <td class="cross">❌ Perda total</td>
+                            <td class="check">✅ Google Cloud</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="context" style="background: linear-gradient(135deg, #020617 0%, #0f172a 100%);">
+        <div class="container">
+            <div class="text-center fade-up">
+                <h2 class="section-title">Números de Impacto Real</h2>
+                <div class="context-grid">
+                    <div class="stat-card">
+                        <h3>-40%</h3>
+                        <p>Menos Inadimplência</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>15h</h3>
+                        <p>Economizadas/Semana</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2x</h3>
+                        <p>Pagamento Mais Rápido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title fade-up">Planos e Preços</h2>
+            <p class="section-subtitle fade-up">Invista na Profissionalização do Seu Negócio. Sem taxa de implantação.</p>
+            <div class="price-grid">
+                <div class="price-box fade-up">
+                    <div class="price-name">🟢 Starter</div>
+                    <div class="price-val">Grátis</div>
+                    <ul class="feature-list" style="text-align: left;">
+                        <li>Até 10 clientes ativos</li>
+                        <li>Portal do cliente completo</li>
+                        <li>Hospedagem incluída</li>
+                    </ul>
+                </div>
+                <div class="price-box featured fade-up delay-1">
+                    <div class="price-name">🔵 Pro</div>
+                    <div class="price-val">R$ 600<span>/mês</span></div>
+                    <ul class="feature-list" style="text-align: left;">
+                        <li>Até 200 clientes ativos</li>
+                        <li>Relatórios PDF e Excel</li>
+                        <li>Log de auditoria e Alertas</li>
+                        <li>Suporte Prioritário</li>
+                    </ul>
+                    <a href="https://wa.me/5567993515206" class="btn-main" style="width: 100%; margin-top: 20px;">Assinar Pro</a>
+                </div>
+                <div class="price-box fade-up delay-2">
+                    <div class="price-name">🟣 Enterprise</div>
+                    <div class="price-val">Sob Consulta</div>
+                    <ul class="feature-list" style="text-align: left;">
+                        <li>White-label (sua marca)</li>
+                        <li>Integrações externas</li>
+                        <li>Backup personalizado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title fade-up">Perguntas Frequentes</h2>
+            <div style="max-width: 800px; margin: 0 auto;" class="fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">Preciso instalar algum aplicativo? <span>+</span></div>
+                    <div class="faq-answer">Não! O CerraLoan é um PWA. Acesse pelo navegador e instale na tela inicial como um ícone nativo sem usar lojas de aplicativos.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Meus dados estão seguros? <span>+</span></div>
+                    <div class="faq-answer">Sim! Utilizamos a infraestrutura do Google Firebase. Seus dados são criptografados e cada usuário só acessa o que for permitido.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">O cliente pode alterar empréstimos? <span>+</span></div>
+                    <div class="faq-answer">Absolutamente não. O portal do cliente é exclusivamente de leitura para garantir a segurança da sua operação.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Funciona no computador? <span>+</span></div>
+                    <div class="faq-answer">Sim! É totalmente responsivo e funciona em celulares, tablets e desktops de qualquer configuração.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO SECTION -->
+    <section class="demo">
+        <div class="container">
+            <div class="demo-box fade-up">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 20px;">Experimente Agora</h2>
+                <p>Mergulhe na plataforma e veja a transformação em tempo real.</p>
+                <div style="margin: 30px 0;">
+                    <a href="https://cerraloan.web.app/" target="_blank" class="btn-main">Acessar cerraloan.web.app</a>
+                </div>
+                <ul class="cred-list">
+                    <li><strong>🔑 Login Admin:</strong> admin@admin.com | <strong>Senha:</strong> 123456</li>
+                    <li><strong>👤 Login Cliente:</strong> cliente@cliente.com | <strong>Senha:</strong> 123456</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="footer-cta" style="background: #020617; padding: 100px 0;">
+        <div class="container">
+            <div class="cta-box fade-up">
+                <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 30px;">Pronto para Profissionalizar sua Gestão?</h2>
+                <p style="color: var(--text-dim);">Chega de caderninho. Ganhe controle, segurança e transparência com a Cerrado Tech.</p>
+                <div class="cta-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 50px;">
+                    <a href="https://wa.me/5567993515206" class="cta-item" target="_blank">
+                        <h3>WhatsApp</h3>
+                        <p>(67) 99351-5206</p>
+                    </a>
+                    <a href="mailto:contato@cerradotech.com" class="cta-item">
+                        <h3>Email</h3>
+                        <p>contato@cerradotech.com</p>
+                    </a>
+                    <a href="https://instagram.com/cerradofinancas" class="cta-item" target="_blank">
+                        <h3>Instagram</h3>
+                        <p>@cerradofinancas</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // FAQ Accordion
+            const faqs = document.querySelectorAll('.faq-item');
+            faqs.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
