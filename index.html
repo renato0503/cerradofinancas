@@ -65,17 +65,54 @@
       text-align: left;
     }
 
+    .hero-tech-logo {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.6));
+      position: relative;
+      z-index: 2;
+    }
+
     .hero-tech-visual {
       flex: 0.7;
       display: flex;
       justify-content: flex-end;
+      position: relative;
     }
 
-    .hero-tech-logo {
-      max-width: 500px;
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.6));
+    .hero-tech-visual::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(254,203,0,0.12) 0%, rgba(254,203,0,0.04) 40%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+      animation: logoGlow 4s ease-in-out infinite;
+    }
+
+    .hero-tech-visual::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes logoGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
     }
 
     .hero-badge-tech {
@@ -180,7 +217,7 @@
       .hero-tech-text { text-align: center; }
       .hero-tech h1 + p { margin: 0 auto 36px; }
       .hero-tech-actions, .hero-tech-stats { justify-content: center; }
-      .hero-tech-logo { max-width: 320px; }
+      .hero-tech-logo { max-width: 360px; }
       .hero-tech-visual { justify-content: center; }
     }
 
