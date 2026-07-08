@@ -1,0 +1,188 @@
+---
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboards & Data Analytics | Cerrado Tech — BI e Painéis Executivos Sob Medida</title>
+  <meta name="description" content="Painéis executivos em tempo real integrando múltiplas fontes de dados. Visualize DRE, EBITDA, KPIs e metas de qualquer dispositivo. Power BI e dashboards customizados.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <style>
+    :root { --cont-dark: #001f5c; --cont-accent: #fecb00; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+    .hero-page { position: relative; padding: 140px 0 100px; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); color: #fff; border-bottom: 4px solid var(--cont-accent); overflow: hidden; }
+    .hero-split { display: flex; align-items: center; gap: 60px; }
+    .hero-text { flex: 1.3; }
+    .hero-visual { flex: 0.7; display: flex; justify-content: flex-end; }
+    .hero-icon-big { width: 100px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+    .hero-page .badge { background: rgba(254,203,0,0.12); border: 1px solid rgba(254,203,0,0.3); color: #fecb00; padding: 8px 18px; border-radius: 50px; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 20px; }
+    .hero-page h1 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 900; line-height: 1.08; margin-bottom: 20px; letter-spacing: -1.5px; }
+    .hero-page h1 .gold { color: var(--cont-accent); }
+    .hero-page h1 + p { font-size: 1.1rem; color: #cbd5e1; max-width: 580px; line-height: 1.7; margin-bottom: 32px; }
+    .btn-gold { background: var(--cont-accent); color: #001f5c; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 10px 25px rgba(254,203,0,0.3); }
+    .btn-gold:hover { transform: scale(1.05); background: #ffd733; }
+    @media (max-width: 992px) { .hero-split { flex-direction: column; text-align: center; } .hero-visual { justify-content: center; } .hero-page h1 + p { margin: 0 auto 32px; } .hero-icon-big { margin: 0 auto 28px; } }
+    .section-page { padding: 100px 0; }
+    .section-bg { background: #fff; }
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+    .section-tag { display: inline-block; padding: 6px 16px; background: rgba(0,31,92,0.06); color: #001f5c; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 50px; margin-bottom: 16px; border: 1px solid rgba(0,31,92,0.1); }
+    .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #001f5c; margin-bottom: 12px; }
+    .section-header p { font-size: 1.05rem; color: #64748b; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1050px; margin: 0 auto; }
+    .feature-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 36px 30px; transition: 0.35s; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,31,92,0.07); border-color: #fecb00; }
+    .feature-card .ficon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .feature-card h3 { font-size: 1.15rem; font-weight: 800; color: #001f5c; margin-bottom: 8px; }
+    .feature-card p { font-size: 0.92rem; color: #64748b; line-height: 1.65; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1050px; margin: 0 auto; }
+    .how-step { background: #fff; border-radius: 18px; padding: 32px 24px; text-align: center; border: 1px solid #e2e8f0; transition: 0.35s; }
+    .how-step:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,31,92,0.06); border-color: #fecb00; }
+    .how-num { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #001f5c, #003399); color: #fecb00; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; margin: 0 auto 16px; }
+    .how-step h4 { font-size: 1rem; font-weight: 800; color: #001f5c; margin-bottom: 6px; }
+    .how-step p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+    @media (max-width: 992px) { .how-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .how-grid, .features-grid { grid-template-columns: 1fr; } }
+    .cta-section { background: linear-gradient(135deg, #001f5c 0%, #003399 100%); padding: 80px 0; text-align: center; color: #fff; }
+    .btn-white { background: #fff; color: #001f5c; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,255,255,0.3); }
+    .rel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .rel-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; text-align: center; text-decoration: none; transition: 0.3s; }
+    .rel-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,31,92,0.06); border-color: var(--cont-accent); }
+    .rel-card span { font-weight: 800; color: #001f5c; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="hero-page">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero-text">
+        <div class="hero-icon-big" style="background: #fff7ed; color: #ea580c;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><rect x="5" y="13" width="3" height="5" rx="0.8"/><rect x="10.5" y="11" width="3" height="7" rx="0.8"/><rect x="16" y="14" width="3" height="4" rx="0.8"/><circle cx="6.5" cy="14.5" r="0.8"/><circle cx="12" cy="12.5" r="0.8"/><circle cx="17.5" cy="15.5" r="0.8"/></svg>
+        </div>
+        <span class="badge fade-up">Fábrica de Software</span>
+        <h1 class="fade-up delay-1">Dashboards <span class="gold">& Analytics</span></h1>
+        <p class="fade-up delay-2">Chega de planilhas que ninguém atualiza. Construímos painéis executivos que integram dados do seu ERP, CRM, planilhas e bancos de dados em tempo real. DRE, EBITDA, KPIs operacionais e metas comerciais — tudo na palma da mão, do celular à sala de reunião.</p>
+        <div class="fade-up delay-3">
+          <a href="#contato" class="btn-gold">Solicitar Proposta <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-visual fade-up delay-2">
+        <div style="width:280px;height:280px;border-radius:30px;background:linear-gradient(135deg,rgba(234,88,12,0.08),rgba(255,247,237,0.15));display:flex;align-items:center;justify-content:center;border:2px solid rgba(234,88,12,0.12);">
+          <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><rect x="5" y="13" width="3" height="5" rx="0.8"/><rect x="10.5" y="11" width="3" height="7" rx="0.8"/><rect x="16" y="14" width="3" height="4" rx="0.8"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-page section-bg" id="diferenciais">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Diferenciais</span>
+      <h2>Dados que geram decisão — não confusão</h2>
+      <p>O problema nunca foi a falta de dados — foi a falta de organização. Nossos dashboards transformam informações brutas do seu ERP em insights acionáveis para a diretoria.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up delay-1">
+        <div class="ficon" style="background: #fff7ed; color: #ea580c;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Power BI e Dashboards Customizados</h3>
+        <p>Do básico ao avançado. Criamos dashboards no Power BI, Google Data Studio ou plataformas 100% customizadas em React. A ferramenta é escolhida com base na sua necessidade — não na nossa preferência.</p>
+      </div>
+      <div class="feature-card fade-up delay-1">
+        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>KPIs em Tempo Real</h3>
+        <p>Faturamento do dia, inadimplência, giro de estoque, produtividade por filial. Dados atualizados automaticamente — sem ninguém precisar exportar CSV do ERP e colar no Excel.</p>
+      </div>
+      <div class="feature-card fade-up delay-1">
+        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3>Mobile First</h3>
+        <p>Dashboards responsivos que funcionam no celular, tablet e desktop. O CEO abre o app e vê o DRE do mês. O gerente comercial acompanha a meta da equipe no smartphone. Informação onde você estiver.</p>
+      </div>
+      <div class="feature-card fade-up delay-2">
+        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+        <h3>Múltiplas Fontes de Dados</h3>
+        <p>Integramos dados do ERP, CRM, planilhas, bancos SQL, APIs de terceiros, marketplaces. Uma única fonte da verdade — sem versionsamento de "planilha_final_v3_definitiva.xlsx".</p>
+      </div>
+      <div class="feature-card fade-up delay-2">
+        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Alertas Inteligentes</h3>
+        <p>O sistema monitora os KPIs 24/7. Faturamento caiu 15% em relação à meta? Margem bruta abaixo do esperado? Você recebe uma notificação antes da reunião de diretoria — não depois.</p>
+      </div>
+      <div class="feature-card fade-up delay-2">
+        <div class="ficon" style="background: #f0fdf4; color: #15803d;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+        <h3>Relatórios Automatizados</h3>
+        <p>DRE Gerencial, Fluxo de Caixa, Comparativo Orçado x Real, Análise de Margem por Produto. Relatórios gerados automaticamente e enviados por e-mail ou WhatsApp no dia e hora que você escolher.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-page" id="metodologia" style="background: #f8fafc;">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Metodologia</span>
+      <h2>Do dado bruto ao dashboard executivo</h2>
+      <p>Transformamos informação espalhada em inteligência centralizada — com você validando cada painel.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step fade-up delay-1"><div class="how-num">01</div><h4>Mapeamento de Fontes</h4><p>Identificamos todos os sistemas e planilhas que geram dados relevantes para a sua gestão.</p></div>
+      <div class="how-step fade-up delay-2"><div class="how-num">02</div><h4>Modelagem e ETL</h4><p>Extraímos, transformamos e organizamos os dados em um modelo analítico robusto e escalável.</p></div>
+      <div class="how-step fade-up delay-3"><div class="how-num">03</div><h4>Criação dos Dashboards</h4><p>Desenhamos cada painel com foco nas decisões que você precisa tomar — e não em gráficos bonitos vazios.</p></div>
+      <div class="how-step fade-up delay-3"><div class="how-num">04</div><h4>Treinamento e Autonomia</h4><p>Sua equipe aprende a navegar, filtrar e extrair insights. Atualizações automáticas — zero trabalho manual.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section" id="contato">
+  <div class="container">
+    <div class="fade-up" style="max-width:600px; margin:0 auto;">
+      <span style="background:rgba(254,203,0,0.15);color:#fecb00;border:1px solid rgba(254,203,0,0.3);padding:6px 14px;border-radius:50px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:20px;">Pronto para enxergar seu negócio?</span>
+      <h2 style="font-size:2rem;font-weight:900;margin-bottom:16px;">Pare de tomar decisão no escuro.</h2>
+      <p style="color:#cbd5e1;margin-bottom:32px;line-height:1.7;">Conte quais indicadores você gostaria de acompanhar. Em até 48h você recebe uma proposta com escopo e investimento.</p>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre dashboards e analytics para a minha empresa." target="_blank" class="btn-white">Falar no WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-page section-bg" style="padding-top:80px;">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Explore Também</span>
+      <h2>Soluções complementares da Cerrado Tech</h2>
+    </div>
+    <div class="rel-grid fade-up delay-1">
+      <a href="erp-customizado.html" class="rel-card"><span>ERPs Customizados</span></a>
+      <a href="crm-inteligente.html" class="rel-card"><span>CRMs Inteligentes</span></a>
+      <a href="ia-offline.html" class="rel-card"><span>Inteligência Artificial</span></a>
+      <a href="ecommerce.html" class="rel-card"><span>E-commerce & Vendas</span></a>
+      <a href="compliance.html" class="rel-card"><span>Compliance & Auditoria</span></a>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
+
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  });
+</script>
+</body>
+</html>
