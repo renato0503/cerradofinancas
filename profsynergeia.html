@@ -1,0 +1,255 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof.Synergeia | Gestão de Orientações de Projetos Estudantis</title>
+    <meta name="description" content="Plataforma para acompanhamento de orientações acadêmicas. Dashboard com timeline, registro de avanços, upload de evidências e relatórios CSV.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        .hero {
+            background: linear-gradient(135deg, #020617 0%, #0a1628 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #1e3a5f;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(30, 58, 95, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 992px) { .hero-grid { flex-direction: column; text-align: center; } }
+
+        .hero-text { flex: 1.2; }
+
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0a1628, #1a2a4a);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            margin-bottom: 20px;
+            border: 1px solid rgba(30, 58, 95, 0.4);
+            color: #60a5fa;
+            font-size: 3rem;
+        }
+
+        .hero-badge {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.1), rgba(30, 58, 95, 0.2));
+            color: #60a5fa;
+            border: 1px solid rgba(30, 58, 95, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-accent {
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(30, 58, 95, 0.3);
+            border: none;
+        }
+        .btn-accent:hover { background: #2563eb; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(30, 58, 95, 0.5); }
+
+        @media (max-width: 992px) { .app-branding { align-items: center; } }
+
+        .features-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #1e3a5f; box-shadow: 0 10px 30px rgba(30, 58, 95, 0.1); }
+
+        .fc-icon { width: 50px; height: 50px; background: #1e293b; color: #60a5fa; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; border: 1px solid #334155; }
+        .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px; }
+        .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+        .cta-bottom { background: linear-gradient(135deg, #1e3a5f 0%, #0f2b4a 100%); padding: 80px 0; text-align: center; color: #fff; }
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+        .cta-bottom p { font-size: 1.15rem; color: #bfdbfe; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-text fade-up">
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <i class="ph ph-graduation-cap"></i>
+                    </div>
+                    <div class="hero-badge">Educação & EdTech</div>
+                </div>
+                <h1>Orientações acadêmicas com ordem e visibilidade.</h1>
+                <p>O <strong>Prof.Synergeia</strong> é a plataforma definitiva para professores e coordenadores acompanharem projetos estudantis. Dashboard com CRUD de turmas, timeline de orientações, upload de evidências e relatórios exportáveis em CSV.</p>
+                <div class="fade-up delay-1">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conhecer o Prof.Synergeia." target="_blank" class="btn-accent">
+                        Conhecer Prof.Synergeia
+                        <i class="ph ph-whatsapp-logo"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Do cadastro ao relatório final</h2>
+            <p>Seis módulos integrados que cobrem todo o ciclo de vida de uma orientação de projeto acadêmico.</p>
+        </div>
+        <div class="f-grid fade-up delay-1">
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-table"></i></div>
+                <h3>Dashboard Admin com CRUD de Turmas e Grupos</h3>
+                <p>Painel administrativo completo para criar turmas, cadastrar grupos de alunos, atribuir orientadores e gerenciar todo o ecossistema de projetos da instituição.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-clipboard-text"></i></div>
+                <h3>Registro de Orientações (4 Perguntas-Chave)</h3>
+                <p>Formulário padronizado com 4 perguntas essenciais para cada sessão de orientação, garantindo consistência e rastreabilidade em todos os registros.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-clock-counter-clockwise"></i></div>
+                <h3>Timeline do Grupo com Histórico Completo</h3>
+                <p>Visualização cronológica de todas as orientações recebidas por cada grupo, com filtros por data, professor e status, formando um diário de bordo acadêmico.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-camera"></i></div>
+                <h3>Upload de Evidências Fotográficas (Base64)</h3>
+                <p>Registre fotos dos encontros, quadros brancos e protótipos diretamente no sistema. As imagens são armazenadas em Base64 para portabilidade total dos dados.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-traffic-signal"></i></div>
+                <h3>Visualização Semáforo de Situação</h3>
+                <p>Cada grupo recebe um indicador visual (verde, amarelo, vermelho) baseado na frequência e qualidade das orientações, permitindo intervenção precoce do coordenador.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-chart-bar"></i></div>
+                <h3>Relatórios CSV e Gráfico de Frequência</h3>
+                <p>Exporte todos os dados em CSV para análise no Excel ou Power BI. Gráfico de frequência de orientações por turma para relatórios de coordenação e MEC.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Eleve a qualidade das orientações da sua IES.</h2>
+        <p>O Prof.Synergeia traz governança e transparência para o processo de orientação de projetos. Ideal para faculdades, IFs e programas de extensão universitária.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conhecer o Prof.Synergeia." target="_blank" class="btn-accent" style="background: #ffffff; color: #1e3a5f; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Falar com a Engenharia
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-up').forEach((el) => { observer.observe(el); });
+    });
+</script>
+
+</body>
+</html>

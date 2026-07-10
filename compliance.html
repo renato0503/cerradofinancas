@@ -14,12 +14,18 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
     :root { --cont-dark: #001f5c; --cont-accent: #fecb00; }
     body { font-family: 'Inter', sans-serif; background: #f8fafc; }
     .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
     .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+    .ficon { font-size: 28px; transition: transform 0.3s ease; }
+    .feature-card:hover .ficon { transform: scale(1.1) rotate(-3deg); }
+    .ficon i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); }
+    .hero-icon-big { font-size: 56px; }
+    .hero-icon-big i.ph { filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3)); }
     .hero-page { position: relative; padding: 140px 0 100px; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); color: #fff; border-bottom: 4px solid var(--cont-accent); overflow: hidden; }
     .hero-split { display: flex; align-items: center; gap: 60px; }
     .hero-text { flex: 1.3; }
@@ -70,18 +76,18 @@
     <div class="hero-split">
       <div class="hero-text">
         <div class="hero-icon-big" style="background: #ffe4e6; color: #e11d48;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+          <i class="ph ph-shield-check"></i>
         </div>
         <span class="badge fade-up">Fábrica de Software</span>
         <h1 class="fade-up delay-1">Compliance <span class="gold">& Auditoria</span></h1>
         <p class="fade-up delay-2">Conformidade regulatória não é um mal necessário — é uma vantagem competitiva. Construímos sistemas de LGPD, trilhas de auditoria imutáveis, gestão de riscos e due diligence digital que blindam sua operação e geram confiança para seus clientes e investidores.</p>
         <div class="fade-up delay-3">
-          <a href="#contato" class="btn-gold">Solicitar Proposta <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="#contato" class="btn-gold">Solicitar Proposta <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
       <div class="hero-visual fade-up delay-2">
         <div style="width:280px;height:280px;border-radius:30px;background:linear-gradient(135deg,rgba(225,29,72,0.08),rgba(255,228,230,0.15));display:flex;align-items:center;justify-content:center;border:2px solid rgba(225,29,72,0.12);">
-          <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <i class="ph ph-shield-check" style="font-size: 160px; opacity: 0.6;"></i>
         </div>
       </div>
     </div>
@@ -97,32 +103,32 @@
     </div>
     <div class="features-grid">
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #ffe4e6; color: #e11d48;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M9 3v2"/><path d="M15 3v2"/><polyline points="9 13 11 15 15 11"/></svg></div>
+        <div class="ficon" style="background: #ffe4e6; color: #e11d48;"><i class="ph ph-file-text"></i></div>
         <h3>Gestão de LGPD Completa</h3>
         <p>Mapeamento de dados pessoais, gestão de consentimentos, resposta a requisições de titulares, relatórios de impacto (RIPD) e dashboard de conformidade. Tudo automatizado e auditável.</p>
       </div>
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><i class="ph ph-eye"></i></div>
         <h3>Auditoria Automatizada</h3>
         <p>Trilhas de auditoria imutáveis registram cada ação no sistema: quem fez, o quê, quando e de qual IP. Relatórios prontos para auditorias externas, certificações ISO e due diligence de investidores.</p>
       </div>
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><i class="ph ph-shield"></i></div>
         <h3>Gestão de Riscos</h3>
         <p>Matriz de riscos corporativos, probabilidade x impacto, planos de mitigação e monitoramento contínuo. Dashboards que mostram exatamente onde estão as vulnerabilidades da operação.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><i class="ph ph-users-three"></i></div>
         <h3>Due Diligence Digital</h3>
         <p>Plataforma para processos de M&A, avaliação de fornecedores e parceiros. Checklists customizáveis, upload seguro de documentos, scorecards automáticos e relatórios executivos.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><i class="ph ph-bell-ringing"></i></div>
         <h3>Políticas e Treinamentos</h3>
         <p>Gestão de políticas internas, termos de uso, códigos de conduta e treinamentos obrigatórios. Controle de quem leu, quando leu e qual versão — com alertas automáticos de renovação.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #f0fdf4; color: #15803d;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="ficon" style="background: #f0fdf4; color: #15803d;"><i class="ph ph-clipboard-text"></i></div>
         <h3>Alertas e Notificações</h3>
         <p>O sistema monitora prazos, vencimentos de certificações, mudanças regulatórias e eventos de risco. Sua equipe de compliance é notificada antes que qualquer coisa saia do prazo.</p>
       </div>
@@ -152,7 +158,7 @@
       <span style="background:rgba(254,203,0,0.15);color:#fecb00;border:1px solid rgba(254,203,0,0.3);padding:6px 14px;border-radius:50px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:20px;">Pronto para blindar sua operação?</span>
       <h2 style="font-size:2rem;font-weight:900;margin-bottom:16px;">Compliance começa com o software certo.</h2>
       <p style="color:#cbd5e1;margin-bottom:32px;line-height:1.7;">Conte quais são os desafios de conformidade da sua empresa. Em até 48h você recebe um diagnóstico e proposta técnica.</p>
-      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre sistemas de compliance e auditoria para a minha empresa." target="_blank" class="btn-white">Falar no WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre sistemas de compliance e auditoria para a minha empresa." target="_blank" class="btn-white">Falar no WhatsApp <i class="ph ph-whatsapp-logo"></i></a>
     </div>
   </div>
 </section>

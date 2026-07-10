@@ -1,0 +1,406 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerraCare | Prontuário Eletrônico e Gestão de Cuidadoras</title>
+    <meta name="description" content="PWA mobile-first para registro de rotinas de cuidado de pacientes. Sinais vitais, checklist de medicamentos, relatório por voz e assinatura digital.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        .cc-hero {
+            background: linear-gradient(135deg, #020617 0%, #4c0519 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #e11d48;
+        }
+
+        .cc-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(225, 29, 72, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cc-hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .cc-hero-grid { flex-direction: column; text-align: center; }
+        }
+
+        .cc-text { flex: 1.2; }
+        
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #4c0519, #881337);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            padding: 0; 
+            margin-bottom: 20px;
+            border: 1px solid rgba(225, 29, 72, 0.4);
+            overflow: hidden;
+            color: #fda4af;
+            font-size: 3rem;
+        }
+        .app-big-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cc-badge {
+            background: linear-gradient(135deg, rgba(225, 29, 72, 0.1), rgba(225, 29, 72, 0.2));
+            color: #fda4af;
+            border: 1px solid rgba(225, 29, 72, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .cc-text h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cc-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-rose {
+            background: #e11d48;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-rose:hover { background: #be123c; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(225, 29, 72, 0.5); }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+        }
+
+        .cc-visual { flex: 0.8; display: flex; justify-content: center; width: 100%; }
+        
+        .prontuario-mockup {
+            width: 100%;
+            max-width: 480px;
+            background: #0f172a;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+        .prontuario-mockup:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02); }
+
+        .pm-header {
+            background: #1e293b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        .pm-dots { display: flex; gap: 6px; }
+        .pm-dot { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
+        .pm-dot.r { background: #ef4444; }
+        .pm-dot.y { background: #f59e0b; }
+        .pm-dot.g { background: #10b981; }
+
+        .pm-body { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+        
+        .pm-row { display: flex; gap: 15px; }
+        .pm-box { flex: 1; background: #0b0f19; border-radius: 10px; padding: 15px; border: 1px dashed #1e293b; }
+        .pm-box-title { font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 10px; }
+
+        .pm-stat { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .pm-stat-val { font-size: 1.1rem; font-weight: 800; color: #fff; }
+        .pm-stat-label { font-size: 0.65rem; color: #64748b; }
+        .pm-line { height: 4px; border-radius: 2px; background: #334155; margin-bottom: 6px; }
+        .pm-line.rose { background: #e11d48; }
+        .pm-line.half { width: 60%; }
+
+        .pm-checklist { margin-top: 10px; }
+        .pm-chk-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #1e293b; }
+        .pm-chk-icon { width: 16px; height: 16px; border-radius: 4px; border: 1px solid #e11d48; display: flex; align-items: center; justify-content: center; color: #e11d48; font-size: 0.6rem; }
+        .pm-chk-text { font-size: 0.75rem; color: #cbd5e1; }
+
+        .features-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto;}
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #e11d48; box-shadow: 0 10px 30px rgba(225, 29, 72, 0.1);}
+
+        .fc-icon { width: 50px; height: 50px; background: #1e293b; color: #fda4af; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; border: 1px solid #334155;}
+        
+        .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
+
+        .cta-bottom { background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%); padding: 80px 0; text-align: center; color: #fff;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
+        .cta-bottom p { font-size: 1.15rem; color: #fecdd3; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;}
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="cc-hero">
+    <div class="container">
+        <div class="cc-hero-grid">
+            
+            <div class="cc-text fade-up">
+                
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <i class="ph ph-heartbeat"></i>
+                    </div>
+                    <div class="cc-badge">Saúde / CareTech</div>
+                </div>
+
+                <h1>Cuidador conectado, paciente seguro.</h1>
+                <p>O <strong>CerraCare</strong> é o prontuário eletrônico PWA desenvolvido para cuidadoras de idosos e pacientes domiciliares. Registe sinais vitais, controle medicamentos por checklist, dite relatórios com o microfone e assine digitalmente. Tudo offline-first, sempre acessível no telemóvel.</p>
+                
+                <div class="btn-group fade-up delay-1">
+                    <a href="#funcionalidades" class="btn-rose">
+                        Explorar Funcionalidades
+                        <i class="ph ph-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cc-visual fade-up delay-2">
+                <div class="prontuario-mockup">
+                    <div class="pm-header">
+                        <div class="pm-dots">
+                            <div class="pm-dot r"></div>
+                            <div class="pm-dot y"></div>
+                            <div class="pm-dot g"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: bold;">CerraCare — Prontuário</span>
+                        <i class="ph ph-heartbeat" style="color: #e11d48; font-size: 1.2rem;"></i>
+                    </div>
+                    <div class="pm-body">
+                        <div class="pm-row">
+                            <div class="pm-box">
+                                <div class="pm-box-title">Sinais Vitais</div>
+                                <div class="pm-stat">
+                                    <div>
+                                        <div class="pm-stat-val">128/82</div>
+                                        <div class="pm-stat-label">Pressão Arterial</div>
+                                    </div>
+                                </div>
+                                <div class="pm-line rose"></div>
+                                <div class="pm-stat">
+                                    <div>
+                                        <div class="pm-stat-val">78 bpm</div>
+                                        <div class="pm-stat-label">Frequência Cardíaca</div>
+                                    </div>
+                                </div>
+                                <div class="pm-line rose half"></div>
+                                <div class="pm-stat">
+                                    <div>
+                                        <div class="pm-stat-val">36.5°</div>
+                                        <div class="pm-stat-label">Temperatura</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pm-box">
+                                <div class="pm-box-title">Medicamentos</div>
+                                <div class="pm-checklist">
+                                    <div class="pm-chk-item">
+                                        <div class="pm-chk-icon"><i class="ph ph-check" style="font-size: 0.5rem;"></i></div>
+                                        <span class="pm-chk-text">Losartana 50mg — 08:00</span>
+                                    </div>
+                                    <div class="pm-chk-item">
+                                        <div class="pm-chk-icon"><i class="ph ph-check" style="font-size: 0.5rem;"></i></div>
+                                        <span class="pm-chk-text">Sinvastatina 20mg — 20:00</span>
+                                    </div>
+                                    <div class="pm-chk-item">
+                                        <div class="pm-chk-icon"></div>
+                                        <span class="pm-chk-text">AAS 100mg — 12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pm-box" style="border-color: #e11d48; border-style: solid; background: #1c1917;">
+                            <div class="pm-box-title" style="color: #fda4af;">Relatório por Voz <i class="ph ph-microphone"></i></div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div class="pm-line" style="width: 80%; background: #e11d48;"></div>
+                                <span style="font-size: 0.65rem; color: #fda4af;">Gravando...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Tecnologia que humaniza o cuidado</h2>
+            <p>O CerraCare foi projetado com cuidadoras reais. Interface intuitiva, offline-first e funcionalidades que eliminam o papel do dia a dia.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+            
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-activity"></i>
+                </div>
+                <h3>Sinais Vitais</h3>
+                <p>Registro rápido de pressão arterial, frequência cardíaca e temperatura. Gráficos de evolução com alertas inteligentes para variações críticas.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-check-square"></i>
+                </div>
+                <h3>Checklist de Medicamentos</h3>
+                <p>Lista interativa de medicamentos com horários e dosagens. Confirmação visual de cada dose administrada, com notificações push no horário certo.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-microphone"></i>
+                </div>
+                <h3>Relatório por Voz</h3>
+                <p>Speech-to-Text integrado. A cuidadora dita as observações do plantão e o sistema transcreve automaticamente para o prontuário digital.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-pen"></i>
+                </div>
+                <h3>Assinatura Digital</h3>
+                <p>Canvas de assinatura diretamente no ecrã do telemóvel. O responsável assina com o dedo e o comprovante fica anexado ao prontuário eletrônico.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-file-pdf"></i>
+                </div>
+                <h3>Dashboard com Exportação PDF</h3>
+                <p>Painel administrativo completo para familiares e supervisores. Gere relatórios detalhados do plantão e exporte em PDF com um clique.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-drop"></i>
+                </div>
+                <h3>Balanço Hídrico</h3>
+                <p>Controle preciso de ingestão e eliminação de líquidos. Fundamental para pacientes com restrição hídrica ou monitorização renal.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>O melhor cuidado começa com a melhor informação.</h2>
+        <p>Equipe as suas cuidadoras com um prontuário eletrônico moderno. Mais segurança para o paciente, mais tranquilidade para a família.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20Conhecer%20o%20CerraCare" class="btn-rose" style="background: #ffffff; color: #be123c; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Quero Conhecer o CerraCare
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

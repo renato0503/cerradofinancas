@@ -13,6 +13,7 @@ permalink: /startups/chamala/
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <style>
         /* ================= VÁRIAVEIS GLOBAIS (ESCALA DE LARANJA PREMIUM) ================= */
@@ -102,6 +103,9 @@ permalink: /startups/chamala/
         .hero-badges { display: flex; justify-content: center; gap: 16px; margin-top: 50px; flex-wrap: wrap; }
         .badge { display: flex; align-items: center; gap: 8px; background: var(--white); padding: 12px 20px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; color: var(--text-main); box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid var(--border-light); }
         .badge svg { width: 18px; height: 18px; fill: var(--success); }
+        .badge i.ph { font-size: 18px; color: var(--success); }
+        .btn i.ph { font-size: 24px; vertical-align: middle; }
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
 
         /* ================= SEÇÕES BASE ================= */
         .section-padding { padding: 100px 0; }
@@ -126,7 +130,9 @@ permalink: /startups/chamala/
         .join-icon { width: 80px; height: 80px; background: rgba(249, 115, 22, 0.1); border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; transform: rotate(-5deg); transition: 0.3s; }
         .join-card:hover .join-icon { transform: rotate(0deg) scale(1.1); background: var(--gradient-primary); }
         .join-card:hover .join-icon svg { fill: var(--white); }
+        .join-card:hover .join-icon i.ph { color: var(--white); }
         .join-icon svg { width: 40px; height: 40px; fill: var(--orange-500); transition: 0.3s; }
+        .join-icon i.ph { font-size: 40px; color: var(--orange-500); transition: 0.3s; }
         
         .join-card h3 { color: var(--white); margin-bottom: 16px; }
         .join-card p { color: #A1A1AA; margin-bottom: 30px; flex-grow: 1; font-size: 1.05rem; }
@@ -164,6 +170,7 @@ permalink: /startups/chamala/
         }
         .sec-icon { width: 48px; height: 48px; background: var(--white); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .sec-icon svg { width: 24px; height: 24px; fill: var(--orange-600); }
+        .sec-icon i.ph { font-size: 24px; color: var(--orange-600); }
         .security-item h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--dark-bg); }
         .security-item p { font-size: 0.95rem; margin: 0; }
 
@@ -179,6 +186,7 @@ permalink: /startups/chamala/
         .cat-box:hover { background: #222225; border-color: rgba(249, 115, 22, 0.4); }
         .cat-box h4 { font-size: 1.3rem; color: var(--white); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
         .cat-box h4 svg { width: 28px; height: 28px; fill: var(--orange-500); }
+        .cat-box h4 i.ph { font-size: 28px; color: var(--orange-500); }
         .cat-list { list-style: none; }
         .cat-list li { font-size: 1rem; color: #A1A1AA; margin-bottom: 12px; padding-left: 20px; position: relative; }
         .cat-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--orange-500); }
@@ -193,8 +201,10 @@ permalink: /startups/chamala/
             display: flex; justify-content: space-between; align-items: center; transition: 0.3s;
         }
         .faq-question svg { width: 24px; height: 24px; transition: transform 0.3s; fill: var(--text-main); }
+        .faq-question i.ph { font-size: 24px; transition: transform 0.3s; color: var(--text-main); }
         .faq-question.active { color: var(--orange-600); }
         .faq-question.active svg { transform: rotate(180deg); fill: var(--orange-600); }
+        .faq-question.active i.ph { transform: rotate(180deg); color: var(--orange-600); }
         .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; }
         .faq-answer p { color: var(--text-muted); padding-bottom: 24px; font-size: 1.05rem; margin: 0; }
 
@@ -258,26 +268,26 @@ permalink: /startups/chamala/
             
             <div class="hero-actions">
                 <a href="https://chamala-app.web.app/" class="btn btn-primary">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    <i class="ph ph-play"></i>
                     Quero Contratar um Serviço
                 </a>
                 <a href="https://chamala-app.web.app/prestador.html" class="btn btn-outline">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                    <i class="ph ph-briefcase"></i>
                     Quero Trabalhar no App
                 </a>
             </div>
 
             <div class="hero-badges">
                 <div class="badge">
-                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    <i class="ph ph-shield-check"></i>
                     Profissionais 100% Verificados
                 </div>
                 <div class="badge">
-                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    <i class="ph ph-lock"></i>
                     Dinheiro Retido e Seguro
                 </div>
                 <div class="badge">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <i class="ph ph-map-pin"></i>
                     Foco Total em Cuiabá e Região
                 </div>
             </div>
@@ -300,7 +310,7 @@ permalink: /startups/chamala/
             <div class="join-grid">
                 <div class="join-card">
                     <div class="join-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <i class="ph ph-user"></i>
                     </div>
                     <h3>Sou Cliente</h3>
                     <p>Precisa de um profissional agora? Crie sua conta gratuita, publique seu pedido e deixe que os melhores prestadores disputem para atender você com o menor preço.</p>
@@ -309,7 +319,7 @@ permalink: /startups/chamala/
 
                 <div class="join-card" style="border-top: 4px solid var(--orange-500);">
                     <div class="join-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                        <i class="ph ph-wrench"></i>
                     </div>
                     <h3>Sou Profissional</h3>
                     <p>Diga adeus ao calote. Tenha uma agenda cheia, receba seus pagamentos garantidos direto na conta bancária após a conclusão e construa sua reputação na cidade.</p>
@@ -318,7 +328,7 @@ permalink: /startups/chamala/
 
                 <div class="join-card">
                     <div class="join-icon">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
+                        <i class="ph ph-storefront"></i>
                     </div>
                     <h3>Sou Lojista</h3>
                     <p>Transforme sua loja física em um fornecedor digital. Receba listas de materiais de dezenas de obras ativas pelo app diariamente e faça o seu lance de vendas.</p>
@@ -384,7 +394,7 @@ permalink: /startups/chamala/
                 <div class="security-list">
                     <div class="security-item">
                         <div class="sec-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                            <i class="ph ph-shield"></i>
                         </div>
                         <div>
                             <h4>Verificação de Identidade (KYC)</h4>
@@ -393,7 +403,7 @@ permalink: /startups/chamala/
                     </div>
                     <div class="security-item">
                         <div class="sec-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                            <i class="ph ph-calculator"></i>
                         </div>
                         <div>
                             <h4>Validação na Receita Federal</h4>
@@ -402,7 +412,7 @@ permalink: /startups/chamala/
                     </div>
                     <div class="security-item">
                         <div class="sec-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <i class="ph ph-star"></i>
                         </div>
                         <div>
                             <h4>Reputação 100% Imutável</h4>
@@ -423,7 +433,7 @@ permalink: /startups/chamala/
 
             <div class="cat-grid">
                 <div class="cat-box">
-                    <h4><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg> Construção Civil</h4>
+                    <h4><i class="ph ph-buildings"></i> Construção Civil</h4>
                     <ul class="cat-list">
                         <li>Pedreiro e Mestre de Obras</li>
                         <li>Armador e Carpinteiro</li>
@@ -434,7 +444,7 @@ permalink: /startups/chamala/
                 </div>
 
                 <div class="cat-box">
-                    <h4><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Manutenção & Reparos</h4>
+                    <h4><i class="ph ph-wrench"></i> Manutenção & Reparos</h4>
                     <ul class="cat-list">
                         <li>Eletricista Residencial e Predial</li>
                         <li>Encanador (Caça Vazamentos)</li>
@@ -445,7 +455,7 @@ permalink: /startups/chamala/
                 </div>
 
                 <div class="cat-box">
-                    <h4><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h-2v5H6v2h2v5h2v-5h2v-2zm4 5h-2v-5h-2V9h2V7h2v2h2v2h-2v5z"/></svg> Tecnologia & Clima</h4>
+                    <h4><i class="ph ph-lightning"></i> Tecnologia & Clima</h4>
                     <ul class="cat-list">
                         <li>Limpeza de Ar Condicionado</li>
                         <li>Técnico Linha Branca (Geladeira)</li>
@@ -456,7 +466,7 @@ permalink: /startups/chamala/
                 </div>
 
                 <div class="cat-box">
-                    <h4><svg viewBox="0 0 24 24"><path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72M5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 8.83L14.67 16.27L12.58 21.15C10.34 20.81 7.94 19.58 5.93 17.57Z"/></svg> Limpeza & Acabamento</h4>
+                    <h4><i class="ph ph-broom"></i> Limpeza & Acabamento</h4>
                     <ul class="cat-list">
                         <li>Pintor Residencial (Texturas)</li>
                         <li>Marceneiro (Móveis Planejados)</li>
@@ -479,7 +489,7 @@ permalink: /startups/chamala/
                 <div class="faq-item">
                     <button class="faq-question">
                         O ChamaLá cobra para eu solicitar um orçamento?
-                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        <i class="ph ph-caret-down"></i>
                     </button>
                     <div class="faq-answer">
                         <p>Não. Para o cliente final, criar a conta e solicitar orçamentos é 100% gratuito. Você só paga o valor do serviço que for acordado diretamente com o prestador.</p>
@@ -489,7 +499,7 @@ permalink: /startups/chamala/
                 <div class="faq-item">
                     <button class="faq-question">
                         E se o prestador estragar algo na minha casa?
-                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        <i class="ph ph-caret-down"></i>
                     </button>
                     <div class="faq-answer">
                         <p>O dinheiro do serviço só é liberado para o prestador após a sua aprovação final. Se houver danos, você pode abrir uma <strong>Disputa</strong> direto no app para nossa equipe mediar e reembolsar o valor retido.</p>
@@ -499,7 +509,7 @@ permalink: /startups/chamala/
                 <div class="faq-item">
                     <button class="faq-question">
                         Sou Profissional. Como o ChamaLá ganha dinheiro?
-                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        <i class="ph ph-caret-down"></i>
                     </button>
                     <div class="faq-answer">
                         <p>Não cobramos mensalidade dos profissionais. Cobramos apenas uma Taxa de Plataforma percentual sobre os serviços fechados e concluídos com sucesso. Se não fechar, não paga nada.</p>

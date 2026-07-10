@@ -14,12 +14,18 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
     :root { --cont-dark: #001f5c; --cont-accent: #fecb00; }
     body { font-family: 'Inter', sans-serif; background: #f8fafc; }
     .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
     .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+    .ficon { font-size: 28px; transition: transform 0.3s ease; }
+    .feature-card:hover .ficon { transform: scale(1.1) rotate(-3deg); }
+    .ficon i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); }
+    .hero-icon-big { font-size: 56px; }
+    .hero-icon-big i.ph { filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3)); }
     .hero-page { position: relative; padding: 140px 0 100px; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); color: #fff; border-bottom: 4px solid var(--cont-accent); overflow: hidden; }
     .hero-split { display: flex; align-items: center; gap: 60px; }
     .hero-text { flex: 1.3; }
@@ -70,18 +76,18 @@
     <div class="hero-split">
       <div class="hero-text">
         <div class="hero-icon-big" style="background: #dcfce7; color: #16a34a;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-2.5 12H5.5L3 6z"/><path d="M8 6V4a4 4 0 0 1 8 0v2"/><circle cx="9" cy="14" r="1.2"/><circle cx="15" cy="14" r="1.2"/><polyline points="8 6 8 10 16 10 16 6"/></svg>
+          <i class="ph ph-shopping-bag-open"></i>
         </div>
         <span class="badge fade-up">Fábrica de Software</span>
         <h1 class="fade-up delay-1">E-commerce <span class="gold">& Vendas</span></h1>
         <p class="fade-up delay-2">Sua loja virtual, PDV físico e marketplace integrados em uma única plataforma — conectada ao seu ERP, CRM e meios de pagamento. Venda online e offline com o mesmo estoque, o mesmo cliente, a mesma operação.</p>
         <div class="fade-up delay-3">
-          <a href="#contato" class="btn-gold">Solicitar Proposta <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="#contato" class="btn-gold">Solicitar Proposta <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
       <div class="hero-visual fade-up delay-2">
         <div style="width:280px;height:280px;border-radius:30px;background:linear-gradient(135deg,rgba(22,163,74,0.08),rgba(220,252,231,0.15));display:flex;align-items:center;justify-content:center;border:2px solid rgba(22,163,74,0.15);">
-          <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"><path d="M3 6h18l-2.5 12H5.5L3 6z"/><path d="M8 6V4a4 4 0 0 1 8 0v2"/><circle cx="9" cy="14" r="1.2"/><circle cx="15" cy="14" r="1.2"/></svg>
+          <i class="ph ph-shopping-bag-open" style="font-size: 160px; opacity: 0.6;"></i>
         </div>
       </div>
     </div>
@@ -97,32 +103,32 @@
     </div>
     <div class="features-grid">
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><i class="ph ph-storefront"></i></div>
         <h3>Loja Virtual Completa</h3>
         <p>Vitrine, carrinho, checkout, cálculo de frete, cupons de desconto, avaliações de produtos. Tudo personalizado com a identidade da sua marca — sem templates genéricos.</p>
       </div>
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><i class="ph ph-credit-card"></i></div>
         <h3>PDV Integrado</h3>
         <p>Ponto de venda para loja física: frente de caixa, leitor de código de barras, emissão de NFC-e e recibos. O estoque da loja virtual e da loja física é o mesmo — sempre sincronizado.</p>
       </div>
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="9" x2="22" y2="9"/><rect x="5" y="13" width="3" height="3" rx="0.5"/><rect x="10.5" y="13" width="3" height="3" rx="0.5"/></svg></div>
+        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><i class="ph ph-truck"></i></div>
         <h3>Marketplaces Conectados</h3>
         <p>Venda no Mercado Livre, Shopee, Amazon e outros marketplaces com sincronização automática de estoque, preços e pedidos. Tudo cai no mesmo ERP, sem planilhas de controle paralelas.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><i class="ph ph-qr-code"></i></div>
         <h3>Pagamentos Integrados</h3>
         <p>Pix, boleto, cartão de crédito, carteiras digitais. Conectamos os principais gateways (Stripe, Mercado Pago, PagSeguro) direto na sua plataforma. Conciliação automática com o financeiro do ERP.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #ffe4e6; color: #e11d48;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="ficon" style="background: #ffe4e6; color: #e11d48;"><i class="ph ph-trend-up"></i></div>
         <h3>Logística e Fulfillment</h3>
         <p>Cálculo de frete em tempo real (Correios, transportadoras), rastreamento de pedidos, gestão de entregas. Integração com APIs de logística para automatizar todo o pós-venda.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #fff7ed; color: #ea580c;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="ficon" style="background: #fff7ed; color: #ea580c;"><i class="ph ph-device-mobile"></i></div>
         <h3>Orquestração Total</h3>
         <p>Venda no site → estoque atualiza → pedido vai pro ERP → faturamento emite NF-e → logística despacha → cliente recebe. Tudo automático, sem intervenção humana entre as etapas.</p>
       </div>
@@ -152,7 +158,7 @@
       <span style="background:rgba(254,203,0,0.15);color:#fecb00;border:1px solid rgba(254,203,0,0.3);padding:6px 14px;border-radius:50px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:20px;">Pronto para vender mais?</span>
       <h2 style="font-size:2rem;font-weight:900;margin-bottom:16px;">Sua plataforma de vendas, do seu jeito.</h2>
       <p style="color:#cbd5e1;margin-bottom:32px;line-height:1.7;">Conte para a gente como você vende hoje. Em até 48h entregamos uma proposta técnica com escopo, prazo e investimento.</p>
-      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre uma plataforma de e-commerce customizada." target="_blank" class="btn-white">Falar no WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre uma plataforma de e-commerce customizada." target="_blank" class="btn-white">Falar no WhatsApp <i class="ph ph-whatsapp-logo"></i></a>
     </div>
   </div>
 </section>

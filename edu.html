@@ -692,7 +692,11 @@ permalink: /solucoes/edu/
                 font-size: 1.5rem;
             }
         }
+
+[class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
+
     </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
@@ -719,10 +723,7 @@ permalink: /solucoes/edu/
                     <div class="hero-btns fade-up delay-3">
                         <a href="#simulador" class="btn-action">
                             Testar IA Preditiva
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
+                            <i class="ph ph-trend-up"></i>
                         </a>
                         <a href="/solucoes/edu/simuladoredu/" class="btn-action outline">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -784,13 +785,7 @@ permalink: /solucoes/edu/
                 </div>
 
                 <button class="app-btn" id="btnAiRun" onclick="runAiPrediction()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                        </path>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                    </svg>
+                    <i class="ph ph-cube"></i>
                     Rodar Algoritmo Preditivo
                 </button>
             </div>
@@ -813,14 +808,7 @@ permalink: /solucoes/edu/
 
                     <div class="ai-result" id="aiResultBox">
                         <h4>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3">
-                                <polygon
-                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">
-                                </polygon>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
+                            <i class="ph ph-warning"></i>
                             Alerta Crítico: Risco de Evasão (87%)
                         </h4>
                         <p><strong>Padrão Detectado:</strong> Combinação de 4 faltas consecutivas não justificadas e
@@ -1105,7 +1093,7 @@ permalink: /solucoes/edu/
             const resultBox = document.getElementById('aiResultBox');
 
             btn.disabled = false;
-            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Rodar Nova Predição';
+            btn.innerHTML = '<i class="ph ph-cube"></i> Rodar Nova Predição';
 
             statusBadge.innerText = 'Aguardando Input';
             statusBadge.className = 'ai-status-badge';

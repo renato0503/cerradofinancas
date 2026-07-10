@@ -1,0 +1,392 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerraliance | Compliance e Auditoria para Órgãos Públicos</title>
+    <meta name="description" content="Plataforma de auditoria cidadã com detecção de fraudes, due diligence de fornecedores e transparência ativa para órgãos públicos.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; 
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        .cl-hero {
+            background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #6366f1;
+        }
+
+        .cl-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cl-hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .cl-hero-grid { flex-direction: column; text-align: center; }
+        }
+
+        .cl-text { flex: 1.2; }
+        
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #1e1b4b, #3730a3);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            padding: 0; 
+            margin-bottom: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            overflow: hidden;
+            color: #a5b4fc;
+            font-size: 3rem;
+        }
+        .app-big-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cl-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.2));
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .cl-text h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cl-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-indigo {
+            background: #6366f1;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-indigo:hover { background: #4f46e5; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(99, 102, 241, 0.5); }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+        }
+
+        .cl-visual { flex: 0.8; display: flex; justify-content: center; width: 100%; }
+        
+        .audit-mockup {
+            width: 100%;
+            max-width: 480px;
+            background: #0f172a;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+        .audit-mockup:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02); }
+
+        .am-header {
+            background: #1e293b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        .am-dots { display: flex; gap: 6px; }
+        .am-dot { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
+        .am-dot.r { background: #ef4444; }
+        .am-dot.y { background: #f59e0b; }
+        .am-dot.g { background: #10b981; }
+
+        .am-body { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+        
+        .am-card { background: #0b0f19; border-radius: 10px; padding: 15px; border: 1px solid #1e293b; }
+        .am-card-title { font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 10px; }
+        .am-line { height: 4px; border-radius: 2px; background: #334155; margin-bottom: 6px; }
+        .am-line.indigo { background: #6366f1; }
+        .am-line.short { width: 60%; }
+        .am-line.half { width: 50%; }
+
+        .am-risk-row { display: flex; gap: 10px; margin-top: 8px; }
+        .am-risk-tag {
+            padding: 4px 10px; border-radius: 50px; font-size: 0.65rem; font-weight: 700;
+        }
+        .am-risk-tag.high { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .am-risk-tag.med { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .am-risk-tag.low { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+        .am-table { width: 100%; }
+        .am-table th { font-size: 0.6rem; color: #64748b; text-transform: uppercase; text-align: left; padding-bottom: 6px; }
+        .am-table td { font-size: 0.7rem; color: #cbd5e1; padding: 4px 0; border-bottom: 1px solid #1e293b; }
+
+        .features-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto;}
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);}
+
+        .fc-icon { width: 50px; height: 50px; background: #1e293b; color: #a5b4fc; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; border: 1px solid #334155;}
+        
+        .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
+
+        .cta-bottom { background: linear-gradient(135deg, #6366f1 0%, #3730a3 100%); padding: 80px 0; text-align: center; color: #fff;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
+        .cta-bottom p { font-size: 1.15rem; color: #c7d2fe; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;}
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="cl-hero">
+    <div class="container">
+        <div class="cl-hero-grid">
+            
+            <div class="cl-text fade-up">
+                
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <i class="ph ph-buildings"></i>
+                    </div>
+                    <div class="cl-badge">GovTech / Compliance</div>
+                </div>
+
+                <h1>Auditoria cidadã, governança de verdade.</h1>
+                <p>O <strong>Cerraliance</strong> é a plataforma de compliance que traz transparência ativa para órgãos públicos. Faça scraping do Diário Oficial, execute due diligence de fornecedores, monitore métricas de risco contratual e dê visibilidade ao cidadão com o Portal da Transparência integrado.</p>
+                
+                <div class="btn-group fade-up delay-1">
+                    <a href="#funcionalidades" class="btn-indigo">
+                        Ver Plataforma
+                        <i class="ph ph-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cl-visual fade-up delay-2">
+                <div class="audit-mockup">
+                    <div class="am-header">
+                        <div class="am-dots">
+                            <div class="am-dot r"></div>
+                            <div class="am-dot y"></div>
+                            <div class="am-dot g"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: bold;">Cerraliance Dashboard</span>
+                        <i class="ph ph-shield-check" style="color: #6366f1; font-size: 1.2rem;"></i>
+                    </div>
+                    <div class="am-body">
+                        <div class="am-card">
+                            <div class="am-card-title">Alertas de Risco — Contratos Ativos</div>
+                            <table class="am-table">
+                                <tr>
+                                    <th>Contrato</th>
+                                    <th>Fornecedor</th>
+                                    <th>Risco</th>
+                                </tr>
+                                <tr>
+                                    <td>#142/2025</td>
+                                    <td>Construtécnica Ltda</td>
+                                    <td><span class="am-risk-tag high">Alto</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#089/2025</td>
+                                    <td>MedSupply Brasil</td>
+                                    <td><span class="am-risk-tag med">Médio</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#201/2025</td>
+                                    <td>EcoServ Gestão</td>
+                                    <td><span class="am-risk-tag low">Baixo</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="am-card" style="border-color: #6366f1; border-style: solid; background: #1e1b4b;">
+                            <div class="am-card-title" style="color: #a5b4fc;">Due Diligence — Novo Fornecedor</div>
+                            <div class="am-line indigo"></div>
+                            <div class="am-line indigo short"></div>
+                            <div class="am-line" style="width: 80%;"></div>
+                            <div style="font-size: 0.65rem; color: #a5b4fc; margin-top: 8px;">Status: Em análise — IOMAT scraping OK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Inteligência fiscal para a gestão pública</h2>
+            <p>Módulos independentes que transformam dados públicos em inteligência acionável. Compliance ativo, não reativo.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+            
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-newspaper"></i>
+                </div>
+                <h3>Scraping IOMAT</h3>
+                <p>Monitorização automática do Diário Oficial de Mato Grosso. Extraia publicações relevantes, cruze com a base de fornecedores e receba alertas de menções em tempo real.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-chart-bar"></i>
+                </div>
+                <h3>Dashboard de Contratos</h3>
+                <p>Painel executivo com métricas de risco contratual: prazos, aditivos suspeitos, concentração de fornecedores e score de conformidade por secretaria.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-clipboard-text"></i>
+                </div>
+                <h3>Gestor de Planos 5W2H</h3>
+                <p>Módulo de gestão de ações corretivas baseado na metodologia 5W2H. Cada apontamento de auditoria gera um plano com responsável, prazo e dashboard de progresso.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-magnifying-glass"></i>
+                </div>
+                <h3>Due Diligence de Fornecedores</h3>
+                <p>Varredura automática de certidões federais, estaduais e municipais. CNPJ, CEIS, CEPIM, trabalho escravo — tudo consolidado num score de risco do fornecedor.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-chat-circle-text"></i>
+                </div>
+                <h3>Canal de Denúncias</h3>
+                <p>Plataforma anônima e segura para denúncias internas e externas. Conforme a Lei 14.133/2021, com protocolo, acompanhamento de status e proteção ao denunciante.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-eye"></i>
+                </div>
+                <h3>Portal da Transparência</h3>
+                <p>Front-end público com dados da execução orçamentária, contratos, licitações e folha de pagamento. Alimentado automaticamente pelos módulos internos da plataforma.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Transparência não é opção, é obrigação.</h2>
+        <p>Leve a sua prefeitura, câmara ou autarquia para o próximo nível de compliance. Conformidade com a nova Lei de Licitações, LGPD e controle social.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20falar%20com%20um%20consultor%20sobre%20o%20Cerraliance" class="btn-indigo" style="background: #ffffff; color: #4338ca; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Falar com Consultor
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

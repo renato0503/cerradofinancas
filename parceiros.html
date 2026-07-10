@@ -17,6 +17,7 @@ layout: null
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         body {
@@ -213,6 +214,7 @@ layout: null
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
             color: #fff;
         }
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
     </style>
 </head>
 <body>
@@ -345,7 +347,7 @@ layout: null
             <div class="calc-results">
                 <div class="result-box">
                     <div class="result-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <i class="ph ph-file-text" style="font-size:18px"></i>
                         Comissão Imediata (À vista)
                     </div>
                     <p class="result-value">R$ <span id="res-pontual" style="font-size: inherit; font-weight: inherit; color: inherit;">0</span></p>
@@ -356,7 +358,7 @@ layout: null
 
                 <div class="result-box">
                     <div class="result-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.21l-1.51 1.51A8 8 0 1 0 20.36 14.5l1.64-1.64z"></path></svg>
+                        <i class="ph ph-arrows-clockwise" style="font-size:18px"></i>
                         Renda Recorrente Mensal
                     </div>
                     <p class="result-value">R$ <span id="res-recorrente" style="font-size: inherit; font-weight: inherit; color: inherit;">0</span><span>/mês</span></p>
@@ -371,7 +373,7 @@ layout: null
         <p>Não é apenas uma indicação de link afiliado, é uma parceria de crescimento real (White-label). Fale diretamente com a nossa diretoria para alinhar os detalhes operacionais e assinar seu contrato de parceiro.</p>
         
         <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá Renato! Quero me tornar um parceiro oficial da Cerrado e conhecer a estrutura de comissões." class="btn-whatsapp-premium">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <i class="ph ph-whatsapp-logo" style="font-size:24px"></i>
             Fechar Parceria pelo WhatsApp
         </a>
         

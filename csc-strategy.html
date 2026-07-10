@@ -328,7 +328,9 @@ layout: null
         .cta-section p { font-size: 1.1rem; color: rgba(15, 23, 42, 0.8); margin-bottom: 40px; max-width: 550px; margin-left: auto; margin-right: auto; }
         .btn-dark { background: #0f172a; color: #fff; padding: 16px 32px; border-radius: 12px; font-weight: 800; font-size: 1.05rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
         .btn-dark:hover { background: #1e293b; transform: translateY(-3px); }
+[class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
     </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
@@ -345,7 +347,7 @@ layout: null
                 <div class="btn-group">
                     <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero agendar uma demonstração do CSC Strategy." target="_blank" class="btn-gold">
                         Agendar Demonstração
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <i class="ph ph-arrow-right"></i>
                     </a>
                     <a href="#funcionalidades" class="btn-outline">
                         Ver Funcionalidades
@@ -407,11 +409,7 @@ layout: null
             <div class="pilar-card fade-up" style="--pilar-color: #fecb00; --pilar-bg: rgba(254, 203, 0, 0.1); --pilar-border: rgba(254, 203, 0, 0.3);">
                 <div class="pilar-num">01</div>
                 <div class="pilar-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                        <polyline points="2 17 12 22 22 17"></polyline>
-                        <polyline points="2 12 12 17 22 12"></polyline>
-                    </svg>
+                    <i class="ph ph-clipboard-text"></i>
                 </div>
                 <h3>Framework de Implementação</h3>
                 <p class="pilar-title">The Roadmap</p>
@@ -427,11 +425,7 @@ layout: null
             <div class="pilar-card fade-up delay-1" style="--pilar-color: #10b981; --pilar-bg: rgba(16, 185, 129, 0.1); --pilar-border: rgba(16, 185, 129, 0.3);">
                 <div class="pilar-num">02</div>
                 <div class="pilar-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
+                    <i class="ph ph-table"></i>
                 </div>
                 <h3>Cockpit de Gestão Operacional</h3>
                 <p class="pilar-title">O Hub Central</p>
@@ -447,9 +441,7 @@ layout: null
             <div class="pilar-card fade-up delay-2" style="--pilar-color: #8b5cf6; --pilar-bg: rgba(139, 92, 246, 0.1); --pilar-border: rgba(139, 92, 246, 0.3);">
                 <div class="pilar-num">03</div>
                 <div class="pilar-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                    </svg>
+                    <i class="ph ph-database"></i>
                 </div>
                 <h3>Intelligence & Analytics</h3>
                 <p class="pilar-title">BI Preditivo com IA</p>
@@ -477,7 +469,7 @@ layout: null
 
             <div class="feat-card">
                 <div class="feat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <i class="ph ph-check-circle"></i>
                 </div>
                 <h3>SLA Dinâmico</h3>
                 <p>Monitoramento em tempo real de prazos e qualidade de cada serviço prestado pelo CSC às unidades.</p>
@@ -485,7 +477,7 @@ layout: null
 
             <div class="feat-card">
                 <div class="feat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <i class="ph ph-chart-bar"></i>
                 </div>
                 <h3>Benchmarks Internos</h3>
                 <p>Compare a eficiência da Unidade A vs Unidade B instantaneamente. Identifique onde está o vazamento de tempo e dinheiro.</p>
@@ -493,7 +485,7 @@ layout: null
 
             <div class="feat-card">
                 <div class="feat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <i class="ph ph-currency-dollar"></i>
                 </div>
                 <h3>Central de Compliance</h3>
                 <p>Repositório de POPs (Procedimentos Operacionais Padrão) dinâmicos. Todos fazem igual, sempre.</p>
@@ -501,7 +493,7 @@ layout: null
 
             <div class="feat-card">
                 <div class="feat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                    <i class="ph ph-squares-four"></i>
                 </div>
                 <h3>Integração Facilitada</h3>
                 <p>API pronta para ler dados dos principais ERPs do mercado. Conecte Domínio, SAP, Totvs ou qualquer sistema via REST API.</p>
@@ -509,7 +501,7 @@ layout: null
 
             <div class="feat-card">
                 <div class="feat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    <i class="ph ph-users"></i>
                 </div>
                 <h3>Workflow Engine</h3>
                 <p>Motor de tarefas para atividades recorrentes: fechamento contábil, processamento de folha, emissão de relatórios — automatizado.</p>
@@ -517,7 +509,7 @@ layout: null
 
             <div class="feat-card">
                 <div class="feat-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <i class="ph ph-file-text"></i>
                 </div>
                 <h3>IA para Insights Gerados</h3>
                 <p>Assistente de IA que analisa os dados de produtividade e sugere melhorias automaticamente. Ex: "Etapa de aprovação manual está acima da média".</p>
@@ -647,7 +639,7 @@ layout: null
         <h2>Pronto para transformar sua operação?</h2>
         <p>Agende uma demonstração personalizada de 30 minutos. Sem compromisso. Mostramos o CSC Strategy funcionando ao vivo.</p>
         <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero agendar uma demonstração do CSC Strategy." target="_blank" class="btn-dark">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <i class="ph ph-whatsapp-logo"></i>
             Agendar Demonstração Gratuita
         </a>
     </div>

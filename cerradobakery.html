@@ -1,0 +1,255 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerradoBakery | Gestão Inteligente para Padarias</title>
+    <meta name="description" content="Sistema completo para padarias. Fichas técnicas, cronograma inteligente de fornadas, simulador de precificação e dashboard BI com curva ABC.">
+    
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        .hero {
+            background: linear-gradient(135deg, #020617 0%, #431407 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #ea580c;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(234, 88, 12, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 992px) { .hero-grid { flex-direction: column; text-align: center; } }
+
+        .hero-text { flex: 1.2; }
+
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #431407, #5c1a00);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            margin-bottom: 20px;
+            border: 1px solid rgba(234, 88, 12, 0.4);
+            color: #fb923c;
+            font-size: 3rem;
+        }
+
+        .hero-badge {
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(234, 88, 12, 0.2));
+            color: #fb923c;
+            border: 1px solid rgba(234, 88, 12, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-accent {
+            background: #ea580c;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+            border: none;
+        }
+        .btn-accent:hover { background: #c2410c; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(234, 88, 12, 0.5); }
+
+        @media (max-width: 992px) { .app-branding { align-items: center; } }
+
+        .features-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b; }
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #ea580c; box-shadow: 0 10px 30px rgba(234, 88, 12, 0.1); }
+
+        .fc-icon { width: 50px; height: 50px; background: #1e293b; color: #fb923c; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; border: 1px solid #334155; }
+        .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px; }
+        .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+        .cta-bottom { background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%); padding: 80px 0; text-align: center; color: #fff; }
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+        .cta-bottom p { font-size: 1.15rem; color: #fed7aa; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-text fade-up">
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <i class="ph ph-cooking-pot"></i>
+                    </div>
+                    <div class="hero-badge">Varejo & FoodTech</div>
+                </div>
+                <h1>A padaria que sabe exatamente quanto lucra em cada fornada.</h1>
+                <p>O <strong>CerradoBakery</strong> é o sistema de gestão completo para panificadoras e confeitarias. Fichas técnicas padrão Sebrae/ABIP, cronograma inteligente de fornadas, simulador de precificação com markup e dashboard BI com curva ABC de margem.</p>
+                <div class="fade-up delay-1">
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero conhecer o CerradoBakery." target="_blank" class="btn-accent">
+                        Quero Conhecer o CerradoBakery
+                        <i class="ph ph-whatsapp-logo"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Da receita ao resultado financeiro</h2>
+            <p>Seis módulos que transformam a gestão artesanal da sua padaria em uma operação orientada a dados e lucratividade.</p>
+        </div>
+        <div class="f-grid fade-up delay-1">
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-receipt"></i></div>
+                <h3>Fichas Técnicas (Padrão Sebrae/ABIP)</h3>
+                <p>Cadastre cada produto com ingredientes, quantidades, rendimento e modo de preparo. Fichas no padrão reconhecido pelo Sebrae e ABIP, prontas para vigilância sanitária.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-timer"></i></div>
+                <h3>Cronograma Inteligente de Fornadas (Timeline do Padeiro)</h3>
+                <p>Planeje automaticamente a sequência de produção com base nos tempos de fermentação, assamento e resfriamento. O padeiro vê exatamente o que fazer e quando.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-calculator"></i></div>
+                <h3>Simulador de Custos e Precificação (Markup)</h3>
+                <p>Calcule o custo real de cada produto considerando ingredientes, mão de obra, embalagem e despesas fixas. Aplique markup automático e simule cenários de preço de venda.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-chart-pie"></i></div>
+                <h3>Dashboard BI com Curva ABC de Margem</h3>
+                <p>Visualize a rentabilidade de cada produto. A curva ABC classifica automaticamente seus itens por margem de contribuição, revelando quais produtos realmente sustentam o negócio.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-check-square"></i></div>
+                <h3>Checklist de Qualidade</h3>
+                <p>Listas de verificação diárias para BPF (Boas Práticas de Fabricação): temperatura de fornos, validade de ingredientes, higienização de utensílios e conformidade sanitária.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-package"></i></div>
+                <h3>Controle de Estoque de Insumos</h3>
+                <p>Gestão completa do estoque de farinhas, fermentos, recheios e embalagens. Alertas de ponto de reposição e rastreabilidade de lotes para recall e controle sanitário.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Transforme sua padaria em uma operação data-driven.</h2>
+        <p>Descubra o lucro real de cada pão, torta e bolo. O CerradoBakery entrega a inteligência que faltava para o varejo de panificação.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero conhecer o CerradoBakery." target="_blank" class="btn-accent" style="background: #ffffff; color: #9a3412; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Falar com a Engenharia
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-up').forEach((el) => { observer.observe(el); });
+    });
+</script>
+
+</body>
+</html>

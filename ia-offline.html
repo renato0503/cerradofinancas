@@ -59,7 +59,13 @@
     .rel-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; text-align: center; text-decoration: none; transition: 0.3s; }
     .rel-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,31,92,0.06); border-color: var(--cont-accent); }
     .rel-card span { font-weight: 800; color: #001f5c; font-size: 0.95rem; }
+    .ficon { font-size: 28px; transition: transform 0.3s ease; }
+    .feature-card:hover .ficon { transform: scale(1.1) rotate(-3deg); }
+    .ficon i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); }
+    .hero-icon-big { font-size: 56px; }
+    .hero-icon-big i.ph { filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3)); }
   </style>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
@@ -70,18 +76,18 @@
     <div class="hero-split">
       <div class="hero-text">
         <div class="hero-icon-big" style="background: #ede9fe; color: #7c3aed;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><rect x="8" y="8" width="8" height="8" rx="1"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="4" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="4" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="20" y2="12"/><line x1="4.5" y1="4.5" x2="8" y2="8"/><line x1="19.5" y1="4.5" x2="16" y2="8"/><line x1="4.5" y1="19.5" x2="8" y2="16"/><line x1="19.5" y1="19.5" x2="16" y2="16"/></svg>
+          <i class="ph ph-brain"></i>
         </div>
         <span class="badge fade-up">Fábrica de Software</span>
         <h1 class="fade-up delay-1">IA <span class="gold">Offline</span></h1>
         <p class="fade-up delay-2">Inteligência artificial que roda direto na sua infraestrutura, sem internet, sem APIs de terceiros. Seus dados estratégicos nunca saem da sua empresa. Automação de documentos, chatbots internos e análise de contratos com privacidade absoluta.</p>
         <div class="fade-up delay-3">
-          <a href="#contato" class="btn-gold">Solicitar Proposta <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="#contato" class="btn-gold">Solicitar Proposta <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
       <div class="hero-visual fade-up delay-2">
         <div style="width:280px;height:280px;border-radius:30px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(237,233,254,0.15));display:flex;align-items:center;justify-content:center;border:2px solid rgba(124,58,237,0.15);">
-          <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"><rect x="4" y="4" width="16" height="16" rx="2.5"/><rect x="8" y="8" width="8" height="8" rx="1"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="4" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="4" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="20" y2="12"/></svg>
+          <i class="ph ph-brain" style="font-size: 160px; opacity: 0.5;"></i>
         </div>
       </div>
     </div>
@@ -97,32 +103,32 @@
     </div>
     <div class="features-grid">
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="ficon" style="background: #ede9fe; color: #7c3aed;"><i class="ph ph-file-text"></i></div>
         <h3>Seus dados nunca saem da empresa</h3>
         <p>Modelos de linguagem (LLMs) executados localmente. Zero dependência de APIs externas como OpenAI ou Google. Informações estratégicas processadas dentro da sua rede.</p>
       </div>
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="ficon" style="background: #dcfce7; color: #16a34a;"><i class="ph ph-lock"></i></div>
         <h3>Análise automática de documentos</h3>
         <p>Contratos, propostas, laudos, petições. A IA lê, classifica, extrai dados relevantes e aponta inconsistências. Centenas de documentos processados em minutos — sem um ser humano digitar uma linha.</p>
       </div>
       <div class="feature-card fade-up delay-1">
-        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="ficon" style="background: #fef3c7; color: #ca8a04;"><i class="ph ph-robot"></i></div>
         <h3>Chatbots internos inteligentes</h3>
         <p>Atendimento ao cliente, suporte a colaboradores, consulta a manuais e políticas internas. Um assistente de IA que responde perguntas complexas com base nos documentos da sua empresa.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="ficon" style="background: #e0f2fe; color: #0284c7;"><i class="ph ph-gear"></i></div>
         <h3>Modelos customizados para o seu negócio</h3>
         <p>Treinamos (fine-tuning) modelos de IA com os dados e a linguagem específica da sua operação. A IA entende o vocabulário do seu setor — jurídico, saúde, engenharia, financeiro.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #ffe4e6; color: #e11d48;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="ficon" style="background: #ffe4e6; color: #e11d48;"><i class="ph ph-magnifying-glass"></i></div>
         <h3>Roda em qualquer servidor</h3>
         <p>Compatível com servidores Linux e Windows, on-premise ou cloud privada. Modelos otimizados para rodar inclusive em hardware sem GPU dedicada, com performance aceitável para uso corporativo.</p>
       </div>
       <div class="feature-card fade-up delay-2">
-        <div class="ficon" style="background: #f0fdf4; color: #15803d;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="ficon" style="background: #f0fdf4; color: #15803d;"><i class="ph ph-lightning"></i></div>
         <h3>Compliance e LGPD garantidos</h3>
         <p>Como os dados nunca saem da sua infraestrutura, a conformidade com a LGPD é natural. Para setores regulados (financeiro, saúde, jurídico), isso é requisito — não opção.</p>
       </div>
@@ -152,7 +158,7 @@
       <span style="background:rgba(254,203,0,0.15);color:#fecb00;border:1px solid rgba(254,203,0,0.3);padding:6px 14px;border-radius:50px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:20px;">Pronto para automatizar?</span>
       <h2 style="font-size:2rem;font-weight:900;margin-bottom:16px;">IA que trabalha para você — e só para você.</h2>
       <p style="color:#cbd5e1;margin-bottom:32px;line-height:1.7;">Conte quais processos manuais estão consumindo tempo da sua equipe. Em até 48h você recebe um diagnóstico e proposta técnica.</p>
-      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre soluções de IA offline para a minha empresa." target="_blank" class="btn-white">Falar no WhatsApp <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de conversar sobre soluções de IA offline para a minha empresa." target="_blank" class="btn-white">Falar no WhatsApp <i class="ph ph-whatsapp-logo"></i></a>
     </div>
   </div>
 </section>

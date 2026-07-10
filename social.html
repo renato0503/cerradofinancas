@@ -18,6 +18,7 @@ permalink: /solucoes/social/
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         /* ================= CORES E VARIÁVEIS CERRADO SOCIAL ================= */
@@ -35,6 +36,8 @@ permalink: /solucoes/social/
 
         body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
         
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
+
         /* Animações Dinâmicas */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -267,7 +270,7 @@ permalink: /solucoes/social/
 <body>
     
     <a href="{{ '/solucoes/social/simuladorsocial' | relative_url }}" class="fab-simulator" aria-label="Abrir Simulador">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        <i class="ph ph-table"></i>
         <div class="tooltip">ACESSAR SIMULADOR 🚀</div>
     </a>
 
@@ -290,11 +293,11 @@ permalink: /solucoes/social/
                     <div class="fade-up delay-3" style="display:flex; gap:16px; flex-wrap:wrap;">
                         <a href="#simulador" class="btn-action">
                             Simular Regulação
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <i class="ph ph-users"></i>
                         </a>
                         <a href="{{ '/solucoes/social/simuladorsocial' | relative_url }}" class="btn-action" style="background:var(--soc-accent); box-shadow: 0 10px 25px rgba(217, 70, 239, 0.3);">
                             Simulador Completo
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            <i class="ph ph-squares-four"></i>
                         </a>
                     </div>
                 </div>
@@ -309,7 +312,7 @@ permalink: /solucoes/social/
             <p>Clique em <strong>Executar Regulação</strong> abaixo para uma prévia rápida ou acesse o simulador completo para explorar todos os módulos da plataforma.</p>
             <div style="margin-top:24px;">
                 <a href="{{ '/solucoes/social/simuladorsocial' | relative_url }}" class="btn-action" style="background:var(--soc-accent); border-radius:12px; font-size:1rem; padding:15px 30px;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    <i class="ph ph-squares-four"></i>
                     Acessar Simulador Completo (Painel SUAS)
                 </a>
             </div>
@@ -319,7 +322,7 @@ permalink: /solucoes/social/
             
             <div class="demo-queue">
                 <div class="queue-header">
-                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> Fila de Regulação (Bolsa Família)</h4>
+                    <h4><i class="ph ph-list"></i> Fila de Regulação (Bolsa Família)</h4>
                 </div>
                 
                 <div class="waiting-list">
@@ -335,7 +338,7 @@ permalink: /solucoes/social/
                 </div>
 
                 <button class="app-btn" id="btnRunReg" onclick="runRegulation()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <i class="ph ph-clock"></i>
                     Executar Regulação Inteligente
                 </button>
             </div>
@@ -366,7 +369,7 @@ permalink: /solucoes/social/
                         </div>
                         
                         <div class="ai-result" id="aiResultBox">
-                            <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Regulação Concluída</h4>
+                            <h4><i class="ph ph-check-circle"></i> Regulação Concluída</h4>
                             <p>Família vinculada ao <strong>CRAS Centro</strong> (1.2km de distância). Agendamento confirmado para Amanhã, 09h00. SMS disparado para o titular.</p>
                         </div>
                     </div>
@@ -386,7 +389,7 @@ permalink: /solucoes/social/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <i class="ph ph-users"></i>
                     </div>
                     <h3>Prontuário Social Eletrônico (Único)</h3>
                     <p>Chega de criar uma pasta nova de papel para o cidadão cada vez que ele visita uma unidade diferente. O sistema unifica o histórico de atendimento integrando toda a rede: <strong>CRAS, CREAS, Centro POP, Centro-Dia e Unidades de Acolhimento</strong>. O assistente social sabe exatamente o histórico da família em segundos.</p>
@@ -413,7 +416,7 @@ permalink: /solucoes/social/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <i class="ph ph-file-text"></i>
                     </div>
                     <h3>Gestão de Condicionalidades</h3>
                     <p>Monitoramento ativo dos benefícios. O sistema controla e unifica as exigências de programas federais, estaduais e municipais como <strong>Bolsa Família, CadÚnico, Passe Livre, Tarifa Social de Energia e Minha Casa Minha Vida</strong>. Emite alertas para recadastramento antes do bloqueio do benefício.</p>
@@ -442,7 +445,7 @@ permalink: /solucoes/social/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <i class="ph ph-clock"></i>
                     </div>
                     <h3>Fluxo e Regulação Automática</h3>
                     <p>Nós literalmente acabamos com as filas de espera físicas. Através de um painel de regulação, o município faz a gestão inteligente do ciclo de vida do atendimento, roteando o cidadão da triagem inicial (regulação) para o agendamento no polo correto, acompanhando até a alta social do indivíduo.</p>
@@ -469,7 +472,7 @@ permalink: /solucoes/social/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <i class="ph ph-map-pin"></i>
                     </div>
                     <h3>Inteligência Georreferenciada (Mapa)</h3>
                     <p>Onde a prefeitura deve construir o próximo CRAS? O sistema responde. Mapeamento social com mapas de calor (heatmaps) indicando onde estão as maiores zonas de vulnerabilidade na região. Perfeito para o direcionamento estratégico de recursos e prestação de contas automatizada ao Ministério do Desenvolvimento Social (MDS).</p>
@@ -592,7 +595,7 @@ permalink: /solucoes/social/
                 // Reset para rodar de novo
                 setTimeout(() => {
                     btn.disabled = false;
-                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Executar Próxima Regulação';
+                    btn.innerHTML = '<i class="ph ph-clock"></i> Executar Próxima Regulação';
                     btn.style.background = 'var(--soc-primary)';
                     
                     statusBadge.innerText = 'Sistema em Espera';

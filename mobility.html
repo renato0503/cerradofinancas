@@ -18,6 +18,7 @@ permalink: /solucoes/mobility/
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         /* ================= CORES E VARIÁVEIS CERRADO MOBILITY ================= */
@@ -34,6 +35,8 @@ permalink: /solucoes/mobility/
 
         body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
         
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
+
         /* Animações Dinâmicas */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -213,7 +216,7 @@ permalink: /solucoes/mobility/
                 <div class="fade-up delay-3">
                     <a href="/solucoes/mobility/simuladormobility" class="btn-action">
                         Testar Simulador ao Vivo
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -301,7 +304,7 @@ permalink: /solucoes/mobility/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <i class="ph ph-device-mobile"></i>
                     </div>
                     <h3>App Mobile Nativo (Android/iOS)</h3>
                     <p>Diga adeus às requisições de papel. O aplicativo opera com dinâmica "estilo Uber": o servidor solicita a viagem, justifica o motivo oficial e o motorista mais próximo aceita. Tudo com uso de GPS nativo do aparelho para rastreio irrefutável.</p>
@@ -328,7 +331,7 @@ permalink: /solucoes/mobility/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        <i class="ph ph-monitor"></i>
                     </div>
                     <h3>Painel Web de Gestão e Aprovação</h3>
                     <p>Uma torre de controle para o gestor. Dashboard interativo exibindo o mapa, rotas reais e marcadores de origem/destino. Permite aprovação gerencial prévia de viagens longas e exibe os cards completos dos participantes.</p>
@@ -360,7 +363,7 @@ permalink: /solucoes/mobility/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <i class="ph ph-currency-dollar"></i>
                     </div>
                     <h3>Controle de Insumos Anti-Fraude</h3>
                     <p>Registro detalhado a cada parada no posto. O motorista insere litros e preço, o sistema cruza com o odômetro do veículo e calcula automaticamente o consumo (km/L) entre tanques cheios, dedurando médias de consumo fora do padrão.</p>
@@ -384,7 +387,7 @@ permalink: /solucoes/mobility/
             <div class="feat-row fade-up">
                 <div class="feat-content">
                     <div class="feat-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        <i class="ph ph-warning"></i>
                     </div>
                     <h3>Automação de Multas e Analytics</h3>
                     <p>Integração via API com sistemas de trânsito (SERPRO) importa multas automaticamente e inicia um workflow de defesa e identificação do condutor. Exporte dados granulares para Excel ou PDF para fácil prestação de contas aos órgãos controladores.</p>

@@ -18,6 +18,7 @@ layout: null
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         /* --- ESTILIZAÇÃO ESPECÍFICA MTDATA (THEME DARK/DATA) --- */
@@ -249,6 +250,10 @@ layout: null
         
         .f-icon { width: 50px; height: 50px; background: #0f172a; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid #334155;}
         .f-icon svg { color: #10b981; width: 24px; height: 24px; }
+        .f-icon i.ph { color: #10b981; font-size: 24px; }
+        .problem-box .box-title i.ph { font-size: 28px; }
+        .solution-box .box-title i.ph { font-size: 28px; }
+        .btn-group i.ph { font-size: 20px; vertical-align: middle; }
         
         .feature-card h3 { font-size: 1.3rem; color: #f8fafc; margin-bottom: 15px; font-weight: 700;}
         .feature-card p { color: #94a3b8; font-size: 1rem; line-height: 1.6; margin: 0;}
@@ -262,6 +267,7 @@ layout: null
         }
         .mtdata-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: #fff;}
         .mtdata-cta p { color: #94a3b8; max-width: 600px; margin: 0 auto 40px; font-size: 1.15rem;}
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
 
     </style>
 </head>
@@ -286,7 +292,7 @@ layout: null
                 <div class="btn-group fade-up delay-1">
                     <a href="https://renato0503.github.io/MTData---MVP/" target="_blank" class="btn-primary-mt">
                         Acessar MVP Interativo
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <i class="ph ph-arrow-right"></i>
                     </a>
                     <a href="#solucao" class="btn-outline-mt">Como Funciona</a>
                 </div>
@@ -331,7 +337,7 @@ layout: null
         <div class="split-features fade-up">
             <div class="problem-box">
                 <h3 class="box-title">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <i class="ph ph-warning" style="font-size:28px; vertical-align:middle"></i>
                     A Cegueira Informacional
                 </h3>
                 <p class="box-text">
@@ -341,7 +347,7 @@ layout: null
             
             <div class="solution-box delay-1">
                 <h3 class="box-title">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <i class="ph ph-lightbulb" style="font-size:28px; vertical-align:middle"></i>
                     Conhecimento Estratégico
                 </h3>
                 <p class="box-text">
@@ -364,7 +370,7 @@ layout: null
         <div class="features-grid fade-up delay-2">
             <div class="feature-card">
                 <div class="f-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <i class="ph ph-chart-bar"></i>
                 </div>
                 <h3>Plataforma Viva (SaaS BI)</h3>
                 <p>Em vez de entregar um PDF estático de 100 páginas que ninguém lê, entregamos acesso a um Dashboard Interativo. O cliente filtra datas, cruza dados de cidades e descobre insights por conta própria em tempo real.</p>
@@ -372,7 +378,7 @@ layout: null
 
             <div class="feature-card">
                 <div class="f-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <i class="ph ph-users"></i>
                 </div>
                 <h3>Rede Universitária (Capilaridade)</h3>
                 <p>Nossa metodologia de campo envolve parcerias com as Instituições de Ensino Superior de MT. Uma rede treinada de acadêmicos realiza a coleta na ponta, garantindo o melhor custo-benefício e alcance seguro em todo o estado.</p>
@@ -380,7 +386,7 @@ layout: null
 
             <div class="feature-card">
                 <div class="f-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    <i class="ph ph-map-pin"></i>
                 </div>
                 <h3>Inteligência Artificial (GenAI)</h3>
                 <p>O MVP já integra motores avançados de Inteligência Artificial para gerar "Insights Estratégicos" textuais instantâneos. O sistema lê os dados matemáticos do painel e entrega diagnósticos acionáveis que facilitam a vida do gestor público.</p>

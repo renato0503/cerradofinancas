@@ -18,6 +18,7 @@ layout: null
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         /* --- TEMA PREMIUM GLOBAL READY (DARK & GOLD) --- */
@@ -167,6 +168,11 @@ layout: null
         
         .p-icon { width: 50px; height: 50px; background: rgba(239, 68, 68, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(239, 68, 68, 0.2);}
         .p-icon svg { color: #ef4444; width: 24px; height: 24px; }
+        .p-icon i.ph { color: #ef4444; font-size: 24px; }
+        .feature-list li i.ph { color: #facc15; flex-shrink: 0; margin-top: 4px; font-size: 20px; }
+        .btn-group i.ph { font-size: 20px; vertical-align: middle; }
+        .seal-mockup svg, .seal-mockup i.ph { color: #facc15; width: 60px; height: 60px; margin-bottom: 15px; }
+        .seal-mockup i.ph { font-size: 60px; width: auto; height: auto; }
         
         .p-card h3 { font-size: 1.3rem; color: #f8fafc; margin-bottom: 15px; font-weight: 700;}
         .p-card p { color: #94a3b8; font-size: 1.05rem; line-height: 1.6; margin: 0;}
@@ -243,6 +249,7 @@ layout: null
         .founder-header span { color: #facc15; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;}
         
         .founder-card p { color: #94a3b8; font-size: 1rem; line-height: 1.6;}
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
 
     </style>
 </head>
@@ -266,7 +273,7 @@ layout: null
                 <div class="btn-group fade-up delay-1">
                     <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de entender como certificar meu hotel/estabelecimento com a Global Ready." target="_blank" class="btn-gold">
                         Solicitar Diagnóstico
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -293,7 +300,7 @@ layout: null
         <div class="problem-grid fade-up delay-1">
             <div class="p-card">
                 <div class="p-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <i class="ph ph-shield"></i>
                 </div>
                 <h3>Despreparo Estrutural</h3>
                 <p>Hotéis e restaurantes premium não possuem certificações ou infraestrutura alinhada às expectativas corporativas internacionais de alto padrão.</p>
@@ -301,7 +308,7 @@ layout: null
             
             <div class="p-card">
                 <div class="p-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"></path></svg>
+                    <i class="ph ph-file-text"></i>
                 </div>
                 <h3>Barreira Cultural e Idioma</h3>
                 <p>A total ausência de comunicação tática em Mandarim e Inglês cria um ambiente de desconforto, dificultando o andamento de negociações de milhões de dólares.</p>
@@ -309,7 +316,7 @@ layout: null
 
             <div class="p-card">
                 <div class="p-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <i class="ph ph-globe"></i>
                 </div>
                 <h3>Gafes de Etiqueta</h3>
                 <p>O desconhecimento de protocolos e costumes asiáticos prejudica a experiência de hospitalidade, gerando constrangimentos que danificam a imagem do estado.</p>
@@ -365,9 +372,9 @@ layout: null
                 <p>Para garantir escalabilidade, todo o processo de auditoria e nivelamento foi embarcado em um <strong>Módulo Digital de Certificação (SaaS)</strong>, permitindo que grandes redes hoteleiras ou municípios inteiros padronizem o atendimento de ponta a ponta.</p>
                 
                 <ul class="feature-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Gestão integrada de checklists de auditoria.</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Acompanhamento de progresso da equipe em tempo real.</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Módulos atualizados com inteligência comercial global.</li>
+                    <li><i class="ph ph-check"></i> Gestão integrada de checklists de auditoria.</li>
+                    <li><i class="ph ph-check"></i> Acompanhamento de progresso da equipe em tempo real.</li>
+                    <li><i class="ph ph-check"></i> Módulos atualizados com inteligência comercial global.</li>
                 </ul>
             </div>
 

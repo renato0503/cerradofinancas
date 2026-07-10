@@ -1,0 +1,381 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerraCarryOver | Controle de Grãos para Traders Agrícolas</title>
+    <meta name="description" content="Plataforma PWA para controle de grãos da captura na fazenda até a entrega final. Estoque em tempo real, contratos e logística de fretes.">
+
+    <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+            background-color: #020617;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+
+        .hero {
+            background: linear-gradient(135deg, #020617 0%, #052e16 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #16a34a;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(22, 163, 74, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid { flex-direction: column; text-align: center; }
+        }
+
+        .hero-text { flex: 1.2; }
+
+        .app-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .app-big-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0f172a, #052e16);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.05);
+            margin-bottom: 20px;
+            border: 1px solid rgba(22, 163, 74, 0.4);
+            font-size: 3rem;
+            color: #4ade80;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(22, 163, 74, 0.2));
+            color: #4ade80;
+            border: 1px solid rgba(22, 163, 74, 0.4);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .btn-primary {
+            background: #16a34a;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+            border: none;
+        }
+        .btn-primary:hover { background: #15803d; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(22, 163, 74, 0.5); }
+
+        @media (max-width: 992px) {
+            .app-branding { align-items: center; }
+        }
+
+        .hero-visual { flex: 0.8; display: flex; justify-content: center; width: 100%; }
+
+        .dashboard-mockup {
+            width: 100%;
+            max-width: 480px;
+            background: #0f172a;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+        .dashboard-mockup:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02); }
+
+        .db-header {
+            background: #1e293b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        .db-dots { display: flex; gap: 6px; }
+        .db-dot { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
+        .db-dot.r { background: #ef4444; }
+        .db-dot.y { background: #f59e0b; }
+        .db-dot.g { background: #10b981; }
+
+        .db-body { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+
+        .db-stat-row {
+            display: flex;
+            gap: 12px;
+        }
+        .db-stat-box {
+            flex: 1;
+            background: #0b0f19;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #1e293b;
+        }
+        .db-stat-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; }
+        .db-stat-value { font-size: 1.4rem; font-weight: 900; color: #4ade80; }
+
+        .db-table {
+            background: #0b0f19;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #1e293b;
+        }
+        .db-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #1e293b;
+            font-size: 0.8rem;
+        }
+        .db-row:last-child { border-bottom: none; }
+        .db-row span:first-child { color: #94a3b8; }
+        .db-row span:last-child { font-weight: 700; color: #e2e8f0; }
+
+        .features-section { padding: 100px 0; background: #020617; border-top: 1px solid #1e293b;}
+        .sec-title { text-align: center; margin-bottom: 60px; }
+        .sec-title h2 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 15px;}
+        .sec-title p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto;}
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .f-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .f-card:hover { transform: translateY(-5px); border-color: #16a34a; box-shadow: 0 10px 30px rgba(22, 163, 74, 0.1);}
+
+        .fc-icon { width: 50px; height: 50px; background: #1e293b; color: #4ade80; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; border: 1px solid #334155;}
+
+        .f-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px;}
+        .f-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0;}
+
+        .cta-bottom { background: linear-gradient(135deg, #16a34a 0%, #14532d 100%); padding: 80px 0; text-align: center; color: #fff;}
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;}
+        .cta-bottom p { font-size: 1.15rem; color: #dcfce7; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;}
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+
+            <div class="hero-text fade-up">
+
+                <div class="app-branding">
+                    <div class="app-big-icon">
+                        <i class="ph ph-plant"></i>
+                    </div>
+                    <div class="badge">Agronegócio & Trading</div>
+                </div>
+
+                <h1>Controle total de grãos, da fazenda ao destino final.</h1>
+                <p>O <strong>CerraCarryOver</strong> é a plataforma PWA para traders agrícolas que precisam de rastreabilidade completa. Controle estoques multi-grãos, contratos de compra e venda, e a logística de fretes em tempo real, direto do celular.</p>
+
+                <div class="btn-group fade-up delay-1">
+                    <a href="#funcionalidades" class="btn-primary">
+                        Conhecer o Sistema
+                        <i class="ph ph-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual fade-up delay-2">
+                <div class="dashboard-mockup">
+                    <div class="db-header">
+                        <div class="db-dots">
+                            <div class="db-dot r"></div>
+                            <div class="db-dot y"></div>
+                            <div class="db-dot g"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: bold;">CerraCarryOver</span>
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #16a34a;"></div>
+                    </div>
+                    <div class="db-body">
+                        <div class="db-stat-row">
+                            <div class="db-stat-box">
+                                <div class="db-stat-label">Estoque Soja</div>
+                                <div class="db-stat-value">12.450 sc</div>
+                            </div>
+                            <div class="db-stat-box">
+                                <div class="db-stat-label">Valor Estimado</div>
+                                <div class="db-stat-value" style="color: #facc15;">R$ 1,8M</div>
+                            </div>
+                        </div>
+                        <div class="db-table">
+                            <div class="db-row"><span>Entrada (Hoje)</span><span style="color: #4ade80;">+ 850 sc</span></div>
+                            <div class="db-row"><span>Saída (Hoje)</span><span style="color: #ef4444;">- 320 sc</span></div>
+                            <div class="db-row"><span>Fretes Ativos</span><span>4 caminhões</span></div>
+                            <div class="db-row"><span>Contratos</span><span>7 a vencer</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="funcionalidades" class="features-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Operação de grãos com engenharia de software</h2>
+            <p>Cada funcionalidade foi desenhada com traders reais para eliminar planilhas e retrabalho.</p>
+        </div>
+
+        <div class="f-grid fade-up delay-1">
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-package"></i>
+                </div>
+                <h3>Estoque em Tempo Real</h3>
+                <p>Controle entradas, saídas e transferências entre unidades com atualização instantânea. Saiba exatamente quanto tem de cada grão em cada armazém.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-circles-three-plus"></i>
+                </div>
+                <h3>Multi-Grãos</h3>
+                <p>Soja, milho, trigo, arroz e outras commodities. Cada grão com parâmetros próprios de classificação, umidade e descontos. Um sistema, todos os grãos.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-chart-line-up"></i>
+                </div>
+                <h3>Dashboard com Valor Total Estimado</h3>
+                <p>Acompanhe o valuation do seu estoque em tempo real com base nas cotações de mercado. Visualize seu patrimônio agrícola num único painel.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-users"></i>
+                </div>
+                <h3>Cadastro de Fornecedores e Clientes</h3>
+                <p>Base completa de produtores rurais, tradings e clientes finais. Histórico de negociações, contratos e condições comerciais individualizadas.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-scales"></i>
+                </div>
+                <h3>Múltiplas Unidades</h3>
+                <p>Converta automaticamente entre kg, sacas (sc), toneladas e bushels. O sistema adapta-se à unidade que o seu mercado utiliza, sem cálculos manuais.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon">
+                    <i class="ph ph-truck"></i>
+                </div>
+                <h3>Logística de Fretes</h3>
+                <p>Controle a frota, rastreie entregas e calcule fretes automaticamente. Do campo ao porto, saiba onde está cada carga e quanto custou o transporte.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-bottom">
+    <div class="container fade-up">
+        <h2>Pronto para digitalizar sua operação de grãos?</h2>
+        <p>Deixe as planilhas para trás. O CerraCarryOver entrega controle total da captura na fazenda até a entrega final.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20Conhecer%20o%20CerraCarryOver" class="btn-primary" style="background: #ffffff; color: #16a34a; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <i class="ph ph-whatsapp-logo"></i>
+            Quero Conhecer o CerraCarryOver
+        </a>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

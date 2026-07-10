@@ -18,6 +18,7 @@ permalink: /solucoes/govdash/
     <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
         /* ================= CORES E VARIÁVEIS CERRADO GOVDASH ================= */
@@ -37,6 +38,8 @@ permalink: /solucoes/govdash/
 
         body { background-color: #f8fafc; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
         
+        [class*="icon"] i.ph, [class*="Icon"] i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); transition: transform 0.3s ease; }
+
         /* Animações Dinâmicas */
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -191,7 +194,7 @@ permalink: /solucoes/govdash/
                     <div class="fade-up delay-3">
                         <a href="#simulador" class="btn-action">
                             Testar Motor de Compliance
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            <i class="ph ph-activity"></i>
                         </a>
                         <a href="https://govdash-ddf2b.web.app/" target="_blank" class="btn-outline">
                             Acessar Web App
@@ -214,14 +217,14 @@ permalink: /solucoes/govdash/
                 
                 <div class="demo-sidebar">
                     <div class="side-logo">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gd-primary)" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                        <i class="ph ph-squares-four"></i>
                         GovDash
                     </div>
                     <div class="side-menu">
                         <div class="side-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> Visão Geral</div>
-                        <div class="side-item active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Finanças e LRF</div>
-                        <div class="side-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Saúde (REMUME)</div>
-                        <div class="side-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> Educação Escolar</div>
+                        <div class="side-item active"><i class="ph ph-currency-dollar"></i> Finanças e LRF</div>
+                        <div class="side-item"><i class="ph ph-chart-line-up"></i> Saúde (REMUME)</div>
+                        <div class="side-item"><i class="ph ph-book-open"></i> Educação Escolar</div>
                     </div>
                 </div>
 
@@ -256,7 +259,7 @@ permalink: /solucoes/govdash/
                         <p id="lrfAlert" style="text-align: center; color: #94a3b8; font-weight: 600; margin-top: 10px; font-size: 1.1rem;">Fechamento Mensal Seguro.</p>
 
                         <button class="app-btn" id="btnSync" onclick="runETL()">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                            <i class="ph ph-arrows-clockwise"></i>
                             Sincronizar Contabilidade (ETL)
                         </button>
                     </div>
@@ -277,7 +280,7 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            <i class="ph ph-calendar"></i>
                         </div>
                         <h3>Foco Executivo e UX Premium</h3>
                         <p>Desenvolvido exclusivamente para Prefeitos, Gabinete, Secretários (Fazenda, Saúde, Educação, Infraestrutura) e Controladoria Geral (CGM). Substitui as antigas interfaces cinzas defasadas por um design moderno e em nuvem, com menus laterais em <em>Apple Glassmorphism</em>, focando na agilidade de leitura de dados.</p>
@@ -305,7 +308,7 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            <i class="ph ph-currency-dollar"></i>
                         </div>
                         <h3>Finanças e Compliance (LRF)</h3>
                         <p>Monitoramento exato do ciclo do dinheiro público. Acompanha a evolução de Receitas (próprias vs. transferências) e Despesas (Empenhado, Liquidado e Pago). Inclui um termômetro visual que vigia a Dívida Consolidada e emite alertas (amarelo, laranja e vermelho) caso a folha se aproxime dos 54% da RCL.</p>
@@ -330,7 +333,7 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            <i class="ph ph-activity"></i>
                         </div>
                         <h3>Saúde Pública e Epidemiologia</h3>
                         <p>Controle de produtividade das UBSs, tamanho de filas do SUS e cobertura vacinal. Acompanha o estoque da Farmácia Básica (REMUME) com alertas para medicamentos zerados/críticos. Monitora surtos epidemiológicos cruzando dados de casos confirmados com o LIRAa (índice da Dengue e arboviroses).</p>
@@ -353,7 +356,7 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            <i class="ph ph-stack"></i>
                         </div>
                         <h3>Educação e Operação Escolar</h3>
                         <p>Censo analítico em tempo real demonstrando taxas de matrículas ativas, evasão escolar histórica e fila por vagas em creches. Na infraestrutura da secretaria, monitora o custo/km da frota do transporte escolar e o estoque da merenda por unidade, disparando alertas de baixas no PNAE para escolas específicas.</p>
@@ -376,7 +379,7 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            <i class="ph ph-database"></i>
                         </div>
                         <h3>Engenharia, Contratos e Almoxarifado</h3>
                         <p>Portfólio visual de Obras (licitando, no prazo, atrasadas ou paralisadas). A plataforma cruza os dados de Medições Físico-Financeiras para identificar falhas entre o avanço real da obra e os pagamentos. Gerencia o vencimento de contratos, aditivos e aplica a Curva ABC no Almoxarifado para guiar compras.</p>
@@ -404,7 +407,7 @@ permalink: /solucoes/govdash/
                 <div class="feat-row fade-up">
                     <div class="feat-content">
                         <div class="feat-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            <i class="ph ph-monitor"></i>
                         </div>
                         <h3>Motor de Integração Nativo (ETL)</h3>
                         <p>O coração tecnológico da plataforma. Chega de digitação dupla e planilhas soltas. O sistema possui ferramentas de ETL que permitem o upload de arquivos CSV pelos servidores ou a conexão 100% automatizada com bancos de dados (SQL) legados, mantendo todos os dashboards vivos sem esforço manual.</p>
@@ -502,7 +505,7 @@ permalink: /solucoes/govdash/
                         
                         setTimeout(() => {
                             btn.disabled = false;
-                            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg> Sincronizar Contabilidade (ETL)';
+                            btn.innerHTML = '<i class="ph ph-arrows-clockwise"></i> Sincronizar Contabilidade (ETL)';
                             
                             lrfBar.style.width = '35%';
                             lrfBar.style.background = 'var(--success)';
