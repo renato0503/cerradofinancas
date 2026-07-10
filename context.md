@@ -14,7 +14,7 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 ## Estrutura Técnica
 
 ### Stack do portal
-- **HTML5** com **Jekyll/Liquid** (front matter `--- ---`, `{% include %}`, `{{ relative_url }}`)
+- **HTML5** com **Jekyll/Liquid** (front matter `--- ---`, `{% raw %}{% include %}{% endraw %}`, `{% raw %}{{ relative_url }}{% endraw %}`)
 - **CSS3** vanilla com variáveis CSS, glassmorphism, dark mode
 - **JavaScript** vanilla (Intersection Observer, menu mobile, FAQ accordion)
 - **Google Fonts** — 'Inter' (principal), 'Outfit', 'Poppins', 'Plus Jakarta Sans' (páginas específicas)
@@ -182,6 +182,7 @@ Todas seguem o mesmo template: Hero com ícone + badge "Fábrica de Software" + 
 ## Como o site é construído
 
 ### Padrão de página com header/footer:
+{% raw %}
 ```html
 ---
 ---
@@ -210,6 +211,7 @@ Todas seguem o mesmo template: Hero com ícone + badge "Fábrica de Software" + 
 </body>
 </html>
 ```
+{% endraw %}
 
 ### Formulários
 Todos usam **FormSubmit.co** com POST para `gestor.renatorosa@gmail.com` e redirecionam para `obrigado.html`.
