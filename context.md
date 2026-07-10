@@ -18,7 +18,7 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 - **CSS3** vanilla com variáveis CSS, glassmorphism, dark mode
 - **JavaScript** vanilla (Intersection Observer, menu mobile, FAQ accordion)
 - **Google Fonts** — 'Inter' (principal), 'Outfit', 'Poppins', 'Plus Jakarta Sans' (páginas específicas)
-- **Phosphor Icons** / **Lucide Icons** (páginas específicas)
+- **Phosphor Icons** — Todas as páginas usam `<i class="ph ph-...">` (substituiu SVGs inline). CDN: `https://unpkg.com/@phosphor-icons/web`. Efeito 3D com `drop-shadow` CSS nos ícones.
 
 ### Arquivos compartilhados
 
@@ -54,14 +54,14 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 **Title:** Cerrado Tech — Fábrica de Software Customizada | ERPs, CRMs, IA e Dashboards
 
 Estrutura:
-1. **Hero** com vídeo `video.mp4`, logo `logo-tech.png`, badge "Fábrica de Software Corporativa", título "O software que o seu negócio realmente precisa", subtítulo sobre software customizado, CTA "Solicitar Proposta"
+1. **Hero** com vídeo `video.mp4`, logo `logohome.png`, badge "Fábrica de Software Corporativa", título "O software que o seu negócio realmente precisa", subtítulo sobre software customizado, CTA "Solicitar Proposta"
 2. **Faixa de plataformas** — SAP®, TOTVS Protheus, Power BI, ContaAzul, Bling ERP
-3. **Categorias de Software** (6 cards clicáveis): ERPs Customizados, CRMs Inteligentes, IA Offline, E-commerce & Vendas, Compliance & Auditoria, Dashboards & Analytics
+3. **Categorias de Software** (6 cards clicáveis com ícones Phosphor 3D): ERPs Customizados, CRMs Inteligentes, IA Offline, E-commerce & Vendas, Compliance & Auditoria, Dashboards & Analytics
 4. **Pipeline / Metodologia** (4 passos): Descoberta → Arquitetura → Desenvolvimento Ágil → Entrega & Evolução
 5. **Comparação** Custom vs Software de Prateleira (cards lado a lado)
 6. **Consultorias CTA** (banner azul escuro)
 7. **Quem Somos**: Foto + bio do Renato, LinkedIn CTA
-   - **Nossa Stack Tecnológica** (6 cards compactos): Cloud, IA Offline, Mobile/PWA, APIs & Integrações, Segurança & LGPD, Blockchain
+   - **Nossa Stack Tecnológica** (6 cards compactos com ícones Phosphor 3D): Cloud, IA Offline, Mobile/PWA, APIs & Integrações, Segurança & LGPD, Blockchain
 8. **Formulário de Contato** → FormSubmit.co → `gestor.renatorosa@gmail.com`
 
 ### 2. `contabilidade.html` — Cerrado Contabilidade
@@ -85,7 +85,7 @@ Estrutura:
 ### 3. `solucoes.html` — Fábrica de Software e B2B
 Catálogo completo de soluções. Carrosséis separados para:
 - **B2G (GovTech)**: GovDash, Mobility, Edu, GovRH, Prev, Privacy, Social, Docs
-- **B2B (Corporativo)**: Cerraflow, CerraBI, Blockchain, CerraPlan, Cartór.IO, EloEleitoral, Lei do Bem, Broker Logístico, CerraZap, CerraFood, CerraLoan
+- **B2B (Corporativo)**: Cerraflow, CerraBI, Blockchain, CerraPlan, Cartór.IO, EloEleitoral, Lei do Bem, Broker Logístico, CerraZap, CerraFood, CerraLoan, CerraCare, Cerraliance, CerraCarryOver, SolarCRM, Cerra.AI, Prof.Synergeia, CerradoBakery
 
 ### 4. `startups.html` — Portfólio de Startups
 Venture Builder com 5 startups: GoGym (fitness), MTData (govtech dados), PataMed (veterinária), Global Ready (certificação internacional), ChamaLá (serviços locais). Hero com vídeo `cerradotech.mp4`.
@@ -106,7 +106,7 @@ Página standalone de confirmação após envio de formulário. Sem header/foote
 
 ## Páginas de Produto (6 novas — Cerrado Tech)
 
-Todas seguem o mesmo template: Hero com ícone + badge "Fábrica de Software" + CTA WhatsApp, 6 cards de diferenciais, metodologia 4 passos, seção "Explore Também" com links para as outras 5 soluções.
+Todas seguem o mesmo template: Hero com ícone Phosphor + badge "Fábrica de Software" + CTA WhatsApp, 6 cards de diferenciais, metodologia 4 passos, seção "Explore Também" com links para as outras 5 soluções.
 
 | Página | Arquivo | Cor |
 |--------|---------|-----|
@@ -152,6 +152,13 @@ Todas seguem o mesmo template: Hero com ícone + badge "Fábrica de Software" + 
 | CSC Strategy | `csc-strategy.html` | CSC implementation |
 | MTData | `mtdata.html` | Dados turismo MT |
 | Global Ready | `globalready.html` | Certificação B2B internacional |
+| CerraCare | `cerracare.html` | Prontuário eletrônico e gestão de cuidadoras (PWA mobile-first) |
+| Cerraliance | `cerraliance.html` | Compliance e auditoria cidadã para órgãos públicos |
+| CerraCarryOver | `cerracarryover.html` | Controle de grãos para traders agrícolas (PWA) |
+| SolarCRM | `solarcrm.html` | CRM solar com dimensionamento, proposta PDF e Kanban |
+| Cerra.AI | `cerraai.html` | Assistente IA offline para cartórios com RAG e mascaramento LGPD |
+| Prof.Synergeia | `profsynergeia.html` | Gestão de orientações de projetos estudantis (EdTech) |
+| CerradoBakery | `cerradobakery.html` | Gestão inteligente para padarias com fichas técnicas e BI |
 
 ---
 
@@ -198,6 +205,7 @@ Todas seguem o mesmo template: Hero com ícone + badge "Fábrica de Software" + 
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>/* CSS inline da página */</style>
 </head>
 <body>
@@ -212,6 +220,9 @@ Todas seguem o mesmo template: Hero com ícone + badge "Fábrica de Software" + 
 </html>
 ```
 {% endraw %}
+
+### Ícones
+Todas as páginas usam **Phosphor Icons** via CDN (`unpkg.com/@phosphor-icons/web`). SVGs inline foram substituídos por `<i class="ph ph-nome-icone"></i>`. Efeito 3D aplicado via CSS: `filter: drop-shadow()` nos ícones e `transform: scale() rotate()` no hover dos cards.
 
 ### Formulários
 Todos usam **FormSubmit.co** com POST para `gestor.renatorosa@gmail.com` e redirecionam para `obrigado.html`.
