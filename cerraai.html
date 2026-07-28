@@ -6,8 +6,8 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerra.AI | Assistente IA Offline para Cartórios</title>
-    <meta name="description" content="Assistente IA local para cartórios com RAG (LangChain/ChromaDB), processamento de PDFs, roteador automático de LLMs e mascaramento LGPD.">
+    <title>Cerra.AI | IA Corporativa Offline e Soberana para sua Organização</title>
+    <meta name="description" content="Plataforma de IA 100% offline com RAG avançado, conformidade LGPD e soberania de dados. Transforme documentos sensíveis em inteligência estratégica sem enviar dados à nuvem.">
     
     <link rel="icon" type="image/png" href="{{ '/img/folinha.png' | relative_url }}">
     
@@ -147,6 +147,16 @@ layout: null
         .cta-bottom { background: linear-gradient(135deg, #ca8a04 0%, #854d0e 100%); padding: 80px 0; text-align: center; color: #fff; }
         .cta-bottom h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
         .cta-bottom p { font-size: 1.15rem; color: #fef3c7; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Use Cases */
+        .usecases-section { padding: 100px 0; background: #0a0f1e; border-top: 1px solid #1e293b; }
+        .uc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .uc-card { background: #020617; border: 1px solid #1e293b; padding: 40px 30px; border-radius: 24px; transition: 0.3s; position: relative; overflow: hidden; }
+        .uc-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #ca8a04; border-radius: 0 4px 4px 0; }
+        .uc-card:hover { transform: translateY(-5px); border-color: #ca8a04; box-shadow: 0 10px 30px rgba(202, 138, 4, 0.1); }
+        .uc-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
+        .uc-card p { font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+        .uc-card .uc-icon { color: #facc15; font-size: 1.5rem; }
     </style>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
@@ -160,15 +170,15 @@ layout: null
             <div class="hero-text fade-up">
                 <div class="app-branding">
                     <div class="app-big-icon">
-                        <i class="ph ph-brain"></i>
+                        <img src="img/logo_cerraai.png" alt="Cerra.AI Logo" style="width:80px; height:auto;">
                     </div>
-                    <div class="hero-badge">IA & LegalTech</div>
+                    <div class="hero-badge">IA Corporativa e Governamental | 100% Offline e Segura</div>
                 </div>
-                <h1>IA jurídica que roda 100% offline no seu cartório.</h1>
-                <p>O <strong>Cerra.AI</strong> é um assistente de inteligência artificial que opera completamente offline no Windows. Com tecnologia <em>RAG (LangChain + ChromaDB)</em>, ele processa PDFs de provimentos, regras cartorárias e livros fiscais, respondendo com precisão sem enviar um único dado à nuvem.</p>
+                <h1>Inteligência Artificial Soberana, Offline e 100% Gerenciada para sua Organização.</h1>
+                <p>O <strong>Cerra.AI</strong> é a plataforma de inteligência artificial que transforma seus dados sensíveis em vantagem estratégica e operacional. Com tecnologia RAG avançada e execução 100% local, garantimos sigilo absoluto, conformidade com a LGPD e controle total, sem que um único byte de dado seja enviado à nuvem.</p>
                 <div class="fade-up delay-1">
-                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de uma demonstração do Cerra.AI." target="_blank" class="btn-accent">
-                        Solicitar Demonstração
+                    <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de uma demonstração personalizada do Cerra.AI." target="_blank" class="btn-accent">
+                        Solicitar Demonstração Personalizada
                         <i class="ph ph-whatsapp-logo"></i>
                     </a>
                 </div>
@@ -180,45 +190,72 @@ layout: null
 <section id="funcionalidades" class="features-section">
     <div class="container">
         <div class="sec-title fade-up">
-            <h2>Arsenal completo de IA Documental</h2>
-            <p>Seis pilares tecnológicos que transformam o Cerra.AI no copiloto jurídico mais seguro e inteligente para cartórios extrajudiciais.</p>
+            <h2>O Arsenal Tecnológico: 6 Pilares de Segurança e Inteligência</h2>
+            <p>Seis pilares que transformam o Cerra.AI no copiloto operacional e estratégico mais seguro para empresas, órgãos públicos e instituições de saúde.</p>
         </div>
         <div class="f-grid fade-up delay-1">
 
             <div class="f-card">
                 <div class="fc-icon"><i class="ph ph-file-text"></i></div>
-                <h3>RAG com Upload de PDFs e ChromaDB</h3>
-                <p>Faça upload de provimentos, CNIB, manuais e livros fiscais. O motor RAG indexa tudo no ChromaDB e responde com citações precisas extraídas dos seus documentos.</p>
+                <h3>RAG Avançado com ChromaDB e Upload de Documentos</h3>
+                <p>Faça upload de PDFs, manuais, processos, diários oficiais ou protocolos clínicos. O motor RAG indexa tudo localmente e responde com citações precisas e rastreáveis, extraídas diretamente da sua base de conhecimento.</p>
             </div>
 
             <div class="f-card">
                 <div class="fc-icon"><i class="ph ph-stack"></i></div>
-                <h3>LLM Cascading Automático (4 Tiers)</h3>
-                <p>Roteador inteligente que escala automaticamente entre 4 níveis de LLMs locais — do modelo leve para respostas rápidas até o modelo pesado para análises complexas.</p>
-            </div>
-
-            <div class="f-card">
-                <div class="fc-icon"><i class="ph ph-scales"></i></div>
-                <h3>Regras Cartorárias (CNIB, Emolumentos)</h3>
-                <p>Base de conhecimento pré-treinada com a Consolidação Normativa Notarial e Registral, tabelas de emolumentos estaduais e provimentos do CNJ.</p>
+                <h3>LLM Cascading Automático (Orquestração Inteligente)</h3>
+                <p>Roteador que escala automaticamente entre múltiplos níveis de modelos de linguagem locais. Otimiza o processamento e garante a máxima precisão para tarefas complexas, sem depender de APIs externas.</p>
             </div>
 
             <div class="f-card">
                 <div class="fc-icon"><i class="ph ph-shield-check"></i></div>
-                <h3>Mascaramento LGPD de PII</h3>
-                <p>Motor de anonimização que detecta e mascara CPF, RG, endereços e outros dados pessoais antes de qualquer processamento, garantindo conformidade com a LGPD.</p>
+                <h3>Soberania de Dados: 100% Offline (Zero Nuvem)</h3>
+                <p>Aplicação nativa que roda em ambiente controlado. Seus dados, regras de negócio e segredos industriais jamais saem da sua infraestrutura, eliminando riscos de vazamento.</p>
             </div>
 
             <div class="f-card">
-                <div class="fc-icon"><i class="ph ph-desktop"></i></div>
-                <h3>Desktop App Standalone (Windows)</h3>
-                <p>Aplicação nativa Windows que roda 100% offline. Zero dependência de internet após a instalação inicial. Seus dados jamais saem da máquina do cartório.</p>
+                <div class="fc-icon"><i class="ph ph-lock-key"></i></div>
+                <h3>Mascaramento e Conformidade LGPD Nativa</h3>
+                <p>Motor de anonimização que detecta e protege dados pessoais sensíveis antes de qualquer processamento, garantindo conformidade total com a LGPD e normas rigorosas de governança.</p>
             </div>
 
             <div class="f-card">
-                <div class="fc-icon"><i class="ph ph-folders"></i></div>
-                <h3>Workspaces Isolados por Cartório</h3>
-                <p>Cada cartório ou unidade ganha seu próprio workspace com base vetorial isolada, garantindo que documentos e respostas não se misturem entre operações distintas.</p>
+                <div class="fc-icon"><i class="ph ph-buildings"></i></div>
+                <h3>Adaptabilidade Multissetorial</h3>
+                <p>Configurado para entender o vocabulário e os fluxos específicos do seu setor: desde regras cartorárias e editais públicos até protocolos de saúde e compliance corporativo.</p>
+            </div>
+
+            <div class="f-card">
+                <div class="fc-icon"><i class="ph ph-wrench"></i></div>
+                <h3>Gestão e Implementação 100% Dedicada</h3>
+                <p>Do deploy à manutenção contínua, nossa equipe cuida de toda a infraestrutura. Implementação rápida, personalização completa e sem custo adicional de desenvolvimento, sem sobrecarregar sua TI.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="casos-de-uso" class="usecases-section">
+    <div class="container">
+        <div class="sec-title fade-up">
+            <h2>Soluções sob Medida para Setores de Alta Criticidade</h2>
+            <p>O Cerra.AI se adapta ao vocabulário, aos fluxos e às exigências normativas de cada segmento, entregando inteligência contextual onde a confidencialidade é inegociável.</p>
+        </div>
+        <div class="uc-grid fade-up delay-1">
+
+            <div class="uc-card">
+                <h3><i class="ph ph-buildings uc-icon"></i> Gestão Pública e LegalTech</h3>
+                <p>Análise automatizada de editais, processos administrativos e provimentos. Atende a rigorosos critérios de governança, controle social e à Nova Lei de Licitações.</p>
+            </div>
+
+            <div class="uc-card">
+                <h3><i class="ph ph-heartbeat uc-icon"></i> Saúde e Home Care</h3>
+                <p>Gestão de protocolos clínicos e normas operacionais com confidencialidade total dos dados sensíveis de pacientes, integrando-se perfeitamente a ecossistemas como o CerraCare.</p>
+            </div>
+
+            <div class="uc-card">
+                <h3><i class="ph ph-briefcase uc-icon"></i> Estratégia Corporativa e Compliance</h3>
+                <p>Due diligence, análise de contratos e relatórios financeiros. Transforma milhares de páginas de documentos estáticos em inteligência acionável e segura para a diretoria.</p>
             </div>
 
         </div>
@@ -227,10 +264,10 @@ layout: null
 
 <section class="cta-bottom">
     <div class="container fade-up">
-        <h2>Modernize seu cartório com IA offline e segura.</h2>
-        <p>Agende uma demonstração guiada e veja como o Cerra.AI processa seus PDFs, responde perguntas complexas e mantém 100% dos dados sob seu controle.</p>
-        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de uma demonstração do Cerra.AI." target="_blank" class="btn-accent" style="background: #ffffff; color: #854d0e; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-            Falar com a Engenharia
+        <h2>Não comprometa a segurança dos seus dados para obter inovação.</h2>
+        <p>Traga a IA para o seu território, sob as suas regras. Descubra como o Cerra.AI pode ser implementado em horas na sua infraestrutura, com personalização completa e suporte especializado.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Gostaria de falar com um especialista sobre o Cerra.AI." target="_blank" class="btn-accent" style="background: #ffffff; color: #854d0e; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Falar com um Especialista
         </a>
     </div>
 </section>
