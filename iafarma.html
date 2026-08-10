@@ -1,0 +1,631 @@
+---
+layout: null
+permalink: /iafarma/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA em Ação Farma | Treinamento Prático de IA para Propagandistas</title>
+  <meta name="description" content="Treinamento presencial e 100% prático para propagandistas da indústria farmacêutica: aprenda a construir seus próprios apps, automações e conteúdos com a IDE Antigravity — sem saber programar. Turma de 13/09 em Cuiabá.">
+  <link rel="icon" type="image/png" href="img/logo-tech.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+    :root { --if-dark: #001f5c; --if-gold: #fecb00; --if-green: #16a34a; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+    /* ===== BARRA DE AVISO ===== */
+    .aviso-bar {
+      position: fixed; top: 90px; left: 0; width: 100%; z-index: 9000;
+      background: linear-gradient(135deg, #fecb00 0%, #eab308 100%);
+      color: #001f5c; text-align: center; padding: 10px 20px;
+      font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .aviso-bar i.ph { font-size: 1.2rem; filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.2)); }
+    @media (max-width: 992px) { .aviso-bar { top: 80px; font-size: 0.85rem; } }
+
+    /* ===== HERO ===== */
+    .hero-page { position: relative; padding: 210px 0 110px; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); color: #fff; border-bottom: 4px solid var(--if-gold); overflow: hidden; }
+    .hero-page::after { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(254,203,0,0.08) 0%, transparent 70%); border-radius: 50%; }
+    .hero-page .container { position: relative; z-index: 2; }
+    .hero-split { display: flex; align-items: center; gap: 60px; }
+    .hero-text { flex: 1.25; }
+    .hero-visual { flex: 0.75; display: flex; justify-content: flex-end; }
+    .hero-logo-wrap { margin-bottom: 26px; }
+    .hero-logo-wrap img { height: 64px; width: auto; border-radius: 10px; background: #fff; padding: 8px 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.35); display: inline-block; }
+    .hero-page .badge { background: rgba(254,203,0,0.12); border: 1px solid rgba(254,203,0,0.35); color: #fecb00; padding: 8px 18px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 20px; }
+    .hero-page h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: 900; line-height: 1.12; margin-bottom: 20px; letter-spacing: -1.5px; }
+    .hero-page h1 .gold { color: var(--if-gold); }
+    .hero-page h1 + p { font-size: 1.06rem; color: #cbd5e1; max-width: 600px; line-height: 1.7; margin-bottom: 30px; }
+    .btn-green { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #fff; padding: 16px 32px; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 10px 25px rgba(22,163,74,0.35); }
+    .btn-green:hover { transform: translateY(-3px) scale(1.02); background: linear-gradient(135deg, #2fce66 0%, #1aaf51 100%); box-shadow: 0 15px 35px rgba(22,163,74,0.45); }
+    .hero-selos { margin-top: 34px; display: flex; flex-direction: column; gap: 14px; max-width: 560px; }
+    .selo { display: flex; align-items: flex-start; gap: 12px; font-size: 0.93rem; color: #e2e8f0; line-height: 1.5; }
+    .selo i.ph { font-size: 1.5rem; color: #fecb00; flex-shrink: 0; filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.3)); }
+    .selo strong { color: #fff; }
+    .hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 22px; padding: 28px 26px; width: 100%; max-width: 340px; backdrop-filter: blur(10px); box-shadow: 0 25px 50px rgba(0,0,0,0.35); }
+    .hero-card-head { text-align: center; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #fecb00; margin-bottom: 22px; }
+    .hero-card-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .hero-card-item:last-of-type { border-bottom: none; }
+    .hero-card-item i.ph { font-size: 1.6rem; color: #fecb00; flex-shrink: 0; filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.3)); }
+    .hero-card-item strong { display: block; color: #fff; font-size: 1.02rem; }
+    .hero-card-item span { color: #94a3b8; font-size: 0.86rem; line-height: 1.4; display: block; }
+    .hero-card-cta { margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; padding: 14px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: 0.3s; }
+    .hero-card-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
+    @media (max-width: 992px) { .hero-split { flex-direction: column; text-align: center; } .hero-visual { justify-content: center; width: 100%; } .hero-card { max-width: 400px; margin: 0 auto; } .hero-page h1 + p { margin: 0 auto 30px; } .hero-selos { margin: 34px auto 0; text-align: left; } }
+
+    /* ===== SEÇÕES GERAIS ===== */
+    .section-page { padding: 100px 0; }
+    .section-bg { background: #fff; }
+    .section-header { text-align: center; max-width: 760px; margin: 0 auto 60px; }
+    .section-tag { display: inline-block; padding: 6px 16px; background: rgba(0,31,92,0.06); color: #001f5c; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 50px; margin-bottom: 16px; border: 1px solid rgba(0,31,92,0.1); }
+    .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #001f5c; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .section-header p { font-size: 1.05rem; color: #64748b; }
+
+    /* ===== A DOR ===== */
+    .dor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1080px; margin: 0 auto; }
+    .dor-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 30px 26px; transition: 0.35s; box-shadow: 0 4px 15px rgba(0,31,92,0.03); }
+    .dor-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,31,92,0.08); border-color: #fecb00; }
+    .dor-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 1.5rem; }
+    .dor-icon i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); }
+    .dor-card h3 { font-size: 1.05rem; font-weight: 800; color: #001f5c; margin-bottom: 8px; line-height: 1.4; }
+    .dor-card p { font-size: 0.9rem; color: #64748b; line-height: 1.6; }
+    .virada-card { max-width: 900px; margin: 50px auto 0; background: linear-gradient(135deg, #001f5c 0%, #003399 100%); border-radius: 22px; padding: 44px 40px; color: #fff; text-align: center; position: relative; overflow: hidden; }
+    .virada-card::before { content: ''; position: absolute; top: -60px; left: -60px; width: 180px; height: 180px; background: rgba(254,203,0,0.1); border-radius: 50%; }
+    .virada-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 14px; color: #fecb00; }
+    .virada-card p { color: #cbd5e1; font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto; }
+
+    /* ===== PILARES ===== */
+    .pilar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 1080px; margin: 0 auto; }
+    .pilar-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 22px; padding: 38px 34px; transition: 0.35s; }
+    .pilar-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(0,31,92,0.08); }
+    .pilar-icon { width: 62px; height: 62px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; font-size: 2rem; }
+    .pilar-icon i.ph { filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.15)); }
+    .pilar-card h3 { font-size: 1.3rem; font-weight: 800; color: #001f5c; margin-bottom: 10px; }
+    .pilar-card > p { font-size: 0.95rem; color: #64748b; line-height: 1.65; margin-bottom: 18px; }
+    .pilar-list { list-style: none; padding: 0; margin: 0; }
+    .pilar-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: #1e293b; line-height: 1.55; margin-bottom: 12px; }
+    .pilar-list li:last-child { margin-bottom: 0; }
+    .pilar-list li i.ph { color: #16a34a; font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+    @media (max-width: 992px) { .pilar-grid { grid-template-columns: 1fr; } }
+
+    /* ===== GANHOS ===== */
+    .ganhos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; max-width: 900px; margin: 0 auto; }
+    .ganho-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 22px; padding: 40px 34px; text-align: center; transition: 0.35s; }
+    .ganho-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(0,31,92,0.08); border-color: #fecb00; }
+    .ganho-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2.1rem; }
+    .ganho-icon i.ph { filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.15)); }
+    .ganho-card h3 { font-size: 1.35rem; font-weight: 800; color: #001f5c; margin-bottom: 10px; }
+    .ganho-card p { font-size: 0.98rem; color: #64748b; line-height: 1.65; }
+
+    /* ===== QUEM TE GUIA ===== */
+    .qs-hero { display: flex; align-items: center; gap: 50px; max-width: 1000px; margin: 0 auto 50px; background: #fff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 40px; box-shadow: 0 15px 40px rgba(0,31,92,0.06); }
+    .qs-photo img { width: 220px; height: 220px; object-fit: cover; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,31,92,0.2); }
+    .qs-bio h3 { font-size: 1.6rem; font-weight: 900; color: #001f5c; margin-bottom: 6px; }
+    .qs-role { color: #fecb00; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .qs-text { color: #475569; line-height: 1.7; font-size: 0.98rem; margin-bottom: 20px; }
+    .btn-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: #fff; padding: 12px 24px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; text-decoration: none; transition: 0.3s; }
+    .btn-linkedin:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,119,181,0.35); }
+    @media (max-width: 992px) { .qs-hero { flex-direction: column; text-align: center; } }
+    .creds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 1080px; margin: 0 auto; }
+    .cred-card { display: flex; align-items: flex-start; gap: 14px; background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 22px 20px; transition: 0.3s; }
+    .cred-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,31,92,0.06); border-color: #fecb00; }
+    .cred-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .cred-icon i.ph { filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.12)); }
+    .cred-card p { font-size: 0.9rem; color: #475569; line-height: 1.55; }
+    .cred-card strong { color: #001f5c; }
+
+    /* ===== PARA QUEM É / NÃO É ===== */
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 1000px; margin: 0 auto; }
+    .fit-card { border-radius: 22px; padding: 40px 34px; border: 1px solid #e2e8f0; transition: 0.35s; }
+    .fit-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; }
+    .fit-yes { background: #f0fdf4; border-color: #bbf7d0; }
+    .fit-yes h3 { color: #166534; }
+    .fit-yes:hover { box-shadow: 0 15px 35px rgba(22,163,74,0.12); }
+    .fit-no { background: #fef2f2; border-color: #fecaca; }
+    .fit-no h3 { color: #991b1b; }
+    .fit-no:hover { box-shadow: 0 15px 35px rgba(239,68,68,0.1); }
+    .fit-list { list-style: none; padding: 0; margin: 0; }
+    .fit-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.98rem; line-height: 1.6; margin-bottom: 14px; }
+    .fit-list li:last-child { margin-bottom: 0; }
+    .fit-list li i.ph { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .fit-yes .fit-list li { color: #14532d; }
+    .fit-yes .fit-list li i.ph { color: #16a34a; }
+    .fit-no .fit-list li { color: #7f1d1d; }
+    .fit-no .fit-list li i.ph { color: #dc2626; }
+    .frase-card { max-width: 900px; margin: 50px auto 0; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); border-radius: 22px; padding: 36px 30px; text-align: center; }
+    .frase-card p { color: #fecb00; font-size: 1.25rem; font-weight: 800; line-height: 1.5; }
+    @media (max-width: 992px) { .fit-grid { grid-template-columns: 1fr; } }
+
+    /* ===== INVESTIMENTO ===== */
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1000px; margin: 0 auto 60px; align-items: stretch; }
+    .price-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 40px 34px; display: flex; flex-direction: column; position: relative; transition: 0.35s; }
+    .price-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,31,92,0.1); }
+    .price-featured { border: 2px solid #fecb00; box-shadow: 0 20px 50px rgba(254,203,0,0.15); }
+    .price-badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fecb00, #eab308); color: #001f5c; padding: 7px 22px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; letter-spacing: 1px; box-shadow: 0 8px 20px rgba(254,203,0,0.4); white-space: nowrap; }
+    .price-tag { font-size: 0.82rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+    .price-value { font-size: 3rem; font-weight: 900; color: #001f5c; letter-spacing: -2px; line-height: 1; }
+    .price-per { font-size: 0.95rem; color: #64748b; margin: 8px 0 22px; }
+    .price-desc { font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 20px; }
+    .price-incluso { border-top: 1px dashed #e2e8f0; padding-top: 18px; margin-bottom: 8px; }
+    .price-incluso-label { font-weight: 800; color: #001f5c; font-size: 0.9rem; margin-bottom: 12px; }
+    .price-list { list-style: none; padding: 0; margin: 0 0 26px; flex: 1; }
+    .price-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.93rem; color: #1e293b; line-height: 1.5; margin-bottom: 11px; }
+    .price-list li i.ph { color: #16a34a; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .price-funciona { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px 18px; margin-bottom: 20px; }
+    .price-funciona strong { color: #001f5c; font-size: 0.9rem; display: block; margin-bottom: 8px; }
+    .price-funciona ul { list-style: none; padding: 0; margin: 0; }
+    .price-funciona li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.88rem; color: #475569; line-height: 1.5; margin-bottom: 6px; }
+    .price-funciona li:last-child { margin-bottom: 0; }
+    .price-funciona li::before { content: ''; width: 6px; height: 6px; background: #fecb00; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+    .btn-price { display: flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff; padding: 16px 20px; border-radius: 50px; font-weight: 800; font-size: 0.92rem; text-align: center; text-decoration: none; transition: 0.3s; }
+    .btn-price:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(22,163,74,0.4); }
+    .btn-price-outline { background: #fff; color: #001f5c; border: 2px solid #001f5c; }
+    .btn-price-outline:hover { background: #001f5c; color: #fff; box-shadow: none; }
+    @media (max-width: 992px) { .price-grid { grid-template-columns: 1fr; } }
+
+    .compare-wrap { max-width: 900px; margin: 0 auto 60px; }
+    .compare-wrap h3 { text-align: center; font-size: 1.3rem; font-weight: 800; color: #001f5c; margin-bottom: 24px; }
+    .compare-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,31,92,0.06); border: 1px solid #e2e8f0; }
+    .compare-table th { background: #001f5c; color: #fff; padding: 16px 18px; text-align: left; font-size: 0.9rem; font-weight: 800; }
+    .compare-table td { padding: 16px 18px; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; color: #334155; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: #f8fafc; }
+
+    .pagamento { max-width: 900px; margin: 0 auto; text-align: center; }
+    .pag-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 20px; }
+    .pag-item { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #e2e8f0; border-radius: 50px; padding: 14px 24px; font-weight: 700; color: #001f5c; font-size: 0.95rem; box-shadow: 0 5px 15px rgba(0,31,92,0.04); }
+    .pag-item i.ph { color: #16a34a; font-size: 1.4rem; }
+    .nota-fiscal { color: #64748b; font-size: 0.92rem; }
+
+    /* ===== POLÍTICA DE VAGAS ===== */
+    .vagas-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .vaga-item { display: flex; align-items: flex-start; gap: 16px; background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; transition: 0.3s; }
+    .vaga-item:hover { border-color: #fecb00; box-shadow: 0 10px 25px rgba(0,31,92,0.06); }
+    .vaga-item i.ph { font-size: 1.6rem; color: #fecb00; flex-shrink: 0; filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.12)); }
+    .vaga-item p { font-size: 0.97rem; color: #475569; line-height: 1.6; }
+    .vaga-item strong { color: #001f5c; }
+
+    /* ===== COMO GARANTIR SUA VAGA ===== */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto 50px; }
+    .step-card { background: #fff; border-radius: 18px; padding: 30px 24px; text-align: center; border: 1px solid #e2e8f0; transition: 0.35s; }
+    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,31,92,0.07); border-color: #fecb00; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #001f5c, #003399); color: #fecb00; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; margin: 0 auto 16px; }
+    .step-card h4 { font-size: 1rem; font-weight: 800; color: #001f5c; margin-bottom: 8px; }
+    .step-card p { font-size: 0.87rem; color: #64748b; line-height: 1.6; }
+    @media (max-width: 992px) { .steps-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .steps-grid { grid-template-columns: 1fr; } }
+    .whats-box { max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); border-radius: 24px; padding: 44px 34px; color: #fff; }
+    .whats-box p { color: #cbd5e1; font-size: 1.05rem; margin-bottom: 8px; }
+    .whats-box .whats-num { font-size: 1.5rem; font-weight: 900; color: #fecb00; margin-bottom: 24px; display: block; }
+    .btn-whatsapp { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; padding: 18px 38px; border-radius: 50px; font-weight: 800; font-size: 1.05rem; text-decoration: none; transition: 0.3s; }
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(37,211,102,0.4); }
+
+    /* ===== LEMBRETE ===== */
+    .lembrete-section { background: linear-gradient(135deg, #001f5c 0%, #003399 100%); padding: 80px 0; color: #fff; }
+    .lembrete-card { max-width: 760px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 26px; padding: 44px 40px; text-align: center; }
+    .lembrete-card h2 { font-size: 1.8rem; font-weight: 900; color: #fecb00; margin-bottom: 26px; }
+    .lembrete-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-bottom: 24px; }
+    .lembrete-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 22px 16px; }
+    .lembrete-item i.ph { font-size: 1.8rem; color: #fecb00; display: block; margin-bottom: 10px; filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.3)); }
+    .lembrete-item strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+    .lembrete-item span { color: #94a3b8; font-size: 0.85rem; line-height: 1.4; display: block; }
+    .lembrete-obs { color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; }
+    .lembrete-obs i.ph { color: #fecb00; }
+  </style>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<!-- ===== BARRA DE AVISO ===== -->
+<div class="aviso-bar">
+  <i class="ph ph-megaphone"></i>
+  <span>Vagas limitadas — Turma de 13 de Setembro</span>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-page">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero-text">
+        <div class="hero-logo-wrap fade-up">
+          <img src="img/logo-tech.png" alt="Cerrado Tech Logo">
+        </div>
+        <span class="badge fade-up">Treinamento Presencial &amp; 100% Prático</span>
+        <h1 class="fade-up delay-1">Aprenda a construir seus próprios <span class="gold">apps, automações e conteúdos com IA</span> — sem precisar saber programar.</h1>
+        <p class="fade-up delay-2">Treinamento presencial e 100% prático para propagandistas da indústria farmacêutica. Você aprende a usar a IDE Antigravity para construir suas próprias ferramentas — e domina as IAs do dia a dia (Claude, Gemini, ChatGPT) para aplicar no que você já faz na rotina.</p>
+        <div class="fade-up delay-3">
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%20turma%20de%2013/09%20do%20treinamento%20IA%20em%20A%C3%A7%C3%A3o%20Farma." target="_blank" class="btn-green">
+            <i class="ph ph-whatsapp-logo"></i> Quero minha vaga na turma de 13/09 <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+        <div class="hero-selos fade-up delay-3">
+          <div class="selo"><i class="ph ph-wrench"></i><span><strong>100% prático:</strong> você constrói na sala, com acompanhamento</span></div>
+          <div class="selo"><i class="ph ph-lightning"></i><span>Turmas de no máximo <strong>8 pessoas</strong></span></div>
+          <div class="selo"><i class="ph ph-graduation-cap"></i><span>Conduzido por <strong>Renato Rosa</strong> — especialista em dados, IA e software</span></div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-card">
+          <div class="hero-card-head">Detalhes do Treinamento</div>
+          <div class="hero-card-item">
+            <i class="ph ph-calendar-blank"></i>
+            <div><strong>13 de Setembro</strong><span>Domingo</span></div>
+          </div>
+          <div class="hero-card-item">
+            <i class="ph ph-clock"></i>
+            <div><strong>08h às 18h</strong><span>10 horas de prática</span></div>
+          </div>
+          <div class="hero-card-item">
+            <i class="ph ph-map-pin"></i>
+            <div><strong>Cerrado Tech</strong><span>Rua Voluntários da Pátria, 350, Loja 39</span></div>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%20turma%20de%2013/09%20do%20treinamento%20IA%20em%20A%C3%A7%C3%A3o%20Farma." target="_blank" class="hero-card-cta"><i class="ph ph-whatsapp-logo"></i> Reservar minha vaga</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== A DOR ===== -->
+<section class="section-page section-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">A dor</span>
+      <h2>Quanto da sua semana vai para tarefas que a IA poderia fazer com você?</h2>
+      <p>Pense no seu dia a dia real de propagandista:</p>
+    </div>
+    <div class="dor-grid">
+      <div class="dor-card fade-up delay-1">
+        <div class="dor-icon" style="background:#fef3c7;color:#ca8a04;"><i class="ph ph-image"></i></div>
+        <h3>Arte e folder na correria</h3>
+        <p>Montar a arte e o folder daquele jantar relacional ou treinamento em loja para postar no grupo do chefe e do GDS.</p>
+      </div>
+      <div class="dor-card fade-up delay-1">
+        <div class="dor-icon" style="background:#e0f2fe;color:#0284c7;"><i class="ph ph-pencil-simple"></i></div>
+        <h3>Comentário de visita</h3>
+        <p>Escrever comentário de visita depois da conversa com o médico, relacionando produtos e objetivos das próximas visitas.</p>
+      </div>
+      <div class="dor-card fade-up delay-1">
+        <div class="dor-icon" style="background:#ede9fe;color:#7c3aed;"><i class="ph ph-files"></i></div>
+        <h3>Materiais espalhados</h3>
+        <p>Organizar estudos, materiais e documentos espalhados entre e-mail, WhatsApp e pastas.</p>
+      </div>
+      <div class="dor-card fade-up delay-2">
+        <div class="dor-icon" style="background:#fecdd3;color:#e11d48;"><i class="ph ph-arrows-clockwise"></i></div>
+        <h3>O mesmo padrão, toda semana</h3>
+        <p>Refazer, toda semana, tarefas repetitivas que seguem sempre o mesmo padrão.</p>
+      </div>
+      <div class="dor-card fade-up delay-2">
+        <div class="dor-icon" style="background:#dcfce7;color:#16a34a;"><i class="ph ph-chats-circle"></i></div>
+        <h3>Treinar sem ter com quem</h3>
+        <p>Treinar a propaganda médica sem ter com quem simular — inclusive para os diferentes perfis de médico.</p>
+      </div>
+    </div>
+    <div class="virada-card fade-up delay-2">
+      <h3>Agora imagine ter suas próprias ferramentas para tudo isso</h3>
+      <p>Apps, automações e conteúdos construídos por você, do seu jeito, para a sua rotina. É exatamente isso que você aprende neste treinamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O QUE É O TREINAMENTO ===== -->
+<section class="section-page">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">O treinamento</span>
+      <h2>Dois pilares, um objetivo: você no controle da IA</h2>
+      <p>Um dia inteiro de prática para transformar o seu jeito de trabalhar.</p>
+    </div>
+    <div class="pilar-grid">
+      <div class="pilar-card fade-up delay-1">
+        <div class="pilar-icon" style="background:#e0f2fe;color:#0284c7;"><i class="ph ph-wrench"></i></div>
+        <h3>Pilar 1 — IDE Antigravity: sua oficina digital</h3>
+        <p>Você aprende a usar uma IDE com IA — um ambiente onde você descreve o que precisa e constrói, sem escrever código:</p>
+        <ul class="pilar-list">
+          <li><i class="ph ph-check-circle"></i><span><strong>Construir conteúdos</strong> — folders, artes, textos e materiais das suas ações</span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Criar apps</strong> — ferramentas sob medida para a sua rotina de campo</span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Organizar documentos</strong> — estudos, materiais e arquivos no lugar certo, fáceis de encontrar</span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Criar automações</strong> — tarefas repetitivas passando a funcionar sem o seu esforço manual</span></li>
+        </ul>
+      </div>
+      <div class="pilar-card fade-up delay-2">
+        <div class="pilar-icon" style="background:#ede9fe;color:#7c3aed;"><i class="ph ph-robot"></i></div>
+        <h3>Pilar 2 — Outras IAs no seu dia a dia</h3>
+        <p>Claude, Gemini, ChatGPT e outras, aplicadas ao que o propagandista realmente usa:</p>
+        <ul class="pilar-list">
+          <li><i class="ph ph-check-circle"></i><span><strong>Folder a partir de fotos</strong> — a arte da ação (jantar relacional, treinamento em loja) com fotos, assuntos abordados e nomes, pronta para postar no grupo</span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Comentários de visita</strong> — você conta como foi a conversa com o médico e a IA estrutura o comentário, relacionando produtos e objetivos das próximas visitas</span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Treino de propaganda médica</strong> — a IA te ajuda a desenvolver e evoluir sua propaganda, inclusive adaptando aos perfis de médico (relacional, performático, analítico e demais perfis do seu método)</span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Médico virtual</strong> — simulação de visita para você treinar sua propaganda antes da visita real</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O QUE VOCÊ GANHA ===== -->
+<section class="section-page section-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Resultados</span>
+      <h2>O que muda na sua rotina depois do treinamento</h2>
+      <p>Mais autonomia, mais tempo de campo — e reconhecimento pelo resultado.</p>
+    </div>
+    <div class="ganhos-grid">
+      <div class="ganho-card fade-up delay-1">
+        <div class="ganho-icon" style="background:#e0f2fe;color:#0284c7;"><i class="ph ph-gauge"></i></div>
+        <h3>Autonomia</h3>
+        <p>Você mesmo constrói o que precisa — app, automação, arte, conteúdo. Não fica na fila esperando ninguém.</p>
+      </div>
+      <div class="ganho-card fade-up delay-2">
+        <div class="ganho-icon" style="background:#fef3c7;color:#ca8a04;"><i class="ph ph-clock-countdown"></i></div>
+        <h3>Tempo</h3>
+        <p>Tarefas repetitivas viram automação. O tempo que sobra é tempo de campo, de relacionamento — ou de descanso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUEM TE GUIA ===== -->
+<section class="section-page">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Quem te guia</span>
+      <h2>Aprenda IA com quem entende de dados de verdade</h2>
+      <p>Renato Rosa não vai te ensinar "dicas de ChatGPT". Ele trabalha com ciência de dados, Machine Learning e compliance em nível acadêmico e empresarial — e traduziu isso para a sua rotina.</p>
+    </div>
+    <div class="qs-hero fade-up delay-1">
+      <div class="qs-photo">
+        <img src="img/renato.jpg" alt="Renato Rosa - Especialista em dados, IA e software">
+      </div>
+      <div class="qs-bio">
+        <h3>Renato Rosa</h3>
+        <div class="qs-role">Especialista em dados, IA e software</div>
+        <p class="qs-text">Mestre em Contabilidade pela UFPR, pesquisador de Machine Learning e fundador da Cerrado Tech — fábrica de software que atende governo e empresas. Une conhecimento acadêmico de ponta à execução prática, com didática para ensinar tecnologia do zero.</p>
+        <a href="https://www.linkedin.com/in/gestorrenato/" target="_blank" class="btn-linkedin">
+          <i class="ph ph-linkedin-logo" style="font-size:1.2rem;"></i> Conectar no LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="creds-grid">
+      <div class="cred-card fade-up delay-1">
+        <div class="cred-icon" style="background:#e0f2fe;color:#0284c7;"><i class="ph ph-graduation-cap"></i></div>
+        <p><strong>Mestre em Contabilidade</strong> — UFPR</p>
+      </div>
+      <div class="cred-card fade-up delay-1">
+        <div class="cred-icon" style="background:#ede9fe;color:#7c3aed;"><i class="ph ph-flask"></i></div>
+        <p><strong>Doutorando Adm/Cont</strong> — pesquisa em algoritmos de compliance</p>
+      </div>
+      <div class="cred-card fade-up delay-1">
+        <div class="cred-icon" style="background:#dcfce7;color:#16a34a;"><i class="ph ph-brain"></i></div>
+        <p><strong>Bolsista ICTI / Itaú Unibanco</strong> — Dados &amp; Machine Learning em KPIs de desempenho</p>
+      </div>
+      <div class="cred-card fade-up delay-2">
+        <div class="cred-icon" style="background:#fef3c7;color:#ca8a04;"><i class="ph ph-buildings"></i></div>
+        <p><strong>Fundador da Cerrado Tech</strong> — fábrica de software para governo e empresas</p>
+      </div>
+      <div class="cred-card fade-up delay-2">
+        <div class="cred-icon" style="background:#fecdd3;color:#e11d48;"><i class="ph ph-chalkboard-teacher"></i></div>
+        <p><strong>Docente</strong> de Finanças, IA, Compliance e Ciência de Dados (UNISENAI, UNIC, ECONET, UNIFACC, ICET)</p>
+      </div>
+      <div class="cred-card fade-up delay-2">
+        <div class="cred-icon" style="background:#d1fae5;color:#059669;"><i class="ph ph-globe"></i></div>
+        <p><strong>Experiência internacional</strong> — Brasil, Europa, África e América Latina</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARA QUEM É / NÃO É ===== -->
+<section class="section-page section-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Perfil ideal</span>
+      <h2>Este treinamento é para você se...</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card fit-yes fade-up delay-1">
+        <h3>Para você que quer tempo livre e reconhecimento</h3>
+        <ul class="fit-list">
+          <li><i class="ph ph-check-circle"></i><span>É propagandista ou representante da indústria farma e quer <strong>tempo livre e reconhecimento</strong></span></li>
+          <li><i class="ph ph-check-circle"></i><span>É gerente distrital/regional e quer o <strong>time inteiro mais produtivo</strong></span></li>
+          <li><i class="ph ph-check-circle"></i><span>Está começando na farma e quer <strong>entrar na frente de todo mundo</strong></span></li>
+          <li><i class="ph ph-check-circle"></i><span><strong>Não entende nada de tecnologia</strong> e quer aprender do zero, com paciência</span></li>
+        </ul>
+      </div>
+      <div class="fit-card fit-no fade-up delay-2">
+        <h3>NÃO é para você se...</h3>
+        <ul class="fit-list">
+          <li><i class="ph ph-x-circle"></i><span>Procura "botão mágico" sem dedicar um dia de prática</span></li>
+          <li><i class="ph ph-x-circle"></i><span>Acha que "sempre fez assim e sempre deu certo"</span></li>
+          <li><i class="ph ph-x-circle"></i><span>Não está disposto a levar um notebook e colocar a mão na massa</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="frase-card fade-up delay-2">
+      <p>Turmas de 8 pessoas. Não por charme — por método. Cada aluno recebe atenção individual do início ao fim.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INVESTIMENTO ===== -->
+<section class="section-page" id="investimento">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Investimento</span>
+      <h2>Escolha a modalidade que se encaixa na sua realidade</h2>
+      <p>As duas formas dão acesso ao mesmo conteúdo, mesmo material e mesma carga horária (10h práticas).</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card fade-up delay-1">
+        <span class="price-tag">Modalidade Individual</span>
+        <div class="price-value">R$ 280</div>
+        <div class="price-per">por pessoa</div>
+        <p class="price-desc">Para quem é: propagandistas que querem fazer o curso sozinhos ou em pequenos grupos (menos de 8 pessoas).</p>
+        <div class="price-incluso">
+          <div class="price-incluso-label">Incluso</div>
+          <ul class="price-list">
+            <li><i class="ph ph-check-circle"></i><span>10 horas de treinamento presencial (08h às 18h)</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Coffee breaks (café, bolachas, água)</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Material didático completo</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Banco de prompts para IA</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Certificado de conclusão</span></li>
+          </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20me%20inscrever%20na%20modalidade%20INDIVIDUAL%20(R%24%20280)%20do%20IA%20em%20A%C3%A7%C3%A3o%20Farma%20-%20turma%20de%2013/09." target="_blank" class="btn-price">Quero me inscrever individual <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="price-card price-featured fade-up delay-2">
+        <span class="price-badge">Recomendado</span>
+        <span class="price-tag">Modalidade Pacote Equipe</span>
+        <div class="price-value">R$ 1.500</div>
+        <div class="price-per">taxa única para até 8 pessoas</div>
+        <p class="price-desc">Para quem é: times e regionais. Você e seus colegas se organizam, fecham o grupo e participam juntos pagando menos por pessoa.</p>
+        <div class="price-funciona">
+          <strong>Como funciona</strong>
+          <ul>
+            <li>Você reúne o grupo (máximo 8 pessoas)</li>
+            <li>Um único pagamento de R$ 1.500 cobre todos</li>
+            <li>Sai a R$ 187,50 por pessoa (economia de R$ 92,50 por cabeça)</li>
+            <li>Todos recebem o mesmo material e certificado individual</li>
+          </ul>
+        </div>
+        <div class="price-incluso">
+          <div class="price-incluso-label">Incluso</div>
+          <ul class="price-list">
+            <li><i class="ph ph-check-circle"></i><span>10 horas de treinamento presencial (08h às 18h)</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Coffee breaks (café, bolachas, água)</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Material didático completo para cada participante</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Banco de prompts para IA</span></li>
+            <li><i class="ph ph-check-circle"></i><span>Certificado individual para cada participante</span></li>
+          </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20fechar%20um%20PACOTE%20EQUIPE%20(R%24%201.500)%20para%20a%20turma%20de%2013/09%20do%20IA%20em%20A%C3%A7%C3%A3o%20Farma." target="_blank" class="btn-price">Quero fechar pacote para meu grupo <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="compare-wrap fade-up delay-1">
+      <h3>Comparativo rápido</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Modalidade</th><th>Investimento</th><th>Por pessoa</th><th>Ideal para</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><i class="ph ph-user"></i> Individual</td><td>R$ 280</td><td>R$ 280</td><td>Quem vem sozinho ou em poucos</td></tr>
+          <tr><td><i class="ph ph-users-three"></i> Pacote Equipe</td><td>R$ 1.500</td><td>R$ 187,50</td><td>Grupos que se organizam juntos</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagamento fade-up delay-2">
+      <div class="pag-items">
+        <div class="pag-item"><i class="ph ph-qr-code"></i> PIX — confirmação imediata da vaga</div>
+        <div class="pag-item"><i class="ph ph-credit-card"></i> Cartão de crédito</div>
+        <div class="pag-item"><i class="ph ph-bank"></i> Transferência bancária</div>
+      </div>
+      <p class="nota-fiscal">Nota fiscal disponível para pessoa jurídica (laboratórios e empresas).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POLÍTICA DE VAGAS ===== -->
+<section class="section-page section-bg">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Política de vagas</span>
+      <h2>Transparência do início ao fim</h2>
+    </div>
+    <div class="vagas-list">
+      <div class="vaga-item fade-up delay-1">
+        <i class="ph ph-users-three"></i>
+        <p><strong>Máximo de 8 pessoas por turma</strong> — para garantir acompanhamento individual do instrutor no notebook de cada aluno.</p>
+      </div>
+      <div class="vaga-item fade-up delay-1">
+        <i class="ph ph-receipt"></i>
+        <p>As vagas são confirmadas mediante <strong>envio do comprovante de pagamento</strong>.</p>
+      </div>
+      <div class="vaga-item fade-up delay-2">
+        <i class="ph ph-arrows-clockwise"></i>
+        <p>Em caso de imprevisto, você pode <strong>transferir sua vaga para outra pessoa</strong> até 48h antes do curso, sem custo adicional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMO GARANTIR SUA VAGA ===== -->
+<section class="section-page">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Inscrição</span>
+      <h2>Como garantir sua vaga</h2>
+      <p>Reserva rápida, direto no WhatsApp com o Renato.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-up delay-1"><div class="step-num">1</div><h4>Escolha a modalidade</h4><p>Individual (R$ 280) ou Pacote Equipe (R$ 1.500).</p></div>
+      <div class="step-card fade-up delay-1"><div class="step-num">2</div><h4>Chame o Renato</h4><p>Reserve a vaga direto no WhatsApp.</p></div>
+      <div class="step-card fade-up delay-2"><div class="step-num">3</div><h4>Pague e envie o comprovante</h4><p>Realize o pagamento e envie o comprovante para confirmação.</p></div>
+      <div class="step-card fade-up delay-2"><div class="step-num">4</div><h4>Receba as instruções</h4><p>Instruções de preparo para o dia 13/09.</p></div>
+    </div>
+    <div class="whats-box fade-up delay-2">
+      <p>WhatsApp:</p>
+      <span class="whats-num">(67) 99351-5206 — Renato Rosa</span>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%20turma%20de%2013/09%20do%20treinamento%20IA%20em%20A%C3%A7%C3%A3o%20Farma." target="_blank" class="btn-whatsapp">
+        <i class="ph ph-whatsapp-logo"></i> Quero garantir minha vaga agora <i class="ph ph-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEMBRETE ===== -->
+<section class="lembrete-section">
+  <div class="container">
+    <div class="lembrete-card fade-up">
+      <h2>Guarde na agenda</h2>
+      <div class="lembrete-grid">
+        <div class="lembrete-item">
+          <i class="ph ph-calendar-blank"></i>
+          <strong>13 de Setembro</strong>
+          <span>Domingo</span>
+        </div>
+        <div class="lembrete-item">
+          <i class="ph ph-clock"></i>
+          <strong>08h às 18h</strong>
+          <span>Horário do treinamento</span>
+        </div>
+        <div class="lembrete-item">
+          <i class="ph ph-map-pin"></i>
+          <strong>Cerrado Tech</strong>
+          <span>Rua Voluntários da Pátria, 350, Loja 39 — Cuiabá - MT</span>
+        </div>
+      </div>
+      <p class="lembrete-obs">
+        <i class="ph ph-coffee"></i> Coffee breaks inclusos · <i class="ph ph-fork-knife"></i> Almoço por conta do participante (intervalo das 12h às 13h)
+      </p>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%20turma%20de%2013/09%20do%20treinamento%20IA%20em%20A%C3%A7%C3%A3o%20Farma." target="_blank" class="btn-whatsapp">
+        <i class="ph ph-whatsapp-logo"></i> Garantir minha vaga
+      </a>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
+
+<script src="js/main.js"></script>
+</body>
+</html>
