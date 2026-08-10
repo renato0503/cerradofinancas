@@ -8,7 +8,7 @@ permalink: /portfolio/
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio Cerrado Tech | Soluções de Software por Segmento e Sob Demanda</title>
-  <meta name="description" content="Portfólio comercial da Cerrado Tech: soluções de software prontas para vários segmentos (cartórios, saúde, energia solar, food service, governo, contabilidade, educação e mais) e desenvolvimento sob demanda — ERPs, CRMs, IA offline, BI e automações.">
+  <meta name="description" content="Portfólio comercial da Cerrado Tech: soluções de software por segmento com funcionalidades detalhadas e desenvolvimento sob demanda. Modelo de implantação + mensalidade + módulos customizados, com sala de formação para treinar sua equipe.">
   <link rel="icon" type="image/png" href="{{ '/img/logohome.png' | relative_url }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,8 @@ permalink: /portfolio/
     h2.title { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; color: #001f5c; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 14px; }
     .sub { font-size: 1.02rem; color: #64748b; line-height: 1.65; }
     .center { text-align: center; }
-    .center .title { max-width: 720px; margin-left: auto; margin-right: auto; }
+    .center .title { max-width: 760px; margin-left: auto; margin-right: auto; }
+    .center .sub { max-width: 760px; margin-left: auto; margin-right: auto; }
 
     /* NAV DE SEGMENTOS */
     .seg-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 34px; }
@@ -59,28 +60,58 @@ permalink: /portfolio/
 
     /* CARDS DE SEGMENTO */
     .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .seg-card { border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 26px; transition: 0.25s; }
+    .seg-card { border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 26px; transition: 0.25s; scroll-margin-top: 110px; }
     .seg-card:hover { border-color: #fecb00; box-shadow: 0 12px 30px rgba(0,31,92,0.06); }
-    .seg-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .seg-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
     .seg-head i.ph { font-size: 1.7rem; color: #fecb00; filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); }
     .seg-head h3 { font-size: 1.15rem; font-weight: 900; color: #001f5c; }
-    .prod-list { list-style: none; padding: 0; margin: 0; }
-    .prod-list li { margin-bottom: 12px; }
-    .prod-list li:last-child { margin-bottom: 0; }
-    .prod-list b { display: block; color: #0f172a; font-size: 0.98rem; }
-    .prod-list span { font-size: 0.88rem; color: #64748b; line-height: 1.5; }
     @media (max-width: 992px) { .seg-grid { grid-template-columns: 1fr; } }
+
+    /* PRODUTO EXPANSÍVEL */
+    details.prod { border-top: 1px solid #e2e8f0; padding: 14px 0; }
+    details.prod:last-child { border-bottom: 1px solid #e2e8f0; }
+    details.prod summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    details.prod summary::-webkit-details-marker { display: none; }
+    details.prod summary .prod-txt b { display: block; color: #0f172a; font-size: 0.98rem; }
+    details.prod summary .prod-txt span { display: block; font-size: 0.86rem; color: #64748b; line-height: 1.45; margin-top: 2px; }
+    details.prod summary .plus { font-size: 1.3rem; font-weight: 900; color: #fecb00; flex-shrink: 0; }
+    details.prod[open] summary .plus { transform: rotate(45deg); }
+    details.prod ul { margin: 12px 0 2px; padding: 0; list-style: none; }
+    details.prod ul li { position: relative; padding-left: 18px; font-size: 0.88rem; color: #475569; line-height: 1.55; margin-bottom: 7px; }
+    details.prod ul li::before { content: '•'; position: absolute; left: 4px; color: #16a34a; font-weight: 900; }
 
     /* CAPACIDADES SOB DEMANDA */
     .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .cap-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 24px; transition: 0.25s; }
     .cap-card:hover { border-color: #fecb00; box-shadow: 0 12px 30px rgba(0,31,92,0.06); }
-    .cap-card .cap-name { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .cap-card .cap-name { display: flex; align-items: center; gap: 10px; }
     .cap-card .cap-name i.ph { color: #16a34a; font-size: 1.3rem; }
     .cap-card h3 { font-size: 1.05rem; font-weight: 900; color: #001f5c; }
-    .cap-card .cap-tech { display: inline-block; background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.5px; border-radius: 50px; padding: 4px 12px; margin-top: 4px; }
-    .cap-card p { font-size: 0.9rem; color: #475569; line-height: 1.6; margin-top: 10px; }
+    .cap-card .cap-tech { display: inline-block; background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.5px; border-radius: 50px; padding: 4px 12px; margin-top: 6px; }
+    .cap-card p { font-size: 0.9rem; color: #475569; line-height: 1.6; margin-top: 12px; }
+    .cap-card ul { list-style: none; padding: 0; margin: 10px 0 0; }
+    .cap-card ul li { position: relative; padding-left: 16px; font-size: 0.86rem; color: #475569; line-height: 1.55; margin-bottom: 6px; }
+    .cap-card ul li::before { content: '•'; position: absolute; left: 2px; color: #16a34a; font-weight: 900; }
     @media (max-width: 992px) { .cap-grid { grid-template-columns: 1fr; } }
+
+    /* COMO TRABALHAMOS */
+    .model-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .model-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px 26px; transition: 0.25s; }
+    .model-card:hover { border-color: #fecb00; box-shadow: 0 12px 30px rgba(0,31,92,0.06); }
+    .model-card .m-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 16px; }
+    .model-card h3 { font-size: 1.1rem; font-weight: 900; color: #001f5c; margin-bottom: 8px; }
+    .model-card p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
+    .model-card b { color: #001f5c; }
+    @media (max-width: 992px) { .model-grid { grid-template-columns: 1fr; } }
+
+    .dif-box { background: linear-gradient(135deg, #001f5c 0%, #003399 100%); border-radius: 18px; padding: 44px 40px; color: #fff; margin-top: 40px; }
+    .dif-box h3 { color: #fecb00; font-size: 1.4rem; font-weight: 900; margin-bottom: 14px; }
+    .dif-box p { color: #cbd5e1; font-size: 1.02rem; line-height: 1.7; margin-bottom: 12px; }
+    .dif-box .dif-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
+    .dif-box .dif-benefits div { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px; }
+    .dif-box .dif-benefits b { display: block; color: #fff; font-size: 0.98rem; margin-bottom: 4px; }
+    .dif-box .dif-benefits span { color: #94a3b8; font-size: 0.88rem; line-height: 1.5; }
+    @media (max-width: 992px) { .dif-box .dif-benefits { grid-template-columns: 1fr; } }
 
     /* METODOLOGIA */
     .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -115,14 +146,14 @@ permalink: /portfolio/
       <div class="fade-up">
         <span class="hero-badge">Fábrica de Software · Portfólio Comercial</span>
         <h1>O que a <span class="gold">Cerrado Tech</span> constrói — e o que ela pode construir para você</h1>
-        <p class="lead">Soluções prontas para diversos segmentos — cartórios, saúde, energia solar, food service, governo, contabilidade, educação e mais. E desenvolvimento sob demanda: você descreve o problema e a gente constrói.</p>
+        <p class="lead">Soluções prontas para diversos segmentos, com funcionalidades detalhadas. Desenvolvimento sob demanda para o que ainda não existe. E um modelo comercial transparente: implantação, mensalidade e módulos sob medida.</p>
         <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Cerrado%20Tech%20sobre%20solu%C3%A7%C3%B5es%20de%20software." target="_blank" class="btn-whats">
           <i class="ph ph-whatsapp-logo"></i> Falar com um especialista <i class="ph ph-arrow-right"></i>
         </a>
         <div class="hero-selos">
           <span class="hero-selo"><i class="ph ph-squares-four"></i> Soluções prontas por segmento</span>
           <span class="hero-selo"><i class="ph ph-puzzle-piece"></i> Desenvolvimento sob demanda</span>
-          <span class="hero-selo"><i class="ph ph-rocket"></i> Do MVP ao scale-up</span>
+          <span class="hero-selo"><i class="ph ph-presentation-chart"></i> Sala de formação para sua equipe</span>
         </div>
       </div>
       <div class="hero-logo fade-up delay-2">
@@ -137,8 +168,8 @@ permalink: /portfolio/
   <div class="container">
     <div class="fade-up center">
       <span class="tag">Soluções prontas</span>
-      <h2 class="title">Software por segmento</h2>
-      <p class="sub">Produtos que já rodam em operações reais, organizados pela área de atuação. Tudo pode ser adaptado para a realidade da sua empresa.</p>
+      <h2 class="title">Software por segmento — funcionalidades em detalhe</h2>
+      <p class="sub">Clique em cada solução para ver o que ela faz. Tudo pode ser adaptado à realidade do cliente, vendido como serviço ou usado como porta de entrada para uma customização maior.</p>
     </div>
 
     <nav class="seg-nav fade-up delay-1">
@@ -164,135 +195,530 @@ permalink: /portfolio/
 
       <div class="seg-card fade-up delay-1" id="seg-cartorios">
         <div class="seg-head"><i class="ph ph-stamp"></i><h3>Cartórios &amp; Extrajudicial</h3></div>
-        <ul class="prod-list">
-          <li><b>Cerra.AI</b><span>Assistente de IA offline: responde usando apenas os documentos do cartório, com mascaramento e proteção LGPD.</span></li>
-          <li><b>CartorioForms</b><span>Digitalização de processos com assinatura digital (ICP-Brasil / GOV.br).</span></li>
-          <li><b>SISCOAF-Cartórios</b><span>Compliance antilavagem: análise e geração das comunicações obrigatórias ao COAF, com consulta a base de PEP.</span></li>
-          <li><b>EscrituracaoFacil (RegFácil)</b><span>"Sistema operacional" para associações e OSCs: vida jurídico-cartorial completa e Kit Cartorário automático.</span></li>
-          <li><b>ChatCartório</b><span>Chatbot com IA para atendimento, dúvidas e agendamento de procedimentos.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Cerra.AI — Assistente de IA Offline</b><span>IA soberana que responde usando só os documentos do cartório, sem internet.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Base de conhecimento própria do cartório (documentos, normas e procedimentos).</li>
+            <li>RAG — responde perguntas citando a fonte exata dentro dos seus arquivos.</li>
+            <li>IA 100% local: roda sem internet, os dados nunca saem do cartório.</li>
+            <li>Mascaramento automático de dados sensíveis (LGPD).</li>
+            <li>Workspaces isolados por área (RH, segurança, governança, etc.).</li>
+            <li>Painel administrativo e aplicativo desktop para o dia a dia.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CartorioForms — Digitalização de Processos</b><span>Formulários digitais com assinatura jurídica e envio automático ao cartório.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Formulário dinâmico por tipo de procedimento (não precisa de papel).</li>
+            <li>Upload de documentos em PDF junto ao pedido.</li>
+            <li>Assinatura digital com validade jurídica (ICP-Brasil A1 e GOV.br).</li>
+            <li>Envio automático ao cartório por e-mail com links assinados.</li>
+            <li>Controle de validade dos links (prazo configurável).</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>SISCOAF-Cartórios — Compliance Antilavagem</b><span>Analisa e gera as comunicações obrigatórias ao COAF.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Motor de regras baseado nos Provimentos CN 149/2023 e 161/2024 (42 situações de alerta).</li>
+            <li>Consulta automática a base de PEPs (Pessoas Expostas Politicamente).</li>
+            <li>Geração do relatório em PDF com papel timbrado do cartório.</li>
+            <li>Dashboard e histórico de comunicações para auditoria.</li>
+            <li>Versão de prateleira, configurável e 100% local.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>EscrituracaoFacil (RegFácil)</b><span>"Sistema operacional" para associações, federações e OSCs.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Acompanha toda a vida jurídico-cartorial de entidades sem fins lucrativos.</li>
+            <li>Cadastro de entidades, regras estatutárias, pessoas e atos associativos.</li>
+            <li>Documentos inteligentes padronizados (série DOC).</li>
+            <li>Painel de saúde da entidade e validação de regularidade.</li>
+            <li>OCR + NLP para leitura de documentos.</li>
+            <li>Geração automática do "Kit Cartorário".</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>ChatCartório — Chatbot com IA</b><span>Atendimento automático treinado no conteúdo do cartório.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Responde dúvidas comuns sobre procedimentos, documentos e prazos.</li>
+            <li>Agendamento e encaminhamento de solicitações.</li>
+            <li>Treinado no conteúdo do próprio cartório (sem respostas genéricas).</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-1" id="seg-saude">
         <div class="seg-head"><i class="ph ph-first-aid"></i><h3>Saúde &amp; Odontologia</h3></div>
-        <ul class="prod-list">
-          <li><b>Plataforma B2B Odontológica</b><span>CRM + orçamentos + pedidos + chatbot com IA + integração com ERP para distribuidores e indústrias.</span></li>
-          <li><b>CerraCare</b><span>Prontuário eletrônico e gestão de cuidadores: sinais vitais, rotina, balanço hídrico e relatórios por voz.</span></li>
-          <li><b>PataMed</b><span>Telemedicina veterinária: agendamento, prontuário e aplicativos para donos e clínicas.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Plataforma B2B Odontológica</b><span>Comércio eletrônico e gestão de clientes para distribuidores e indústrias.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>CRM com pipeline em Kanban (prospecção → negociação → fechamento).</li>
+            <li>Catálogo de produtos e preços (milhares de itens).</li>
+            <li>Orçamentos e pedidos online pelos vendedores.</li>
+            <li>Chatbot com IA para atendimento e qualificação de leads.</li>
+            <li>Gestão de churn e handoff humano (bot → vendedor).</li>
+            <li>Sincronização bidirecional com o ERP do distribuidor.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraCare — Home Care</b><span>Prontuário eletrônico e gestão de cuidadores de idosos.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Prontuário eletrônico do paciente.</li>
+            <li>Registro de sinais vitais, rotina e balanço hídrico.</li>
+            <li>Relatórios por voz (digitados pela IA).</li>
+            <li>Geolocalização e controle de estoque de insumos.</li>
+            <li>Painel administrativo para a operação.</li>
+            <li>PWA mobile-first — funciona no celular, online e offline.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>PataMed — Telemedicina Veterinária</b><span>Ecossistema de apps para donos, clínicas e veterinários.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Aplicativo do dono do pet (saúde, histórico e agendamento).</li>
+            <li>Agendamento e prontuário para as clínicas.</li>
+            <li>App do veterinário com gestão de atendimentos.</li>
+            <li>Dispatch/encaminhamento entre profissionais.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-1" id="seg-solar">
         <div class="seg-head"><i class="ph ph-sun"></i><h3>Energia Solar</h3></div>
-        <ul class="prod-list">
-          <li><b>SolarCRM</b><span>CRM para integradores: dimensionamento de projetos, proposta em PDF, funil e Kanban.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>SolarCRM</b><span>CRM completo para integradores solares.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Simulador/dimensionamento de sistemas solares.</li>
+            <li>Proposta comercial em PDF gerada automaticamente.</li>
+            <li>Funil de vendas e Kanban.</li>
+            <li>Aprovação interna de propostas.</li>
+            <li>Faturamento, controle de estoque e site institucional.</li>
+            <li>PWA — funciona no celular em campo.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-1" id="seg-food">
         <div class="seg-head"><i class="ph ph-pizza"></i><h3>Food Service</h3></div>
-        <ul class="prod-list">
-          <li><b>NapoleFood</b><span>ERP completo de pizzaria/restaurante: totem, PDV, cozinha (KDS), app entregador, delivery e integração iFood/Mercado Pago.</span></li>
-          <li><b>CerraFood</b><span>ERP para pizzarias: fichas técnicas, estoque e programa de fidelidade.</span></li>
-          <li><b>CerradoBakery</b><span>Gestão de padarias: fichas técnicas, precificação, cronograma de fornadas e BI Curva ABC.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>NapoleFood — ERP de Pizzaria/Restaurante</b><span>Plataforma completa do pedido ao financeiro.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Totem de autoatendimento para o cliente.</li>
+            <li>PDV (ponto de venda) do caixa.</li>
+            <li>KDS — tela de cozinha com fila de preparo.</li>
+            <li>App do entregador com rota e entregas.</li>
+            <li>Gestão de delivery e pedidos (WhatsApp).</li>
+            <li>Impressora térmica e NFC-e (nota fiscal eletrônica).</li>
+            <li>Integração com iFood e Mercado Pago.</li>
+            <li>Insights e DRE para o dono acompanhar o negócio.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraFood — ERP para Pizzarias</b><span>Gestão operacional e fidelização.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Fichas técnicas dos produtos.</li>
+            <li>Controle de estoque.</li>
+            <li>Programa de fidelidade e CRM de clientes.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerradoBakery — Gestão de Padarias</b><span>Do custo da receita à margem de lucro.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Fichas técnicas de produtos.</li>
+            <li>Simulador de custos e precificação (referências Sebrae/ABIP).</li>
+            <li>Cronograma de fornadas.</li>
+            <li>Checklist de qualidade.</li>
+            <li>BI Curva ABC de produtos.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-1" id="seg-gov">
         <div class="seg-head"><i class="ph ph-bank"></i><h3>Governo &amp; Compras (GovTech)</h3></div>
-        <ul class="prod-list">
-          <li><b>Cerraliance</b><span>Compliance e governança pública: due diligence, riscos, auditoria, denúncias, LGPD, transparência e IA preditiva.</span></li>
-          <li><b>CompraPublica.AI</b><span>Painel de contratações (Lei 14.133): pipeline de 9 etapas, minutas geradas por IA e pesquisa de preços no PNCP.</span></li>
-          <li><b>GovDash</b><span>"Cockpit do Prefeito": BI municipal com finanças (LRF), saúde, educação e obras.</span></li>
-          <li><b>GovRH · Prev · Mobility · Edu · Social · Docs</b><span>Folha pública com eSocial, previdência RPPS, frotas, gestão escolar anti-evasão, prontuário SUAS e documentos com OCR.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Cerraliance — Compliance e Governança Pública</b><span>Plataforma ampla de controle e transparência.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Due diligence e gestão de riscos.</li>
+            <li>Planos de ação 5W2H com acompanhamento.</li>
+            <li>Auditoria e canal de denúncias.</li>
+            <li>Gestão de contratos e conformidade LGPD.</li>
+            <li>Painel de transparência pública.</li>
+            <li>IA preditiva para identificar irregularidades.</li>
+            <li>Robôs de coleta de dados de fontes públicas (tribunais, prefeituras, bases federais).</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CompraPublica.AI — Contratações</b><span>Painel completo do ciclo de compras públicas (Lei 14.133).</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Pipeline de contratações em 9 etapas.</li>
+            <li>Minutas de documentos geradas por IA.</li>
+            <li>Pesquisa de preços no PNCP e marketplaces.</li>
+            <li>Cálculo de preço de referência e conformidade.</li>
+            <li>Trilha de auditoria completa.</li>
+            <li>Exportação de relatórios em PDF.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Governo — demais módulos</b><span>BI, RH, previdência, frotas, educação e social.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>GovDash — "cockpit do prefeito": finanças (LRF), saúde, educação e obras.</li>
+            <li>GovRH — folha de pagamento pública com eSocial.</li>
+            <li>Prev — hub de previdência municipal (RPPS).</li>
+            <li>Mobility — gestão de frotas governamentais.</li>
+            <li>Edu — gestão escolar com IA anti-evasão.</li>
+            <li>Social — prontuário SUAS com CadÚnico.</li>
+            <li>Docs — digitalização de processos com OCR.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-2" id="seg-contabil">
         <div class="seg-head"><i class="ph ph-calculator"></i><h3>Contabilidade &amp; Fiscal</h3></div>
-        <ul class="prod-list">
-          <li><b>CerraBI</b><span>Business Intelligence white-label que o contador revende com a própria marca.</span></li>
-          <li><b>DoBem</b><span>Consultoria tributária da Lei do Bem: diagnóstico com IA, gestão de dispêndios e compliance (FORMPD/DIRBI).</span></li>
-          <li><b>Lei do Bem Diagnóstico</b><span>Diagnóstico fiscal automatizado com IA para identificar incentivos.</span></li>
-          <li><b>CSC Strategy</b><span>Estruturação de Centros de Serviços Compartilhados e planejamento tributário.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraBI — BI White-Label</b><span>Painéis de inteligência para o contador revender com a própria marca.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Dashboards financeiros e gerenciais para os clientes do escritório.</li>
+            <li>Marca do contador no produto (white-label).</li>
+            <li>Nova fonte de receita recorrente para a contabilidade.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>DoBem — Consultoria Lei do Bem</b><span>Incentivos fiscais de inovação com inteligência artificial.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Diagnóstico de enquadramento com IA.</li>
+            <li>Pipeline/CRM de projetos.</li>
+            <li>Gestão de dispêndios (gastos incentiváveis).</li>
+            <li>Compliance fiscal (FORMPD e DIRBI).</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Lei do Bem Diagnóstico</b><span>Diagnóstico fiscal automatizado com IA.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Identifica automaticamente os incentivos a que a empresa tem direito.</li>
+            <li>Porta de entrada rápida para consultorias e escritórios.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CSC Strategy</b><span>Estruturação de Centros de Serviços Compartilhados.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Desenho e implantação de CSC para grupos e escritórios.</li>
+            <li>Planejamento tributário integrado.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-2" id="seg-edu">
         <div class="seg-head"><i class="ph ph-student"></i><h3>Educação &amp; Eventos (EdTech)</h3></div>
-        <ul class="prod-list">
-          <li><b>Confacc</b><span>Plataforma de congressos e eventos: inscrições com QR Code, pagamento PIX, submissão de resumos, revisão e certificados verificáveis.</span></li>
-          <li><b>Prof.Synergeia</b><span>Gestão de orientações de projetos: turmas, grupos, timeline, evidências e relatórios.</span></li>
-          <li><b>CerraClass</b><span>Educação online: cursos, trilhas, sala de aula, certificados, provas e gamificação.</span></li>
-          <li><b>ModuloCompras</b><span>Simuladores de Supply Chain para o ensino de compras e logística.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Confacc — Plataforma de Eventos</b><span>Congresso acadêmico do início ao fim.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Inscrições com QR Code.</li>
+            <li>Pagamento PIX integrado (Infinity Pay).</li>
+            <li>Submissão de resumos e avaliação por revisores.</li>
+            <li>Certificados com verificação de autenticidade.</li>
+            <li>Anais do evento e gamificação.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Prof.Synergeia — Orientação de Projetos</b><span>Gestão das orientações de TCC/projetos estudantis.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Login para professor e alunos.</li>
+            <li>Turmas, grupos e alunos organizados.</li>
+            <li>Registro de orientações com timeline.</li>
+            <li>Evidências fotográficas e semáforo de andamento.</li>
+            <li>Relatórios em CSV para a coordenação.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraClass — Educação Online</b><span>Plataforma de cursos e trilhas da própria escola.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Cursos, trilhas e sala de aula virtual.</li>
+            <li>Certificados e provas online.</li>
+            <li>Gamificação com moedas internas.</li>
+            <li>Funil de vendas e checkout de pagamento.</li>
+            <li>Agendamento de turmas presenciais.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>ModuloCompras — Simuladores de Supply Chain</b><span>Laboratório de ensino de compras e logística.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>6 simuladores: Kraljic, TCO, homologação/due diligence, 5W2H, OTIF e ZOPA/MAPAN.</li>
+            <li>Histórico do aluno e painel do professor.</li>
+            <li>Exportação de resultados em CSV.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-2" id="seg-ong">
         <div class="seg-head"><i class="ph ph-hand-heart"></i><h3>Terceiro Setor</h3></div>
-        <ul class="prod-list">
-          <li><b>ThirdAccountability</b><span>Gestão documental e prestação de contas de ONGs/OSCIPs: projetos, despesas, diligências, pesquisa de preços (PNCP) e auditoria.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>ThirdAccountability</b><span>Gestão documental e prestação de contas de ONGs/OSCIPs.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Projetos com metas e atividades.</li>
+            <li>Gestão de despesas e diligências.</li>
+            <li>Repositório de documentos com auditoria.</li>
+            <li>Pesquisa de preços no PNCP + chat com IA.</li>
+            <li>Relatórios de prestação de contas prontos.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-2" id="seg-mercado">
         <div class="seg-head"><i class="ph ph-chart-line-up"></i><h3>Inteligência de Mercado</h3></div>
-        <ul class="prod-list">
-          <li><b>Prevoya / Smarket</b><span>Análise de localização: raio-x de concorrentes, demografia IBGE, reputação, SWOT com IA e laudo em PDF.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Prevoya / Smarket</b><span>Análise de localização para escolher e validar o ponto.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Raio-x de concorrentes na região.</li>
+            <li>Demografia IBGE (público-alvo na área).</li>
+            <li>Termômetro de reputação.</li>
+            <li>SWOT gerado por IA.</li>
+            <li>Plano de ação e laudo em PDF.</li>
+            <li>Modelo por créditos (pré-pago).</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-2" id="seg-agro">
         <div class="seg-head"><i class="ph ph-wheat"></i><h3>Agronegócio</h3></div>
-        <ul class="prod-list">
-          <li><b>CerraCarryOver</b><span>Controle de grãos para traders: estoque, entradas/saídas, transferências, armazenagem e dashboards.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraCarryOver</b><span>Controle de grãos para traders agrícolas.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Estoque e movimentação (entradas/saídas).</li>
+            <li>Transferências entre unidades.</li>
+            <li>Controle de armazenagem.</li>
+            <li>Dashboards gerenciais.</li>
+            <li>PWA mobile para operação em campo.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-2" id="seg-auto">
         <div class="seg-head"><i class="ph ph-wrench"></i><h3>Automotivo</h3></div>
-        <ul class="prod-list">
-          <li><b>CerraCar</b><span>Gestão de oficinas com vistoria 360°: fotos de peças, workflow e dossiê do veículo.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraCar — Gestão de Oficinas</b><span>Vistoria e workflow para oficinas mecânicas.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Vistoria 360° com fotos.</li>
+            <li>Workflow de ordens de serviço.</li>
+            <li>Registro fotográfico de peças.</li>
+            <li>Dossiê do veículo para a vida toda.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-3" id="seg-finan">
         <div class="seg-head"><i class="ph ph-bank"></i><h3>Finanças &amp; Crédito</h3></div>
-        <ul class="prod-list">
-          <li><b>CerraLoan</b><span>PWA de microcrédito: carteira, pagamentos e simulação de quitação.</span></li>
-          <li><b>CerraPlan</b><span>Planejamento de ações 5W2H com trilha de compliance.</span></li>
-          <li><b>Cerraflow</b><span>CRM com financeiro embarcado.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraLoan — Microcrédito</b><span>PWA de carteira de microcrédito.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Cadastro de clientes, empréstimos e pagamentos.</li>
+            <li>Área do cliente com saldo e parcelas.</li>
+            <li>Simulação de quitação.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>CerraPlan</b><span>Planejamento de ações com compliance.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Plano 5W2H com responsáveis e prazos.</li>
+            <li>Trilha de auditoria de cada ação.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Cerraflow</b><span>CRM com financeiro embarcado.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Gestão de clientes e negociações.</li>
+            <li>Cobrança e financeiro dentro do CRM.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-3" id="seg-servicos">
         <div class="seg-head"><i class="ph ph-handshake"></i><h3>Serviços Locais &amp; E-commerce</h3></div>
-        <ul class="prod-list">
-          <li><b>ChamaLá</b><span>Super app de serviços locais: jobs, pagamentos e CRM.</span></li>
-          <li><b>GoGym e lojas virtuais</b><span>E-commerce de suplementos e lojas online para qualquer segmento.</span></li>
-        </ul>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>ChamaLá — Super App de Serviços</b><span>Marketplace de serviços locais com pagamento seguro.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Apps para cliente, prestador, empresa e admin.</li>
+            <li>Anúncio e contratação de serviços (jobs).</li>
+            <li>Pagamento com escrow (valor só libera na conclusão).</li>
+            <li>CRM e dashboard de gestão.</li>
+          </ul>
+        </details>
+
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>GoGym e lojas virtuais</b><span>E-commerce completo para qualquer produto.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Catálogo com controle de estoque.</li>
+            <li>Painel administrativo.</li>
+            <li>PWA — loja que funciona como app no celular.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-3" id="seg-politica">
         <div class="seg-head"><i class="ph ph-users"></i><h3>Política &amp; Mandato</h3></div>
-        <ul class="prod-list">
-          <li><b>EloEleitoral</b><span>CRM político com heat maps, gestão de demandas e disparos.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>EloEleitoral</b><span>CRM de gestão de mandato e demandas cidadãs.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Captação e acompanhamento de demandas.</li>
+            <li>Heat maps e KPIs de território.</li>
+            <li>Diálogo e disparos para eleitores.</li>
+            <li>Monitoramento de ações.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-3" id="seg-log">
         <div class="seg-head"><i class="ph ph-truck"></i><h3>Logística &amp; Indústria</h3></div>
-        <ul class="prod-list">
-          <li><b>Broker Logístico</b><span>ERP logístico mobile: operações, entregas e rastreio.</span></li>
-          <li><b>ERP Industrial / Módulo Compras</b><span>Sistemas de gestão para indústria, sob medida.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Broker Logístico</b><span>ERP logístico mobile para operações de transporte.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Gestão de operações e entregas.</li>
+            <li>Rastreio e status em tempo real.</li>
+            <li>Módulo de compras industriais.</li>
+          </ul>
+        </details>
       </div>
 
       <div class="seg-card fade-up delay-3" id="seg-marketing">
         <div class="seg-head"><i class="ph ph-target"></i><h3>Marketing &amp; Vendas B2B</h3></div>
-        <ul class="prod-list">
-          <li><b>Robô de Prospecção</b><span>Identifica CNPJs novos no seu mercado, qualifica e dispara contato por e-mail e WhatsApp.</span></li>
-        </ul>
+        <details class="prod">
+          <summary>
+            <div class="prod-txt"><b>Robô de Prospecção</b><span>Automação de prospecção de empresas novas.</span></div>
+            <span class="plus">+</span>
+          </summary>
+          <ul>
+            <li>Identifica CNPJs recém-abertos no mercado-alvo.</li>
+            <li>Qualifica os leads automaticamente.</li>
+            <li>Dispara contato por e-mail e WhatsApp.</li>
+            <li>Dashboard de resultados da campanha.</li>
+          </ul>
+        </details>
       </div>
 
     </div>
@@ -305,101 +731,232 @@ permalink: /portfolio/
     <div class="fade-up center">
       <span class="tag">Sob demanda</span>
       <h2 class="title">Capacidades que a gente constrói para você</h2>
-      <p class="sub">Cada item abaixo lista o nome técnico e o que significa na prática. Se a sua necessidade não estiver aqui, provavelmente a gente ainda assim consegue construir.</p>
+      <p class="sub">Cada capacidade lista o nome técnico, o que significa na prática e exemplos de entrega. Se a necessidade do cliente não estiver aqui, a gente ainda assim constrói.</p>
     </div>
     <div class="cap-grid" style="margin-top:40px;">
       <div class="cap-card fade-up delay-1">
         <div class="cap-name"><i class="ph ph-squares-four"></i><h3>ERP Customizado</h3></div>
         <span class="cap-tech">Enterprise Resource Planning</span>
-        <p>Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, feita do jeito do seu negócio.</p>
+        <p>Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.</p>
+        <ul>
+          <li>Contas a pagar/receber, fluxo de caixa e DRE.</li>
+          <li>Controle de estoque e produção (PCP).</li>
+          <li>Emissão de notas fiscais (NF-e/NFC-e).</li>
+          <li>Multi-filial e centros de custo.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-1">
         <div class="cap-name"><i class="ph ph-users-three"></i><h3>CRM</h3></div>
         <span class="cap-tech">Customer Relationship Management</span>
-        <p>Gestão de relacionamento com clientes: cada contato, proposta e venda acompanhados em um único painel.</p>
+        <p>Gestão do relacionamento com clientes: cada contato, proposta e venda em um único painel.</p>
+        <ul>
+          <li>Funil e Kanban de vendas.</li>
+          <li>Histórico completo de cada cliente.</li>
+          <li>Automação de follow-up e lembretes.</li>
+          <li>Relatórios de desempenho do time.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-1">
         <div class="cap-name"><i class="ph ph-chart-pie"></i><h3>BI &amp; Dashboards</h3></div>
         <span class="cap-tech">Business Intelligence</span>
-        <p>Transforma os seus dados em gráficos e indicadores para você enxergar o negócio e decidir melhor.</p>
+        <p>Transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.</p>
+        <ul>
+          <li>Painéis de vendas, financeiro e operação.</li>
+          <li>Indicadores (KPIs) automáticos.</li>
+          <li>Exportação e compartilhamento de relatórios.</li>
+          <li>Integração com ERPs e planilhas.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-1">
         <div class="cap-name"><i class="ph ph-brain"></i><h3>IA Offline &amp; RAG</h3></div>
         <span class="cap-tech">Retrieval-Augmented Generation</span>
         <p>Assistente de IA que responde usando apenas os SEUS documentos, rodando localmente, sem internet e com proteção LGPD.</p>
+        <ul>
+          <li>Base de conhecimento da empresa (manuais, normas, contratos).</li>
+          <li>Respostas com citação da fonte.</li>
+          <li>Dados nunca saem da sua infraestrutura.</li>
+          <li>Mascaramento automático de dados sensíveis.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-2">
         <div class="cap-name"><i class="ph ph-robot"></i><h3>Automação de Processos</h3></div>
         <span class="cap-tech">RPA / Workflows</span>
-        <p>Robôs que executam tarefas repetitivas no seu lugar — planilhas, relatórios, envios — liberando tempo da sua equipe.</p>
+        <p>Robôs que executam tarefas repetitivas no seu lugar, liberando tempo da equipe para o que importa.</p>
+        <ul>
+          <li>Consolidação de planilhas e relatórios.</li>
+          <li>Envio automático de e-mails e mensagens.</li>
+          <li>Integração entre sistemas legados.</li>
+          <li>Rotinas agendadas (dias e horários).</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-2">
         <div class="cap-name"><i class="ph ph-chats-circle"></i><h3>Chatbots &amp; Assistentes</h3></div>
         <span class="cap-tech">LLM — Large Language Models</span>
-        <p>Atendimento automático com IA, 24h, treinado no conteúdo da sua empresa ou do seu site.</p>
+        <p>Atendimento automático com IA, 24h, treinado no conteúdo da empresa.</p>
+        <ul>
+          <li>Atendimento no site e WhatsApp.</li>
+          <li>Respostas treinadas no conteúdo do negócio.</li>
+          <li>Encaminhamento para humano quando necessário.</li>
+          <li>Qualificação de leads automaticamente.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-2">
         <div class="cap-name"><i class="ph ph-signature"></i><h3>Assinatura Digital</h3></div>
         <span class="cap-tech">ICP-Brasil / GOV.br</span>
-        <p>Documentos assinados pela internet com validade jurídica, sem precisar ir ao balcão.</p>
+        <p>Documentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.</p>
+        <ul>
+          <li>Assinatura com certificado ICP-Brasil A1 e GOV.br.</li>
+          <li>Trilha de auditoria de quem assinou e quando.</li>
+          <li>Fluxo de aprovações entre várias pessoas.</li>
+          <li>Notificação por e-mail e WhatsApp.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-2">
         <div class="cap-name"><i class="ph ph-text-t"></i><h3>OCR &amp; Documentos Inteligentes</h3></div>
         <span class="cap-tech">Optical Character Recognition</span>
-        <p>Transforma PDFs, fotos e papéis escaneados em texto pesquisável, pronto para organizar e consultar.</p>
+        <p>Transforma PDFs, fotos e papéis escaneados em texto pesquisável e organizado.</p>
+        <ul>
+          <li>Leitura automática de documentos.</li>
+          <li>Extração de dados (nomes, valores, datas).</li>
+          <li>Indexação e busca por conteúdo.</li>
+          <li>Classificação automática por tipo.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-2">
         <div class="cap-name"><i class="ph ph-storefront"></i><h3>E-commerce &amp; PWA</h3></div>
         <span class="cap-tech">Progressive Web Apps</span>
         <p>Loja online que funciona no celular como um app, com e sem internet — sem burocracia de lojas de aplicativo.</p>
+        <ul>
+          <li>Catálogo, carrinho e checkout.</li>
+          <li>Pagamento PIX, cartão e boleto.</li>
+          <li>Controle de estoque e pedidos.</li>
+          <li>Painel administrativo completo.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-3">
         <div class="cap-name"><i class="ph ph-plugs-connected"></i><h3>Integrações</h3></div>
         <span class="cap-tech">APIs / Webhooks</span>
-        <p>Conecta os seus sistemas entre si: SAP, TOTVS, iFood, Mercado Pago, bancos e qualquer outro que você já use.</p>
+        <p>Conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.</p>
+        <ul>
+          <li>Integração com SAP, TOTVS e ERPs.</li>
+          <li>Mercado Pago, bancos e meios de pagamento.</li>
+          <li>iFood, WhatsApp e marketplaces.</li>
+          <li>Sincronização bidirecional em tempo real.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-3">
         <div class="cap-name"><i class="ph ph-shield-check"></i><h3>Compliance &amp; LGPD</h3></div>
         <span class="cap-tech">DPO as a Service</span>
-        <p>Adequação à Lei Geral de Proteção de Dados: políticas, mascaramento de dados e trilhas de auditoria.</p>
+        <p>Adequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.</p>
+        <ul>
+          <li>Políticas e fluxos de conformidade.</li>
+          <li>Mascaramento e proteção de dados.</li>
+          <li>Trilha de auditoria de acessos e alterações.</li>
+          <li>Painel de riscos e evidências.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-3">
         <div class="cap-name"><i class="ph ph-magnifying-glass-chart"></i><h3>Machine Learning &amp; Previsão</h3></div>
         <span class="cap-tech">Data Science</span>
-        <p>Modelos que preveem vendas, churn, riscos e indicadores de desempenho a partir dos seus dados históricos.</p>
+        <p>Modelos que aprendem com o histórico e preveem o que vai acontecer.</p>
+        <ul>
+          <li>Previsão de vendas e demanda.</li>
+          <li>Predição de churn e inadimplência.</li>
+          <li>Análise de risco e performance (KPIs).</li>
+          <li>Modelos explicáveis para auditoria.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-3">
         <div class="cap-name"><i class="ph ph-buildings"></i><h3>GovTech &amp; Legal-Tech</h3></div>
         <span class="cap-tech">Lei 14.133 · eSocial · RPPS</span>
         <p>Sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.</p>
+        <ul>
+          <li>Compras públicas e pesquisa de preços (PNCP).</li>
+          <li>Folha de pagamento pública e previdência.</li>
+          <li>Gestão documental de cartórios e escritórios.</li>
+          <li>Conformidade com normas regulatórias.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-3">
         <div class="cap-name"><i class="ph ph-seal-check"></i><h3>Web3 &amp; Blockchain</h3></div>
         <span class="cap-tech">Smart Contracts · Tokens</span>
         <p>Contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.</p>
+        <ul>
+          <li>Contratos inteligentes (Solidity).</li>
+          <li>Tokens e NFTs utilitários.</li>
+          <li>Rastreabilidade de processos.</li>
+        </ul>
       </div>
       <div class="cap-card fade-up delay-3">
         <div class="cap-name"><i class="ph ph-certificate"></i><h3>Produto White-Label</h3></div>
         <span class="cap-tech">Branding próprio</span>
-        <p>Sistemas prontos que você revende com a sua marca — contabilidade, consultoria, educação e outros.</p>
+        <p>Sistemas prontos que o seu cliente revende com a própria marca — contabilidade, consultoria, educação e outros.</p>
+        <ul>
+          <li>Identidade visual do cliente no produto.</li>
+          <li>Plano de revenda e margens.</li>
+          <li>Suporte técnico da Cerrado por trás.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO TRABALHAMOS -->
+<section class="section" id="como-trabalhamos">
+  <div class="container">
+    <div class="fade-up center">
+      <span class="tag">Como trabalhamos</span>
+      <h2 class="title">Um modelo comercial simples e transparente</h2>
+      <p class="sub">Três pilares que deixam claro quanto custa, o que está incluso e como cresce junto com o cliente.</p>
+    </div>
+    <div class="model-grid" style="margin-top:40px;">
+      <div class="model-card fade-up delay-1">
+        <div class="m-icon" style="background:#e0f2fe;color:#0284c7;"><i class="ph ph-rocket"></i></div>
+        <h3>Valor de implantação</h3>
+        <p><b>Investimento único</b> para colocar a solução no ar: levantamento de requisitos, configuração, integrações com os sistemas atuais, migração de dados e treinamento inicial da equipe.</p>
+      </div>
+      <div class="model-card fade-up delay-1">
+        <div class="m-icon" style="background:#dcfce7;color:#16a34a;"><i class="ph ph-arrows-clockwise"></i></div>
+        <h3>Mensalidade</h3>
+        <p><b>Valor recorrente</b> com custo previsível: suporte, manutenção, atualizações, segurança, LGPD e hospedagem. O sistema continua evoluindo sem sustos no orçamento.</p>
+      </div>
+      <div class="model-card fade-up delay-2">
+        <div class="m-icon" style="background:#fef3c7;color:#ca8a04;"><i class="ph ph-puzzle-piece"></i></div>
+        <h3>Módulos customizados</h3>
+        <p><b>Módulos adicionais sob demanda.</b> Precisa de uma funcionalidade nova? Desenvolvemos por projeto, dimensionado e orçado para o que o cliente realmente precisa — cada módulo é uma nova venda.</p>
+      </div>
+    </div>
+
+    <div class="dif-box fade-up delay-2">
+      <h3>O diferencial: treinamos a equipe do cliente na nossa sala de formação</h3>
+      <p>Além do software, a Cerrado Tech capacita presencialmente os colaboradores do cliente e os usuários focais — quem usa o sistema no dia a dia — na nossa <b>sala de formação</b> em Cuiabá.</p>
+      <div class="dif-benefits">
+        <div>
+          <b>Para o cliente</b>
+          <span>Equipe realmente capacitada, adoção total da ferramenta e um serviço de melhor qualidade entregue aos clientes finais.</span>
+        </div>
+        <div>
+          <b>Para a Cerrado Tech</b>
+          <span>Mais receita por conta (treinamento como serviço), maior ticket médio, mais retenção e oportunidades de novos módulos e indicações.</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- METODOLOGIA -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
     <div class="fade-up center">
       <span class="tag">Metodologia</span>
       <h2 class="title">Como a gente entrega</h2>
-      <p class="sub">Transparência em cada etapa, com você validando o rumo do projeto.</p>
+      <p class="sub">Transparência em cada etapa, com o cliente validando o rumo do projeto.</p>
     </div>
     <div class="step-grid" style="margin-top:44px;">
       <div class="step fade-up delay-1">
         <div class="n">01</div>
         <h3>Descoberta</h3>
-        <p>Mapeamos o seu problema, processo e objetivos junto à sua equipe.</p>
+        <p>Mapeamos o problema, os processos e os objetivos junto à equipe do cliente.</p>
       </div>
       <div class="step fade-up delay-1">
         <div class="n">02</div>
@@ -409,7 +966,7 @@ permalink: /portfolio/
       <div class="step fade-up delay-2">
         <div class="n">03</div>
         <h3>Desenvolvimento Ágil</h3>
-        <p>Sprints semanais com entregas parciais. Você testa e ajusta o rumo.</p>
+        <p>Sprints semanais com entregas parciais. O cliente testa e ajusta o rumo.</p>
       </div>
       <div class="step fade-up delay-2">
         <div class="n">04</div>
@@ -425,7 +982,7 @@ permalink: /portfolio/
   <div class="container">
     <div class="fade-up">
       <h2>Fale com a Cerrado Tech e <span class="gold">construa a sua solução</span></h2>
-      <p>Com uma solução pronta do seu segmento ou um desenvolvimento sob medida, o próximo passo é o mesmo: uma conversa para entender a sua necessidade.</p>
+      <p>Com uma solução pronta do segmento ou um desenvolvimento sob medida, o próximo passo é o mesmo: uma conversa para entender a necessidade — e montar a melhor proposta.</p>
       <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Cerrado%20Tech%20sobre%20solu%C3%A7%C3%B5es%20de%20software." target="_blank" class="btn-big">
         <i class="ph ph-whatsapp-logo"></i> Falar com um especialista <i class="ph ph-arrow-right"></i>
       </a>
