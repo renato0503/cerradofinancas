@@ -1,0 +1,444 @@
+---
+layout: null
+permalink: /portfolio/
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Cerrado Tech | Soluções de Software por Segmento e Sob Demanda</title>
+  <meta name="description" content="Portfólio comercial da Cerrado Tech: soluções de software prontas para vários segmentos (cartórios, saúde, energia solar, food service, governo, contabilidade, educação e mais) e desenvolvimento sob demanda — ERPs, CRMs, IA offline, BI e automações.">
+  <link rel="icon" type="image/png" href="{{ '/img/logohome.png' | relative_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/css/global.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #0f172a; }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+    /* HERO */
+    .hero { position: relative; padding: 190px 0 90px; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); color: #fff; border-bottom: 4px solid #fecb00; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 60px; }
+    .hero-badge { display: inline-block; background: rgba(254,203,0,0.12); border: 1px solid rgba(254,203,0,0.35); color: #fecb00; padding: 7px 16px; border-radius: 50px; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(1.9rem, 4vw, 3.1rem); font-weight: 900; line-height: 1.12; letter-spacing: -1.5px; margin-bottom: 18px; }
+    .hero h1 .gold { color: #fecb00; }
+    .hero .lead { color: #cbd5e1; font-size: 1.05rem; line-height: 1.7; max-width: 580px; margin-bottom: 30px; }
+    .btn-whats { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #16a34a; color: #fff; padding: 17px 36px; border-radius: 50px; font-weight: 800; font-size: 1.02rem; text-decoration: none; transition: 0.25s; }
+    .btn-whats:hover { transform: translateY(-2px); background: #15803d; }
+    .hero-selos { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+    .hero-selo { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: #e2e8f0; }
+    .hero-selo i.ph { color: #fecb00; font-size: 1.2rem; }
+    .hero-logo { position: relative; display: flex; justify-content: center; }
+    .hero-logo::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px; background: radial-gradient(circle, rgba(254,203,0,0.16) 0%, rgba(254,203,0,0.05) 45%, transparent 70%); border-radius: 50%; animation: glow 4s ease-in-out infinite; }
+    .hero-logo img { position: relative; z-index: 2; max-width: 100%; width: 420px; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); }
+    @keyframes glow { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @media (max-width: 992px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .hero .lead { margin: 0 auto 30px; } .hero-selos { justify-content: center; } .hero-logo img { width: 320px; } }
+
+    /* SEÇÕES */
+    .section { padding: 84px 0; }
+    .section-alt { background: #f8fafc; }
+    .tag { display: inline-block; color: #16a34a; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+    h2.title { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; color: #001f5c; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 14px; }
+    .sub { font-size: 1.02rem; color: #64748b; line-height: 1.65; }
+    .center { text-align: center; }
+    .center .title { max-width: 720px; margin-left: auto; margin-right: auto; }
+
+    /* NAV DE SEGMENTOS */
+    .seg-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 34px; }
+    .seg-nav a { text-decoration: none; border: 1px solid #e2e8f0; color: #475569; padding: 9px 18px; border-radius: 50px; font-size: 0.86rem; font-weight: 700; transition: 0.2s; }
+    .seg-nav a:hover { border-color: #001f5c; color: #001f5c; background: #f8fafc; }
+
+    /* CARDS DE SEGMENTO */
+    .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .seg-card { border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 26px; transition: 0.25s; }
+    .seg-card:hover { border-color: #fecb00; box-shadow: 0 12px 30px rgba(0,31,92,0.06); }
+    .seg-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .seg-head i.ph { font-size: 1.7rem; color: #fecb00; filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15)); }
+    .seg-head h3 { font-size: 1.15rem; font-weight: 900; color: #001f5c; }
+    .prod-list { list-style: none; padding: 0; margin: 0; }
+    .prod-list li { margin-bottom: 12px; }
+    .prod-list li:last-child { margin-bottom: 0; }
+    .prod-list b { display: block; color: #0f172a; font-size: 0.98rem; }
+    .prod-list span { font-size: 0.88rem; color: #64748b; line-height: 1.5; }
+    @media (max-width: 992px) { .seg-grid { grid-template-columns: 1fr; } }
+
+    /* CAPACIDADES SOB DEMANDA */
+    .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .cap-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 24px; transition: 0.25s; }
+    .cap-card:hover { border-color: #fecb00; box-shadow: 0 12px 30px rgba(0,31,92,0.06); }
+    .cap-card .cap-name { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .cap-card .cap-name i.ph { color: #16a34a; font-size: 1.3rem; }
+    .cap-card h3 { font-size: 1.05rem; font-weight: 900; color: #001f5c; }
+    .cap-card .cap-tech { display: inline-block; background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.5px; border-radius: 50px; padding: 4px 12px; margin-top: 4px; }
+    .cap-card p { font-size: 0.9rem; color: #475569; line-height: 1.6; margin-top: 10px; }
+    @media (max-width: 992px) { .cap-grid { grid-template-columns: 1fr; } }
+
+    /* METODOLOGIA */
+    .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .step { border-top: 3px solid #fecb00; padding-top: 16px; }
+    .step .n { font-size: 2rem; font-weight: 900; color: #e2e8f0; line-height: 1; margin-bottom: 8px; }
+    .step h3 { font-size: 1rem; font-weight: 900; color: #001f5c; margin-bottom: 6px; }
+    .step p { font-size: 0.88rem; color: #64748b; line-height: 1.6; }
+    @media (max-width: 992px) { .step-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .step-grid { grid-template-columns: 1fr; } }
+
+    /* CTA FINAL */
+    .cta-dark { background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); padding: 84px 0; color: #fff; text-align: center; }
+    .cta-dark h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 16px; }
+    .cta-dark h2 .gold { color: #fecb00; }
+    .cta-dark p { color: #cbd5e1; max-width: 640px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.7; }
+    .btn-big { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: #16a34a; color: #fff; padding: 20px 44px; border-radius: 50px; font-weight: 900; font-size: 1.1rem; text-decoration: none; transition: 0.25s; }
+    .btn-big:hover { transform: translateY(-2px); background: #15803d; }
+    .cta-contato { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; color: #94a3b8; font-size: 0.95rem; }
+    .cta-contato b { color: #fff; }
+    .cta-contato i.ph { color: #fecb00; }
+  </style>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="fade-up">
+        <span class="hero-badge">Fábrica de Software · Portfólio Comercial</span>
+        <h1>O que a <span class="gold">Cerrado Tech</span> constrói — e o que ela pode construir para você</h1>
+        <p class="lead">Soluções prontas para diversos segmentos — cartórios, saúde, energia solar, food service, governo, contabilidade, educação e mais. E desenvolvimento sob demanda: você descreve o problema e a gente constrói.</p>
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Cerrado%20Tech%20sobre%20solu%C3%A7%C3%B5es%20de%20software." target="_blank" class="btn-whats">
+          <i class="ph ph-whatsapp-logo"></i> Falar com um especialista <i class="ph ph-arrow-right"></i>
+        </a>
+        <div class="hero-selos">
+          <span class="hero-selo"><i class="ph ph-squares-four"></i> Soluções prontas por segmento</span>
+          <span class="hero-selo"><i class="ph ph-puzzle-piece"></i> Desenvolvimento sob demanda</span>
+          <span class="hero-selo"><i class="ph ph-rocket"></i> Do MVP ao scale-up</span>
+        </div>
+      </div>
+      <div class="hero-logo fade-up delay-2">
+        <img src="{{ '/img/logohome.png' | relative_url }}" alt="Cerrado Tech">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÕES POR SEGMENTO -->
+<section class="section" id="segmentos">
+  <div class="container">
+    <div class="fade-up center">
+      <span class="tag">Soluções prontas</span>
+      <h2 class="title">Software por segmento</h2>
+      <p class="sub">Produtos que já rodam em operações reais, organizados pela área de atuação. Tudo pode ser adaptado para a realidade da sua empresa.</p>
+    </div>
+
+    <nav class="seg-nav fade-up delay-1">
+      <a href="#seg-cartorios">Cartórios</a>
+      <a href="#seg-saude">Saúde</a>
+      <a href="#seg-solar">Energia Solar</a>
+      <a href="#seg-food">Food Service</a>
+      <a href="#seg-gov">Governo</a>
+      <a href="#seg-contabil">Contabilidade</a>
+      <a href="#seg-edu">Educação</a>
+      <a href="#seg-ong">Terceiro Setor</a>
+      <a href="#seg-mercado">Mercado</a>
+      <a href="#seg-agro">Agro</a>
+      <a href="#seg-auto">Automotivo</a>
+      <a href="#seg-finan">Finanças</a>
+      <a href="#seg-servicos">Serviços</a>
+      <a href="#seg-politica">Política</a>
+      <a href="#seg-log">Logística</a>
+      <a href="#seg-marketing">Marketing</a>
+    </nav>
+
+    <div class="seg-grid" style="margin-top:44px;">
+
+      <div class="seg-card fade-up delay-1" id="seg-cartorios">
+        <div class="seg-head"><i class="ph ph-stamp"></i><h3>Cartórios &amp; Extrajudicial</h3></div>
+        <ul class="prod-list">
+          <li><b>Cerra.AI</b><span>Assistente de IA offline: responde usando apenas os documentos do cartório, com mascaramento e proteção LGPD.</span></li>
+          <li><b>CartorioForms</b><span>Digitalização de processos com assinatura digital (ICP-Brasil / GOV.br).</span></li>
+          <li><b>SISCOAF-Cartórios</b><span>Compliance antilavagem: análise e geração das comunicações obrigatórias ao COAF, com consulta a base de PEP.</span></li>
+          <li><b>EscrituracaoFacil (RegFácil)</b><span>"Sistema operacional" para associações e OSCs: vida jurídico-cartorial completa e Kit Cartorário automático.</span></li>
+          <li><b>ChatCartório</b><span>Chatbot com IA para atendimento, dúvidas e agendamento de procedimentos.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-1" id="seg-saude">
+        <div class="seg-head"><i class="ph ph-first-aid"></i><h3>Saúde &amp; Odontologia</h3></div>
+        <ul class="prod-list">
+          <li><b>Plataforma B2B Odontológica</b><span>CRM + orçamentos + pedidos + chatbot com IA + integração com ERP para distribuidores e indústrias.</span></li>
+          <li><b>CerraCare</b><span>Prontuário eletrônico e gestão de cuidadores: sinais vitais, rotina, balanço hídrico e relatórios por voz.</span></li>
+          <li><b>PataMed</b><span>Telemedicina veterinária: agendamento, prontuário e aplicativos para donos e clínicas.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-1" id="seg-solar">
+        <div class="seg-head"><i class="ph ph-sun"></i><h3>Energia Solar</h3></div>
+        <ul class="prod-list">
+          <li><b>SolarCRM</b><span>CRM para integradores: dimensionamento de projetos, proposta em PDF, funil e Kanban.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-1" id="seg-food">
+        <div class="seg-head"><i class="ph ph-pizza"></i><h3>Food Service</h3></div>
+        <ul class="prod-list">
+          <li><b>NapoleFood</b><span>ERP completo de pizzaria/restaurante: totem, PDV, cozinha (KDS), app entregador, delivery e integração iFood/Mercado Pago.</span></li>
+          <li><b>CerraFood</b><span>ERP para pizzarias: fichas técnicas, estoque e programa de fidelidade.</span></li>
+          <li><b>CerradoBakery</b><span>Gestão de padarias: fichas técnicas, precificação, cronograma de fornadas e BI Curva ABC.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-1" id="seg-gov">
+        <div class="seg-head"><i class="ph ph-bank"></i><h3>Governo &amp; Compras (GovTech)</h3></div>
+        <ul class="prod-list">
+          <li><b>Cerraliance</b><span>Compliance e governança pública: due diligence, riscos, auditoria, denúncias, LGPD, transparência e IA preditiva.</span></li>
+          <li><b>CompraPublica.AI</b><span>Painel de contratações (Lei 14.133): pipeline de 9 etapas, minutas geradas por IA e pesquisa de preços no PNCP.</span></li>
+          <li><b>GovDash</b><span>"Cockpit do Prefeito": BI municipal com finanças (LRF), saúde, educação e obras.</span></li>
+          <li><b>GovRH · Prev · Mobility · Edu · Social · Docs</b><span>Folha pública com eSocial, previdência RPPS, frotas, gestão escolar anti-evasão, prontuário SUAS e documentos com OCR.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-2" id="seg-contabil">
+        <div class="seg-head"><i class="ph ph-calculator"></i><h3>Contabilidade &amp; Fiscal</h3></div>
+        <ul class="prod-list">
+          <li><b>CerraBI</b><span>Business Intelligence white-label que o contador revende com a própria marca.</span></li>
+          <li><b>DoBem</b><span>Consultoria tributária da Lei do Bem: diagnóstico com IA, gestão de dispêndios e compliance (FORMPD/DIRBI).</span></li>
+          <li><b>Lei do Bem Diagnóstico</b><span>Diagnóstico fiscal automatizado com IA para identificar incentivos.</span></li>
+          <li><b>CSC Strategy</b><span>Estruturação de Centros de Serviços Compartilhados e planejamento tributário.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-2" id="seg-edu">
+        <div class="seg-head"><i class="ph ph-student"></i><h3>Educação &amp; Eventos (EdTech)</h3></div>
+        <ul class="prod-list">
+          <li><b>Confacc</b><span>Plataforma de congressos e eventos: inscrições com QR Code, pagamento PIX, submissão de resumos, revisão e certificados verificáveis.</span></li>
+          <li><b>Prof.Synergeia</b><span>Gestão de orientações de projetos: turmas, grupos, timeline, evidências e relatórios.</span></li>
+          <li><b>CerraClass</b><span>Educação online: cursos, trilhas, sala de aula, certificados, provas e gamificação.</span></li>
+          <li><b>ModuloCompras</b><span>Simuladores de Supply Chain para o ensino de compras e logística.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-2" id="seg-ong">
+        <div class="seg-head"><i class="ph ph-hand-heart"></i><h3>Terceiro Setor</h3></div>
+        <ul class="prod-list">
+          <li><b>ThirdAccountability</b><span>Gestão documental e prestação de contas de ONGs/OSCIPs: projetos, despesas, diligências, pesquisa de preços (PNCP) e auditoria.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-2" id="seg-mercado">
+        <div class="seg-head"><i class="ph ph-chart-line-up"></i><h3>Inteligência de Mercado</h3></div>
+        <ul class="prod-list">
+          <li><b>Prevoya / Smarket</b><span>Análise de localização: raio-x de concorrentes, demografia IBGE, reputação, SWOT com IA e laudo em PDF.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-2" id="seg-agro">
+        <div class="seg-head"><i class="ph ph-wheat"></i><h3>Agronegócio</h3></div>
+        <ul class="prod-list">
+          <li><b>CerraCarryOver</b><span>Controle de grãos para traders: estoque, entradas/saídas, transferências, armazenagem e dashboards.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-2" id="seg-auto">
+        <div class="seg-head"><i class="ph ph-wrench"></i><h3>Automotivo</h3></div>
+        <ul class="prod-list">
+          <li><b>CerraCar</b><span>Gestão de oficinas com vistoria 360°: fotos de peças, workflow e dossiê do veículo.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-3" id="seg-finan">
+        <div class="seg-head"><i class="ph ph-bank"></i><h3>Finanças &amp; Crédito</h3></div>
+        <ul class="prod-list">
+          <li><b>CerraLoan</b><span>PWA de microcrédito: carteira, pagamentos e simulação de quitação.</span></li>
+          <li><b>CerraPlan</b><span>Planejamento de ações 5W2H com trilha de compliance.</span></li>
+          <li><b>Cerraflow</b><span>CRM com financeiro embarcado.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-3" id="seg-servicos">
+        <div class="seg-head"><i class="ph ph-handshake"></i><h3>Serviços Locais &amp; E-commerce</h3></div>
+        <ul class="prod-list">
+          <li><b>ChamaLá</b><span>Super app de serviços locais: jobs, pagamentos e CRM.</span></li>
+          <li><b>GoGym e lojas virtuais</b><span>E-commerce de suplementos e lojas online para qualquer segmento.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-3" id="seg-politica">
+        <div class="seg-head"><i class="ph ph-users"></i><h3>Política &amp; Mandato</h3></div>
+        <ul class="prod-list">
+          <li><b>EloEleitoral</b><span>CRM político com heat maps, gestão de demandas e disparos.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-3" id="seg-log">
+        <div class="seg-head"><i class="ph ph-truck"></i><h3>Logística &amp; Indústria</h3></div>
+        <ul class="prod-list">
+          <li><b>Broker Logístico</b><span>ERP logístico mobile: operações, entregas e rastreio.</span></li>
+          <li><b>ERP Industrial / Módulo Compras</b><span>Sistemas de gestão para indústria, sob medida.</span></li>
+        </ul>
+      </div>
+
+      <div class="seg-card fade-up delay-3" id="seg-marketing">
+        <div class="seg-head"><i class="ph ph-target"></i><h3>Marketing &amp; Vendas B2B</h3></div>
+        <ul class="prod-list">
+          <li><b>Robô de Prospecção</b><span>Identifica CNPJs novos no seu mercado, qualifica e dispara contato por e-mail e WhatsApp.</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOB DEMANDA -->
+<section class="section section-alt" id="sob-demanda">
+  <div class="container">
+    <div class="fade-up center">
+      <span class="tag">Sob demanda</span>
+      <h2 class="title">Capacidades que a gente constrói para você</h2>
+      <p class="sub">Cada item abaixo lista o nome técnico e o que significa na prática. Se a sua necessidade não estiver aqui, provavelmente a gente ainda assim consegue construir.</p>
+    </div>
+    <div class="cap-grid" style="margin-top:40px;">
+      <div class="cap-card fade-up delay-1">
+        <div class="cap-name"><i class="ph ph-squares-four"></i><h3>ERP Customizado</h3></div>
+        <span class="cap-tech">Enterprise Resource Planning</span>
+        <p>Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, feita do jeito do seu negócio.</p>
+      </div>
+      <div class="cap-card fade-up delay-1">
+        <div class="cap-name"><i class="ph ph-users-three"></i><h3>CRM</h3></div>
+        <span class="cap-tech">Customer Relationship Management</span>
+        <p>Gestão de relacionamento com clientes: cada contato, proposta e venda acompanhados em um único painel.</p>
+      </div>
+      <div class="cap-card fade-up delay-1">
+        <div class="cap-name"><i class="ph ph-chart-pie"></i><h3>BI &amp; Dashboards</h3></div>
+        <span class="cap-tech">Business Intelligence</span>
+        <p>Transforma os seus dados em gráficos e indicadores para você enxergar o negócio e decidir melhor.</p>
+      </div>
+      <div class="cap-card fade-up delay-1">
+        <div class="cap-name"><i class="ph ph-brain"></i><h3>IA Offline &amp; RAG</h3></div>
+        <span class="cap-tech">Retrieval-Augmented Generation</span>
+        <p>Assistente de IA que responde usando apenas os SEUS documentos, rodando localmente, sem internet e com proteção LGPD.</p>
+      </div>
+      <div class="cap-card fade-up delay-2">
+        <div class="cap-name"><i class="ph ph-robot"></i><h3>Automação de Processos</h3></div>
+        <span class="cap-tech">RPA / Workflows</span>
+        <p>Robôs que executam tarefas repetitivas no seu lugar — planilhas, relatórios, envios — liberando tempo da sua equipe.</p>
+      </div>
+      <div class="cap-card fade-up delay-2">
+        <div class="cap-name"><i class="ph ph-chats-circle"></i><h3>Chatbots &amp; Assistentes</h3></div>
+        <span class="cap-tech">LLM — Large Language Models</span>
+        <p>Atendimento automático com IA, 24h, treinado no conteúdo da sua empresa ou do seu site.</p>
+      </div>
+      <div class="cap-card fade-up delay-2">
+        <div class="cap-name"><i class="ph ph-signature"></i><h3>Assinatura Digital</h3></div>
+        <span class="cap-tech">ICP-Brasil / GOV.br</span>
+        <p>Documentos assinados pela internet com validade jurídica, sem precisar ir ao balcão.</p>
+      </div>
+      <div class="cap-card fade-up delay-2">
+        <div class="cap-name"><i class="ph ph-text-t"></i><h3>OCR &amp; Documentos Inteligentes</h3></div>
+        <span class="cap-tech">Optical Character Recognition</span>
+        <p>Transforma PDFs, fotos e papéis escaneados em texto pesquisável, pronto para organizar e consultar.</p>
+      </div>
+      <div class="cap-card fade-up delay-2">
+        <div class="cap-name"><i class="ph ph-storefront"></i><h3>E-commerce &amp; PWA</h3></div>
+        <span class="cap-tech">Progressive Web Apps</span>
+        <p>Loja online que funciona no celular como um app, com e sem internet — sem burocracia de lojas de aplicativo.</p>
+      </div>
+      <div class="cap-card fade-up delay-3">
+        <div class="cap-name"><i class="ph ph-plugs-connected"></i><h3>Integrações</h3></div>
+        <span class="cap-tech">APIs / Webhooks</span>
+        <p>Conecta os seus sistemas entre si: SAP, TOTVS, iFood, Mercado Pago, bancos e qualquer outro que você já use.</p>
+      </div>
+      <div class="cap-card fade-up delay-3">
+        <div class="cap-name"><i class="ph ph-shield-check"></i><h3>Compliance &amp; LGPD</h3></div>
+        <span class="cap-tech">DPO as a Service</span>
+        <p>Adequação à Lei Geral de Proteção de Dados: políticas, mascaramento de dados e trilhas de auditoria.</p>
+      </div>
+      <div class="cap-card fade-up delay-3">
+        <div class="cap-name"><i class="ph ph-magnifying-glass-chart"></i><h3>Machine Learning &amp; Previsão</h3></div>
+        <span class="cap-tech">Data Science</span>
+        <p>Modelos que preveem vendas, churn, riscos e indicadores de desempenho a partir dos seus dados históricos.</p>
+      </div>
+      <div class="cap-card fade-up delay-3">
+        <div class="cap-name"><i class="ph ph-buildings"></i><h3>GovTech &amp; Legal-Tech</h3></div>
+        <span class="cap-tech">Lei 14.133 · eSocial · RPPS</span>
+        <p>Sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.</p>
+      </div>
+      <div class="cap-card fade-up delay-3">
+        <div class="cap-name"><i class="ph ph-seal-check"></i><h3>Web3 &amp; Blockchain</h3></div>
+        <span class="cap-tech">Smart Contracts · Tokens</span>
+        <p>Contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.</p>
+      </div>
+      <div class="cap-card fade-up delay-3">
+        <div class="cap-name"><i class="ph ph-certificate"></i><h3>Produto White-Label</h3></div>
+        <span class="cap-tech">Branding próprio</span>
+        <p>Sistemas prontos que você revende com a sua marca — contabilidade, consultoria, educação e outros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section class="section">
+  <div class="container">
+    <div class="fade-up center">
+      <span class="tag">Metodologia</span>
+      <h2 class="title">Como a gente entrega</h2>
+      <p class="sub">Transparência em cada etapa, com você validando o rumo do projeto.</p>
+    </div>
+    <div class="step-grid" style="margin-top:44px;">
+      <div class="step fade-up delay-1">
+        <div class="n">01</div>
+        <h3>Descoberta</h3>
+        <p>Mapeamos o seu problema, processo e objetivos junto à sua equipe.</p>
+      </div>
+      <div class="step fade-up delay-1">
+        <div class="n">02</div>
+        <h3>Arquitetura</h3>
+        <p>Definimos stack, integrações e modelagem de dados sob medida.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="n">03</div>
+        <h3>Desenvolvimento Ágil</h3>
+        <p>Sprints semanais com entregas parciais. Você testa e ajusta o rumo.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="n">04</div>
+        <h3>Entrega &amp; Evolução</h3>
+        <p>Treinamento, suporte contínuo e evolução do sistema junto com o crescimento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-dark">
+  <div class="container">
+    <div class="fade-up">
+      <h2>Fale com a Cerrado Tech e <span class="gold">construa a sua solução</span></h2>
+      <p>Com uma solução pronta do seu segmento ou um desenvolvimento sob medida, o próximo passo é o mesmo: uma conversa para entender a sua necessidade.</p>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Cerrado%20Tech%20sobre%20solu%C3%A7%C3%B5es%20de%20software." target="_blank" class="btn-big">
+        <i class="ph ph-whatsapp-logo"></i> Falar com um especialista <i class="ph ph-arrow-right"></i>
+      </a>
+      <div class="cta-contato">
+        <span><i class="ph ph-whatsapp-logo"></i> <b>(67) 99351-5206</b></span>
+        <span><i class="ph ph-map-pin"></i> Cuiabá/MT — R. Voluntários da Pátria, 350, Loja 39</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>
