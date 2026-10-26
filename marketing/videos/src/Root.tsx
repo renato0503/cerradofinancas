@@ -9,6 +9,8 @@ const FRENTES = [
   ["ReelContabilidade", "contabilidade"],
   ["ReelCredito", "credito"],
   ["ReelCursos", "cursos"],
+  ["ReelIaNaPratica", "iaNaPratica"],
+  ["ReelIaFarma", "iaFarma"],
 ] as const;
 
 export const Root: React.FC = () => (

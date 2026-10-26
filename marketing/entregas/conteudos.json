@@ -1,5 +1,157 @@
 [
   {
+    "pasta": "2026-10-curso-ia-na-pratica",
+    "titulo": "Curso IA na Prática",
+    "data": "2026-10-28",
+    "descricao": "Campanha do curso IA na Prática (Cerraclass): dores, o que se constrói, impacto, público, instrutor e chamada para as turmas de 10 vagas. Sem preço nem data nas peças: inscrições e agenda pelo site da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://cerraclass.com.br/",
+      "As peças não citam preço nem data de turma: agenda e valores ficam no site da Cerraclass.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 564
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 597
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 582
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 594
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 685
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 594
+      },
+      {
+        "nome": "reel-ia-na-pratica.mp4",
+        "tipo": "video",
+        "kb": 6412
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 783
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Saia da sala com seus próprios apps funcionando. ⚡\n\nVocê usa a IA, mas ainda depende dos outros? Arquivos espalhados, esperando o TI para ter a ferramenta que imaginou, usando a IA só para pedir textos...\n\nNo IA na Prática, da Cerraclass, você aprende a construir:\n\n🛠️ Apps sob medida para a sua rotina, com a IDE Antigravity\n📚 Uma base de conhecimento em que a IA encontra seus arquivos em segundos\n🤖 Automações reais que trabalham por você\n✨ Claude, Gemini e ChatGPT como consultores do seu negócio\n\nSão 10h de imersão presencial, 100% prática e sem precisar saber programar. Com Renato Rosa, especialista em dados, IA e software.\n\nSó 10 vagas por turma. Venha sozinho ou traga sua equipe: o pacote para grupos sai mais barato por pessoa.\n\n🔗 cerraclass.com.br | WhatsApp (67) 99351-5206\n\n#IANaPratica #Automacao #Produtividade #Antigravity #ChatGPT #Claude #Gemini #Cerraclass #InteligenciaArtificial #CursoDeIA #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A barreira para criar software mudou. Hoje não é mais saber escrever código, é saber fazer a pergunta certa e estruturar o problema.\n\nÉ isso que o IA na Prática, da Cerraclass, ensina em 10 horas de imersão presencial: usar a IDE Antigravity e as principais IAs do mercado (Claude, Gemini e ChatGPT) para construir apps, automações e uma base de conhecimento, sem programar.\n\nPara empreendedores, gestores, profissionais liberais e quem já usa IA, mas sente que está só na superfície.\n\nTurmas de até 10 pessoas, com atenção individual. Para empresas, o pacote em grupo leva o time inteiro com os problemas reais do negócio, com nota fiscal para CNPJ.\n\nAgenda e inscrições: cerraclass.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-ia-na-pratica.zip",
+      "kb": 10970
+    }
+  },
+  {
+    "pasta": "2026-10-curso-ia-farma",
+    "titulo": "Curso IA em Ação Farma",
+    "data": "2026-10-28",
+    "descricao": "Campanha do curso IA em Ação Farma (Cerraclass) para propagandistas: tarefas da semana, o que se constrói com o Antigravity, IAs aplicadas ao campo, público, instrutor e chamada para turmas de 10 pessoas. Sem preço nem data nas peças.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://cerraclass.com.br/",
+      "As peças não citam preço nem data de turma: agenda e valores ficam no site da Cerraclass.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 559
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 593
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 579
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 564
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 676
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 592
+      },
+      {
+        "nome": "reel-ia-farma.mp4",
+        "tipo": "video",
+        "kb": 6571
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 768
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Propagandista, a IA pode trabalhar com você. 💊\n\nQuanto da sua semana vai para comentários de visita, materiais espalhados e tarefas que se repetem toda semana?\n\nNo IA em Ação Farma, da Cerraclass, você aprende a usar a IA na sua rotina de campo:\n\n🖼️ Folder da ação a partir de fotos, pronto para o grupo\n📝 Comentários de visita estruturados com produtos e próximos objetivos\n👥 Treino de propaganda médica para cada perfil de médico\n🩺 Médico virtual para simular a visita antes da visita real\n\nE com a IDE Antigravity você constrói seus próprios apps, conteúdos e automações, sem escrever código.\n\nTurmas de 10 pessoas, por método: atenção individual do início ao fim. Gerente distrital ou regional? Feche um grupo com o seu time pelo pacote equipe.\n\n🔗 cerraclass.com.br | WhatsApp (67) 99351-5206\n\n#IAemAcaoFarma #Propagandista #IndustriaFarmaceutica #PropagandaMedica #RepresentanteFarma #Cerraclass #InteligenciaArtificial #CursoDeIA #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Propagandistas passam boa parte da semana em tarefas que a IA pode fazer junto: comentários de visita, organização de estudos e materiais, artes de ações e o treino da propaganda médica.\n\nO IA em Ação Farma, da Cerraclass, é um treinamento presencial e prático para a rotina de campo. Os participantes constroem os próprios apps, conteúdos e automações com a IDE Antigravity e aplicam Claude, Gemini e ChatGPT a casos reais, como o médico virtual para simular visitas e o treino por perfil de médico.\n\nTurmas de 10 pessoas. Para gerentes distritais e regionais, o pacote equipe leva o time inteiro com custo menor por pessoa e nota fiscal para PJ.\n\nAgenda e inscrições: cerraclass.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-ia-farma.zip",
+      "kb": 11055
+    }
+  },
+  {
     "pasta": "2026-10-fabrica-de-software",
     "titulo": "Fábrica de Software",
     "data": "2026-10-27",

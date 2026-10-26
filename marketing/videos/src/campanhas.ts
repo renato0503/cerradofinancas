@@ -165,4 +165,78 @@ export const CAMPANHAS: Record<string, Campanha> = {
       principal: { icone: "GraduationCap", texto: "cerraclass.com.br" }, secundario: WHATS,
     },
   },
+
+  // ---------------------------------------------------------------- cursos da Cerraclass
+
+  iaNaPratica: {
+    cor: theme.frentes.cursos, icone: "Lightning", kicker: "Cerraclass · IA na Prática",
+    gancho: "Saia da sala com seus próprios apps funcionando.", destaque: ["apps"],
+    sub: "10h de imersão presencial, sem saber programar.",
+    blocos: [
+      {
+        tipo: "lista", kicker: "Você se reconhece?", titulo: "Usa IA, mas ainda depende dos outros?",
+        itens: [
+          { icone: "Files", titulo: "Bagunça digital", texto: "Arquivos espalhados por todo lado" },
+          { icone: "HourglassMedium", titulo: "Dependência", texto: "Esperando o TI para ter seu app" },
+          { icone: "ChatDots", titulo: "Uso superficial", texto: "Só pedindo textos para a IA" },
+        ],
+      },
+      {
+        tipo: "lista", kicker: "O que você constrói", titulo: "Nada de dicas de prompt",
+        itens: [
+          { icone: "AppWindow", titulo: "Apps sob medida", texto: "Ferramentas para a sua rotina" },
+          { icone: "Books", titulo: "Base de conhecimento", texto: "A IA acha seus arquivos" },
+          { icone: "Robot", titulo: "Automações reais", texto: "O trabalho pesado na máquina" },
+          { icone: "Sparkle", titulo: "IA consultora", texto: "Claude, Gemini e ChatGPT" },
+        ],
+      },
+      {
+        tipo: "numeros", kicker: "O formato", titulo: "Um dia que muda a sua semana",
+        numeros: [
+          { valor: "10", legenda: "vagas por turma" },
+          { valor: "10h", legenda: "de imersão" },
+          { valor: "100%", legenda: "prático" },
+          { valor: "0", legenda: "código exigido" },
+        ],
+      },
+    ],
+    fechamento: {
+      titulo: "Garanta sua vaga. São só 10.", destaque: ["10."],
+      principal: { icone: "GraduationCap", texto: "cerraclass.com.br" }, secundario: WHATS,
+    },
+  },
+
+  iaFarma: {
+    cor: "#2dd4bf", icone: "Pill", kicker: "Cerraclass · IA em Ação Farma",
+    gancho: "Propagandista, a IA trabalha com você.", destaque: ["com", "você."],
+    sub: "Apps, conteúdos e automações para a rotina de campo.",
+    blocos: [
+      {
+        tipo: "lista", kicker: "A sua semana", titulo: "Tarefas que a IA faz com você",
+        itens: [
+          { icone: "NotePencil", titulo: "Comentários de visita", texto: "Depois de cada médico" },
+          { icone: "Files", titulo: "Materiais espalhados", texto: "Entre e-mail e WhatsApp" },
+          { icone: "Repeat", titulo: "Tarefas repetitivas", texto: "Toda semana, o mesmo padrão" },
+        ],
+      },
+      {
+        tipo: "lista", kicker: "IAs no campo", titulo: "Claude, Gemini e ChatGPT na rotina",
+        itens: [
+          { icone: "Image", titulo: "Folder a partir de fotos", texto: "Arte pronta para o grupo" },
+          { icone: "ChatText", titulo: "Comentário de visita", texto: "Estruturado pela IA" },
+          { icone: "UsersFour", titulo: "Treino por perfil", texto: "Para cada tipo de médico" },
+          { icone: "Stethoscope", titulo: "Médico virtual", texto: "Simule antes da visita" },
+        ],
+      },
+      {
+        tipo: "contraste", kicker: "O que muda", titulo: "Mais campo, menos planilha",
+        ruim: { rotulo: "Antes", itens: ["Fila esperando ajuda", "Horas no repetitivo", "Treino sem parceiro"] },
+        bom: { rotulo: "Depois", itens: ["Você mesmo constrói", "Tempo de campo", "Médico virtual"] },
+      },
+    ],
+    fechamento: {
+      titulo: "Turmas de 10 pessoas. Por método.", destaque: ["10"],
+      principal: { icone: "GraduationCap", texto: "cerraclass.com.br" }, secundario: WHATS,
+    },
+  },
 };
