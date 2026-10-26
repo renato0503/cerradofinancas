@@ -2,11 +2,12 @@
 
 Uso:
     python tools/exportar.py posts/2026-10-lancamento-4-frentes/carrossel.html
-    python tools/exportar.py stories/2026-10-lancamento-4-frentes.html
+    python tools/exportar.py posts/2026-10-lancamento-4-frentes/story.html
 
-Cada peça declara o tamanho em <meta name="formato" content="1080x1350"> e
-cada slide é um elemento com class="slide". O arquivo é aberto com ?s=N e o
-CSS da peça mostra só o slide N. Os PNGs saem em <pasta da peça>/out/.
+Cada peça declara o tamanho em <meta name="formato" content="1080x1350"> e a
+entrega em <meta name="entrega" content="2026-10-tema">; cada slide é um
+elemento com class="slide". O arquivo é aberto com ?s=N e só o slide N aparece.
+Os PNGs saem em entregas/<entrega>/, a pasta publicada na página /marketing/.
 """
 import re
 import subprocess
@@ -32,12 +33,15 @@ def exportar(peca: Path):
     if not formato:
         sys.exit(f'{peca}: falta <meta name="formato" content="LARGURAxALTURA">')
     largura, altura = formato.groups()
+    entrega = re.search(r'<meta name="entrega" content="([\w-]+)"', html)
+    if not entrega:
+        sys.exit(f'{peca}: falta <meta name="entrega" content="AAAA-MM-tema">')
     total = len(re.findall(r'class="slide[\s"]', html))
     if total == 0:
         sys.exit(f'{peca}: nenhum elemento com class="slide"')
 
-    saida = peca.resolve().parent / "out"
-    saida.mkdir(exist_ok=True)
+    saida = Path(__file__).resolve().parent.parent / "entregas" / entrega.group(1)
+    saida.mkdir(parents=True, exist_ok=True)
     chrome = achar_chrome()
     url_base = peca.resolve().as_uri()
 
@@ -56,6 +60,7 @@ def exportar(peca: Path):
         if not png.exists():
             sys.exit(f"Falha ao gerar {png}")
         print(f"  {png.relative_to(saida.parent.parent)}")
+    print("Rode tools/publicar.py para atualizar o .zip e a página.")
 
 
 if __name__ == "__main__":

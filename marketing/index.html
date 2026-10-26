@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Central de Conteúdos | Cerrado Finanças & Tech</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <style>
+    :root {
+      --azul: #001f5c;
+      --dourado: #fecb00;
+      --verde: #006430;
+      --texto: #0f172a;
+      --muted: #64748b;
+      --borda: #e2e8f0;
+      --fundo: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    /* ---------- topo ---------- */
+    .topo {
+      background: linear-gradient(135deg, var(--azul) 0%, #00113a 100%);
+      color: #fff;
+      padding: 40px 0 44px;
+      border-bottom: 4px solid var(--dourado);
+    }
+
+    .topo .container { display: flex; align-items: center; gap: 22px; }
+    .topo img { width: 72px; height: auto; flex-shrink: 0; }
+    .topo h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 900; letter-spacing: -0.5px; }
+    .topo p { color: #cbd5e1; margin-top: 6px; font-size: 0.98rem; line-height: 1.5; }
+
+    main { padding: 36px 0 70px; }
+
+    .vazio, .erro { text-align: center; color: var(--muted); padding: 60px 0; }
+
+    /* ---------- campanha ---------- */
+    .campanha {
+      background: #fff;
+      border: 1px solid var(--borda);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .cab {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .data {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--verde);
+    }
+
+    .cab h2 { font-size: 1.5rem; font-weight: 800; color: var(--azul); margin-top: 4px; }
+    .desc { color: #475569; line-height: 1.6; max-width: 760px; margin-top: 8px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border-radius: 10px;
+      padding: 12px 18px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+
+    .btn:active { transform: scale(0.97); }
+    .btn-ouro { background: var(--dourado); color: var(--azul); }
+    .btn-ouro:hover { background: #ffd733; }
+    .btn-azul { background: var(--azul); color: #fff; }
+    .btn-azul:hover { background: var(--verde); }
+
+    .orient {
+      background: #f8fafc;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 14px 18px 14px 34px;
+      margin-bottom: 22px;
+      color: #334155;
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    .secao-titulo {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      margin: 6px 0 12px;
+    }
+
+    /* ---------- arquivos ---------- */
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    .arquivo {
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .previa {
+      background: #0b1324;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* cada prévia assume a proporção real da peça (feed 4:5, story 9:16) */
+    .previa img, .previa video { width: 100%; height: auto; display: block; }
+    .previa .lottie { width: 80%; aspect-ratio: 1; margin: 10% 0; }
+    .previa a { display: contents; }
+
+    .meta {
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .meta span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .meta a {
+      flex-shrink: 0;
+      color: var(--azul);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .meta a:hover { color: var(--verde); }
+
+    /* ---------- legendas ---------- */
+    .legendas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
+
+    .legenda {
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .legenda header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px 10px 16px;
+      border-bottom: 1px solid var(--borda);
+      font-weight: 800;
+      color: var(--azul);
+    }
+
+    .legenda pre {
+      font-family: inherit;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #334155;
+      padding: 14px 16px;
+      max-height: 320px;
+      overflow: auto;
+    }
+
+    .btn-copiar { padding: 8px 12px; font-size: 0.82rem; }
+
+    @media (max-width: 600px) {
+      .campanha { padding: 20px; border-radius: 16px; }
+      .topo img { width: 54px; }
+      .cab .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <div class="container">
+      <img src="/img/folinha-hero.png" alt="Cerrado Finanças & Tech">
+      <div>
+        <h1>Central de Conteúdos</h1>
+        <p>Posts, stories, vídeos e legendas prontos para publicar. Baixe o pacote completo ou peça por peça.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="lista">
+    <p class="vazio">Carregando conteúdos…</p>
+  </main>
+
+  <script>
+    const base = 'entregas/';
+    const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+
+    function el(tag, attrs = {}, ...filhos) {
+      const e = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs)) {
+        if (k === 'text') e.textContent = v;
+        else e.setAttribute(k, v);
+      }
+      filhos.forEach(f => f && e.append(f));
+      return e;
+    }
+
+    function dataBR(iso) {
+      const [a, m, d] = iso.split('-').map(Number);
+      return `${d} ${meses[m - 1]} ${a}`;
+    }
+
+    function tamanho(kb) {
+      return kb >= 1024 ? (kb / 1024).toFixed(1).replace('.', ',') + ' MB' : kb + ' KB';
+    }
+
+    function previa(c, a) {
+      const url = base + c.pasta + '/' + a.nome;
+      if (a.tipo === 'video') return el('video', { src: url, controls: '', muted: '', playsinline: '', preload: 'metadata' });
+      if (a.tipo === 'lottie') {
+        const box = el('div', { class: 'lottie' });
+        lottie.loadAnimation({ container: box, renderer: 'svg', loop: true, autoplay: true, path: url });
+        return box;
+      }
+      return el('a', { href: url, target: '_blank', rel: 'noopener' }, el('img', { src: url, alt: a.nome, loading: 'lazy' }));
+    }
+
+    function cardArquivo(c, a) {
+      const url = base + c.pasta + '/' + a.nome;
+      return el('div', { class: 'arquivo' },
+        el('div', { class: 'previa' }, previa(c, a)),
+        el('div', { class: 'meta' },
+          el('span', { text: `${a.nome} · ${tamanho(a.kb)}`, title: a.nome }),
+          el('a', { href: url, download: a.nome, text: 'Baixar' })));
+    }
+
+    function cardLegenda(l) {
+      const btn = el('button', { class: 'btn btn-azul btn-copiar', type: 'button', text: 'Copiar' });
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(l.texto);
+          btn.textContent = 'Copiado!';
+        } catch {
+          btn.textContent = 'Selecione e copie';
+        }
+        setTimeout(() => (btn.textContent = 'Copiar'), 1800);
+      });
+      return el('div', { class: 'legenda' },
+        el('header', {}, el('span', { text: l.rede }), btn),
+        el('pre', { text: l.texto }));
+    }
+
+    function campanha(c) {
+      const sec = el('section', { class: 'campanha', id: c.pasta });
+      sec.append(el('div', { class: 'cab' },
+        el('div', {},
+          el('p', { class: 'data', text: dataBR(c.data) }),
+          el('h2', { text: c.titulo }),
+          el('p', { class: 'desc', text: c.descricao })),
+        el('a', { class: 'btn btn-ouro', href: base + c.pasta + '/' + c.pacote.nome, download: c.pacote.nome,
+          text: `⬇ Baixar tudo (.zip, ${tamanho(c.pacote.kb)})` })));
+
+      if (c.orientacoes && c.orientacoes.length) {
+        const ul = el('ul', { class: 'orient' });
+        c.orientacoes.forEach(o => ul.append(el('li', { text: o })));
+        sec.append(ul);
+      }
+
+      sec.append(el('p', { class: 'secao-titulo', text: 'Peças' }));
+      const grade = el('div', { class: 'grade' });
+      c.arquivos.forEach(a => grade.append(cardArquivo(c, a)));
+      sec.append(grade);
+
+      if (c.legendas.length) {
+        sec.append(el('p', { class: 'secao-titulo', text: 'Legendas' }));
+        const ls = el('div', { class: 'legendas' });
+        c.legendas.forEach(l => ls.append(cardLegenda(l)));
+        sec.append(ls);
+      }
+      return sec;
+    }
+
+    fetch(base + 'conteudos.json', { cache: 'no-store' })
+      .then(r => r.json())
+      .then(lista => {
+        const main = document.getElementById('lista');
+        main.innerHTML = '';
+        if (!lista.length) main.append(el('p', { class: 'vazio', text: 'Nenhum conteúdo publicado ainda.' }));
+        lista.forEach(c => main.append(campanha(c)));
+      })
+      .catch(() => {
+        document.getElementById('lista').innerHTML = '<p class="erro">Não foi possível carregar os conteúdos. Atualize a página.</p>';
+      });
+  </script>
+</body>
+</html>

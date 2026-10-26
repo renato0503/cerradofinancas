@@ -8,5 +8,12 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  # Estúdio de conteúdo: versionado no git, mas não publicado no site
-  - marketing
+  # Estúdio de conteúdo: só marketing/index.html (Central de Conteúdos) e
+  # marketing/entregas/ são publicados. Pasta nova em marketing/ deve entrar aqui.
+  - marketing/.claude
+  - marketing/README.md
+  - marketing/brand
+  - marketing/posts
+  - marketing/tools
+  - marketing/videos
+  - marketing/animacoes

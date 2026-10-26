@@ -1,0 +1,71 @@
+[
+  {
+    "pasta": "2026-10-lancamento-4-frentes",
+    "titulo": "Lançamento das 4 frentes",
+    "data": "2026-10-26",
+    "descricao": "Apresenta o novo posicionamento: Fábrica de Software, Contabilidade, Crédito (com a LS) e Cursos (Cerraclass). Carrossel de 7 slides para o feed e story para Instagram e status do WhatsApp.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07), no Instagram e no LinkedIn.",
+      "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 632
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 597
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 583
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 608
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 571
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 600
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 758
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Agora somos 4 frentes. 🌱\n\nA Cerrado Finanças & Tech cresceu para ser o único parceiro que o seu negócio precisa:\n\n💻 Fábrica de Software: ERPs, CRMs, IA e dashboards sob medida, para empresas e gestão pública.\n📊 Contabilidade: 100% digital, com BPO financeiro, controladoria e BI.\n💰 Crédito: empréstimos, consignados, financiamentos, seguros e consórcios, comparando vários bancos, em parceria com a LS Intermediação Financeira.\n🎓 Cursos: Inteligência Artificial na prática com a Cerraclass, em turmas de até 10 pessoas.\n\nE o melhor: tudo conversa entre si. O contador enxerga o seu software, o crédito usa os seus números e a sua equipe aprende a operar tudo.\n\nPor onde você quer começar? Conta aqui nos comentários ou chama no WhatsApp (67) 99351-5206.\n\n🔗 cerradofinancas.com.br\n\n#CerradoFinancas #CerradoTech #Cuiaba #MatoGrosso #FabricaDeSoftware #Contabilidade #CreditoConsignado #InteligenciaArtificial #Cerraclass #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Temos novidade: a Cerrado Finanças & Tech agora atua em 4 frentes integradas.\n\n1. Fábrica de Software: ERPs, CRMs, IA e dashboards construídos em torno do processo do cliente, para o mercado privado e a gestão pública.\n2. Contabilidade e Gestão: contabilidade 100% digital, BPO financeiro, controladoria e BI.\n3. Crédito: correspondente bancário multi bancos, em parceria com a LS Intermediação Financeira.\n4. Cursos: treinamentos práticos de IA e tecnologia pela Cerraclass.\n\nA lógica é simples: quando software, contabilidade, crédito e capacitação estão no mesmo lugar, as decisões ficam mais rápidas e mais bem fundamentadas.\n\nConheça: cerradofinancas.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-lancamento-4-frentes.zip",
+      "kb": 4904
+    }
+  }
+]

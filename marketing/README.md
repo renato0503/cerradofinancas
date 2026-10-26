@@ -1,31 +1,36 @@
 # Estúdio de conteúdo: Cerrado Finanças & Tech
 
-Posts, carrosséis, stories, vídeos e animações da marca. A pasta é versionada no git,
-mas **não é publicada** no site: o `_config.yml` da raiz a exclui do build do GitHub Pages.
+Posts, carrosséis, stories, vídeos e animações da marca.
+
+**Central de Conteúdos (para o time de marketing):** https://www.cerradofinancas.com.br/marketing/
+Só a página (`index.html`) e a pasta `entregas/` são publicadas. As áreas de trabalho
+(`posts/`, `videos/`, `tools/`, `brand/`, `animacoes/`, `.claude/`) ficam fora do site pelo
+`_config.yml` da raiz. **Ao criar uma pasta nova aqui, acrescente-a no `exclude` do `_config.yml`.**
+A página tem `noindex` e não aparece no menu nem no sitemap.
 
 ## Estrutura
 
 | Pasta | O que vai nela |
 |---|---|
 | `brand/` | `tokens.css` (cores e fonte da marca) e `slides.js` (controle de slides para exportação) |
-| `posts/AAAA-MM-tema/` | Um post ou carrossel por pasta: `carrossel.html`, `legenda.md` e `out/` com os PNGs |
-| `stories/` | Peças verticais 1080×1920 para Stories e status do WhatsApp |
+| `posts/AAAA-MM-tema/` | Fontes de uma campanha: `carrossel.html`, `story.html` etc. |
+| `entregas/AAAA-MM-tema/` | **Publicado.** Arquivos finais, `legenda-<rede>.txt`, `info.json` e o `.zip` |
 | `videos/` | Projetos Remotion (Reels 1080×1920) |
 | `animacoes/` | Logos e ícones animados (Lottie, GIF, MP4) |
-| `tools/` | `exportar.py`, que transforma HTML em PNG |
+| `tools/` | `exportar.py` (HTML → PNG em `entregas/`) e `publicar.py` (gera .zip e `conteudos.json`) |
 | `.claude/skills/` | Skills usadas pelo Claude dentro desta pasta |
 
 As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img/ls-logo.png` etc.
 
-## Exportar peças para PNG
+## Fluxo de uma campanha
 
-```
-python tools/exportar.py posts/2026-10-lancamento-4-frentes/carrossel.html
-python tools/exportar.py stories/2026-10-lancamento-4-frentes.html
-```
-
-Cada peça declara o tamanho em `<meta name="formato" content="1080x1350">`, e cada slide é um
-elemento `class="slide"`. Para revisar, abra o HTML no navegador: todos os slides aparecem empilhados.
+1. Crie as peças em `posts/AAAA-MM-tema/`. Cada HTML declara
+   `<meta name="entrega" content="AAAA-MM-tema">` e `<meta name="formato" content="1080x1350">`,
+   e cada slide é um elemento `class="slide"`. Abra no navegador para revisar (os slides aparecem empilhados).
+2. Exporte: `python tools/exportar.py posts/AAAA-MM-tema/carrossel.html posts/AAAA-MM-tema/story.html`
+3. Em `entregas/AAAA-MM-tema/`, crie o `info.json` (`titulo`, `data`, `descricao`, `orientacoes`)
+   e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt` etc. Vídeos e GIFs finais também vão aqui.
+4. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
 
 Formatos usados:
 - Feed (Instagram/LinkedIn): **1080×1350**
@@ -47,4 +52,4 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 
 ## Peças prontas
 
-- **2026-10 · Lançamento das 4 frentes**: carrossel de 7 slides (`posts/2026-10-lancamento-4-frentes/`), story (`stories/`) e legendas para Instagram e LinkedIn.
+- **2026-10 · Lançamento das 4 frentes**: carrossel de 7 slides, story e legendas para Instagram e LinkedIn.
