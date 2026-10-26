@@ -11,3 +11,29 @@
   });
   if (n) document.documentElement.classList.add('exportando');
 })();
+
+// ?check=1 (usado por tools/verificar.py): mede se o conteúdo do slide invade o rodapé
+// (carrossel) ou sai da área segura de 250px no topo/base (story) e escreve o resultado no título.
+(function () {
+  var p = new URLSearchParams(location.search);
+  if (!p.get('check')) return;
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      var slide = Array.prototype.filter.call(document.querySelectorAll('.slide'), function (s) { return s.style.display !== 'none'; })[0];
+      var base = slide.getBoundingClientRect();
+      var story = slide.classList.contains('story');
+      var limite = story ? base.top + slide.offsetHeight - 250 : (slide.querySelector('.rodape') ? slide.querySelector('.rodape').getBoundingClientRect().top - 12 : base.bottom);
+      var pior = 0, culpado = '';
+      slide.querySelectorAll('*').forEach(function (el) {
+        if (el.closest('.rodape') || el.children.length) return;
+        var r = el.getBoundingClientRect();
+        if (!r.height) return;
+        var excesso = r.bottom - limite;
+        if (story && base.top + 240 - r.top > excesso) excesso = base.top + 240 - r.top;
+        if (r.right > base.right - 40) excesso = Math.max(excesso, r.right - (base.right - 40));
+        if (excesso > pior) { pior = excesso; culpado = (el.textContent || el.className || el.tagName).trim().slice(0, 40); }
+      });
+      document.title = pior > 0 ? 'ESTOURO ' + Math.round(pior) + 'px: ' + culpado : 'OK';
+    }, 1500);
+  });
+})();

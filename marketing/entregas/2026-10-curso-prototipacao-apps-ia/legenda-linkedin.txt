@@ -1,0 +1,16 @@
+Hoje é possível construir protótipos funcionais de aplicativos sem uma equipe de desenvolvimento, usando ferramentas de IA que geram telas, código e banco de dados a partir de descrições em linguagem natural.
+
+Curso presencial "Prototipação de Apps com IA", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:
+1. Da ideia ao problema certo
+2. Experiência do usuário e primeira versão
+3. Dados, login e integrações
+4. Iteração, publicação e demo day
+
+Cada participante sai com:
+• Protótipo funcional publicado na internet
+• Documento de produto: problema, MVP e histórias de usuário
+• Protótipo navegável no Figma
+• Pitch de apresentação da ideia
+
+Turmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.
+Inscrições: cerraclass.com.br/presencial/pres-prototipacao-apps-ia

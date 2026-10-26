@@ -57,6 +57,22 @@ Formatos usados:
 - Feed (Instagram/LinkedIn): **1080×1350**
 - Stories / status / Reels: **1080×1920**, com cerca de 250px livres no topo e na base
 
+## Cursos presenciais da Cerraclass (geração automática)
+
+As campanhas dos cursos presenciais saem do catálogo oficial do projeto CerraClass:
+
+```
+node tools/importar-cerraclass.mjs          # copia o catálogo para dados/cerraclass-cursos.json
+python tools/gerar_cursos_cerraclass.py     # carrossel, story, legendas e info.json de cada curso
+python tools/exportar.py posts/2026-10-curso-*/carrossel.html posts/2026-10-curso-*/story.html
+python tools/verificar.py posts/2026-10-curso-*/carrossel.html posts/2026-10-curso-*/story.html
+cd videos && npm run render:cursos-presenciais   # Reels; depois copie para entregas/<curso>/reel.mp4
+python tools/publicar.py
+```
+
+Cor, ícone e hashtags de cada curso ficam em `VISUAL` (no gerador e em `videos/src/cursosCerraclass.ts`).
+`tools/verificar.py` acusa qualquer conteúdo que invada o rodapé ou saia da área segura do story.
+
 ## Skills instaladas (`.claude/skills/`)
 
 | Skill | Para quê |
@@ -75,4 +91,5 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 
 - **2026-10 · Lançamento das 4 frentes**: carrossel de 7 slides, story, Reel de 21s e legendas para Instagram e LinkedIn.
 - **2026-10 · Uma campanha por frente** (Software, Contabilidade, Crédito, Cursos): carrossel de 6 slides, story, Reel de 15s e legendas.
+- **2026-10 · Cursos da Cerraclass**: IA na Prática e IA em Ação Farma (feitos à mão) e os 11 cursos presenciais do catálogo, gerados a partir dos dados da CerraClass.
 - **2026-10 · Folinha animada**: vinheta MP4, GIF em loop, WebM transparente e Lottie (entrada e loop).

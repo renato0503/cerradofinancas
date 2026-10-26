@@ -1,0 +1,22 @@
+📉 BI e Dashboards com IA: Construa painéis de BI completos, da conexão aos dados à apresentação, e use IA para modelar, calcular e comunicar resultados.
+
+O que você vai aprender:
+✅ Conectar e tratar dados de várias fontes com Power Query
+✅ Construir modelos de dados em estrela (fatos e dimensões)
+✅ Criar medidas DAX essenciais (CALCULATE, inteligência de tempo) com ajuda da IA
+✅ Desenhar dashboards claros seguindo boas práticas de visualização
+
+Para quem é:
+• Analistas administrativos, financeiros e comerciais
+• Profissionais que fazem relatórios em Excel e querem evoluir
+• Gestores que precisam acompanhar indicadores
+• Quem concluiu Excel com IA ou Introdução à Análise de Dados
+
+📅 Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo
+📍 Presencial em Cuiabá, turma de até 15 alunos
+🎓 Certificado com QR Code, material físico e coffee break inclusos
+
+Inscrições: 🔗 cerraclass.com.br/presencial/pres-bi-dashboards-ia
+💬 WhatsApp (67) 99351-5206
+
+#PowerBI #BI #Dashboards #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso

@@ -245,3 +245,39 @@ html.exportando body { padding: 0; gap: 0; }
   border-left: 6px solid var(--acento);
   padding-left: 30px;
 }
+
+/* ---------- checklist (objetivos, entregáveis) ---------- */
+.checklist { margin-top: 56px; list-style: none; display: flex; flex-direction: column; gap: 26px; }
+.checklist li { display: flex; gap: 20px; font-size: 34px; line-height: 1.35; }
+.checklist li i { flex-shrink: 0; font-size: 42px; color: var(--acento); margin-top: 1px; }
+.checklist.compacta { gap: 18px; }
+.checklist.compacta li { font-size: 31px; }
+
+/* ---------- chips (ferramentas) ---------- */
+.chips-titulo { margin-top: 48px; font-size: 26px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--texto-suave); }
+.chips { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 14px; }
+.chips span {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- selo de formato do curso ---------- */
+.formato {
+  margin-top: 44px;
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 16px;
+  font-size: 32px;
+  font-weight: 800;
+  padding: 18px 28px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--acento) 14%, transparent);
+  border: 2px solid color-mix(in srgb, var(--acento) 45%, transparent);
+}
+.formato i { font-size: 40px; color: var(--acento); }
+.story .formato { align-self: center; }

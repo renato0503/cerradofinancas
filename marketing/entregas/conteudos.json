@@ -1,5 +1,830 @@
 [
   {
+    "pasta": "2026-10-curso-prototipacao-apps-ia",
+    "titulo": "Curso Prototipação de Apps com IA",
+    "data": "2026-10-29",
+    "descricao": "Tire ideias do papel criando protótipos funcionais de aplicativos com ferramentas de IA. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-prototipacao-apps-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 570
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 590
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 608
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 595
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 601
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 595
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6515
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 786
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "📱 Prototipação de Apps com IA: Tire sua ideia do papel: em dois fins de semana você valida, desenha e constrói o protótipo funcional de um aplicativo usando IA.\n\nO que você vai aprender:\n✅ Validar uma ideia: problema, público e proposta de valor\n✅ Definir o MVP e escrever histórias de usuário com IA\n✅ Desenhar fluxos e telas (wireframes e protótipo navegável)\n✅ Construir um app funcional com ferramentas de IA (front-end, dados e login)\n\nPara quem é:\n• Empreendedores com ideia de aplicativo ou produto digital\n• Profissionais de inovação, produto e marketing\n• Gestores que querem criar ferramentas internas para a empresa\n• Designers e estudantes que querem prototipar rápido\n\n📅 Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-prototipacao-apps-ia\n💬 WhatsApp (67) 99351-5206\n\n#Apps #Prototipacao #NoCode #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Hoje é possível construir protótipos funcionais de aplicativos sem uma equipe de desenvolvimento, usando ferramentas de IA que geram telas, código e banco de dados a partir de descrições em linguagem natural.\n\nCurso presencial \"Prototipação de Apps com IA\", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:\n1. Da ideia ao problema certo\n2. Experiência do usuário e primeira versão\n3. Dados, login e integrações\n4. Iteração, publicação e demo day\n\nCada participante sai com:\n• Protótipo funcional publicado na internet\n• Documento de produto: problema, MVP e histórias de usuário\n• Protótipo navegável no Figma\n• Pitch de apresentação da ideia\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-prototipacao-apps-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-prototipacao-apps-ia.zip",
+      "kb": 11012
+    }
+  },
+  {
+    "pasta": "2026-10-curso-ia-na-gestao",
+    "titulo": "Curso IA na Gestão",
+    "data": "2026-10-29",
+    "descricao": "Use inteligência artificial para planejar, decidir e acompanhar resultados na gestão do negócio. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-ia-gestao",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 549
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 578
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 626
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 560
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 592
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6378
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 758
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "📈 IA na Gestão: Um sábado para transformar a IA em ferramenta de gestão: planejar, decidir e acompanhar resultados com mais velocidade e clareza.\n\nO que você vai aprender:\n✅ Escrever prompts eficientes para tarefas de gestão (método contexto → tarefa → formato → critério)\n✅ Usar IA para montar planejamento estratégico simplificado (SWOT, OKRs e plano de ação 5W2H)\n✅ Analisar planilhas de resultados e gerar resumos executivos com IA\n✅ Preparar pautas, atas e comunicados internos em minutos\n\nPara quem é:\n• Empresários e sócios de pequenas e médias empresas\n• Gerentes, coordenadores e supervisores\n• Gestores públicos e de organizações do terceiro setor\n• Profissionais que estão assumindo cargos de liderança\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-ia-gestao\n💬 WhatsApp (67) 99351-5206\n\n#GestaoEmpresarial #Lideranca #IAnaGestao #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A inteligência artificial deixou de ser assunto de TI e virou ferramenta de quem gere pessoas, metas e recursos. Neste curso você aprende a usar assistentes de IA no dia a dia da gestão: organizar o planejamento, preparar reuniões, analisar indicadores, redigir comunicados e apoiar decisões com dados.\n\nCurso presencial \"IA na Gestão\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. IA para gestores: o que muda na prática\n2. Planejamento e metas com IA\n3. Indicadores, análise e decisão\n4. Rotina do gestor + projeto final\n\nCada participante sai com:\n• Plano de ação trimestral da sua área\n• Modelo de relatório executivo de indicadores\n• Biblioteca com 30+ prompts de gestão\n• Rascunho de política de uso de IA para a equipe\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-ia-gestao\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-ia-na-gestao.zip",
+      "kb": 10772
+    }
+  },
+  {
+    "pasta": "2026-10-curso-ia-na-farma",
+    "titulo": "Curso IA na Farma",
+    "data": "2026-10-29",
+    "descricao": "Aplicações de inteligência artificial no setor farmacêutico, da gestão ao atendimento. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-ia-farma",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 544
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 582
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 616
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 609
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 593
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6567
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 763
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "💊 IA na Farma: Inteligência artificial aplicada ao setor farmacêutico: gestão, estoque, atendimento, marketing e conformidade em dois fins de semana.\n\nO que você vai aprender:\n✅ Usar assistentes de IA na rotina da farmácia com segurança\n✅ Analisar curva ABC, giro de estoque, rupturas e vencimentos com IA\n✅ Fazer previsão de demanda com sazonalidade\n✅ Criar fluxos de atendimento e relacionamento com IA (sem substituir a orientação farmacêutica)\n\nPara quem é:\n• Proprietários e gestores de farmácias e drogarias\n• Farmacêuticos responsáveis técnicos\n• Profissionais de distribuidoras e indústria farmacêutica\n• Gerentes de loja, compradores e profissionais de marketing farmacêutico\n\n📅 Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-ia-farma\n💬 WhatsApp (67) 99351-5206\n\n#Farmacia #Drogaria #VarejoFarmaceutico #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Farmácias e drogarias operam com margens apertadas, estoques complexos, regras sanitárias rígidas e clientes cada vez mais exigentes. Nesta imersão você aprende a aplicar IA em cada frente do negócio farmacêutico: da previsão de demanda ao atendimento, do marketing à conformidade regulatória.\n\nCurso presencial \"IA na Farma\", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:\n1. IA no contexto farmacêutico\n2. Gestão de estoque, compras e indicadores\n3. Atendimento, relacionamento e marketing\n4. Conformidade, automação e projeto final\n\nCada participante sai com:\n• Plano de implantação de IA para sua farmácia ou empresa\n• Painel de indicadores farmacêuticos\n• Planilha de curva ABC e previsão de demanda\n• Biblioteca de prompts para o setor farmacêutico\n• Modelos de POP revisados com IA\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-ia-farma\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-ia-na-farma.zip",
+      "kb": 11021
+    }
+  },
+  {
+    "pasta": "2026-10-curso-excel-com-ia",
+    "titulo": "Curso Excel com IA",
+    "data": "2026-10-29",
+    "descricao": "Fórmulas, análises e relatórios no Excel acelerados com assistentes de IA. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-excel-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 527
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 550
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 568
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 571
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6523
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 730
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "📊 Excel com IA: Fórmulas, análises e relatórios no Excel acelerados com IA: faça em minutos o que hoje leva horas.\n\nO que você vai aprender:\n✅ Gerar e entender fórmulas (PROCX, SE, SOMASES, CONT.SES, ÍNDICE/CORRESP) com ajuda da IA\n✅ Limpar e padronizar bases de dados rapidamente\n✅ Criar tabelas dinâmicas e segmentações\n✅ Construir gráficos e um mini dashboard\n\nPara quem é:\n• Profissionais administrativos, financeiros e comerciais\n• Analistas e assistentes que vivem em planilhas\n• Empreendedores que controlam o negócio no Excel\n• Estudantes que querem se destacar no mercado\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-excel-ia\n💬 WhatsApp (67) 99351-5206\n\n#Excel #Planilhas #ExcelComIA #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Você vai aprender a usar a IA como copiloto do Excel: pedir fórmulas em português, limpar bases bagunçadas, criar tabelas dinâmicas e gráficos e montar relatórios prontos para apresentar.\n\nCurso presencial \"Excel com IA\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. Fundamentos e a IA como copiloto\n2. Buscar, cruzar e limpar dados\n3. Análise com tabelas dinâmicas e gráficos\n4. Dashboard, automação e projeto final\n\nCada participante sai com:\n• Mini dashboard de vendas pronto para reutilizar\n• Guia de fórmulas com exemplos\n• Prompts para Excel organizados por tarefa\n• Planilhas de exercício resolvidas\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-excel-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-excel-com-ia.zip",
+      "kb": 10762
+    }
+  },
+  {
+    "pasta": "2026-10-curso-consultoria-financeira-ia",
+    "titulo": "Curso Consultoria Financeira com IA",
+    "data": "2026-10-29",
+    "descricao": "Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA para consultoria. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-consultoria-financeira-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 559
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 604
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 565
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 596
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 585
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6799
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 765
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "💰 Consultoria Financeira com IA: Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA, para consultores e para quem cuida das finanças do negócio.\n\nO que você vai aprender:\n✅ Aplicar um roteiro de diagnóstico financeiro completo\n✅ Montar fluxo de caixa realizado e projetado com IA\n✅ Calcular capital de giro, ponto de equilíbrio, margem de contribuição e prazos médios\n✅ Projetar cenários (pessimista, realista, otimista)\n\nPara quem é:\n• Consultores financeiros e de negócios\n• Empresários que querem dominar as finanças da empresa\n• Profissionais de financeiro, controladoria e tesouraria\n• Contadores que querem atuar como consultores\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-consultoria-financeira-ia\n💬 WhatsApp (67) 99351-5206\n\n#Financas #FluxoDeCaixa #ConsultoriaFinanceira #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Consultoria financeira é transformar números em decisões. Neste curso você aprende um método de diagnóstico financeiro para pequenas e médias empresas e usa a IA para acelerar cada etapa: organizar os dados, montar o fluxo de caixa, calcular indicadores, projetar cenários e apresentar recomendações.\n\nCurso presencial \"Consultoria Financeira com IA\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. Método de diagnóstico financeiro\n2. Fluxo de caixa e capital de giro\n3. Indicadores, custos e cenários\n4. Relatório, apresentação e projeto final\n\nCada participante sai com:\n• Planilha de fluxo de caixa projetado\n• Planilha de indicadores e ponto de equilíbrio\n• Roteiro de diagnóstico financeiro\n• Modelo de relatório e apresentação para o cliente\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-consultoria-financeira-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-consultoria-financeira-ia.zip",
+      "kb": 11202
+    }
+  },
+  {
+    "pasta": "2026-10-curso-consultoria-contabil-ia",
+    "titulo": "Curso Consultoria Contábil com IA",
+    "data": "2026-10-29",
+    "descricao": "Aplique IA na rotina contábil e transforme o escritório em consultoria de valor para o cliente. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-consultoria-contabil-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 548
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 557
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 606
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 556
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 570
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 582
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6514
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 746
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "🧮 Consultoria Contábil com IA: Use a IA para sair do operacional e transformar o escritório contábil em consultoria de valor para o cliente.\n\nO que você vai aprender:\n✅ Aplicar IA na rotina do escritório: atendimento, conferências e documentação\n✅ Analisar balanço e DRE com IA e gerar indicadores (liquidez, margem, endividamento)\n✅ Produzir relatórios gerenciais em linguagem simples para o cliente\n✅ Fazer simulações comparativas de regime tributário com apoio da IA\n\nPara quem é:\n• Contadores e técnicos em contabilidade\n• Donos e gestores de escritórios contábeis\n• Analistas fiscais, contábeis e de controladoria\n• Estudantes de Ciências Contábeis\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-consultoria-contabil-ia\n💬 WhatsApp (67) 99351-5206\n\n#Contabilidade #Contador #ConsultoriaContabil #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "O contador que entrega apenas guias e obrigações está sendo substituído pela automação. O que tem valor é interpretar os números e orientar o cliente. Neste curso você aprende a usar IA para ganhar tempo na rotina e para criar serviços consultivos: análise de demonstrativos, diagnóstico tributário e relatórios gerenciais.\n\nCurso presencial \"Consultoria Contábil com IA\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. Do operacional ao consultivo\n2. Análise de demonstrativos com IA\n3. Relatórios gerenciais e planejamento tributário\n4. Produto de consultoria + projeto final\n\nCada participante sai com:\n• Modelo de relatório gerencial para clientes\n• Planilha de indicadores financeiros\n• Proposta comercial de consultoria contábil\n• Biblioteca de prompts contábeis\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-consultoria-contabil-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-consultoria-contabil-ia.zip",
+      "kb": 10815
+    }
+  },
+  {
+    "pasta": "2026-10-curso-ciencia-de-dados",
+    "titulo": "Curso Ciência de Dados Aplicada",
+    "data": "2026-10-29",
+    "descricao": "Do dado bruto ao modelo: análise, estatística e machine learning aplicados a problemas reais. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-ciencia-dados-aplicada",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 578
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 611
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 585
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6398
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 767
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "🧪 Ciência de Dados Aplicada: Do dado bruto ao modelo preditivo: dois fins de semana de imersão em análise, estatística e machine learning aplicados a problemas reais.\n\nO que você vai aprender:\n✅ Programar em Python para dados (pandas, numpy) com apoio de IA\n✅ Fazer análise exploratória completa e visualizações (matplotlib, seaborn)\n✅ Aplicar estatística: amostragem, testes de hipótese e correlação\n✅ Construir modelos de regressão e classificação com scikit-learn\n\nPara quem é:\n• Analistas de dados e de BI que querem dar o próximo passo\n• Profissionais de exatas, engenharia, economia e administração\n• Quem concluiu Introdução à Análise de Dados\n• Profissionais em transição de carreira para dados\n\n📅 Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-ciencia-dados-aplicada\n💬 WhatsApp (67) 99351-5206\n\n#CienciaDeDados #Python #MachineLearning #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A Ciência de Dados é a capacidade de responder perguntas e prever resultados a partir de dados. Nesta imersão você percorre o ciclo completo de um projeto de dados com Python: preparação, análise exploratória, estatística, modelagem preditiva e comunicação dos resultados.\n\nCurso presencial \"Ciência de Dados Aplicada\", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:\n1. Python para dados com IA\n2. Análise exploratória e estatística\n3. Machine learning supervisionado\n4. Projeto final de ponta a ponta\n\nCada participante sai com:\n• Notebook completo de projeto de dados\n• Modelo preditivo treinado e avaliado\n• Apresentação do projeto para portfólio\n• Coleção de notebooks de referência da imersão\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-ciencia-dados-aplicada\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-ciencia-de-dados.zip",
+      "kb": 10819
+    }
+  },
+  {
+    "pasta": "2026-10-curso-bpmn-com-ia",
+    "titulo": "Curso Processos Empresariais BPMN com IA",
+    "data": "2026-10-29",
+    "descricao": "Mapeie e melhore processos com a notação BPMN, usando IA para modelar e documentar. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-bpmn-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 568
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 608
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 554
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6641
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 757
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "🗺️ Processos Empresariais BPMN com IA: Mapeie e melhore os processos da sua empresa com a notação BPMN, usando IA para modelar, documentar e encontrar gargalos.\n\nO que você vai aprender:\n✅ Ler e desenhar diagramas BPMN 2.0 (eventos, tarefas, gateways, raias)\n✅ Conduzir levantamento de processos com entrevistas guiadas por IA\n✅ Mapear o processo atual (AS-IS) e o melhorado (TO-BE)\n✅ Identificar gargalos, desperdícios e oportunidades de automação\n\nPara quem é:\n• Gestores e líderes de equipe\n• Analistas de processos, qualidade e melhoria contínua\n• Profissionais administrativos e de operações\n• Empreendedores que querem organizar a empresa para crescer\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-bpmn-ia\n💬 WhatsApp (67) 99351-5206\n\n#BPMN #Processos #GestaoDeProcessos #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Processos desorganizados geram retrabalho, atrasos e dependência de pessoas-chave. Neste curso você aprende a notação BPMN, o padrão internacional de modelagem de processos, e usa a IA para acelerar o levantamento, desenhar fluxos e escrever a documentação.\n\nCurso presencial \"Processos Empresariais BPMN com IA\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. Gestão por processos e BPMN\n2. Levantamento e modelagem AS-IS\n3. Análise e redesenho TO-BE\n4. Documentação, indicadores e projeto final\n\nCada participante sai com:\n• Diagrama AS-IS e TO-BE de um processo seu\n• POP do processo melhorado\n• Matriz RACI\n• Roteiro de levantamento de processos\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-bpmn-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-bpmn-com-ia.zip",
+      "kb": 10995
+    }
+  },
+  {
+    "pasta": "2026-10-curso-bi-dashboards-ia",
+    "titulo": "Curso BI e Dashboards com IA",
+    "data": "2026-10-29",
+    "descricao": "Construa painéis de BI completos e use IA para modelar, analisar e comunicar os dados. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-bi-dashboards-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 557
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 576
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 613
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 583
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 586
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 583
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6496
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 759
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "📉 BI e Dashboards com IA: Construa painéis de BI completos, da conexão aos dados à apresentação, e use IA para modelar, calcular e comunicar resultados.\n\nO que você vai aprender:\n✅ Conectar e tratar dados de várias fontes com Power Query\n✅ Construir modelos de dados em estrela (fatos e dimensões)\n✅ Criar medidas DAX essenciais (CALCULATE, inteligência de tempo) com ajuda da IA\n✅ Desenhar dashboards claros seguindo boas práticas de visualização\n\nPara quem é:\n• Analistas administrativos, financeiros e comerciais\n• Profissionais que fazem relatórios em Excel e querem evoluir\n• Gestores que precisam acompanhar indicadores\n• Quem concluiu Excel com IA ou Introdução à Análise de Dados\n\n📅 Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-bi-dashboards-ia\n💬 WhatsApp (67) 99351-5206\n\n#PowerBI #BI #Dashboards #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Business Intelligence é o que transforma planilhas espalhadas em decisões. Nesta imersão você aprende a construir dashboards profissionais no Power BI: conectar e tratar dados, modelar, criar medidas DAX, desenhar o painel e publicar para a equipe.\n\nCurso presencial \"BI e Dashboards com IA\", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:\n1. Fundamentos de BI e Power Query\n2. Modelagem e DAX\n3. Visualização e design de dashboards\n4. Publicação e projeto final\n\nCada participante sai com:\n• Dashboard completo publicado (arquivo .pbix)\n• Modelo de dados com tabela calendário reutilizável\n• Biblioteca de medidas DAX comentadas\n• Guia de design de dashboards\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-bi-dashboards-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-bi-dashboards-ia.zip",
+      "kb": 10890
+    }
+  },
+  {
+    "pasta": "2026-10-curso-automacao-com-ia",
+    "titulo": "Curso Introdução à Automação com IA",
+    "data": "2026-10-29",
+    "descricao": "Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-intro-automacao-ia",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 550
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 585
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 547
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 578
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 575
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6668
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 760
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "⚡ Introdução à Automação com IA: Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA, sem programar.\n\nO que você vai aprender:\n✅ Mapear tarefas repetitivas e priorizar o que automatizar\n✅ Entender gatilhos, ações, filtros e integrações\n✅ Construir automações no Make e no Zapier\n✅ Conectar IA às automações para classificar, resumir e responder\n\nPara quem é:\n• Profissionais administrativos, comerciais e de atendimento\n• Empreendedores e pequenos empresários\n• Gestores que querem ganhar produtividade na equipe\n• Qualquer pessoa curiosa sobre automação, sem saber programar\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-intro-automacao-ia\n💬 WhatsApp (67) 99351-5206\n\n#Automacao #NoCode #Produtividade #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Copiar dados entre sistemas, responder as mesmas mensagens, gerar relatórios toda semana: tarefas assim consomem horas que poderiam ir para trabalho de valor. Neste curso você aprende a identificar o que pode ser automatizado e a construir automações com ferramentas no-code conectadas a IA.\n\nCurso presencial \"Introdução à Automação com IA\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. Pensando em automação\n2. Primeiras automações no-code\n3. Automação com IA\n4. Relatórios automáticos e projeto final\n\nCada participante sai com:\n• 3 automações funcionando na sua conta\n• Mapa de automações priorizadas\n• Modelos (blueprints) prontos para importar\n• Guia de boas práticas de automação\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-intro-automacao-ia\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-automacao-com-ia.zip",
+      "kb": 10990
+    }
+  },
+  {
+    "pasta": "2026-10-curso-analise-de-dados",
+    "titulo": "Curso Introdução à Análise de Dados",
+    "data": "2026-10-29",
+    "descricao": "Os fundamentos para organizar, analisar e tirar conclusões a partir de dados reais. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+      "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-intro-analise-dados",
+      "Valor sob consulta: as peças não citam preço nem data de turma."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 551
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 569
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 594
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 554
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 569
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 586
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 575
+      },
+      {
+        "nome": "reel.mp4",
+        "tipo": "video",
+        "kb": 6496
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 747
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "🔎 Introdução à Análise de Dados: Os fundamentos para organizar, analisar e tirar conclusões de dados reais, o primeiro passo para quem quer trabalhar com dados.\n\nO que você vai aprender:\n✅ Entender o ciclo da análise de dados, da pergunta à decisão\n✅ Identificar tipos de dados e problemas comuns de qualidade\n✅ Limpar e organizar bases em planilha e com IA\n✅ Aplicar estatística descritiva (média, mediana, dispersão, distribuição)\n\nPara quem é:\n• Quem quer iniciar carreira em dados\n• Profissionais de qualquer área que precisam analisar informações\n• Gestores que querem tomar decisões baseadas em dados\n• Estudantes de graduação e recém-formados\n\n📅 Curso de um dia · 8h · 1 sábado, o dia todo\n📍 Presencial em Cuiabá, turma de até 15 alunos\n🎓 Certificado com QR Code, material físico e coffee break inclusos\n\nInscrições: 🔗 cerraclass.com.br/presencial/pres-intro-analise-dados\n💬 WhatsApp (67) 99351-5206\n\n#AnaliseDeDados #Dados #DataAnalytics #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Toda empresa tem dados, mas poucas pessoas sabem transformá-los em respostas. Neste curso você aprende o ciclo completo da análise de dados: fazer a pergunta certa, coletar e limpar os dados, explorar, visualizar e comunicar a conclusão.\n\nCurso presencial \"Introdução à Análise de Dados\", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:\n1. Pensamento analítico\n2. Preparação de dados\n3. Exploração e estatística descritiva\n4. Visualização, storytelling e projeto final\n\nCada participante sai com:\n• Base de dados limpa e documentada\n• Painel no Looker Studio\n• Checklist de análise de dados\n• Apresentação com suas conclusões\n\nTurmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.\nInscrições: cerraclass.com.br/presencial/pres-intro-analise-dados\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-curso-analise-de-dados.zip",
+      "kb": 10803
+    }
+  },
+  {
     "pasta": "2026-10-curso-ia-na-pratica",
     "titulo": "Curso IA na Prática",
     "data": "2026-10-28",

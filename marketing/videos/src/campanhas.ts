@@ -1,6 +1,7 @@
 // Conteúdo dos Reels por frente. Cada Reel = gancho + 3 blocos + fechamento.
 // Ícones pelo nome do Phosphor (https://phosphoricons.com), ex.: "Code", "HandCoins".
 import { theme } from "./theme";
+import { CAMPANHAS_CURSOS } from "./cursosCerraclass";
 
 export type Item = { icone: string; titulo: string; texto?: string };
 
@@ -239,4 +240,5 @@ export const CAMPANHAS: Record<string, Campanha> = {
       principal: { icone: "GraduationCap", texto: "cerraclass.com.br" }, secundario: WHATS,
     },
   },
+  ...CAMPANHAS_CURSOS,
 };

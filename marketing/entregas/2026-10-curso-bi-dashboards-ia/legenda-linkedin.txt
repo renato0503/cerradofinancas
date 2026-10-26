@@ -1,0 +1,16 @@
+Business Intelligence é o que transforma planilhas espalhadas em decisões. Nesta imersão você aprende a construir dashboards profissionais no Power BI: conectar e tratar dados, modelar, criar medidas DAX, desenhar o painel e publicar para a equipe.
+
+Curso presencial "BI e Dashboards com IA", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:
+1. Fundamentos de BI e Power Query
+2. Modelagem e DAX
+3. Visualização e design de dashboards
+4. Publicação e projeto final
+
+Cada participante sai com:
+• Dashboard completo publicado (arquivo .pbix)
+• Modelo de dados com tabela calendário reutilizável
+• Biblioteca de medidas DAX comentadas
+• Guia de design de dashboards
+
+Turmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.
+Inscrições: cerraclass.com.br/presencial/pres-bi-dashboards-ia

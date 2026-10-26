@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { Reel4Frentes, REEL_DURACAO } from "./Reel4Frentes";
 import { FolinhaIntro, FolinhaLoopAlpha, FolinhaLoopGif, INTRO_DURACAO } from "./Folinha";
 import { ReelFrente, REEL_FRENTE_DURACAO } from "./ReelFrente";
+import { COMPOSICOES_CURSOS } from "./cursosCerraclass";
 
 const FRENTES = [
   ["ReelSoftware", "software"],
@@ -11,6 +12,7 @@ const FRENTES = [
   ["ReelCursos", "cursos"],
   ["ReelIaNaPratica", "iaNaPratica"],
   ["ReelIaFarma", "iaFarma"],
+  ...COMPOSICOES_CURSOS,
 ] as const;
 
 export const Root: React.FC = () => (

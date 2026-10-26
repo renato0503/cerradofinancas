@@ -1,0 +1,16 @@
+A Ciência de Dados é a capacidade de responder perguntas e prever resultados a partir de dados. Nesta imersão você percorre o ciclo completo de um projeto de dados com Python: preparação, análise exploratória, estatística, modelagem preditiva e comunicação dos resultados.
+
+Curso presencial "Ciência de Dados Aplicada", da Cerraclass (Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo). Programa:
+1. Python para dados com IA
+2. Análise exploratória e estatística
+3. Machine learning supervisionado
+4. Projeto final de ponta a ponta
+
+Cada participante sai com:
+• Notebook completo de projeto de dados
+• Modelo preditivo treinado e avaliado
+• Apresentação do projeto para portfólio
+• Coleção de notebooks de referência da imersão
+
+Turmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.
+Inscrições: cerraclass.com.br/presencial/pres-ciencia-dados-aplicada

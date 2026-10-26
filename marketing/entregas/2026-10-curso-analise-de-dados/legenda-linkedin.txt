@@ -1,0 +1,16 @@
+Toda empresa tem dados, mas poucas pessoas sabem transformá-los em respostas. Neste curso você aprende o ciclo completo da análise de dados: fazer a pergunta certa, coletar e limpar os dados, explorar, visualizar e comunicar a conclusão.
+
+Curso presencial "Introdução à Análise de Dados", da Cerraclass (Curso de um dia · 8h · 1 sábado, o dia todo). Programa:
+1. Pensamento analítico
+2. Preparação de dados
+3. Exploração e estatística descritiva
+4. Visualização, storytelling e projeto final
+
+Cada participante sai com:
+• Base de dados limpa e documentada
+• Painel no Looker Studio
+• Checklist de análise de dados
+• Apresentação com suas conclusões
+
+Turmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.
+Inscrições: cerraclass.com.br/presencial/pres-intro-analise-dados

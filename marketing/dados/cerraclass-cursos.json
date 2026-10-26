@@ -1,0 +1,1151 @@
+{
+  "fonte": "CerraClass/src/constants (presencialCourses.ts + presencialCourseContent.ts)",
+  "formatos": {
+    "um-dia": {
+      "label": "Curso de um dia",
+      "shortLabel": "Um dia",
+      "summary": "1 sábado, o dia todo",
+      "startWeekday": 6,
+      "totalHours": "8h",
+      "sessions": [
+        {
+          "weekday": 6,
+          "weekOffset": 0,
+          "label": "Sábado",
+          "hours": "08:00 às 17:00"
+        }
+      ]
+    },
+    "imersao": {
+      "label": "Imersão",
+      "shortLabel": "Imersão",
+      "summary": "2 sextas à noite + 2 sábados o dia todo",
+      "startWeekday": 5,
+      "totalHours": "22h",
+      "sessions": [
+        {
+          "weekday": 5,
+          "weekOffset": 0,
+          "label": "Sexta",
+          "hours": "19:00 às 22:00"
+        },
+        {
+          "weekday": 6,
+          "weekOffset": 0,
+          "label": "Sábado",
+          "hours": "08:00 às 17:00"
+        },
+        {
+          "weekday": 5,
+          "weekOffset": 1,
+          "label": "Sexta",
+          "hours": "19:00 às 22:00"
+        },
+        {
+          "weekday": 6,
+          "weekOffset": 1,
+          "label": "Sábado",
+          "hours": "08:00 às 17:00"
+        }
+      ]
+    }
+  },
+  "inclusos": [
+    "Turma de no máximo 15 alunos",
+    "Certificado impresso com QR Code de validação",
+    "Material didático físico incluso",
+    "Coffee break incluso",
+    "Arquivos, prompts e modelos usados em aula para levar",
+    "Grupo de suporte no WhatsApp após o curso",
+    "Estacionamento gratuito",
+    "Cancelamento gratuito até 72h antes"
+  ],
+  "levar": [
+    "Notebook com carregador (Windows ou Mac)",
+    "Conta Google ou Microsoft ativa",
+    "Acesso gratuito a um assistente de IA (ChatGPT, Gemini ou Claude) — ajudamos a criar na hora"
+  ],
+  "cursos": [
+    {
+      "id": "pres-ia-gestao",
+      "title": "IA na Gestão",
+      "category": "IA & Negócios",
+      "format": "um-dia",
+      "icon": "insights",
+      "description": "Use inteligência artificial para planejar, decidir e acompanhar resultados na gestão do negócio.",
+      "headline": "Um sábado para transformar a IA em ferramenta de gestão: planejar, decidir e acompanhar resultados com mais velocidade e clareza.",
+      "about": [
+        "A inteligência artificial deixou de ser assunto de TI e virou ferramenta de quem gere pessoas, metas e recursos. Neste curso você aprende a usar assistentes de IA no dia a dia da gestão: organizar o planejamento, preparar reuniões, analisar indicadores, redigir comunicados e apoiar decisões com dados.",
+        "O dia é 100% prático. Cada bloco parte de uma situação real de gestão e termina com um entregável que você leva pronto para a sua empresa: um plano de ação, um painel de indicadores e uma biblioteca de prompts para sua rotina."
+      ],
+      "audience": [
+        "Empresários e sócios de pequenas e médias empresas",
+        "Gerentes, coordenadores e supervisores",
+        "Gestores públicos e de organizações do terceiro setor",
+        "Profissionais que estão assumindo cargos de liderança"
+      ],
+      "prerequisites": [
+        "Nenhum conhecimento técnico prévio",
+        "Saber usar navegador e e-mail no computador"
+      ],
+      "outcomes": [
+        "Escrever prompts eficientes para tarefas de gestão (método contexto → tarefa → formato → critério)",
+        "Usar IA para montar planejamento estratégico simplificado (SWOT, OKRs e plano de ação 5W2H)",
+        "Analisar planilhas de resultados e gerar resumos executivos com IA",
+        "Preparar pautas, atas e comunicados internos em minutos",
+        "Apoiar decisões comparando cenários, riscos e prioridades",
+        "Definir regras de uso seguro de IA na empresa (LGPD e dados sensíveis)"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Google Gemini",
+        "Claude",
+        "Microsoft Copilot",
+        "Google Planilhas / Excel",
+        "Notion ou Google Docs"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "IA para gestores: o que muda na prática",
+          "topics": [
+            "Panorama: o que a IA generativa faz bem e onde ela erra",
+            "Comparando assistentes: ChatGPT, Gemini, Claude e Copilot",
+            "Anatomia de um bom prompt para gestão",
+            "Exercício: transformar uma demanda vaga em um pedido preciso"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Planejamento e metas com IA",
+          "topics": [
+            "Diagnóstico do negócio com SWOT assistida por IA",
+            "Definição de objetivos e OKRs",
+            "Plano de ação 5W2H gerado e refinado com IA",
+            "Exercício: plano trimestral da sua área"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Indicadores, análise e decisão",
+          "topics": [
+            "Levando planilhas de resultado para a IA com segurança",
+            "Resumo executivo e leitura de tendências",
+            "Matriz de priorização e análise de cenários",
+            "Exercício: relatório mensal de indicadores em 15 minutos"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Rotina do gestor + projeto final",
+          "topics": [
+            "Reuniões: pauta, ata e encaminhamentos automáticos",
+            "Comunicação com a equipe: feedbacks e comunicados",
+            "Política de uso de IA e cuidados com LGPD",
+            "Projeto final: kit de gestão com IA para a sua empresa"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Plano de ação trimestral da sua área",
+        "Modelo de relatório executivo de indicadores",
+        "Biblioteca com 30+ prompts de gestão",
+        "Rascunho de política de uso de IA para a equipe"
+      ],
+      "faq": [
+        {
+          "question": "Preciso pagar alguma ferramenta de IA?",
+          "answer": "Não. Usamos as versões gratuitas dos assistentes. Mostramos quando a versão paga compensa, mas não é obrigatória."
+        },
+        {
+          "question": "Serve para quem não é da área de tecnologia?",
+          "answer": "Sim, foi pensado justamente para gestores sem formação técnica."
+        }
+      ]
+    },
+    {
+      "id": "pres-excel-ia",
+      "title": "Excel com IA",
+      "category": "Excel & Planilhas",
+      "format": "um-dia",
+      "icon": "grid_on",
+      "description": "Fórmulas, análises e relatórios no Excel acelerados com assistentes de IA.",
+      "headline": "Fórmulas, análises e relatórios no Excel acelerados com IA: faça em minutos o que hoje leva horas.",
+      "about": [
+        "Você vai aprender a usar a IA como copiloto do Excel: pedir fórmulas em português, limpar bases bagunçadas, criar tabelas dinâmicas e gráficos e montar relatórios prontos para apresentar.",
+        "O curso combina os fundamentos que todo usuário de planilha precisa dominar com as novas formas de trabalhar com assistentes de IA, sempre em cima de bases reais: vendas, financeiro, estoque e RH."
+      ],
+      "audience": [
+        "Profissionais administrativos, financeiros e comerciais",
+        "Analistas e assistentes que vivem em planilhas",
+        "Empreendedores que controlam o negócio no Excel",
+        "Estudantes que querem se destacar no mercado"
+      ],
+      "prerequisites": [
+        "Saber abrir, salvar e digitar dados em uma planilha",
+        "Não é necessário conhecer fórmulas"
+      ],
+      "outcomes": [
+        "Gerar e entender fórmulas (PROCX, SE, SOMASES, CONT.SES, ÍNDICE/CORRESP) com ajuda da IA",
+        "Limpar e padronizar bases de dados rapidamente",
+        "Criar tabelas dinâmicas e segmentações",
+        "Construir gráficos e um mini dashboard",
+        "Usar o Copilot/assistentes para analisar planilhas e escrever conclusões",
+        "Automatizar tarefas repetitivas com macros simples geradas por IA"
+      ],
+      "tools": [
+        "Microsoft Excel",
+        "Microsoft Copilot",
+        "ChatGPT",
+        "Google Gemini",
+        "Google Planilhas"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "Fundamentos e a IA como copiloto",
+          "topics": [
+            "Estrutura correta de uma base de dados",
+            "Tabelas formatadas e referências",
+            "Pedindo fórmulas à IA em português e validando o resultado",
+            "Funções essenciais: SE, E/OU, SOMASES, CONT.SES"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Buscar, cruzar e limpar dados",
+          "topics": [
+            "PROCX e ÍNDICE/CORRESP na prática",
+            "Tratamento de textos e datas (ARRUMAR, TEXTO, funções de data)",
+            "Limpeza de bases com IA e com Power Query básico",
+            "Exercício: consolidar duas bases de vendas"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Análise com tabelas dinâmicas e gráficos",
+          "topics": [
+            "Tabelas dinâmicas, campos calculados e segmentações",
+            "Escolhendo o gráfico certo",
+            "IA para interpretar resultados e sugerir análises",
+            "Exercício: análise de vendas por produto, região e período"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Dashboard, automação e projeto final",
+          "topics": [
+            "Montando um mini dashboard em uma aba",
+            "Macros simples geradas por IA (com segurança)",
+            "Relatório com conclusões escritas pela IA",
+            "Projeto final: dashboard da sua própria planilha"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Mini dashboard de vendas pronto para reutilizar",
+        "Guia de fórmulas com exemplos",
+        "Prompts para Excel organizados por tarefa",
+        "Planilhas de exercício resolvidas"
+      ],
+      "faq": [
+        {
+          "question": "Qual versão do Excel preciso?",
+          "answer": "O ideal é o Excel 365 ou 2021. Se tiver versão anterior, adaptamos as funções; o Google Planilhas também funciona para a maior parte do conteúdo."
+        },
+        {
+          "question": "Preciso ter o Copilot pago?",
+          "answer": "Não. Mostramos o Copilot, mas todos os exercícios podem ser feitos com assistentes gratuitos."
+        }
+      ]
+    },
+    {
+      "id": "pres-consultoria-contabil-ia",
+      "title": "Consultoria Contábil com IA",
+      "category": "Contabilidade",
+      "format": "um-dia",
+      "icon": "calculate",
+      "description": "Aplique IA na rotina contábil e transforme o escritório em consultoria de valor para o cliente.",
+      "headline": "Use a IA para sair do operacional e transformar o escritório contábil em consultoria de valor para o cliente.",
+      "about": [
+        "O contador que entrega apenas guias e obrigações está sendo substituído pela automação. O que tem valor é interpretar os números e orientar o cliente. Neste curso você aprende a usar IA para ganhar tempo na rotina e para criar serviços consultivos: análise de demonstrativos, diagnóstico tributário e relatórios gerenciais.",
+        "Trabalhamos com casos de pequenas e médias empresas e saímos com modelos de relatório e uma proposta de serviço consultivo pronta para oferecer aos seus clientes."
+      ],
+      "audience": [
+        "Contadores e técnicos em contabilidade",
+        "Donos e gestores de escritórios contábeis",
+        "Analistas fiscais, contábeis e de controladoria",
+        "Estudantes de Ciências Contábeis"
+      ],
+      "prerequisites": [
+        "Conhecimento básico de contabilidade (balanço, DRE, regimes tributários)",
+        "Uso básico de planilhas"
+      ],
+      "outcomes": [
+        "Aplicar IA na rotina do escritório: atendimento, conferências e documentação",
+        "Analisar balanço e DRE com IA e gerar indicadores (liquidez, margem, endividamento)",
+        "Produzir relatórios gerenciais em linguagem simples para o cliente",
+        "Fazer simulações comparativas de regime tributário com apoio da IA",
+        "Estruturar e precificar um serviço de consultoria contábil",
+        "Usar IA com segurança e sigilo (LGPD e dados de clientes)"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Google Gemini",
+        "Excel / Google Planilhas",
+        "Google Docs / Word"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "Do operacional ao consultivo",
+          "topics": [
+            "Mercado contábil e o impacto da automação",
+            "Onde a IA ajuda no escritório (e onde não deve ser usada)",
+            "Prompts para atendimento, e-mails e respostas a clientes",
+            "Cuidados com sigilo, anonimização e LGPD"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Análise de demonstrativos com IA",
+          "topics": [
+            "Levando balanço e DRE para a IA",
+            "Cálculo e interpretação de indicadores",
+            "Análise vertical e horizontal assistida",
+            "Exercício: diagnóstico de uma empresa real (dados anonimizados)"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Relatórios gerenciais e planejamento tributário",
+          "topics": [
+            "Relatório mensal do cliente em linguagem de dono",
+            "Simulação comparativa Simples × Presumido × Real com apoio da IA",
+            "Verificação humana: como revisar o que a IA produz",
+            "Exercício: relatório gerencial completo"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Produto de consultoria + projeto final",
+          "topics": [
+            "Desenhando o serviço consultivo (escopo, entregas, recorrência)",
+            "Precificação e proposta comercial com IA",
+            "Roteiro de reunião de resultados com o cliente",
+            "Projeto final: proposta de consultoria para um cliente seu"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Modelo de relatório gerencial para clientes",
+        "Planilha de indicadores financeiros",
+        "Proposta comercial de consultoria contábil",
+        "Biblioteca de prompts contábeis"
+      ],
+      "faq": [
+        {
+          "question": "A IA substitui o sistema contábil?",
+          "answer": "Não. Ela complementa o sistema: trabalhamos com os relatórios que seu sistema já exporta."
+        },
+        {
+          "question": "Posso colocar dados de clientes na IA?",
+          "answer": "Ensinamos a anonimizar e a configurar as ferramentas para não usar seus dados em treinamento, além dos limites que a LGPD impõe."
+        }
+      ]
+    },
+    {
+      "id": "pres-consultoria-financeira-ia",
+      "title": "Consultoria Financeira com IA",
+      "category": "Finanças",
+      "format": "um-dia",
+      "icon": "account_balance",
+      "description": "Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA para consultoria.",
+      "headline": "Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA, para consultores e para quem cuida das finanças do negócio.",
+      "about": [
+        "Consultoria financeira é transformar números em decisões. Neste curso você aprende um método de diagnóstico financeiro para pequenas e médias empresas e usa a IA para acelerar cada etapa: organizar os dados, montar o fluxo de caixa, calcular indicadores, projetar cenários e apresentar recomendações.",
+        "Ao final você terá um kit completo de consultoria financeira: planilhas, roteiro de diagnóstico e modelo de relatório para aplicar no seu negócio ou em clientes."
+      ],
+      "audience": [
+        "Consultores financeiros e de negócios",
+        "Empresários que querem dominar as finanças da empresa",
+        "Profissionais de financeiro, controladoria e tesouraria",
+        "Contadores que querem atuar como consultores"
+      ],
+      "prerequisites": [
+        "Noções básicas de receitas, despesas e lucro",
+        "Uso básico de planilhas"
+      ],
+      "outcomes": [
+        "Aplicar um roteiro de diagnóstico financeiro completo",
+        "Montar fluxo de caixa realizado e projetado com IA",
+        "Calcular capital de giro, ponto de equilíbrio, margem de contribuição e prazos médios",
+        "Projetar cenários (pessimista, realista, otimista)",
+        "Montar DRE gerencial e precificação com base em custos",
+        "Apresentar recomendações claras ao empresário"
+      ],
+      "tools": [
+        "Excel / Google Planilhas",
+        "ChatGPT",
+        "Claude",
+        "Google Gemini",
+        "Google Slides / PowerPoint"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "Método de diagnóstico financeiro",
+          "topics": [
+            "As 5 perguntas que todo diagnóstico responde",
+            "Coleta e organização de dados com ajuda da IA",
+            "Separação de contas PF × PJ e classificação de despesas",
+            "Exercício: organizar o extrato de uma empresa"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Fluxo de caixa e capital de giro",
+          "topics": [
+            "Fluxo de caixa realizado e projetado",
+            "Prazos médios de recebimento, pagamento e estoque",
+            "Necessidade de capital de giro",
+            "Exercício: fluxo de caixa de 12 meses com IA"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Indicadores, custos e cenários",
+          "topics": [
+            "DRE gerencial e margem de contribuição",
+            "Ponto de equilíbrio e precificação",
+            "Simulação de cenários e análise de sensibilidade com IA",
+            "Exercício: plano de recuperação de margem"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Relatório, apresentação e projeto final",
+          "topics": [
+            "Relatório de diagnóstico em linguagem simples",
+            "Apresentação de recomendações ao empresário",
+            "Como transformar isso em serviço recorrente",
+            "Projeto final: diagnóstico completo de um caso"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Planilha de fluxo de caixa projetado",
+        "Planilha de indicadores e ponto de equilíbrio",
+        "Roteiro de diagnóstico financeiro",
+        "Modelo de relatório e apresentação para o cliente"
+      ],
+      "faq": [
+        {
+          "question": "Preciso ser formado em finanças?",
+          "answer": "Não. O curso parte dos conceitos essenciais e foca na aplicação prática."
+        },
+        {
+          "question": "Serve para a minha própria empresa?",
+          "answer": "Sim. Você pode usar os dados do seu negócio nos exercícios."
+        }
+      ]
+    },
+    {
+      "id": "pres-intro-analise-dados",
+      "title": "Introdução à Análise de Dados",
+      "category": "Dados",
+      "format": "um-dia",
+      "icon": "analytics",
+      "description": "Os fundamentos para organizar, analisar e tirar conclusões a partir de dados reais.",
+      "headline": "Os fundamentos para organizar, analisar e tirar conclusões de dados reais, o primeiro passo para quem quer trabalhar com dados.",
+      "about": [
+        "Toda empresa tem dados, mas poucas pessoas sabem transformá-los em respostas. Neste curso você aprende o ciclo completo da análise de dados: fazer a pergunta certa, coletar e limpar os dados, explorar, visualizar e comunicar a conclusão.",
+        "Sem programação e sem matemática complicada: usamos planilhas e IA para que você entenda os conceitos fazendo. É o ponto de partida ideal para as imersões de BI e Ciência de Dados."
+      ],
+      "audience": [
+        "Quem quer iniciar carreira em dados",
+        "Profissionais de qualquer área que precisam analisar informações",
+        "Gestores que querem tomar decisões baseadas em dados",
+        "Estudantes de graduação e recém-formados"
+      ],
+      "prerequisites": [
+        "Nenhum conhecimento prévio em dados",
+        "Uso básico de computador e planilhas"
+      ],
+      "outcomes": [
+        "Entender o ciclo da análise de dados, da pergunta à decisão",
+        "Identificar tipos de dados e problemas comuns de qualidade",
+        "Limpar e organizar bases em planilha e com IA",
+        "Aplicar estatística descritiva (média, mediana, dispersão, distribuição)",
+        "Escolher a visualização certa para cada pergunta",
+        "Comunicar conclusões com storytelling de dados"
+      ],
+      "tools": [
+        "Google Planilhas / Excel",
+        "ChatGPT (análise de dados)",
+        "Google Gemini",
+        "Looker Studio"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "Pensamento analítico",
+          "topics": [
+            "O que faz um analista de dados",
+            "Da pergunta de negócio à pergunta analítica",
+            "Tipos de dados e fontes",
+            "Exercício: transformar um problema em perguntas mensuráveis"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Preparação de dados",
+          "topics": [
+            "Qualidade de dados: duplicados, ausentes e inconsistentes",
+            "Limpeza e padronização em planilha",
+            "IA como apoio na limpeza e na documentação",
+            "Exercício: preparar uma base real de vendas"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Exploração e estatística descritiva",
+          "topics": [
+            "Medidas de tendência central e dispersão",
+            "Distribuições, outliers e correlação (sem fórmulas complicadas)",
+            "Análise exploratória com IA",
+            "Exercício: o que os dados dizem sobre o negócio?"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Visualização, storytelling e projeto final",
+          "topics": [
+            "Escolhendo gráficos que respondem perguntas",
+            "Primeiro painel no Looker Studio",
+            "Storytelling: contexto, conflito e recomendação",
+            "Projeto final: análise completa com apresentação de 3 minutos"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Base de dados limpa e documentada",
+        "Painel no Looker Studio",
+        "Checklist de análise de dados",
+        "Apresentação com suas conclusões"
+      ],
+      "faq": [
+        {
+          "question": "Vou aprender Python?",
+          "answer": "Não neste curso. Aqui o foco são os fundamentos. Python é trabalhado na imersão Ciência de Dados Aplicada."
+        },
+        {
+          "question": "Qual o próximo passo depois deste curso?",
+          "answer": "As imersões BI e Dashboards com IA ou Ciência de Dados Aplicada."
+        }
+      ]
+    },
+    {
+      "id": "pres-bpmn-ia",
+      "title": "Processos Empresariais BPMN com IA",
+      "category": "Processos",
+      "format": "um-dia",
+      "icon": "account_tree",
+      "description": "Mapeie e melhore processos com a notação BPMN, usando IA para modelar e documentar.",
+      "headline": "Mapeie e melhore os processos da sua empresa com a notação BPMN, usando IA para modelar, documentar e encontrar gargalos.",
+      "about": [
+        "Processos desorganizados geram retrabalho, atrasos e dependência de pessoas-chave. Neste curso você aprende a notação BPMN, o padrão internacional de modelagem de processos, e usa a IA para acelerar o levantamento, desenhar fluxos e escrever a documentação.",
+        "Você vai mapear um processo real da sua área (como está hoje), identificar desperdícios e desenhar o processo melhorado (como deveria ser), com indicadores e procedimento operacional padrão."
+      ],
+      "audience": [
+        "Gestores e líderes de equipe",
+        "Analistas de processos, qualidade e melhoria contínua",
+        "Profissionais administrativos e de operações",
+        "Empreendedores que querem organizar a empresa para crescer"
+      ],
+      "prerequisites": [
+        "Nenhum conhecimento prévio de processos ou BPMN"
+      ],
+      "outcomes": [
+        "Ler e desenhar diagramas BPMN 2.0 (eventos, tarefas, gateways, raias)",
+        "Conduzir levantamento de processos com entrevistas guiadas por IA",
+        "Mapear o processo atual (AS-IS) e o melhorado (TO-BE)",
+        "Identificar gargalos, desperdícios e oportunidades de automação",
+        "Gerar POPs (procedimentos operacionais padrão) com IA",
+        "Definir indicadores de desempenho para o processo"
+      ],
+      "tools": [
+        "Bizagi Modeler ou draw.io",
+        "Camunda Modeler (demonstração)",
+        "ChatGPT",
+        "Claude",
+        "Google Docs / Word"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "Gestão por processos e BPMN",
+          "topics": [
+            "Por que processos importam: cadeia de valor e clientes internos",
+            "Elementos BPMN: eventos, atividades, gateways, fluxos",
+            "Raias e piscinas: quem faz o quê",
+            "Exercício: leitura e correção de diagramas"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Levantamento e modelagem AS-IS",
+          "topics": [
+            "Roteiro de entrevista gerado por IA",
+            "Transformando relatos em diagrama",
+            "Gerando BPMN a partir de texto com IA",
+            "Exercício: mapear um processo real da sua área"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Análise e redesenho TO-BE",
+          "topics": [
+            "Identificando gargalos, retrabalho e esperas",
+            "Técnicas de melhoria: eliminar, simplificar, automatizar",
+            "IA como consultora de melhoria de processos",
+            "Exercício: desenhar o processo melhorado"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Documentação, indicadores e projeto final",
+          "topics": [
+            "POP e matriz de responsabilidades (RACI) com IA",
+            "Indicadores de processo: tempo, custo, qualidade",
+            "Oportunidades de automação (ponte para o curso de Automação)",
+            "Projeto final: processo AS-IS → TO-BE documentado"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Diagrama AS-IS e TO-BE de um processo seu",
+        "POP do processo melhorado",
+        "Matriz RACI",
+        "Roteiro de levantamento de processos"
+      ],
+      "faq": [
+        {
+          "question": "Preciso instalar algum programa?",
+          "answer": "Usamos ferramentas gratuitas (Bizagi Modeler ou draw.io no navegador). Enviamos as instruções antes da aula."
+        },
+        {
+          "question": "Serve para empresa pequena?",
+          "answer": "Sim. Organizar processos é justamente o que permite à empresa pequena crescer sem depender do dono para tudo."
+        }
+      ]
+    },
+    {
+      "id": "pres-intro-automacao-ia",
+      "title": "Introdução à Automação com IA",
+      "category": "Automação",
+      "format": "um-dia",
+      "icon": "bolt",
+      "description": "Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA.",
+      "headline": "Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA, sem programar.",
+      "about": [
+        "Copiar dados entre sistemas, responder as mesmas mensagens, gerar relatórios toda semana: tarefas assim consomem horas que poderiam ir para trabalho de valor. Neste curso você aprende a identificar o que pode ser automatizado e a construir automações com ferramentas no-code conectadas a IA.",
+        "Você sai com automações funcionando: formulário que alimenta planilha e envia e-mail, e-mails classificados e resumidos por IA e um relatório semanal automático."
+      ],
+      "audience": [
+        "Profissionais administrativos, comerciais e de atendimento",
+        "Empreendedores e pequenos empresários",
+        "Gestores que querem ganhar produtividade na equipe",
+        "Qualquer pessoa curiosa sobre automação, sem saber programar"
+      ],
+      "prerequisites": [
+        "Nenhum conhecimento de programação",
+        "Conta Google ativa (Gmail)"
+      ],
+      "outcomes": [
+        "Mapear tarefas repetitivas e priorizar o que automatizar",
+        "Entender gatilhos, ações, filtros e integrações",
+        "Construir automações no Make e no Zapier",
+        "Conectar IA às automações para classificar, resumir e responder",
+        "Automatizar formulários, planilhas, e-mails e relatórios",
+        "Cuidar de custos, limites e segurança das automações"
+      ],
+      "tools": [
+        "Make",
+        "Zapier",
+        "n8n (demonstração)",
+        "Google Forms / Planilhas / Gmail",
+        "API do ChatGPT ou Gemini"
+      ],
+      "program": [
+        {
+          "when": "08:00 – 10:00",
+          "title": "Pensando em automação",
+          "topics": [
+            "O que pode (e o que não deve) ser automatizado",
+            "Mapa de tarefas repetitivas e cálculo de horas economizadas",
+            "Conceitos: gatilho, ação, filtro, roteador",
+            "Exercício: lista de automações da sua rotina"
+          ]
+        },
+        {
+          "when": "10:15 – 12:00",
+          "title": "Primeiras automações no-code",
+          "topics": [
+            "Criando contas e navegando no Make e no Zapier",
+            "Formulário → planilha → e-mail de confirmação",
+            "Filtros e condições",
+            "Exercício: automação de cadastro de clientes"
+          ]
+        },
+        {
+          "when": "13:00 – 15:00",
+          "title": "Automação com IA",
+          "topics": [
+            "Conectando a IA às automações",
+            "Classificar e resumir e-mails automaticamente",
+            "Respostas sugeridas e triagem de atendimento",
+            "Exercício: caixa de entrada inteligente"
+          ]
+        },
+        {
+          "when": "15:15 – 17:00",
+          "title": "Relatórios automáticos e projeto final",
+          "topics": [
+            "Relatório semanal automático com resumo por IA",
+            "Tratamento de erros, custos e limites dos planos gratuitos",
+            "Segurança: credenciais e dados sensíveis",
+            "Projeto final: automação de uma tarefa real sua"
+          ]
+        }
+      ],
+      "deliverables": [
+        "3 automações funcionando na sua conta",
+        "Mapa de automações priorizadas",
+        "Modelos (blueprints) prontos para importar",
+        "Guia de boas práticas de automação"
+      ],
+      "faq": [
+        {
+          "question": "As ferramentas são pagas?",
+          "answer": "Usamos os planos gratuitos do Make e do Zapier, suficientes para todas as automações do curso."
+        },
+        {
+          "question": "Dá para automatizar WhatsApp?",
+          "answer": "Mostramos os caminhos e cuidados para integrar o WhatsApp, mas o foco do curso são e-mail, formulários e planilhas."
+        }
+      ]
+    },
+    {
+      "id": "pres-ciencia-dados-aplicada",
+      "title": "Ciência de Dados Aplicada",
+      "category": "Dados",
+      "format": "imersao",
+      "icon": "science",
+      "description": "Do dado bruto ao modelo: análise, estatística e machine learning aplicados a problemas reais.",
+      "headline": "Do dado bruto ao modelo preditivo: dois fins de semana de imersão em análise, estatística e machine learning aplicados a problemas reais.",
+      "about": [
+        "A Ciência de Dados é a capacidade de responder perguntas e prever resultados a partir de dados. Nesta imersão você percorre o ciclo completo de um projeto de dados com Python: preparação, análise exploratória, estatística, modelagem preditiva e comunicação dos resultados.",
+        "Usamos a IA como par de programação, o que permite avançar rápido mesmo para quem está começando no Python. O último encontro é dedicado ao projeto final, apresentado à turma e pronto para entrar no seu portfólio."
+      ],
+      "audience": [
+        "Analistas de dados e de BI que querem dar o próximo passo",
+        "Profissionais de exatas, engenharia, economia e administração",
+        "Quem concluiu Introdução à Análise de Dados",
+        "Profissionais em transição de carreira para dados"
+      ],
+      "prerequisites": [
+        "Conhecimento básico de análise de dados em planilhas (ou o curso Introdução à Análise de Dados)",
+        "Não é necessário saber programar: Python é ensinado do zero com apoio de IA"
+      ],
+      "outcomes": [
+        "Programar em Python para dados (pandas, numpy) com apoio de IA",
+        "Fazer análise exploratória completa e visualizações (matplotlib, seaborn)",
+        "Aplicar estatística: amostragem, testes de hipótese e correlação",
+        "Construir modelos de regressão e classificação com scikit-learn",
+        "Avaliar modelos (métricas, validação cruzada, overfitting)",
+        "Apresentar um projeto de dados de ponta a ponta"
+      ],
+      "tools": [
+        "Python",
+        "Google Colab / Jupyter",
+        "pandas e numpy",
+        "matplotlib e seaborn",
+        "scikit-learn",
+        "ChatGPT / Claude como copiloto de código"
+      ],
+      "program": [
+        {
+          "when": "Encontro 1 · Sexta · 19:00 – 22:00",
+          "title": "Python para dados com IA",
+          "topics": [
+            "O ciclo de um projeto de Ciência de Dados (CRISP-DM)",
+            "Google Colab e primeiros passos em Python",
+            "pandas: ler, filtrar, agrupar e juntar dados",
+            "IA como copiloto de código: pedir, entender e corrigir"
+          ]
+        },
+        {
+          "when": "Encontro 2 · Sábado · 08:00 – 17:00",
+          "title": "Análise exploratória e estatística",
+          "topics": [
+            "Limpeza e tratamento de dados ausentes e outliers",
+            "Visualizações com matplotlib e seaborn",
+            "Estatística descritiva e distribuições",
+            "Correlação, amostragem e testes de hipótese",
+            "Feature engineering: criando variáveis úteis",
+            "Exercício: análise exploratória completa de um caso real"
+          ]
+        },
+        {
+          "when": "Encontro 3 · Sexta · 19:00 – 22:00",
+          "title": "Machine learning supervisionado",
+          "topics": [
+            "Regressão linear: prevendo valores",
+            "Classificação: árvores de decisão e random forest",
+            "Treino, teste e validação cruzada",
+            "Métricas: MAE, RMSE, acurácia, precisão, recall"
+          ]
+        },
+        {
+          "when": "Encontro 4 · Sábado · 08:00 – 17:00",
+          "title": "Projeto final de ponta a ponta",
+          "topics": [
+            "Escolha do problema e dos dados (seu ou da turma)",
+            "Desenvolvimento orientado: preparação → modelo → avaliação",
+            "Interpretação do modelo e limitações",
+            "Storytelling e apresentação dos resultados",
+            "Banca de apresentação e feedback",
+            "Próximos passos na carreira em dados"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Notebook completo de projeto de dados",
+        "Modelo preditivo treinado e avaliado",
+        "Apresentação do projeto para portfólio",
+        "Coleção de notebooks de referência da imersão"
+      ],
+      "faq": [
+        {
+          "question": "Nunca programei. Consigo acompanhar?",
+          "answer": "Sim. O Python é ensinado do zero e a IA ajuda a escrever e entender o código. O ritmo é intenso, então recomendamos ter feito Introdução à Análise de Dados ou ter familiaridade com planilhas."
+        },
+        {
+          "question": "Preciso instalar algo?",
+          "answer": "Não. Usamos o Google Colab, que roda no navegador."
+        },
+        {
+          "question": "Se eu faltar a um encontro?",
+          "answer": "Os materiais e notebooks de todos os encontros ficam disponíveis, e o grupo de suporte ajuda a recuperar o conteúdo."
+        }
+      ]
+    },
+    {
+      "id": "pres-ia-farma",
+      "title": "IA na Farma",
+      "category": "IA Setorial",
+      "format": "imersao",
+      "icon": "medication",
+      "description": "Aplicações de inteligência artificial no setor farmacêutico, da gestão ao atendimento.",
+      "headline": "Inteligência artificial aplicada ao setor farmacêutico: gestão, estoque, atendimento, marketing e conformidade em dois fins de semana.",
+      "about": [
+        "Farmácias e drogarias operam com margens apertadas, estoques complexos, regras sanitárias rígidas e clientes cada vez mais exigentes. Nesta imersão você aprende a aplicar IA em cada frente do negócio farmacêutico: da previsão de demanda ao atendimento, do marketing à conformidade regulatória.",
+        "O conteúdo é construído sobre a realidade do varejo e da indústria farmacêutica brasileira, sempre respeitando a ética, a LGPD e as normas da Anvisa. O projeto final é um plano de implantação de IA para a sua farmácia ou empresa."
+      ],
+      "audience": [
+        "Proprietários e gestores de farmácias e drogarias",
+        "Farmacêuticos responsáveis técnicos",
+        "Profissionais de distribuidoras e indústria farmacêutica",
+        "Gerentes de loja, compradores e profissionais de marketing farmacêutico"
+      ],
+      "prerequisites": [
+        "Experiência no setor farmacêutico (varejo, distribuição ou indústria)",
+        "Nenhum conhecimento técnico de IA ou programação"
+      ],
+      "outcomes": [
+        "Usar assistentes de IA na rotina da farmácia com segurança",
+        "Analisar curva ABC, giro de estoque, rupturas e vencimentos com IA",
+        "Fazer previsão de demanda com sazonalidade",
+        "Criar fluxos de atendimento e relacionamento com IA (sem substituir a orientação farmacêutica)",
+        "Produzir conteúdo e campanhas dentro das regras de publicidade de medicamentos",
+        "Aplicar IA à conformidade: RDCs, POPs, LGPD e dados de saúde",
+        "Montar um plano de implantação de IA com indicadores e retorno esperado"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Google Gemini",
+        "Excel / Google Planilhas",
+        "Looker Studio",
+        "Make (automações)"
+      ],
+      "program": [
+        {
+          "when": "Encontro 1 · Sexta · 19:00 – 22:00",
+          "title": "IA no contexto farmacêutico",
+          "topics": [
+            "Panorama: IA no varejo farmacêutico e na indústria",
+            "Assistentes de IA: o que fazem bem e seus riscos na saúde",
+            "Ética, LGPD e dados sensíveis de saúde",
+            "Prompts para a rotina da farmácia"
+          ]
+        },
+        {
+          "when": "Encontro 2 · Sábado · 08:00 – 17:00",
+          "title": "Gestão de estoque, compras e indicadores",
+          "topics": [
+            "Curva ABC, giro e cobertura de estoque com IA",
+            "Rupturas, excessos e controle de vencimentos",
+            "Previsão de demanda e sazonalidade (gripe, dengue, verão)",
+            "Precificação e margem por categoria",
+            "Painel de indicadores da farmácia no Looker Studio",
+            "Exercício: plano de compras do mês com base em dados"
+          ]
+        },
+        {
+          "when": "Encontro 3 · Sexta · 19:00 – 22:00",
+          "title": "Atendimento, relacionamento e marketing",
+          "topics": [
+            "Fluxos de atendimento e pós-venda apoiados por IA",
+            "Programas de fidelidade e adesão a tratamentos contínuos",
+            "Conteúdo para redes sociais dentro das regras (RDC 96/2008)",
+            "Limites: onde a IA não substitui o farmacêutico"
+          ]
+        },
+        {
+          "when": "Encontro 4 · Sábado · 08:00 – 17:00",
+          "title": "Conformidade, automação e projeto final",
+          "topics": [
+            "IA na elaboração e revisão de POPs e documentação sanitária",
+            "Apoio a farmacovigilância e organização de informações técnicas",
+            "Automações para tarefas administrativas da loja",
+            "Cálculo de retorno de iniciativas de IA",
+            "Projeto final: plano de implantação de IA para sua empresa",
+            "Apresentação e feedback da turma"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Plano de implantação de IA para sua farmácia ou empresa",
+        "Painel de indicadores farmacêuticos",
+        "Planilha de curva ABC e previsão de demanda",
+        "Biblioteca de prompts para o setor farmacêutico",
+        "Modelos de POP revisados com IA"
+      ],
+      "faq": [
+        {
+          "question": "A IA pode orientar pacientes sobre medicamentos?",
+          "answer": "Não. Deixamos claro no curso que a orientação farmacêutica é atribuição do farmacêutico. A IA apoia a gestão, o relacionamento e a organização da informação."
+        },
+        {
+          "question": "Serve para indústria e distribuidora?",
+          "answer": "Sim. Os módulos de dados, demanda, conformidade e marketing se aplicam a toda a cadeia; os exemplos priorizam o varejo, mas adaptamos aos casos da turma."
+        }
+      ]
+    },
+    {
+      "id": "pres-bi-dashboards-ia",
+      "title": "BI e Dashboards com IA",
+      "category": "BI",
+      "format": "imersao",
+      "icon": "dashboard",
+      "description": "Construa painéis de BI completos e use IA para modelar, analisar e comunicar os dados.",
+      "headline": "Construa painéis de BI completos, da conexão aos dados à apresentação, e use IA para modelar, calcular e comunicar resultados.",
+      "about": [
+        "Business Intelligence é o que transforma planilhas espalhadas em decisões. Nesta imersão você aprende a construir dashboards profissionais no Power BI: conectar e tratar dados, modelar, criar medidas DAX, desenhar o painel e publicar para a equipe.",
+        "A IA entra como acelerador em todas as etapas: ajuda a escrever DAX, sugere visuais, documenta o modelo e gera narrativas automáticas. Você termina com um dashboard completo para o portfólio ou para a sua empresa."
+      ],
+      "audience": [
+        "Analistas administrativos, financeiros e comerciais",
+        "Profissionais que fazem relatórios em Excel e querem evoluir",
+        "Gestores que precisam acompanhar indicadores",
+        "Quem concluiu Excel com IA ou Introdução à Análise de Dados"
+      ],
+      "prerequisites": [
+        "Uso intermediário de Excel (filtros, fórmulas básicas, tabelas dinâmicas)",
+        "Notebook com Windows para o Power BI Desktop (usuários de Mac: fale conosco antes)"
+      ],
+      "outcomes": [
+        "Conectar e tratar dados de várias fontes com Power Query",
+        "Construir modelos de dados em estrela (fatos e dimensões)",
+        "Criar medidas DAX essenciais (CALCULATE, inteligência de tempo) com ajuda da IA",
+        "Desenhar dashboards claros seguindo boas práticas de visualização",
+        "Usar recursos de IA do Power BI (Q&A, Copilot, narrativas)",
+        "Publicar, compartilhar e atualizar painéis no Power BI Service"
+      ],
+      "tools": [
+        "Power BI Desktop",
+        "Power BI Service",
+        "Power Query",
+        "DAX",
+        "Copilot / ChatGPT",
+        "Excel"
+      ],
+      "program": [
+        {
+          "when": "Encontro 1 · Sexta · 19:00 – 22:00",
+          "title": "Fundamentos de BI e Power Query",
+          "topics": [
+            "O que é BI e como funciona um projeto de dashboard",
+            "Instalação e interface do Power BI Desktop",
+            "Conectando fontes: Excel, CSV, pastas e web",
+            "Tratamento de dados no Power Query com apoio de IA"
+          ]
+        },
+        {
+          "when": "Encontro 2 · Sábado · 08:00 – 17:00",
+          "title": "Modelagem e DAX",
+          "topics": [
+            "Modelo estrela: tabelas fato e dimensão",
+            "Relacionamentos e tabela calendário",
+            "Medidas DAX essenciais: SUM, DIVIDE, CALCULATE",
+            "Inteligência de tempo: acumulado, mês anterior, ano anterior",
+            "IA para escrever, explicar e revisar DAX",
+            "Exercício: modelo completo de vendas"
+          ]
+        },
+        {
+          "when": "Encontro 3 · Sexta · 19:00 – 22:00",
+          "title": "Visualização e design de dashboards",
+          "topics": [
+            "Escolha de visuais e hierarquia de informação",
+            "Layout, cores e identidade visual",
+            "Interatividade: filtros, segmentações, drill-down e dicas de ferramenta",
+            "Recursos de IA: Q&A, principais influenciadores, narrativas inteligentes"
+          ]
+        },
+        {
+          "when": "Encontro 4 · Sábado · 08:00 – 17:00",
+          "title": "Publicação e projeto final",
+          "topics": [
+            "Publicação no Power BI Service e compartilhamento",
+            "Atualização agendada e segurança em nível de linha (conceito)",
+            "Documentação do modelo gerada por IA",
+            "Projeto final: dashboard completo com dados reais",
+            "Apresentação dos dashboards e feedback",
+            "Próximos passos: certificação PL-300 e carreira em BI"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Dashboard completo publicado (arquivo .pbix)",
+        "Modelo de dados com tabela calendário reutilizável",
+        "Biblioteca de medidas DAX comentadas",
+        "Guia de design de dashboards"
+      ],
+      "faq": [
+        {
+          "question": "Uso Mac. Consigo fazer?",
+          "answer": "O Power BI Desktop roda apenas no Windows. Usuários de Mac podem usar máquina virtual ou fazer parte do curso pelo navegador. Fale conosco antes de reservar para combinarmos a melhor opção."
+        },
+        {
+          "question": "Preciso de licença paga do Power BI?",
+          "answer": "Não. O Power BI Desktop é gratuito. Para publicar, usamos a conta gratuita ou de avaliação."
+        }
+      ]
+    },
+    {
+      "id": "pres-prototipacao-apps-ia",
+      "title": "Prototipação de Apps com IA",
+      "category": "Produto & Apps",
+      "format": "imersao",
+      "icon": "phone_iphone",
+      "description": "Tire ideias do papel criando protótipos funcionais de aplicativos com ferramentas de IA.",
+      "headline": "Tire sua ideia do papel: em dois fins de semana você valida, desenha e constrói o protótipo funcional de um aplicativo usando IA.",
+      "about": [
+        "Hoje é possível construir protótipos funcionais de aplicativos sem uma equipe de desenvolvimento, usando ferramentas de IA que geram telas, código e banco de dados a partir de descrições em linguagem natural.",
+        "Nesta imersão você passa pelo processo completo de produto: entender o problema, definir o escopo mínimo, desenhar a experiência, construir o protótipo com IA, testar com usuários e apresentar. O último encontro termina com um demo day, com os protótipos publicados na internet."
+      ],
+      "audience": [
+        "Empreendedores com ideia de aplicativo ou produto digital",
+        "Profissionais de inovação, produto e marketing",
+        "Gestores que querem criar ferramentas internas para a empresa",
+        "Designers e estudantes que querem prototipar rápido"
+      ],
+      "prerequisites": [
+        "Nenhum conhecimento de programação",
+        "Ter uma ideia de aplicativo (ou escolher uma das propostas da turma)"
+      ],
+      "outcomes": [
+        "Validar uma ideia: problema, público e proposta de valor",
+        "Definir o MVP e escrever histórias de usuário com IA",
+        "Desenhar fluxos e telas (wireframes e protótipo navegável)",
+        "Construir um app funcional com ferramentas de IA (front-end, dados e login)",
+        "Testar com usuários e iterar rapidamente",
+        "Publicar o protótipo e apresentar um pitch"
+      ],
+      "tools": [
+        "Lovable",
+        "Bolt.new",
+        "Google AI Studio",
+        "Figma",
+        "Firebase / Supabase",
+        "ChatGPT / Claude"
+      ],
+      "program": [
+        {
+          "when": "Encontro 1 · Sexta · 19:00 – 22:00",
+          "title": "Da ideia ao problema certo",
+          "topics": [
+            "Prototipação rápida: por que construir para aprender",
+            "Problema, público e proposta de valor",
+            "Pesquisa rápida e análise de concorrentes com IA",
+            "Definição do MVP: o mínimo que prova a ideia"
+          ]
+        },
+        {
+          "when": "Encontro 2 · Sábado · 08:00 – 17:00",
+          "title": "Experiência do usuário e primeira versão",
+          "topics": [
+            "Jornada do usuário e fluxos principais",
+            "Histórias de usuário e requisitos com IA",
+            "Wireframes e protótipo navegável no Figma",
+            "Primeira versão do app com ferramentas de IA (Lovable / Bolt)",
+            "Como escrever bons prompts para construir software",
+            "Exercício: telas principais funcionando"
+          ]
+        },
+        {
+          "when": "Encontro 3 · Sexta · 19:00 – 22:00",
+          "title": "Dados, login e integrações",
+          "topics": [
+            "Banco de dados e autenticação (Firebase / Supabase)",
+            "Integrações e uso de IA dentro do app",
+            "Depuração com IA: quando algo não funciona",
+            "Teste rápido com usuários reais"
+          ]
+        },
+        {
+          "when": "Encontro 4 · Sábado · 08:00 – 17:00",
+          "title": "Iteração, publicação e demo day",
+          "topics": [
+            "Ajustes a partir do feedback dos testes",
+            "Publicação do protótipo na internet",
+            "Métricas de validação e próximos passos (MVP → produto)",
+            "Custos, limites e quando contratar desenvolvimento",
+            "Pitch de 3 minutos",
+            "Demo day com apresentação para a turma"
+          ]
+        }
+      ],
+      "deliverables": [
+        "Protótipo funcional publicado na internet",
+        "Documento de produto: problema, MVP e histórias de usuário",
+        "Protótipo navegável no Figma",
+        "Pitch de apresentação da ideia"
+      ],
+      "faq": [
+        {
+          "question": "Vou sair com um app pronto para vender?",
+          "answer": "Você sai com um protótipo funcional, ideal para validar a ideia, mostrar a investidores e clientes ou usar internamente. Transformar em produto escalável costuma exigir etapas adicionais, que discutimos no curso."
+        },
+        {
+          "question": "As ferramentas são pagas?",
+          "answer": "Usamos os planos gratuitos sempre que possível. Algumas ferramentas têm limites diários; orientamos como trabalhar dentro deles."
+        }
+      ]
+    }
+  ]
+}

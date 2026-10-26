@@ -1,0 +1,22 @@
+🧪 Ciência de Dados Aplicada: Do dado bruto ao modelo preditivo: dois fins de semana de imersão em análise, estatística e machine learning aplicados a problemas reais.
+
+O que você vai aprender:
+✅ Programar em Python para dados (pandas, numpy) com apoio de IA
+✅ Fazer análise exploratória completa e visualizações (matplotlib, seaborn)
+✅ Aplicar estatística: amostragem, testes de hipótese e correlação
+✅ Construir modelos de regressão e classificação com scikit-learn
+
+Para quem é:
+• Analistas de dados e de BI que querem dar o próximo passo
+• Profissionais de exatas, engenharia, economia e administração
+• Quem concluiu Introdução à Análise de Dados
+• Profissionais em transição de carreira para dados
+
+📅 Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo
+📍 Presencial em Cuiabá, turma de até 15 alunos
+🎓 Certificado com QR Code, material físico e coffee break inclusos
+
+Inscrições: 🔗 cerraclass.com.br/presencial/pres-ciencia-dados-aplicada
+💬 WhatsApp (67) 99351-5206
+
+#CienciaDeDados #Python #MachineLearning #Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso
