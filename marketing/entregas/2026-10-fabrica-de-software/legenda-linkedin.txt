@@ -1,0 +1,13 @@
+Software de prateleira cobra duas vezes: na licença e na adaptação da sua equipe a ele.
+
+Na Cerrado Tech, desenvolvemos ERPs, CRMs, soluções de IA (inclusive offline) e dashboards construídos em torno do processo real de cada empresa, e também para a gestão pública.
+
+Nosso processo:
+1. Descoberta e imersão no seu negócio
+2. Arquitetura e protótipo validado por você antes de qualquer código
+3. Desenvolvimento ágil, com entregas semanais
+4. Entrega, treinamento e evolução contínua
+
+O código é do cliente. Sem amarras com fornecedor.
+
+Vamos conversar sobre o software que a sua operação precisa? cerradofinancas.com.br

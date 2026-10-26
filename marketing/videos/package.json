@@ -8,7 +8,12 @@
     "render:reel": "remotion render src/index.ts Reel4Frentes out/reel-4-frentes.mp4 --codec h264 --crf 16",
     "render:intro": "remotion render src/index.ts FolinhaIntro out/folinha-intro.mp4 --codec h264 --crf 16",
     "render:gif": "remotion render src/index.ts FolinhaLoopGif out/folinha-loop.gif --codec gif --every-nth-frame 2",
-    "render:alpha": "remotion render src/index.ts FolinhaLoopAlpha out/folinha-loop.webm --codec vp8 --image-format png --pixel-format yuva420p"
+    "render:alpha": "remotion render src/index.ts FolinhaLoopAlpha out/folinha-loop.webm --codec vp8 --image-format png --pixel-format yuva420p",
+    "render:software": "remotion render src/index.ts ReelSoftware out/reel-software.mp4 --codec h264 --crf 16",
+    "render:contabilidade": "remotion render src/index.ts ReelContabilidade out/reel-contabilidade.mp4 --codec h264 --crf 16",
+    "render:credito": "remotion render src/index.ts ReelCredito out/reel-credito.mp4 --codec h264 --crf 16",
+    "render:cursos": "remotion render src/index.ts ReelCursos out/reel-cursos.mp4 --codec h264 --crf 16",
+    "render:frentes": "npm run render:software && npm run render:contabilidade && npm run render:credito && npm run render:cursos"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

@@ -43,10 +43,13 @@ npm run render:reel    # out/reel-4-frentes.mp4
 npm run render:intro   # out/folinha-intro.mp4
 npm run render:gif     # out/folinha-loop.gif
 npm run render:alpha   # out/folinha-loop.webm (fundo transparente)
+npm run render:frentes # out/reel-software|contabilidade|credito|cursos.mp4
 ```
 
 Depois de renderizar, copie os arquivos finais de `videos/out/` para `entregas/<campanha>/` e rode `tools/publicar.py`.
 Tema (cores, curvas, molas) em `videos/src/theme.ts`; cenas em `videos/src/scenes/`.
+Os Reels por frente são guiados por dados: edite `videos/src/campanhas.ts` (gancho, 3 blocos dos tipos
+lista/passos/contraste/numeros e fechamento). Peças estáticas usam os componentes de `brand/carrossel.css`.
 A animação Lottie da folinha é gerada por `python animacoes/folinha/gerar_lottie.py`
 (grava em `entregas/folinha-animada/`; copie os .json para `videos/public/` se mudar).
 
@@ -71,4 +74,5 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 ## Peças prontas
 
 - **2026-10 · Lançamento das 4 frentes**: carrossel de 7 slides, story, Reel de 21s e legendas para Instagram e LinkedIn.
+- **2026-10 · Uma campanha por frente** (Software, Contabilidade, Crédito, Cursos): carrossel de 6 slides, story, Reel de 15s e legendas.
 - **2026-10 · Folinha animada**: vinheta MP4, GIF em loop, WebM transparente e Lottie (entrada e loop).

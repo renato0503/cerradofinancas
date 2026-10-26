@@ -1,5 +1,286 @@
 [
   {
+    "pasta": "2026-10-fabrica-de-software",
+    "titulo": "Fábrica de Software",
+    "data": "2026-10-27",
+    "descricao": "Campanha da Cerrado Tech: software sob medida contra o de prateleira, o que construímos (ERP, CRM, IA, BI), como trabalhamos e GovTech.",
+    "orientacoes": [
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/fabrica.html",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 556
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 603
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 597
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 576
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "reel-software.mp4",
+        "tipo": "video",
+        "kb": 6687
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 776
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seu negócio não cabe num software de prateleira. 💻\n\nCom sistema pronto, é a sua equipe que se adapta ao software, você paga por funções que nunca usa e qualquer ajuste vira um projeto à parte.\n\nNa Cerrado Tech é o contrário: construímos o sistema em torno do seu processo.\n\n✅ ERPs e CRMs sob medida, integrados com SAP®, TOTVS, bancos e notas fiscais\n✅ Inteligência Artificial, inclusive offline, com seus dados dentro de casa\n✅ Dashboards e BI com seus números em tempo real\n✅ Soluções para a gestão pública (GovTech)\n\nE o código é seu, sem amarras com fornecedor.\n\nQual software o seu negócio precisa? Chama no WhatsApp (67) 99351-5206.\n🔗 cerradofinancas.com.br\n\n#CerradoTech #FabricaDeSoftware #SoftwareSobMedida #ERP #CRM #InteligenciaArtificial #GovTech #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Software de prateleira cobra duas vezes: na licença e na adaptação da sua equipe a ele.\n\nNa Cerrado Tech, desenvolvemos ERPs, CRMs, soluções de IA (inclusive offline) e dashboards construídos em torno do processo real de cada empresa, e também para a gestão pública.\n\nNosso processo:\n1. Descoberta e imersão no seu negócio\n2. Arquitetura e protótipo validado por você antes de qualquer código\n3. Desenvolvimento ágil, com entregas semanais\n4. Entrega, treinamento e evolução contínua\n\nO código é do cliente. Sem amarras com fornecedor.\n\nVamos conversar sobre o software que a sua operação precisa? cerradofinancas.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-fabrica-de-software.zip",
+      "kb": 10541
+    }
+  },
+  {
+    "pasta": "2026-10-cursos",
+    "titulo": "Cursos Cerraclass",
+    "data": "2026-10-27",
+    "descricao": "Campanha da Cerraclass: formato das turmas, o que se aprende (Antigravity, Claude, Gemini, ChatGPT), antes e depois, e as turmas (IA na Prática, IA em Ação Farma, in company).",
+    "orientacoes": [
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://cerraclass.com.br/",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 550
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 572
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 569
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "reel-cursos.mp4",
+        "tipo": "video",
+        "kb": 6169
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 775
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Pare de só usar IA. Construa com ela. 🎓\n\nNa Cerraclass, você aprende a criar as suas próprias ferramentas, sem saber programar:\n\n🛠️ IDE Antigravity, a sua oficina digital\n✨ Claude, Gemini e ChatGPT aplicados ao seu dia a dia\n⚡ Apps e automações para acabar com o trabalho repetitivo\n📚 Uma base de conhecimento organizada no seu notebook\n\nFormato: turmas de até 10 pessoas, 10h de imersão presencial e 100% prática. Você sai da sala com algo funcionando.\n\nTurmas: IA na Prática (profissionais e empresas), IA em Ação Farma (propagandistas) e in company.\n\nGaranta sua vaga na próxima turma: 🔗 cerraclass.com.br\n\n#Cerraclass #InteligenciaArtificial #IA #CursoDeIA #Automacao #ChatGPT #Claude #Gemini #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A maioria dos profissionais já usa IA. Poucos constroem com ela.\n\nOs treinamentos da Cerraclass são presenciais, em turmas de até 10 pessoas e 100% práticos: em 10 horas de imersão, cada participante sai com apps, automações e uma base de conhecimento funcionando, usando a IDE Antigravity e as principais IAs do mercado (Claude, Gemini e ChatGPT). Não é preciso saber programar.\n\nTurmas abertas (IA na Prática e IA em Ação Farma, para propagandistas) e formato in company, construído com os dados e problemas reais da empresa.\n\nAgenda e inscrições: cerraclass.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-cursos.zip",
+      "kb": 9972
+    }
+  },
+  {
+    "pasta": "2026-10-credito",
+    "titulo": "Crédito",
+    "data": "2026-10-27",
+    "descricao": "Campanha de crédito multi bancos com a LS Intermediação Financeira: produtos, consignado (novo, portabilidade e refinanciamento), como funciona e diferenciais. Contém aviso legal de correspondente bancário.",
+    "orientacoes": [
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/credito/",
+      "Crédito: manter o aviso legal de correspondente bancário na legenda e nas peças.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 567
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 580
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 596
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 594
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 579
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 615
+      },
+      {
+        "nome": "reel-credito.mp4",
+        "tipo": "video",
+        "kb": 7072
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 777
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Antes de assinar, compare. 💰\n\nNa Cerrado Finanças, em parceria com a LS Intermediação Financeira, você faz uma consulta só e nós comparamos as condições de vários bancos:\n\n✅ Empréstimos pessoais, capital de giro e com garantia\n✅ Consignado para aposentados, pensionistas e servidores, com portabilidade e refinanciamento\n✅ Financiamento de imóveis, veículos, máquinas e equipamentos\n✅ Seguros e consórcios\n\nComo funciona: conversa inicial, simulação em vários bancos, você escolhe sem pressão e nós acompanhamos a contratação até a liberação.\n\nSimulação gratuita e sem compromisso: (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nA Cerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#Credito #Consignado #EmprestimoConsignado #Financiamento #Consorcio #Seguros #LSIntermediacao #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Crédito é decisão financeira, não só uma venda.\n\nPor isso a frente de crédito da Cerrado Finanças, em parceria com a LS Intermediação Financeira, compara as propostas de várias instituições olhando o custo total. Para empresas, avalia também se a parcela cabe no fluxo de caixa antes da assinatura.\n\nProdutos: empréstimos, consignados (inclusive portabilidade e refinanciamento), financiamentos, seguros e consórcios.\n\nAtendimento humano do primeiro contato até a liberação. Simulação gratuita: cerradofinancas.com.br/credito\n\nA Cerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-credito.zip",
+      "kb": 10955
+    }
+  },
+  {
+    "pasta": "2026-10-contabilidade",
+    "titulo": "Contabilidade",
+    "data": "2026-10-27",
+    "descricao": "Campanha da Cerrado Contabilidade: serviços do CNPJ à folha, públicos atendidos (PJ, saúde, comércio), as 4 fases da consultoria de dados e a troca de contador.",
+    "orientacoes": [
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade.html",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 553
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 576
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 583
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "reel-contabilidade.mp4",
+        "tipo": "video",
+        "kb": 6513
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 763
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seu contador te ajuda a decidir ou só a pagar imposto? 📊\n\nNa Cerrado Contabilidade, burocracia é com a gente, e os seus números viram decisão:\n\n✅ Abertura de CNPJ rápida e 100% digital\n✅ Gestão tributária: Simples Nacional, notas e declarações em dia\n✅ Folha de pagamento e eSocial\n✅ Suporte humano direto no WhatsApp\n\nSomos especialistas em prestadores de serviço PJ, profissionais da saúde (Fator R para reduzir a alíquota) e comércio e e-commerce.\n\nInsatisfeito com a contabilidade atual? Fazemos toda a migração, de forma transparente e digital.\n\nAgende um diagnóstico: (67) 99351-5206\n🔗 cerradofinancas.com.br\n\n#CerradoContabilidade #Contabilidade #ContabilidadeDigital #SimplesNacional #FatorR #MEI #PJ #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Contabilidade não deveria ser só uma guia de imposto por mês.\n\nNa Cerrado Contabilidade, além da rotina fiscal, tributária e de folha (com eSocial), levamos as empresas da planilha ao painel em 4 fases:\n\n1. Mapeamento e diagnóstico: plano de contas e centros de custo organizados\n2. Saneamento e BPO: conciliações e uma base de dados confiável\n3. Automação e integração: a venda no CRM vira financeiro no ERP, sem digitação dupla\n4. Inteligência executiva: DRE, EBITDA e metas em tempo real\n\nAtendemos prestadores de serviço PJ, profissionais da saúde e comércio/e-commerce, e cuidamos de toda a migração para quem quer trocar de contador.\n\ncerradofinancas.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-contabilidade.zip",
+      "kb": 10312
+    }
+  },
+  {
     "pasta": "folinha-animada",
     "titulo": "Folinha animada",
     "data": "2026-10-26",
