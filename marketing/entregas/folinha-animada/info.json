@@ -1,0 +1,11 @@
+{
+  "titulo": "Folinha animada",
+  "data": "2026-10-26",
+  "descricao": "A logo da Cerrado (folinha) em movimento: vinheta com a marca para abrir ou fechar vídeos, loop para WhatsApp e apresentações, versão com fundo transparente para edição e animações Lottie para site e apps.",
+  "orientacoes": [
+    "folinha-intro.mp4 (1080×1080, 4s, com som): abertura ou fechamento de vídeos e posts animados.",
+    "folinha-loop.gif (480×480): WhatsApp, e-mail e apresentações.",
+    "folinha-loop.webm (fundo transparente): sobrepor em edições (CapCut, Premiere, Canva).",
+    "folinha-entrada.json e folinha-loop.json (Lottie): para o site ou apps, com o player lottie-web."
+  ]
+}

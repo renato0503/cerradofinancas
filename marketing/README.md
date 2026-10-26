@@ -32,6 +32,24 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt` etc. Vídeos e GIFs finais também vão aqui.
 4. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
 
+## Vídeos e folinha animada (`videos/`, Remotion)
+
+```
+cd videos
+npm install            # primeira vez (node_modules fica fora do git)
+npm run sfx            # gera os efeitos sonoros em public/sfx/
+npm run studio         # editor visual no navegador
+npm run render:reel    # out/reel-4-frentes.mp4
+npm run render:intro   # out/folinha-intro.mp4
+npm run render:gif     # out/folinha-loop.gif
+npm run render:alpha   # out/folinha-loop.webm (fundo transparente)
+```
+
+Depois de renderizar, copie os arquivos finais de `videos/out/` para `entregas/<campanha>/` e rode `tools/publicar.py`.
+Tema (cores, curvas, molas) em `videos/src/theme.ts`; cenas em `videos/src/scenes/`.
+A animação Lottie da folinha é gerada por `python animacoes/folinha/gerar_lottie.py`
+(grava em `entregas/folinha-animada/`; copie os .json para `videos/public/` se mudar).
+
 Formatos usados:
 - Feed (Instagram/LinkedIn): **1080×1350**
 - Stories / status / Reels: **1080×1920**, com cerca de 250px livres no topo e na base
@@ -52,4 +70,5 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 
 ## Peças prontas
 
-- **2026-10 · Lançamento das 4 frentes**: carrossel de 7 slides, story e legendas para Instagram e LinkedIn.
+- **2026-10 · Lançamento das 4 frentes**: carrossel de 7 slides, story, Reel de 21s e legendas para Instagram e LinkedIn.
+- **2026-10 · Folinha animada**: vinheta MP4, GIF em loop, WebM transparente e Lottie (entrada e loop).

@@ -6,3 +6,7 @@ node_modules/
 **/out/frames/
 .venv/
 __pycache__/
+
+# Projeto de vídeo: renders e sons gerados (npm run sfx recria os sons)
+videos/out/
+videos/public/sfx/

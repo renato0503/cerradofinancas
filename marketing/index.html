@@ -253,7 +253,8 @@
 
     function previa(c, a) {
       const url = base + c.pasta + '/' + a.nome;
-      if (a.tipo === 'video') return el('video', { src: url, controls: '', muted: '', playsinline: '', preload: 'metadata' });
+      // #t=1.5: a prévia mostra um quadro com conteúdo (o primeiro costuma ser escuro)
+      if (a.tipo === 'video') return el('video', { src: url + '#t=1.5', controls: '', muted: '', playsinline: '', preload: 'metadata' });
       if (a.tipo === 'lottie') {
         const box = el('div', { class: 'lottie' });
         lottie.loadAnimation({ container: box, renderer: 'svg', loop: true, autoplay: true, path: url });

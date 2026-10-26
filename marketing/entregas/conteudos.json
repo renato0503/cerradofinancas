@@ -1,11 +1,56 @@
 [
   {
+    "pasta": "folinha-animada",
+    "titulo": "Folinha animada",
+    "data": "2026-10-26",
+    "descricao": "A logo da Cerrado (folinha) em movimento: vinheta com a marca para abrir ou fechar vídeos, loop para WhatsApp e apresentações, versão com fundo transparente para edição e animações Lottie para site e apps.",
+    "orientacoes": [
+      "folinha-intro.mp4 (1080×1080, 4s, com som): abertura ou fechamento de vídeos e posts animados.",
+      "folinha-loop.gif (480×480): WhatsApp, e-mail e apresentações.",
+      "folinha-loop.webm (fundo transparente): sobrepor em edições (CapCut, Premiere, Canva).",
+      "folinha-entrada.json e folinha-loop.json (Lottie): para o site ou apps, com o player lottie-web."
+    ],
+    "arquivos": [
+      {
+        "nome": "folinha-entrada.json",
+        "tipo": "lottie",
+        "kb": 162
+      },
+      {
+        "nome": "folinha-intro.mp4",
+        "tipo": "video",
+        "kb": 1482
+      },
+      {
+        "nome": "folinha-loop.gif",
+        "tipo": "imagem",
+        "kb": 1547
+      },
+      {
+        "nome": "folinha-loop.json",
+        "tipo": "lottie",
+        "kb": 162
+      },
+      {
+        "nome": "folinha-loop.webm",
+        "tipo": "video",
+        "kb": 197
+      }
+    ],
+    "legendas": [],
+    "pacote": {
+      "nome": "folinha-animada.zip",
+      "kb": 3332
+    }
+  },
+  {
     "pasta": "2026-10-lancamento-4-frentes",
     "titulo": "Lançamento das 4 frentes",
     "data": "2026-10-26",
-    "descricao": "Apresenta o novo posicionamento: Fábrica de Software, Contabilidade, Crédito (com a LS) e Cursos (Cerraclass). Carrossel de 7 slides para o feed e story para Instagram e status do WhatsApp.",
+    "descricao": "Apresenta o novo posicionamento: Fábrica de Software, Contabilidade, Crédito (com a LS) e Cursos (Cerraclass). Carrossel de 7 slides para o feed, story para Instagram e status do WhatsApp e Reel de 21s com trilha e efeitos sonoros.",
     "orientacoes": [
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07), no Instagram e no LinkedIn.",
+      "Reel (reel-4-frentes.mp4, 1080×1920, 21s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a mesma legenda do Instagram.",
       "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/",
       "Legendas prontas abaixo, uma para cada rede."
     ],
@@ -46,6 +91,11 @@
         "kb": 600
       },
       {
+        "nome": "reel-4-frentes.mp4",
+        "tipo": "video",
+        "kb": 10968
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 758
@@ -65,7 +115,7 @@
     ],
     "pacote": {
       "nome": "2026-10-lancamento-4-frentes.zip",
-      "kb": 4904
+      "kb": 15326
     }
   }
 ]

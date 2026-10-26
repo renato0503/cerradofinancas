@@ -1,0 +1,27 @@
+{
+  "name": "cerrado-videos",
+  "private": true,
+  "description": "Vídeos e animações da Cerrado Finanças & Tech (Remotion)",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "sfx": "node scripts/gerar-sfx.mjs",
+    "render:reel": "remotion render src/index.ts Reel4Frentes out/reel-4-frentes.mp4 --codec h264 --crf 16",
+    "render:intro": "remotion render src/index.ts FolinhaIntro out/folinha-intro.mp4 --codec h264 --crf 16",
+    "render:gif": "remotion render src/index.ts FolinhaLoopGif out/folinha-loop.gif --codec gif --every-nth-frame 2",
+    "render:alpha": "remotion render src/index.ts FolinhaLoopAlpha out/folinha-loop.webm --codec vp8 --image-format png --pixel-format yuva420p"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@remotion/cli": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "@remotion/lottie": "4.0.539",
+    "lottie-web": "^5.13.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
