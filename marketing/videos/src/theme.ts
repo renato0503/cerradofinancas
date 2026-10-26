@@ -25,6 +25,7 @@ export const theme = {
     contabil: "#4ade80",
     credito: "#fecb00",
     cursos: "#a78bfa",
+    cerraai: "#8b5cf6",
   },
   fonts: {
     display: fontFamily,

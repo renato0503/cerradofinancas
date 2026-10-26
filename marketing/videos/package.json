@@ -16,6 +16,7 @@
     "render:frentes": "npm run render:software && npm run render:contabilidade && npm run render:credito && npm run render:cursos",
     "render:ia-na-pratica": "remotion render src/index.ts ReelIaNaPratica out/reel-ia-na-pratica.mp4 --codec h264 --crf 16",
     "render:ia-farma": "remotion render src/index.ts ReelIaFarma out/reel-ia-farma.mp4 --codec h264 --crf 16",
+    "render:cerra-ai": "remotion render src/index.ts ReelCerraAI out/reel-cerra-ai.mp4 --codec h264 --crf 16",
     "render:cursos-cerraclass": "npm run render:ia-na-pratica && npm run render:ia-farma",
     "render:cursos-presenciais": "node scripts/render-cursos.mjs"
   },

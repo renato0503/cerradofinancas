@@ -44,6 +44,7 @@ npm run render:intro   # out/folinha-intro.mp4
 npm run render:gif     # out/folinha-loop.gif
 npm run render:alpha   # out/folinha-loop.webm (fundo transparente)
 npm run render:frentes # out/reel-software|contabilidade|credito|cursos.mp4
+npm run render:cerra-ai # out/reel-cerra-ai.mp4
 ```
 
 Depois de renderizar, copie os arquivos finais de `videos/out/` para `entregas/<campanha>/` e rode `tools/publicar.py`.
@@ -56,6 +57,18 @@ A animação Lottie da folinha é gerada por `python animacoes/folinha/gerar_lot
 Formatos usados:
 - Feed (Instagram/LinkedIn): **1080×1350**
 - Stories / status / Reels: **1080×1920**, com cerca de 250px livres no topo e na base
+
+## Logo do produto (Cerra.AI)
+
+A logo original (`img/logo_cerraai.png`) vem num quadro preto opaco. Para entrar nas peças, o fundo é
+removido por flood fill e o resultado (com transparência) fica em `img/logo_cerraai-icone.png`:
+
+```
+python tools/recortar_logo_cerraai.py
+```
+
+O script também copia a versão limpa para `videos/public/cerraai.png`, usada no Reel.
+No Reel, uma campanha pode usar a logo no lugar do ícone: campo `logo` em `videos/src/campanhas.ts`.
 
 ## Cursos presenciais da Cerraclass (geração automática)
 
@@ -119,3 +132,5 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 - **2026-10 · Uma campanha por frente** (Software, Contabilidade, Crédito, Cursos): carrossel de 6 slides, story, Reel de 15s e legendas.
 - **2026-10 · Cursos da Cerraclass**: IA na Prática e IA em Ação Farma (feitos à mão) e os 11 cursos presenciais do catálogo, gerados a partir dos dados da CerraClass.
 - **2026-10 · Folinha animada**: vinheta MP4, GIF em loop, WebM transparente e Lottie (entrada e loop).
+- **2026-10 · Cerra.AI**: carrossel de 7 slides, story, Reel de 15s e legendas. O texto vem do projeto
+  `D:\Dev\Cerra.AI` — o que pode e o que não pode ser afirmado está na regra 8 do `HISTORICO.md`.

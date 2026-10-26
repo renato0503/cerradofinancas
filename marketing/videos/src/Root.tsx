@@ -12,6 +12,7 @@ const FRENTES = [
   ["ReelCursos", "cursos"],
   ["ReelIaNaPratica", "iaNaPratica"],
   ["ReelIaFarma", "iaFarma"],
+  ["ReelCerraAI", "cerraai"],
   ...COMPOSICOES_CURSOS,
 ] as const;
 

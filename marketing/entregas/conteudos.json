@@ -1,5 +1,82 @@
 [
   {
+    "pasta": "2026-10-cerra-ai",
+    "titulo": "Cerra.AI",
+    "data": "2026-10-30",
+    "descricao": "Campanha do Cerra.AI, o assistente corporativo 100% local da Cerrado Tech: a IA que roda no seu computador, com RAG nos documentos da empresa, OCR e transcrição offline, anonimização e auditoria LGPD, e três cenários com base própria.",
+    "orientacoes": [
+      "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
+      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/cerraai.html",
+      "O CTA das peças é a página do Cerra.AI no site. O pedido de demonstração vai pelo WhatsApp (67) 99351-5206.",
+      "As bases dos três cenários são ponto de partida e devem ser revisadas por profissionais da área — isso está na legenda, não precisa entrar na arte.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 600
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 569
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 586
+      },
+      {
+        "nome": "carrossel-07.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "reel-cerra-ai.mp4",
+        "tipo": "video",
+        "kb": 6936
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 790
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Inteligência artificial que roda no seu computador. 🖥️\n\nQuando a sua pergunta leva o documento junto, a resposta depende de para onde ele vai. No Cerra.AI, ele não vai para lugar nenhum: o assistente é 100% local e responde a partir da base que está na sua máquina.\n\n✅ RAG nos seus arquivos — a resposta vem com o arquivo e a página de origem\n✅ PDF, Word, Excel, imagens, áudio e vídeo lidos localmente, com OCR e transcrição offline\n✅ Anonimização de CPF, CNPJ, RG, cartão, telefone e e-mail antes de chegar ao modelo\n✅ Relatório LGPD por base de trabalho e auditoria de acessos, com o conteúdo mascarado\n✅ Bases isoladas: uma pergunta nunca cruza de uma base para outra\n✅ Três cenários com base própria: contabilidade, oncologia e advocacia penal\n\nZero requisições externas. Sem conta, sem cadastro. Funciona offline — a sua operação não para quando a internet cai.\n\nAs bases dos cenários são ponto de partida e devem ser revisadas por profissionais da área.\n\nQuer ver o Cerra.AI funcionando com o seu caso? Chama no WhatsApp (67) 99351-5206.\n🔗 cerradofinancas.com.br/cerraai.html\n\n#CerraAI #CerradoTech #InteligenciaArtificial #IAOffline #LGPD #PrivacidadeDeDados #RAG #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Inteligência artificial que roda no seu computador.\n\nA discussão sobre IA nas empresas costuma ser sobre modelo, prompt e productivity. Mas antes disso há uma pergunta de arquitetura: onde o seu dado está quando a máquina responde?\n\nO Cerra.AI é o assistente corporativo da Cerrado Tech, e roda 100% local — modelos no Ollama, documentos em base vetorial por workspace, conversas em banco local. Nenhuma requisição sai da máquina, e o sistema foi desenhado para a LGPD desde o primeiro dia.\n\nO que ele entrega:\n• Respostas com base nos documentos da empresa, citando o arquivo e a página de origem\n• Leitura local de PDF, Word, Excel, imagens, áudio e vídeo, com OCR e transcrição embarcados\n• Anonimização por regras locais (CPF, CNPJ, RG, processo, cartão, telefone, e-mail) antes do modelo, com relatório LGPD por base e auditoria de acessos mascarada\n• Bases de trabalho isoladas: uma pergunta nunca cruza de uma base para outra\n• Três cenários prontos com base de referência e limites éticos: Escritório de Contabilidade, Clínica de Oncologia e Escritório de Advocacia Penal\n\nO modelo de trabalho é simples: roda no computador da sua operação, funciona offline e não cria dependência de um servidor externo. Para uso individual, a Ferramenta de apoio: a decisão e o tratamento dos dados continuam sendo da sua organização.\n\nQuer ver o Cerra.AI funcionando com o seu caso? Escreva no WhatsApp (67) 99351-5206.\n🔗 cerradofinancas.com.br/cerraai.html\n\n#CerraAI #CerradoTech #InteligenciaArtificial #IAOffline #LGPD #RAG #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-10-cerra-ai.zip",
+      "kb": 4820
+    }
+  },
+  {
     "pasta": "2026-10-curso-prototipacao-apps-ia",
     "titulo": "Curso Prototipação de Apps com IA",
     "data": "2026-10-29",

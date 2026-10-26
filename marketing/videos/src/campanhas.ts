@@ -14,6 +14,7 @@ export type Bloco =
 export type Campanha = {
   cor: string;
   icone: string;
+  logo?: string;             // logo do produto (arquivo em public/) no lugar do ícone
   kicker: string;
   gancho: string;          // título do gancho
   destaque: string[];      // palavras do gancho na cor da frente
@@ -164,6 +165,44 @@ export const CAMPANHAS: Record<string, Campanha> = {
     fechamento: {
       titulo: "Garanta sua vaga na próxima turma.", destaque: ["próxima", "turma."],
       principal: { icone: "GraduationCap", texto: "cerraclass.com.br" }, secundario: WHATS,
+    },
+  },
+
+  // ---------------------------------------------------------------- Cerra.AI
+
+  cerraai: {
+    cor: theme.frentes.cerraai, icone: "Cpu", logo: "cerraai.png", kicker: "Cerrado Tech · IA local",
+    gancho: "E se a IA rodasse no seu computador?", destaque: ["no seu computador?"],
+    sub: "Cerra.AI: assistente corporativo 100% local.",
+    blocos: [
+      {
+        tipo: "contraste", kicker: "A diferença", titulo: "Onde o seu dado termina",
+        ruim: { rotulo: "IA na nuvem", itens: ["O documento sai do seu ambiente", "Você não vê o que foi enviado", "Depende de internet"] },
+        bom: { rotulo: "Cerra.AI", itens: ["Roda no seu computador", "Zero requisições externas", "Funciona offline"] },
+      },
+      {
+        tipo: "lista", kicker: "O que ele faz", titulo: "Resposta com base nos seus documentos",
+        itens: [
+          { icone: "MagnifyingGlass", titulo: "RAG nos seus arquivos", texto: "Resposta citando o arquivo e a página" },
+          { icone: "FileArrowUp", titulo: "Documento, imagem, áudio e vídeo", texto: "OCR e transcrição offline" },
+          { icone: "ShieldCheck", titulo: "Anonimização e auditoria LGPD", texto: "Dados mascarados antes do modelo" },
+          { icone: "TreeStructure", titulo: "Bases isoladas por cenário", texto: "Contabilidade, oncologia e advocacia" },
+        ],
+      },
+      {
+        tipo: "numeros", kicker: "O essencial", titulo: "O que muda para o seu ambiente",
+        numeros: [
+          { valor: "100%", legenda: "local, na sua máquina" },
+          { valor: "0", legenda: "requisições externas" },
+          { valor: "0", legenda: "conta ou cadastro" },
+          { valor: "3", legenda: "cenários com base própria" },
+        ],
+      },
+    ],
+    fechamento: {
+      titulo: "Sua IA, dentro da sua empresa.", destaque: ["dentro"],
+      principal: { icone: "Globe", texto: "cerradofinancas.com.br" }, secundario: WHATS,
+      aviso: "O Cerra.AI é uma ferramenta de apoio: a decisão e o tratamento dos dados continuam sendo da sua organização.",
     },
   },
 

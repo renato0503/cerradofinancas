@@ -42,16 +42,27 @@ export const Gancho: React.FC<{ c: Campanha }> = ({ c }) => {
     <AbsoluteFill>
       <SaidaCena duracao={GANCHO}>
         <AbsoluteFill style={{ ...corpo, alignItems: "center", paddingTop: 450, textAlign: "center" }}>
-          <div
-            style={{
-              width: 200, height: 200, borderRadius: 54, display: "flex", alignItems: "center", justifyContent: "center",
-              background: `${c.cor}29`, border: `4px solid ${c.cor}80`,
-              opacity: interpolate(tile, [0, 0.4], [0, 1], clamp),
-              transform: `scale(${interpolate(tile, [0, 1], [0.3, 1]) * escala}) rotate(${interpolate(tile, [0, 1], [-30, 0])}deg) translateY(${flutua}px)`,
-            }}
-          >
-            <Icone nome={c.icone} size={120} color={c.cor} weight="duotone" />
-          </div>
+          {c.logo ? (
+            <div
+              style={{
+                opacity: interpolate(tile, [0, 0.4], [0, 1], clamp),
+                transform: `scale(${interpolate(tile, [0, 1], [0.55, 1]) * escala}) translateY(${flutua}px)`,
+              }}
+            >
+              <Img src={staticFile(c.logo)} style={{ width: 250, filter: "drop-shadow(0 26px 44px rgba(0,0,0,0.55))" }} />
+            </div>
+          ) : (
+            <div
+              style={{
+                width: 200, height: 200, borderRadius: 54, display: "flex", alignItems: "center", justifyContent: "center",
+                background: `${c.cor}29`, border: `4px solid ${c.cor}80`,
+                opacity: interpolate(tile, [0, 0.4], [0, 1], clamp),
+                transform: `scale(${interpolate(tile, [0, 1], [0.3, 1]) * escala}) rotate(${interpolate(tile, [0, 1], [-30, 0])}deg) translateY(${flutua}px)`,
+              }}
+            >
+              <Icone nome={c.icone} size={120} color={c.cor} weight="duotone" />
+            </div>
+          )}
           <div style={{ marginTop: 50, display: "flex", justifyContent: "center" }}>
             <Kicker cor={c.cor} texto={c.kicker} delay={8} />
           </div>
@@ -209,8 +220,8 @@ export const Fechamento: React.FC<{ c: Campanha }> = ({ c }) => {
     <AbsoluteFill style={{ ...corpo, alignItems: "center", paddingTop: 440, textAlign: "center" }}>
       <Entrada mola="bouncy">
         <Img
-          src={staticFile("folinha.png")}
-          style={{ width: 240, transform: `scale(${escala}) translateY(${flutua}px)`, filter: "drop-shadow(0 26px 40px rgba(0,0,0,0.5))" }}
+          src={staticFile(c.logo ?? "folinha.png")}
+          style={{ width: c.logo ? 260 : 240, transform: `scale(${escala}) translateY(${flutua}px)`, filter: "drop-shadow(0 26px 40px rgba(0,0,0,0.5))" }}
         />
       </Entrada>
       <Palavras

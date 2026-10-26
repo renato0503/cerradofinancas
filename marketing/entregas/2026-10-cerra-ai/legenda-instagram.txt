@@ -1,0 +1,19 @@
+Inteligência artificial que roda no seu computador. 🖥️
+
+Quando a sua pergunta leva o documento junto, a resposta depende de para onde ele vai. No Cerra.AI, ele não vai para lugar nenhum: o assistente é 100% local e responde a partir da base que está na sua máquina.
+
+✅ RAG nos seus arquivos — a resposta vem com o arquivo e a página de origem
+✅ PDF, Word, Excel, imagens, áudio e vídeo lidos localmente, com OCR e transcrição offline
+✅ Anonimização de CPF, CNPJ, RG, cartão, telefone e e-mail antes de chegar ao modelo
+✅ Relatório LGPD por base de trabalho e auditoria de acessos, com o conteúdo mascarado
+✅ Bases isoladas: uma pergunta nunca cruza de uma base para outra
+✅ Três cenários com base própria: contabilidade, oncologia e advocacia penal
+
+Zero requisições externas. Sem conta, sem cadastro. Funciona offline — a sua operação não para quando a internet cai.
+
+As bases dos cenários são ponto de partida e devem ser revisadas por profissionais da área.
+
+Quer ver o Cerra.AI funcionando com o seu caso? Chama no WhatsApp (67) 99351-5206.
+🔗 cerradofinancas.com.br/cerraai.html
+
+#CerraAI #CerradoTech #InteligenciaArtificial #IAOffline #LGPD #PrivacidadeDeDados #RAG #CerradoFinancas #Cuiaba #MatoGrosso

@@ -30,7 +30,7 @@ Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml
 - `gerar_gamma.py` sem chave no código: a chave vem da variável de ambiente `GAMMA_API_KEY`
   (`.env`, ignorado pelo git).
 
-**Marketing:** 19 campanhas publicadas (lançamento, 4 frentes, 13 cursos, folinha animada). Detalhes em `marketing/HISTORICO.md`.
+**Marketing:** 20 campanhas publicadas (lançamento, 4 frentes, 13 cursos, folinha animada e Cerra.AI). Detalhes em `marketing/HISTORICO.md`.
 
 ## Pendências
 

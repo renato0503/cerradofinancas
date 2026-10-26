@@ -18,8 +18,9 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `a74f8e0` | Cursos com landing própria: IA na Prática e IA em Ação Farma (propagandistas) |
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
+| 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
 
-## Campanhas publicadas (19)
+## Campanhas publicadas (20)
 
 Cada campanha tem carrossel (6 ou 7 slides, 1080×1350), story (1080×1920), Reel com som (1080×1920)
 e legendas para Instagram e LinkedIn, exceto onde indicado.
@@ -37,6 +38,12 @@ e legendas para Instagram e LinkedIn, exceto onde indicado.
 **Cursos com landing própria no site** (carrossel de 7, com slide do instrutor)
 - IA na Prática (`/iacao/`)
 - IA em Ação Farma, para propagandistas (`/iafarma/`)
+
+**Produto** (Reel de 15s)
+- Cerra.AI: "E se a IA rodasse no seu computador?" — assistente corporativo 100% local da Cerrado Tech,
+  com RAG nos documentos da empresa, OCR e transcrição offline, anonimização e auditoria LGPD e três
+  cenários com base própria. Fonte dos textos: `D:\Dev\Cerra.AI` (README, `docs/FUNCIONALIDADES.md`,
+  `docs/implementation.md`).
 
 **Cursos presenciais do catálogo CerraClass** (gerados de `dados/cerraclass-cursos.json`)
 - Curso de um dia (8h, 1 sábado): IA na Gestão, Excel com IA, Consultoria Contábil com IA,
@@ -64,8 +71,19 @@ Valem para todas as próximas campanhas.
    (`curso-ia-na-farma` e `curso-ia-farma`).
 6. **Cores:** azul `#001f5c` de fundo, dourado `#fecb00` só no elemento principal (botão do CTA). Cada frente e
    cada curso tem uma cor de destaque própria (definida em `VISUAL` no gerador e em `videos/src/theme.ts`).
-7. **Logo:** a folinha (`../img/folinha-hero.png`) foi limpa (sem halo, contorno suave) e é a marca em todas as
-   peças. Nos stories dos cursos presenciais ela foi retirada para caber o selo de formato.
+7. **Logo:** a folinha (`../img/folinha-hero.png`) foi limpa (sem halo, contorno suave) e é a marca da empresa em
+   todas as peças (rodapé). Nos stories dos cursos presenciais ela foi retirada para caber o selo de formato.
+   A campanha do Cerra.AI usa a **logo do produto** (`img/logo_cerraai-icone.png`), recortada do fundo preto
+   original por `tools/recortar_logo_cerraai.py`; no Reel, a logo entra no lugar da folinha (campo `logo`
+   em `videos/src/campanhas.ts`).
+8. **Cerra.AI:** o texto vem do próprio projeto (`D:\Dev\Cerra.AI`). Pode afirmar: 100% local, zero requisições
+   externas, RAG com citação de arquivo e página, OCR e transcrição offline, anonimização e relatório LGPD,
+   auditoria mascarada, bases isoladas e os três cenários (Contabilidade, Oncologia, Advocacia Penal).
+   **Não pode afirmar:** download disponível (o executável existe mas não foi publicado), cliente ou case,
+   produto em nuvem ou multiusuário, certificação LGPD, "sempre correto", desempenho fora da máquina medida
+   (RTX 4060 8 GB), a Freedom Tier como diferencial, nem que as bases dos cenários já foram revisadas por
+   especialistas (ainda não). As peças comparam com "IA na nuvem" só em termos genéricos (o dado sai do
+   ambiente, precisa de internet).
 
 ## Como garantimos a qualidade
 

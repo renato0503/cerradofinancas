@@ -1,0 +1,19 @@
+Inteligência artificial que roda no seu computador.
+
+A discussão sobre IA nas empresas costuma ser sobre modelo, prompt e productivity. Mas antes disso há uma pergunta de arquitetura: onde o seu dado está quando a máquina responde?
+
+O Cerra.AI é o assistente corporativo da Cerrado Tech, e roda 100% local — modelos no Ollama, documentos em base vetorial por workspace, conversas em banco local. Nenhuma requisição sai da máquina, e o sistema foi desenhado para a LGPD desde o primeiro dia.
+
+O que ele entrega:
+• Respostas com base nos documentos da empresa, citando o arquivo e a página de origem
+• Leitura local de PDF, Word, Excel, imagens, áudio e vídeo, com OCR e transcrição embarcados
+• Anonimização por regras locais (CPF, CNPJ, RG, processo, cartão, telefone, e-mail) antes do modelo, com relatório LGPD por base e auditoria de acessos mascarada
+• Bases de trabalho isoladas: uma pergunta nunca cruza de uma base para outra
+• Três cenários prontos com base de referência e limites éticos: Escritório de Contabilidade, Clínica de Oncologia e Escritório de Advocacia Penal
+
+O modelo de trabalho é simples: roda no computador da sua operação, funciona offline e não cria dependência de um servidor externo. Para uso individual, a Ferramenta de apoio: a decisão e o tratamento dos dados continuam sendo da sua organização.
+
+Quer ver o Cerra.AI funcionando com o seu caso? Escreva no WhatsApp (67) 99351-5206.
+🔗 cerradofinancas.com.br/cerraai.html
+
+#CerraAI #CerradoTech #InteligenciaArtificial #IAOffline #LGPD #RAG #CerradoFinancas

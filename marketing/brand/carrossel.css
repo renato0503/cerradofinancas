@@ -116,6 +116,13 @@ html.exportando body { padding: 0; gap: 0; }
 .grade.uma .card h3 { margin-top: 0; }
 .grade.uma .card p { margin-top: 6px; }
 
+/* grade 2x2 mais densa: para slides com 4 cards e título longo */
+.grade.compacta { margin-top: 40px; gap: 22px; }
+.grade.compacta .card { padding: 32px 28px; }
+.grade.compacta .card i { font-size: 54px; }
+.grade.compacta .card h3 { margin-top: 14px; font-size: 36px; }
+.grade.compacta .card p { margin-top: 10px; font-size: 28px; }
+
 /* lista compacta: para slides com título longo ou 4 itens */
 .grade.uma.compacta { margin-top: 48px; gap: 18px; }
 .grade.uma.compacta .card { padding: 26px 34px; }
@@ -217,7 +224,29 @@ html.exportando body { padding: 0; gap: 0; }
 .story .grade.uma .card p { font-size: 28px; }
 .story .contato { margin-top: 44px; width: auto; padding: 28px 52px; border-radius: 999px; }
 
+/* ---------- logo do produto (ex.: Cerra.AI) ---------- */
+.logo-produto {
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+}
+
+.capa .logo-produto {
+  position: absolute;
+  right: 90px;
+  top: 96px;
+  width: 190px;
+}
+
+.cta .logo-produto {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.story .logo-produto {
+  width: 240px;
+}
+
 /* ---------- instrutor (cursos) ---------- */
+
 .instrutor { margin-top: 60px; display: flex; gap: 44px; align-items: flex-start; }
 
 .instrutor img {
