@@ -1,0 +1,2 @@
+# Scripts de shell precisam de quebra de linha Unix para rodar no bash
+*.sh text eol=lf

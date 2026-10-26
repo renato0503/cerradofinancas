@@ -1,0 +1,12 @@
+# Configuração mínima do Jekyll (GitHub Pages).
+# Ao definir "exclude", a lista padrão do Jekyll deixa de valer, por isso ela é repetida aqui.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # Estúdio de conteúdo: versionado no git, mas não publicado no site
+  - marketing

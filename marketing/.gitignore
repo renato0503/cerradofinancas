@@ -1,0 +1,8 @@
+# Dependências e renders pesados (os PNGs exportados são versionados)
+node_modules/
+**/out/*.mp4
+**/out/*.mov
+**/out/*.webm
+**/out/frames/
+.venv/
+__pycache__/
