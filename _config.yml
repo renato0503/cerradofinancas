@@ -8,10 +8,16 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  # Documentação interna: fica no GitHub, mas não vira página do site
+  - README.md
+  - context.md
+  - PROXIMOS_PASSOS.md
+  - LICENSE.txt
   # Estúdio de conteúdo: só marketing/index.html (Central de Conteúdos) e
   # marketing/entregas/ são publicados. Pasta nova em marketing/ deve entrar aqui.
   - marketing/.claude
   - marketing/README.md
+  - marketing/HISTORICO.md
   - marketing/brand
   - marketing/posts
   - marketing/tools

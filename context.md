@@ -18,14 +18,20 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 - **CSS3** vanilla com variáveis CSS, glassmorphism, dark mode
 - **JavaScript** vanilla (Intersection Observer, menu mobile, FAQ accordion)
 - **Google Fonts** — 'Inter' (principal), 'Outfit', 'Poppins', 'Plus Jakarta Sans' (páginas específicas)
-- **Phosphor Icons** — Todas as páginas usam `<i class="ph ph-...">` (substituiu SVGs inline). CDN: `https://unpkg.com/@phosphor-icons/web`. Efeito 3D com `drop-shadow` CSS nos ícones.
+- **Phosphor Icons** — A maioria das páginas usa `<i class="ph ph-...">`. CDN: `https://unpkg.com/@phosphor-icons/web`. Efeito 3D com `drop-shadow` CSS nos ícones. Exceção: o `/portfolio/` usa um sprite SVG inline próprio.
+- **`_config.yml`** — Só tem a lista `exclude` (ao defini-la, a lista padrão do Jekyll deixa de valer, por isso ela é repetida). Exclui as áreas de trabalho de `marketing/` e os arquivos de documentação (`*.md` da raiz), que antes eram publicados (o `context.md` aparecia em `/context.html`).
+
+### Identidade visual e ícones
+- **Logo / folinha:** `img/folinha.png` (1440×1440, limpo: sem halo branco, contorno suavizado) e `img/folinha-hero.png` (recorte sem margem, usado no hero da home e no card de parceria do Crédito).
+- **Favicons** gerados da folinha: `favicon.ico` (16/32/48, na raiz), `img/favicon-32.png`, `img/favicon-192.png`, `img/favicon-512.png`, `apple-touch-icon.png` (180, fundo azul) e `site.webmanifest`. Todas as páginas usam o mesmo bloco de 5 tags `<link>`, exceto ChamaLá e GoGym (marcas próprias).
+- **LS Intermediação Financeira:** `img/ls-logo.png` (parceira da frente de Crédito).
 
 ### Arquivos compartilhados
 
 | Arquivo | Função |
 |---------|--------|
-| `_includes/header.html` | Header fixo glassmorphism com logo, nav desktop/mobile e CTA WhatsApp. CSS inline próprio. |
-| `_includes/footer.html` | Footer premium dark slate com 4 colunas, links, contato e CTAs. CSS inline próprio. |
+| `_includes/header.html` | Header fixo glassmorphism com logo, nav (Início, Fábrica de Software, Contabilidade, Crédito, Cursos) e CTA WhatsApp. CSS inline próprio. |
+| `_includes/footer.html` | Footer dark slate com 5 colunas: marca, Nossas Frentes, Ecossistema (Catálogo, Startups, Parceiros, Data Driven), Fale Conosco e CTAs. CSS inline próprio. |
 | `css/global.css` | Variáveis CSS (:root), reset, container, seções, botões, tags |
 | `css/home.css` | Apenas animações fade-up (.fade-up, .visible, .delay-1 a .delay-3) |
 | `css/menu.css` | Estilo alternativo de header (não usado pelos includes principais) |
@@ -56,6 +62,7 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 - `fabrica.html` — A antiga home de software, intacta (estrutura descrita abaixo).
 - `credito.html` (permalink `/credito/`) — Correspondente Bancário Multi Bancos em parceria com a LS Intermediação Financeira (@ls.intermedfin): empréstimos, consignados, financiamentos, seguros e consórcios, com CTAs de WhatsApp por produto e aviso legal.
 - `cursos.html` (permalink `/cursos/`) — Página da Cerraclass no próprio site: destaques IA na Prática (`/iacao/`) e IA em Ação Farma (`/iafarma/`), método, in company; todos os botões de inscrição levam para https://cerraclass.com.br/.
+- `marketing/index.html` (`/marketing/`) — **Central de Conteúdos** para o time de marketing: lê `marketing/entregas/conteudos.json` e mostra cada campanha com prévias, download por peça, `.zip` e legendas com botão de copiar. Tem `noindex` e não aparece no menu nem no sitemap. Só ela e `marketing/entregas/` são publicadas; o resto de `marketing/` é o estúdio de produção (ver `marketing/README.md` e `marketing/HISTORICO.md`).
 - Header: Início, Fábrica de Software, Contabilidade, Crédito, Cursos. Startups/Parceiros/Data Driven saíram do header e ficam no footer (coluna "Ecossistema") e na home.
 
 ### 1. `fabrica.html` — Fábrica de Software (antiga home)
@@ -208,7 +215,11 @@ Todas seguem o mesmo template: Hero com ícone Phosphor + badge "Fábrica de Sof
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>...</title>
   <meta name="description" content="...">
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link href="https://fonts.googleapis.com/css2?family=Inter:...">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
