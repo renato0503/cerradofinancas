@@ -50,7 +50,14 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 
 ## Páginas Principais
 
-### 1. `index.html` — Home (Cerrado Tech — Fábrica de Software)
+### Reposicionamento (out/2026): home vira hub de 4 frentes
+
+- `index.html` — Hub "Cerrado Finanças & Tech": hero, 4 frentes (Fábrica de Software → `fabrica.html`, Contabilidade → `contabilidade.html`, Crédito → `/credito/`, Cursos → https://cerraclass.com.br/), CTA Consultorias, Ecossistema (Startups, Parceiros, Data Driven), Quem Somos e formulário com seleção de frente.
+- `fabrica.html` — A antiga home de software, intacta (estrutura descrita abaixo).
+- `credito.html` (permalink `/credito/`) — Correspondente Bancário Multi Bancos em parceria com a LS Intermediação Financeira (@ls.intermedfin): empréstimos, consignados, financiamentos, seguros e consórcios, com CTAs de WhatsApp por produto e aviso legal.
+- Header: Início, Fábrica de Software, Contabilidade, Crédito, Cursos. Startups/Parceiros/Data Driven saíram do header e ficam no footer (coluna "Ecossistema") e na home.
+
+### 1. `fabrica.html` — Fábrica de Software (antiga home)
 **Title:** Cerrado Tech — Fábrica de Software Customizada | ERPs, CRMs, IA e Dashboards
 
 Estrutura:

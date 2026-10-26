@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cerrado Tech — Fábrica de Software Customizada | ERPs, CRMs, IA e Dashboards</title>
-  <meta name="description" content="Construímos ERPs, CRMs, inteligência artificial offline, plataformas de e-commerce, compliance, auditoria e dashboards 100% customizados para a visão do seu negócio.">
+  <title>Cerrado Finanças & Tech | Software, Contabilidade, Crédito e Cursos</title>
+  <meta name="description" content="Um só parceiro para o seu negócio: fábrica de software sob medida, contabilidade digital, crédito multi bancos (empréstimos, consignados, financiamentos, seguros e consórcios) e cursos na Cerraclass. Cuiabá/MT.">
   <link rel="icon" type="image/png" href="img/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,42 +208,12 @@
       .hero-tech-visual { justify-content: center; }
     }
 
-    /* ============= TECNOLOGIAS BAR ============= */
-    .tech-badge-strip {
-      background: #f8fafc;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 36px 0;
-      text-align: center;
+    .hero-tech-logo.hero-folinha {
+      max-width: 380px;
     }
-    .tech-badge-strip p {
-      color: #64748b;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 18px;
-      font-size: 0.85rem;
-    }
-    .tech-strip-items {
-      display: flex;
-      gap: 36px;
-      justify-content: center;
-      flex-wrap: wrap;
-      align-items: center;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #334155;
-      opacity: 0.7;
-    }
-    .tech-strip-items span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .tech-strip-items .gold-dot {
-      width: 6px; height: 6px;
-      background: #fecb00;
-      border-radius: 50%;
-      display: inline-block;
+
+    @media (max-width: 992px) {
+      .hero-tech-logo.hero-folinha { max-width: 200px; }
     }
 
     /* ============= SOFTWARE CATEGORIES GRID ============= */
@@ -362,147 +332,6 @@
       color: #fecb00;
     }
 
-    /* ============= PIPELINE / METODOLOGIA ============= */
-    .pipeline-section {
-      padding: 100px 0;
-      background: #f8fafc;
-    }
-
-    .pipeline-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .pipeline-step {
-      background: #fff;
-      border-radius: 20px;
-      padding: 36px 28px;
-      text-align: center;
-      border: 1px solid #e2e8f0;
-      transition: all 0.4s ease;
-      position: relative;
-    }
-
-    .pipeline-step:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0, 31, 92, 0.08);
-      border-color: #fecb00;
-    }
-
-    .pipeline-number {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #001f5c 0%, #003399 100%);
-      color: #fecb00;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 900;
-      margin: 0 auto 20px;
-      box-shadow: 0 8px 20px rgba(0, 31, 92, 0.25);
-    }
-
-    .pipeline-step h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #001f5c;
-      margin-bottom: 10px;
-    }
-
-    .pipeline-step p {
-      font-size: 0.9rem;
-      color: #64748b;
-      line-height: 1.6;
-    }
-
-    .pipeline-connector {
-      display: none;
-    }
-
-    @media (max-width: 992px) {
-      .pipeline-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 600px) {
-      .pipeline-grid { grid-template-columns: 1fr; }
-      .software-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ============= COMPARAÇÃO (CUSTOM VS GENÉRICO) ============= */
-    .compare-section {
-      padding: 100px 0;
-      background: #ffffff;
-    }
-
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-      align-items: stretch;
-    }
-
-    .compare-card {
-      padding: 40px 36px;
-      border-radius: 20px;
-      border: 1px solid #e2e8f0;
-      background: #fff;
-      transition: all 0.4s ease;
-    }
-
-    .compare-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    }
-
-    .compare-card.negative { border-top: 5px solid #e11d48; }
-    .compare-card.positive { border-top: 5px solid #006430; }
-
-    .compare-card h3 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin: 16px 0 20px;
-    }
-
-    .compare-card.negative h3 { color: #e11d48; }
-    .compare-card.positive h3 { color: #006430; }
-
-    .compare-card ul {
-      list-style: none;
-    }
-
-    .compare-card li {
-      position: relative;
-      padding-left: 32px;
-      margin-bottom: 14px;
-      font-size: 0.98rem;
-      font-weight: 500;
-      color: #334155;
-      line-height: 1.4;
-    }
-
-    .compare-card li svg {
-      position: absolute;
-      left: 0;
-      top: 2px;
-      width: 22px;
-      height: 22px;
-    }
-
-    .compare-card.negative li svg { color: #e11d48; }
-    .compare-card.positive li svg { color: #006430; }
-
-    @media (max-width: 768px) {
-      .compare-grid { grid-template-columns: 1fr; }
-    }
-
     /* ============= QUEM SOMOS ============= */
     .quem-somos {
       padding: 100px 0;
@@ -586,86 +415,8 @@
     }
     .btn-linkedin:hover { background: #004182; transform: translateY(-2px); }
 
-    .qs-divider {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .qs-divider span {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba(0,31,92,0.06);
-      color: #001f5c;
-      font-weight: 700;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      border-radius: 50px;
-      border: 1px solid rgba(0,31,92,0.1);
-    }
-
-    .qs-tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .qs-tech-item {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 22px 24px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: 0.3s;
-    }
-
-    .qs-tech-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,31,92,0.04);
-      border-color: #fecb00;
-    }
-
-    .qs-tech-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 26px;
-      transition: transform 0.3s ease;
-    }
-
-    .qs-tech-item:hover .qs-tech-icon {
-      transform: scale(1.15) rotate(-3deg);
-    }
-
-    .qs-tech-icon i.ph {
-      filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.15));
-    }
-
-    .qs-tech-item h4 {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #001f5c;
-      margin-bottom: 4px;
-    }
-
-    .qs-tech-item p {
-      font-size: 0.84rem;
-      color: #64748b;
-      line-height: 1.55;
-      margin: 0;
-    }
-
     @media (max-width: 768px) {
       .qs-hero { grid-template-columns: 1fr; text-align: center; }
-      .qs-tech-grid { grid-template-columns: 1fr; }
     }
 
     /* ============= CONTATO ============= */
@@ -807,11 +558,177 @@
       text-align: center;
       color: #fff;
     }
+
+    /* ============= 4 FRENTES ============= */
+    .frentes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .frente-kicker {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #006430;
+      margin-bottom: 6px;
+    }
+
+    .software-card p.frente-kicker {
+      flex-grow: 0;
+      font-size: 0.75rem;
+      color: #006430;
+      margin-bottom: 6px;
+    }
+
+    .frente-list {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+    }
+
+    .frente-list li {
+      font-size: 0.9rem;
+      color: #334155;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .frente-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fecb00;
+      flex-shrink: 0;
+    }
+
+    .frente-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #001f5c;
+    }
+
+    .software-card:hover .frente-cta { color: #006430; }
+
+    .frente-parceria {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .frentes-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .frente-list { grid-template-columns: 1fr; }
+      .software-card { padding: 32px 24px; }
+    }
+
+    /* ============= ECOSSISTEMA ============= */
+    .ecossistema-section {
+      padding: 90px 0;
+      background: #f8fafc;
+    }
+
+    .ecossistema-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eco-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .eco-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 31, 92, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .eco-card i.ph {
+      font-size: 30px;
+      color: #001f5c;
+    }
+
+    .eco-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #001f5c;
+    }
+
+    .eco-card p {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .eco-card span {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #006430;
+    }
+
+    @media (max-width: 900px) {
+      .ecossistema-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group { min-width: 0; }
+
+    .form-group select {
+      width: 100%;
+      min-width: 0;
+      padding: 15px 16px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+
+    .form-group select:focus {
+      outline: none;
+      border-color: #fecb00;
+      box-shadow: 0 0 0 4px rgba(254, 203, 0, 0.12);
+      background: #fff;
+    }
   </style>
 </head>
 <body>
 
-  {% include header.html titulo="Cerrado Tech" %}
+  {% include header.html titulo="Cerrado Finanças & Tech" %}
 
   <!-- ========== HERO ========== -->
   <section class="hero-tech" id="inicio">
@@ -824,227 +741,124 @@
       <div class="hero-tech-grid">
         <div class="hero-tech-text">
           <div class="hero-badge-tech fade-up">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Fábrica de Software Corporativa
+            <i class="ph ph-squares-four"></i>
+            Software · Contabilidade · Crédito · Cursos
           </div>
 
           <h1 class="fade-up delay-1">
-            O software que o seu negócio <span class="text-gold">realmente precisa</span>.
+            Um só parceiro para o seu negócio <span class="text-gold">crescer</span>.
           </h1>
 
           <p class="fade-up delay-2">
-            Software feito para o seu negócio, não o contrário. Desenvolvemos ERPs, CRMs e dashboards personalizados para sua realidade. Zero funcionalidades desnecessárias. Você paga apenas pelo que realmente precisa.
+            Tecnologia sob medida, contabilidade inteligente, crédito com as melhores condições do mercado e formação prática para a sua equipe. Tudo com a mesma equipe, do diagnóstico ao resultado.
           </p>
 
           <div class="hero-tech-stats fade-up delay-2">
             <div class="hero-stat-item">
-              <h3>100%</h3>
-              <p>Customizado</p>
+              <h3>4 frentes</h3>
+              <p>Integradas em um só lugar</p>
             </div>
             <div class="hero-stat-item">
-              <h3>B2B & B2G</h3>
-              <p>Mercado Privado e Governo</p>
+              <h3>Multi bancos</h3>
+              <p>Crédito com parceria LS</p>
             </div>
           </div>
 
           <div class="hero-tech-actions fade-up delay-3">
-            <a href="#contato" class="btn-gold-cta">
-              Solicitar Proposta
+            <a href="#frentes" class="btn-gold-cta">
+              Conhecer as Frentes
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#categorias" class="btn-outline-tech">
-              Explorar Soluções
+            <a href="#contato" class="btn-outline-tech">
+              Falar com a Gente
             </a>
           </div>
         </div>
 
         <div class="hero-tech-visual fade-up delay-2">
-          <img src="img/logohome.png" alt="Cerrado Tech Logo" class="hero-tech-logo">
+          <img src="img/folinha-hero.png" alt="Cerrado Finanças & Tech" class="hero-tech-logo hero-folinha">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== PLATAFORMAS QUE INTEGRAMOS ========== -->
-  <div class="tech-badge-strip">
-    <div class="container">
-      <p>Tecnologias que dominamos e integramos</p>
-      <div class="tech-strip-items">
-        <span style="color: #0ea5e9;">SAP®</span>
-        <span style="font-style: italic; color: #1e293b;">TOTVS Protheus</span>
-        <span style="color: #f2c811;">Power BI</span>
-        <span style="color: #2563eb;">ContaAzul</span>
-        <span style="color: #16a34a;">Bling ERP</span>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- ========== CATEGORIAS DE SOFTWARE ========== -->
-  <section class="software-section" id="categorias">
+  <!-- ========== 4 FRENTES ========== -->
+  <section class="software-section" id="frentes">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-tag">O Que Construímos Para Você</span>
-        <h2>Cada software é desenhado em torno do seu processo, não o contrário</h2>
-        <p>Não adaptamos seu negócio a um sistema pronto. Construímos o sistema que seu negócio merece — funcionalidade por funcionalidade, alinhado à sua visão.</p>
+        <span class="section-tag">Nossas Frentes</span>
+        <h2>Tudo o que o seu negócio precisa para crescer, em um só ecossistema</h2>
+        <p>Escolha por onde começar. As frentes conversam entre si: o contador enxerga o seu software, o crédito usa os seus números e a sua equipe aprende a operar tudo.</p>
       </div>
 
-      <div class="software-grid">
+      <div class="software-grid frentes-grid">
 
-        <a href="erp-customizado.html" class="software-card fade-up delay-1">
+        <a href="fabrica.html" class="software-card fade-up delay-1">
           <div class="software-icon" style="background: #e0f2fe; color: #0284c7;">
-            <i class="ph ph-squares-four"></i>
+            <i class="ph ph-code"></i>
           </div>
-          <h3>ERPs Customizados</h3>
-          <p>Sistemas de gestão empresarial completos, integrando financeiro, estoque, produção e fiscal em uma plataforma única, pensada para o seu fluxo de trabalho real.</p>
-          <div class="software-tags">
-            <span class="highlight">100% Customizado</span>
-            <span>Integração SAP/TOTVS</span>
-            <span>Multi-filial</span>
-          </div>
+          <p class="frente-kicker">Cerrado Tech</p>
+          <h3>Fábrica de Software</h3>
+          <p>ERPs, CRMs, IA e dashboards construídos em torno do seu processo, para empresas e para a gestão pública. O código é seu, sem amarras de fornecedor.</p>
+          <ul class="frente-list">
+            <li>ERPs e CRMs sob medida</li>
+            <li>Inteligência Artificial</li>
+            <li>Dashboards e BI</li>
+            <li>GovTech (B2G)</li>
+          </ul>
+          <span class="frente-cta">Conhecer a Fábrica <i class="ph ph-arrow-right"></i></span>
         </a>
 
-        <a href="crm-inteligente.html" class="software-card fade-up delay-1">
-          <div class="software-icon" style="background: #fef3c7; color: #ca8a04;">
-            <i class="ph ph-crosshair"></i>
-          </div>
-          <h3>CRMs Inteligentes</h3>
-          <p>Gestão completa do relacionamento com clientes, funil de vendas, automação de follow-ups e pipeline comercial com dashboards de conversão em tempo real.</p>
-          <div class="software-tags">
-            <span>Funil de Vendas</span>
-            <span>Automação</span>
-            <span>Pipeline Visual</span>
-          </div>
-        </a>
-
-        <a href="ia-offline.html" class="software-card fade-up delay-1">
-          <div class="software-icon" style="background: #ede9fe; color: #7c3aed;">
-            <i class="ph ph-cpu"></i>
-          </div>
-          <h3>Inteligência Artificial Offline</h3>
-          <p>Modelos de linguagem (LLMs) rodando localmente na sua infraestrutura, sem depender de internet. Automação de documentos, análise de contratos e chatbots internos com total privacidade de dados.</p>
-          <div class="software-tags">
-            <span class="highlight">IA 100% Offline</span>
-            <span>LLMs Locais</span>
-            <span>Chatbots</span>
-          </div>
-        </a>
-
-        <a href="ecommerce.html" class="software-card fade-up delay-2">
+        <a href="contabilidade.html" class="software-card fade-up delay-1">
           <div class="software-icon" style="background: #dcfce7; color: #16a34a;">
-            <i class="ph ph-shopping-bag-open"></i>
+            <i class="ph ph-calculator"></i>
           </div>
-          <h3>E-commerce & Vendas</h3>
-          <p>Plataformas de vendas online completas, PDV físico, marketplaces, integração com meios de pagamento e logística. Tudo orquestrado com seu ERP e CRM.</p>
-          <div class="software-tags">
-            <span>Loja Virtual</span>
-            <span>PDV Integrado</span>
-            <span>Pagamentos</span>
-          </div>
-        </a>
-
-        <a href="compliance.html" class="software-card fade-up delay-2">
-          <div class="software-icon" style="background: #ffe4e6; color: #e11d48;">
-            <i class="ph ph-shield-check"></i>
-          </div>
-          <h3>Compliance & Auditoria</h3>
-          <p>Sistemas de conformidade regulatória, LGPD, trilhas de auditoria automatizadas, gestão de riscos e due diligence digital. Governança corporativa com tecnologia.</p>
-          <div class="software-tags">
-            <span>LGPD</span>
-            <span>Auditoria</span>
-            <span>Gestão de Riscos</span>
-            <span>Due Diligence</span>
-          </div>
-        </a>
-
-        <a href="dashboards.html" class="software-card fade-up delay-2">
-          <div class="software-icon" style="background: #fff7ed; color: #ea580c;">
-            <i class="ph ph-chart-bar"></i>
-          </div>
-          <h3>Dashboards & Data Analytics</h3>
-          <p>Painéis executivos em tempo real, integrando múltiplas fontes de dados. Visualize DRE, EBITDA, KPIs operacionais e metas comerciais de qualquer dispositivo.</p>
-          <div class="software-tags">
-            <span class="highlight">Power BI</span>
-            <span>KPIs em Tempo Real</span>
-            <span>Mobile First</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PIPELINE / METODOLOGIA ========== -->
-  <section class="pipeline-section" id="metodologia">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-tag">Como Trabalhamos</span>
-        <h2>Da sua visão ao software rodando: sem atalhos, sem surpresas</h2>
-        <p>Você não precisa entender de código — precisa de um parceiro que entenda do seu negócio. Nosso processo é transparente, com você validando cada etapa antes de seguirmos adiante.</p>
-      </div>
-
-      <div class="pipeline-grid">
-
-        <div class="pipeline-step fade-up delay-1">
-          <div class="pipeline-number">01</div>
-          <h3>Descoberta & Imersão</h3>
-          <p>Entendemos profundamente seu negócio, seus processos atuais e sua visão. Mapeamos dores, gargalos e oportunidades junto à sua equipe.</p>
-        </div>
-
-        <div class="pipeline-step fade-up delay-2">
-          <div class="pipeline-number">02</div>
-          <h3>Arquitetura & Prototipação</h3>
-          <p>Desenhamos a solução ideal: stack tecnológica, integrações, experiência do usuário. Você valida o protótipo antes de qualquer código.</p>
-        </div>
-
-        <div class="pipeline-step fade-up delay-3">
-          <div class="pipeline-number">03</div>
-          <h3>Desenvolvimento Ágil</h3>
-          <p>Construímos em sprints semanais com entregas parciais. Você acompanha cada etapa, testa e ajusta o rumo em tempo real.</p>
-        </div>
-
-        <div class="pipeline-step fade-up delay-3">
-          <div class="pipeline-number">04</div>
-          <h3>Entrega & Evolução</h3>
-          <p>Deploy, treinamento da equipe e suporte contínuo. O software evolui com o seu negócio: novas features, integrações e melhorias sob demanda.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== COMPARAÇÃO: CUSTOM VS GENÉRICO ========== -->
-  <section class="compare-section" id="por-que-customizado">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-tag">Por que Software Customizado?</span>
-        <h2>Seu negócio é único. Por que o software seria diferente?</h2>
-        <p>Veja o que acontece quando você escolhe entre se adaptar a um sistema genérico ou ter um sistema construído para você.</p>
-      </div>
-
-      <div class="compare-grid">
-        <div class="compare-card negative fade-up delay-1">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <h3>Software de Prateleira</h3>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Você paga por dezenas de funcionalidades que nunca vai usar.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> É a sua equipe que precisa se adaptar ao sistema — e não o contrário.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Integrar com o seu ERP atual? Depende da "boa vontade" do fornecedor.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Qualquer ajuste vira um projeto à parte — com custo e prazo impostos por terceiros.</li>
+          <p class="frente-kicker">Cerrado Contabilidade</p>
+          <h3>Contabilidade e Gestão</h3>
+          <p>Contabilidade 100% digital para PMEs, MEIs e profissionais liberais, com BPO financeiro, controladoria e BI para decidir com números reais.</p>
+          <ul class="frente-list">
+            <li>Abertura de CNPJ</li>
+            <li>Gestão tributária</li>
+            <li>Folha e eSocial</li>
+            <li>BPO e Controladoria</li>
           </ul>
-        </div>
+          <span class="frente-cta">Conhecer a Contabilidade <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-        <div class="compare-card positive fade-up delay-2">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3>Com a Cerrado Tech</h3>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg> Cada funcionalidade nasce de uma necessidade real do seu dia a dia.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg> O software se molda à sua operação. Sua equipe não perde tempo se adaptando.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg> Integração direta com SAP®, TOTVS, bancos, notas fiscais e BI — tudo conversando.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg> O código é seu. Equipe dedicada. Evolução contínua. Sem amarras com fornecedor.</li>
+        <a href="{{ '/credito/' | relative_url }}" class="software-card fade-up delay-2">
+          <div class="software-icon" style="background: #fef3c7; color: #ca8a04;">
+            <i class="ph ph-hand-coins"></i>
+          </div>
+          <p class="frente-kicker">Correspondente Bancário Multi Bancos</p>
+          <h3>Crédito</h3>
+          <span class="frente-parceria"><i class="ph ph-handshake"></i> Em parceria com a LS Intermediação Financeira</span>
+          <p>Comparamos as condições de vários bancos para encontrar a melhor opção para você ou para a sua empresa, sem precisar ir de banco em banco.</p>
+          <ul class="frente-list">
+            <li>Empréstimos</li>
+            <li>Consignados</li>
+            <li>Financiamentos</li>
+            <li>Seguros</li>
+            <li>Consórcios</li>
           </ul>
-        </div>
+          <span class="frente-cta">Simular meu Crédito <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="https://cerraclass.com.br/" target="_blank" rel="noopener" class="software-card fade-up delay-2">
+          <div class="software-icon" style="background: #ede9fe; color: #7c3aed;">
+            <i class="ph ph-graduation-cap"></i>
+          </div>
+          <p class="frente-kicker">Cerraclass</p>
+          <h3>Cursos</h3>
+          <p>Formação prática para profissionais e equipes: aprenda a usar tecnologia, IA e gestão no dia a dia, com quem aplica isso nos próprios projetos.</p>
+          <ul class="frente-list">
+            <li>IA na prática</li>
+            <li>Tecnologia e gestão</li>
+            <li>Turmas reduzidas</li>
+            <li>Treinamento de equipes</li>
+          </ul>
+          <span class="frente-cta">Ver cursos na Cerraclass <i class="ph ph-arrow-up-right"></i></span>
+        </a>
+
       </div>
     </div>
   </section>
@@ -1053,7 +867,7 @@
   <div class="section-dark">
     <div class="container">
       <div class="fade-up" style="max-width: 750px; margin: 0 auto;">
-        <span style="background: rgba(254,203,0,0.15); color: #fecb00; border: 1px solid rgba(254,203,0,0.3); padding: 6px 14px; border-radius: 50px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 20px;">Além do Software</span>
+        <span style="background: rgba(254,203,0,0.15); color: #fecb00; border: 1px solid rgba(254,203,0,0.3); padding: 6px 14px; border-radius: 50px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 20px;">Além das Frentes</span>
         <h2 style="font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 15px; letter-spacing: -0.5px;">Consultoria Estratégica que Estrutura e Escala</h2>
         <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto;">CSC Strategy, BPO Financeiro, Controladoria, Planejamento Tributário, Governança & M&A. Aliamos tecnologia de ponta com conhecimento profundo de gestão empresarial.</p>
         <a href="/consultorias.html" style="display: inline-flex; align-items: center; gap: 10px; background: #fecb00; color: #001f5c; padding: 16px 36px; border-radius: 12px; font-weight: 800; font-size: 1.05rem; text-decoration: none; box-shadow: 0 10px 25px rgba(254,203,0,0.3); transition: 0.3s;">
@@ -1064,19 +878,51 @@
     </div>
   </div>
 
+  <!-- ========== ECOSSISTEMA ========== -->
+  <section class="ecossistema-section" id="ecossistema">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Ecossistema Cerrado</span>
+        <h2>Mais do que serviços: uma rede que cresce junto</h2>
+        <p>Criamos startups, dividimos resultados com parceiros e compartilhamos o que aprendemos com dados.</p>
+      </div>
+
+      <div class="ecossistema-grid">
+        <a href="startups.html" class="eco-card fade-up delay-1">
+          <i class="ph ph-rocket-launch"></i>
+          <h3>Startups</h3>
+          <p>Nosso venture builder: produtos próprios que nascem da fábrica e ganham vida como empresas.</p>
+          <span>Ver portfólio →</span>
+        </a>
+        <a href="parceiros.html" class="eco-card fade-up delay-2">
+          <i class="ph ph-users-three"></i>
+          <h3>Seja Parceiro</h3>
+          <p>Indique clientes para qualquer uma das frentes e receba comissão. Simule seus ganhos na calculadora.</p>
+          <span>Calcular comissões →</span>
+        </a>
+        <a href="data-driven.html" class="eco-card fade-up delay-3">
+          <i class="ph ph-chart-line-up"></i>
+          <h3>Somos Data Driven</h3>
+          <p>Artigos sobre controladoria, tecnologia e estratégia fiscal para decidir com dados, não com achismo.</p>
+          <span>Ler artigos →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== QUEM SOMOS ========== -->
   <section class="quem-somos" id="quem-somos">
     <div class="container">
       <div class="section-header fade-up">
         <span class="section-tag">Quem Somos</span>
-        <h2>As pessoas e a tecnologia por trás da Cerrado Tech</h2>
-        <p>Não somos uma software house genérica. Somos uma equipe de engenharia liderada por quem entende de negócio — e sustentada por um stack tecnológico de ponta.</p>
+        <h2>Quem está por trás da Cerrado Finanças & Tech</h2>
+        <p>Uma equipe que une engenharia de software, contabilidade e mercado financeiro, liderada por quem entende de negócio.</p>
       </div>
 
       <div class="qs-hero fade-up delay-1">
         <div class="qs-photo">
           <div class="qs-img-wrap">
-            <img src="img/renato.jpg" alt="Renato Rosa - CEO Cerrado Tech">
+            <img src="img/renato.jpg" alt="Renato Rosa - CEO Cerrado Finanças & Tech">
           </div>
         </div>
         <div class="qs-bio">
@@ -1089,55 +935,6 @@
           </a>
         </div>
       </div>
-
-      <div class="qs-divider fade-up delay-2">
-        <span>Nossa Stack Tecnológica</span>
-      </div>
-
-      <div class="qs-tech-grid">
-        <div class="qs-tech-item fade-up delay-1">
-          <div class="qs-tech-icon" style="background:#e0f2fe;color:#0284c7;">
-            <i class="ph ph-cloud-arrow-down"></i>
-          </div>
-          <h4>Cloud & Escalabilidade</h4>
-          <p>Infraestrutura Google Cloud, Firebase e AWS que escala automaticamente com a demanda.</p>
-        </div>
-        <div class="qs-tech-item fade-up delay-1">
-          <div class="qs-tech-icon" style="background:#ede9fe;color:#7c3aed;">
-            <i class="ph ph-brain"></i>
-          </div>
-          <h4>IA Offline</h4>
-          <p>LLMs rodando localmente. Seus dados nunca saem da sua infraestrutura.</p>
-        </div>
-        <div class="qs-tech-item fade-up delay-1">
-          <div class="qs-tech-icon" style="background:#dcfce7;color:#16a34a;">
-            <i class="ph ph-device-mobile"></i>
-          </div>
-          <h4>Mobile & PWA</h4>
-          <p>Aplicativos progressivos que funcionam em qualquer dispositivo, online e offline.</p>
-        </div>
-        <div class="qs-tech-item fade-up delay-2">
-          <div class="qs-tech-icon" style="background:#fef3c7;color:#ca8a04;">
-            <i class="ph ph-share-network"></i>
-          </div>
-          <h4>APIs & Integrações</h4>
-          <p>Conexão direta com SAP®, TOTVS, bancos, notas fiscais e ERPs de mercado.</p>
-        </div>
-        <div class="qs-tech-item fade-up delay-2">
-          <div class="qs-tech-icon" style="background:#ffe4e6;color:#e11d48;">
-            <i class="ph ph-shield"></i>
-          </div>
-          <h4>Segurança & LGPD</h4>
-          <p>Criptografia ponta a ponta, MFA, trilhas imutáveis e conformidade como padrão.</p>
-        </div>
-        <div class="qs-tech-item fade-up delay-2">
-          <div class="qs-tech-icon" style="background:#f0fdf4;color:#15803d;">
-            <i class="ph ph-cube"></i>
-          </div>
-          <h4>Blockchain & Web3</h4>
-          <p>Smart contracts, rastreabilidade e certificação digital em Ethereum/Solidity.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1146,8 +943,8 @@
     <div class="container">
       <div class="contact-card fade-up">
         <div class="text-center" style="margin-bottom: 40px;">
-          <h2>Vamos construir o software do seu negócio</h2>
-          <p class="contact-sub">Preencha o formulário para iniciarmos o diagnóstico e a proposta técnica da sua solução.</p>
+          <h2>Como podemos ajudar o seu negócio?</h2>
+          <p class="contact-sub">Conte o que você precisa e direcionamos para a frente certa.</p>
         </div>
         <form action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST">
           <div class="form-row">
@@ -1156,16 +953,28 @@
               <input type="text" name="name" required placeholder="Nome completo">
             </div>
             <div class="form-group">
-              <label>E-mail Corporativo *</label>
+              <label>E-mail *</label>
               <input type="email" name="email" required placeholder="seu@email.com">
             </div>
             <div class="form-group full">
-              <label>Descreva o software que você imagina para o seu negócio *</label>
-              <textarea name="message" rows="4" required placeholder="Ex: Preciso de um CRM que integre com meu ERP TOTVS e faça gestão de propostas comerciais..."></textarea>
+              <label>Tenho interesse em *</label>
+              <select name="frente" required>
+                <option value="" disabled selected>Selecione uma frente</option>
+                <option>Fábrica de Software</option>
+                <option>Contabilidade</option>
+                <option>Crédito (empréstimos, consignados, financiamentos, seguros, consórcios)</option>
+                <option>Cursos (Cerraclass)</option>
+                <option>Consultoria</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Conte um pouco sobre o que você precisa *</label>
+              <textarea name="message" rows="4" required placeholder="Ex: Preciso de um sistema de vendas integrado ao meu ERP, ou quero simular um consignado..."></textarea>
             </div>
           </div>
+          <input type="hidden" name="_subject" value="Novo contato pelo site - Cerrado Finanças & Tech">
           <input type="hidden" name="_next" value="https://cerradofinancas.com.br/obrigado.html">
-          <button type="submit" class="btn-submit-form">Solicitar Proposta Técnica</button>
+          <button type="submit" class="btn-submit-form">Enviar Mensagem</button>
         </form>
       </div>
     </div>
