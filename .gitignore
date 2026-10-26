@@ -32,3 +32,6 @@ venv/
 
 # Gamma presentations
 apresentacoes/
+
+# Scripts com credenciais / fora do site
+gerar_gamma.py

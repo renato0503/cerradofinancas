@@ -219,7 +219,7 @@
       <img src="/img/folinha-hero.png" alt="Cerrado Finanças & Tech">
       <div>
         <h1>Central de Conteúdos</h1>
-        <p>Posts, stories, vídeos e legendas prontos para publicar. Baixe o pacote completo ou peça por peça.</p>
+        <p>Posts, stories, vídeos e legendas prontos para publicar. Baixe o pacote completo ou peça por peça. O .zip traz as imagens e as legendas; os vídeos baixam aqui ao lado.</p>
       </div>
     </div>
   </header>
@@ -296,7 +296,7 @@
           el('h2', { text: c.titulo }),
           el('p', { class: 'desc', text: c.descricao })),
         el('a', { class: 'btn btn-ouro', href: base + c.pasta + '/' + c.pacote.nome, download: c.pacote.nome,
-          text: `⬇ Baixar tudo (.zip, ${tamanho(c.pacote.kb)})` })));
+          text: `⬇ Baixar pacote (.zip, ${tamanho(c.pacote.kb)})` })));
 
       if (c.orientacoes && c.orientacoes.length) {
         const ul = el('ul', { class: 'orient' });

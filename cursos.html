@@ -300,8 +300,186 @@ permalink: /cursos/
       .destaques-grid { grid-template-columns: 1fr; }
     }
 
+    .destaques-mais {
+      max-width: 1100px;
+      margin: 34px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .destaques-mais p {
+      color: #475569;
+      font-size: 0.97rem;
+      margin: 0;
+    }
+
     @media (max-width: 480px) {
       .curso-card { padding: 30px 24px; }
+    }
+
+    /* ============= CATALOGO DE CURSOS ============= */
+    .catalogo-section {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .cat-grupo { margin-bottom: 56px; }
+
+    .cat-grupo-topo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .cat-grupo-topo h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #001f5c;
+    }
+
+    .cat-grupo-badge {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+    }
+
+    .cat-grupo-sub {
+      color: #64748b;
+      font-size: 0.97rem;
+      margin-bottom: 24px;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .cat-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(0, 31, 92, 0.07);
+      border-color: #cbd5e1;
+    }
+
+    .cat-topo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .cat-icone {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .cat-categoria {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #64748b;
+    }
+
+    .cat-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #001f5c;
+      margin-bottom: 8px;
+    }
+
+    .cat-card > p {
+      color: #475569;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .cat-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-bottom: 18px;
+    }
+
+    .cat-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .cat-meta i { color: #94a3b8; }
+
+    .cat-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #001f5c;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .cat-link:hover { color: #6d28d9; }
+
+    .cat-rodape {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .cat-rodape p {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 640px;
+    }
+
+    .cat-rodape p i { color: #6d28d9; margin-right: 6px; }
+
+    @media (max-width: 980px) {
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .cat-grid { grid-template-columns: 1fr; }
     }
 
     /* ============= MÉTODO ============= */
@@ -527,6 +705,189 @@ permalink: /cursos/
         </div>
       </div>
 
+    </div>
+
+    <div class="destaques-mais fade-up">
+      <p>E quer ver o resto? São mais 11 cursos presenciais de IA e tecnologia, de um dia ou em imersão.</p>
+      <a href="#catalogo" class="btn-curso-outline">Ver o catálogo de cursos <i class="ph ph-arrow-down"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CATALOGO DE CURSOS PRESENCIAIS ========== -->
+<section class="catalogo-section" id="catalogo">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Catálogo Presencial</span>
+      <h2>Cursos de IA e tecnologia para a sua equipe</h2>
+      <p>Além de IA na Prática e IA em Ação Farma, a Cerraclass tem 11 cursos presenciais de um dia e imersões. Turmas de até 10 pessoas, com material e certificado inclusos.</p>
+    </div>
+
+    <div class="cat-grupo fade-up">
+      <div class="cat-grupo-topo">
+        <h3>Curso de um dia</h3>
+        <span class="cat-grupo-badge">8h · 1 sábado</span>
+      </div>
+      <p class="cat-grupo-sub">Um sábado inteiro, 8h de imersão prática.</p>
+      <div class="cat-grid">
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#a78bfa1f;color:#a78bfa;"><i class="ph ph-trend-up"></i></span>
+          <span class="cat-categoria">IA & Negócios</span>
+        </div>
+        <h3>IA na Gestão</h3>
+        <p>Use inteligência artificial para planejar, decidir e acompanhar resultados na gestão do negócio.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-ia-gestao" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#4ade801f;color:#4ade80;"><i class="ph ph-table"></i></span>
+          <span class="cat-categoria">Excel & Planilhas</span>
+        </div>
+        <h3>Excel com IA</h3>
+        <p>Fórmulas, análises e relatórios no Excel acelerados com assistentes de IA.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-excel-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#2dd4bf1f;color:#2dd4bf;"><i class="ph ph-calculator"></i></span>
+          <span class="cat-categoria">Contabilidade</span>
+        </div>
+        <h3>Consultoria Contábil com IA</h3>
+        <p>Aplique IA na rotina contábil e transforme o escritório em consultoria de valor para o cliente.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-consultoria-contabil-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#fbbf241f;color:#fbbf24;"><i class="ph ph-bank"></i></span>
+          <span class="cat-categoria">Finanças</span>
+        </div>
+        <h3>Consultoria Financeira com IA</h3>
+        <p>Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA para consultoria.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-consultoria-financeira-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#38bdf81f;color:#38bdf8;"><i class="ph ph-chart-bar"></i></span>
+          <span class="cat-categoria">Dados</span>
+        </div>
+        <h3>Introdução à Análise de Dados</h3>
+        <p>Os fundamentos para organizar, analisar e tirar conclusões a partir de dados reais.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-intro-analise-dados" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#fb71851f;color:#fb7185;"><i class="ph ph-tree-structure"></i></span>
+          <span class="cat-categoria">Processos</span>
+        </div>
+        <h3>Processos Empresariais BPMN com IA</h3>
+        <p>Mapeie e melhore processos com a notação BPMN, usando IA para modelar e documentar.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-bpmn-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#fb923c1f;color:#fb923c;"><i class="ph ph-lightning"></i></span>
+          <span class="cat-categoria">Automação</span>
+        </div>
+        <h3>Introdução à Automação com IA</h3>
+        <p>Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 8h</span>
+          <span><i class="ph ph-calendar-blank"></i> 1 sábado, o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-intro-automacao-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      </div>
+    </div>
+    <div class="cat-grupo fade-up">
+      <div class="cat-grupo-topo">
+        <h3>Imersão</h3>
+        <span class="cat-grupo-badge">22h · 2 sextas + 2 sábados</span>
+      </div>
+      <p class="cat-grupo-sub">Dois fins de semana, 22h de imersão prática.</p>
+      <div class="cat-grid">
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#818cf81f;color:#818cf8;"><i class="ph ph-flask"></i></span>
+          <span class="cat-categoria">Dados</span>
+        </div>
+        <h3>Ciência de Dados Aplicada</h3>
+        <p>Do dado bruto ao modelo: análise, estatística e machine learning aplicados a problemas reais.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 22h</span>
+          <span><i class="ph ph-calendar-blank"></i> 2 sextas à noite + 2 sábados o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-ciencia-dados-aplicada" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#f472b61f;color:#f472b6;"><i class="ph ph-pill"></i></span>
+          <span class="cat-categoria">IA Setorial</span>
+        </div>
+        <h3>IA na Farma</h3>
+        <p>Aplicações de inteligência artificial no setor farmacêutico, da gestão ao atendimento.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 22h</span>
+          <span><i class="ph ph-calendar-blank"></i> 2 sextas à noite + 2 sábados o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-ia-farma" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#22d3ee1f;color:#22d3ee;"><i class="ph ph-gauge"></i></span>
+          <span class="cat-categoria">BI</span>
+        </div>
+        <h3>BI e Dashboards com IA</h3>
+        <p>Construa painéis de BI completos e use IA para modelar, analisar e comunicar os dados.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 22h</span>
+          <span><i class="ph ph-calendar-blank"></i> 2 sextas à noite + 2 sábados o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-bi-dashboards-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="cat-card fade-up">
+        <div class="cat-topo">
+          <span class="cat-icone" style="background:#e879f91f;color:#e879f9;"><i class="ph ph-device-mobile"></i></span>
+          <span class="cat-categoria">Produto & Apps</span>
+        </div>
+        <h3>Prototipação de Apps com IA</h3>
+        <p>Tire ideias do papel criando protótipos funcionais de aplicativos com ferramentas de IA.</p>
+        <div class="cat-meta">
+          <span><i class="ph ph-clock"></i> 22h</span>
+          <span><i class="ph ph-calendar-blank"></i> 2 sextas à noite + 2 sábados o dia todo</span>
+        </div>
+        <a class="cat-link" href="https://cerraclass.com.br/presencial/pres-prototipacao-apps-ia" target="_blank" rel="noopener">Ver na Cerraclass <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      </div>
+    </div>
+
+    <div class="cat-rodape fade-up">
+      <p><i class="ph ph-info"></i> Datas, valores e inscrição ficam no site da Cerraclass. Turmas abertas sob consulta e também no formato in company.</p>
+      <a href="https://cerraclass.com.br/presenciais" target="_blank" rel="noopener" class="btn-curso">Ver o catálogo completo <i class="ph ph-arrow-up-right"></i></a>
     </div>
   </div>
 </section>

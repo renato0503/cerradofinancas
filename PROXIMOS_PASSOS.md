@@ -22,25 +22,33 @@ Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml
 - Header só com as 4 frentes; Startups, Parceiros e Data Driven foram para o footer e para a home.
 - Folinha como logo do hub, favicon, ícone de app (iPhone/Android) em todas as páginas; recorte da folinha limpo.
 - Central de Conteúdos em `/marketing/` para o Felipe (marketing) baixar as peças.
+- Sitemap completo: as 51 páginas públicas estão listadas (antes faltavam portfolio, iacao, iafarma,
+  consultorias e as páginas de produto/GovTech).
+- `/cursos/` passou a listar os **11 cursos presenciais** do catálogo da Cerraclass (7 de um dia e
+  4 imersões), com link para a página de cada curso no site da Cerraclass.
+- `/iafarma/` sem data nem preço: "próxima turma sob consulta". A data fixa (13/09) já tinha passado.
+- `gerar_gamma.py` sem chave no código: a chave vem da variável de ambiente `GAMMA_API_KEY`
+  (`.env`, ignorado pelo git).
 
 **Marketing:** 19 campanhas publicadas (lançamento, 4 frentes, 13 cursos, folinha animada). Detalhes em `marketing/HISTORICO.md`.
 
 ## Pendências
 
 ### Site
-- [ ] **`gerar_gamma.py` tem uma API key do Gamma escrita no código.** O arquivo nunca foi commitado; mover a
-      chave para variável de ambiente antes de qualquer commit e, se ela já circulou, trocá-la no Gamma.
-- [ ] **Sitemap incompleto:** faltam `/portfolio/`, `/iafarma/`, `/iacao/`, `consultorias.html` e as páginas de
-      produto e GovTech.
-- [ ] Os cards de "Cursos" no site (`/cursos/` e a home) citam só IA na Prática e IA em Ação Farma; o catálogo da
-      Cerraclass tem mais 11 cursos presenciais que poderiam aparecer lá.
+- [ ] **Trocar a chave da API do Gamma**, caso ela tenha circulado. A chave saiu do código (agora vem de
+      `GAMMA_API_KEY`) e `gerar_gamma.py` entrou no `.gitignore`, mas a chave antiga continua válida no Gamma.
 - [ ] `analyze_pages.py` teve o caminho corrigido para `D:\Dev\cerradofinancas` (projetos migrados de
       `C:\Users\Renato\Documents`); outros scripts antigos podem ter o mesmo problema.
+- [ ] `/iacao/` ainda mostra preço (R$ 300 individual / R$ 1.800 equipe) enquanto `/iafarma/` ficou "sob consulta".
+      Decidir se os dois ficam igual.
+- [ ] No catálogo da CerraClass, "turma de no máximo 15 alunos" ainda diz 15. A decisão é 10 — alinhar lá
+      (o site e as peças já dizem 10).
 
 ### Marketing
 - [ ] Ouvir o áudio dos Reels antes de postar (sons sintetizados, nunca revisados por uma pessoa).
-- [ ] Confirmar o tamanho de turma da Cerraclass: as landings dizem 10, o catálogo diz até 15.
-- [ ] Espaço no GitHub Pages: `marketing/entregas/` usa ~405 MB de 1 GB (ver `marketing/HISTORICO.md`).
+      Medido em 26/10 com `marketing/tools/conferir_audio.py`: os 19 vídeos têm trilha, sem clipping e sem
+      silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
+- [ ] Ajustar o catálogo da CerraClass para 10 alunos por turma (ver acima).
 
 ## Como publicar uma mudança
 

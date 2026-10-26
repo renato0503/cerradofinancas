@@ -73,6 +73,32 @@ python tools/publicar.py
 Cor, ícone e hashtags de cada curso ficam em `VISUAL` (no gerador e em `videos/src/cursosCerraclass.ts`).
 `tools/verificar.py` acusa qualquer conteúdo que invada o rodapé ou saia da área segura do story.
 
+## Catálogo de cursos no site (`/cursos/`)
+
+A seção "Catálogo Presencial" da página `/cursos/` é gerada do mesmo catálogo:
+
+```
+python tools/gerar_cursos_site.py    # atualiza a seção em ../../cursos.html
+```
+
+Os textos vêm do catálogo oficial (nada escrito à mão). Cada card abre a página do curso na Cerraclass
+(`https://cerraclass.com.br/presencial/<id>`).
+
+## Conferência do áudio dos vídeos
+
+```
+python tools/conferir_audio.py
+```
+
+Extrai a trilha de cada MP4 de `entregas/` e mede pico, RMS, clipping e silêncios. Não substitui a escuta:
+serve para pegar áudio faltando, corte ou distorção.
+
+## Tamanho do repositório (limite de 1 GB do GitHub Pages)
+
+O `.zip` de cada campanha **não** leva os vídeos (`.mp4`, `.webm`, `.mov`): o time baixa o vídeo direto na
+Central de Conteúdos. Sem isso, `entregas/` passou de 400 MB. Se o limite apertar de novo, mover os vídeos
+antigos para outro armazenamento (Google Drive, Firebase Storage).
+
 ## Skills instaladas (`.claude/skills/`)
 
 | Skill | Para quê |

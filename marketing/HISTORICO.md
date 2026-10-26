@@ -17,6 +17,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `ffafe7b` | Uma campanha por frente: Fábrica de Software, Contabilidade, Crédito, Cursos |
 | 26/10 | `a74f8e0` | Cursos com landing própria: IA na Prática e IA em Ação Farma (propagandistas) |
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
+| 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 
 ## Campanhas publicadas (19)
 
@@ -56,8 +57,8 @@ Valem para todas as próximas campanhas.
    Cerraclass. Os cursos do catálogo são "sob consulta". Pode-se dizer que o pacote para grupos sai mais barato por pessoa.
 3. **Crédito sempre com aviso legal** de correspondente bancário: "não é instituição financeira; crédito sujeito
    a análise e aprovação; taxas e condições variam". Está no CTA do carrossel, no story, no Reel e na legenda.
-4. **Tamanho de turma:** as landings de IA na Prática e IA em Ação Farma falam em **10 pessoas**; o catálogo da
-   CerraClass fala em **até 15 alunos**. Cada campanha segue a fonte do seu curso. *Pendente confirmar com o Renato.*
+4. **Tamanho de turma:** **10 pessoas por turma** em tudo (decidido em 26/10). As landings de IA na Prática e
+   IA em Ação Farma e o site já dizem 10; o catálogo da CerraClass ainda diz "até 15 alunos" — alinhar lá.
 5. **IA na Farma ≠ IA em Ação Farma.** A primeira é a imersão para farmácias e drogarias (estoque, atendimento,
    conformidade); a segunda é o curso de um dia para propagandistas da indústria. Pastas diferentes
    (`curso-ia-na-farma` e `curso-ia-farma`).
@@ -72,18 +73,23 @@ Valem para todas as próximas campanhas.
   segura do story (250px no topo e na base). Foi testado com um caso propositalmente quebrado.
 - Todo vídeo é conferido extraindo quadros dos momentos-chave (`npx remotion ffmpeg -ss ...`) e olhando
   cada um com as linhas da zona segura.
+- O áudio dos vídeos é medido por `tools/conferir_audio.py`: extrai a trilha, mede pico, RMS, clipping e
+  silêncios. Em 26/10 os 19 vídeos passaram (trilha presente, sem clipping, sem silêncio longo), com RMS
+  em torno de -28 dBFS — baixo, mas dentro do que o Instagram normaliza. **A escuta continua pendente:**
+  a medição não diz se o som combina com a imagem.
 - Depois de publicar, conferimos que os arquivos de `entregas/` respondem no site e que as áreas de trabalho
   (código, skills, fontes) **não** são publicadas (dão 404).
 
 ## Pendências e próximos passos
 
 - [ ] **Ouvir o áudio dos Reels** antes de postar. Os sons são sintetizados por código e nunca foram ouvidos por uma pessoa.
-- [ ] **Confirmar o tamanho de turma** (10 ou 15) e alinhar as peças se necessário.
+- [ ] **Alinhar o catálogo da CerraClass para 10 alunos** por turma (hoje diz 15).
 - [ ] Atualizar as campanhas dos cursos quando o catálogo da CerraClass mudar (sequência no README).
 - [ ] Ideias de campanhas futuras: promoção de consignado, cases de clientes da Fábrica, depoimentos de alunos,
       turmas com data definida (aí sim com data, em peça de vida curta), conteúdo educativo de contabilidade.
 - [ ] Skills instaladas e ainda não usadas: `threejs-*` (3D) e `lemo-opuscar` (curtas cinematográficos, pesado).
-- [ ] **Espaço no GitHub Pages:** o limite é 1 GB por site e `entregas/` já usa cerca de **405 MB** (19 campanhas),
-      metade disso por causa dos `.zip`, que repetem os arquivos de cada campanha. No ritmo atual o limite chega
-      em cerca de 25 novas campanhas. Opções: tirar os vídeos do `.zip`, gerar o `.zip` só para campanhas novas ou
-      mover vídeos antigos para outro armazenamento (Google Drive, Firebase Storage).
+- [ ] **Espaço no GitHub Pages:** o limite é 1 GB por site. `entregas/` usava ~405 MB (19 campanhas) e foi
+      reduzida para **~290 MB** em 26/10: o `.zip` de cada campanha passou a levar só as imagens e as legendas,
+      não os vídeos (o time baixa o vídeo direto na Central de Conteúdos). Os `.zip` caíram de 198 MB para 84 MB.
+      Se apertar o limite de novo, o próximo passo é mover os vídeos antigos para outro armazenamento
+      (Google Drive, Firebase Storage) e deixar no repositório só as peças estáticas.

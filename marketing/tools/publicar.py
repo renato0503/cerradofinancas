@@ -1,8 +1,10 @@
 """Atualiza a página /marketing/ a partir de entregas/.
 
 Para cada pasta em entregas/ (uma por campanha), gera o pacote <pasta>.zip com
-todos os arquivos e escreve entregas/conteudos.json, que a página lê.
+os arquivos da campanha e escreve entregas/conteudos.json, que a página lê.
 
+O .zip NAO leva os videos (.mp4, .webm, .mov): eles ocupam quase todo o espaco
+do repositorio e o time baixa o video direto pela pagina, peça por peça.
 Cada pasta precisa de um info.json com "titulo", "data", "descricao" e,
 opcionalmente, "orientacoes" (lista de frases). Legendas são os arquivos
 legenda-*.txt; o nome depois do hífen vira o nome da rede na página.
@@ -22,6 +24,8 @@ TIPOS = {
     ".mp4": "video", ".webm": "video", ".mov": "video",
     ".json": "lottie",
 }
+# extensoes que ficam de fora do .zip (peso alto, baixa pela pagina)
+FORA_DO_ZIP = {".mp4", ".webm", ".mov"}
 
 
 def publicar_pasta(pasta: Path):
@@ -46,7 +50,7 @@ def publicar_pasta(pasta: Path):
     pacote = pasta / f"{pasta.name}.zip"
     with zipfile.ZipFile(pacote, "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(pasta.iterdir()):
-            if f.suffix != ".zip" and f.name != "info.json":
+            if f.suffix != ".zip" and f.name != "info.json" and f.suffix.lower() not in FORA_DO_ZIP:
                 z.write(f, f.name)
 
     return {

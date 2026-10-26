@@ -61,7 +61,7 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 - `index.html` — Hub "Cerrado Finanças & Tech": hero, 4 frentes (Fábrica de Software → `fabrica.html`, Contabilidade → `contabilidade.html`, Crédito → `/credito/`, Cursos → `/cursos/`), CTA Consultorias, Ecossistema (Startups, Parceiros, Data Driven), Quem Somos e formulário com seleção de frente.
 - `fabrica.html` — A antiga home de software, intacta (estrutura descrita abaixo).
 - `credito.html` (permalink `/credito/`) — Correspondente Bancário Multi Bancos em parceria com a LS Intermediação Financeira (@ls.intermedfin): empréstimos, consignados, financiamentos, seguros e consórcios, com CTAs de WhatsApp por produto e aviso legal.
-- `cursos.html` (permalink `/cursos/`) — Página da Cerraclass no próprio site: destaques IA na Prática (`/iacao/`) e IA em Ação Farma (`/iafarma/`), método, in company; todos os botões de inscrição levam para https://cerraclass.com.br/.
+- `cursos.html` (permalink `/cursos/`) — Página da Cerraclass no próprio site: destaques IA na Prática (`/iacao/`) e IA em Ação Farma (`/iafarma/`), seção **Catálogo Presencial** com os 11 cursos do catálogo da CerraClass (7 de um dia, 4 imersões, com link para `https://cerraclass.com.br/presencial/<id>`), método, in company; todos os botões de inscrição levam para https://cerraclass.com.br/. A seção do catálogo é gerada por `marketing/tools/gerar_cursos_site.py` a partir de `marketing/dados/cerraclass-cursos.json` — mexa no gerador, não no HTML.
 - `marketing/index.html` (`/marketing/`) — **Central de Conteúdos** para o time de marketing: lê `marketing/entregas/conteudos.json` e mostra cada campanha com prévias, download por peça, `.zip` e legendas com botão de copiar. Tem `noindex` e não aparece no menu nem no sitemap. Só ela e `marketing/entregas/` são publicadas; o resto de `marketing/` é o estúdio de produção (ver `marketing/README.md` e `marketing/HISTORICO.md`).
 - Header: Início, Fábrica de Software, Contabilidade, Crédito, Cursos. Startups/Parceiros/Data Driven saíram do header e ficam no footer (coluna "Ecossistema") e na home.
 
@@ -248,6 +248,14 @@ Todos usam **FormSubmit.co** com POST para `gestor.renatorosa@gmail.com` e redir
 
 ### WhatsApp
 CTAs apontam para `https://api.whatsapp.com/send?phone=5567993515206`.
+
+### Sitemap e indexação
+`sitemap.xml` na raiz lista as 51 páginas públicas (frentes, categorias de software, GovTech, B2B, startups e as landings `/iacao/`, `/iafarma/`, `/portfolio/`). Ficam de fora, de propósito:
+- `/marketing/` e `obrigado.html` — têm `noindex, nofollow`.
+- Documentos internos (`README.md`, `context.md`, `PROXIMOS_PASSOS.md`, `marketing/README.md`, `marketing/HISTORICO.md`) — excluídos no `_config.yml`, não viram página.
+
+### Segredos
+Chaves de API **nunca** no código. `gerar_gamma.py` (fora do git, no `.gitignore`) lê `GAMMA_API_KEY` do ambiente; use `.env` (também ignorado) a partir do `.env.example`.
 
 ### Deploy
 GitHub Pages com Jekyll. Domínio customizado: `www.cerradofinancas.com.br` (CNAME). Commit e push direto na branch `main`.
