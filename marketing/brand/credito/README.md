@@ -38,6 +38,16 @@ só em "Em parceria com" (com o logo dela, como parceira) e no aviso legal; nunc
 não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o
 perfil e a instituição." No story e no vídeo pode ir a versão curta.
 
+## Série produto a produto
+
+`tools/gerar_credito.py` gera as 11 campanhas de produto e as 4 da série "Antes de assinar, entenda". A fonte é o
+portfólio da LS (`PortfolioParceriaLS/`). Recursos novos:
+- `.pauta.compacta`, para listas de 4 itens;
+- `.fecho`, a frase no pé do slide;
+- as cláusulas com "§ 1" a "§ 3" no slide azul.
+
+Seguro e consórcio têm aviso legal próprio. Nunca usar nome ou logo de banco.
+
 ## Vídeo
 
 `filmes/credito-comercial` (15s, 16:9 e 9:16): a proposta de crédito em 3D, com o comparativo e a assinatura.

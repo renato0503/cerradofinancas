@@ -19,7 +19,8 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 | 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
-| 28/10 | (esta rodada) | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
+| 28/10 | (esta rodada) | Crédito produto a produto (11 campanhas, terças e sextas de 03/11 a 08/12, + 4 educativas "Antes de assinar, entenda" em janeiro) e Consultorias (7 pranchas na identidade nova "Planta", quartas de 04/11 a 16/12); plano de saúde e fiança no `/credito` |
+| 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
@@ -83,6 +84,31 @@ entregamos (os itens do portfólio, sem acréscimo) → como trabalhamos (os 4 p
 própria com o link da página certa (ERP, CRM, Dashboards, IA Offline, E-commerce, Compliance e Blockchain têm página;
 o resto vai para `/portfolio`). Identidade: a da Cerrado Tech (azul e dourado), uma cor de destaque por capacidade.
 Postagem sugerida segunda, quarta e sexta, na ordem do gerador (ERP 02/11 até Web3 07/12), registrada no `info.json`.
+
+## Crédito produto a produto e Consultorias (28/10)
+
+Planejamento em `PLANEJAMENTO-credito-consultorias.md`, aprovado pelo Renato ("pode seguir") sem responder às perguntas
+abertas. Ficou o caminho mais seguro em cada uma:
+- não citar cidade (a LS fica em Campo Grande e o site diz Cuiabá);
+- WhatsApp da Cerrado;
+- consignado sem INSS (o INSS fica só no empréstimo pessoal, como no portfólio da LS);
+- plano de saúde e odonto incluídos (e no site);
+- sem os números das consultorias;
+- identidade nova "Planta" e o calendário proposto.
+
+**Crédito** (`tools/gerar_credito.py`, identidade "Antes de assinar"): 11 produtos do portfólio da LS (`PortfolioParceriaLS/`).
+Os 6 slides são: capa → para quem é → como usar → comparativo → as três cláusulas para conferir antes de assinar
+(slide azul, com § 1 a 3) → CTA com o aviso legal. Há avisos próprios para seguro (intermediação, análise de risco) e
+consórcio (não é administradora).
+- **Números:** só os do portfólio da LS ("mais de 20 bancos" no consignado, "mais de 30 seguradoras").
+- **Bancos:** nenhum nome nem logo.
+- **Série educativa "Antes de assinar, entenda":** CET, portabilidade, consórcio ou financiamento, e margem
+  consignável. Sai em janeiro de 2027.
+
+**Consultorias** (`tools/gerar_consultorias.py`, identidade "Planta", `brand/consultoria/README.md`): 7 pranchas (BPO,
+controladoria, CSC Strategy, GRC, planejamento tributário e Lei do Bem, venture building, GovTech). Os 6 slides são:
+capa com organograma → os sinais → o que entregamos → antes e depois → como funciona → diagnóstico gratuito.
+O LinkedIn é a rede principal.
 
 ## Série da Cerrado Contabilidade (28/10)
 

@@ -1,0 +1,21 @@
+Apontamento de auditoria resolvido e evidenciado.
+
+Workflow 5W2H para cada apontamento, matriz de risco e adequação à LGPD com DPO as a Service.
+
+Sinais de que está na hora de redesenhar a estrutura:
+• O mesmo apontamento volta em toda auditoria
+• Ninguém sabe quem responde por cada ação
+• Dados pessoais sem mapeamento
+• A LGPD ainda é um projeto para depois
+
+O que a Cerrado Finanças entrega em Governança, risco e compliance:
+▸ Compliance 5W2H: com a plataforma CerraPlan
+▸ Matriz de risco: jurídico, operacional e de execução
+▸ DPO as a Service: com o Cerrado Privacy
+▸ Adequação à LGPD: mapeamento de dados com IA e relatórios ROPA e RIPD
+
+Como funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.
+
+Risco mapeado, ação evidenciada. Agende o diagnóstico: cerradofinancas.com.br/cerraplan
+
+#Compliance #GRC #LGPD #Governanca #Auditoria #CerradoFinancas #Consultoria #GestaoEmpresarial

@@ -1,5 +1,297 @@
 [
   {
+    "pasta": "2027-01-credito-entenda-margem-consignavel",
+    "titulo": "Antes de assinar, entenda 4 · Margem consignável: usar tudo é o erro.",
+    "data": "2027-01-15",
+    "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (4 de 4).",
+    "orientacoes": [
+      "Postar em 15/01 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Conteúdo conferido com as regras em 28/10/2026; se algo mudar antes da data, revisar antes de postar.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 71
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 120
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 119
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4186
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 165
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Antes de assinar, entenda. Cláusula 4\n\nMargem consignável: usar tudo é o erro.\nÉ o limite do salário ou do benefício que pode ir para parcelas de consignado.\n\nA margem consignável é a parte da renda que pode ser comprometida com parcelas descontadas em folha. O limite é definido por lei e pelo convênio de cada órgão ou empresa.\n\nOnde olhar:\n• O contracheque: mostra a margem disponível\n• O convênio: cada órgão tem a sua regra\n• A margem livre: é folga para imprevistos\n\nTrês perguntas para fazer:\n✍️ Quanto sobra: depois da parcela\n✍️ Outros descontos: que já estão na folha\n✍️ O CET: mesmo no consignado, compare\n\nConteúdo informativo, com base nas regras vigentes em outubro de 2026.\nUse a margem com folga. Simulação gratuita: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#AntesDeAssinar #MargemConsignavel #Consignado #EducacaoFinanceira #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Antes de assinar, entenda: Margem consignável: usar tudo é o erro.\n\nÉ o limite do salário ou do benefício que pode ir para parcelas de consignado. A margem consignável é a parte da renda que pode ser comprometida com parcelas descontadas em folha. O limite é definido por lei e pelo convênio de cada órgão ou empresa.\n\nTrês perguntas para fazer:\n✍️ Quanto sobra: depois da parcela\n✍️ Outros descontos: que já estão na folha\n✍️ O CET: mesmo no consignado, compare\n\nUse a margem com folga. cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2027-01-credito-entenda-margem-consignavel.zip",
+      "kb": 748
+    }
+  },
+  {
+    "pasta": "2027-01-credito-entenda-consorcio-ou-financiamento",
+    "titulo": "Antes de assinar, entenda 3 · Consórcio ou financiamento: qual faz sentido?",
+    "data": "2027-01-12",
+    "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (3 de 4).",
+    "orientacoes": [
+      "Postar em 12/01 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Conteúdo conferido com as regras em 28/10/2026; se algo mudar antes da data, revisar antes de postar.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 105
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 79
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 98
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 120
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 122
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4270
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 157
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Antes de assinar, entenda. Cláusula 3\n\nConsórcio ou financiamento: qual faz sentido?\nOs dois ajudam a comprar um bem, mas funcionam de jeitos muito diferentes.\n\nNo financiamento, você recebe o bem agora e paga juros. No consórcio, você paga a taxa de administração e recebe a carta de crédito quando é contemplado, por sorteio ou por lance.\n\nA pergunta certa:\n• Precisa agora?: o financiamento entrega já\n• Pode esperar?: o consórcio não cobra juros\n• Tem um lance?: ele pode antecipar a contemplação\n\nTrês perguntas para fazer:\n✍️ O custo total: juros ou taxa de administração\n✍️ O seu prazo: quando você precisa do bem\n✍️ O reajuste: como a parcela é corrigida\n\nConteúdo informativo, com base nas regras vigentes em outubro de 2026.\nCompare os dois caminhos. Simulação gratuita: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#AntesDeAssinar #Consorcio #Financiamento #EducacaoFinanceira #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Antes de assinar, entenda: Consórcio ou financiamento: qual faz sentido?\n\nOs dois ajudam a comprar um bem, mas funcionam de jeitos muito diferentes. No financiamento, você recebe o bem agora e paga juros. No consórcio, você paga a taxa de administração e recebe a carta de crédito quando é contemplado, por sorteio ou por lance.\n\nTrês perguntas para fazer:\n✍️ O custo total: juros ou taxa de administração\n✍️ O seu prazo: quando você precisa do bem\n✍️ O reajuste: como a parcela é corrigida\n\nCompare os dois caminhos. cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2027-01-credito-entenda-consorcio-ou-financiamento.zip",
+      "kb": 756
+    }
+  },
+  {
+    "pasta": "2027-01-credito-entenda-portabilidade",
+    "titulo": "Antes de assinar, entenda 2 · Portabilidade é um direito seu.",
+    "data": "2027-01-08",
+    "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (2 de 4).",
+    "orientacoes": [
+      "Postar em 08/01 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Conteúdo conferido com as regras em 28/10/2026; se algo mudar antes da data, revisar antes de postar.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 97
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 122
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 77
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 97
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 120
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 116
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4235
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 147
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Antes de assinar, entenda. Cláusula 2\n\nPortabilidade é um direito seu.\nVocê pode levar o seu empréstimo para outro banco com condição melhor.\n\nPelas regras do Banco Central, você pode transferir a dívida para outra instituição. O banco de origem não pode impedir a transferência, mas pode fazer uma contraproposta.\n\nComo funciona:\n• Você pede a proposta: num banco com condição melhor\n• O novo banco quita: a dívida no banco antigo\n• Você segue pagando: agora no novo contrato\n\nTrês perguntas para fazer:\n✍️ O novo CET: precisa ser menor de verdade\n✍️ O prazo: não aumentar sem perceber\n✍️ A contraproposta: compare também a do seu banco\n\nConteúdo informativo, com base nas regras vigentes em outubro de 2026.\nVeja se vale trocar. Simulação gratuita: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#AntesDeAssinar #Portabilidade #EducacaoFinanceira #Consignado #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Antes de assinar, entenda: Portabilidade é um direito seu.\n\nVocê pode levar o seu empréstimo para outro banco com condição melhor. Pelas regras do Banco Central, você pode transferir a dívida para outra instituição. O banco de origem não pode impedir a transferência, mas pode fazer uma contraproposta.\n\nTrês perguntas para fazer:\n✍️ O novo CET: precisa ser menor de verdade\n✍️ O prazo: não aumentar sem perceber\n✍️ A contraproposta: compare também a do seu banco\n\nVeja se vale trocar. cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2027-01-credito-entenda-portabilidade.zip",
+      "kb": 725
+    }
+  },
+  {
+    "pasta": "2027-01-credito-entenda-cet",
+    "titulo": "Antes de assinar, entenda 1 · A taxa de juros não é o custo do empréstimo.",
+    "data": "2027-01-05",
+    "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (1 de 4).",
+    "orientacoes": [
+      "Postar em 05/01 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Conteúdo conferido com as regras em 28/10/2026; se algo mudar antes da data, revisar antes de postar.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 126
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 75
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 100
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 120
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 116
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4238
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 154
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Antes de assinar, entenda. Cláusula 1\n\nA taxa de juros não é o custo do empréstimo.\nO número que importa se chama CET, o Custo Efetivo Total.\n\nO CET soma tudo o que você paga no contrato: juros, tarifas, impostos como o IOF, seguros e outros encargos. Pelas regras do Banco Central, ele precisa ser informado antes da contratação.\n\nO que entra no CET:\n• Juros: o preço do dinheiro\n• Tarifas: de cadastro e de serviços\n• IOF: o imposto sobre a operação\n• Seguros: quando fazem parte do contrato\n\nTrês perguntas para fazer:\n✍️ Peça o CET por escrito: antes de assinar\n✍️ Compare CET com CET: não taxa com taxa\n✍️ Olhe o valor total: quanto você paga no fim\n\nConteúdo informativo, com base nas regras vigentes em outubro de 2026.\nCompare o custo total. Simulação gratuita: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#AntesDeAssinar #CET #EducacaoFinanceira #Emprestimo #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Antes de assinar, entenda: A taxa de juros não é o custo do empréstimo.\n\nO número que importa se chama CET, o Custo Efetivo Total. O CET soma tudo o que você paga no contrato: juros, tarifas, impostos como o IOF, seguros e outros encargos. Pelas regras do Banco Central, ele precisa ser informado antes da contratação.\n\nTrês perguntas para fazer:\n✍️ Peça o CET por escrito: antes de assinar\n✍️ Compare CET com CET: não taxa com taxa\n✍️ Olhe o valor total: quanto você paga no fim\n\nCompare o custo total. cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2027-01-credito-entenda-cet.zip",
+      "kb": 743
+    }
+  },
+  {
     "pasta": "2026-11-contabil-sabia-cnae",
     "titulo": "Você sabia? Nota nº 08 · O CNAE errado pode custar caro?",
     "data": "2026-12-26",
@@ -141,6 +433,77 @@
     "pacote": {
       "nome": "2026-11-contabil-sabia-certidao-negativa.zip",
       "kb": 584
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-govtech",
+    "titulo": "Consultoria · Consultoria GovTech",
+    "data": "2026-12-16",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 7 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 16/12 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/consultorias",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 181
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 151
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 163
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 149
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 151
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5086
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 180
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Edital de TI bem escrito é sistema que funciona.\n\nApoiamos o setor público na contratação, implementação e gestão de sistemas, com aderência à Nova Lei de Licitações e à LGPD.\n\nSe a sua empresa se reconhece aqui:\n• Sistema contratado que ninguém usa\n• Edital copiado de outro órgão\n• Implantação sem gestão de projeto\n• Dúvidas sobre a LGPD nos dados do cidadão\n\nTecnologia pública que entrega. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/consultorias\n\n#GovTech #GestaoPublica #NovaLeiDeLicitacoes #Prefeituras #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Edital de TI bem escrito é sistema que funciona.\n\nApoiamos o setor público na contratação, implementação e gestão de sistemas, com aderência à Nova Lei de Licitações e à LGPD.\n\nSinais de que está na hora de redesenhar a estrutura:\n• Sistema contratado que ninguém usa\n• Edital copiado de outro órgão\n• Implantação sem gestão de projeto\n• Dúvidas sobre a LGPD nos dados do cidadão\n\nO que a Cerrado Finanças entrega em Consultoria GovTech:\n▸ Levantamento de requisitos: antes do edital\n▸ Avaliação de editais de TI: termo de referência sólido\n▸ Gestão de projetos: com a metodologia PMBOK\n▸ Aderência legal: lei 14.133/2021 e LGPD\n▸ Transformação digital: do papel ao sistema\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nTecnologia pública que entrega. Agende o diagnóstico: cerradofinancas.com.br/consultorias\n\n#GovTech #GestaoPublica #NovaLeiDeLicitacoes #Prefeituras #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-govtech.zip",
+      "kb": 957
     }
   },
   {
@@ -355,6 +718,149 @@
     "pacote": {
       "nome": "2026-11-contabil-socios.zip",
       "kb": 588
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-venture-building",
+    "titulo": "Consultoria · Venture building",
+    "data": "2026-12-09",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 6 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 09/12 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/startups",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 160
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 147
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 162
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 135
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 145
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4962
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 162
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Da ideia ao MVP, com sócio técnico.\n\nA gente co-cria a startup do zero: a arquitetura financeira, societária e tecnológica para transformar a ideia num negócio rentável.\n\nSe a sua empresa se reconhece aqui:\n• A ideia só foi validada na conversa\n• Falta quem construa o produto\n• O pitch ainda não tem os números\n• A rodada de investimento parece longe\n\nConstrua com quem já constrói. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/startups\n\n#VentureBuilding #Startups #MVP #Empreendedorismo #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Da ideia ao MVP, com sócio técnico.\n\nA gente co-cria a startup do zero: a arquitetura financeira, societária e tecnológica para transformar a ideia num negócio rentável.\n\nSinais de que está na hora de redesenhar a estrutura:\n• A ideia só foi validada na conversa\n• Falta quem construa o produto\n• O pitch ainda não tem os números\n• A rodada de investimento parece longe\n\nO que a Cerrado Finanças entrega em Venture building:\n▸ MVP: o produto mínimo viável, construído\n▸ Arquitetura societária: quem é dono de quê\n▸ Pitch deck financeiro: com os números que o investidor pergunta\n▸ Captação: apoio nas rodadas Seed e Series A\n▸ Tech partner: sócio operacional e tecnológico\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nConstrua com quem já constrói. Agende o diagnóstico: cerradofinancas.com.br/startups\n\n#VentureBuilding #Startups #MVP #Empreendedorismo #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-venture-building.zip",
+      "kb": 888
+    }
+  },
+  {
+    "pasta": "2026-11-credito-seguros-e-saude",
+    "titulo": "Crédito · Seguros e planos de saúde",
+    "data": "2026-12-08",
+    "descricao": "Série do Crédito produto a produto (11 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 08/12 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 143
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 98
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 81
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 109
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 104
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 110
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4176
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 170
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Mais de 30 seguradoras numa cotação só.\n\nSeguro auto, residencial, vida e fiança, e plano de saúde e odontológico para você ou para a sua empresa.\n\nPara quem é:\n• Auto: carro, moto, caminhão e frota\n• Residencial e fiança: para quem mora e para quem aluga\n• Vida: para proteger a família\n• Saúde e odonto: para você ou para a empresa, individual ou coletivo\n\nAntes de assinar, confira:\n✍️ A cobertura: o que está e o que não está incluído\n✍️ A franquia: quanto você paga num sinistro\n✍️ A carência: quando o plano começa a valer\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nCote o seu seguro. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, faz a intermediação e não é seguradora nem operadora. Contratação sujeita a análise de risco e aceitação. Valores conforme cotação.\n\n#Seguros #PlanoDeSaude #SeguroAuto #PlanoOdontologico #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Mais de 30 seguradoras numa cotação só.\n\nSeguro auto, residencial, vida e fiança, e plano de saúde e odontológico para você ou para a sua empresa. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ A cobertura: o que está e o que não está incluído\n✍️ A franquia: quanto você paga num sinistro\n✍️ A carência: quando o plano começa a valer\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, faz a intermediação e não é seguradora nem operadora. Contratação sujeita a análise de risco e aceitação. Valores conforme cotação.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-seguros-e-saude.zip",
+      "kb": 765
     }
   },
   {
@@ -643,6 +1149,78 @@
     }
   },
   {
+    "pasta": "2026-11-credito-consorcio-servicos",
+    "titulo": "Crédito · Consórcio de serviços e energia solar",
+    "data": "2026-12-04",
+    "descricao": "Série do Crédito produto a produto (10 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 04/12 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 104
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 77
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 111
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 110
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4195
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 162
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Lente dental e energia solar também têm consórcio.\n\nEstética, odontologia, móveis planejados e energia solar, planejados sem juros de financiamento.\n\nPara quem é:\n• Estética e harmonização: inclusive cirurgia plástica\n• Odontologia: lentes de contato dentais e implantes\n• Móveis planejados: para a casa nova\n• Energia solar: em casa ou na empresa\n\nAntes de assinar, confira:\n✍️ A taxa de administração: é o custo do consórcio\n✍️ O prazo: não há data certa para ser contemplado\n✍️ O que a carta cobre: confira antes com o profissional\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nO sonho planejado. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, faz a intermediação e não é administradora de consórcio. Cartas sujeitas à disponibilidade; valores sujeitos a alteração.\n\n#ConsorcioDeServicos #EnergiaSolar #LentesDeContatoDental #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Lente dental e energia solar também têm consórcio.\n\nEstética, odontologia, móveis planejados e energia solar, planejados sem juros de financiamento. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ A taxa de administração: é o custo do consórcio\n✍️ O prazo: não há data certa para ser contemplado\n✍️ O que a carta cobre: confira antes com o profissional\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, faz a intermediação e não é administradora de consórcio. Cartas sujeitas à disponibilidade; valores sujeitos a alteração.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-consorcio-servicos.zip",
+      "kb": 760
+    }
+  },
+  {
     "pasta": "2026-11-contabil-troca-de-contador",
     "titulo": "Contabilidade · Insatisfeito com o contador atual?",
     "data": "2026-12-03",
@@ -782,6 +1360,149 @@
     "pacote": {
       "nome": "2026-11-tech-govtech.zip",
       "kb": 4072
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-planejamento-tributario",
+    "titulo": "Consultoria · Planejamento tributário e inovação",
+    "data": "2026-12-02",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 5 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 02/12 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/leidobem",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 179
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 154
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 169
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 159
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 149
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5203
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 192
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Inovação também pode reduzir imposto.\n\nDiagnóstico da carga tributária e apuração de incentivos à inovação, com a Plataforma Lei do Bem cruzando a sua contabilidade com IA.\n\nSe a sua empresa se reconhece aqui:\n• A empresa investe em inovação e não usa incentivo\n• O regime tributário nunca foi revisto\n• Créditos de imposto esquecidos\n• Autuação sem uma defesa estruturada\n\nA Lei do Bem vale para empresas tributadas pelo Lucro Real.\n\nO imposto certo, dentro da lei. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/leidobem\n\n#PlanejamentoTributario #LeiDoBem #IncentivosFiscais #Inovacao #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Inovação também pode reduzir imposto.\n\nDiagnóstico da carga tributária e apuração de incentivos à inovação, com a Plataforma Lei do Bem cruzando a sua contabilidade com IA.\n\nSinais de que está na hora de redesenhar a estrutura:\n• A empresa investe em inovação e não usa incentivo\n• O regime tributário nunca foi revisto\n• Créditos de imposto esquecidos\n• Autuação sem uma defesa estruturada\n\nO que a Cerrado Finanças entrega em Planejamento tributário e inovação:\n▸ Lei do Bem: desoneração de IRPJ e CSLL para quem inova\n▸ Mix de tributação: simples, Presumido ou Real\n▸ Fator R: aplicado quando cabe\n▸ Recuperação de créditos: o que foi pago a mais\n▸ Contencioso administrativo: defesa ativa\n\nA Lei do Bem vale para empresas tributadas pelo Lucro Real.\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nO imposto certo, dentro da lei. Agende o diagnóstico: cerradofinancas.com.br/leidobem\n\n#PlanejamentoTributario #LeiDoBem #IncentivosFiscais #Inovacao #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-planejamento-tributario.zip",
+      "kb": 986
+    }
+  },
+  {
+    "pasta": "2026-11-credito-consorcio",
+    "titulo": "Crédito · Consórcio",
+    "data": "2026-12-01",
+    "descricao": "Série do Crédito produto a produto (9 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 01/12 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 131
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 86
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 71
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 111
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 113
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3961
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 152
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Planejar a compra sem juros de financiamento.\n\nImóvel, carro, moto, caminhão ou máquina: no consórcio, você paga a taxa de administração, não juros.\n\nPara quem é:\n• Imóvel: casa, apartamento, construção e reforma\n• Auto: carro e moto\n• Pesados: caminhão, máquinas e equipamentos\n\nAntes de assinar, confira:\n✍️ A taxa de administração: é o custo do consórcio\n✍️ O prazo: não há data certa para ser contemplado\n✍️ O reajuste: a carta e a parcela podem ser corrigidas\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule o seu consórcio. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, faz a intermediação e não é administradora de consórcio. Cartas sujeitas à disponibilidade; valores sujeitos a alteração.\n\n#Consorcio #ConsorcioImobiliario #ConsorcioDeVeiculos #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Planejar a compra sem juros de financiamento.\n\nImóvel, carro, moto, caminhão ou máquina: no consórcio, você paga a taxa de administração, não juros. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ A taxa de administração: é o custo do consórcio\n✍️ O prazo: não há data certa para ser contemplado\n✍️ O reajuste: a carta e a parcela podem ser corrigidas\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, faz a intermediação e não é administradora de consórcio. Cartas sujeitas à disponibilidade; valores sujeitos a alteração.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-consorcio.zip",
+      "kb": 720
     }
   },
   {
@@ -1070,6 +1791,78 @@
     }
   },
   {
+    "pasta": "2026-11-credito-financiamento-veiculo",
+    "titulo": "Crédito · Financiamento de veículo",
+    "data": "2026-11-27",
+    "descricao": "Série do Crédito produto a produto (8 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 27/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 135
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 82
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 79
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 99
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 121
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3950
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 164
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Carro novo? A taxa também se compara.\n\nCarro, moto ou caminhão: as propostas de vários bancos antes de você fechar na loja.\n\nPara quem é:\n• Carro: novo ou seminovo\n• Moto: para o dia a dia ou o trabalho\n• Caminhão: para quem vive da estrada\n\nAntes de assinar, confira:\n✍️ O CET: tarifas e seguros embutidos\n✍️ A entrada: quanto mais, menos juros\n✍️ O valor final: quanto o veículo custa no fim\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nCompare antes de fechar. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#FinanciamentoDeVeiculo #CarroNovo #Caminhao #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Carro novo? A taxa também se compara.\n\nCarro, moto ou caminhão: as propostas de vários bancos antes de você fechar na loja. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O CET: tarifas e seguros embutidos\n✍️ A entrada: quanto mais, menos juros\n✍️ O valor final: quanto o veículo custa no fim\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-financiamento-veiculo.zip",
+      "kb": 722
+    }
+  },
+  {
     "pasta": "2026-11-contabil-contabil",
     "titulo": "Contabilidade · Balanço e DRE que você entende.",
     "data": "2026-11-26",
@@ -1209,6 +2002,149 @@
     "pacote": {
       "nome": "2026-11-tech-ecommerce.zip",
       "kb": 4073
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-grc",
+    "titulo": "Consultoria · Governança, risco e compliance",
+    "data": "2026-11-25",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 4 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 25/11 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/cerraplan",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 174
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 157
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 154
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 151
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 157
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5066
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 195
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Apontamento de auditoria resolvido e evidenciado.\n\nWorkflow 5W2H para cada apontamento, matriz de risco e adequação à LGPD com DPO as a Service.\n\nSe a sua empresa se reconhece aqui:\n• O mesmo apontamento volta em toda auditoria\n• Ninguém sabe quem responde por cada ação\n• Dados pessoais sem mapeamento\n• A LGPD ainda é um projeto para depois\n\nRisco mapeado, ação evidenciada. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraplan\n\n#Compliance #GRC #LGPD #Governanca #Auditoria #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Apontamento de auditoria resolvido e evidenciado.\n\nWorkflow 5W2H para cada apontamento, matriz de risco e adequação à LGPD com DPO as a Service.\n\nSinais de que está na hora de redesenhar a estrutura:\n• O mesmo apontamento volta em toda auditoria\n• Ninguém sabe quem responde por cada ação\n• Dados pessoais sem mapeamento\n• A LGPD ainda é um projeto para depois\n\nO que a Cerrado Finanças entrega em Governança, risco e compliance:\n▸ Compliance 5W2H: com a plataforma CerraPlan\n▸ Matriz de risco: jurídico, operacional e de execução\n▸ DPO as a Service: com o Cerrado Privacy\n▸ Adequação à LGPD: mapeamento de dados com IA e relatórios ROPA e RIPD\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nRisco mapeado, ação evidenciada. Agende o diagnóstico: cerradofinancas.com.br/cerraplan\n\n#Compliance #GRC #LGPD #Governanca #Auditoria #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-grc.zip",
+      "kb": 969
+    }
+  },
+  {
+    "pasta": "2026-11-credito-financiamento-imovel",
+    "titulo": "Crédito · Financiamento de imóvel",
+    "data": "2026-11-24",
+    "descricao": "Série do Crédito produto a produto (7 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 24/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 134
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 86
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 81
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 105
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 118
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4028
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 163
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Da cidade à fazenda: compare antes de financiar.\n\nCasa, apartamento, chácara, fazenda ou terreno. A gente leva o seu projeto a vários bancos.\n\nPara quem é:\n• Casa e apartamento: para morar ou investir\n• Chácara e fazenda: imóvel rural\n• Terreno: para construir depois\n\nAntes de assinar, confira:\n✍️ O custo total: seguros e tarifas entram na conta\n✍️ A entrada: quanto você precisa ter\n✍️ A documentação: a do imóvel e a sua, em ordem\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule o seu financiamento. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#FinanciamentoImobiliario #CasaPropria #ImovelRural #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Da cidade à fazenda: compare antes de financiar.\n\nCasa, apartamento, chácara, fazenda ou terreno. A gente leva o seu projeto a vários bancos. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O custo total: seguros e tarifas entram na conta\n✍️ A entrada: quanto você precisa ter\n✍️ A documentação: a do imóvel e a sua, em ordem\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-financiamento-imovel.zip",
+      "kb": 729
     }
   },
   {
@@ -1497,6 +2433,78 @@
     }
   },
   {
+    "pasta": "2026-11-credito-credito-com-garantia",
+    "titulo": "Crédito · Crédito com garantia",
+    "data": "2026-11-20",
+    "descricao": "Série do Crédito produto a produto (6 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 20/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 141
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 91
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 90
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 104
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 124
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4200
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 171
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Imóvel ou carro quitado pode baixar o custo do crédito.\n\nO bem fica como garantia e continua com você. Com garantia, o banco costuma oferecer condição melhor.\n\nPara quem é:\n• Imóvel: em seu nome e quitado\n• Veículo: em seu nome e quitado\n• Pessoa física ou empresa: para um projeto, capital de giro ou dívidas\n\nAntes de assinar, confira:\n✍️ O risco: sem pagar, a garantia pode ser executada\n✍️ O CET: avaliação e registro entram no custo\n✍️ A finalidade: crédito mais barato também pede plano\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule o crédito com garantia. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#CreditoComGarantia #HomeEquity #CapitalDeGiro #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Imóvel ou carro quitado pode baixar o custo do crédito.\n\nO bem fica como garantia e continua com você. Com garantia, o banco costuma oferecer condição melhor. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O risco: sem pagar, a garantia pode ser executada\n✍️ O CET: avaliação e registro entram no custo\n✍️ A finalidade: crédito mais barato também pede plano\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-credito-com-garantia.zip",
+      "kb": 766
+    }
+  },
+  {
     "pasta": "2026-11-contabil-fiscal",
     "titulo": "Contabilidade · Seu imposto, apurado com precisão.",
     "data": "2026-11-19",
@@ -1636,6 +2644,149 @@
     "pacote": {
       "nome": "2026-11-tech-ia-offline.zip",
       "kb": 4221
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-csc-strategy",
+    "titulo": "Consultoria · CSC Strategy",
+    "data": "2026-11-18",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 3 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 18/11 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/csc-strategy",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 172
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 162
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 172
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 139
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 138
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5093
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 188
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Cinco empresas, cinco jeitos de pagar conta?\n\nCentralizamos os processos financeiros, fiscais e administrativos do grupo num hub único, com o mesmo padrão em todas as unidades.\n\nSe a sua empresa se reconhece aqui:\n• Cada unidade tem o seu próprio financeiro\n• Os mesmos processos repetidos em cada empresa\n• Relatórios que não conversam entre si\n• Custo administrativo que cresce junto com o grupo\n\nUm grupo, um padrão. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/csc-strategy\n\n#CSC #ServicosCompartilhados #Holding #SharedServices #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Cinco empresas, cinco jeitos de pagar conta?\n\nCentralizamos os processos financeiros, fiscais e administrativos do grupo num hub único, com o mesmo padrão em todas as unidades.\n\nSinais de que está na hora de redesenhar a estrutura:\n• Cada unidade tem o seu próprio financeiro\n• Os mesmos processos repetidos em cada empresa\n• Relatórios que não conversam entre si\n• Custo administrativo que cresce junto com o grupo\n\nO que a Cerrado Finanças entrega em CSC Strategy:\n▸ Desenho do CSC: sob medida para o seu grupo\n▸ Implementação: do hub único ao padrão de cada unidade\n▸ Automação processual: menos retrabalho e redundância\n▸ Padronização total: todas as unidades no mesmo padrão\n▸ Plataforma CSC Strategy: implementação, gestão e escala do centro\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nUm grupo, um padrão. Agende o diagnóstico: cerradofinancas.com.br/csc-strategy\n\n#CSC #ServicosCompartilhados #Holding #SharedServices #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-csc-strategy.zip",
+      "kb": 951
+    }
+  },
+  {
+    "pasta": "2026-11-credito-fgts",
+    "titulo": "Crédito · Antecipação do FGTS",
+    "data": "2026-11-17",
+    "descricao": "Série do Crédito produto a produto (5 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 17/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 135
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 99
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 85
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 111
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 118
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4164
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 165
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "O seu FGTS pode virar dinheiro agora.\n\nPara quem optou pelo saque-aniversário: antecipe os saques dos próximos anos, sem parcela no seu orçamento.\n\nPara quem é:\n• Optante do saque-aniversário: com saldo no FGTS\n• Contas ativas e inativas: todo o saldo conta\n• Quem quer evitar parcela: o pagamento sai do próprio FGTS\n\nAntes de assinar, confira:\n✍️ O que você abre mão: no saque-aniversário, a demissão não libera o saldo\n✍️ O CET: a antecipação também tem juros\n✍️ Quantos anos antecipar: menos anos, menos custo\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule a antecipação. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#FGTS #SaqueAniversario #AntecipacaoFGTS #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "O seu FGTS pode virar dinheiro agora.\n\nPara quem optou pelo saque-aniversário: antecipe os saques dos próximos anos, sem parcela no seu orçamento. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O que você abre mão: no saque-aniversário, a demissão não libera o saldo\n✍️ O CET: a antecipação também tem juros\n✍️ Quantos anos antecipar: menos anos, menos custo\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-fgts.zip",
+      "kb": 756
     }
   },
   {
@@ -1924,6 +3075,78 @@
     }
   },
   {
+    "pasta": "2026-11-credito-emprestimo-pessoal",
+    "titulo": "Crédito · Empréstimo pessoal",
+    "data": "2026-11-13",
+    "descricao": "Série do Crédito produto a produto (4 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 13/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 126
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 71
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 119
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3925
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 157
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Antes do primeiro sim, compare.\n\nEmpréstimo pessoal para correntista, beneficiário do INSS e servidor público, com as propostas lado a lado.\n\nPara quem é:\n• Correntista: de banco\n• Beneficiário do INSS: aposentado ou pensionista\n• Servidor público: municipal, estadual e federal\n\nAntes de assinar, confira:\n✍️ O CET: o custo total, não só a taxa de juros\n✍️ A parcela no orçamento: com folga para o resto do mês\n✍️ Seguro embutido: só se você pediu\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule o seu empréstimo. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#EmprestimoPessoal #Emprestimo #INSS #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Antes do primeiro sim, compare.\n\nEmpréstimo pessoal para correntista, beneficiário do INSS e servidor público, com as propostas lado a lado. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O CET: o custo total, não só a taxa de juros\n✍️ A parcela no orçamento: com folga para o resto do mês\n✍️ Seguro embutido: só se você pediu\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-emprestimo-pessoal.zip",
+      "kb": 714
+    }
+  },
+  {
     "pasta": "2026-11-contabil-micro-a-media",
     "titulo": "Contabilidade · Do primeiro CNPJ à média empresa, o mesmo contador.",
     "data": "2026-11-12",
@@ -2063,6 +3286,149 @@
     "pacote": {
       "nome": "2026-11-tech-chatbots.zip",
       "kb": 4130
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-controladoria",
+    "titulo": "Consultoria · Controladoria estruturada",
+    "data": "2026-11-11",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 2 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 11/11 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/consultorias",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 162
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 160
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 142
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 154
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 159
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5036
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 183
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Um CFO, sem contratar um CFO.\n\nDRE gerencial, orçamento base zero, indicadores e auditoria interna: a arquitetura para crescer sem vazamento de caixa.\n\nSe a sua empresa se reconhece aqui:\n• A empresa vende mais e o caixa não acompanha\n• Ninguém sabe a margem de cada produto\n• O orçamento é o do ano passado, mais um pouco\n• As decisões saem do feeling\n\nPare o vazamento invisível de caixa. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/consultorias\n\n#Controladoria #CFO #DREGerencial #OrcamentoBaseZero #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Um CFO, sem contratar um CFO.\n\nDRE gerencial, orçamento base zero, indicadores e auditoria interna: a arquitetura para crescer sem vazamento de caixa.\n\nSinais de que está na hora de redesenhar a estrutura:\n• A empresa vende mais e o caixa não acompanha\n• Ninguém sabe a margem de cada produto\n• O orçamento é o do ano passado, mais um pouco\n• As decisões saem do feeling\n\nO que a Cerrado Finanças entrega em Controladoria estruturada:\n▸ DRE gerencial: detalhada, feita para decidir\n▸ Orçamento base zero: cada gasto justificado\n▸ KPIs: painéis de indicadores de alta precisão\n▸ Auditoria interna: processos rígidos de controle\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nPare o vazamento invisível de caixa. Agende o diagnóstico: cerradofinancas.com.br/consultorias\n\n#Controladoria #CFO #DREGerencial #OrcamentoBaseZero #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-controladoria.zip",
+      "kb": 939
+    }
+  },
+  {
+    "pasta": "2026-11-credito-portabilidade",
+    "titulo": "Crédito · Portabilidade e refinanciamento",
+    "data": "2026-11-10",
+    "descricao": "Série do Crédito produto a produto (3 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 10/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 130
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 85
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 104
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 120
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4091
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 161
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "A sua parcela pode mudar de banco.\n\nJá tem consignado? A gente procura um banco com condição melhor para levar o seu contrato.\n\nPara quem é:\n• Servidor: municipal, estadual, federal e militar\n• Trabalhador CLT: com consignado em folha\n• Quem paga há tempo: e quer rever o contrato\n\nAntes de assinar, confira:\n✍️ O saldo devedor: quanto falta pagar hoje\n✍️ O novo CET: se o custo total cai de verdade\n✍️ O novo prazo: prazo maior pode custar mais no fim\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nCompare o seu contrato. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#Portabilidade #Refinanciamento #Consignado #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A sua parcela pode mudar de banco.\n\nJá tem consignado? A gente procura um banco com condição melhor para levar o seu contrato. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O saldo devedor: quanto falta pagar hoje\n✍️ O novo CET: se o custo total cai de verdade\n✍️ O novo prazo: prazo maior pode custar mais no fim\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-portabilidade.zip",
+      "kb": 735
     }
   },
   {
@@ -2351,6 +3717,78 @@
     }
   },
   {
+    "pasta": "2026-11-credito-consignado-clt",
+    "titulo": "Crédito · Consignado CLT",
+    "data": "2026-11-06",
+    "descricao": "Série do Crédito produto a produto (2 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 06/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 132
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 81
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 107
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4121
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 166
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Carteira assinada também tem consignado.\n\nA parcela sai direto do salário, e a gente compara as propostas antes de você assinar.\n\nPara quem é:\n• Trabalhador CLT: com carteira assinada\n• Empresa privada: desconto direto na folha\n• Quem tem dívida cara: como cartão e cheque especial\n\nAntes de assinar, confira:\n✍️ O CET: o custo total, não só a taxa de juros\n✍️ Quanto cabe no salário: a parcela com folga no mês\n✍️ Se mudar de emprego: pergunte o que acontece com o contrato\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule o seu consignado CLT. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#ConsignadoCLT #CarteiraAssinada #Consignado #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Carteira assinada também tem consignado.\n\nA parcela sai direto do salário, e a gente compara as propostas antes de você assinar. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O CET: o custo total, não só a taxa de juros\n✍️ Quanto cabe no salário: a parcela com folga no mês\n✍️ Se mudar de emprego: pergunte o que acontece com o contrato\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-consignado-clt.zip",
+      "kb": 746
+    }
+  },
+  {
     "pasta": "2026-11-contabil-simples-nacional",
     "titulo": "Contabilidade · Você paga o DAS certo ou só paga?",
     "data": "2026-11-05",
@@ -2490,6 +3928,149 @@
     "pacote": {
       "nome": "2026-11-tech-crm.zip",
       "kb": 4012
+    }
+  },
+  {
+    "pasta": "2026-11-consultoria-bpo-financeiro",
+    "titulo": "Consultoria · BPO financeiro",
+    "data": "2026-11-04",
+    "descricao": "Série das Consultorias da Cerrado Finanças (prancha 1 de 7), na identidade própria \"Planta\".",
+    "orientacoes": [
+      "Postar em 04/11 de manhã, primeiro no LinkedIn (a série sai às quartas; o público é decisor de empresa e gestor público).",
+      "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/consultorias",
+      "Legendas prontas abaixo: a do LinkedIn é a principal."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 170
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 153
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 174
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 150
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 140
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 144
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5094
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 189
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "A sua diretoria está conciliando extrato?\n\nA gente assume a operação financeira de ponta a ponta. Você mantém o foco nas vendas e na expansão.\n\nSe a sua empresa se reconhece aqui:\n• O sócio fecha o caixa no fim de semana\n• Pagar e receber em planilhas soltas\n• O extrato não bate com a contabilidade\n• Cobrança só quando o caixa aperta\n\nNúmeros limpos e em dia. Diagnóstico gratuito pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/consultorias\n\n#BPOFinanceiro #Terceirizacao #FinancasEmpresariais #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A sua diretoria está conciliando extrato?\n\nA gente assume a operação financeira de ponta a ponta. Você mantém o foco nas vendas e na expansão.\n\nSinais de que está na hora de redesenhar a estrutura:\n• O sócio fecha o caixa no fim de semana\n• Pagar e receber em planilhas soltas\n• O extrato não bate com a contabilidade\n• Cobrança só quando o caixa aperta\n\nO que a Cerrado Finanças entrega em BPO financeiro:\n▸ Fechamento contábil: todo mês, em dia\n▸ Conciliação bancária: o extrato batendo com os números\n▸ Contas a pagar e a receber: a rotina executada pela nossa equipe\n▸ Faturamento: notas e cobranças no prazo\n▸ Crédito e cobrança: a gestão de quem deve à empresa\n▸ FP&A: planejamento e análise financeira\n\nComo funciona: diagnóstico gratuito, roadmap, implantação junto com o seu time e acompanhamento por indicadores. Cada projeto é desenhado sob medida.\n\nNúmeros limpos e em dia. Agende o diagnóstico: cerradofinancas.com.br/consultorias\n\n#BPOFinanceiro #Terceirizacao #FinancasEmpresariais #CerradoFinancas #Consultoria #GestaoEmpresarial\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-consultoria-bpo-financeiro.zip",
+      "kb": 962
+    }
+  },
+  {
+    "pasta": "2026-11-credito-consignado-servidor",
+    "titulo": "Crédito · Consignado do servidor",
+    "data": "2026-11-03",
+    "descricao": "Série do Crédito produto a produto (1 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
+    "orientacoes": [
+      "Postar em 03/11 à noite no Instagram (sugestão: o Crédito sai terça e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
+      "O aviso legal precisa aparecer na legenda também (já está nas legendas prontas).",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 147
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 101
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 83
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 121
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4174
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 178
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Servidor, o seu consignado cabe melhor em outro banco?\n\nParcela descontada direto na folha. A gente compara as propostas de mais de 20 bancos e financeiras.\n\nPara quem é:\n• Prefeitura de Campo Grande: servidores municipais\n• Governo de Mato Grosso do Sul: servidores estaduais\n• SIAPE: servidores federais\n• Forças Armadas: militares\n\nAntes de assinar, confira:\n✍️ O CET: o custo total, não só a taxa de juros\n✍️ A sua margem: quanto da folha ainda fica livre\n✍️ O prazo: parcela menor nem sempre sai mais barato\n\nVocê fala com uma pessoa só, e a gente compara as propostas para você enxergar o custo total. A simulação é gratuita e sem compromisso. Você decide.\n\nSimule o seu consignado. WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n\n#Consignado #ServidorPublico #SIAPE #CampoGrande #MatoGrossoDoSul #CerradoFinancas #Credito #CorrespondenteBancario #LSIntermediacao\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Servidor, o seu consignado cabe melhor em outro banco?\n\nParcela descontada direto na folha. A gente compara as propostas de mais de 20 bancos e financeiras. Como também somos contabilidade e consultoria financeira, olhamos se a parcela cabe no caixa antes de você assinar.\n\nAntes de assinar, confira:\n✍️ O CET: o custo total, não só a taxa de juros\n✍️ A sua margem: quanto da folha ainda fica livre\n✍️ O prazo: parcela menor nem sempre sai mais barato\n\nSimulação gratuita: cerradofinancas.com.br/credito\n\nCerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-credito-consignado-servidor.zip",
+      "kb": 773
     }
   },
   {

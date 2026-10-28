@@ -19,6 +19,21 @@ monta `carrosseis/<entrega>/` (fora do git) e, com `--render`, grava `entregas/<
 (1080×1350). Cada slide fica de 3 a 5 s conforme o texto; os slides deslizam colados, como num carrossel, e os
 elementos entram em sequência. A trilha tem whoosh em cada troca.
 
+## Como pedir uma mudança de movimento
+
+Descreva o **elemento + o efeito + o tempo (s) + o ritmo (easing)**, por exemplo: "título com slide in em 0,4 s e
+ease out; itens com stagger de 0,15 s; fecho com punch zoom no produto". O vocabulário:
+
+- **Entradas suaves:** fade in, slide in e blur in.
+- **Entradas com impacto:** pop in, scale up e stagger.
+- **Ritmo:** ease in-out, overshoot e bounce.
+- **Texto:** typewriter, word reveal e text swap.
+- **Formas:** draw-on, morph e bar grow.
+- **Transições:** mask reveal, wipe e punch zoom.
+
+Hoje o carrossel animado usa slide in (power3.inOut, 0,55 s) na troca de slide, e blur in com stagger de 0,09 s
+(expo.out) nos itens.
+
 ## Estrutura de um filme
 
 ```

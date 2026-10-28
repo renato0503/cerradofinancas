@@ -1,0 +1,137 @@
+/* Identidade Consultorias (Cerrado Finanças): "Planta"
+   A consultoria desenha a arquitetura da empresa: papel vegetal com grade técnica, traço grafite e um único
+   laranja de prancheta. Recursos gráficos próprios: a cota (.cota), o corte antes/depois (.corte), as entregas
+   em pranchas com marcas de canto (.entregas), as etapas (.etapas), o selo do diagnóstico (.selo) e o rodapé
+   como carimbo de prancha (.rodape).
+   Tipografia: Fraunces (títulos, itálico no destaque), Instrument Sans (texto) e DM Mono (cotas e rótulos).
+   Marca: a folinha + "Cerrado Finanças · Consultoria". */
+@font-face { font-family: 'Fraunces'; src: url('../fontes/fraunces-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Fraunces'; src: url('../fontes/fraunces-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Fraunces'; src: url('../fontes/fraunces-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Instrument Sans'; src: url('../fontes/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('../fontes/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('../fontes/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('../fontes/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root {
+  --vegetal: #f3f0e8;
+  --grade: rgba(35, 38, 43, .07);
+  --grade-forte: rgba(35, 38, 43, .13);
+  --grafite: #23262b;
+  --grafite-suave: #5d626b;
+  --laranja: #e4570e;
+  --linha: #b9b4a8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #2a2a2a; font-family: 'Instrument Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+body { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+html.exportando body { padding: 0; gap: 0; }
+
+/* O papel: grade fina a cada 30px e grade forte a cada 150px */
+.slide {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  color: var(--grafite); padding: 96px 90px 0; display: flex; flex-direction: column;
+  background-color: var(--vegetal);
+  background-image:
+    linear-gradient(var(--grade-forte) 1px, transparent 1px), linear-gradient(90deg, var(--grade-forte) 1px, transparent 1px),
+    linear-gradient(var(--grade) 1px, transparent 1px), linear-gradient(90deg, var(--grade) 1px, transparent 1px);
+  background-size: 150px 150px, 150px 150px, 30px 30px, 30px 30px;
+  background-position: -1px -1px;
+}
+/* Moldura da prancha */
+.slide::before { content: ''; position: absolute; inset: 36px; border: 2px solid var(--grafite); pointer-events: none; }
+.slide.story { height: 1920px; padding: 260px 90px 260px; }
+.slide.grafite { background-color: var(--grafite); color: var(--vegetal);
+  background-image:
+    linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); }
+.slide.grafite::before { border-color: rgba(255, 255, 255, .45); }
+
+/* Tipografia */
+.rotulo { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--grafite-suave); margin-bottom: 30px; }
+.rotulo b { color: var(--laranja); font-weight: 500; }
+.grafite .rotulo { color: #b9bcc2; }
+.mega { font-family: 'Fraunces', serif; font-weight: 600; font-size: 112px; line-height: 1; letter-spacing: -0.025em; }
+.titulo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 80px; line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 44px; }
+.mega em, .titulo em { font-style: italic; font-weight: 400; color: var(--laranja); }
+.sub { font-size: 38px; line-height: 1.32; color: var(--grafite-suave); max-width: 880px; }
+.grafite .sub { color: #cfd1d5; }
+
+/* Cota: a linha de dimensão com o rótulo no meio */
+.cota { display: flex; align-items: center; gap: 18px; font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--laranja); }
+.cota::before, .cota::after { content: ''; flex: 1; height: 2px; background: var(--laranja); }
+.cota span { white-space: nowrap; }
+
+/* Organograma em traço (capa): o hub em cima e as áreas ligadas embaixo */
+.organo { display: flex; flex-direction: column; align-items: center; }
+.organo .topo { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 600; background: var(--grafite); color: var(--vegetal); padding: 16px 34px; }
+.organo .tronco { width: 2px; height: 40px; background: var(--grafite); }
+.organo .galhos { align-self: stretch; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; border-top: 2px solid var(--grafite); margin: 0 12%; }
+.organo .galhos { margin: 0; }
+.organo .galho { position: relative; padding-top: 38px; }
+.organo .galho::before { content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 38px; background: var(--grafite); }
+.organo .galho span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 104px; padding: 12px; border: 2px solid var(--grafite); background: rgba(255, 255, 255, .6); font-size: 25px; font-weight: 600; line-height: 1.15; }
+
+/* Sinais numerados */
+.sinais { list-style: none; counter-reset: s; }
+.sinais li { counter-increment: s; display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 30px 0; border-top: 2px solid var(--grafite); font-size: 44px; line-height: 1.16; font-weight: 600; }
+.sinais li:last-child { border-bottom: 2px solid var(--grafite); }
+.sinais li::before { content: counter(s, decimal-leading-zero); font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 500; color: var(--laranja); }
+
+/* Entregas: pranchas com marcas de canto */
+.entregas { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.entregas .e { position: relative; padding: 34px 30px 36px; background: rgba(255, 255, 255, .55); border: 1.5px solid var(--linha); }
+.entregas .e::before, .entregas .e::after { content: ''; position: absolute; width: 22px; height: 22px; border-color: var(--grafite); border-style: solid; }
+.entregas .e::before { top: -2px; left: -2px; border-width: 4px 0 0 4px; }
+.entregas .e::after { bottom: -2px; right: -2px; border-width: 0 4px 4px 0; }
+.entregas b { display: block; font-family: 'Fraunces', serif; font-size: 42px; font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; }
+.entregas span { display: block; font-size: 29px; line-height: 1.25; color: var(--grafite-suave); margin-top: 10px; }
+.entregas .e.larga { grid-column: 1 / -1; }
+
+/* Corte antes/depois */
+.corte { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+.corte h3 { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--grafite-suave); margin-bottom: 22px; padding-bottom: 12px; border-bottom: 2px solid var(--grafite); }
+.corte .depois h3 { color: var(--laranja); border-bottom-color: var(--laranja); }
+.corte .bloco { font-size: 32px; font-weight: 600; line-height: 1.15; padding: 20px 22px; margin-bottom: 18px; }
+.corte .antes .bloco { border: 2px dashed var(--grafite-suave); color: var(--grafite-suave); }
+.corte .antes .bloco:nth-child(odd) { transform: rotate(-1.6deg) translateX(-6px); }
+.corte .antes .bloco:nth-child(even) { transform: rotate(1.4deg) translateX(10px); }
+.corte .depois { position: relative; }
+.corte .hub { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 600; background: var(--grafite); color: var(--vegetal); padding: 18px 22px; margin-bottom: 18px; }
+.corte .depois .bloco { border: 2px solid var(--grafite); background: rgba(255, 255, 255, .6); margin-left: 34px; position: relative; }
+.corte .depois .bloco::before { content: ''; position: absolute; left: -36px; top: 50%; width: 34px; height: 2px; background: var(--grafite); }
+.corte .depois .ramo { position: relative; }
+.corte .depois .ramo::before { content: ''; position: absolute; left: 0; top: -18px; bottom: 48px; width: 2px; background: var(--grafite); }
+
+/* Etapas (slide grafite) */
+.etapas { display: flex; flex-direction: column; }
+.etapas .et { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 28px 0; border-top: 2px solid rgba(255, 255, 255, .3); }
+.etapas .et:last-child { border-bottom: 2px solid rgba(255, 255, 255, .3); }
+.etapas .n { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; letter-spacing: .08em; color: var(--laranja); padding-top: 10px; }
+.etapas b { display: block; font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; }
+.etapas span { display: block; font-size: 30px; color: #cfd1d5; margin-top: 6px; }
+
+/* Selo do diagnóstico */
+.selo { align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--laranja); border: 3px solid var(--laranja); padding: 12px 22px; margin-bottom: 44px; }
+.selo::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--laranja); }
+
+/* CTA */
+.contatos { display: flex; flex-direction: column; gap: 18px; margin-top: 48px; }
+.contato { font-size: 38px; font-weight: 600; }
+.contato.principal { align-self: flex-start; background: var(--laranja); color: #fff; padding: 18px 30px; font-family: 'DM Mono', monospace; font-size: 32px; font-weight: 500; }
+.nota { font-family: 'DM Mono', monospace; font-size: 22px; line-height: 1.45; color: var(--grafite-suave); border-left: 4px solid var(--laranja); padding-left: 20px; }
+
+/* Rodapé: o carimbo da prancha */
+.rodape {
+  position: absolute; left: 36px; right: 36px; bottom: 36px; height: 104px;
+  display: grid; grid-template-columns: 1fr auto auto; border-top: 2px solid var(--grafite);
+  font-family: 'DM Mono', monospace; font-size: 22px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+}
+.rodape > span { display: flex; align-items: center; padding: 0 28px; }
+.rodape > span + span { border-left: 2px solid var(--grafite); }
+.grafite .rodape, .grafite .rodape > span + span { border-color: rgba(255, 255, 255, .45); }
+.rodape .marca { gap: 14px; font-family: 'Instrument Sans', sans-serif; font-size: 27px; font-weight: 600; letter-spacing: 0; text-transform: none; padding-left: 52px; }
+.rodape .marca img { width: 44px; height: 44px; object-fit: contain; }
+.rodape .marca small { font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 500; color: var(--grafite-suave); text-transform: uppercase; letter-spacing: .08em; }
+.grafite .rodape .marca small { color: #b9bcc2; }

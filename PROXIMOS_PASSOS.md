@@ -52,6 +52,10 @@ HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identid
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
 - [ ] Ajustar o catálogo da CerraClass para 10 alunos por turma (ver acima).
 - [ ] Ouvir as trilhas novas dos vídeos HyperFrames (sintetizadas por `marketing/filmes/ferramentas/trilha.mjs`; volume já medido, escuta pendente).
+- [ ] Crédito: decidir a cidade do atendimento presencial (a LS fica em Campo Grande-MS; o `/credito` diz Cuiabá),
+      se o consignado do INSS continua no site (o portfólio da LS lista o INSS só no empréstimo pessoal) e se as peças
+      usam o WhatsApp da LS. As peças hoje não citam cidade e usam o WhatsApp da Cerrado.
+- [ ] Consultorias: confirmar se os números do site (50+ projetos, R$ 2 bi, 12 anos, "até 40%") podem ir para anúncio.
 - [ ] Contabilidade: confirmar se atendem Lucro Real (as peças ainda não citam) e, quando houver, incluir o nome e
       o CRC do responsável técnico. A série "Você sabia?" foi conferida com a lei em 28/10/2026; revisar se algo mudar
       antes da data de cada post.

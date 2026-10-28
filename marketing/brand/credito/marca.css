@@ -80,6 +80,9 @@ html.exportando body { padding: 0; gap: 0; }
 .pauta li:last-child { border-bottom: 2px solid var(--pauta); }
 .pauta b { font-size: 46px; font-weight: 900; letter-spacing: -0.02em; }
 .pauta span { font-size: 32px; font-weight: 500; color: var(--cinza); }
+.pauta.compacta li { padding: 22px 0; }
+.pauta.compacta b { font-size: 42px; }
+.pauta.compacta span { font-size: 30px; }
 .caneta .pauta li { border-color: rgba(255, 255, 255, .3); }
 .caneta .pauta span { color: #dfe4ff; }
 
@@ -90,6 +93,14 @@ html.exportando body { padding: 0; gap: 0; }
 .clausulas .n { font-size: 30px; font-weight: 800; color: var(--caneta); text-transform: uppercase; letter-spacing: .04em; padding-top: 8px; }
 .clausulas b { display: block; font-size: 44px; font-weight: 900; letter-spacing: -0.02em; }
 .clausulas span { display: block; font-size: 31px; color: var(--cinza); margin-top: 6px; }
+
+.caneta .clausulas .c { border-color: rgba(255, 255, 255, .35); }
+.caneta .clausulas .n { color: var(--grifo); }
+.caneta .clausulas span { color: #dfe4ff; }
+
+/* Fecho: a frase que fecha o slide, no pé */
+.fecho { margin-top: auto; margin-bottom: 170px; border-top: 3px solid var(--tinta); padding-top: 30px; font-size: 46px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; }
+.caneta .fecho { border-top-color: rgba(255, 255, 255, .5); }
 
 /* Aviso legal: letra miúda de contrato, mas legível */
 .letra-miuda { font-size: 24px; line-height: 1.4; color: var(--cinza); border-left: 6px solid var(--caneta); padding-left: 22px; }
