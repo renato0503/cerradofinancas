@@ -142,6 +142,78 @@
     }
   },
   {
+    "pasta": "2026-11-contabil-troca-de-contador",
+    "titulo": "Contabilidade · Insatisfeito com o contador atual?",
+    "data": "2026-12-03",
+    "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (10 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 03/12 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 79
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 98
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 88
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 69
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 101
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3813
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 73
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Insatisfeito com o contador atual?\n\nFazemos toda a migração de forma transparente e digital, com o seu CNPJ protegido.\n\nVocê acompanha cada etapa da transição e as obrigações seguem em dia durante toda a troca.\n\nO que a Cerrado Contabilidade faz:\n✅ Transparente: você acompanha cada etapa da transição\n✅ 100% digital: sem papelada e sem precisar sair de casa\n✅ CNPJ protegido: obrigações em dia durante toda a troca\n✅ Diagnóstico da sua contabilidade: para começar sabendo onde está\n\nAtendemos MEI, microempresa, pequena empresa e Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nTroque de contador sem dor de cabeça. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#TrocarDeContador #MigracaoContabil #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Insatisfeito com o contador atual?\n\nFazemos toda a migração de forma transparente e digital, com o seu CNPJ protegido. Você acompanha cada etapa da transição e as obrigações seguem em dia durante toda a troca.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Transparente: você acompanha cada etapa da transição\n✅ 100% digital: sem papelada e sem precisar sair de casa\n✅ CNPJ protegido: obrigações em dia durante toda a troca\n✅ Diagnóstico da sua contabilidade: para começar sabendo onde está\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nTroque de contador sem dor de cabeça. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-troca-de-contador.zip",
+      "kb": 562
+    }
+  },
+  {
     "pasta": "2026-11-tech-govtech",
     "titulo": "Cerrado Tech · GovTech & Legal-Tech",
     "data": "2026-12-02",
@@ -210,6 +282,78 @@
     "pacote": {
       "nome": "2026-11-tech-govtech.zip",
       "kb": 4072
+    }
+  },
+  {
+    "pasta": "2026-11-contabil-consultivo",
+    "titulo": "Contabilidade · Seu contador te mostra onde está o lucro?",
+    "data": "2026-12-01",
+    "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (9 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 01/12 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 89
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 76
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 93
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3860
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 87
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seu contador te mostra onde está o lucro?\n\nControladoria externa, BPO financeiro e painéis em Power BI para quem quer gerir com dados.\n\nA Cerrado é uma consultoria completa: cliente da contabilidade tem condição especial para BPO financeiro e painéis de BI.\n\nO que a Cerrado Contabilidade faz:\n✅ Controladoria externa: DRE gerencial, orçamento e indicadores\n✅ BPO financeiro: conciliações e rotina financeira\n✅ Dashboards em Power BI: DRE, EBITDA e metas no celular\n✅ Integração com o seu ERP: SAP®, TOTVS, ContaAzul e Bling\n✅ Planejamento tributário: estratégia, não só apuração\n\nAtendemos Pequena empresa → Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nDecisão baseada em dados. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#Controladoria #BPOFinanceiro #PowerBI #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Seu contador te mostra onde está o lucro?\n\nControladoria externa, BPO financeiro e painéis em Power BI para quem quer gerir com dados. A Cerrado é uma consultoria completa: cliente da contabilidade tem condição especial para BPO financeiro e painéis de BI.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Controladoria externa: DRE gerencial, orçamento e indicadores\n✅ BPO financeiro: conciliações e rotina financeira\n✅ Dashboards em Power BI: DRE, EBITDA e metas no celular\n✅ Integração com o seu ERP: SAP®, TOTVS, ContaAzul e Bling\n✅ Planejamento tributário: estratégia, não só apuração\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nDecisão baseada em dados. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-consultivo.zip",
+      "kb": 590
     }
   },
   {
@@ -355,6 +499,78 @@
     }
   },
   {
+    "pasta": "2026-11-contabil-contabil",
+    "titulo": "Contabilidade · Balanço e DRE que você entende.",
+    "data": "2026-11-26",
+    "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (8 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 26/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 82
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 82
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 76
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3811
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 79
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Balanço e DRE que você entende.\n\nA contabilidade que mostra onde a empresa está, não só a que cumpre tabela.\n\nPlano de contas organizado, conciliação bancária e demonstrativos que servem para decidir, não só para guardar na gaveta.\n\nO que a Cerrado Contabilidade faz:\n✅ Balanço patrimonial: A foto da empresa\n✅ DRE: receitas, custos e resultado\n✅ Plano de contas e centros de custo: cada gasto no lugar certo\n✅ Conciliação bancária: O extrato batendo com a contabilidade\n\nAtendemos Microempresa → Pequena empresa → Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nQuer entender os seus números? Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#Balanco #DRE #ContabilidadeConsultiva #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Balanço e DRE que você entende.\n\nA contabilidade que mostra onde a empresa está, não só a que cumpre tabela. Plano de contas organizado, conciliação bancária e demonstrativos que servem para decidir, não só para guardar na gaveta.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Balanço patrimonial: A foto da empresa\n✅ DRE: receitas, custos e resultado\n✅ Plano de contas e centros de custo: cada gasto no lugar certo\n✅ Conciliação bancária: O extrato batendo com a contabilidade\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nQuer entender os seus números? cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-contabil.zip",
+      "kb": 574
+    }
+  },
+  {
     "pasta": "2026-11-tech-ecommerce",
     "titulo": "Cerrado Tech · E-commerce & PWA",
     "data": "2026-11-25",
@@ -423,6 +639,78 @@
     "pacote": {
       "nome": "2026-11-tech-ecommerce.zip",
       "kb": 4073
+    }
+  },
+  {
+    "pasta": "2026-11-contabil-departamento-pessoal",
+    "titulo": "Contabilidade · Contratou? A burocracia fica com a gente.",
+    "data": "2026-11-24",
+    "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (7 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 24/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 89
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 101
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 86
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 72
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3808
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 87
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Contratou? A burocracia fica com a gente.\n\nAdmissão, holerites, férias, 13º, guias de INSS e FGTS e o eSocial, tudo em dia.\n\nA partir do primeiro funcionário, a folha vira rotina. A gente assume a parte burocrática para você cuidar das pessoas.\n\nO que a Cerrado Contabilidade faz:\n✅ Folha de pagamento: holerites todo mês\n✅ Admissão e rescisão: do primeiro ao último dia\n✅ Férias e 13º: calculados e no prazo\n✅ Guias de INSS e FGTS: geradas em dia\n✅ Transmissão ao eSocial: sem pendência no governo\n\nAtendemos Microempresa → Pequena empresa → Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nSua equipe cresce, a burocracia não. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#DepartamentoPessoal #FolhaDePagamento #eSocial #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Contratou? A burocracia fica com a gente.\n\nAdmissão, holerites, férias, 13º, guias de INSS e FGTS e o eSocial, tudo em dia. A partir do primeiro funcionário, a folha vira rotina. A gente assume a parte burocrática para você cuidar das pessoas.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Folha de pagamento: holerites todo mês\n✅ Admissão e rescisão: do primeiro ao último dia\n✅ Férias e 13º: calculados e no prazo\n✅ Guias de INSS e FGTS: geradas em dia\n✅ Transmissão ao eSocial: sem pendência no governo\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nSua equipe cresce, a burocracia não. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-departamento-pessoal.zip",
+      "kb": 591
     }
   },
   {
@@ -568,6 +856,78 @@
     }
   },
   {
+    "pasta": "2026-11-contabil-fiscal",
+    "titulo": "Contabilidade · Seu imposto, apurado com precisão.",
+    "data": "2026-11-19",
+    "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (6 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 19/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 89
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 100
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 97
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 71
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 88
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3859
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 83
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seu imposto, apurado com precisão.\n\nSimples Nacional, Lucro Presumido, notas fiscais e todas as declarações para proteger o seu CNPJ.\n\nEspecialistas em pequenas empresas, e-commerces e profissionais autônomos: cada regime com as suas regras e os seus prazos.\n\nO que a Cerrado Contabilidade faz:\n✅ Apuração de impostos: simples Nacional e Lucro Presumido\n✅ Fator R: redução para 6% em serviços, quando se aplica\n✅ Notas fiscais, ICMS e ST: comércio e e-commerce legalizados\n✅ Obrigações acessórias: DEFIS e demais declarações\n✅ Planejamento tributário: pagar o justo, dentro da lei\n\nAtendemos MEI, microempresa, pequena empresa e Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nImposto em dia e sem susto. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#Impostos #GestaoTributaria #NotaFiscal #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Seu imposto, apurado com precisão.\n\nSimples Nacional, Lucro Presumido, notas fiscais e todas as declarações para proteger o seu CNPJ. Especialistas em pequenas empresas, e-commerces e profissionais autônomos: cada regime com as suas regras e os seus prazos.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Apuração de impostos: simples Nacional e Lucro Presumido\n✅ Fator R: redução para 6% em serviços, quando se aplica\n✅ Notas fiscais, ICMS e ST: comércio e e-commerce legalizados\n✅ Obrigações acessórias: DEFIS e demais declarações\n✅ Planejamento tributário: pagar o justo, dentro da lei\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nImposto em dia e sem susto. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-fiscal.zip",
+      "kb": 582
+    }
+  },
+  {
     "pasta": "2026-11-tech-ia-offline",
     "titulo": "Cerrado Tech · IA Offline & RAG",
     "data": "2026-11-18",
@@ -636,6 +996,78 @@
     "pacote": {
       "nome": "2026-11-tech-ia-offline.zip",
       "kb": 4221
+    }
+  },
+  {
+    "pasta": "2026-11-contabil-abertura",
+    "titulo": "Contabilidade · Vai abrir o seu primeiro CNPJ?",
+    "data": "2026-11-17",
+    "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (5 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 17/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 76
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 75
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 94
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3823
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 78
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Vai abrir o seu primeiro CNPJ?\n\nContrato social, Junta Comercial, Receita Federal e Prefeitura: a gente cuida de tudo.\n\nDo MEI à empresa no Lucro Presumido. Estudamos a sua atividade para escolher o CNAE certo e você começar na menor carga tributária possível.\n\nO que a Cerrado Contabilidade faz:\n✅ Abertura de empresa: contrato social, Junta, Receita e Prefeitura\n✅ Estudo de CNAE: A atividade certa para pagar o justo\n✅ Alvarás e inscrição municipal: funcionando dentro da lei\n✅ Escolha do regime: simples Nacional ou Lucro Presumido\n\nAtendemos MEI, microempresa, pequena empresa e Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nAbra o seu CNPJ com quem entende. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#AbrirEmpresa #CNPJ #Empreender #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Vai abrir o seu primeiro CNPJ?\n\nContrato social, Junta Comercial, Receita Federal e Prefeitura: a gente cuida de tudo. Do MEI à empresa no Lucro Presumido. Estudamos a sua atividade para escolher o CNAE certo e você começar na menor carga tributária possível.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Abertura de empresa: contrato social, Junta, Receita e Prefeitura\n✅ Estudo de CNAE: A atividade certa para pagar o justo\n✅ Alvarás e inscrição municipal: funcionando dentro da lei\n✅ Escolha do regime: simples Nacional ou Lucro Presumido\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nAbra o seu CNPJ com quem entende. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-abertura.zip",
+      "kb": 565
     }
   },
   {
@@ -781,6 +1213,78 @@
     }
   },
   {
+    "pasta": "2026-11-contabil-micro-a-media",
+    "titulo": "Contabilidade · Do primeiro CNPJ à média empresa, o mesmo contador.",
+    "data": "2026-11-12",
+    "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (4 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 12/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 96
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 83
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 72
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 100
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3821
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 84
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Do primeiro CNPJ à média empresa, o mesmo contador.\n\nA empresa cresce, o regime muda, e você não precisa recomeçar com outro escritório.\n\nMEI, microempresa, pequena empresa no Simples Nacional e Lucro Presumido. A cada degrau, a contabilidade se adapta ao tamanho da empresa.\n\nO que a Cerrado Contabilidade faz:\n✅ MEI: formalização e declarações\n✅ Simples Nacional: DAS, Fator R e obrigações\n✅ Lucro Presumido: apuração e declarações\n✅ Média empresa: controladoria, BPO financeiro e painéis em Power BI\n\nAtendemos MEI, microempresa, pequena empresa e Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nEm qual degrau está a sua empresa? Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#Empreendedorismo #GestaoEmpresarial #PME #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Do primeiro CNPJ à média empresa, o mesmo contador.\n\nA empresa cresce, o regime muda, e você não precisa recomeçar com outro escritório. MEI, microempresa, pequena empresa no Simples Nacional e Lucro Presumido. A cada degrau, a contabilidade se adapta ao tamanho da empresa.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ MEI: formalização e declarações\n✅ Simples Nacional: DAS, Fator R e obrigações\n✅ Lucro Presumido: apuração e declarações\n✅ Média empresa: controladoria, BPO financeiro e painéis em Power BI\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nEm qual degrau está a sua empresa? cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-micro-a-media.zip",
+      "kb": 584
+    }
+  },
+  {
     "pasta": "2026-11-tech-chatbots",
     "titulo": "Cerrado Tech · Chatbots & Assistentes",
     "data": "2026-11-11",
@@ -849,6 +1353,78 @@
     "pacote": {
       "nome": "2026-11-tech-chatbots.zip",
       "kb": 4130
+    }
+  },
+  {
+    "pasta": "2026-11-contabil-lucro-presumido",
+    "titulo": "Contabilidade · Cresceu? O regime cresce junto.",
+    "data": "2026-11-10",
+    "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (3 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 10/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 82
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 75
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 99
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3847
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 83
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Cresceu? O regime cresce junto.\n\nPara quem saiu do Simples ou tem no Lucro Presumido a opção mais vantajosa.\n\nMais apurações e mais declarações, com a mesma tranquilidade. A escolha do regime vem de um estudo da sua operação, não de achismo.\n\nO que a Cerrado Contabilidade faz:\n✅ Apuração do Lucro Presumido: impostos calculados e guias em dia\n✅ Obrigações acessórias: declarações entregues no prazo\n✅ Folha e eSocial: admissões, férias, 13º e guias\n✅ Balanço e DRE: A empresa em números claros\n✅ Planejamento tributário: O regime certo para a sua operação\n\nAtendemos Lucro Presumido. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nO Presumido é para a sua empresa? Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#LucroPresumido #PlanejamentoTributario #Impostos #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Cresceu? O regime cresce junto.\n\nPara quem saiu do Simples ou tem no Lucro Presumido a opção mais vantajosa. Mais apurações e mais declarações, com a mesma tranquilidade. A escolha do regime vem de um estudo da sua operação, não de achismo.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Apuração do Lucro Presumido: impostos calculados e guias em dia\n✅ Obrigações acessórias: declarações entregues no prazo\n✅ Folha e eSocial: admissões, férias, 13º e guias\n✅ Balanço e DRE: A empresa em números claros\n✅ Planejamento tributário: O regime certo para a sua operação\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nO Presumido é para a sua empresa? cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-lucro-presumido.zip",
+      "kb": 590
     }
   },
   {
@@ -994,6 +1570,78 @@
     }
   },
   {
+    "pasta": "2026-11-contabil-simples-nacional",
+    "titulo": "Contabilidade · Você paga o DAS certo ou só paga?",
+    "data": "2026-11-05",
+    "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (2 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 05/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 92
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 101
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 96
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 77
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 105
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3899
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 89
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Você paga o DAS certo ou só paga?\n\nNo Simples Nacional, a alíquota depende de como a empresa está enquadrada. A gente confere.\n\nO Simples Nacional reúne os impostos numa guia só. Atividade e enquadramento bem feitos fazem diferença no valor da guia.\n\nO que a Cerrado Contabilidade faz:\n✅ Apuração do Simples Nacional: O DAS mensal calculado com precisão\n✅ Fator R: redução da alíquota para 6% em serviços, quando se aplica\n✅ Notas fiscais: emissão e controle\n✅ Obrigações acessórias: DEFIS e demais declarações em dia\n✅ Folha e eSocial: para quando a equipe crescer\n\nAtendemos Microempresa → Pequena empresa. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nDescubra se você está pagando o certo. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#SimplesNacional #FatorR #DAS #PequenaEmpresa #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Você paga o DAS certo ou só paga?\n\nNo Simples Nacional, a alíquota depende de como a empresa está enquadrada. A gente confere. O Simples Nacional reúne os impostos numa guia só. Atividade e enquadramento bem feitos fazem diferença no valor da guia.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Apuração do Simples Nacional: O DAS mensal calculado com precisão\n✅ Fator R: redução da alíquota para 6% em serviços, quando se aplica\n✅ Notas fiscais: emissão e controle\n✅ Obrigações acessórias: DEFIS e demais declarações em dia\n✅ Folha e eSocial: para quando a equipe crescer\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nDescubra se você está pagando o certo. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-simples-nacional.zip",
+      "kb": 614
+    }
+  },
+  {
     "pasta": "2026-11-tech-crm",
     "titulo": "Cerrado Tech · CRM",
     "data": "2026-11-04",
@@ -1062,6 +1710,78 @@
     "pacote": {
       "nome": "2026-11-tech-crm.zip",
       "kb": 4012
+    }
+  },
+  {
+    "pasta": "2026-11-contabil-mei",
+    "titulo": "Contabilidade · MEI também merece um contador de verdade.",
+    "data": "2026-11-03",
+    "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (1 de 10). Identidade própria \"Partida dobrada\".",
+    "orientacoes": [
+      "Postar em 03/11 (sugestão: a série sai terça e quinta; a da Cerrado Tech, segunda, quarta e sexta).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
+      "Antes de postar: confirmar com o responsável técnico (nome e CRC) se a peça deve levar o registro, conforme o código de ética do CFC.",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 91
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 88
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 79
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 91
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3899
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 89
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "MEI também merece um contador de verdade.\n\nA gente cuida da formalização, das guias e das declarações. Você cuida de vender.\n\nMicroempreendedor individual: o começo formal do negócio, com CNPJ e nota fiscal. E quando o MEI crescer, você sobe de degrau com o mesmo contador.\n\nO que a Cerrado Contabilidade faz:\n✅ Formalização e gestão de MEI: do CNPJ às declarações\n✅ Estudo de CNAE: A atividade certa desde o início\n✅ Alvarás e inscrição municipal: tudo regularizado na Prefeitura\n✅ Declarações em dia: sem esquecer prazo\n\nAtendemos Microempreendedor. 100% digital, com suporte humano direto no WhatsApp. E se você quer trocar de contador, a migração é transparente e acompanhada.\n\nSeu MEI em dia, do jeito certo. Fale com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#MEI #Microempreendedor #CNPJ #CerradoContabilidade #Contabilidade #ContabilidadeDigital #CerradoFinancas #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "MEI também merece um contador de verdade.\n\nA gente cuida da formalização, das guias e das declarações. Você cuida de vender. Microempreendedor individual: o começo formal do negócio, com CNPJ e nota fiscal. E quando o MEI crescer, você sobe de degrau com o mesmo contador.\n\nNa prática, a Cerrado Contabilidade entrega:\n✅ Formalização e gestão de MEI: do CNPJ às declarações\n✅ Estudo de CNAE: A atividade certa desde o início\n✅ Alvarás e inscrição municipal: tudo regularizado na Prefeitura\n✅ Declarações em dia: sem esquecer prazo\n\nAtendemos MEI, empresas do Simples Nacional e do Lucro Presumido, da microempresa à média empresa, com atendimento 100% digital e humano.\n\nSeu MEI em dia, do jeito certo. cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-contabil-mei.zip",
+      "kb": 596
     }
   },
   {

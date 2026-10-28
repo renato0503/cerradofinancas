@@ -19,6 +19,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 | 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
+| 28/10 | (esta rodada) | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
@@ -81,6 +82,18 @@ entregamos (os itens do portfólio, sem acréscimo) → como trabalhamos (os 4 p
 própria com o link da página certa (ERP, CRM, Dashboards, IA Offline, E-commerce, Compliance e Blockchain têm página;
 o resto vai para `/portfolio`). Identidade: a da Cerrado Tech (azul e dourado), uma cor de destaque por capacidade.
 Postagem sugerida segunda, quarta e sexta, na ordem do gerador (ERP 02/11 até Web3 07/12), registrada no `info.json`.
+
+## Série da Cerrado Contabilidade (28/10)
+
+Fonte única: `tools/gerar_contabilidade.py`. Posicionamento: "do MEI à média empresa, o mesmo contador".
+Série A, "Para quem atendemos": MEI, Simples Nacional, Lucro Presumido, da micro à média. Série B, "O que fazemos":
+abertura, fiscal e tributário, departamento pessoal, contábil, consultivo e troca de contador. Identidade própria
+("Partida dobrada", `brand/contabilidade/README.md`) para não se confundir com o resto da Cerrado Finanças.
+Só entram serviços confirmados no site e o Lucro Presumido (confirmado pelo Renato). **Pendências:** confirmar os
+demais serviços (inscrição estadual, MEI para ME, alterações e baixa, certidões, certificado digital, DASN-SIMEI, ISS,
+parcelamentos, reforma tributária, pró-labore, escrituração completa, distribuição de lucros, IRPF dos sócios),
+se atendem Lucro Real, e o nome e CRC do responsável técnico. A série educativa ("Você sabia?") fica para depois,
+com revisão de um contador. A página `/contabilidade` ainda cita a DIRF, que foi extinta.
 
 ## Decisões e regras de conteúdo
 

@@ -1,0 +1,113 @@
+/* Identidade Cerrado Contabilidade: "Partida dobrada"
+   O papel pautado do livro-razão, a tinta verde do lançamento e o vermelho só na dor do cliente.
+   Recursos gráficos próprios: o razonete em T (.razonete), a escada do crescimento MEI → ME → EPP → Presumido
+   (.escada), as linhas de lançamento com "em dia" (.lancamentos) e o carimbo EM DIA (.carimbo).
+   Tipografia: IBM Plex Sans Condensed (títulos e texto) e IBM Plex Mono (rótulos, colunas, carimbo).
+   Marca: a folinha + "Cerrado Contabilidade". */
+@font-face { font-family: 'Plex Cond'; src: url('../fontes/plex-cond-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Plex Cond'; src: url('../fontes/plex-cond-700.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Plex Mono'; src: url('../fontes/plex-mono-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Plex Mono'; src: url('../fontes/plex-mono-600.woff2') format('woff2'); font-weight: 600; }
+
+:root {
+  --papel: #f1f6f0;
+  --pauta: #cfe0d4;
+  --tinta: #0c3b2e;
+  --tinta-suave: #4a6b5f;
+  --vermelho: #d23a2c;
+  --verde-claro: #d8efdf;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #2b2b2b; font-family: 'Plex Cond', sans-serif; -webkit-font-smoothing: antialiased; }
+body { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+html.exportando body { padding: 0; gap: 0; }
+
+/* O papel do livro-razão: pauta horizontal e a margem vermelha à esquerda */
+.slide {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  color: var(--tinta); padding: 96px 90px 0 120px; display: flex; flex-direction: column;
+  background-color: var(--papel);
+  background-image: linear-gradient(var(--pauta) 2px, transparent 2px);
+  background-size: 100% 54px; background-position: 0 30px;
+}
+.slide::before { content: ''; position: absolute; top: 0; bottom: 0; left: 78px; width: 3px; background: var(--vermelho); opacity: .55; }
+.slide.story { height: 1920px; padding: 260px 90px 260px 120px; }
+.slide.tinta { background-color: var(--tinta); background-image: linear-gradient(rgba(255, 255, 255, .08) 2px, transparent 2px); color: var(--papel); }
+.slide.tinta::before { background: var(--verde-claro); opacity: .5; }
+
+/* Tipografia */
+.rotulo { font-family: 'Plex Mono', monospace; font-size: 26px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 28px; color: var(--tinta-suave); }
+.tinta .rotulo { color: var(--verde-claro); }
+.mega { font-size: 116px; font-weight: 700; line-height: .98; letter-spacing: -0.02em; }
+.titulo { font-size: 80px; font-weight: 700; line-height: 1; letter-spacing: -0.015em; margin-bottom: 40px; }
+.marca-verde { background: linear-gradient(transparent 58%, var(--verde-claro) 58%); padding: 0 .05em; }
+.tinta .marca-verde { background: none; color: #9fe0b9; }
+.vermelho { color: var(--vermelho); }
+.sub { font-size: 40px; line-height: 1.28; font-weight: 500; color: var(--tinta-suave); max-width: 860px; }
+.tinta .sub { color: #cfe5d8; }
+
+/* Rodapé */
+.rodape {
+  position: absolute; left: 120px; right: 90px; bottom: 0; height: 132px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 3px solid var(--tinta); font-family: 'Plex Mono', monospace; font-size: 24px; font-weight: 600;
+}
+.tinta .rodape { border-top-color: rgba(255, 255, 255, .4); }
+.rodape .marca { display: flex; align-items: center; gap: 14px; font-family: 'Plex Cond', sans-serif; font-size: 30px; font-weight: 700; }
+.rodape .marca img { width: 50px; height: 50px; object-fit: contain; }
+
+/* Razonete: o T do contador */
+.razonete { display: grid; grid-template-columns: 1fr 1fr; border-top: 5px solid var(--tinta); }
+.razonete .col { padding: 22px 26px 10px 0; }
+.razonete .col + .col { border-left: 5px solid var(--tinta); padding-left: 30px; padding-right: 0; }
+.razonete h3 { font-family: 'Plex Mono', monospace; font-size: 24px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 14px; }
+.razonete .col:first-child h3 { color: var(--tinta-suave); }
+.razonete li { list-style: none; font-size: 44px; font-weight: 500; line-height: 1.15; padding: 26px 0; border-bottom: 2px solid var(--pauta); }
+.razonete .col + .col li { font-weight: 700; }
+.razonete.dor .col:first-child li { color: var(--vermelho); }
+.razonete-topo { display: grid; grid-template-columns: 1fr 1fr; font-size: 54px; font-weight: 700; padding-bottom: 14px; }
+.razonete-topo span + span { padding-left: 35px; }
+
+/* Escada do crescimento: MEI → ME → EPP → Lucro Presumido */
+.escada { display: flex; align-items: flex-end; gap: 14px; }
+.escada .degrau { flex: 1; border: 3px solid var(--tinta); border-bottom-width: 8px; border-radius: 10px 10px 0 0; padding: 14px 12px; display: flex; flex-direction: column; justify-content: flex-end; background: rgba(255, 255, 255, .6); }
+.escada .degrau:nth-child(1) { height: 120px; }
+.escada .degrau:nth-child(2) { height: 170px; }
+.escada .degrau:nth-child(3) { height: 220px; }
+.escada .degrau:nth-child(4) { height: 270px; }
+.escada .degrau b { font-family: 'Plex Mono', monospace; font-size: 26px; font-weight: 600; }
+.escada .degrau small { font-size: 20px; font-weight: 500; color: var(--tinta-suave); line-height: 1.1; margin-top: 4px; }
+.escada .degrau.ativo { background: var(--tinta); color: var(--papel); }
+.escada .degrau.ativo small { color: #cfe5d8; }
+.escada.grande .degrau:nth-child(1) { height: 160px; }
+.escada.grande .degrau:nth-child(2) { height: 250px; }
+.escada.grande .degrau:nth-child(3) { height: 340px; }
+.escada.grande .degrau:nth-child(4) { height: 430px; }
+.escada.grande .degrau b { font-size: 32px; }
+.escada.grande .degrau small { font-size: 24px; }
+
+/* Lançamentos: cada serviço é uma linha do livro, com "em dia" na coluna da direita */
+.lancamentos { list-style: none; }
+.lancamentos li { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 30px 0; border-bottom: 3px solid var(--tinta); font-size: 46px; font-weight: 700; line-height: 1.15; }
+.lancamentos li:first-child { border-top: 3px solid var(--tinta); }
+.lancamentos li small { display: block; font-size: 32px; font-weight: 500; color: var(--tinta-suave); margin-top: 4px; }
+.lancamentos li .ok { font-family: 'Plex Mono', monospace; font-size: 26px; font-weight: 600; color: var(--tinta); border: 2px solid var(--tinta); padding: 4px 10px; border-radius: 6px; white-space: nowrap; }
+.lancamentos.compacta li { padding: 20px 0; font-size: 40px; }
+.lancamentos.compacta li small { font-size: 29px; }
+.tinta .lancamentos li, .tinta .lancamentos li:first-child { border-color: rgba(255, 255, 255, .35); }
+.tinta .lancamentos li small { color: #cfe5d8; }
+.tinta .lancamentos li .ok { color: #9fe0b9; border-color: #9fe0b9; }
+
+/* Carimbo EM DIA */
+.carimbo { align-self: flex-start; font-family: 'Plex Mono', monospace; font-weight: 600; font-size: 40px; letter-spacing: .12em; color: var(--vermelho); border: 6px double var(--vermelho); border-radius: 12px; padding: 10px 26px; transform: rotate(-6deg); margin-bottom: 40px; }
+
+/* CTA */
+.contatos { display: flex; flex-direction: column; gap: 16px; margin-top: 44px; }
+.contato { font-size: 40px; font-weight: 700; }
+.contato.principal { align-self: flex-start; background: var(--tinta); color: var(--papel); padding: 16px 28px; border-radius: 10px; font-family: 'Plex Mono', monospace; font-size: 34px; font-weight: 600; }
+.letra-miuda { font-family: 'Plex Mono', monospace; font-size: 22px; color: var(--tinta-suave); }
+
+/* Saldo: a linha que fecha o razonete */
+.saldo { margin-top: auto; margin-bottom: 186px; border-top: 6px double var(--tinta); padding-top: 22px; display: flex; gap: 28px; align-items: baseline; font-size: 50px; font-weight: 700; line-height: 1.1; }
+.saldo b { font-family: 'Plex Mono', monospace; font-size: 26px; font-weight: 600; letter-spacing: .06em; color: var(--tinta-suave); }
