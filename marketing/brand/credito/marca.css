@@ -1,0 +1,107 @@
+/* Identidade Crédito (Cerrado Finanças + LS Intermediação Financeira): "Antes de assinar"
+   Papel branco, tinta azul-caneta e marca-texto amarelo só na melhor opção.
+   Recursos gráficos próprios: o comparativo de propostas (.comparativo), a linha de assinatura (.assinatura),
+   o grifo de marca-texto (.grifo) e o aviso legal como letra miúda de contrato (.letra-miuda).
+   Tipografia: Schibsted Grotesk (display e texto) e Caveat só na assinatura manuscrita.
+   Marca: a folinha da Cerrado Finanças. A LS é parceira: aparece só em "em parceria com" e no aviso legal. */
+@font-face { font-family: 'Schibsted Grotesk'; src: url('../fontes/schibsted.woff2') format('woff2'); font-weight: 400 900; }
+@font-face { font-family: 'Caveat'; src: url('../fontes/caveat.woff2') format('woff2'); font-weight: 700; }
+
+:root {
+  --papel: #fbfbf8;
+  --caneta: #1f3ae0;
+  --caneta-escura: #10208f;
+  --grifo: #e6ff3d;
+  --tinta: #111522;
+  --cinza: #6b7080;
+  --pauta: #d9dce6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #333; font-family: 'Schibsted Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+body { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+html.exportando body { padding: 0; gap: 0; }
+
+.slide {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  background: var(--papel); color: var(--tinta);
+  padding: 92px 88px 0; display: flex; flex-direction: column;
+}
+.slide.story { height: 1920px; padding: 260px 88px 260px; }
+.slide.caneta { background: var(--caneta); color: #fff; }
+
+/* Tipografia */
+.mega, .titulo { font-weight: 900; line-height: .92; letter-spacing: -0.035em; }
+.mega { font-size: 136px; }
+.titulo { font-size: 92px; margin-bottom: 48px; }
+.mega .azul, .titulo .azul { color: var(--caneta); }
+.caneta .mega .azul, .caneta .titulo .azul { color: var(--grifo); }
+.sub { font-size: 40px; line-height: 1.28; font-weight: 500; color: var(--cinza); max-width: 880px; }
+.caneta .sub { color: #dfe4ff; }
+.rotulo { font-size: 28px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--caneta); margin-bottom: 34px; display: flex; align-items: center; gap: 16px; }
+.rotulo::before { content: ''; width: 44px; height: 6px; background: currentColor; border-radius: 3px; }
+.caneta .rotulo { color: var(--grifo); }
+
+/* Grifo de marca-texto: atrás da palavra, levemente torto */
+.grifo { background: linear-gradient(transparent 12%, var(--grifo) 12%, var(--grifo) 88%, transparent 88%); padding: 0 .08em; margin: 0 -.04em; border-radius: 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; color: var(--tinta); }
+
+/* Rodapé */
+.rodape {
+  position: absolute; left: 88px; right: 88px; bottom: 0; height: 132px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 3px solid var(--tinta); font-size: 26px; font-weight: 700;
+}
+.caneta .rodape { border-top-color: rgba(255, 255, 255, .5); }
+.rodape .marca { display: flex; align-items: center; gap: 14px; font-size: 28px; font-weight: 800; }
+.rodape .marca img { width: 46px; height: 46px; object-fit: contain; }
+.rodape .marca small { font-size: 22px; font-weight: 600; color: var(--cinza); }
+.caneta .rodape .marca small { color: #dfe4ff; }
+
+/* Comparativo de propostas: a melhor linha ganha o grifo (sem números: nada de taxa inventada) */
+.comparativo { border: 3px solid var(--tinta); border-radius: 18px; overflow: hidden; background: #fff; }
+.comparativo .cab { display: grid; grid-template-columns: 1fr 430px; padding: 20px 30px; font-size: 24px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--cinza); border-bottom: 3px solid var(--tinta); }
+.comparativo .linha { display: grid; grid-template-columns: 1fr 430px; align-items: center; padding: 26px 30px; border-bottom: 2px solid var(--pauta); font-size: 36px; font-weight: 700; }
+.comparativo .linha:last-child { border-bottom: 0; }
+.comparativo .barra { height: 26px; border-radius: 13px; background: var(--pauta); }
+.comparativo .linha.melhor { background: var(--grifo); }
+.comparativo .linha.melhor .barra { background: var(--caneta); }
+.comparativo .selo-escolha { white-space: nowrap; font-size: 22px; font-weight: 800; color: var(--caneta); text-transform: uppercase; letter-spacing: .06em; margin-left: 14px; }
+
+/* Linha de assinatura com X e rubrica manuscrita */
+.assinatura { margin-top: 54px; display: flex; align-items: flex-end; gap: 22px; }
+.assinatura .x { font-size: 64px; font-weight: 900; color: var(--caneta); line-height: 1; }
+.assinatura .traco { flex: 1; border-bottom: 4px solid var(--tinta); position: relative; height: 90px; }
+.assinatura .rubrica { position: absolute; left: 30px; bottom: 4px; font-family: 'Caveat', cursive; font-size: 96px; color: var(--caneta); line-height: 1; transform: rotate(-4deg); }
+.assinatura .legenda { position: absolute; left: 0; top: 100%; margin-top: 10px; font-size: 24px; font-weight: 600; color: var(--cinza); }
+
+/* Listas em pauta */
+.pauta { list-style: none; }
+.pauta li { padding: 28px 0; border-top: 2px solid var(--pauta); display: grid; grid-template-columns: 1fr; gap: 8px; }
+.pauta li:last-child { border-bottom: 2px solid var(--pauta); }
+.pauta b { font-size: 46px; font-weight: 900; letter-spacing: -0.02em; }
+.pauta span { font-size: 32px; font-weight: 500; color: var(--cinza); }
+.caneta .pauta li { border-color: rgba(255, 255, 255, .3); }
+.caneta .pauta span { color: #dfe4ff; }
+
+/* Passos numerados como cláusulas */
+.clausulas { display: flex; flex-direction: column; }
+.clausulas .c { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 26px 0; border-top: 2px solid var(--pauta); }
+.clausulas .c:last-child { border-bottom: 2px solid var(--pauta); }
+.clausulas .n { font-size: 30px; font-weight: 800; color: var(--caneta); text-transform: uppercase; letter-spacing: .04em; padding-top: 8px; }
+.clausulas b { display: block; font-size: 44px; font-weight: 900; letter-spacing: -0.02em; }
+.clausulas span { display: block; font-size: 31px; color: var(--cinza); margin-top: 6px; }
+
+/* Aviso legal: letra miúda de contrato, mas legível */
+.letra-miuda { font-size: 24px; line-height: 1.4; color: var(--cinza); border-left: 6px solid var(--caneta); padding-left: 22px; }
+.caneta .letra-miuda { color: #dfe4ff; border-left-color: var(--grifo); }
+
+/* Parceria */
+.parceria { display: flex; align-items: center; gap: 22px; margin-top: 48px; }
+.parceria img { width: 150px; height: 130px; object-fit: cover; border-radius: 16px; }
+.parceria p { font-size: 28px; font-weight: 600; color: var(--cinza); }
+.parceria p b { display: block; font-size: 36px; color: var(--tinta); font-weight: 900; }
+
+/* CTA */
+.contatos { display: flex; flex-direction: column; gap: 16px; margin-top: 46px; }
+.contato { font-size: 40px; font-weight: 800; }
+.contato.principal { align-self: flex-start; background: var(--grifo); color: var(--tinta); padding: 18px 30px; border-radius: 14px; }

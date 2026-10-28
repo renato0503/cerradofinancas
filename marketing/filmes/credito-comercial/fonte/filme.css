@@ -1,0 +1,76 @@
+@font-face { font-family: 'Schibsted Grotesk'; src: url('assets/fonts/schibsted.woff2') format('woff2'); font-weight: 400 900; }
+@font-face { font-family: 'Caveat'; src: url('assets/fonts/caveat.woff2') format('woff2'); font-weight: 700; }
+
+:root { --papel: #fbfbf8; --caneta: #1f3ae0; --grifo: #e6ff3d; --tinta: #111522; --cinza: #6b7080; --pauta: #d9dce6; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: var(--papel); }
+#root { position: relative; overflow: hidden; font-family: 'Schibsted Grotesk', sans-serif; color: var(--tinta); }
+.camada { position: absolute; inset: 0; }
+.cena { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.display { font-weight: 900; letter-spacing: -0.035em; line-height: .9; }
+
+#fundo { background: var(--papel); }
+#ponto { width: 28px; height: 28px; border-radius: 50%; background: var(--caneta); }
+
+.frase { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .24em; max-width: 1500px; color: #fff; font-size: 230px; text-align: center; }
+.palavra { display: inline-block; }
+
+/* A proposta de crédito em 3D */
+#folha { position: absolute; left: 50%; top: 50%; width: 640px; height: 820px; margin: -410px 0 0 -320px; perspective: 2400px; }
+#papel { position: absolute; inset: 0; transform-style: preserve-3d; }
+.lamina { position: absolute; inset: 0; border-radius: 22px; background: #c9ccd8; }
+.face { position: absolute; inset: 0; border-radius: 22px; backface-visibility: hidden; border: 4px solid var(--tinta); }
+.frente { background: #fff; padding: 40px 42px; display: flex; flex-direction: column; }
+.verso { background: var(--caneta); display: grid; place-items: center; }
+.verso img { width: 260px; height: 260px; object-fit: contain; }
+.frente .cab { display: flex; justify-content: space-between; font-size: 22px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--cinza); padding-bottom: 18px; border-bottom: 3px solid var(--tinta); }
+.frente h3 { font-size: 54px; margin: 22px 0 18px; }
+.prop { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 18px; padding: 18px 14px; border-bottom: 2px solid var(--pauta); font-size: 28px; font-weight: 700; position: relative; }
+.prop .barra { height: 20px; border-radius: 10px; background: var(--pauta); }
+.prop.melhor .barra { background: var(--caneta); }
+.prop .marca-texto { position: absolute; inset: 4px -6px; background: var(--grifo); border-radius: 8px; z-index: -1; transform-origin: left center; }
+.prop { z-index: 0; }
+.ass { margin-top: auto; display: flex; align-items: flex-end; gap: 14px; }
+.ass .x { font-size: 46px; font-weight: 900; color: var(--caneta); }
+.ass .traco { flex: 1; border-bottom: 3px solid var(--tinta); height: 70px; position: relative; }
+.ass .rubrica { position: absolute; left: 20px; bottom: 2px; font-family: 'Caveat', cursive; font-size: 72px; color: var(--caneta); transform: rotate(-4deg); }
+
+/* Frase 2: "compare." grifado */
+.compare { flex-direction: column; justify-content: flex-start; padding-top: 70px; }
+.compare p { position: relative; font-size: 230px; }
+.compare .grifo { position: absolute; inset: 14% -3% 8%; background: var(--grifo); z-index: -1; border-radius: 12px; transform-origin: left center; }
+.compare p span { position: relative; }
+
+/* Cards */
+.card { position: absolute; top: 50%; width: 560px; background: var(--caneta); color: #fff; border-radius: 22px; padding: 34px 40px; box-shadow: 10px 10px 0 var(--grifo); }
+.card .grande { font-size: 60px; }
+.card .apoio { font-size: 30px; font-weight: 600; margin-top: 12px; color: #dfe4ff; }
+.card.c1 { left: 90px; margin-top: -280px; }
+.card.c2 { right: 90px; margin-top: 70px; }
+
+.frase3 { color: #fff; font-size: 150px; text-align: center; max-width: 1500px; }
+.frase3 .g { color: var(--grifo); }
+.palavrao { position: absolute; color: var(--caneta); font-size: 220px; }
+
+/* Assinatura final */
+.fecho { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 160px; gap: 26px; }
+.fecho .marca { display: flex; align-items: center; gap: 24px; font-size: 76px; font-weight: 900; letter-spacing: -0.02em; }
+.fecho .marca img { width: 120px; height: 120px; object-fit: contain; }
+.fecho .marca small { font-size: 40px; color: var(--caneta); font-weight: 800; }
+.fecho .tag { font-size: 150px; line-height: 1.05; }
+.fecho .tag .g { background: var(--grifo); padding: 0 .08em; border-radius: 10px; }
+.fecho .zap { align-self: flex-start; background: var(--caneta); color: #fff; font-size: 44px; font-weight: 800; padding: 14px 28px; border-radius: 14px; }
+.fecho .aviso { font-size: 30px; line-height: 1.35; color: var(--cinza); border-left: 6px solid var(--caneta); padding-left: 22px; max-width: 1500px; }
+
+/* Vertical */
+.vertical .frase { font-size: 170px; max-width: 960px; }
+.vertical .compare { padding-top: 300px; }
+.vertical .compare p { font-size: 200px; }
+.vertical .card { left: 90px; right: auto; width: 900px; }
+.vertical .card.c1 { top: 250px; margin-top: 0; }
+.vertical .card.c2 { top: auto; bottom: 250px; margin-top: 0; }
+.vertical .frase3 { font-size: 120px; max-width: 960px; }
+.vertical .palavrao { font-size: 128px; }
+.vertical .fecho { padding: 0 80px; }
+.vertical .fecho .tag { font-size: 104px; }
+.vertical .fecho .marca { font-size: 54px; }

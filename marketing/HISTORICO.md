@@ -56,13 +56,16 @@ e legendas para Instagram e LinkedIn, exceto onde indicado.
 
 ## Identidades próprias (28/10)
 
-Cerrado Tech e Cerrado Finanças mantêm a identidade do site (azul `#001f5c` e dourado). **Cerra.AI e
-CerraClass (com todos os cursos) ganharam identidade própria**, cada uma com guia em `brand/<marca>/README.md`:
+Cerrado Tech e Cerrado Finanças mantêm a identidade do site (azul `#001f5c` e dourado). **Cerra.AI,
+CerraClass (com todos os cursos) e Crédito ganharam identidade própria**, cada uma com guia em `brand/<marca>/README.md`:
 
 - **Cerra.AI, "Silício local":** cobre `#e2873b` + quase-preto `#0d0f0e`, Archivo expandida em caixa alta,
   JetBrains Mono nas citações. Recursos próprios: a tarja de anonimização e a etiqueta "Trechos consultados".
 - **CerraClass, "Sábado de sala":** um fundo vivo por curso + tinta quase-preta, Bricolage Grotesque condensada
   em caixa alta. Recursos próprios: as 10 cadeiras da turma, a régua do dia de aula, o ingresso, a etiqueta adesiva.
+- **Crédito, "Antes de assinar":** papel branco, azul-caneta `#1f3ae0` e marca-texto `#e6ff3d` só no destaque,
+  Schibsted Grotesk + Caveat na rubrica. Recursos próprios: o comparativo de propostas (sem números), a linha de
+  assinatura "Você decide" e o aviso legal como letra miúda. **A marca é a folinha**; a LS aparece só como parceira.
 
 **Vídeos dessas duas marcas agora são HyperFrames** (HTML + GSAP, `filmes/`), feitos a partir de três
 modelos de prompt (comercial de produto 15s, lançamento estilo App Store 30s, lançamento minimalista P&B 30s),
@@ -78,7 +81,7 @@ Valem para todas as próximas campanhas.
    fazer a pergunta certa e estruturar o problema."). Uma citação criada para o slide de Farma foi trocada pela real.
 2. **Sem preço e sem data nas peças.** Peças circulam por muito tempo; valores e agenda ficam no site da
    Cerraclass. Os cursos do catálogo são "sob consulta". Pode-se dizer que o pacote para grupos sai mais barato por pessoa.
-3. **Crédito sempre com aviso legal** de correspondente bancário: "não é instituição financeira; crédito sujeito
+3. **Crédito sempre com aviso legal** de correspondente bancário (também no fecho do vídeo): "não é instituição financeira; crédito sujeito
    a análise e aprovação; taxas e condições variam". Está no CTA do carrossel, no story, no Reel e na legenda.
 4. **Tamanho de turma:** **até 10 alunos por turma** em tudo (decidido em 26/10, confirmado em 28/10; os 11 cursos
    do catálogo foram regerados com 10). As landings de IA na Prática e

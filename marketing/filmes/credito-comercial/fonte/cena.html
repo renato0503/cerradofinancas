@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Crédito: comercial 15s</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada clip" data-start="0" data-duration="15" data-track-index="0" style="z-index: 1"></div>
+
+      <!-- 0-1,45: o ponto de tinta explode -->
+      <div id="abertura" class="cena clip" data-start="0" data-duration="1.5" data-track-index="1" style="z-index: 2"><div id="ponto"></div></div>
+
+      <!-- 1,45-3,6: frase 1 -->
+      <div id="cena-frase1" class="cena clip" data-start="1.45" data-duration="2.15" data-track-index="1" style="z-index: 3">
+        <p class="frase display" data-eco data-layout-allow-overlap><span class="palavra">Antes</span><span class="palavra">de</span><span class="palavra">assinar,</span></p>
+      </div>
+
+      <!-- 5,2-7,8: "compare." grifado, acima da proposta -->
+      <div id="cena-compare" class="cena compare clip" data-start="5.2" data-duration="2.6" data-track-index="1" style="z-index: 6" data-layout-allow-overlap>
+        <p class="display"><i id="grifo-compare" class="grifo"></i><span id="compare">compare.</span></p>
+      </div>
+
+      <!-- 3,6-10,2: a proposta de crédito 3D -->
+      <div id="cena-folha" class="camada clip" data-start="3.6" data-duration="6.6" data-track-index="2" style="z-index: 5" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="folha">
+          <div id="papel">
+            <div class="lamina"></div><div class="lamina"></div><div class="lamina"></div><div class="lamina"></div>
+            <div class="lamina"></div><div class="lamina"></div><div class="lamina"></div><div class="lamina"></div>
+            <div class="face verso"><img src="assets/folinha.png" alt="" /></div>
+            <div class="face frente">
+              <div class="cab"><span>Simulação de crédito</span><span>Custo total</span></div>
+              <h3 class="display">Propostas</h3>
+              <div class="prop"><span>Banco 1</span><i class="barra" style="width: 100%"></i></div>
+              <div class="prop melhor"><i id="grifo-prop" class="marca-texto"></i><span>Banco 2</span><i class="barra" style="width: 60%"></i></div>
+              <div class="prop"><span>Banco 3</span><i class="barra" style="width: 84%"></i></div>
+              <div class="prop"><span>Banco 4</span><i class="barra" style="width: 92%"></i></div>
+              <div class="ass"><span class="x">X</span><div class="traco"><span id="rubrica" class="rubrica">Você decide</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7,8-10,2: cards ao redor da proposta -->
+      <div id="cena-cards" class="camada clip" data-start="7.8" data-duration="2.4" data-track-index="3" style="z-index: 7">
+        <div class="card c1" data-eco><p class="grande display">Vários bancos</p><p class="apoio">numa consulta só</p></div>
+        <div class="card c2" data-eco><p class="grande display">Você escolhe</p><p class="apoio">opções claras, sem pressão</p></div>
+      </div>
+
+      <!-- 10,2-11,6: frase 3 -->
+      <div id="cena-frase3" class="cena clip" data-start="10.2" data-duration="1.4" data-track-index="1" style="z-index: 7">
+        <p id="f3" class="frase3 display">Simulação <span class="g">gratuita</span> e sem compromisso.</p>
+      </div>
+
+      <!-- 11,6-12,6: três palavras -->
+      <div id="cena-palavras" class="cena clip" data-start="11.6" data-duration="1" data-track-index="1" style="z-index: 7" data-layout-allow-overlap>
+        <p id="p1" class="palavrao display">Empréstimo.</p>
+        <p id="p2" class="palavrao display">Consignado.</p>
+        <p id="p3" class="palavrao display">Financiamento.</p>
+      </div>
+
+      <!-- 12,6-15: fecho com a folinha e o aviso legal -->
+      <div id="cena-fecho" class="fecho clip" data-start="12.6" data-duration="2.4" data-track-index="3" style="z-index: 8">
+        <p id="f-marca" class="marca"><img src="assets/folinha.png" alt="Cerrado Finanças" /> Cerrado Finanças <small>Crédito</small></p>
+        <p id="f-tag" class="tag display">Antes de assinar, <span class="g">compare.</span></p>
+        <p id="f-zap" class="zap">Simule: (67) 99351-5206</p>
+        <p id="f-aviso" class="aviso">Em parceria com a LS Intermediação Financeira. Correspondente bancário, não é instituição financeira. Crédito sujeito a análise e aprovação.</p>
+      </div>
+
+      <audio id="trilha" class="clip" data-start="0" data-duration="15" data-track-index="9" data-volume="1" src="assets/trilha.wav"></audio>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>

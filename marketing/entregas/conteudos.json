@@ -1287,10 +1287,11 @@
     "pasta": "2026-10-credito",
     "titulo": "Crédito",
     "data": "2026-10-27",
-    "descricao": "Campanha de crédito multi bancos com a LS Intermediação Financeira: produtos, consignado (novo, portabilidade e refinanciamento), como funciona e diferenciais. Contém aviso legal de correspondente bancário.",
+    "descricao": "Campanha de crédito multi bancos, na identidade própria do Crédito (\"Antes de assinar\": papel, caneta azul e marca-texto) com a LS Intermediação Financeira: produtos, consignado (novo, portabilidade e refinanciamento), como funciona e diferenciais. Contém aviso legal de correspondente bancário.",
     "orientacoes": [
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
-      "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Vídeo vertical (video-vertical.mp4, 1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
+      "Vídeo 16:9 (video-16x9.mp4, 1920×1080, 15s, com som): LinkedIn, YouTube e apresentações.",
       "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/credito/",
       "Crédito: manter o aviso legal de correspondente bancário na legenda e nas peças.",
       "Legendas prontas abaixo, uma para cada rede."
@@ -1299,42 +1300,47 @@
       {
         "nome": "carrossel-01.png",
         "tipo": "imagem",
-        "kb": 567
+        "kb": 116
       },
       {
         "nome": "carrossel-02.png",
         "tipo": "imagem",
-        "kb": 580
+        "kb": 93
       },
       {
         "nome": "carrossel-03.png",
         "tipo": "imagem",
-        "kb": 596
+        "kb": 111
       },
       {
         "nome": "carrossel-04.png",
         "tipo": "imagem",
-        "kb": 594
+        "kb": 114
       },
       {
         "nome": "carrossel-05.png",
         "tipo": "imagem",
-        "kb": 579
+        "kb": 126
       },
       {
         "nome": "carrossel-06.png",
         "tipo": "imagem",
-        "kb": 615
-      },
-      {
-        "nome": "reel-credito.mp4",
-        "tipo": "video",
-        "kb": 7072
+        "kb": 118
       },
       {
         "nome": "story.png",
         "tipo": "imagem",
-        "kb": 777
+        "kb": 116
+      },
+      {
+        "nome": "video-16x9.mp4",
+        "tipo": "video",
+        "kb": 3406
+      },
+      {
+        "nome": "video-vertical.mp4",
+        "tipo": "video",
+        "kb": 3514
       }
     ],
     "legendas": [
@@ -1351,7 +1357,7 @@
     ],
     "pacote": {
       "nome": "2026-10-credito.zip",
-      "kb": 4274
+      "kb": 745
     }
   },
   {
