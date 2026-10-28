@@ -59,16 +59,37 @@
     .semana { margin-bottom: 26px; }
     .semana h2 { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 10px; }
     .semana.atual h2 { color: var(--verde); }
-    .linha { width: 100%; display: grid; grid-template-columns: 74px 56px 1fr auto; gap: 16px; align-items: center; text-align: left; background: #fff; border: 1px solid var(--borda); border-left: 5px solid var(--cor); border-radius: 14px; padding: 12px 16px 12px 14px; margin-bottom: 8px; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
-    .linha:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(15, 23, 42, .07); }
-    .linha .dia { text-align: center; line-height: 1.1; }
-    .linha .dia b { display: block; font-size: 1.5rem; font-weight: 900; color: var(--azul); }
-    .linha .dia small { font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; }
-    .linha .mini { width: 56px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; background: #0b1324; }
-    .linha .txt strong { display: block; font-size: 1rem; font-weight: 800; color: var(--texto); margin: 4px 0 2px; }
-    .linha .abrir { font-weight: 800; font-size: .85rem; color: var(--azul); white-space: nowrap; }
-    details.passadas { margin-top: 30px; }
-    details.passadas summary { cursor: pointer; font-weight: 800; color: var(--muted); padding: 10px 0; }
+
+    .contas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; margin-bottom: 26px; }
+    .conta { background: #fff; border: 1px solid var(--borda); border-top: 5px solid var(--cor); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+    .conta b { font-size: 1.02rem; font-weight: 900; color: var(--azul); }
+    .conta span { font-size: .84rem; color: #475569; line-height: 1.45; }
+    .conta small { font-size: .78rem; font-weight: 700; color: var(--verde); }
+    .conta small.alerta { color: #b45309; }
+    .conta.futura { border: 1px dashed #94a3b8; border-top: 5px dashed #94a3b8; background: transparent; }
+    .conta.futura small { color: var(--muted); }
+    .cal-cab, .dia-linha { display: grid; grid-template-columns: 96px repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .cal-cab { position: sticky; top: 62px; z-index: 5; background: var(--fundo); padding: 8px 0; }
+    .cal-cab span { font-size: .8rem; font-weight: 900; color: var(--azul); border-bottom: 3px solid var(--cor, transparent); padding-bottom: 6px; }
+    .dia-linha { margin-bottom: 8px; }
+    .dia-linha .dia { font-size: .82rem; font-weight: 800; color: var(--azul); padding-top: 12px; }
+    .dia-linha.hoje .dia { color: var(--verde); }
+    .celula { background: #fff; border: 1px solid var(--borda); border-top: 3px solid var(--cor); border-radius: 12px; padding: 8px; display: flex; flex-direction: column; gap: 4px; min-height: 64px; }
+    .rot-conta { display: none; font-size: .72rem; font-weight: 900; color: var(--azul); }
+    .post { display: grid; grid-template-columns: 38px 1fr; gap: 9px; align-items: center; text-align: left; border: 0; background: none; cursor: pointer; padding: 4px; border-radius: 8px; font: inherit; color: var(--texto); }
+    .post:hover { background: var(--fundo); }
+    .post img, .post .ico { width: 38px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 5px; background: #0b1324; }
+    .post .ico { display: flex; align-items: center; justify-content: center; color: #fff; font-size: .8rem; }
+    .post strong { display: block; font-size: .8rem; font-weight: 800; line-height: 1.3; }
+    .post small { display: block; font-size: .7rem; color: var(--muted); margin-top: 2px; }
+    .falta { font-size: .76rem; font-weight: 800; color: #b45309; background: #fffbeb; border: 1px dashed #f59e0b; border-radius: 8px; padding: 10px; text-align: center; margin: auto 0; }
+    .sem { color: var(--muted); text-align: center; margin: auto 0; }
+    @media (max-width: 760px) {
+      .cal-cab { display: none; }
+      .dia-linha { grid-template-columns: 1fr; gap: 6px; margin-bottom: 18px; }
+      .dia-linha .dia { padding-top: 0; }
+      .rot-conta { display: block; }
+    }
 
     /* ---------- por frente ---------- */
     .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
@@ -165,8 +186,6 @@
     @media (max-width: 680px) {
       .topo img { width: 50px; }
       .busca { max-width: none; margin-left: 0; order: 9; }
-      .linha { grid-template-columns: 54px 1fr; gap: 10px; }
-      .linha .mini, .linha .abrir { display: none; }
       .glossario div { grid-template-columns: 1fr; gap: 4px; }
       .det-cab, .det-corpo { padding-left: 18px; padding-right: 18px; }
     }
@@ -214,7 +233,7 @@
     <section class="vista" id="v-como-usar" hidden>
       <h2 class="h-sec">Passo a passo para postar</h2>
       <div class="passos">
-        <div class="passo"><b>1</b><h3>Veja a agenda</h3><p>Na aba <strong>Agenda</strong> está o que sai em cada dia, da semana atual em diante. A cor da borda mostra a frente.</p></div>
+        <div class="passo"><b>1</b><h3>Veja a agenda</h3><p>Na aba <strong>Agenda</strong> está o que sai em cada dia, numa coluna por Instagram (@cerradofinancas, @cerra.ai e @cerraclass). Cada conta posta de 1 a 2 vezes por dia.</p></div>
         <div class="passo"><b>2</b><h3>Abra a campanha</h3><p>Clique na campanha. Leia as <strong>orientações</strong> no topo: dia, rede, ordem dos slides e o link do story.</p></div>
         <div class="passo"><b>3</b><h3>Baixe as peças</h3><p><strong>Baixar pacote (.zip)</strong> traz todas as imagens e legendas. Os vídeos (.mp4) baixam um a um, no botão de cada vídeo.</p></div>
         <div class="passo"><b>4</b><h3>Copie a legenda</h3><p>Cada rede tem a sua legenda pronta. Clique em <strong>Copiar</strong> e cole na postagem, sem cortar o aviso legal quando houver.</p></div>
@@ -253,6 +272,7 @@
     };
     const ORDEM = Object.keys(FRENTES);
 
+    let agenda = null;
     let campanhas = [], kits = [], filtroFrente = 'todas', termo = '';
 
     function el(tag, attrs = {}, ...filhos) {
@@ -296,44 +316,76 @@
     /* ---------- agenda ---------- */
     function inicioSemana(d) { const x = new Date(d); x.setDate(x.getDate() - ((x.getDay() + 6) % 7)); return x; }
 
-    function linhaAgenda(c) {
-      const d = dataLocal(c.data);
-      const capa = capaUrl(c);
-      return el('button', { class: 'linha', type: 'button', style: `--cor: ${frenteDe(c).cor}`, onclick: () => abrir(c.pasta) },
-        el('span', { class: 'dia' }, el('b', { text: String(d.getDate()) }), el('small', { text: `${semanaDias[d.getDay()]} · ${meses[d.getMonth()]}` })),
-        capa ? el('img', { class: 'mini', src: capa, alt: '', loading: 'lazy' }) : el('span'),
-        el('span', { class: 'txt' }, tagFrente(c), el('strong', { text: c.titulo }), el('span', { class: 'serie', text: c.serie })),
-        el('span', { class: 'abrir', text: 'Abrir →' }));
+    const nomeDia = d => `${semanaDias[d.getDay()]}, ${d.getDate()} ${meses[d.getMonth()]}`;
+    const isoDe = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+
+    function botaoPost(p) {
+      const c = campanhas.find(x => x.pasta === p.pasta);
+      const capa = p.arquivo ? '' : (c ? capaUrl(c) : '');
+      return el('button', { class: 'post', type: 'button', onclick: () => abrir(p.pasta), title: p.titulo },
+        capa ? el('img', { src: capa, alt: '', loading: 'lazy' }) : el('span', { class: 'ico', text: p.arquivo ? '▶' : '▦' }),
+        el('span', {}, el('strong', { text: p.titulo }), el('small', { text: `${p.peca} · ${(FRENTES[p.frente] || {}).nome || ''}` })));
     }
 
     function renderAgenda() {
       const box = document.getElementById('agenda');
       box.innerHTML = '';
-      const lista = campanhas.filter(casa).slice().sort((a, b) => a.data.localeCompare(b.data));
-      const futuras = lista.filter(c => dataLocal(c.data) >= hoje);
-      const passadas = lista.filter(c => dataLocal(c.data) < hoje).reverse();
-      const semAtual = inicioSemana(hoje).getTime();
+      if (!agenda) { box.append(el('p', { class: 'vazio', text: 'A agenda ainda não foi montada.' })); return; }
+      const contas = agenda.contas;
+      const casaPost = p => !termo || normal(`${p.titulo} ${p.peca} ${p.pasta} ${(FRENTES[p.frente] || {}).nome || ''}`).includes(termo);
+      const posts = agenda.posts.filter(casaPost);
+      const ultimo = {};
+      agenda.posts.forEach(p => { if (!ultimo[p.conta] || p.data > ultimo[p.conta]) ultimo[p.conta] = p.data; });
+
+      // as contas, com o alerta de quando o conteúdo acaba
+      const legenda = el('div', { class: 'contas' });
+      contas.forEach(ct => {
+        const n = agenda.posts.filter(p => p.conta === ct.id).length;
+        const acaba = ultimo[ct.id] && ultimo[ct.id] < agenda.fim;
+        legenda.append(el('div', { class: 'conta', style: `--cor: ${ct.cor}` },
+          el('b', { text: ct.arroba }),
+          el('span', { text: ct.frentes.map(f => (FRENTES[f] || {}).nome).filter(Boolean).join(', ') }),
+          el('small', { class: acaba ? 'alerta' : '', text: `${n} posts · ${agenda.por_dia[ct.id]} por dia · ${acaba ? 'conteúdo só até ' + dataBR(ultimo[ct.id]) : 'coberto até ' + dataBR(agenda.fim)}` })));
+      });
+      (agenda.futuras || []).forEach(f => legenda.append(el('div', { class: 'conta futura' },
+        el('b', { text: f.nome }), el('span', { text: 'Em breve' }), el('small', { text: f.obs }))));
+      box.append(legenda);
+
       document.getElementById('intro-agenda').innerHTML =
-        `Hoje é <b>${hoje.getDate()} de ${meses[hoje.getMonth()]}</b>. ${futuras.length ? `Há <b>${futuras.length}</b> campanhas agendadas daqui para a frente` : 'Nenhuma campanha agendada daqui para a frente'}${termo ? ' para esta busca' : ''}. Clique numa linha para abrir a campanha.`;
-      const grupos = new Map();
-      futuras.forEach(c => {
-        const k = inicioSemana(dataLocal(c.data)).getTime();
-        if (!grupos.has(k)) grupos.set(k, []);
-        grupos.get(k).push(c);
-      });
-      grupos.forEach((itens, k) => {
-        const ini = new Date(k), fim = new Date(k); fim.setDate(fim.getDate() + 6);
-        const titulo = k === semAtual ? 'Esta semana' : `Semana de ${ini.getDate()} ${meses[ini.getMonth()]} a ${fim.getDate()} ${meses[fim.getMonth()]}`;
-        const sec = el('section', { class: 'semana' + (k === semAtual ? ' atual' : '') }, el('h2', { text: `${titulo} · ${itens.length}` }));
-        itens.forEach(c => sec.append(linhaAgenda(c)));
-        box.append(sec);
-      });
-      if (passadas.length) {
-        const det = el('details', { class: 'passadas' }, el('summary', { text: `Acervo: ${passadas.length} campanhas com data já passada (podem ser repostadas)` }));
-        passadas.forEach(c => det.append(linhaAgenda(c)));
-        box.append(det);
+        `Hoje é <b>${hoje.getDate()} de ${meses[hoje.getMonth()]}</b>. Cada conta posta <b>de 1 a 2 vezes por dia</b>; cada coluna é um Instagram. ` +
+        `Onde aparece <b>"falta conteúdo"</b>, a conta precisa de peças novas. Clique num post para abrir a campanha.`;
+
+      const cab = el('div', { class: 'cal-cab' }, el('span'));
+      contas.forEach(ct => cab.append(el('span', { style: `--cor: ${ct.cor}`, text: ct.arroba })));
+      box.append(cab);
+
+      const semAtual = inicioSemana(hoje).getTime();
+      const comeco = dataLocal(agenda.inicio) > hoje ? dataLocal(agenda.inicio) : hoje;
+      let semana = null, sec = null, dias = 0;
+      for (let d = new Date(comeco); d <= dataLocal(agenda.fim); d.setDate(d.getDate() + 1)) {
+        const iso = isoDe(d);
+        const doDia = posts.filter(p => p.data === iso);
+        if (termo && !doDia.length) continue;
+        const k = inicioSemana(d).getTime();
+        if (k !== semana) {
+          semana = k;
+          const ini = new Date(k), f = new Date(k); f.setDate(f.getDate() + 6);
+          sec = el('section', { class: 'semana' + (k === semAtual ? ' atual' : '') },
+            el('h2', { text: k === semAtual ? 'Esta semana' : `Semana de ${ini.getDate()} ${meses[ini.getMonth()]} a ${f.getDate()} ${meses[f.getMonth()]}` }));
+          box.append(sec);
+        }
+        const linha = el('div', { class: 'dia-linha' + (iso === isoDe(hoje) ? ' hoje' : '') }, el('div', { class: 'dia', text: nomeDia(d) }));
+        contas.forEach(ct => {
+          const ps = doDia.filter(p => p.conta === ct.id);
+          const cel = el('div', { class: 'celula', style: `--cor: ${ct.cor}` }, el('span', { class: 'rot-conta', text: ct.arroba }));
+          if (ps.length) ps.forEach(p => cel.append(botaoPost(p)));
+          else cel.append(el('span', { class: termo ? 'sem' : 'falta', text: termo ? '—' : 'Falta conteúdo' }));
+          linha.append(cel);
+        });
+        sec.append(linha);
+        dias++;
       }
-      if (!lista.length) box.append(el('p', { class: 'vazio', text: 'Nada encontrado.' }));
+      if (!dias) box.append(el('p', { class: 'vazio', text: 'Nada encontrado.' }));
     }
 
     /* ---------- por frente ---------- */
@@ -441,16 +493,22 @@
       mostrarDetalhe(pasta);
     }
 
+    function quando(c) {
+      const ps = agenda ? agenda.posts.filter(p => p.pasta === c.pasta) : [];
+      if (!ps.length) return `Sem data na agenda · ${c.serie}`;
+      const conta = agenda.contas.find(x => x.id === ps[0].conta);
+      return (conta ? conta.arroba + ' · ' : '') + ps.map(p => `${p.peca} em ${dataBR(p.data)}`).join(' · ');
+    }
+
     function mostrarDetalhe(pasta) {
       const c = campanhas.find(x => x.pasta === pasta);
       const dlg = document.getElementById('detalhe');
       if (!c) return;
       dlg.innerHTML = '';
       const meta = frenteDe(c);
-      const futuro = dataLocal(c.data) >= hoje;
       dlg.append(el('div', { class: 'det-cab' },
         el('div', {}, tagFrente(c), el('h2', { id: 'det-titulo', text: c.titulo }),
-          el('p', { class: 'quando', text: `${futuro ? 'Postar em' : 'Data sugerida (já passou):'} ${dataBR(c.data)} · ${c.serie}` })),
+          el('p', { class: 'quando', text: quando(c) })),
         el('button', { class: 'fechar', type: 'button', 'aria-label': 'Fechar', text: '×', onclick: fechar })));
       const corpo = el('div', { class: 'det-corpo' }, el('p', { class: 'desc', text: c.descricao }),
         el('div', { class: 'det-acoes' },
@@ -525,8 +583,10 @@
     Promise.all([
       fetch(base + 'conteudos.json', { cache: 'no-store' }).then(r => r.json()),
       fetch(baseKits + 'kits.json', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
-    ]).then(([lista, ks]) => {
+      fetch(base + 'agenda.json', { cache: 'no-store' }).then(r => r.json()).catch(() => null),
+    ]).then(([lista, ks, ag]) => {
       campanhas = lista;
+      agenda = ag;
       kits = ks;
       rota();
     }).catch(() => {

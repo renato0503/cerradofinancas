@@ -19,7 +19,9 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 | 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
-| 28/10 | (esta rodada) | Crédito produto a produto (11 campanhas, terças e sextas de 03/11 a 08/12, + 4 educativas "Antes de assinar, entenda" em janeiro) e Consultorias (7 pranchas na identidade nova "Planta", quartas de 04/11 a 16/12); plano de saúde e fiança no `/credito` |
+| 28/10 | (esta rodada) | Agenda refeita por conta de Instagram: @cerradofinancas (Tech, Contabilidade, Crédito, Consultorias, Institucional), @cerra.ai e @cerraclass, de 1 a 2 posts por dia em cada uma (`tools/agendar.py`); a aba Agenda virou calendário com uma coluna por conta e aviso de "falta conteúdo". Consultoria acadêmica listada como frente futura |
+| 28/10 | ee4e213 | Central de Marketing reorganizada e mídia kits |
+| 28/10 | 7c39780 | Crédito produto a produto (11 campanhas, terças e sextas de 03/11 a 08/12, + 4 educativas "Antes de assinar, entenda" em janeiro) e Consultorias (7 pranchas na identidade nova "Planta", quartas de 04/11 a 16/12); plano de saúde e fiança no `/credito` |
 | 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |

@@ -52,6 +52,9 @@ HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identid
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
 - [ ] Ajustar o catálogo da CerraClass para 10 alunos por turma (ver acima).
 - [ ] Ouvir as trilhas novas dos vídeos HyperFrames (sintetizadas por `marketing/filmes/ferramentas/trilha.mjs`; volume já medido, escuta pendente).
+- [ ] **Falta conteúdo para manter 1 post por dia:** o @cerra.ai só tem posts até 31/10 (1 carrossel e 2 Reels) e
+      o @cerraclass, até 25/11. O @cerradofinancas está coberto até 30/12 com 1 por dia. Ver a aba Agenda da Central.
+- [ ] Consultoria acadêmica: definir a conta (Instagram próprio ou @cerradofinancas) e criar a identidade e o conteúdo.
 - [ ] Crédito: decidir a cidade do atendimento presencial (a LS fica em Campo Grande-MS; o `/credito` diz Cuiabá),
       se o consignado do INSS continua no site (o portfólio da LS lista o INSS só no empréstimo pessoal) e se as peças
       usam o WhatsApp da LS. As peças hoje não citam cidade e usam o WhatsApp da Cerrado.

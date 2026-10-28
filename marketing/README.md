@@ -46,10 +46,14 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    `cd filmes && node ferramentas/animar-carrossel.mjs ../posts/AAAA-MM-tema/carrossel.html --render`
    grava `entregas/AAAA-MM-tema/carrossel-animado.mp4` (mesma arte, slides deslizando, com trilha).
    Comerciais HyperFrames (`filmes/`) só quando pedidos, como vídeo extra.
-5. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
+5. Agende: `python tools/agendar.py` (início padrão: amanhã). Ele distribui as postagens pelas três contas
+   (@cerradofinancas, @cerra.ai e @cerraclass), de 1 a 2 por dia em cada conta (`POR_DIA`). Grava a data e a
+   conta no `info.json` de cada campanha e escreve `entregas/agenda.json`. Rode depois de qualquer gerador de série,
+   porque eles regravam as datas antigas.
+6. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
    A frente e a série saem do nome da pasta (`REGRAS` em `publicar.py`). Um prefixo novo precisa entrar lá, senão
    a campanha cai em "Institucional · Avulsa".
-6. Mudou uma identidade (cor, fonte, logo)? Atualize `KITS_DADOS` em `tools/gerar_kits.py` e rode o gerador.
+7. Mudou uma identidade (cor, fonte, logo)? Atualize `KITS_DADOS` em `tools/gerar_kits.py` e rode o gerador.
 
 ## Vídeos e folinha animada (`videos/`, Remotion)
 
