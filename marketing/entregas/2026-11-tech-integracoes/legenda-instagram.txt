@@ -1,0 +1,21 @@
+Seus sistemas não conversam entre si? 🔌
+
+Integrações (APIs · Webhooks), na prática: conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.
+
+Sinais de que você precisa:
+• O mesmo pedido digitado duas vezes: no marketplace e no sistema de gestão
+• Pagamento que não baixa sozinho: conciliação manual com banco e meios de pagamento
+• Dados desencontrados: cada sistema com uma versão diferente
+
+O que entregamos:
+✅ Integração com SAP®, TOTVS e ERPs
+✅ Mercado Pago, bancos e meios de pagamento
+✅ iFood, WhatsApp e marketplaces
+✅ Sincronização bidirecional em tempo real
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quais sistemas você quer ligar? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/portfolio
+
+#Integracao #API #ERP #Marketplace #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

@@ -28,10 +28,15 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
 1. Crie as peças em `posts/AAAA-MM-tema/`. Cada HTML declara
    `<meta name="entrega" content="AAAA-MM-tema">` e `<meta name="formato" content="1080x1350">`,
    e cada slide é um elemento `class="slide"`. Abra no navegador para revisar (os slides aparecem empilhados).
-2. Exporte: `python tools/exportar.py posts/AAAA-MM-tema/carrossel.html posts/AAAA-MM-tema/story.html`
+2. Verifique e exporte: `python tools/verificar.py ...` (acusa estouro de rodapé, de área segura e sobreposição de
+   ícone/logo sobre texto) e `python tools/exportar.py posts/AAAA-MM-tema/carrossel.html posts/AAAA-MM-tema/story.html`
 3. Em `entregas/AAAA-MM-tema/`, crie o `info.json` (`titulo`, `data`, `descricao`, `orientacoes`)
    e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt` etc. Vídeos e GIFs finais também vão aqui.
-4. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
+4. **Carrossel animado (padrão de vídeo desde 28/10):**
+   `cd filmes && node ferramentas/animar-carrossel.mjs ../posts/AAAA-MM-tema/carrossel.html --render`
+   grava `entregas/AAAA-MM-tema/carrossel-animado.mp4` (mesma arte, slides deslizando, com trilha).
+   Comerciais HyperFrames (`filmes/`) só quando pedidos, como vídeo extra.
+5. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
 
 ## Vídeos e folinha animada (`videos/`, Remotion)
 

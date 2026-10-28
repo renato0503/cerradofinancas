@@ -1,0 +1,22 @@
+Seus dados, organizados na sua conta, para a sua equipe usar sozinha. 🗂️
+
+Organização de Dados (Data Organization · Self-service BI), na prática: estruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.
+
+Sinais de que você precisa:
+• Dados espalhados: em planilhas, sistemas e e-mails, sem versão certa
+• Todo relatório vira um pedido: A equipe depende de quem montou a base
+• Números que não fecham: respostas diferentes para a mesma pergunta
+
+O que entregamos:
+✅ Modelagem e limpeza dos dados espalhados
+✅ Base montada na conta do cliente
+✅ Camada pronta para Power BI, Looker Studio e Excel
+✅ Dicionário de dados, atualização automática e governança
+✅ Treinamento da equipe para manter a base sozinha
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quer dados seus, organizados e confiáveis? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/portfolio
+
+#Dados #BI #DataDriven #PowerBI #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

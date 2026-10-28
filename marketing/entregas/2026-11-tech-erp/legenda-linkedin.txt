@@ -1,0 +1,18 @@
+ERP Customizado | Enterprise Resource Planning
+
+Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.
+
+Sinais de que a sua operação precisa disso:
+• O mesmo dado digitado duas vezes: venda num sistema, estoque em outro, e ninguém confia no número
+• Fechar o mês é um mutirão: contas a pagar, a receber e DRE montados à mão
+• O sistema de prateleira não serve: sua equipe se adapta ao software, e não o contrário
+
+O que a Cerrado Tech entrega:
+✅ Contas a pagar/receber, fluxo de caixa e DRE
+✅ Controle de estoque e produção (PCP)
+✅ Emissão de notas fiscais (NF-e/NFC-e)
+✅ Multi-filial e centros de custo
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer um ERP do jeito da sua operação? Conte o seu processo: cerradofinancas.com.br/erp-customizado

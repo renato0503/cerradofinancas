@@ -1,0 +1,18 @@
+IA Offline & RAG | Retrieval-Augmented Generation
+
+Assistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.
+
+Sinais de que a sua operação precisa disso:
+• Documento sensível não pode ir para a nuvem: contratos, laudos e dados de clientes
+• Resposta sem fonte não serve: você precisa saber de onde a resposta veio
+• Manuais que ninguém acha: A informação existe, mas está enterrada
+
+O que a Cerrado Tech entrega:
+✅ Base de conhecimento da empresa (manuais, normas, contratos)
+✅ Respostas com citação da fonte
+✅ Dados nunca saem da sua infraestrutura
+✅ Mascaramento automático de dados sensíveis
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer uma IA que não deixa os dados saírem? Conte o seu processo: cerradofinancas.com.br/ia-offline

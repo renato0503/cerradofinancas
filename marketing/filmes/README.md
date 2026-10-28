@@ -11,6 +11,14 @@ Os Reels antigos do Remotion (`../videos/`) continuam valendo para Cerrado Tech 
 | `cerraclass-curso` | 15s | comercial de produto (o ingresso do curso em 3D), um render por curso via variáveis |
 | `cerraclass-lancamento` | 30s | lançamento estilo App Store: iPhone 3D, brilho colorido, cards saltando |
 
+## Carrossel animado (o padrão de toda campanha nova)
+
+`node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html [--render] [--clima cobre|pb|sala]`
+lê o carrossel do estúdio (qualquer identidade), embute o CSS, as fontes, as imagens e os ícones Phosphor locais,
+monta `carrosseis/<entrega>/` (fora do git) e, com `--render`, grava `entregas/<entrega>/carrossel-animado.mp4`
+(1080×1350). Cada slide fica de 3 a 5 s conforme o texto; os slides deslizam colados, como num carrossel, e os
+elementos entram em sequência. A trilha tem whoosh em cada troca.
+
 ## Estrutura de um filme
 
 ```

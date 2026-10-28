@@ -1,0 +1,21 @@
+Uma IA que responde com os seus documentos, sem internet. 🧠
+
+IA Offline & RAG (Retrieval-Augmented Generation), na prática: assistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.
+
+Sinais de que você precisa:
+• Documento sensível não pode ir para a nuvem: contratos, laudos e dados de clientes
+• Resposta sem fonte não serve: você precisa saber de onde a resposta veio
+• Manuais que ninguém acha: A informação existe, mas está enterrada
+
+O que entregamos:
+✅ Base de conhecimento da empresa (manuais, normas, contratos)
+✅ Respostas com citação da fonte
+✅ Dados nunca saem da sua infraestrutura
+✅ Mascaramento automático de dados sensíveis
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quer uma IA que não deixa os dados saírem? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/ia-offline
+
+#InteligenciaArtificial #IAOffline #RAG #LGPD #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

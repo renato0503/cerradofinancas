@@ -1,0 +1,20 @@
+Quando o registro não pode ser alterado. ⛓️
+
+Web3 & Blockchain (Smart Contracts · Tokens), na prática: contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.
+
+Sinais de que você precisa:
+• Várias partes no mesmo processo: E ninguém quer ser o dono do registro
+• Rastreabilidade exigida: saber por onde passou e quem mexeu
+• Regras que devem rodar sozinhas: liberar quando a condição for cumprida
+
+O que entregamos:
+✅ Contratos inteligentes (Solidity)
+✅ Tokens e NFTs utilitários
+✅ Rastreabilidade de processos
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Tem um caso que exige imutabilidade? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/blockchain
+
+#Blockchain #Web3 #SmartContracts #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

@@ -1,0 +1,18 @@
+Machine Learning & Previsão | Data Science
+
+Modelos que aprendem com o histórico e preveem o que vai acontecer.
+
+Sinais de que a sua operação precisa disso:
+• Compra de estoque no feeling: sobra de um lado, falta do outro
+• Cliente que some sem aviso: O churn aparece tarde demais
+• Inadimplência que surpreende: O risco poderia ser antecipado
+
+O que a Cerrado Tech entrega:
+✅ Previsão de vendas e demanda
+✅ Predição de churn e inadimplência
+✅ Análise de risco e performance (KPIs)
+✅ Modelos explicáveis para auditoria
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer prever em vez de reagir? Conte o seu processo: cerradofinancas.com.br/portfolio

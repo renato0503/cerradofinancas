@@ -1,0 +1,18 @@
+Integrações | APIs · Webhooks
+
+Conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.
+
+Sinais de que a sua operação precisa disso:
+• O mesmo pedido digitado duas vezes: no marketplace e no sistema de gestão
+• Pagamento que não baixa sozinho: conciliação manual com banco e meios de pagamento
+• Dados desencontrados: cada sistema com uma versão diferente
+
+O que a Cerrado Tech entrega:
+✅ Integração com SAP®, TOTVS e ERPs
+✅ Mercado Pago, bancos e meios de pagamento
+✅ iFood, WhatsApp e marketplaces
+✅ Sincronização bidirecional em tempo real
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quais sistemas você quer ligar? Conte o seu processo: cerradofinancas.com.br/portfolio

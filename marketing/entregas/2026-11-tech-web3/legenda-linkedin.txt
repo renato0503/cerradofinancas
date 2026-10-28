@@ -1,0 +1,17 @@
+Web3 & Blockchain | Smart Contracts · Tokens
+
+Contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.
+
+Sinais de que a sua operação precisa disso:
+• Várias partes no mesmo processo: E ninguém quer ser o dono do registro
+• Rastreabilidade exigida: saber por onde passou e quem mexeu
+• Regras que devem rodar sozinhas: liberar quando a condição for cumprida
+
+O que a Cerrado Tech entrega:
+✅ Contratos inteligentes (Solidity)
+✅ Tokens e NFTs utilitários
+✅ Rastreabilidade de processos
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Tem um caso que exige imutabilidade? Conte o seu processo: cerradofinancas.com.br/blockchain

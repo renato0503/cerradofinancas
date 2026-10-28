@@ -1,0 +1,21 @@
+Sua empresa consegue provar que cumpre a LGPD? 🛡️
+
+Compliance & LGPD (DPO as a Service), na prática: adequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.
+
+Sinais de que você precisa:
+• Dado pessoal sem controle: planilhas com CPF, e-mails e telefones circulando
+• Quem acessou o quê?: sem trilha de acessos e alterações
+• Auditoria vira correria: evidências espalhadas na hora de mostrar
+
+O que entregamos:
+✅ Políticas e fluxos de conformidade
+✅ Mascaramento e proteção de dados
+✅ Trilha de auditoria de acessos e alterações
+✅ Painel de riscos e evidências
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quer conformidade com evidência? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/compliance
+
+#LGPD #Compliance #ProtecaoDeDados #DPO #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

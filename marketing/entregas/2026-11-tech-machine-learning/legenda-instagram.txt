@@ -1,0 +1,21 @@
+E se o seu histórico mostrasse o que vem? 📈
+
+Machine Learning & Previsão (Data Science), na prática: modelos que aprendem com o histórico e preveem o que vai acontecer.
+
+Sinais de que você precisa:
+• Compra de estoque no feeling: sobra de um lado, falta do outro
+• Cliente que some sem aviso: O churn aparece tarde demais
+• Inadimplência que surpreende: O risco poderia ser antecipado
+
+O que entregamos:
+✅ Previsão de vendas e demanda
+✅ Predição de churn e inadimplência
+✅ Análise de risco e performance (KPIs)
+✅ Modelos explicáveis para auditoria
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quer prever em vez de reagir? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/portfolio
+
+#MachineLearning #CienciaDeDados #Previsao #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

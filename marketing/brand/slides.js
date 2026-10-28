@@ -36,7 +36,36 @@
         if (el.scrollWidth > el.clientWidth + 2 && el.clientWidth) excesso = Math.max(excesso, el.scrollWidth - el.clientWidth);
         if (excesso > pior) { pior = excesso; culpado = (el.textContent || el.className || el.tagName).trim().slice(0, 40); }
       });
-      document.title = pior > 0 ? 'ESTOURO ' + Math.round(pior) + 'px: ' + culpado : 'OK';
+      if (pior > 0) { document.title = 'ESTOURO ' + Math.round(pior) + 'px: ' + culpado; return; }
+
+      // Sobreposição: um elemento posicionado por cima do fluxo (ícone da capa, emblema, logo) não pode
+      // encostar em texto. Vale também para data-sangra, que só é dispensado do limite das bordas.
+      var soltos = Array.prototype.filter.call(slide.querySelectorAll('*'), function (el) {
+        var pos = getComputedStyle(el).position;
+        return (pos === 'absolute' || pos === 'fixed') && !el.classList.contains('rodape') && !el.closest('.rodape');
+      });
+      var textos = Array.prototype.filter.call(slide.querySelectorAll('*'), function (el) {
+        // elemento com texto próprio (o rótulo com ícone dentro também conta)
+        var temTexto = Array.prototype.some.call(el.childNodes, function (n) { return n.nodeType === 3 && n.textContent.trim(); });
+        if (el.closest('.rodape') || !temTexto) return false;
+        return getComputedStyle(el).position === 'static' || getComputedStyle(el).position === 'relative';
+      });
+      var colisao = '';
+      soltos.some(function (s) {
+        var a = s.getBoundingClientRect();
+        return textos.some(function (t) {
+          if (s.contains(t)) return false;
+          // a extensão do texto em si, não a caixa do bloco (um bloco pode ocupar a largura toda)
+          var faixa = document.createRange();
+          faixa.selectNodeContents(t);
+          var b = faixa.getBoundingClientRect();
+          var dx = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+          var dy = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+          if (dx > 4 && dy > 4) { colisao = (s.className || s.tagName) + ' sobre "' + t.textContent.trim().slice(0, 30) + '"'; return true; }
+          return false;
+        });
+      });
+      document.title = colisao ? 'SOBREPOSIÇÃO: ' + colisao : 'OK';
     }, 1500);
   });
 })();

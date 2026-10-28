@@ -1,0 +1,18 @@
+Chatbots & Assistentes | Large Language Models
+
+Atendimento automático com IA, 24h, treinado no conteúdo da empresa.
+
+Sinais de que a sua operação precisa disso:
+• Mensagem sem resposta fora do horário: O cliente esfria até o dia seguinte
+• As mesmas perguntas o dia todo: preço, horário, prazo, endereço
+• Lead que ninguém qualifica: O time gasta tempo com quem não vai comprar
+
+O que a Cerrado Tech entrega:
+✅ Atendimento no site e WhatsApp
+✅ Respostas treinadas no conteúdo do negócio
+✅ Encaminhamento para humano quando necessário
+✅ Qualificação de leads automaticamente
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer um assistente que conhece o seu negócio? Conte o seu processo: cerradofinancas.com.br/portfolio

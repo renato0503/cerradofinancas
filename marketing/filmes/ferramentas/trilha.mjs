@@ -95,7 +95,7 @@ const CLIMAS = {
   },
 };
 
-function renderizar(cfg) {
+export function renderizar(cfg) {
   const n = Math.round(cfg.duracao * SR);
   const musica = new Float32Array(n);
   const fx = new Float32Array(n);
@@ -156,7 +156,9 @@ function renderizar(cfg) {
 }
 
 const raiz = new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
-for (const filme of process.argv.slice(2)) {
+// Só roda como linha de comando; importado (ex.: animar-carrossel.mjs), expõe renderizar()
+const comoCli = process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll("\\", "/").split("/").pop());
+for (const filme of comoCli ? process.argv.slice(2) : []) {
   const cfg = JSON.parse(readFileSync(join(raiz, filme, "fonte", "trilha.json"), "utf8"));
   mkdirSync(join(raiz, filme, "fonte", "assets"), { recursive: true });
   writeFileSync(join(raiz, filme, "fonte", "assets", "trilha.wav"), renderizar(cfg));

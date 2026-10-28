@@ -1,0 +1,18 @@
+E-commerce & PWA | Progressive Web Apps
+
+Loja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.
+
+Sinais de que a sua operação precisa disso:
+• Venda só pela conversa: pedido anotado à mão e estoque no chute
+• App em loja de aplicativos: aprovação, publicação e atualização para cada mudança
+• Pagamento conferido à mão: comprovante por comprovante
+
+O que a Cerrado Tech entrega:
+✅ Catálogo, carrinho e checkout
+✅ Pagamento PIX, cartão e boleto
+✅ Controle de estoque e pedidos
+✅ Painel administrativo completo
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer a sua loja no celular do cliente? Conte o seu processo: cerradofinancas.com.br/ecommerce

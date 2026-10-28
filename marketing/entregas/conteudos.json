@@ -1,5 +1,1141 @@
 [
   {
+    "pasta": "2026-11-tech-web3",
+    "titulo": "Cerrado Tech · Web3 & Blockchain",
+    "data": "2026-12-07",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (16 de 16): Web3 & Blockchain (Smart Contracts · Tokens). Contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.",
+    "orientacoes": [
+      "Postar em 07/12 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/blockchain",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 574
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 537
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 540
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 599
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 565
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4915
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 732
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quando o registro não pode ser alterado. ⛓️\n\nWeb3 & Blockchain (Smart Contracts · Tokens), na prática: contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.\n\nSinais de que você precisa:\n• Várias partes no mesmo processo: E ninguém quer ser o dono do registro\n• Rastreabilidade exigida: saber por onde passou e quem mexeu\n• Regras que devem rodar sozinhas: liberar quando a condição for cumprida\n\nO que entregamos:\n✅ Contratos inteligentes (Solidity)\n✅ Tokens e NFTs utilitários\n✅ Rastreabilidade de processos\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nTem um caso que exige imutabilidade? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/blockchain\n\n#Blockchain #Web3 #SmartContracts #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Web3 & Blockchain | Smart Contracts · Tokens\n\nContratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.\n\nSinais de que a sua operação precisa disso:\n• Várias partes no mesmo processo: E ninguém quer ser o dono do registro\n• Rastreabilidade exigida: saber por onde passou e quem mexeu\n• Regras que devem rodar sozinhas: liberar quando a condição for cumprida\n\nO que a Cerrado Tech entrega:\n✅ Contratos inteligentes (Solidity)\n✅ Tokens e NFTs utilitários\n✅ Rastreabilidade de processos\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nTem um caso que exige imutabilidade? Conte o seu processo: cerradofinancas.com.br/blockchain\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-web3.zip",
+      "kb": 4095
+    }
+  },
+  {
+    "pasta": "2026-11-tech-white-label",
+    "titulo": "Cerrado Tech · Produto White-Label",
+    "data": "2026-12-04",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (15 de 16): Produto White-Label (Branding próprio). Sistemas prontos que você revende com a própria marca: contabilidade, consultoria, educação e outros.",
+    "orientacoes": [
+      "Postar em 04/12 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 554
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 533
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 543
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 598
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 559
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5095
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 735
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Venda um sistema com a sua marca. 🏷️\n\nProduto White-Label (Branding próprio), na prática: sistemas prontos que você revende com a própria marca: contabilidade, consultoria, educação e outros.\n\nSinais de que você precisa:\n• Seu cliente pede tecnologia: E você não tem uma fábrica de software\n• Construir do zero não compensa: para oferecer o que já existe pronto\n• Quem dá o suporte?: quando o cliente liga, alguém precisa resolver\n\nO que entregamos:\n✅ Identidade visual do cliente no produto\n✅ Plano de revenda e margens\n✅ Suporte técnico da Cerrado por trás\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer ter o seu próprio produto? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#WhiteLabel #Revenda #SaaS #Parceria #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Produto White-Label | Branding próprio\n\nSistemas prontos que você revende com a própria marca: contabilidade, consultoria, educação e outros.\n\nSinais de que a sua operação precisa disso:\n• Seu cliente pede tecnologia: E você não tem uma fábrica de software\n• Construir do zero não compensa: para oferecer o que já existe pronto\n• Quem dá o suporte?: quando o cliente liga, alguém precisa resolver\n\nO que a Cerrado Tech entrega:\n✅ Identidade visual do cliente no produto\n✅ Plano de revenda e margens\n✅ Suporte técnico da Cerrado por trás\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer ter o seu próprio produto? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-white-label.zip",
+      "kb": 4069
+    }
+  },
+  {
+    "pasta": "2026-11-tech-govtech",
+    "titulo": "Cerrado Tech · GovTech & Legal-Tech",
+    "data": "2026-12-02",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (14 de 16): GovTech & Legal-Tech (Lei 14.133 · eSocial · RPPS). Sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.",
+    "orientacoes": [
+      "Postar em 02/12 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 543
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 534
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 579
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 568
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 589
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5352
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 735
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Tecnologia para quem presta contas. 🏛️\n\nGovTech & Legal-Tech (Lei 14.133 · eSocial · RPPS), na prática: sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.\n\nSinais de que você precisa:\n• Pesquisa de preços feita à mão: cotações coletadas uma a uma para a Lei 14.133\n• Folha pública e previdência: eSocial e RPPS com regras próprias\n• Cartório e escritório no papel: gestão documental que depende de pastas\n\nO que entregamos:\n✅ Compras públicas e pesquisa de preços (PNCP)\n✅ Folha de pagamento pública e previdência\n✅ Gestão documental de cartórios e escritórios\n✅ Conformidade com normas regulatórias\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer modernizar a gestão pública ou o cartório? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#GovTech #LegalTech #Lei14133 #GestaoPublica #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "GovTech & Legal-Tech | Lei 14.133 · eSocial · RPPS\n\nSistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.\n\nSinais de que a sua operação precisa disso:\n• Pesquisa de preços feita à mão: cotações coletadas uma a uma para a Lei 14.133\n• Folha pública e previdência: eSocial e RPPS com regras próprias\n• Cartório e escritório no papel: gestão documental que depende de pastas\n\nO que a Cerrado Tech entrega:\n✅ Compras públicas e pesquisa de preços (PNCP)\n✅ Folha de pagamento pública e previdência\n✅ Gestão documental de cartórios e escritórios\n✅ Conformidade com normas regulatórias\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer modernizar a gestão pública ou o cartório? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-govtech.zip",
+      "kb": 4072
+    }
+  },
+  {
+    "pasta": "2026-11-tech-machine-learning",
+    "titulo": "Cerrado Tech · Machine Learning & Previsão",
+    "data": "2026-11-30",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (13 de 16): Machine Learning & Previsão (Data Science). Modelos que aprendem com o histórico e preveem o que vai acontecer.",
+    "orientacoes": [
+      "Postar em 30/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 568
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 531
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 578
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 603
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 565
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4991
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 747
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "E se o seu histórico mostrasse o que vem? 📈\n\nMachine Learning & Previsão (Data Science), na prática: modelos que aprendem com o histórico e preveem o que vai acontecer.\n\nSinais de que você precisa:\n• Compra de estoque no feeling: sobra de um lado, falta do outro\n• Cliente que some sem aviso: O churn aparece tarde demais\n• Inadimplência que surpreende: O risco poderia ser antecipado\n\nO que entregamos:\n✅ Previsão de vendas e demanda\n✅ Predição de churn e inadimplência\n✅ Análise de risco e performance (KPIs)\n✅ Modelos explicáveis para auditoria\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer prever em vez de reagir? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#MachineLearning #CienciaDeDados #Previsao #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Machine Learning & Previsão | Data Science\n\nModelos que aprendem com o histórico e preveem o que vai acontecer.\n\nSinais de que a sua operação precisa disso:\n• Compra de estoque no feeling: sobra de um lado, falta do outro\n• Cliente que some sem aviso: O churn aparece tarde demais\n• Inadimplência que surpreende: O risco poderia ser antecipado\n\nO que a Cerrado Tech entrega:\n✅ Previsão de vendas e demanda\n✅ Predição de churn e inadimplência\n✅ Análise de risco e performance (KPIs)\n✅ Modelos explicáveis para auditoria\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer prever em vez de reagir? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-machine-learning.zip",
+      "kb": 4142
+    }
+  },
+  {
+    "pasta": "2026-11-tech-compliance",
+    "titulo": "Cerrado Tech · Compliance & LGPD",
+    "data": "2026-11-27",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (12 de 16): Compliance & LGPD (DPO as a Service). Adequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.",
+    "orientacoes": [
+      "Postar em 27/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/compliance",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 571
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 524
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 582
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 599
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 561
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5148
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 747
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Sua empresa consegue provar que cumpre a LGPD? 🛡️\n\nCompliance & LGPD (DPO as a Service), na prática: adequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.\n\nSinais de que você precisa:\n• Dado pessoal sem controle: planilhas com CPF, e-mails e telefones circulando\n• Quem acessou o quê?: sem trilha de acessos e alterações\n• Auditoria vira correria: evidências espalhadas na hora de mostrar\n\nO que entregamos:\n✅ Políticas e fluxos de conformidade\n✅ Mascaramento e proteção de dados\n✅ Trilha de auditoria de acessos e alterações\n✅ Painel de riscos e evidências\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer conformidade com evidência? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/compliance\n\n#LGPD #Compliance #ProtecaoDeDados #DPO #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Compliance & LGPD | DPO as a Service\n\nAdequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.\n\nSinais de que a sua operação precisa disso:\n• Dado pessoal sem controle: planilhas com CPF, e-mails e telefones circulando\n• Quem acessou o quê?: sem trilha de acessos e alterações\n• Auditoria vira correria: evidências espalhadas na hora de mostrar\n\nO que a Cerrado Tech entrega:\n✅ Políticas e fluxos de conformidade\n✅ Mascaramento e proteção de dados\n✅ Trilha de auditoria de acessos e alterações\n✅ Painel de riscos e evidências\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer conformidade com evidência? Conte o seu processo: cerradofinancas.com.br/compliance\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-compliance.zip",
+      "kb": 4109
+    }
+  },
+  {
+    "pasta": "2026-11-tech-ecommerce",
+    "titulo": "Cerrado Tech · E-commerce & PWA",
+    "data": "2026-11-25",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (11 de 16): E-commerce & PWA (Progressive Web Apps). Loja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.",
+    "orientacoes": [
+      "Postar em 25/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/ecommerce",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 552
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 540
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 550
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 595
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 560
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5320
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 726
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Uma loja que funciona como app, sem loja de aplicativos. 🛍️\n\nE-commerce & PWA (Progressive Web Apps), na prática: loja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.\n\nSinais de que você precisa:\n• Venda só pela conversa: pedido anotado à mão e estoque no chute\n• App em loja de aplicativos: aprovação, publicação e atualização para cada mudança\n• Pagamento conferido à mão: comprovante por comprovante\n\nO que entregamos:\n✅ Catálogo, carrinho e checkout\n✅ Pagamento PIX, cartão e boleto\n✅ Controle de estoque e pedidos\n✅ Painel administrativo completo\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer a sua loja no celular do cliente? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/ecommerce\n\n#Ecommerce #PWA #LojaVirtual #VendasOnline #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "E-commerce & PWA | Progressive Web Apps\n\nLoja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.\n\nSinais de que a sua operação precisa disso:\n• Venda só pela conversa: pedido anotado à mão e estoque no chute\n• App em loja de aplicativos: aprovação, publicação e atualização para cada mudança\n• Pagamento conferido à mão: comprovante por comprovante\n\nO que a Cerrado Tech entrega:\n✅ Catálogo, carrinho e checkout\n✅ Pagamento PIX, cartão e boleto\n✅ Controle de estoque e pedidos\n✅ Painel administrativo completo\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer a sua loja no celular do cliente? Conte o seu processo: cerradofinancas.com.br/ecommerce\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-ecommerce.zip",
+      "kb": 4073
+    }
+  },
+  {
+    "pasta": "2026-11-tech-assinatura",
+    "titulo": "Cerrado Tech · Assinatura Digital",
+    "data": "2026-11-23",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (10 de 16): Assinatura Digital (ICP-Brasil · GOV.br). Documentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.",
+    "orientacoes": [
+      "Postar em 23/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 574
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 532
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 575
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 601
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5242
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 758
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Ainda imprime, assina, escaneia e manda? ✍️\n\nAssinatura Digital (ICP-Brasil · GOV.br), na prática: documentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.\n\nSinais de que você precisa:\n• Contrato parado esperando assinatura: alguém precisa ir até o escritório\n• Quem assinou e quando?: sem trilha, fica difícil comprovar\n• Aprovação entre várias pessoas: cada uma num canal diferente\n\nO que entregamos:\n✅ Assinatura com certificado ICP-Brasil A1 e GOV.br\n✅ Trilha de auditoria de quem assinou e quando\n✅ Fluxo de aprovações entre várias pessoas\n✅ Notificação por e-mail e WhatsApp\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer assinar pela internet, com validade jurídica? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#AssinaturaDigital #ICPBrasil #GovBr #SemPapel #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Assinatura Digital | ICP-Brasil · GOV.br\n\nDocumentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.\n\nSinais de que a sua operação precisa disso:\n• Contrato parado esperando assinatura: alguém precisa ir até o escritório\n• Quem assinou e quando?: sem trilha, fica difícil comprovar\n• Aprovação entre várias pessoas: cada uma num canal diferente\n\nO que a Cerrado Tech entrega:\n✅ Assinatura com certificado ICP-Brasil A1 e GOV.br\n✅ Trilha de auditoria de quem assinou e quando\n✅ Fluxo de aprovações entre várias pessoas\n✅ Notificação por e-mail e WhatsApp\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer assinar pela internet, com validade jurídica? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-assinatura.zip",
+      "kb": 4168
+    }
+  },
+  {
+    "pasta": "2026-11-tech-ocr",
+    "titulo": "Cerrado Tech · OCR & Documentos Inteligentes",
+    "data": "2026-11-20",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (9 de 16): OCR & Documentos Inteligentes (Optical Character Recognition). Transforma PDFs, fotos e papéis escaneados em texto pesquisável e organizado.",
+    "orientacoes": [
+      "Postar em 20/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 576
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 552
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 594
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 582
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 608
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5334
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 760
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Papel e PDF que ninguém consegue pesquisar? 📄\n\nOCR & Documentos Inteligentes (Optical Character Recognition), na prática: transforma PDFs, fotos e papéis escaneados em texto pesquisável e organizado.\n\nSinais de que você precisa:\n• Dados digitados à mão: nomes, valores e datas, um por um\n• Arquivo escaneado vira imagem: não dá para buscar uma palavra\n• Documentos sem ordem: cada tipo numa pasta, quando está\n\nO que entregamos:\n✅ Leitura automática de documentos\n✅ Extração de dados (nomes, valores, datas)\n✅ Indexação e busca por conteúdo\n✅ Classificação automática por tipo\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer pesquisar o que hoje está no papel? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#OCR #GestaoDocumental #Digitalizacao #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "OCR & Documentos Inteligentes | Optical Character Recognition\n\nTransforma PDFs, fotos e papéis escaneados em texto pesquisável e organizado.\n\nSinais de que a sua operação precisa disso:\n• Dados digitados à mão: nomes, valores e datas, um por um\n• Arquivo escaneado vira imagem: não dá para buscar uma palavra\n• Documentos sem ordem: cada tipo numa pasta, quando está\n\nO que a Cerrado Tech entrega:\n✅ Leitura automática de documentos\n✅ Extração de dados (nomes, valores, datas)\n✅ Indexação e busca por conteúdo\n✅ Classificação automática por tipo\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer pesquisar o que hoje está no papel? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-ocr.zip",
+      "kb": 4219
+    }
+  },
+  {
+    "pasta": "2026-11-tech-ia-offline",
+    "titulo": "Cerrado Tech · IA Offline & RAG",
+    "data": "2026-11-18",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (8 de 16): IA Offline & RAG (Retrieval-Augmented Generation). Assistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.",
+    "orientacoes": [
+      "Postar em 18/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/ia-offline",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 597
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 602
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5425
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 758
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Uma IA que responde com os seus documentos, sem internet. 🧠\n\nIA Offline & RAG (Retrieval-Augmented Generation), na prática: assistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.\n\nSinais de que você precisa:\n• Documento sensível não pode ir para a nuvem: contratos, laudos e dados de clientes\n• Resposta sem fonte não serve: você precisa saber de onde a resposta veio\n• Manuais que ninguém acha: A informação existe, mas está enterrada\n\nO que entregamos:\n✅ Base de conhecimento da empresa (manuais, normas, contratos)\n✅ Respostas com citação da fonte\n✅ Dados nunca saem da sua infraestrutura\n✅ Mascaramento automático de dados sensíveis\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer uma IA que não deixa os dados saírem? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/ia-offline\n\n#InteligenciaArtificial #IAOffline #RAG #LGPD #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "IA Offline & RAG | Retrieval-Augmented Generation\n\nAssistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.\n\nSinais de que a sua operação precisa disso:\n• Documento sensível não pode ir para a nuvem: contratos, laudos e dados de clientes\n• Resposta sem fonte não serve: você precisa saber de onde a resposta veio\n• Manuais que ninguém acha: A informação existe, mas está enterrada\n\nO que a Cerrado Tech entrega:\n✅ Base de conhecimento da empresa (manuais, normas, contratos)\n✅ Respostas com citação da fonte\n✅ Dados nunca saem da sua infraestrutura\n✅ Mascaramento automático de dados sensíveis\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer uma IA que não deixa os dados saírem? Conte o seu processo: cerradofinancas.com.br/ia-offline\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-ia-offline.zip",
+      "kb": 4221
+    }
+  },
+  {
+    "pasta": "2026-11-tech-dados",
+    "titulo": "Cerrado Tech · Organização de Dados",
+    "data": "2026-11-16",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (7 de 16): Organização de Dados (Data Organization · Self-service BI). Estruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.",
+    "orientacoes": [
+      "Postar em 16/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 584
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 603
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 588
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 591
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 599
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5978
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 769
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seus dados, organizados na sua conta, para a sua equipe usar sozinha. 🗂️\n\nOrganização de Dados (Data Organization · Self-service BI), na prática: estruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.\n\nSinais de que você precisa:\n• Dados espalhados: em planilhas, sistemas e e-mails, sem versão certa\n• Todo relatório vira um pedido: A equipe depende de quem montou a base\n• Números que não fecham: respostas diferentes para a mesma pergunta\n\nO que entregamos:\n✅ Modelagem e limpeza dos dados espalhados\n✅ Base montada na conta do cliente\n✅ Camada pronta para Power BI, Looker Studio e Excel\n✅ Dicionário de dados, atualização automática e governança\n✅ Treinamento da equipe para manter a base sozinha\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer dados seus, organizados e confiáveis? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#Dados #BI #DataDriven #PowerBI #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Organização de Dados | Data Organization · Self-service BI\n\nEstruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.\n\nSinais de que a sua operação precisa disso:\n• Dados espalhados: em planilhas, sistemas e e-mails, sem versão certa\n• Todo relatório vira um pedido: A equipe depende de quem montou a base\n• Números que não fecham: respostas diferentes para a mesma pergunta\n\nO que a Cerrado Tech entrega:\n✅ Modelagem e limpeza dos dados espalhados\n✅ Base montada na conta do cliente\n✅ Camada pronta para Power BI, Looker Studio e Excel\n✅ Dicionário de dados, atualização automática e governança\n✅ Treinamento da equipe para manter a base sozinha\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer dados seus, organizados e confiáveis? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-dados.zip",
+      "kb": 4279
+    }
+  },
+  {
+    "pasta": "2026-11-tech-integracoes",
+    "titulo": "Cerrado Tech · Integrações",
+    "data": "2026-11-13",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (6 de 16): Integrações (APIs · Webhooks). Conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.",
+    "orientacoes": [
+      "Postar em 13/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 545
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 521
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 585
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 564
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 592
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 558
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5193
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 731
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seus sistemas não conversam entre si? 🔌\n\nIntegrações (APIs · Webhooks), na prática: conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.\n\nSinais de que você precisa:\n• O mesmo pedido digitado duas vezes: no marketplace e no sistema de gestão\n• Pagamento que não baixa sozinho: conciliação manual com banco e meios de pagamento\n• Dados desencontrados: cada sistema com uma versão diferente\n\nO que entregamos:\n✅ Integração com SAP®, TOTVS e ERPs\n✅ Mercado Pago, bancos e meios de pagamento\n✅ iFood, WhatsApp e marketplaces\n✅ Sincronização bidirecional em tempo real\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuais sistemas você quer ligar? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#Integracao #API #ERP #Marketplace #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Integrações | APIs · Webhooks\n\nConecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.\n\nSinais de que a sua operação precisa disso:\n• O mesmo pedido digitado duas vezes: no marketplace e no sistema de gestão\n• Pagamento que não baixa sozinho: conciliação manual com banco e meios de pagamento\n• Dados desencontrados: cada sistema com uma versão diferente\n\nO que a Cerrado Tech entrega:\n✅ Integração com SAP®, TOTVS e ERPs\n✅ Mercado Pago, bancos e meios de pagamento\n✅ iFood, WhatsApp e marketplaces\n✅ Sincronização bidirecional em tempo real\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuais sistemas você quer ligar? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-integracoes.zip",
+      "kb": 4055
+    }
+  },
+  {
+    "pasta": "2026-11-tech-chatbots",
+    "titulo": "Cerrado Tech · Chatbots & Assistentes",
+    "data": "2026-11-11",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (5 de 16): Chatbots & Assistentes (Large Language Models). Atendimento automático com IA, 24h, treinado no conteúdo da empresa.",
+    "orientacoes": [
+      "Postar em 11/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 564
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 524
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 584
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 581
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 598
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 573
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5233
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 743
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seu cliente chama às 22h. Quem responde? 💬\n\nChatbots & Assistentes (Large Language Models), na prática: atendimento automático com IA, 24h, treinado no conteúdo da empresa.\n\nSinais de que você precisa:\n• Mensagem sem resposta fora do horário: O cliente esfria até o dia seguinte\n• As mesmas perguntas o dia todo: preço, horário, prazo, endereço\n• Lead que ninguém qualifica: O time gasta tempo com quem não vai comprar\n\nO que entregamos:\n✅ Atendimento no site e WhatsApp\n✅ Respostas treinadas no conteúdo do negócio\n✅ Encaminhamento para humano quando necessário\n✅ Qualificação de leads automaticamente\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer um assistente que conhece o seu negócio? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#Chatbot #WhatsApp #Atendimento #InteligenciaArtificial #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Chatbots & Assistentes | Large Language Models\n\nAtendimento automático com IA, 24h, treinado no conteúdo da empresa.\n\nSinais de que a sua operação precisa disso:\n• Mensagem sem resposta fora do horário: O cliente esfria até o dia seguinte\n• As mesmas perguntas o dia todo: preço, horário, prazo, endereço\n• Lead que ninguém qualifica: O time gasta tempo com quem não vai comprar\n\nO que a Cerrado Tech entrega:\n✅ Atendimento no site e WhatsApp\n✅ Respostas treinadas no conteúdo do negócio\n✅ Encaminhamento para humano quando necessário\n✅ Qualificação de leads automaticamente\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer um assistente que conhece o seu negócio? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-chatbots.zip",
+      "kb": 4130
+    }
+  },
+  {
+    "pasta": "2026-11-tech-automacao",
+    "titulo": "Cerrado Tech · Automação de Processos",
+    "data": "2026-11-09",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (4 de 16): Automação de Processos (Robotic Process Automation · Workflows). Robôs que executam tarefas repetitivas no seu lugar, liberando tempo da equipe para o que importa.",
+    "orientacoes": [
+      "Postar em 09/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 544
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 553
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 585
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 595
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 568
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5431
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 736
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Sua equipe ainda faz o que um robô faria? 🤖\n\nAutomação de Processos (Robotic Process Automation · Workflows), na prática: robôs que executam tarefas repetitivas no seu lugar, liberando tempo da equipe para o que importa.\n\nSinais de que você precisa:\n• Copiar e colar entre planilhas: consolidar os mesmos relatórios toda semana\n• Mensagens enviadas à mão: sempre as mesmas, sempre no mesmo horário\n• Sistemas que não conversam: alguém redigita de um para o outro\n\nO que entregamos:\n✅ Consolidação de planilhas e relatórios\n✅ Envio automático de e-mails e mensagens\n✅ Integração entre sistemas legados\n✅ Rotinas agendadas (dias e horários)\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQual tarefa você quer tirar da mão da equipe? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/portfolio\n\n#Automacao #RPA #Produtividade #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Automação de Processos | Robotic Process Automation · Workflows\n\nRobôs que executam tarefas repetitivas no seu lugar, liberando tempo da equipe para o que importa.\n\nSinais de que a sua operação precisa disso:\n• Copiar e colar entre planilhas: consolidar os mesmos relatórios toda semana\n• Mensagens enviadas à mão: sempre as mesmas, sempre no mesmo horário\n• Sistemas que não conversam: alguém redigita de um para o outro\n\nO que a Cerrado Tech entrega:\n✅ Consolidação de planilhas e relatórios\n✅ Envio automático de e-mails e mensagens\n✅ Integração entre sistemas legados\n✅ Rotinas agendadas (dias e horários)\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQual tarefa você quer tirar da mão da equipe? Conte o seu processo: cerradofinancas.com.br/portfolio\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-automacao.zip",
+      "kb": 4121
+    }
+  },
+  {
+    "pasta": "2026-11-tech-bi",
+    "titulo": "Cerrado Tech · BI & Dashboards",
+    "data": "2026-11-06",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (3 de 16): BI & Dashboards (Business Intelligence). Transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.",
+    "orientacoes": [
+      "Postar em 06/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/dashboards",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 562
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 558
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 594
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 574
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 606
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 580
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5210
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 750
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Você decide com dados ou no escuro? 📊\n\nBI & Dashboards (Business Intelligence), na prática: transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.\n\nSinais de que você precisa:\n• Relatório que chega atrasado: quando o número sai, a decisão já passou\n• Cada área com o seu número: vendas, financeiro e operação não batem\n• Indicador calculado à mão: alguém passa o dia montando planilha\n\nO que entregamos:\n✅ Painéis de vendas, financeiro e operação\n✅ Indicadores (KPIs) automáticos\n✅ Exportação e compartilhamento de relatórios\n✅ Integração com ERPs e planilhas\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer ver os seus indicadores num painel só? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/dashboards\n\n#BI #Dashboards #PowerBI #KPI #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "BI & Dashboards | Business Intelligence\n\nTransforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.\n\nSinais de que a sua operação precisa disso:\n• Relatório que chega atrasado: quando o número sai, a decisão já passou\n• Cada área com o seu número: vendas, financeiro e operação não batem\n• Indicador calculado à mão: alguém passa o dia montando planilha\n\nO que a Cerrado Tech entrega:\n✅ Painéis de vendas, financeiro e operação\n✅ Indicadores (KPIs) automáticos\n✅ Exportação e compartilhamento de relatórios\n✅ Integração com ERPs e planilhas\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer ver os seus indicadores num painel só? Conte o seu processo: cerradofinancas.com.br/dashboards\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-bi.zip",
+      "kb": 4187
+    }
+  },
+  {
+    "pasta": "2026-11-tech-crm",
+    "titulo": "Cerrado Tech · CRM",
+    "data": "2026-11-04",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (2 de 16): CRM (Customer Relationship Management). Gestão do relacionamento com clientes: cada contato, proposta e venda em um único painel.",
+    "orientacoes": [
+      "Postar em 04/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/crm-inteligente",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 558
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 531
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 577
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 534
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 587
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 556
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5150
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 706
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quantas vendas se perdem por falta de follow-up? 🤝\n\nCRM (Customer Relationship Management), na prática: gestão do relacionamento com clientes: cada contato, proposta e venda em um único painel.\n\nSinais de que você precisa:\n• Cliente esquecido no meio do funil: ninguém lembra de ligar de volta\n• Histórico espalhado: cada vendedor guarda o cliente no próprio celular\n• Sem visão do time: não dá para saber quem vende o quê, nem onde a venda trava\n\nO que entregamos:\n✅ Funil e Kanban de vendas\n✅ Histórico completo de cada cliente\n✅ Automação de follow-up e lembretes\n✅ Relatórios de desempenho do time\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer um CRM que acompanha o seu funil? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/crm-inteligente\n\n#CRM #Vendas #GestaoComercial #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "CRM | Customer Relationship Management\n\nGestão do relacionamento com clientes: cada contato, proposta e venda em um único painel.\n\nSinais de que a sua operação precisa disso:\n• Cliente esquecido no meio do funil: ninguém lembra de ligar de volta\n• Histórico espalhado: cada vendedor guarda o cliente no próprio celular\n• Sem visão do time: não dá para saber quem vende o quê, nem onde a venda trava\n\nO que a Cerrado Tech entrega:\n✅ Funil e Kanban de vendas\n✅ Histórico completo de cada cliente\n✅ Automação de follow-up e lembretes\n✅ Relatórios de desempenho do time\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer um CRM que acompanha o seu funil? Conte o seu processo: cerradofinancas.com.br/crm-inteligente\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-crm.zip",
+      "kb": 4012
+    }
+  },
+  {
+    "pasta": "2026-11-tech-erp",
+    "titulo": "Cerrado Tech · ERP Customizado",
+    "data": "2026-11-02",
+    "descricao": "Série \"O que a Cerrado Tech constrói\" (1 de 16): ERP Customizado (Enterprise Resource Planning). Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.",
+    "orientacoes": [
+      "Postar em 02/11 (sugestão: a série sai segunda, quarta e sexta, na ordem da numeração).",
+      "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
+      "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/erp-customizado",
+      "Legendas prontas abaixo, uma para cada rede."
+    ],
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 560
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 550
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 598
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 564
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 597
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 565
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 5370
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 734
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Sua empresa ainda roda em várias planilhas? 🧩\n\nERP Customizado (Enterprise Resource Planning), na prática: sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.\n\nSinais de que você precisa:\n• O mesmo dado digitado duas vezes: venda num sistema, estoque em outro, e ninguém confia no número\n• Fechar o mês é um mutirão: contas a pagar, a receber e DRE montados à mão\n• O sistema de prateleira não serve: sua equipe se adapta ao software, e não o contrário\n\nO que entregamos:\n✅ Contas a pagar/receber, fluxo de caixa e DRE\n✅ Controle de estoque e produção (PCP)\n✅ Emissão de notas fiscais (NF-e/NFC-e)\n✅ Multi-filial e centros de custo\n\nComo trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.\n\nQuer um ERP do jeito da sua operação? Conte o seu processo no WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/erp-customizado\n\n#ERP #SistemaDeGestao #GestaoEmpresarial #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "ERP Customizado | Enterprise Resource Planning\n\nSistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.\n\nSinais de que a sua operação precisa disso:\n• O mesmo dado digitado duas vezes: venda num sistema, estoque em outro, e ninguém confia no número\n• Fechar o mês é um mutirão: contas a pagar, a receber e DRE montados à mão\n• O sistema de prateleira não serve: sua equipe se adapta ao software, e não o contrário\n\nO que a Cerrado Tech entrega:\n✅ Contas a pagar/receber, fluxo de caixa e DRE\n✅ Controle de estoque e produção (PCP)\n✅ Emissão de notas fiscais (NF-e/NFC-e)\n✅ Multi-filial e centros de custo\n\nTrabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.\n\nQuer um ERP do jeito da sua operação? Conte o seu processo: cerradofinancas.com.br/erp-customizado\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-tech-erp.zip",
+      "kb": 4133
+    }
+  },
+  {
     "pasta": "2026-10-cerra-ai",
     "titulo": "Cerra.AI",
     "data": "2026-10-30",
@@ -48,7 +1184,7 @@
       {
         "nome": "carrossel-07.png",
         "tipo": "imagem",
-        "kb": 263
+        "kb": 196
       },
       {
         "nome": "story.png",
@@ -90,7 +1226,7 @@
     ],
     "pacote": {
       "nome": "2026-10-cerra-ai.zip",
-      "kb": 1159
+      "kb": 1092
     }
   },
   {
@@ -1214,8 +2350,7 @@
     "descricao": "Campanha da Cerraclass: formato das turmas, o que se aprende (Antigravity, Claude, Gemini, ChatGPT), antes e depois, e as turmas (IA na Prática, IA em Ação Farma, in company). Na identidade própria da CerraClass.",
     "orientacoes": [
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
-      "Vídeo vertical (video-vertical.mp4, 1080×1920, 30s, com som): Instagram Reels, TikTok e YouTube Shorts.",
-      "Vídeo 16:9 (video-16x9.mp4, 1920×1080, 30s, com som): LinkedIn, YouTube e apresentações.",
+      "Vídeo extra (video-extra-app-vertical.mp4 e video-extra-app-16x9.mp4, 30s, com som): o catálogo da CerraClass no celular, estilo lançamento de app. Use como peça a mais, para Reels, anúncios ou LinkedIn.",
       "Story: no Instagram, adicionar o sticker de link para https://cerraclass.com.br/",
       "Legendas prontas abaixo, uma para cada rede."
     ],
@@ -1256,12 +2391,12 @@
         "kb": 120
       },
       {
-        "nome": "video-16x9.mp4",
+        "nome": "video-extra-app-16x9.mp4",
         "tipo": "video",
         "kb": 12048
       },
       {
-        "nome": "video-vertical.mp4",
+        "nome": "video-extra-app-vertical.mp4",
         "tipo": "video",
         "kb": 12709
       }

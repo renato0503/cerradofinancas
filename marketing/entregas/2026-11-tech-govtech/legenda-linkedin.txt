@@ -1,0 +1,18 @@
+GovTech & Legal-Tech | Lei 14.133 · eSocial · RPPS
+
+Sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.
+
+Sinais de que a sua operação precisa disso:
+• Pesquisa de preços feita à mão: cotações coletadas uma a uma para a Lei 14.133
+• Folha pública e previdência: eSocial e RPPS com regras próprias
+• Cartório e escritório no papel: gestão documental que depende de pastas
+
+O que a Cerrado Tech entrega:
+✅ Compras públicas e pesquisa de preços (PNCP)
+✅ Folha de pagamento pública e previdência
+✅ Gestão documental de cartórios e escritórios
+✅ Conformidade com normas regulatórias
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer modernizar a gestão pública ou o cartório? Conte o seu processo: cerradofinancas.com.br/portfolio

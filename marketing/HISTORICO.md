@@ -19,6 +19,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 | 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
+| 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
 ## Campanhas publicadas (20)
@@ -72,6 +73,15 @@ modelos de prompt (comercial de produto 15s, lançamento estilo App Store 30s, l
 sempre em 16:9 e 9:16 (`video-16x9.mp4` e `video-vertical.mp4` em cada campanha). Os Reels antigos do Remotion
 dessas campanhas foram removidos. O Remotion (`videos/`) segue para as campanhas de Cerrado Tech e Finanças.
 
+## Série "O que a Cerrado Tech constrói" (28/10)
+
+Fonte única: `tools/gerar_portfolio_tech.py` (toda a copy das 16 capacidades do `/portfolio/`). Estrutura igual em
+todas: gancho com a dor do cliente → a sigla traduzida ("ERP, na prática") → 3 sinais de que precisa → o que
+entregamos (os itens do portfólio, sem acréscimo) → como trabalhamos (os 4 passos da campanha da Fábrica) → chamada
+própria com o link da página certa (ERP, CRM, Dashboards, IA Offline, E-commerce, Compliance e Blockchain têm página;
+o resto vai para `/portfolio`). Identidade: a da Cerrado Tech (azul e dourado), uma cor de destaque por capacidade.
+Postagem sugerida segunda, quarta e sexta, na ordem do gerador (ERP 02/11 até Web3 07/12), registrada no `info.json`.
+
 ## Decisões e regras de conteúdo
 
 Valem para todas as próximas campanhas.
@@ -105,10 +115,13 @@ Valem para todas as próximas campanhas.
    especialistas (ainda não). As peças comparam com "IA na nuvem" só em termos genéricos (o dado sai do
    ambiente, precisa de internet).
 
+9. **Vídeo padrão = carrossel animado.** Toda campanha nova sai com `carrossel-animado.mp4`, feito do próprio
+   carrossel. Comerciais especiais são extras (ex.: `video-extra-app-*.mp4` da CerraClass). O que já está feito fica.
+
 ## Como garantimos a qualidade
 
-- Toda peça estática passa por `tools/verificar.py`, que acusa conteúdo invadindo o rodapé ou fora da área
-  segura do story (250px no topo e na base). Foi testado com um caso propositalmente quebrado.
+- Toda peça estática passa por `tools/verificar.py`, que acusa conteúdo invadindo o rodapé, fora da área
+  segura do story (250px no topo e na base), palavra vazando do bloco e ícone/logo sobreposto a texto. Foi testado com um caso propositalmente quebrado.
 - Todo vídeo é conferido extraindo quadros dos momentos-chave (`npx remotion ffmpeg -ss ...`) e olhando
   cada um com as linhas da zona segura.
 - O áudio dos vídeos é medido por `tools/conferir_audio.py`: extrai a trilha, mede pico, RMS, clipping e
@@ -127,7 +140,7 @@ Valem para todas as próximas campanhas.
       turmas com data definida (aí sim com data, em peça de vida curta), conteúdo educativo de contabilidade.
 - [ ] Skills instaladas e ainda não usadas: `threejs-*` (3D) e `lemo-opuscar` (curtas cinematográficos, pesado).
 - [ ] **Espaço no GitHub Pages:** o limite é 1 GB por site. `entregas/` usava ~405 MB (19 campanhas) e foi
-      reduzida para **~290 MB** em 26/10: o `.zip` de cada campanha passou a levar só as imagens e as legendas,
+      reduzida para **~290 MB** em 26/10 (e voltou a ~425 MB em 28/10, com a série da Cerrado Tech e os vídeos novos): o `.zip` de cada campanha passou a levar só as imagens e as legendas,
       não os vídeos (o time baixa o vídeo direto na Central de Conteúdos). Os `.zip` caíram de 198 MB para 84 MB.
       Se apertar o limite de novo, o próximo passo é mover os vídeos antigos para outro armazenamento
       (Google Drive, Firebase Storage) e deixar no repositório só as peças estáticas.

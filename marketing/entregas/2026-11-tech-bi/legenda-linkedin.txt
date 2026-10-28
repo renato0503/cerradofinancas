@@ -1,0 +1,18 @@
+BI & Dashboards | Business Intelligence
+
+Transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.
+
+Sinais de que a sua operação precisa disso:
+• Relatório que chega atrasado: quando o número sai, a decisão já passou
+• Cada área com o seu número: vendas, financeiro e operação não batem
+• Indicador calculado à mão: alguém passa o dia montando planilha
+
+O que a Cerrado Tech entrega:
+✅ Painéis de vendas, financeiro e operação
+✅ Indicadores (KPIs) automáticos
+✅ Exportação e compartilhamento de relatórios
+✅ Integração com ERPs e planilhas
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer ver os seus indicadores num painel só? Conte o seu processo: cerradofinancas.com.br/dashboards

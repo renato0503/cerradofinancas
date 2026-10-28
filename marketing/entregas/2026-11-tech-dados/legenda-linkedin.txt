@@ -1,0 +1,19 @@
+Organização de Dados | Data Organization · Self-service BI
+
+Estruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.
+
+Sinais de que a sua operação precisa disso:
+• Dados espalhados: em planilhas, sistemas e e-mails, sem versão certa
+• Todo relatório vira um pedido: A equipe depende de quem montou a base
+• Números que não fecham: respostas diferentes para a mesma pergunta
+
+O que a Cerrado Tech entrega:
+✅ Modelagem e limpeza dos dados espalhados
+✅ Base montada na conta do cliente
+✅ Camada pronta para Power BI, Looker Studio e Excel
+✅ Dicionário de dados, atualização automática e governança
+✅ Treinamento da equipe para manter a base sozinha
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer dados seus, organizados e confiáveis? Conte o seu processo: cerradofinancas.com.br/portfolio

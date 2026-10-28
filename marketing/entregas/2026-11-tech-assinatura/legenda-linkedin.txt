@@ -1,0 +1,18 @@
+Assinatura Digital | ICP-Brasil · GOV.br
+
+Documentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.
+
+Sinais de que a sua operação precisa disso:
+• Contrato parado esperando assinatura: alguém precisa ir até o escritório
+• Quem assinou e quando?: sem trilha, fica difícil comprovar
+• Aprovação entre várias pessoas: cada uma num canal diferente
+
+O que a Cerrado Tech entrega:
+✅ Assinatura com certificado ICP-Brasil A1 e GOV.br
+✅ Trilha de auditoria de quem assinou e quando
+✅ Fluxo de aprovações entre várias pessoas
+✅ Notificação por e-mail e WhatsApp
+
+Trabalhamos em quatro etapas: descoberta e imersão nos processos, arquitetura e protótipo validado antes do código, desenvolvimento com entregas semanais e evolução contínua com treinamento da equipe.
+
+Quer assinar pela internet, com validade jurídica? Conte o seu processo: cerradofinancas.com.br/portfolio

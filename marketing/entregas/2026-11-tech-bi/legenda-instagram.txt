@@ -1,0 +1,21 @@
+Você decide com dados ou no escuro? 📊
+
+BI & Dashboards (Business Intelligence), na prática: transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.
+
+Sinais de que você precisa:
+• Relatório que chega atrasado: quando o número sai, a decisão já passou
+• Cada área com o seu número: vendas, financeiro e operação não batem
+• Indicador calculado à mão: alguém passa o dia montando planilha
+
+O que entregamos:
+✅ Painéis de vendas, financeiro e operação
+✅ Indicadores (KPIs) automáticos
+✅ Exportação e compartilhamento de relatórios
+✅ Integração com ERPs e planilhas
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quer ver os seus indicadores num painel só? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/dashboards
+
+#BI #Dashboards #PowerBI #KPI #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso

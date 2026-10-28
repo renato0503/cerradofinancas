@@ -1,0 +1,21 @@
+Uma loja que funciona como app, sem loja de aplicativos. 🛍️
+
+E-commerce & PWA (Progressive Web Apps), na prática: loja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.
+
+Sinais de que você precisa:
+• Venda só pela conversa: pedido anotado à mão e estoque no chute
+• App em loja de aplicativos: aprovação, publicação e atualização para cada mudança
+• Pagamento conferido à mão: comprovante por comprovante
+
+O que entregamos:
+✅ Catálogo, carrinho e checkout
+✅ Pagamento PIX, cartão e boleto
+✅ Controle de estoque e pedidos
+✅ Painel administrativo completo
+
+Como trabalhamos: descoberta, protótipo validado antes de qualquer código, entregas semanais e evolução contínua. E se a sua necessidade não estiver no portfólio, a gente constrói.
+
+Quer a sua loja no celular do cliente? Conte o seu processo no WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/ecommerce
+
+#Ecommerce #PWA #LojaVirtual #VendasOnline #CerradoTech #FabricaDeSoftware #SoftwareSobMedida #Cuiaba #MatoGrosso
