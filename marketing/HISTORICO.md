@@ -19,6 +19,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 | 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
+| 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
 ## Campanhas publicadas (20)
 
@@ -53,6 +54,21 @@ e legendas para Instagram e LinkedIn, exceto onde indicado.
 
 ---
 
+## Identidades próprias (28/10)
+
+Cerrado Tech e Cerrado Finanças mantêm a identidade do site (azul `#001f5c` e dourado). **Cerra.AI e
+CerraClass (com todos os cursos) ganharam identidade própria**, cada uma com guia em `brand/<marca>/README.md`:
+
+- **Cerra.AI, "Silício local":** cobre `#e2873b` + quase-preto `#0d0f0e`, Archivo expandida em caixa alta,
+  JetBrains Mono nas citações. Recursos próprios: a tarja de anonimização e a etiqueta "Trechos consultados".
+- **CerraClass, "Sábado de sala":** um fundo vivo por curso + tinta quase-preta, Bricolage Grotesque condensada
+  em caixa alta. Recursos próprios: as 10 cadeiras da turma, a régua do dia de aula, o ingresso, a etiqueta adesiva.
+
+**Vídeos dessas duas marcas agora são HyperFrames** (HTML + GSAP, `filmes/`), feitos a partir de três
+modelos de prompt (comercial de produto 15s, lançamento estilo App Store 30s, lançamento minimalista P&B 30s),
+sempre em 16:9 e 9:16 (`video-16x9.mp4` e `video-vertical.mp4` em cada campanha). Os Reels antigos do Remotion
+dessas campanhas foram removidos. O Remotion (`videos/`) segue para as campanhas de Cerrado Tech e Finanças.
+
 ## Decisões e regras de conteúdo
 
 Valem para todas as próximas campanhas.
@@ -64,13 +80,14 @@ Valem para todas as próximas campanhas.
    Cerraclass. Os cursos do catálogo são "sob consulta". Pode-se dizer que o pacote para grupos sai mais barato por pessoa.
 3. **Crédito sempre com aviso legal** de correspondente bancário: "não é instituição financeira; crédito sujeito
    a análise e aprovação; taxas e condições variam". Está no CTA do carrossel, no story, no Reel e na legenda.
-4. **Tamanho de turma:** **10 pessoas por turma** em tudo (decidido em 26/10). As landings de IA na Prática e
+4. **Tamanho de turma:** **até 10 alunos por turma** em tudo (decidido em 26/10, confirmado em 28/10; os 11 cursos
+   do catálogo foram regerados com 10). As landings de IA na Prática e
    IA em Ação Farma e o site já dizem 10; o catálogo da CerraClass ainda diz "até 15 alunos" — alinhar lá.
 5. **IA na Farma ≠ IA em Ação Farma.** A primeira é a imersão para farmácias e drogarias (estoque, atendimento,
    conformidade); a segunda é o curso de um dia para propagandistas da indústria. Pastas diferentes
    (`curso-ia-na-farma` e `curso-ia-farma`).
-6. **Cores:** azul `#001f5c` de fundo, dourado `#fecb00` só no elemento principal (botão do CTA). Cada frente e
-   cada curso tem uma cor de destaque própria (definida em `VISUAL` no gerador e em `videos/src/theme.ts`).
+6. **Cores:** azul `#001f5c` de fundo, dourado `#fecb00` só no elemento principal (botão do CTA), nas peças
+   de Cerrado Tech e Cerrado Finanças. Cerra.AI e CerraClass seguem as próprias identidades (ver acima).
 7. **Logo:** a folinha (`../img/folinha-hero.png`) foi limpa (sem halo, contorno suave) e é a marca da empresa em
    todas as peças (rodapé). Nos stories dos cursos presenciais ela foi retirada para caber o selo de formato.
    A campanha do Cerra.AI usa a **logo do produto** (`img/logo_cerraai-icone.png`), recortada do fundo preto

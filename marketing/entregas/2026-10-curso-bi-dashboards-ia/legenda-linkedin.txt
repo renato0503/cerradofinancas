@@ -12,5 +12,5 @@ Cada participante sai com:
 • Biblioteca de medidas DAX comentadas
 • Guia de design de dashboards
 
-Turmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.
+Turmas de até 10 alunos em Cuiabá, com certificado e nota fiscal para empresas.
 Inscrições: cerraclass.com.br/presencial/pres-bi-dashboards-ia

@@ -35,3 +35,11 @@ apresentacoes/
 
 # Scripts com credenciais / fora do site
 gerar_gamma.py
+
+# Filmes HyperFrames (marketing/filmes): dependências, renders e projetos gerados por ferramentas/montar.mjs
+marketing/filmes/node_modules/
+marketing/filmes/out/
+marketing/filmes/*/16x9/
+marketing/filmes/*/9x16/
+marketing/filmes/**/.hyperframes/
+marketing/filmes/*/fonte/assets/trilha.wav

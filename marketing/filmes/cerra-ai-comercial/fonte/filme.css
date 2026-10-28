@@ -1,0 +1,66 @@
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+
+:root { --cobre: #e2873b; --preto: #0d0f0e; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: var(--preto); }
+#root { position: relative; overflow: hidden; font-family: 'Archivo', sans-serif; }
+
+.camada { position: absolute; inset: 0; }
+#fundo { background: var(--preto); }
+
+.display { font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.015em; line-height: .9; }
+
+/* Cena: centro do quadro, conteúdo em coluna */
+.cena { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* Abertura */
+#ponto { width: 28px; height: 28px; border-radius: 50%; background: var(--cobre); }
+
+/* Frase 1: palavras em linhas */
+.frase { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .28em; max-width: 1680px; text-align: center; color: var(--preto); font-size: 132px; }
+.palavra { position: relative; display: inline-block; }
+.eco { position: absolute; left: 0; top: 0; pointer-events: none; }
+
+/* Produto 3D */
+#produto { position: absolute; left: 50%; top: 50%; width: 620px; height: 648px; margin: -324px 0 0 -310px; perspective: 2200px; }
+#produto { opacity: 0; }
+#moeda { position: absolute; inset: 0; transform-style: preserve-3d; }
+#moeda img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+
+/* Frase 2: texto atrás do produto */
+.fundo-texto { flex-direction: column; gap: 700px; color: var(--cobre); font-size: 170px; text-align: center; }
+
+/* Benefícios */
+.card { position: absolute; top: 50%; width: 600px; background: var(--cobre); color: var(--preto); border-radius: 18px; padding: 40px 44px; }
+.card .grande { font-size: 70px; line-height: .92; }
+.card .apoio { font-size: 38px; font-weight: 700; line-height: 1.12; margin-top: 18px; }
+.card.c1 { left: 120px; margin-top: -170px; }
+.card.c2 { right: 120px; margin-top: -60px; }
+
+/* Frase 3 */
+#iris { background: var(--cobre); }
+.frase3 { color: var(--preto); font-size: 190px; text-align: center; }
+
+/* Palavras */
+.palavrao { color: var(--cobre); font-size: 210px; }
+
+/* Logo final */
+.assinatura { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 56px; }
+.assinatura .vaga { width: 300px; height: 314px; flex: 0 0 auto; }
+.assinatura .textos { display: flex; flex-direction: column; gap: 22px; width: 1040px; }
+.marca { color: var(--cobre); font-size: 150px; }
+.tagline { color: #f1ece3; font-size: 44px; font-weight: 700; font-stretch: 112%; text-transform: uppercase; letter-spacing: .01em; }
+.endereco { color: var(--cobre); font-size: 32px; font-weight: 600; }
+
+/* Vertical: mesmas cenas, rearranjadas */
+.vertical .frase { font-size: 104px; max-width: 900px; }
+.vertical .fundo-texto { font-size: 94px; gap: 760px; }
+.vertical .card { width: 760px; left: 160px; right: auto; }
+.vertical .card.c1 { top: 250px; margin-top: 0; }
+.vertical .card.c2 { top: auto; bottom: 250px; margin-top: 0; }
+.vertical .frase3 { font-size: 124px; }
+.vertical .palavrao { font-size: 112px; }
+.vertical .assinatura { flex-direction: column; gap: 40px; text-align: center; }
+.vertical .assinatura .textos { align-items: center; width: 900px; height: 300px; }
+.vertical .marca { font-size: 132px; }
+.vertical .tagline { font-size: 40px; max-width: 860px; }

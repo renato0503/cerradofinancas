@@ -1,0 +1,75 @@
+{
+  "duracao": 15,
+  "bpm": 120,
+  "clima": "cobre",
+  "musicaEntra": 1.45,
+  "musicaSai": 15,
+  "deixas": [
+    {
+      "t": 0.15,
+      "som": "tique"
+    },
+    {
+      "t": 1.45,
+      "som": "riser"
+    },
+    {
+      "t": 1.45,
+      "som": "impacto"
+    },
+    {
+      "t": 1.55,
+      "som": "whoosh",
+      "ganho": 0.7
+    },
+    {
+      "t": 3.5,
+      "som": "whoosh"
+    },
+    {
+      "t": 3.7,
+      "som": "impacto",
+      "ganho": 0.7
+    },
+    {
+      "t": 5.35,
+      "som": "whoosh"
+    },
+    {
+      "t": 8.2,
+      "som": "pop"
+    },
+    {
+      "t": 8.6,
+      "som": "pop"
+    },
+    {
+      "t": 10.2,
+      "som": "whoosh"
+    },
+    {
+      "t": 10.4,
+      "som": "impacto",
+      "ganho": 0.8
+    },
+    {
+      "t": 11.6,
+      "som": "impacto",
+      "ganho": 0.5
+    },
+    {
+      "t": 11.93,
+      "som": "impacto",
+      "ganho": 0.5
+    },
+    {
+      "t": 12.27,
+      "som": "impacto",
+      "ganho": 0.5
+    },
+    {
+      "t": 12.7,
+      "som": "brilho"
+    }
+  ]
+}

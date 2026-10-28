@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Cerra.AI: comercial 15s</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada clip" data-start="0" data-duration="15" data-track-index="0" style="z-index: 1"></div>
+
+      <!-- 0,0-1,45: o ponto explode -->
+      <div id="abertura" class="cena clip" data-start="0" data-duration="1.5" data-track-index="1" style="z-index: 2">
+        <div id="ponto"></div>
+      </div>
+
+      <!-- 1,45-3,7: frase 1 -->
+      <div id="cena-frase1" class="cena clip" data-start="1.45" data-duration="2.25" data-track-index="1" style="z-index: 3">
+        <p class="frase display" data-layout-allow-overlap>
+          <span class="palavra" data-eco>Seus</span><span class="palavra" data-eco>documentos</span><span class="palavra" data-eco>não</span><span class="palavra" data-eco>saem</span><span class="palavra" data-eco>da</span><span class="palavra" data-eco>sua</span><span class="palavra" data-eco>máquina.</span>
+        </p>
+      </div>
+
+      <!-- 5,5-8,0: frase 2, atrás do produto -->
+      <div id="cena-frase2" class="cena fundo-texto display clip" data-start="5.5" data-duration="2.6" data-track-index="1" style="z-index: 3" data-layout-allow-overlap>
+        <span id="f2-a">Roda no seu</span>
+        <span id="f2-b">computador.</span>
+      </div>
+
+      <!-- 3,7-10,6 e 12,6-15: o produto -->
+      <div id="cena-produto" class="camada clip" data-start="3.7" data-duration="11.3" data-track-index="2" style="z-index: 5" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="produto">
+          <div id="moeda">
+            <img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" />
+            <img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" />
+            <img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" />
+            <img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="" /><img src="assets/emblema.png" alt="Cerra.AI" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 8,0-10,4: benefícios ao redor do produto -->
+      <div id="cena-beneficios" class="camada clip" data-start="8" data-duration="2.4" data-track-index="3" style="z-index: 6">
+        <div class="card c1" data-eco><p class="grande display">Zero</p><p class="apoio">requisições externas</p></div>
+        <div class="card c2" data-eco><p class="grande display">Arquivo e página</p><p class="apoio">citados em toda resposta</p></div>
+      </div>
+
+      <!-- 10,35-11,6: frase 3 -->
+      <div id="cena-frase3" class="camada clip" data-start="10.35" data-duration="1.25" data-track-index="1" style="z-index: 7">
+        <div id="iris" class="camada"></div>
+        <div class="cena"><p id="f3" class="frase3 display">Funciona offline.</p></div>
+      </div>
+
+      <!-- 11,6-12,6: três palavras -->
+      <div id="cena-palavras" class="cena clip" data-start="11.6" data-duration="1" data-track-index="1" style="z-index: 7" data-layout-allow-overlap>
+        <p id="p1" class="palavrao display" style="position: absolute">Local.</p>
+        <p id="p2" class="palavrao display" style="position: absolute">Privado.</p>
+        <p id="p3" class="palavrao display" style="position: absolute">Auditável.</p>
+      </div>
+
+      <!-- 12,6-15: logo + tagline -->
+      <div id="cena-logo" class="assinatura clip" data-start="12.6" data-duration="2.4" data-track-index="3" style="z-index: 6">
+        <div class="vaga"></div>
+        <div class="textos">
+          <p id="marca" class="marca display">Cerra.AI</p>
+          <p id="tagline" class="tagline">A IA que roda no seu computador</p>
+          <p id="endereco" class="endereco">cerradofinancas.com.br/cerraai.html</p>
+        </div>
+      </div>
+
+      <audio id="trilha" class="clip" data-start="0" data-duration="15" data-track-index="9" data-volume="1" src="assets/trilha.wav"></audio>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>

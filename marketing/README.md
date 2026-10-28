@@ -12,10 +12,11 @@ A página tem `noindex` e não aparece no menu nem no sitemap.
 
 | Pasta | O que vai nela |
 |---|---|
-| `brand/` | `tokens.css` (cores e fonte da marca) e `slides.js` (controle de slides para exportação) |
+| `brand/` | `tokens.css` e `carrossel.css` (Cerrado Tech/Finanças), `cerraai/` e `cerraclass/` (identidades próprias, cada uma com README), `fontes/` e `slides.js` |
 | `posts/AAAA-MM-tema/` | Fontes de uma campanha: `carrossel.html`, `story.html` etc. |
 | `entregas/AAAA-MM-tema/` | **Publicado.** Arquivos finais, `legenda-<rede>.txt`, `info.json` e o `.zip` |
-| `videos/` | Projetos Remotion (Reels 1080×1920) |
+| `videos/` | Projetos Remotion (Reels 1080×1920) de Cerrado Tech e Cerrado Finanças |
+| `filmes/` | Vídeos HyperFrames (HTML + GSAP) de Cerra.AI e CerraClass, em 16:9 e 9:16. Ver `filmes/README.md` |
 | `animacoes/` | Logos e ícones animados (Lottie, GIF, MP4) |
 | `tools/` | `exportar.py` (HTML → PNG em `entregas/`) e `publicar.py` (gera .zip e `conteudos.json`) |
 | `.claude/skills/` | Skills usadas pelo Claude dentro desta pasta |

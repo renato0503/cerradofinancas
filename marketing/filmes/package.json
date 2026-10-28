@@ -1,0 +1,16 @@
+{
+  "name": "filmes-cerraai-cerraclass",
+  "private": true,
+  "description": "Filmes HTML + GSAP renderizados com HyperFrames: Cerra.AI e CerraClass",
+  "scripts": {
+    "montar": "node ferramentas/montar.mjs cerra-ai-comercial cerra-ai-lancamento cerraclass-curso cerraclass-lancamento",
+    "trilhas": "node ferramentas/trilha.mjs cerra-ai-comercial cerra-ai-lancamento cerraclass-curso cerraclass-lancamento",
+    "render:cursos": "node ferramentas/render-cursos.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "5.3.0",
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "hyperframes": "0.8.210"
+  }
+}

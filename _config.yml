@@ -22,5 +22,6 @@ exclude:
   - marketing/posts
   - marketing/tools
   - marketing/videos
+  - marketing/filmes
   - marketing/animacoes
   - marketing/dados

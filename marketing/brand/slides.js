@@ -25,12 +25,15 @@
       var limite = story ? base.top + slide.offsetHeight - 250 : (slide.querySelector('.rodape') ? slide.querySelector('.rodape').getBoundingClientRect().top - 12 : base.bottom);
       var pior = 0, culpado = '';
       slide.querySelectorAll('*').forEach(function (el) {
-        if (el.closest('.rodape') || el.children.length) return;
+        // data-sangra: elemento decorativo que corta na borda de propósito
+        if (el.closest('.rodape') || el.closest('[data-sangra]') || el.children.length) return;
         var r = el.getBoundingClientRect();
         if (!r.height) return;
         var excesso = r.bottom - limite;
         if (story && base.top + 240 - r.top > excesso) excesso = base.top + 240 - r.top;
         if (r.right > base.right - 40) excesso = Math.max(excesso, r.right - (base.right - 40));
+        // palavra longa que vaza do próprio bloco (ex.: título grande demais)
+        if (el.scrollWidth > el.clientWidth + 2 && el.clientWidth) excesso = Math.max(excesso, el.scrollWidth - el.clientWidth);
         if (excesso > pior) { pior = excesso; culpado = (el.textContent || el.className || el.tagName).trim().slice(0, 40); }
       });
       document.title = pior > 0 ? 'ESTOURO ' + Math.round(pior) + 'px: ' + culpado : 'OK';

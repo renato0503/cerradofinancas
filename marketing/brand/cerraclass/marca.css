@@ -1,0 +1,123 @@
+/* Identidade CerraClass: "Sábado de sala"
+   Cada curso tem um fundo próprio (--campo), uma cor viva do cerrado; a tinta é sempre quase-preta.
+   Recursos gráficos próprios: as 10 cadeiras da turma (.assentos), a régua do dia de aula (.regua)
+   e a etiqueta adesiva (.etiqueta). Tipografia: Bricolage Grotesque condensada, extra bold, caixa alta. */
+@font-face { font-family: 'Bricolage Grotesque'; src: url('../fontes/bricolage.woff2') format('woff2'); font-weight: 200 800; font-stretch: 75% 100%; }
+
+:root {
+  --campo: #ffc83d;
+  --tinta: #141414;
+  --papel: #ffffff;
+  --sombra: rgba(20, 20, 20, .14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #222; font-family: 'Bricolage Grotesque', sans-serif; -webkit-font-smoothing: antialiased; }
+body { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+html.exportando body { padding: 0; gap: 0; }
+
+.slide {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  background: var(--campo); color: var(--tinta);
+  padding: 92px 88px 0; display: flex; flex-direction: column;
+}
+.slide.story { height: 1920px; padding: 260px 88px 260px; }
+.slide.tinta { background: var(--tinta); color: var(--campo); }
+
+/* Tipografia */
+.mega, .titulo { font-weight: 800; font-stretch: 78%; text-transform: uppercase; line-height: .86; letter-spacing: -0.01em; }
+.mega { font-size: 150px; }
+.titulo { font-size: 110px; margin-bottom: 52px; }
+.sub { font-size: 44px; line-height: 1.25; font-weight: 500; max-width: 880px; }
+
+/* Etiqueta adesiva */
+.etiqueta {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 14px;
+  background: var(--papel); color: var(--tinta); border: 4px solid var(--tinta); border-radius: 16px;
+  padding: 12px 24px; font-size: 32px; font-weight: 700; transform: rotate(-2deg);
+  box-shadow: 6px 6px 0 var(--tinta); margin-bottom: 44px;
+}
+.tinta .etiqueta { box-shadow: 6px 6px 0 var(--campo); border-color: var(--campo); }
+
+/* Faixa de formato do curso */
+.formato { display: flex; flex-wrap: wrap; gap: 0; align-self: flex-start; border: 4px solid var(--tinta); border-radius: 14px; overflow: hidden; font-size: 30px; font-weight: 700; }
+.formato span { padding: 14px 24px; }
+.formato span + span { border-left: 4px solid var(--tinta); }
+.formato span:first-child { background: var(--tinta); color: var(--campo); }
+
+/* Rodapé */
+.rodape {
+  position: absolute; left: 88px; right: 88px; bottom: 0; height: 132px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 4px solid var(--tinta); font-size: 28px; font-weight: 700;
+}
+.tinta .rodape { border-top-color: var(--campo); }
+.rodape .marca { display: flex; align-items: center; gap: 14px; font-size: 32px; font-weight: 800; }
+.selo { width: 64px; height: 64px; border-radius: 50%; background: var(--papel); display: grid; place-items: center; border: 3px solid var(--tinta); flex: 0 0 auto; }
+.selo img { width: 70%; height: 70%; object-fit: contain; }
+
+/* Lista grande */
+.lista { list-style: none; display: flex; flex-direction: column; }
+.lista li { padding: 30px 0; border-top: 4px solid var(--tinta); font-size: 47px; line-height: 1.15; font-weight: 600; }
+.lista li:last-child { border-bottom: 4px solid var(--tinta); }
+.lista.compacta li { padding: 22px 0; font-size: 37px; font-weight: 500; }
+.tinta .lista li { border-color: var(--campo); }
+
+/* Régua do dia de aula: horário à esquerda, bloco à direita */
+.regua { display: flex; flex-direction: column; }
+.regua .bloco { display: grid; grid-template-columns: 330px 1fr; gap: 28px; align-items: start; padding: 34px 0; border-top: 4px solid var(--tinta); }
+.regua .bloco:last-child { border-bottom: 4px solid var(--tinta); }
+.regua .hora { font-weight: 800; font-stretch: 78%; font-size: 50px; line-height: 1; text-transform: uppercase; }
+.regua .hora small { display: block; font-size: 26px; font-weight: 600; font-stretch: 100%; text-transform: none; margin-bottom: 6px; }
+.regua .nome { font-size: 46px; font-weight: 600; line-height: 1.12; }
+
+/* Ticket "Você sai com" */
+.ticket { background: var(--papel); border: 4px solid var(--tinta); border-radius: 22px; box-shadow: 10px 10px 0 var(--tinta); padding: 56px 56px; position: relative; }
+.ticket::before, .ticket::after { content: ''; position: absolute; top: 50%; width: 44px; height: 44px; border-radius: 50%; background: var(--campo); border: 4px solid var(--tinta); transform: translateY(-50%); }
+.ticket::before { left: -26px; clip-path: inset(0 0 0 50%); }
+.ticket::after { right: -26px; clip-path: inset(0 50% 0 0); }
+.ticket ul { list-style: none; display: flex; flex-direction: column; gap: 34px; }
+.ticket li { font-size: 44px; font-weight: 600; line-height: 1.15; display: flex; gap: 20px; }
+.ticket li::before { content: '✓'; font-weight: 800; }
+.ferramentas { margin-top: 56px; font-size: 36px; font-weight: 500; line-height: 1.35; }
+.ferramentas b { font-weight: 800; text-transform: uppercase; font-stretch: 78%; font-size: 34px; margin-right: 10px; }
+
+/* As 10 cadeiras da turma */
+.assentos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; width: 600px; }
+.assentos i { aspect-ratio: 1; border-radius: 50% 50% 18px 18px; background: var(--tinta); }
+.tinta .assentos i { background: var(--campo); }
+.turma { display: flex; align-items: center; gap: 52px; }
+.turma .num { font-weight: 800; font-stretch: 78%; font-size: 260px; line-height: .8; }
+.turma .num small { display: block; font-size: 40px; line-height: 1.05; margin-top: 16px; text-transform: uppercase; }
+
+/* CTA */
+.contatos { display: flex; flex-direction: column; gap: 18px; margin-top: 52px; }
+.contato { font-size: 40px; font-weight: 700; }
+.contato.principal { align-self: flex-start; background: var(--tinta); color: var(--campo); padding: 20px 32px; border-radius: 14px; }
+.tinta .contato.principal { background: var(--campo); color: var(--tinta); }
+.logo-grande { position: absolute; width: 560px; right: -120px; bottom: 170px; }
+.capa .logo-grande { width: 520px; right: -130px; bottom: 120px; }
+
+/* Capa: as cadeiras da turma como assinatura, logo acima do rodapé */
+.turma.mini { margin-top: auto; margin-bottom: 176px; gap: 40px; }
+.turma.mini .assentos { width: 380px; gap: 16px; }
+.legenda-turma { font-weight: 800; font-stretch: 78%; font-size: 52px; line-height: .95; text-transform: uppercase; }
+
+/* Instrutor: foto em moldura adesiva e citação real */
+.instrutor { display: flex; gap: 44px; align-items: center; margin-bottom: 44px; }
+.instrutor img { width: 260px; height: 260px; object-fit: cover; border-radius: 22px; border: 4px solid var(--tinta); box-shadow: 8px 8px 0 var(--tinta); transform: rotate(-2deg); }
+.instrutor h3 { font-weight: 800; font-stretch: 78%; font-size: 76px; line-height: .9; text-transform: uppercase; }
+.instrutor p { font-size: 32px; font-weight: 600; margin-top: 10px; }
+.citacao { font-size: 46px; line-height: 1.2; font-weight: 700; border-left: 10px solid var(--tinta); padding-left: 36px; margin-top: 40px; }
+
+/* Antes x depois */
+.virada { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.virada .lado { border: 4px solid var(--tinta); border-radius: 22px; padding: 36px 34px; background: var(--papel); }
+.virada .lado.depois { background: var(--tinta); color: var(--campo); }
+.virada h3 { font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: 60px; margin-bottom: 22px; }
+.virada li { list-style: none; font-size: 34px; font-weight: 600; line-height: 1.2; padding: 16px 0; border-top: 3px solid currentColor; }
+
+/* Itens com título e linha de apoio */
+.lista.dupla li b { display: block; font-weight: 800; font-size: 46px; }
+.lista.dupla li span { display: block; font-size: 34px; font-weight: 500; margin-top: 6px; }
+.lista.dupla li { padding: 24px 0; }

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>CerraClass: lançamento 30s</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada clip" data-start="0" data-duration="30" data-track-index="0" style="z-index: 1" data-layout-allow-overflow>
+        <i id="b1" class="brilho"></i><i id="b2" class="brilho"></i><i id="b3" class="brilho"></i>
+      </div>
+
+      <!-- 0-24,6: headlines, uma por cena -->
+      <div id="cena-headlines" class="camada clip" data-start="0" data-duration="24.6" data-track-index="1" style="z-index: 3" data-layout-allow-overlap>
+        <div class="headline">
+          <div style="display: grid">
+            <h2 id="h1" class="display" style="grid-area: 1 / 1">11 cursos <em>presenciais</em> em Cuiabá.</h2>
+            <h2 id="h2" class="display" style="grid-area: 1 / 1">Escolha pelo que você quer <em>construir.</em></h2>
+            <h2 id="h3" class="display" style="grid-area: 1 / 1">Um <em>sábado</em> ou uma imersão.</h2>
+            <h2 id="h4" class="display" style="grid-area: 1 / 1">Você sai com o projeto <em>pronto.</em></h2>
+            <h2 id="h5" class="display" style="grid-area: 1 / 1">Turma de até <em>10</em> alunos.</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- 0-24,6: o iPhone com as telas do app -->
+      <div id="cena-celular" class="camada clip" data-start="0" data-duration="24.6" data-track-index="2" style="z-index: 4" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="palco">
+          <div id="iphone" class="iphone">
+            <div class="placa"></div><div class="placa"></div><div class="placa"></div><div class="placa"></div><div class="placa"></div><div class="placa"></div>
+            <div class="corpo">
+              <div class="tela">
+                <i class="ilha"></i>
+                <div id="t1" class="tela-app">
+                  <div class="status"><span>9:41</span><span>●●●</span></div>
+                  <div class="app">
+                    <div class="topo-app"><img src="assets/logo.png" alt="" />CerraClass</div>
+                    <h3 class="display">Cursos presenciais</h3>
+                    <p class="apoio">Cuiabá · turmas de até 10 alunos</p>
+                    <ul class="lista-cursos">
+                      <li><i style="background: #ffc83d"></i><div><b>IA na Gestão</b><small>Curso de um dia · 8h</small></div></li>
+                      <li><i style="background: #4cc274"></i><div><b>Excel com IA</b><small>Curso de um dia · 8h</small></div></li>
+                      <li><i style="background: #7cc4f0"></i><div><b>Consultoria Contábil com IA</b><small>Curso de um dia · 8h</small></div></li>
+                      <li><i style="background: #b9a3ff"></i><div><b>Introdução à Análise de Dados</b><small>Curso de um dia · 8h</small></div></li>
+                      <li><i style="background: #3fcfbf"></i><div><b>Ciência de Dados Aplicada</b><small>Imersão · 22h</small></div></li>
+                      <li><i style="background: #8fa6ff"></i><div><b>BI e Dashboards com IA</b><small>Imersão · 22h</small></div></li>
+                      <li><i style="background: #ff7a5c"></i><div><b>Prototipação de Apps com IA</b><small>Imersão · 22h</small></div></li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="t2" class="tela-app">
+                  <div class="status"><span>9:41</span><span>●●●</span></div>
+                  <div class="app">
+                    <div class="topo-app"><img src="assets/logo.png" alt="" />CerraClass</div>
+                    <h3 class="display">O que você quer construir?</h3>
+                    <p class="apoio">Escolha uma área</p>
+                    <div class="chips">
+                      <span style="background: #ffc83d">IA &amp; Negócios</span><span style="background: #4cc274">Excel &amp; Planilhas</span>
+                      <span style="background: #7cc4f0">Contabilidade</span><span style="background: #ff9f2e">Finanças</span>
+                      <span style="background: #b9a3ff">Dados</span><span style="background: #f2684f">Processos</span>
+                      <span style="background: #cbe847">Automação</span><span style="background: #8fa6ff">BI</span>
+                      <span style="background: #ff8fb8">IA Setorial</span><span style="background: #ff7a5c">Produto &amp; Apps</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="t3" class="tela-app">
+                  <div class="status"><span>9:41</span><span>●●●</span></div>
+                  <div class="app">
+                    <div class="cab-curso"><h3 class="display">Excel com IA</h3><p>Curso de um dia · 8h · 1 sábado</p></div>
+                    <div id="regua-app" class="regua-app">
+                      <div class="bl"><b>08:00 – 10:00</b><span>Fundamentos e a IA como copiloto</span></div>
+                      <div class="bl"><b>10:15 – 12:00</b><span>Buscar, cruzar e limpar dados</span></div>
+                      <div class="bl"><b>13:00 – 15:00</b><span>Tabelas dinâmicas e gráficos</span></div>
+                      <div class="bl"><b>15:15 – 17:00</b><span>Dashboard, automação e projeto final</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="t4" class="tela-app">
+                  <div class="status"><span>9:41</span><span>●●●</span></div>
+                  <div class="app">
+                    <div class="topo-app"><img src="assets/logo.png" alt="" />Excel com IA</div>
+                    <h3 class="display">Você sai com</h3>
+                    <p class="apoio">Material pronto para usar</p>
+                    <ul class="ticket-app">
+                      <li>Mini dashboard de vendas pronto para reutilizar</li>
+                      <li>Guia de fórmulas com exemplos</li>
+                      <li>Prompts para Excel organizados por tarefa</li>
+                      <li>Planilhas de exercício resolvidas</li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="t5" class="tela-app">
+                  <div class="status"><span>9:41</span><span>●●●</span></div>
+                  <div class="app">
+                    <div class="topo-app"><img src="assets/logo.png" alt="" />Presencial, em Cuiabá</div>
+                    <p class="dez display">10</p>
+                    <p class="apoio">alunos, no máximo</p>
+                    <div class="assentos-app"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <ul class="inclusos">
+                      <li>Certificado impresso com QR Code</li>
+                      <li>Material didático físico</li>
+                      <li>Coffee break incluso</li>
+                      <li>Grupo de suporte no WhatsApp</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="card-a" class="card"><small>Você sai com</small>Mini dashboard de vendas</div>
+        <div id="card-b" class="card"><small>Você sai com</small>Guia de fórmulas</div>
+        <div id="card-c" class="card"><small>Você sai com</small>Prompts organizados</div>
+        <div id="card-d" class="card"><small>Incluso</small>Certificado com QR Code</div>
+        <div id="card-e" class="card"><small>Incluso</small>Material físico e coffee</div>
+        <div id="card-f" class="card"><small>Depois do curso</small>Suporte no WhatsApp</div>
+      </div>
+
+      <!-- 24,6-27,4: celulares em leque -->
+      <div id="cena-leque" class="camada clip" data-start="24.6" data-duration="2.8" data-track-index="2" style="z-index: 4" data-layout-allow-overflow data-layout-allow-overlap>
+        <div class="leque" data-tela="t1"></div><div class="leque" data-tela="t2"></div><div class="leque" data-tela="t3"></div>
+        <div class="leque" data-tela="t4"></div><div class="leque" data-tela="t5"></div>
+      </div>
+
+      <!-- 27,2-30: logo + tagline -->
+      <div id="cena-logo" class="assinatura clip" data-start="27.2" data-duration="2.8" data-track-index="3" style="z-index: 6">
+        <div id="selo" class="selo"><img src="assets/logo.png" alt="CerraClass" /></div>
+        <div class="textos">
+          <p id="marca" class="marca display">CerraClass</p>
+          <p id="tagline" class="tagline display">Pare de só usar IA. <span class="chave">Construa com ela.</span></p>
+          <p id="endereco" class="endereco">cerraclass.com.br</p>
+        </div>
+      </div>
+
+      <audio id="trilha" class="clip" data-start="0" data-duration="30" data-track-index="9" data-volume="1" src="assets/trilha.wav"></audio>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>

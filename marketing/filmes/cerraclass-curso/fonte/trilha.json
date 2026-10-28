@@ -1,0 +1,12 @@
+{
+  "duracao": 15, "bpm": 120, "clima": "sala", "musicaEntra": 1.45, "musicaSai": 15,
+  "deixas": [
+    { "t": 0.15, "som": "tique" }, { "t": 1.45, "som": "riser" }, { "t": 1.45, "som": "impacto" },
+    { "t": 1.55, "som": "whoosh", "ganho": 0.7 }, { "t": 3.4, "som": "whoosh" },
+    { "t": 3.6, "som": "impacto", "ganho": 0.6 }, { "t": 5.05, "som": "whoosh" },
+    { "t": 8.0, "som": "pop" }, { "t": 8.4, "som": "pop" }, { "t": 10.0, "som": "whoosh" },
+    { "t": 10.45, "som": "pop", "ganho": 0.6 }, { "t": 10.6, "som": "pop", "ganho": 0.6 }, { "t": 10.75, "som": "pop", "ganho": 0.6 },
+    { "t": 11.6, "som": "impacto", "ganho": 0.5 }, { "t": 11.93, "som": "impacto", "ganho": 0.5 }, { "t": 12.27, "som": "impacto", "ganho": 0.5 },
+    { "t": 12.7, "som": "brilho" }
+  ]
+}

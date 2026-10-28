@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}" data-composition-variables='[
+  {"id":"titulo","type":"string","label":"Nome do curso","default":"Excel com IA"},
+  {"id":"cor","type":"color","label":"Cor do curso","default":"#4cc274"},
+  {"id":"categoria","type":"string","label":"Categoria","default":"Excel & Planilhas"},
+  {"id":"formato","type":"string","label":"Formato","default":"Curso de um dia · 8h"},
+  {"id":"quando","type":"string","label":"Quando","default":"1 sábado, o dia todo"},
+  {"id":"entregavel","type":"string","label":"Você sai com","default":"Mini dashboard de vendas pronto para reutilizar"}
+]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>CerraClass: comercial do curso 15s</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada clip" data-start="0" data-duration="15" data-track-index="0" style="z-index: 1"></div>
+
+      <!-- 0,0-1,45: o ponto explode -->
+      <div id="abertura" class="cena clip" data-start="0" data-duration="1.5" data-track-index="1" style="z-index: 2"><div id="ponto"></div></div>
+
+      <!-- 1,45-3,6: frase 1 -->
+      <div id="cena-frase1" class="cena clip" data-start="1.45" data-duration="2.15" data-track-index="1" style="z-index: 3">
+        <p class="frase display" data-eco data-layout-allow-overlap><span class="palavra">Pare</span><span class="palavra">de</span><span class="palavra">só</span><span class="palavra">usar</span><span class="palavra">IA.</span></p>
+      </div>
+
+      <!-- 5,2-7,8: nome do curso atrás do ingresso -->
+      <div id="cena-nome" class="cena nome-curso display clip" data-start="5.2" data-duration="2.6" data-track-index="1" style="z-index: 3" data-layout-allow-overlap>
+        <span id="nome"></span>
+      </div>
+
+      <!-- 3,6-10,2: o ingresso 3D -->
+      <div id="cena-ingresso" class="camada clip" data-start="3.6" data-duration="6.6" data-track-index="2" style="z-index: 5" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="ingresso">
+          <div id="ticket">
+            <div class="lamina"></div><div class="lamina"></div><div class="lamina"></div><div class="lamina"></div>
+            <div class="lamina"></div><div class="lamina"></div><div class="lamina"></div><div class="lamina"></div>
+            <div class="face verso"><img src="assets/logo.png" alt="" /></div>
+            <div class="face frente">
+              <div class="topo"><span>CerraClass · presencial</span><span id="t-categoria"></span></div>
+              <p id="t-titulo" class="titulo display"></p>
+              <div class="base">
+                <span id="t-formato" class="formato"></span>
+                <div class="mini-assentos"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7,8-10,2: cards ao redor do ingresso -->
+      <div id="cena-cards" class="camada clip" data-start="7.8" data-duration="2.4" data-track-index="3" style="z-index: 6">
+        <div class="card c1" data-eco><p class="rot">Você sai com</p><p id="c-entregavel" class="grande display"></p></div>
+        <div class="card c2" data-eco><p id="c-formato" class="rot"></p><p id="c-quando" class="grande display"></p></div>
+      </div>
+
+      <!-- 10,2-11,6: turma de até 10 -->
+      <div id="cena-turma" class="cena turma clip" data-start="10.2" data-duration="1.4" data-track-index="1" style="z-index: 7">
+        <p id="turma-texto" class="texto display">Turma de até 10 alunos</p>
+        <div class="assentos"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <!-- 11,6-12,6: três palavras -->
+      <div id="cena-palavras" class="cena clip" data-start="11.6" data-duration="1" data-track-index="1" style="z-index: 7" data-layout-allow-overlap>
+        <p id="p1" class="palavrao display">Presencial.</p>
+        <p id="p2" class="palavrao display">Prático.</p>
+        <p id="p3" class="palavrao display">Em Cuiabá.</p>
+      </div>
+
+      <!-- 12,6-15: logo + tagline -->
+      <div id="cena-logo" class="assinatura clip" data-start="12.6" data-duration="2.4" data-track-index="3" style="z-index: 8">
+        <div id="selo" class="selo"><img src="assets/logo.png" alt="CerraClass" /></div>
+        <div class="textos">
+          <p id="marca" class="marca display">CerraClass</p>
+          <p id="tagline" class="tagline">Construa com ela.</p>
+          <p id="endereco" class="endereco">cerraclass.com.br</p>
+        </div>
+      </div>
+
+      <audio id="trilha" class="clip" data-start="0" data-duration="15" data-track-index="9" data-volume="1" src="assets/trilha.wav"></audio>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>

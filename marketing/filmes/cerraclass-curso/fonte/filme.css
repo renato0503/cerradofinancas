@@ -1,0 +1,74 @@
+@font-face { font-family: 'Bricolage Grotesque'; src: url('assets/fonts/bricolage.woff2') format('woff2'); font-weight: 200 800; font-stretch: 75% 100%; }
+
+:root { --cor: #ffc83d; --tinta: #141414; --papel: #ffffff; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: var(--tinta); }
+#root { position: relative; overflow: hidden; font-family: 'Bricolage Grotesque', sans-serif; }
+
+.camada { position: absolute; inset: 0; }
+.cena { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.display { font-weight: 800; font-stretch: 78%; text-transform: uppercase; line-height: .86; letter-spacing: -0.01em; }
+
+#fundo { background: var(--tinta); }
+#ponto { width: 28px; height: 28px; border-radius: 50%; background: var(--cor); }
+
+.frase { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .22em; max-width: 1300px; text-align: center; color: var(--tinta); font-size: 230px; }
+.palavra { display: inline-block; }
+
+/* Ingresso 3D */
+#ingresso { position: absolute; left: 50%; top: 50%; width: 760px; height: 440px; margin: -220px 0 0 -380px; perspective: 2400px; }
+#ticket { position: absolute; inset: 0; transform-style: preserve-3d; }
+.face, .lamina { position: absolute; inset: 0; border-radius: 30px; }
+.lamina { background: var(--tinta); }
+.face { backface-visibility: hidden; border: 6px solid var(--tinta); }
+.frente { background: var(--papel); color: var(--tinta); padding: 40px 46px; display: flex; flex-direction: column; }
+.verso { background: var(--cor); display: grid; place-items: center; }
+.verso img { width: 220px; height: 220px; object-fit: contain; }
+.frente .topo { display: flex; justify-content: space-between; font-size: 26px; font-weight: 700; }
+.frente .titulo { font-size: 76px; margin-top: 22px; text-wrap: balance; }
+.frente .base { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; border-top: 5px dashed var(--tinta); padding-top: 22px; }
+.frente .formato { font-size: 30px; font-weight: 700; }
+.mini-assentos { display: grid; grid-template-columns: repeat(5, 26px); gap: 8px; }
+.mini-assentos i { width: 26px; height: 26px; border-radius: 50% 50% 7px 7px; background: var(--tinta); }
+
+/* Frase 2: nome do curso atrás do ingresso */
+.nome-curso { flex-direction: column; justify-content: flex-start; padding-top: 90px; color: var(--cor); text-align: center; }
+.nome-curso span { display: block; max-width: 1700px; text-wrap: balance; }
+
+/* Cards */
+.card { position: absolute; top: 50%; width: 600px; background: var(--cor); color: var(--tinta); border-radius: 24px; padding: 38px 42px; border: 6px solid var(--tinta); box-shadow: 10px 10px 0 var(--papel); }
+.card .rot { font-size: 30px; font-weight: 700; }
+.card .grande { font-size: 64px; margin-top: 12px; }
+.card.c1 { left: 90px; margin-top: -300px; }
+.card.c2 { right: 90px; margin-top: 60px; }
+
+/* Turma de 10 */
+.turma { flex-direction: column; gap: 60px; }
+.turma .texto { color: var(--tinta); font-size: 170px; text-align: center; }
+.assentos { display: grid; grid-template-columns: repeat(5, 110px); gap: 26px; }
+.assentos i { width: 110px; height: 110px; border-radius: 50% 50% 24px 24px; background: var(--tinta); display: block; }
+
+.palavrao { color: var(--cor); font-size: 300px; position: absolute; }
+
+/* Assinatura */
+.assinatura { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 60px; }
+.selo { width: 320px; height: 320px; border-radius: 50%; background: var(--papel); display: grid; place-items: center; border: 8px solid var(--tinta); flex: 0 0 auto; }
+.selo img { width: 72%; height: 72%; object-fit: contain; }
+.assinatura .textos { display: flex; flex-direction: column; gap: 18px; }
+.marca { color: var(--tinta); font-size: 200px; }
+.tagline { color: var(--tinta); font-size: 64px; font-weight: 800; font-stretch: 78%; text-transform: uppercase; }
+.endereco { align-self: flex-start; background: var(--tinta); color: var(--cor); font-size: 44px; font-weight: 700; padding: 12px 26px; border-radius: 14px; }
+
+/* Vertical */
+.vertical .frase { font-size: 170px; max-width: 960px; }
+.vertical .card { left: 90px; right: auto; width: 900px; }
+.vertical .card.c1 { top: 240px; margin-top: 0; }
+.vertical .card.c2 { top: auto; bottom: 240px; margin-top: 0; }
+.vertical .nome-curso { padding-top: 330px; }
+.vertical .nome-curso span { max-width: 980px; }
+.vertical .turma .texto { font-size: 140px; max-width: 960px; }
+.vertical .palavrao { font-size: 170px; }
+.vertical .assinatura { flex-direction: column; gap: 50px; text-align: center; }
+.vertical .assinatura .textos { align-items: center; }
+.vertical .endereco { align-self: center; }
+.vertical .marca { font-size: 170px; }

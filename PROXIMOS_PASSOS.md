@@ -1,6 +1,6 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 26/10/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 28/10/2026.
 
 ## Onde está cada registro
 
@@ -31,6 +31,8 @@ Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml
   (`.env`, ignorado pelo git).
 
 **Marketing:** 20 campanhas publicadas (lançamento, 4 frentes, 13 cursos, folinha animada e Cerra.AI). Detalhes em `marketing/HISTORICO.md`.
+Em 28/10, Cerra.AI e CerraClass (com os cursos) ganharam **identidade visual própria** e vídeos novos em
+HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identidade do site.
 
 ## Pendências
 
@@ -49,6 +51,7 @@ Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml
       Medido em 26/10 com `marketing/tools/conferir_audio.py`: os 19 vídeos têm trilha, sem clipping e sem
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
 - [ ] Ajustar o catálogo da CerraClass para 10 alunos por turma (ver acima).
+- [ ] Ouvir as trilhas novas dos vídeos HyperFrames (sintetizadas por `marketing/filmes/ferramentas/trilha.mjs`; volume já medido, escuta pendente).
 
 ## Como publicar uma mudança
 

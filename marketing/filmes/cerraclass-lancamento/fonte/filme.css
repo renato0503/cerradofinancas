@@ -1,0 +1,96 @@
+@font-face { font-family: 'Bricolage Grotesque'; src: url('assets/fonts/bricolage.woff2') format('woff2'); font-weight: 200 800; font-stretch: 75% 100%; }
+
+:root { --ipe: #ffc83d; --tinta: #141414; --escuro: #0f0f0f; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: var(--escuro); }
+#root { position: relative; overflow: hidden; font-family: 'Bricolage Grotesque', sans-serif; color: #fff; }
+.camada { position: absolute; inset: 0; }
+#fundo { background: var(--escuro); }
+.display { font-weight: 800; font-stretch: 78%; text-transform: uppercase; line-height: .9; letter-spacing: -0.005em; }
+
+/* Brilhos de cor (pedido do prompt: fundo escuro com brilho colorido) */
+.brilho { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(140px); opacity: .35; }
+#b1 { background: #ffc83d; left: 900px; top: -300px; }
+#b2 { background: #4cc274; left: 1300px; top: 450px; }
+#b3 { background: #ff7a5c; left: 300px; top: 500px; }
+
+/* Headlines */
+.headline { position: absolute; left: 140px; top: 50%; width: 760px; transform: translateY(-50%); }
+.headline h2 { font-size: 118px; }
+.headline .w { display: inline-block; margin-right: .2em; }
+.headline .w.chave { color: var(--ipe); }
+
+/* iPhone 3D */
+#palco { position: absolute; left: 50%; top: 50%; width: 400px; height: 820px; margin: -410px 0 0 -200px; perspective: 2600px; }
+.iphone { position: absolute; inset: 0; transform-style: preserve-3d; }
+.placa { position: absolute; inset: 0; border-radius: 64px; background: #2a2a2a; }
+.corpo { position: absolute; inset: 0; border-radius: 64px; background: #0b0b0b; padding: 14px; box-shadow: inset 0 0 0 3px #3a3a3a; }
+.tela { position: relative; width: 100%; height: 100%; border-radius: 52px; overflow: hidden; background: #fff; color: var(--tinta); }
+.ilha { position: absolute; left: 50%; top: 14px; width: 118px; height: 34px; margin-left: -59px; border-radius: 20px; background: #000; z-index: 5; }
+.status { display: flex; justify-content: space-between; padding: 18px 34px 0; font-size: 18px; font-weight: 700; height: 56px; }
+.app { position: absolute; inset: 56px 0 0; padding: 14px 22px; }
+.topo-app { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+.topo-app img { width: 30px; height: 30px; object-fit: contain; }
+.app h3 { font-size: 38px; margin-bottom: 6px; }
+.app .apoio { font-size: 17px; font-weight: 600; color: #555; margin-bottom: 16px; }
+
+/* Catálogo */
+.lista-cursos { list-style: none; }
+.lista-cursos li { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 2px solid #eee; }
+.lista-cursos i { width: 38px; height: 38px; border-radius: 10px; flex: 0 0 auto; border: 2px solid var(--tinta); }
+.lista-cursos b { display: block; font-size: 18px; line-height: 1.1; }
+.lista-cursos small { display: block; font-size: 14px; color: #666; font-weight: 600; }
+
+/* Categorias */
+.chips { display: flex; flex-wrap: wrap; gap: 9px; }
+.chips span { font-size: 17px; font-weight: 700; padding: 10px 14px; border-radius: 14px; border: 2px solid var(--tinta); }
+
+/* Página do curso */
+.cab-curso { background: #4cc274; border-radius: 22px; padding: 18px; margin-bottom: 14px; border: 2px solid var(--tinta); }
+.cab-curso h3 { font-size: 40px; }
+.cab-curso p { font-size: 16px; font-weight: 700; }
+.regua-app .bl { display: grid; grid-template-columns: 116px 1fr; gap: 8px; padding: 11px 0; border-top: 2px solid #eee; font-size: 16px; }
+.regua-app .bl b { font-weight: 800; font-stretch: 78%; font-size: 19px; }
+
+/* Você sai com */
+.ticket-app { border: 2px solid var(--tinta); border-radius: 18px; padding: 16px; }
+.ticket-app li { list-style: none; font-size: 18px; font-weight: 600; padding: 10px 0; border-top: 2px dashed #ccc; }
+.ticket-app li:first-child { border-top: 0; }
+
+/* Turma */
+.dez { font-size: 120px; line-height: .85; }
+.assentos-app { display: grid; grid-template-columns: repeat(5, 48px); gap: 10px; margin: 16px 0 18px; }
+.assentos-app i { width: 48px; height: 48px; border-radius: 50% 50% 12px 12px; background: var(--tinta); }
+.inclusos li { list-style: none; font-size: 17px; font-weight: 600; padding: 9px 0; border-top: 2px solid #eee; }
+
+/* Telas empilhadas dentro do celular */
+.tela-app { position: absolute; inset: 0; background: #fff; }
+
+/* Cards que saltam do celular */
+.card { position: absolute; left: 50%; top: 50%; width: 340px; margin: -60px 0 0 -170px; background: #fff; color: var(--tinta); border: 4px solid var(--tinta); border-radius: 22px; padding: 18px 22px; box-shadow: 8px 8px 0 var(--ipe); font-size: 28px; font-weight: 700; line-height: 1.15; }
+.card small { display: block; font-size: 18px; color: #666; margin-bottom: 4px; }
+
+/* Leque */
+.leque { position: absolute; left: 50%; top: 50%; width: 400px; height: 820px; margin: -410px 0 0 -200px; }
+
+/* Assinatura */
+.assinatura { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 56px; }
+.selo { width: 280px; height: 280px; border-radius: 50%; background: #fff; display: grid; place-items: center; flex: 0 0 auto; }
+.selo img { width: 72%; height: 72%; object-fit: contain; }
+.assinatura .textos { display: flex; flex-direction: column; gap: 16px; }
+.marca { font-size: 190px; }
+.tagline { font-size: 58px; }
+.tagline .chave { color: var(--ipe); }
+.endereco { align-self: flex-start; background: var(--ipe); color: var(--tinta); font-size: 42px; font-weight: 800; padding: 10px 24px; border-radius: 14px; }
+
+/* Vertical */
+.vertical .headline { left: 90px; top: 250px; width: 900px; transform: none; }
+.vertical .headline h2 { font-size: 104px; }
+.vertical #b1 { left: 200px; top: -200px; }
+.vertical #b2 { left: 400px; top: 1100px; }
+.vertical #b3 { left: -300px; top: 700px; }
+.vertical .assinatura { flex-direction: column; text-align: center; gap: 40px; }
+.vertical .assinatura .textos { align-items: center; }
+.vertical .marca { font-size: 160px; }
+.vertical .tagline { font-size: 52px; max-width: 900px; }
+.vertical .endereco { align-self: center; }

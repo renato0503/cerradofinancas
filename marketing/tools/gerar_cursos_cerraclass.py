@@ -16,43 +16,42 @@ DADOS = json.loads((RAIZ / "dados" / "cerraclass-cursos.json").read_text(encodin
 PREFIXO = "2026-10-curso-"
 DATA = "2026-10-29"
 
-# Diagramação por curso: cor de destaque, ícone Phosphor (equivalente ao Material Icon da CerraClass),
+# Diagramação por curso: fundo próprio (cor do cerrado, identidade CerraClass "Sábado de sala"),
 # emoji da legenda e hashtags. O slug "ia-na-farma" evita colidir com a campanha "ia-farma" (propagandistas).
 VISUAL = {
-    "pres-ia-gestao":                 ("ia-na-gestao", "#a78bfa", "chart-line-up", "📈", "#GestaoEmpresarial #Lideranca #IAnaGestao"),
-    "pres-excel-ia":                  ("excel-com-ia", "#4ade80", "table", "📊", "#Excel #Planilhas #ExcelComIA"),
-    "pres-consultoria-contabil-ia":   ("consultoria-contabil-ia", "#2dd4bf", "calculator", "🧮", "#Contabilidade #Contador #ConsultoriaContabil"),
-    "pres-consultoria-financeira-ia": ("consultoria-financeira-ia", "#fbbf24", "bank", "💰", "#Financas #FluxoDeCaixa #ConsultoriaFinanceira"),
-    "pres-intro-analise-dados":       ("analise-de-dados", "#38bdf8", "chart-bar", "🔎", "#AnaliseDeDados #Dados #DataAnalytics"),
-    "pres-bpmn-ia":                   ("bpmn-com-ia", "#fb7185", "tree-structure", "🗺️", "#BPMN #Processos #GestaoDeProcessos"),
-    "pres-intro-automacao-ia":        ("automacao-com-ia", "#fb923c", "lightning", "⚡", "#Automacao #NoCode #Produtividade"),
-    "pres-ciencia-dados-aplicada":    ("ciencia-de-dados", "#818cf8", "flask", "🧪", "#CienciaDeDados #Python #MachineLearning"),
-    "pres-ia-farma":                  ("ia-na-farma", "#f472b6", "pill", "💊", "#Farmacia #Drogaria #VarejoFarmaceutico"),
-    "pres-bi-dashboards-ia":          ("bi-dashboards-ia", "#22d3ee", "gauge", "📉", "#PowerBI #BI #Dashboards"),
-    "pres-prototipacao-apps-ia":      ("prototipacao-apps-ia", "#e879f9", "device-mobile", "📱", "#Apps #Prototipacao #NoCode"),
+    "pres-ia-gestao":                 ("ia-na-gestao", "#ffc83d", "📈", "#GestaoEmpresarial #Lideranca #IAnaGestao"),
+    "pres-excel-ia":                  ("excel-com-ia", "#4cc274", "📊", "#Excel #Planilhas #ExcelComIA"),
+    "pres-consultoria-contabil-ia":   ("consultoria-contabil-ia", "#7cc4f0", "🧮", "#Contabilidade #Contador #ConsultoriaContabil"),
+    "pres-consultoria-financeira-ia": ("consultoria-financeira-ia", "#ff9f2e", "💰", "#Financas #FluxoDeCaixa #ConsultoriaFinanceira"),
+    "pres-intro-analise-dados":       ("analise-de-dados", "#b9a3ff", "🔎", "#AnaliseDeDados #Dados #DataAnalytics"),
+    "pres-bpmn-ia":                   ("bpmn-com-ia", "#f2684f", "🗺️", "#BPMN #Processos #GestaoDeProcessos"),
+    "pres-intro-automacao-ia":        ("automacao-com-ia", "#cbe847", "⚡", "#Automacao #NoCode #Produtividade"),
+    "pres-ciencia-dados-aplicada":    ("ciencia-de-dados", "#3fcfbf", "🧪", "#CienciaDeDados #Python #MachineLearning"),
+    "pres-ia-farma":                  ("ia-na-farma", "#ff8fb8", "💊", "#Farmacia #Drogaria #VarejoFarmaceutico"),
+    "pres-bi-dashboards-ia":          ("bi-dashboards-ia", "#8fa6ff", "📉", "#PowerBI #BI #Dashboards"),
+    "pres-prototipacao-apps-ia":      ("prototipacao-apps-ia", "#ff7a5c", "📱", "#Apps #Prototipacao #NoCode"),
 }
-TAGS_BASE = "#Cerraclass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso"
+TAGS_BASE = "#CerraClass #InteligenciaArtificial #CursoPresencial #Cuiaba #MatoGrosso"
 WHATS = "(67) 99351-5206"
+TURMA = "Turma de até 10 alunos"
+
+
+def formato_partes(c):
+    f = DADOS["formatos"][c["format"]]
+    return [f["label"], f["totalHours"], f["summary"]]
 
 
 def formato_txt(c):
-    f = DADOS["formatos"][c["format"]]
-    return f"{f['label']} · {f['totalHours']} · {f['summary']}"
+    return " · ".join(formato_partes(c))
 
 
-def titulo_html(titulo, tamanhos=(118, 104, 92)):
-    """Destaca 'com IA' (ou a última palavra) na cor do curso e ajusta o tamanho ao comprimento."""
-    t = escape(titulo)
-    if " com IA" in t:
-        t = t.replace(" com IA", ' <span class="acento">com IA</span>')
-    elif t.endswith(" IA") or " IA " in t:
-        t = t.replace(" IA", ' <span class="acento">IA</span>', 1)
-    else:
-        partes = t.rsplit(" ", 1)
-        t = f'{partes[0]} <span class="acento">{partes[1]}</span>' if len(partes) == 2 else t
+def formato_html(c):
+    return '<div class="formato">' + "".join(f"<span>{escape(t)}</span>" for t in formato_partes(c)) + "</div>"
+
+
+def tamanho_titulo(titulo, tamanhos=(190, 150, 124)):
     n = len(titulo)
-    tam = tamanhos[0] if n <= 16 else tamanhos[1] if n <= 26 else tamanhos[2]
-    return t, tam
+    return tamanhos[0] if n <= 14 else tamanhos[1] if n <= 24 else tamanhos[2]
 
 
 CABECALHO = """<!DOCTYPE html>
@@ -62,22 +61,21 @@ CABECALHO = """<!DOCTYPE html>
   <meta name="entrega" content="{entrega}">
   <meta name="formato" content="{formato}">
   <title>{titulo}</title>
-  <link rel="stylesheet" href="../../brand/carrossel.css">
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="../../brand/cerraclass/marca.css">
 </head>
-<body style="--acento: {cor}">
+<body style="--campo: {cor}">
 """
 RODAPE_PECA = """  <script src="../../brand/slides.js"></script>
 </body>
 </html>
 """
-FOLHA = "../../../img/folinha-hero.png"
+LOGO = "../../brand/cerraclass/logo.png"
 
 
 def rodape(primeiro=False):
-    direita = '<span class="arraste">Arraste <i class="ph-bold ph-arrow-right"></i></span>' if primeiro else "<span data-pagina></span>"
+    direita = "<span>arraste →</span>" if primeiro else "<span data-pagina></span>"
     return f"""    <div class="rodape">
-      <span class="marca"><img src="{FOLHA}" alt=""> Cerraclass</span>
+      <span class="marca"><span class="selo"><img src="{LOGO}" alt=""></span> CerraClass</span>
       {direita}
     </div>"""
 
@@ -86,94 +84,101 @@ def slide(conteudo, classe="", primeiro=False):
     return f'  <section class="slide {classe}">\n{conteudo}\n{rodape(primeiro)}\n  </section>\n'
 
 
-def carrossel(c, entrega, cor, icone):
-    titulo, tam = titulo_html(c["title"])
+def bloco_regua(p):
+    quando = p["when"]
+    if "·" in quando:  # "Encontro 1 · Sexta · 19:00 – 22:00"
+        _, dia, hora = [x.strip() for x in quando.split("·")]
+        return f'<span class="hora"><small>{escape(dia)}</small>{escape(hora)}</span>'
+    return f'<span class="hora">{escape(quando)}</span>'
+
+
+def carrossel(c, entrega, cor):
     s = []
-    s.append(slide(f"""    <span class="kicker"><i class="ph-bold ph-graduation-cap"></i> Cerraclass · {escape(c['category'])}</span>
-    <span class="icone-frente"><i class="ph-duotone ph-{icone}"></i></span>
-    <h1 style="font-size: {tam}px">{titulo}</h1>
-    <p class="sub">{escape(c['description'])}</p>
-    <span class="formato"><i class="ph-bold ph-calendar-check"></i> {escape(formato_txt(c))}</span>""", "capa", primeiro=True))
+    s.append(slide(f"""    <span class="etiqueta">Curso presencial · {escape(c['category'])}</span>
+    <h1 class="mega" style="font-size: {tamanho_titulo(c['title'])}px">{escape(c['title'])}</h1>
+    <p class="sub" style="margin: 44px 0 48px">{escape(c['description'])}</p>
+    {formato_html(c)}
+    <div class="turma mini">
+      <div class="assentos">{'<i></i>' * 10}</div>
+      <span class="legenda-turma">Turma de até<br>10 alunos</span>
+    </div>""", "capa", primeiro=True))
 
-    icones_publico = ["user-circle", "users-three", "briefcase", "student"]
-    cards = "\n".join(
-        f'      <div class="card"><i class="ph-duotone ph-{icones_publico[i % 4]}"></i><div><h3>{escape(a)}</h3></div></div>'
-        for i, a in enumerate(c["audience"][:4]))
-    s.append(slide(f"""    <span class="kicker"><i class="ph-bold ph-target"></i> Para quem é</span>
-    <h2 class="titulo">Feito para você que é...</h2>
-    <div class="grade uma compacta">
-{cards}
-    </div>""", ""))
-
-    itens = "\n".join(f'      <li><i class="ph-bold ph-check-circle"></i> {escape(o)}</li>' for o in c["outcomes"][:5])
-    s.append(slide(f"""    <span class="kicker"><i class="ph-bold ph-lightbulb"></i> O que você vai aprender</span>
-    <h2 class="titulo">Na prática, do início ao fim</h2>
-    <ul class="checklist">
+    itens = "\n".join(f"      <li>{escape(a)}</li>" for a in c["audience"][:4])
+    s.append(slide(f"""    <span class="etiqueta">Para quem é</span>
+    <h2 class="titulo">Feito para você que é</h2>
+    <ul class="lista">
 {itens}
-    </ul>""", ""))
+    </ul>"""))
 
-    passos = "\n".join(
-        f'      <div class="passo"><span class="n">{i + 1}</span><div><h3>{escape(p["title"])}</h3><p>{escape(p["when"])}</p></div></div>'
-        for i, p in enumerate(c["program"][:4]))
-    rotulo = "4 encontros" if c["format"] == "imersao" else "4 blocos no sábado"
-    s.append(slide(f"""    <span class="kicker"><i class="ph-bold ph-list-numbers"></i> Programa</span>
+    itens = "\n".join(f"      <li>{escape(o)}</li>" for o in c["outcomes"][:5])
+    s.append(slide(f"""    <span class="etiqueta">O que você vai aprender</span>
+    <h2 class="titulo">Na prática, do início ao fim</h2>
+    <ul class="lista compacta">
+{itens}
+    </ul>"""))
+
+    blocos = "\n".join(
+        f'      <div class="bloco">{bloco_regua(p)}<span class="nome">{escape(p["title"])}</span></div>'
+        for p in c["program"][:4])
+    rotulo = "4 encontros" if c["format"] == "imersao" else "Um sábado, 4 blocos"
+    s.append(slide(f"""    <span class="etiqueta">Programa</span>
     <h2 class="titulo">{rotulo}</h2>
-    <div class="passos" style="gap: 50px">
-{passos}
-    </div>""", ""))
+    <div class="regua">
+{blocos}
+    </div>"""))
 
-    entregas = "\n".join(f'      <li><i class="ph-bold ph-package"></i> {escape(d)}</li>' for d in c["deliverables"][:5])
-    chips = "".join(f"<span>{escape(t)}</span>" for t in c["tools"][:6])
-    s.append(slide(f"""    <span class="kicker"><i class="ph-bold ph-package"></i> Você sai com</span>
+    entregas = "\n".join(f"        <li>{escape(d)}</li>" for d in c["deliverables"][:4])
+    ferramentas = " / ".join(escape(t) for t in c["tools"][:6])
+    s.append(slide(f"""    <span class="etiqueta">Você sai com</span>
     <h2 class="titulo">Material pronto para usar</h2>
-    <ul class="checklist">
+    <div class="ticket">
+      <ul>
 {entregas}
-    </ul>
-    <p class="chips-titulo">Ferramentas</p>
-    <div class="chips">{chips}</div>""", ""))
+      </ul>
+    </div>
+    <p class="ferramentas"><b>Ferramentas</b> {ferramentas}</p>"""))
 
-    s.append(slide("""    <span class="kicker"><i class="ph-bold ph-gift"></i> Incluso na vaga</span>
-    <h2 class="titulo">Presencial, em Cuiabá</h2>
-    <div class="grade">
-      <div class="card"><i class="ph-duotone ph-users-three"></i><h3>Até 15 alunos</h3><p>Atenção de perto em cada exercício</p></div>
-      <div class="card"><i class="ph-duotone ph-certificate"></i><h3>Certificado</h3><p>Impresso, com QR Code de validação</p></div>
-      <div class="card"><i class="ph-duotone ph-book-open"></i><h3>Material e coffee</h3><p>Material físico, arquivos e prompts</p></div>
-      <div class="card"><i class="ph-duotone ph-whatsapp-logo"></i><h3>Suporte depois</h3><p>Grupo no WhatsApp após o curso</p></div>
-    </div>""", ""))
+    s.append(slide(f"""    <span class="etiqueta">Presencial, em Cuiabá</span>
+    <div class="turma">
+      <span class="num">10<small>alunos,<br>no máximo</small></span>
+      <div class="assentos">{'<i></i>' * 10}</div>
+    </div>
+    <ul class="lista compacta" style="margin-top: 64px">
+      <li>Certificado impresso com QR Code de validação</li>
+      <li>Material didático físico e coffee break</li>
+      <li>Arquivos, prompts e modelos usados em aula para levar</li>
+      <li>Grupo de suporte no WhatsApp depois do curso</li>
+    </ul>""", "tinta"))
 
-    s.append(slide(f"""    <img class="folha" src="{FOLHA}" alt="">
-    <h2>Garanta sua vaga na <span class="acento">próxima turma</span></h2>
-    <p class="sub">{escape(formato_txt(c))}</p>
+    s.append(slide(f"""    <span class="etiqueta">Inscrições abertas</span>
+    <h2 class="mega" style="font-size: 132px">Garanta sua vaga na próxima turma</h2>
     <div class="contatos">
-      <span class="contato principal"><i class="ph-bold ph-graduation-cap"></i> cerraclass.com.br</span>
-      <span class="contato"><i class="ph-bold ph-whatsapp-logo"></i> {WHATS}</span>
-    </div>""", "cta"))
+      <span class="contato principal">cerraclass.com.br</span>
+      <span class="contato">WhatsApp {WHATS}</span>
+    </div>
+    <img class="logo-grande" data-sangra src="{LOGO}" alt="">"""))
 
     cab = CABECALHO.format(entrega=entrega, formato="1080x1350", titulo=f"Carrossel: {escape(c['title'])}", cor=cor)
     return cab + "\n".join(s) + RODAPE_PECA
 
 
-def story(c, entrega, cor, icone):
-    titulo, tam = titulo_html(c["title"], (100, 90, 80))
-    cards = [
-        ("target", "Para quem", c["audience"][0]),
-        ("package", "Você sai com", c["deliverables"][0]),
-        ("users-three", "Turma de até 15 alunos", "Certificado com QR Code"),
-    ]
-    cards_html = "\n".join(
-        f'      <div class="card"><i class="ph-duotone ph-{i}"></i><div><h3>{escape(t)}</h3><p>{escape(d)}</p></div></div>'
-        for i, t, d in cards)
+def story(c, entrega, cor):
     cab = CABECALHO.format(entrega=entrega, formato="1080x1920", titulo=f"Story: {escape(c['title'])}", cor=cor)
     return cab + f"""  <!-- área segura: ~250px livres no topo e na base -->
   <section class="slide story">
-    <span class="kicker"><i class="ph-bold ph-{icone}"></i> Cerraclass · {escape(c['category'])}</span>
-    <h1 style="font-size: {tam}px">{titulo}</h1>
-    <p class="sub">{escape(c['description'])}</p>
-    <span class="formato"><i class="ph-bold ph-calendar-check"></i> {escape(formato_txt(c))}</span>
-    <div class="grade uma">
-{cards_html}
+    <span class="etiqueta">CerraClass · {escape(c['category'])}</span>
+    <h1 class="mega" style="font-size: {tamanho_titulo(c['title'], (140, 116, 100))}px">{escape(c['title'])}</h1>
+    <p class="sub" style="margin: 40px 0 44px">{escape(c['description'])}</p>
+    {formato_html(c)}
+    <ul class="lista compacta" style="margin-top: 56px">
+      <li><b>Você sai com:</b> {escape(c['deliverables'][0])}</li>
+      <li><b>Certificado</b> impresso com QR Code</li>
+    </ul>
+    <div class="turma" style="margin-top: 70px">
+      <span class="num">10<small>alunos,<br>no máximo</small></span>
+      <div class="assentos" style="width: 520px">{'<i></i>' * 10}</div>
     </div>
-    <span class="contato principal"><i class="ph-bold ph-graduation-cap"></i> cerraclass.com.br</span>
+    <span class="contato principal" style="margin-top: auto">cerraclass.com.br</span>
   </section>
 """ + RODAPE_PECA
 
@@ -191,7 +196,7 @@ Para quem é:
 {publico}
 
 📅 {formato_txt(c)}
-📍 Presencial em Cuiabá, turma de até 15 alunos
+📍 Presencial em Cuiabá, turma de até 10 alunos
 🎓 Certificado com QR Code, material físico e coffee break inclusos
 
 Inscrições: 🔗 {link}
@@ -209,7 +214,7 @@ Curso presencial "{c['title']}", da Cerraclass ({formato_txt(c)}). Programa:
 Cada participante sai com:
 {entregas}
 
-Turmas de até 15 alunos em Cuiabá, com certificado e nota fiscal para empresas.
+Turmas de até 10 alunos em Cuiabá, com certificado e nota fiscal para empresas.
 Inscrições: {link}
 """
     return ig, li
@@ -218,15 +223,15 @@ Inscrições: {link}
 def main():
     gerados = []
     for c in DADOS["cursos"]:
-        slug, cor, icone, emoji, tags = VISUAL[c["id"]]
+        slug, cor, emoji, tags = VISUAL[c["id"]]
         entrega = PREFIXO + slug
         pasta_post = RAIZ / "posts" / entrega
         pasta_entrega = RAIZ / "entregas" / entrega
         pasta_post.mkdir(parents=True, exist_ok=True)
         pasta_entrega.mkdir(parents=True, exist_ok=True)
 
-        (pasta_post / "carrossel.html").write_text(carrossel(c, entrega, cor, icone), encoding="utf-8")
-        (pasta_post / "story.html").write_text(story(c, entrega, cor, icone), encoding="utf-8")
+        (pasta_post / "carrossel.html").write_text(carrossel(c, entrega, cor), encoding="utf-8")
+        (pasta_post / "story.html").write_text(story(c, entrega, cor), encoding="utf-8")
 
         ig, li = legendas(c, emoji, tags)
         (pasta_entrega / "legenda-instagram.txt").write_text(ig, encoding="utf-8")
@@ -237,7 +242,7 @@ def main():
             "descricao": f"{c['description']} {formato_txt(c)}. Campanha gerada a partir do catálogo oficial da Cerraclass.",
             "orientacoes": [
                 "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
-                "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
+                "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
                 f"Story: adicionar o sticker de link para https://{'cerraclass.com.br/presencial/' + c['id']}",
                 "Valor sob consulta: as peças não citam preço nem data de turma.",
             ],

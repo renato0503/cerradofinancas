@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Cerra.AI: lançamento 30s</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada clip" data-start="0" data-duration="30" data-track-index="0" style="z-index: 1"></div>
+
+      <!-- 0-2,6: abertura com o logo -->
+      <div id="cena-abre" class="centro clip" data-start="0" data-duration="2.6" data-track-index="1" style="z-index: 2">
+        <div id="abre"><img src="assets/emblema.png" alt="" /><p>Cerra.AI</p></div>
+      </div>
+
+      <!-- 2,6-7,2: frase 1 + documentos -->
+      <div id="cena-1" class="cena clip" data-start="2.6" data-duration="4.6" data-track-index="1" style="z-index: 3">
+        <h2 class="h">Sua empresa tem documentos que não podem sair dela.</h2>
+        <div class="painel" data-eco>
+          <div class="cab"><span>Documentos Vetorizados</span><span class="badge">6</span></div>
+          <ul class="arquivos">
+            <li><span>contrato_locacao.pdf</span><span>12 páginas</span></li>
+            <li><span>folha_outubro.xlsx</span><span>planilha</span></li>
+            <li><span>ata_assembleia.docx</span><span>documento</span></li>
+            <li><span>laudo_digitalizado.jpg</span><span>OCR</span></li>
+            <li><span>reuniao_diretoria.mp3</span><span>transcrição</span></li>
+            <li><span>politica_interna.odt</span><span>documento</span></li>
+          </ul>
+          <div class="rodape-ui"><span>Espaço Local</span><span>ChromaDB</span></div>
+        </div>
+      </div>
+
+      <!-- 7,2-16,6: frases 2 e 3 sobre a mesma conversa -->
+      <div id="cena-2" class="cena clip" data-start="7.2" data-duration="9.4" data-track-index="1" style="z-index: 3" data-layout-allow-overlap>
+        <div class="pilha-h" style="display: grid">
+          <h2 id="h2a" class="h" style="grid-area: 1 / 1">O Cerra.AI responde a partir deles.</h2>
+          <h2 id="h2b" class="h" style="grid-area: 1 / 1">Toda resposta mostra de onde veio.</h2>
+        </div>
+        <div id="conversa-wrap" data-layout-allow-overflow>
+          <div id="conversa" class="painel" data-eco>
+            <div class="cab"><span>Workspace: Jurídico</span><span>Processamento Local</span></div>
+            <p class="saudacao">Como posso auxiliar sua organização hoje?</p>
+            <div id="b-eu" class="bolha eu">Qual é o prazo de aviso no contrato de locação?</div>
+            <div id="b-ia" class="bolha ia">O aviso prévio é de 30 dias, pela cláusula 12.
+              <div id="fontes" class="fontes">Trechos consultados: contrato_locacao.pdf (p. 2, 5)</div>
+            </div>
+            <div class="entrada">Escreva uma pergunta ou anexe arquivos...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16,6-21,2: frase 4 + anonimização -->
+      <div id="cena-4" class="cena clip" data-start="16.6" data-duration="4.6" data-track-index="1" style="z-index: 3">
+        <h2 class="h">Dados pessoais são mascarados antes do modelo.</h2>
+        <div class="painel" data-eco>
+          <div class="cab"><span>Anonimizar</span><span>regras locais</span></div>
+          <p class="texto-doc">
+            Locatário: <span class="dado">Maria A. Souza<i class="barra"></i></span><br />
+            CPF <span class="dado">123.456.789-00<i class="barra"></i></span><br />
+            RG <span class="dado">1234567<i class="barra"></i></span><br />
+            Tel. <span class="dado">(65) 99999-0000<i class="barra"></i></span>
+          </p>
+        </div>
+      </div>
+
+      <!-- 21,2-25,2: frase 5 + offline -->
+      <div id="cena-5" class="cena clip" data-start="21.2" data-duration="4" data-track-index="1" style="z-index: 3">
+        <h2 class="h">Funciona offline. Sem nuvem no caminho.</h2>
+        <div class="painel" data-eco>
+          <div class="status"><i class="ponto"></i><div><b>Modo Offline</b><small>Processamento Local</small></div></div>
+          <div class="contador"><p id="zero" class="n">0</p><p>requisições externas</p></div>
+        </div>
+      </div>
+
+      <!-- 25,2-27,0: elementos formam o logo -->
+      <div id="cena-forma" class="camada clip" data-start="25.2" data-duration="1.8" data-track-index="2" style="z-index: 4" data-layout-allow-overflow>
+        <i class="estilhaco"></i><i class="estilhaco"></i><i class="estilhaco"></i><i class="estilhaco"></i>
+        <i class="estilhaco"></i><i class="estilhaco"></i><i class="estilhaco"></i><i class="estilhaco"></i>
+      </div>
+
+      <!-- 25,9-30: emblema e assinatura -->
+      <div id="cena-logo" class="assinatura clip" data-start="25.9" data-duration="4.1" data-track-index="3" style="z-index: 5">
+        <div id="emblema-final"><img src="assets/emblema.png" alt="Cerra.AI" /></div>
+        <div class="textos">
+          <p id="marca" class="marca">CERRA.AI</p>
+          <p id="tagline" class="tagline">A IA que roda no seu computador.</p>
+          <p id="endereco" class="endereco">cerradofinancas.com.br/cerraai.html</p>
+        </div>
+      </div>
+
+      <audio id="trilha" class="clip" data-start="0" data-duration="30" data-track-index="9" data-volume="1" src="assets/trilha.wav"></audio>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>
