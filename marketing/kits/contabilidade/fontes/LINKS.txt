@@ -1,0 +1,6 @@
+Para instalar no computador ou no Canva, baixe as fontes no Google Fonts (gratuitas):
+
+IBM Plex Sans Condensed: https://fonts.google.com/specimen/IBM+Plex+Sans+Condensed  (títulos 700 e texto 500)
+IBM Plex Mono: https://fonts.google.com/specimen/IBM+Plex+Mono  (rótulos, colunas e carimbo)
+
+Os arquivos .woff2 desta pasta são os mesmos usados nas peças (servem para web).

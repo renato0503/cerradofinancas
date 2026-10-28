@@ -1,0 +1,13 @@
+Mídia kit: Crédito ("Antes de assinar")
+
+guia.pdf     o resumo da identidade: cores, fontes, logos, recursos e regras
+logos/       os arquivos de logo em PNG transparente
+fontes/      as fontes das peças e o link para instalar cada uma (LINKS.txt)
+exemplos/    peças prontas para referência
+
+Cores:
+  Branco-papel: #FBFBF8 (fundo padrão)
+  Azul-caneta: #1F3AE0 (destaque, rubrica, slide invertido)
+  Marca-texto: #E6FF3D (só o grifo e o botão)
+  Tinta: #111522 (texto)
+  Cinza: #6B7080 (apoio)

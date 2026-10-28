@@ -1,0 +1,5 @@
+Para instalar no computador ou no Canva, baixe as fontes no Google Fonts (gratuitas):
+
+Bricolage Grotesque: https://fonts.google.com/specimen/Bricolage+Grotesque  (condensada 800 em caixa alta nos títulos; 500–700 no texto)
+
+Os arquivos .woff2 desta pasta são os mesmos usados nas peças (servem para web).

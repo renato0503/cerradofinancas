@@ -1,0 +1,6 @@
+Para instalar no computador ou no Canva, baixe as fontes no Google Fonts (gratuitas):
+
+Schibsted Grotesk: https://fonts.google.com/specimen/Schibsted+Grotesk  (títulos 900 e texto 500–800)
+Caveat: https://fonts.google.com/specimen/Caveat  (só na rubrica da assinatura)
+
+Os arquivos .woff2 desta pasta são os mesmos usados nas peças (servem para web).

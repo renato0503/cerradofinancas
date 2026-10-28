@@ -1,0 +1,7 @@
+Para instalar no computador ou no Canva, baixe as fontes no Google Fonts (gratuitas):
+
+Fraunces: https://fonts.google.com/specimen/Fraunces  (títulos 600; destaque em itálico laranja)
+Instrument Sans: https://fonts.google.com/specimen/Instrument+Sans  (texto 400–600)
+DM Mono: https://fonts.google.com/specimen/DM+Mono  (rótulos, cotas e carimbo da prancha)
+
+Os arquivos .woff2 desta pasta são os mesmos usados nas peças (servem para web).

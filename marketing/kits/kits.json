@@ -1,0 +1,428 @@
+[
+  {
+    "slug": "institucional",
+    "frentes": [
+      "institucional",
+      "tech"
+    ],
+    "nome": "Cerrado Finanças & Cerrado Tech",
+    "apelido": "A identidade do site",
+    "conceito": "Azul-marinho e dourado, a mesma identidade do site. Cada frente ou capacidade ganha uma cor de destaque (o \"acento\"), usada no ícone, na pílula do rótulo e no brilho do fundo.",
+    "cores": [
+      {
+        "nome": "Azul-marinho",
+        "hex": "#001f5c",
+        "uso": "fundo e títulos"
+      },
+      {
+        "nome": "Azul-noite",
+        "hex": "#000f2e",
+        "uso": "fim do gradiente"
+      },
+      {
+        "nome": "Dourado",
+        "hex": "#fecb00",
+        "uso": "destaque padrão e botão"
+      },
+      {
+        "nome": "Verde",
+        "hex": "#006430",
+        "uso": "apoio"
+      },
+      {
+        "nome": "Texto",
+        "hex": "#0f172a",
+        "uso": "texto sobre claro"
+      },
+      {
+        "nome": "Cinza",
+        "hex": "#64748b",
+        "uso": "texto de apoio"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Inter",
+        "uso": "títulos 900 e texto 400–700",
+        "link": "https://fonts.google.com/specimen/Inter"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "institucional/logos/folinha.png",
+        "uso": "A folinha: a marca da empresa, em todas as frentes",
+        "fundo": "#f2f2f2"
+      },
+      {
+        "arquivo": "institucional/logos/cerrado-tech-fundo-claro.png",
+        "uso": "Cerrado Tech, sobre fundo claro",
+        "fundo": "#f2f2f2"
+      },
+      {
+        "arquivo": "institucional/logos/cerrado-tech-fundo-escuro.png",
+        "uso": "Cerrado Tech, sobre fundo escuro",
+        "fundo": "#1d2433"
+      },
+      {
+        "arquivo": "institucional/logos/cerrado-financas.png",
+        "uso": "Cerrado Finanças, assinatura horizontal",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "institucional/guia.pdf",
+    "zip": {
+      "nome": "institucional.zip",
+      "kb": 4001
+    }
+  },
+  {
+    "slug": "cerraai",
+    "frentes": [
+      "cerraai"
+    ],
+    "nome": "Cerra.AI",
+    "apelido": "Silício local",
+    "conceito": "O Cerra.AI roda no computador da empresa. A identidade sai do produto: o cobre das trilhas do chip da logo, a tarja de anonimização e a etiqueta de citação da interface.",
+    "cores": [
+      {
+        "nome": "Cobre",
+        "hex": "#e2873b",
+        "uso": "destaque, tarjas, botão"
+      },
+      {
+        "nome": "Grafite",
+        "hex": "#0d0f0e",
+        "uso": "fundo padrão"
+      },
+      {
+        "nome": "Tinta clara",
+        "hex": "#f1ece3",
+        "uso": "texto sobre o grafite"
+      },
+      {
+        "nome": "Tinta suave",
+        "hex": "#a39d93",
+        "uso": "texto de apoio"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Archivo",
+        "uso": "títulos expandidos 900 em caixa alta; texto normal",
+        "link": "https://fonts.google.com/specimen/Archivo"
+      },
+      {
+        "nome": "JetBrains Mono",
+        "uso": "citações, nomes de arquivo e rótulos técnicos",
+        "link": "https://fonts.google.com/specimen/JetBrains+Mono"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "cerraai/logos/cerra-ai.png",
+        "uso": "Logo completa do Cerra.AI",
+        "fundo": "#f2f2f2"
+      },
+      {
+        "arquivo": "cerraai/logos/cerra-ai-icone.png",
+        "uso": "Ícone, para fundos escuros",
+        "fundo": "#1d2433"
+      },
+      {
+        "arquivo": "cerraai/logos/folinha.png",
+        "uso": "A folinha, quando a peça assina Cerrado Tech",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "cerraai/guia.pdf",
+    "zip": {
+      "nome": "cerraai.zip",
+      "kb": 5433
+    }
+  },
+  {
+    "slug": "cerraclass",
+    "frentes": [
+      "cerraclass"
+    ],
+    "nome": "CerraClass e cursos",
+    "apelido": "Sábado de sala",
+    "conceito": "Cursos presenciais, práticos, em turma pequena. Cada curso tem uma cor viva do cerrado como fundo, a tinta é sempre quase-preta e a logo vai num selo branco redondo.",
+    "cores": [
+      {
+        "nome": "Amarelo-ipê (geral)",
+        "hex": "#ffc83d",
+        "uso": "CerraClass e IA na Gestão"
+      },
+      {
+        "nome": "Tinta",
+        "hex": "#141414",
+        "uso": "todo o texto"
+      },
+      {
+        "nome": "Branco",
+        "hex": "#ffffff",
+        "uso": "etiquetas, ingresso e selo"
+      },
+      {
+        "nome": "Excel com IA",
+        "hex": "#4cc274",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "Consultoria Contábil",
+        "hex": "#7cc4f0",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "Consultoria Financeira",
+        "hex": "#ff9f2e",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "Análise de Dados",
+        "hex": "#b9a3ff",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "BPMN com IA",
+        "hex": "#f2684f",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "Automação com IA",
+        "hex": "#cbe847",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "Ciência de Dados",
+        "hex": "#3fcfbf",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "IA na Farma",
+        "hex": "#ff8fb8",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "BI e Dashboards",
+        "hex": "#8fa6ff",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "Prototipação de Apps",
+        "hex": "#ff7a5c",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "IA na Prática",
+        "hex": "#9ad65a",
+        "uso": "cor do curso"
+      },
+      {
+        "nome": "IA em Ação Farma",
+        "hex": "#e7a0f0",
+        "uso": "cor do curso"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Bricolage Grotesque",
+        "uso": "condensada 800 em caixa alta nos títulos; 500–700 no texto",
+        "link": "https://fonts.google.com/specimen/Bricolage+Grotesque"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "cerraclass/logos/cerraclass.png",
+        "uso": "Logo da CerraClass: sempre dentro de um selo branco redondo",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "cerraclass/guia.pdf",
+    "zip": {
+      "nome": "cerraclass.zip",
+      "kb": 1059
+    }
+  },
+  {
+    "slug": "credito",
+    "frentes": [
+      "credito"
+    ],
+    "nome": "Crédito",
+    "apelido": "Antes de assinar",
+    "conceito": "Crédito é o momento antes de assinar um contrato. A identidade é o papel e a caneta desse momento: o comparativo de propostas, a linha de assinatura com a rubrica \"Você decide\", o marca-texto e a letra miúda.",
+    "cores": [
+      {
+        "nome": "Branco-papel",
+        "hex": "#fbfbf8",
+        "uso": "fundo padrão"
+      },
+      {
+        "nome": "Azul-caneta",
+        "hex": "#1f3ae0",
+        "uso": "destaque, rubrica, slide invertido"
+      },
+      {
+        "nome": "Marca-texto",
+        "hex": "#e6ff3d",
+        "uso": "só o grifo e o botão"
+      },
+      {
+        "nome": "Tinta",
+        "hex": "#111522",
+        "uso": "texto"
+      },
+      {
+        "nome": "Cinza",
+        "hex": "#6b7080",
+        "uso": "apoio"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Schibsted Grotesk",
+        "uso": "títulos 900 e texto 500–800",
+        "link": "https://fonts.google.com/specimen/Schibsted+Grotesk"
+      },
+      {
+        "nome": "Caveat",
+        "uso": "só na rubrica da assinatura",
+        "link": "https://fonts.google.com/specimen/Caveat"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "credito/logos/folinha.png",
+        "uso": "A folinha é a nossa marca no Crédito",
+        "fundo": "#f2f2f2"
+      },
+      {
+        "arquivo": "credito/logos/ls-parceira.png",
+        "uso": "LS Intermediação Financeira: só em \"Em parceria com\", nunca como a nossa logo",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "credito/guia.pdf",
+    "zip": {
+      "nome": "credito.zip",
+      "kb": 988
+    }
+  },
+  {
+    "slug": "contabilidade",
+    "frentes": [
+      "contabilidade"
+    ],
+    "nome": "Cerrado Contabilidade",
+    "apelido": "Partida dobrada",
+    "conceito": "O material do próprio ofício: o papel do livro-razão, o razonete em T com a linha de saldo, a escada do crescimento MEI → ME → EPP → Lucro Presumido e o carimbo EM DIA.",
+    "cores": [
+      {
+        "nome": "Papel",
+        "hex": "#f1f6f0",
+        "uso": "fundo, com pauta"
+      },
+      {
+        "nome": "Pauta",
+        "hex": "#cfe0d4",
+        "uso": "linhas do papel"
+      },
+      {
+        "nome": "Tinta verde",
+        "hex": "#0c3b2e",
+        "uso": "texto, linhas, slide invertido"
+      },
+      {
+        "nome": "Verde-claro",
+        "hex": "#d8efdf",
+        "uso": "marca-texto"
+      },
+      {
+        "nome": "Vermelho",
+        "hex": "#d23a2c",
+        "uso": "margem, carimbo e só a dor do cliente"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "IBM Plex Sans Condensed",
+        "uso": "títulos 700 e texto 500",
+        "link": "https://fonts.google.com/specimen/IBM+Plex+Sans+Condensed"
+      },
+      {
+        "nome": "IBM Plex Mono",
+        "uso": "rótulos, colunas e carimbo",
+        "link": "https://fonts.google.com/specimen/IBM+Plex+Mono"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "contabilidade/logos/folinha.png",
+        "uso": "A folinha + \"Cerrado Contabilidade\" no rodapé",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "contabilidade/guia.pdf",
+    "zip": {
+      "nome": "contabilidade.zip",
+      "kb": 659
+    }
+  },
+  {
+    "slug": "consultoria",
+    "frentes": [
+      "consultorias"
+    ],
+    "nome": "Consultorias",
+    "apelido": "Planta",
+    "conceito": "A consultoria desenha a arquitetura da empresa. A identidade é a planta técnica: papel vegetal com grade, traço grafite, um único laranja de prancheta e cada consultoria numerada como uma prancha.",
+    "cores": [
+      {
+        "nome": "Vegetal",
+        "hex": "#f3f0e8",
+        "uso": "fundo, com grade"
+      },
+      {
+        "nome": "Grafite",
+        "hex": "#23262b",
+        "uso": "texto, traço, slide invertido"
+      },
+      {
+        "nome": "Laranja de prancheta",
+        "hex": "#e4570e",
+        "uso": "o único destaque"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Fraunces",
+        "uso": "títulos 600; destaque em itálico laranja",
+        "link": "https://fonts.google.com/specimen/Fraunces"
+      },
+      {
+        "nome": "Instrument Sans",
+        "uso": "texto 400–600",
+        "link": "https://fonts.google.com/specimen/Instrument+Sans"
+      },
+      {
+        "nome": "DM Mono",
+        "uso": "rótulos, cotas e carimbo da prancha",
+        "link": "https://fonts.google.com/specimen/DM+Mono"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "consultoria/logos/folinha.png",
+        "uso": "A folinha + \"Cerrado Finanças · Consultoria\"",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "consultoria/guia.pdf",
+    "zip": {
+      "nome": "consultoria.zip",
+      "kb": 867
+    }
+  }
+]

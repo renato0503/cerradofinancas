@@ -1,6 +1,9 @@
 [
   {
     "pasta": "2027-01-credito-entenda-margem-consignavel",
+    "frente": "credito",
+    "serie": "Antes de assinar, entenda",
+    "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 4 · Margem consignável: usar tudo é o erro.",
     "data": "2027-01-15",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (4 de 4).",
@@ -74,6 +77,9 @@
   },
   {
     "pasta": "2027-01-credito-entenda-consorcio-ou-financiamento",
+    "frente": "credito",
+    "serie": "Antes de assinar, entenda",
+    "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 3 · Consórcio ou financiamento: qual faz sentido?",
     "data": "2027-01-12",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (3 de 4).",
@@ -147,6 +153,9 @@
   },
   {
     "pasta": "2027-01-credito-entenda-portabilidade",
+    "frente": "credito",
+    "serie": "Antes de assinar, entenda",
+    "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 2 · Portabilidade é um direito seu.",
     "data": "2027-01-08",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (2 de 4).",
@@ -220,6 +229,9 @@
   },
   {
     "pasta": "2027-01-credito-entenda-cet",
+    "frente": "credito",
+    "serie": "Antes de assinar, entenda",
+    "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 1 · A taxa de juros não é o custo do empréstimo.",
     "data": "2027-01-05",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (1 de 4).",
@@ -293,6 +305,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-cnae",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 08 · O CNAE errado pode custar caro?",
     "data": "2026-12-26",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (8 de 8), no formato das notas explicativas do balanço.",
@@ -365,6 +380,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-certidao-negativa",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 07 · Para que serve a certidão negativa?",
     "data": "2026-12-19",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (7 de 8), no formato das notas explicativas do balanço.",
@@ -437,6 +455,9 @@
   },
   {
     "pasta": "2026-11-consultoria-govtech",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · Consultoria GovTech",
     "data": "2026-12-16",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 7 de 7), na identidade própria \"Planta\".",
@@ -508,6 +529,9 @@
   },
   {
     "pasta": "2026-11-contabil-reforma-tributaria",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · A reforma tributária já começou.",
     "data": "2026-12-15",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (13 de 13). Identidade própria \"Partida dobrada\".",
@@ -579,6 +603,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-mei-limite",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 06 · Seu MEI passou do limite?",
     "data": "2026-12-12",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (6 de 8), no formato das notas explicativas do balanço.",
@@ -651,6 +678,9 @@
   },
   {
     "pasta": "2026-11-contabil-socios",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · O que é da empresa e o que é seu?",
     "data": "2026-12-10",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (12 de 13). Identidade própria \"Partida dobrada\".",
@@ -722,6 +752,9 @@
   },
   {
     "pasta": "2026-11-consultoria-venture-building",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · Venture building",
     "data": "2026-12-09",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 6 de 7), na identidade própria \"Planta\".",
@@ -793,6 +826,9 @@
   },
   {
     "pasta": "2026-11-credito-seguros-e-saude",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Seguros e planos de saúde",
     "data": "2026-12-08",
     "descricao": "Série do Crédito produto a produto (11 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -865,6 +901,9 @@
   },
   {
     "pasta": "2026-11-contabil-regularizacao",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · CNPJ com pendência? A gente regulariza.",
     "data": "2026-12-08",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (11 de 13). Identidade própria \"Partida dobrada\".",
@@ -936,6 +975,9 @@
   },
   {
     "pasta": "2026-11-tech-web3",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Web3 & Blockchain",
     "data": "2026-12-07",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (16 de 16): Web3 & Blockchain (Smart Contracts · Tokens). Contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.",
@@ -1007,6 +1049,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-ibs-cbs",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 05 · O que são IBS e CBS?",
     "data": "2026-12-05",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (5 de 8), no formato das notas explicativas do balanço.",
@@ -1079,6 +1124,9 @@
   },
   {
     "pasta": "2026-11-tech-white-label",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Produto White-Label",
     "data": "2026-12-04",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (15 de 16): Produto White-Label (Branding próprio). Sistemas prontos que você revende com a própria marca: contabilidade, consultoria, educação e outros.",
@@ -1150,6 +1198,9 @@
   },
   {
     "pasta": "2026-11-credito-consorcio-servicos",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Consórcio de serviços e energia solar",
     "data": "2026-12-04",
     "descricao": "Série do Crédito produto a produto (10 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -1222,6 +1273,9 @@
   },
   {
     "pasta": "2026-11-contabil-troca-de-contador",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Insatisfeito com o contador atual?",
     "data": "2026-12-03",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (10 de 13). Identidade própria \"Partida dobrada\".",
@@ -1293,6 +1347,9 @@
   },
   {
     "pasta": "2026-11-tech-govtech",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · GovTech & Legal-Tech",
     "data": "2026-12-02",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (14 de 16): GovTech & Legal-Tech (Lei 14.133 · eSocial · RPPS). Sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.",
@@ -1364,6 +1421,9 @@
   },
   {
     "pasta": "2026-11-consultoria-planejamento-tributario",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · Planejamento tributário e inovação",
     "data": "2026-12-02",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 5 de 7), na identidade própria \"Planta\".",
@@ -1435,6 +1495,9 @@
   },
   {
     "pasta": "2026-11-credito-consorcio",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Consórcio",
     "data": "2026-12-01",
     "descricao": "Série do Crédito produto a produto (9 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -1507,6 +1570,9 @@
   },
   {
     "pasta": "2026-11-contabil-consultivo",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Seu contador te mostra onde está o lucro?",
     "data": "2026-12-01",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (9 de 13). Identidade própria \"Partida dobrada\".",
@@ -1578,6 +1644,9 @@
   },
   {
     "pasta": "2026-11-tech-machine-learning",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Machine Learning & Previsão",
     "data": "2026-11-30",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (13 de 16): Machine Learning & Previsão (Data Science). Modelos que aprendem com o histórico e preveem o que vai acontecer.",
@@ -1649,6 +1718,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-dirf",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 04 · A DIRF acabou. Você sabia?",
     "data": "2026-11-28",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (4 de 8), no formato das notas explicativas do balanço.",
@@ -1721,6 +1793,9 @@
   },
   {
     "pasta": "2026-11-tech-compliance",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Compliance & LGPD",
     "data": "2026-11-27",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (12 de 16): Compliance & LGPD (DPO as a Service). Adequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.",
@@ -1792,6 +1867,9 @@
   },
   {
     "pasta": "2026-11-credito-financiamento-veiculo",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Financiamento de veículo",
     "data": "2026-11-27",
     "descricao": "Série do Crédito produto a produto (8 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -1864,6 +1942,9 @@
   },
   {
     "pasta": "2026-11-contabil-contabil",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Balanço e DRE que você entende.",
     "data": "2026-11-26",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (8 de 13). Identidade própria \"Partida dobrada\".",
@@ -1935,6 +2016,9 @@
   },
   {
     "pasta": "2026-11-tech-ecommerce",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · E-commerce & PWA",
     "data": "2026-11-25",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (11 de 16): E-commerce & PWA (Progressive Web Apps). Loja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.",
@@ -2006,6 +2090,9 @@
   },
   {
     "pasta": "2026-11-consultoria-grc",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · Governança, risco e compliance",
     "data": "2026-11-25",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 4 de 7), na identidade própria \"Planta\".",
@@ -2077,6 +2164,9 @@
   },
   {
     "pasta": "2026-11-credito-financiamento-imovel",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Financiamento de imóvel",
     "data": "2026-11-24",
     "descricao": "Série do Crédito produto a produto (7 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -2149,6 +2239,9 @@
   },
   {
     "pasta": "2026-11-contabil-departamento-pessoal",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Contratou? A burocracia fica com a gente.",
     "data": "2026-11-24",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (7 de 13). Identidade própria \"Partida dobrada\".",
@@ -2220,6 +2313,9 @@
   },
   {
     "pasta": "2026-11-tech-assinatura",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Assinatura Digital",
     "data": "2026-11-23",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (10 de 16): Assinatura Digital (ICP-Brasil · GOV.br). Documentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.",
@@ -2291,6 +2387,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-pro-labore",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 03 · Sócio que trabalha na empresa precisa de pró-labore?",
     "data": "2026-11-21",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (3 de 8), no formato das notas explicativas do balanço.",
@@ -2363,6 +2462,9 @@
   },
   {
     "pasta": "2026-11-tech-ocr",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · OCR & Documentos Inteligentes",
     "data": "2026-11-20",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (9 de 16): OCR & Documentos Inteligentes (Optical Character Recognition). Transforma PDFs, fotos e papéis escaneados em texto pesquisável e organizado.",
@@ -2434,6 +2536,9 @@
   },
   {
     "pasta": "2026-11-credito-credito-com-garantia",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Crédito com garantia",
     "data": "2026-11-20",
     "descricao": "Série do Crédito produto a produto (6 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -2506,6 +2611,9 @@
   },
   {
     "pasta": "2026-11-contabil-fiscal",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Seu imposto, apurado com precisão.",
     "data": "2026-11-19",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (6 de 13). Identidade própria \"Partida dobrada\".",
@@ -2577,6 +2685,9 @@
   },
   {
     "pasta": "2026-11-tech-ia-offline",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · IA Offline & RAG",
     "data": "2026-11-18",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (8 de 16): IA Offline & RAG (Retrieval-Augmented Generation). Assistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.",
@@ -2648,6 +2759,9 @@
   },
   {
     "pasta": "2026-11-consultoria-csc-strategy",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · CSC Strategy",
     "data": "2026-11-18",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 3 de 7), na identidade própria \"Planta\".",
@@ -2719,6 +2833,9 @@
   },
   {
     "pasta": "2026-11-credito-fgts",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Antecipação do FGTS",
     "data": "2026-11-17",
     "descricao": "Série do Crédito produto a produto (5 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -2791,6 +2908,9 @@
   },
   {
     "pasta": "2026-11-contabil-abertura",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Vai abrir o seu primeiro CNPJ?",
     "data": "2026-11-17",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (5 de 13). Identidade própria \"Partida dobrada\".",
@@ -2862,6 +2982,9 @@
   },
   {
     "pasta": "2026-11-tech-dados",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Organização de Dados",
     "data": "2026-11-16",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (7 de 16): Organização de Dados (Data Organization · Self-service BI). Estruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.",
@@ -2933,6 +3056,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-fator-r",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 02 · Empresa de serviço pode pagar 6% no Simples?",
     "data": "2026-11-14",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (2 de 8), no formato das notas explicativas do balanço.",
@@ -3005,6 +3131,9 @@
   },
   {
     "pasta": "2026-11-tech-integracoes",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Integrações",
     "data": "2026-11-13",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (6 de 16): Integrações (APIs · Webhooks). Conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.",
@@ -3076,6 +3205,9 @@
   },
   {
     "pasta": "2026-11-credito-emprestimo-pessoal",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Empréstimo pessoal",
     "data": "2026-11-13",
     "descricao": "Série do Crédito produto a produto (4 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -3148,6 +3280,9 @@
   },
   {
     "pasta": "2026-11-contabil-micro-a-media",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Do primeiro CNPJ à média empresa, o mesmo contador.",
     "data": "2026-11-12",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (4 de 13). Identidade própria \"Partida dobrada\".",
@@ -3219,6 +3354,9 @@
   },
   {
     "pasta": "2026-11-tech-chatbots",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Chatbots & Assistentes",
     "data": "2026-11-11",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (5 de 16): Chatbots & Assistentes (Large Language Models). Atendimento automático com IA, 24h, treinado no conteúdo da empresa.",
@@ -3290,6 +3428,9 @@
   },
   {
     "pasta": "2026-11-consultoria-controladoria",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · Controladoria estruturada",
     "data": "2026-11-11",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 2 de 7), na identidade própria \"Planta\".",
@@ -3361,6 +3502,9 @@
   },
   {
     "pasta": "2026-11-credito-portabilidade",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Portabilidade e refinanciamento",
     "data": "2026-11-10",
     "descricao": "Série do Crédito produto a produto (3 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -3433,6 +3577,9 @@
   },
   {
     "pasta": "2026-11-contabil-lucro-presumido",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Cresceu? O regime cresce junto.",
     "data": "2026-11-10",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (3 de 13). Identidade própria \"Partida dobrada\".",
@@ -3504,6 +3651,9 @@
   },
   {
     "pasta": "2026-11-tech-automacao",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Automação de Processos",
     "data": "2026-11-09",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (4 de 16): Automação de Processos (Robotic Process Automation · Workflows). Robôs que executam tarefas repetitivas no seu lugar, liberando tempo da equipe para o que importa.",
@@ -3575,6 +3725,9 @@
   },
   {
     "pasta": "2026-11-contabil-sabia-dasn-simei",
+    "frente": "contabilidade",
+    "serie": "Você sabia?",
+    "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 01 · MEI que não faturou também declara?",
     "data": "2026-11-07",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (1 de 8), no formato das notas explicativas do balanço.",
@@ -3647,6 +3800,9 @@
   },
   {
     "pasta": "2026-11-tech-bi",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · BI & Dashboards",
     "data": "2026-11-06",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (3 de 16): BI & Dashboards (Business Intelligence). Transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.",
@@ -3718,6 +3874,9 @@
   },
   {
     "pasta": "2026-11-credito-consignado-clt",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Consignado CLT",
     "data": "2026-11-06",
     "descricao": "Série do Crédito produto a produto (2 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -3790,6 +3949,9 @@
   },
   {
     "pasta": "2026-11-contabil-simples-nacional",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Você paga o DAS certo ou só paga?",
     "data": "2026-11-05",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (2 de 13). Identidade própria \"Partida dobrada\".",
@@ -3861,6 +4023,9 @@
   },
   {
     "pasta": "2026-11-tech-crm",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · CRM",
     "data": "2026-11-04",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (2 de 16): CRM (Customer Relationship Management). Gestão do relacionamento com clientes: cada contato, proposta e venda em um único painel.",
@@ -3932,6 +4097,9 @@
   },
   {
     "pasta": "2026-11-consultoria-bpo-financeiro",
+    "frente": "consultorias",
+    "serie": "Pranchas das consultorias",
+    "capa": "carrossel-01.png",
     "titulo": "Consultoria · BPO financeiro",
     "data": "2026-11-04",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 1 de 7), na identidade própria \"Planta\".",
@@ -4003,6 +4171,9 @@
   },
   {
     "pasta": "2026-11-credito-consignado-servidor",
+    "frente": "credito",
+    "serie": "Produto a produto",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito · Consignado do servidor",
     "data": "2026-11-03",
     "descricao": "Série do Crédito produto a produto (1 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
@@ -4075,6 +4246,9 @@
   },
   {
     "pasta": "2026-11-contabil-mei",
+    "frente": "contabilidade",
+    "serie": "Para quem atendemos e o que fazemos",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade · MEI também merece um contador de verdade.",
     "data": "2026-11-03",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (1 de 13). Identidade própria \"Partida dobrada\".",
@@ -4146,6 +4320,9 @@
   },
   {
     "pasta": "2026-11-tech-erp",
+    "frente": "tech",
+    "serie": "O que a Cerrado Tech constrói",
+    "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · ERP Customizado",
     "data": "2026-11-02",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (1 de 16): ERP Customizado (Enterprise Resource Planning). Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.",
@@ -4217,6 +4394,9 @@
   },
   {
     "pasta": "2026-10-cerra-ai",
+    "frente": "cerraai",
+    "serie": "Lançamento",
+    "capa": "carrossel-01.png",
     "titulo": "Cerra.AI",
     "data": "2026-10-30",
     "descricao": "Campanha do Cerra.AI, na identidade própria do produto (cobre e grafite), o assistente corporativo 100% local da Cerrado Tech: a IA que roda no seu computador, com RAG nos documentos da empresa, OCR e transcrição offline, anonimização e auditoria LGPD, e três cenários com base própria.",
@@ -4311,6 +4491,9 @@
   },
   {
     "pasta": "2026-10-curso-prototipacao-apps-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Prototipação de Apps com IA",
     "data": "2026-10-29",
     "descricao": "Tire ideias do papel criando protótipos funcionais de aplicativos com ferramentas de IA. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4391,6 +4574,9 @@
   },
   {
     "pasta": "2026-10-curso-ia-na-gestao",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso IA na Gestão",
     "data": "2026-10-29",
     "descricao": "Use inteligência artificial para planejar, decidir e acompanhar resultados na gestão do negócio. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4471,6 +4657,9 @@
   },
   {
     "pasta": "2026-10-curso-ia-na-farma",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso IA na Farma",
     "data": "2026-10-29",
     "descricao": "Aplicações de inteligência artificial no setor farmacêutico, da gestão ao atendimento. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4551,6 +4740,9 @@
   },
   {
     "pasta": "2026-10-curso-excel-com-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Excel com IA",
     "data": "2026-10-29",
     "descricao": "Fórmulas, análises e relatórios no Excel acelerados com assistentes de IA. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4631,6 +4823,9 @@
   },
   {
     "pasta": "2026-10-curso-consultoria-financeira-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Consultoria Financeira com IA",
     "data": "2026-10-29",
     "descricao": "Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA para consultoria. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4711,6 +4906,9 @@
   },
   {
     "pasta": "2026-10-curso-consultoria-contabil-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Consultoria Contábil com IA",
     "data": "2026-10-29",
     "descricao": "Aplique IA na rotina contábil e transforme o escritório em consultoria de valor para o cliente. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4791,6 +4989,9 @@
   },
   {
     "pasta": "2026-10-curso-ciencia-de-dados",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Ciência de Dados Aplicada",
     "data": "2026-10-29",
     "descricao": "Do dado bruto ao modelo: análise, estatística e machine learning aplicados a problemas reais. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4871,6 +5072,9 @@
   },
   {
     "pasta": "2026-10-curso-bpmn-com-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Processos Empresariais BPMN com IA",
     "data": "2026-10-29",
     "descricao": "Mapeie e melhore processos com a notação BPMN, usando IA para modelar e documentar. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -4951,6 +5155,9 @@
   },
   {
     "pasta": "2026-10-curso-bi-dashboards-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso BI e Dashboards com IA",
     "data": "2026-10-29",
     "descricao": "Construa painéis de BI completos e use IA para modelar, analisar e comunicar os dados. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -5031,6 +5238,9 @@
   },
   {
     "pasta": "2026-10-curso-automacao-com-ia",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Introdução à Automação com IA",
     "data": "2026-10-29",
     "descricao": "Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -5111,6 +5321,9 @@
   },
   {
     "pasta": "2026-10-curso-analise-de-dados",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso Introdução à Análise de Dados",
     "data": "2026-10-29",
     "descricao": "Os fundamentos para organizar, analisar e tirar conclusões a partir de dados reais. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
@@ -5191,6 +5404,9 @@
   },
   {
     "pasta": "2026-10-curso-ia-na-pratica",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso IA na Prática",
     "data": "2026-10-28",
     "descricao": "Campanha do curso IA na Prática (Cerraclass): dores, o que se constrói, impacto, público, instrutor e chamada para as turmas de 10 vagas. Sem preço nem data nas peças: inscrições e agenda pelo site da Cerraclass. Na identidade própria da CerraClass.",
@@ -5273,6 +5489,9 @@
   },
   {
     "pasta": "2026-10-curso-ia-farma",
+    "frente": "cerraclass",
+    "serie": "Um curso por campanha",
+    "capa": "carrossel-01.png",
     "titulo": "Curso IA em Ação Farma",
     "data": "2026-10-28",
     "descricao": "Campanha do curso IA em Ação Farma (Cerraclass) para propagandistas: tarefas da semana, o que se constrói com o Antigravity, IAs aplicadas ao campo, público, instrutor e chamada para turmas de 10 pessoas. Sem preço nem data nas peças. Na identidade própria da CerraClass.",
@@ -5355,6 +5574,9 @@
   },
   {
     "pasta": "2026-10-fabrica-de-software",
+    "frente": "tech",
+    "serie": "Campanha da frente",
+    "capa": "carrossel-01.png",
     "titulo": "Fábrica de Software",
     "data": "2026-10-27",
     "descricao": "Campanha da Cerrado Tech: software sob medida contra o de prateleira, o que construímos (ERP, CRM, IA, BI), como trabalhamos e GovTech.",
@@ -5425,6 +5647,9 @@
   },
   {
     "pasta": "2026-10-cursos",
+    "frente": "cerraclass",
+    "serie": "Campanha da frente",
+    "capa": "carrossel-01.png",
     "titulo": "Cursos Cerraclass",
     "data": "2026-10-27",
     "descricao": "Campanha da Cerraclass: formato das turmas, o que se aprende (Antigravity, Claude, Gemini, ChatGPT), antes e depois, e as turmas (IA na Prática, IA em Ação Farma, in company). Na identidade própria da CerraClass.",
@@ -5500,6 +5725,9 @@
   },
   {
     "pasta": "2026-10-credito",
+    "frente": "credito",
+    "serie": "Campanha da frente",
+    "capa": "carrossel-01.png",
     "titulo": "Crédito",
     "data": "2026-10-27",
     "descricao": "Campanha de crédito multi bancos, na identidade própria do Crédito (\"Antes de assinar\": papel, caneta azul e marca-texto) com a LS Intermediação Financeira: produtos, consignado (novo, portabilidade e refinanciamento), como funciona e diferenciais. Contém aviso legal de correspondente bancário.",
@@ -5577,6 +5805,9 @@
   },
   {
     "pasta": "2026-10-contabilidade",
+    "frente": "contabilidade",
+    "serie": "Campanha da frente",
+    "capa": "carrossel-01.png",
     "titulo": "Contabilidade",
     "data": "2026-10-27",
     "descricao": "Campanha da Cerrado Contabilidade: serviços do CNPJ à folha, públicos atendidos (PJ, saúde, comércio), as 4 fases da consultoria de dados e a troca de contador.",
@@ -5647,6 +5878,9 @@
   },
   {
     "pasta": "folinha-animada",
+    "frente": "institucional",
+    "serie": "Marca animada",
+    "capa": "folinha-loop.gif",
     "titulo": "Folinha animada",
     "data": "2026-10-26",
     "descricao": "A logo da Cerrado (folinha) em movimento: vinheta com a marca para abrir ou fechar vídeos, loop para WhatsApp e apresentações, versão com fundo transparente para edição e animações Lottie para site e apps.",
@@ -5691,6 +5925,9 @@
   },
   {
     "pasta": "2026-10-lancamento-4-frentes",
+    "frente": "institucional",
+    "serie": "Lançamento",
+    "capa": "carrossel-01.png",
     "titulo": "Lançamento das 4 frentes",
     "data": "2026-10-26",
     "descricao": "Apresenta o novo posicionamento: Fábrica de Software, Contabilidade, Crédito (com a LS) e Cursos (Cerraclass). Carrossel de 7 slides para o feed, story para Instagram e status do WhatsApp e Reel de 21s com trilha e efeitos sonoros.",

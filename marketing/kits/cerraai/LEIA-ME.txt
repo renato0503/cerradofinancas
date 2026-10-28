@@ -1,0 +1,12 @@
+Mídia kit: Cerra.AI ("Silício local")
+
+guia.pdf     o resumo da identidade: cores, fontes, logos, recursos e regras
+logos/       os arquivos de logo em PNG transparente
+fontes/      as fontes das peças e o link para instalar cada uma (LINKS.txt)
+exemplos/    peças prontas para referência
+
+Cores:
+  Cobre: #E2873B (destaque, tarjas, botão)
+  Grafite: #0D0F0E (fundo padrão)
+  Tinta clara: #F1ECE3 (texto sobre o grafite)
+  Tinta suave: #A39D93 (texto de apoio)

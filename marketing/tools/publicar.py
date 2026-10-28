@@ -24,6 +24,34 @@ TIPOS = {
     ".mp4": "video", ".webm": "video", ".mov": "video",
     ".json": "lottie",
 }
+# Frente e série de cada campanha, pelo nome da pasta (sem a data): a primeira regra que casar vale.
+# A página agrupa e filtra por elas; ao criar um prefixo novo, acrescente aqui.
+REGRAS = [
+    ("tech-", "tech", "O que a Cerrado Tech constrói"),
+    ("fabrica-de-software", "tech", "Campanha da frente"),
+    ("contabil-sabia-", "contabilidade", "Você sabia?"),
+    ("contabil-", "contabilidade", "Para quem atendemos e o que fazemos"),
+    ("contabilidade", "contabilidade", "Campanha da frente"),
+    ("credito-entenda-", "credito", "Antes de assinar, entenda"),
+    ("credito-", "credito", "Produto a produto"),
+    ("credito", "credito", "Campanha da frente"),
+    ("consultoria-", "consultorias", "Pranchas das consultorias"),
+    ("curso-", "cerraclass", "Um curso por campanha"),
+    ("cursos", "cerraclass", "Campanha da frente"),
+    ("cerra-ai", "cerraai", "Lançamento"),
+    ("lancamento-4-frentes", "institucional", "Lançamento"),
+    ("folinha-animada", "institucional", "Marca animada"),
+]
+
+
+def classificar(nome):
+    tema = nome[8:] if nome[:4].isdigit() and nome[7] == "-" else nome
+    for prefixo, frente, serie in REGRAS:
+        if tema.startswith(prefixo):
+            return frente, serie
+    return "institucional", "Avulsa"
+
+
 # extensoes que ficam de fora do .zip (peso alto, baixa pela pagina)
 FORA_DO_ZIP = {".mp4", ".webm", ".mov"}
 
@@ -53,8 +81,14 @@ def publicar_pasta(pasta: Path):
             if f.suffix != ".zip" and f.name != "info.json" and f.suffix.lower() not in FORA_DO_ZIP:
                 z.write(f, f.name)
 
+    frente, serie = classificar(pasta.name)
+    imagens = [a["nome"] for a in arquivos if a["tipo"] == "imagem"]
+    capa = next((n for n in imagens if n.startswith("carrossel-01")), imagens[0] if imagens else None)
     return {
         "pasta": pasta.name,
+        "frente": frente,
+        "serie": serie,
+        "capa": capa,
         **info,
         "arquivos": arquivos,
         "legendas": legendas,

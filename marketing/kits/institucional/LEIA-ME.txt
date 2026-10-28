@@ -1,0 +1,14 @@
+Mídia kit: Cerrado Finanças & Cerrado Tech ("A identidade do site")
+
+guia.pdf     o resumo da identidade: cores, fontes, logos, recursos e regras
+logos/       os arquivos de logo em PNG transparente
+fontes/      as fontes das peças e o link para instalar cada uma (LINKS.txt)
+exemplos/    peças prontas para referência
+
+Cores:
+  Azul-marinho: #001F5C (fundo e títulos)
+  Azul-noite: #000F2E (fim do gradiente)
+  Dourado: #FECB00 (destaque padrão e botão)
+  Verde: #006430 (apoio)
+  Texto: #0F172A (texto sobre claro)
+  Cinza: #64748B (texto de apoio)

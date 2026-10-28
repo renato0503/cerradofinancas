@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Central de Conteúdos | Cerrado Finanças & Tech</title>
+  <title>Central de Marketing | Cerrado Finanças & Tech</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -24,193 +24,153 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--fundo); color: var(--texto); -webkit-font-smoothing: antialiased; }
     .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+    button { font-family: inherit; }
 
     /* ---------- topo ---------- */
-    .topo {
-      background: linear-gradient(135deg, var(--azul) 0%, #00113a 100%);
-      color: #fff;
-      padding: 40px 0 44px;
-      border-bottom: 4px solid var(--dourado);
-    }
+    .topo { background: linear-gradient(135deg, var(--azul) 0%, #00113a 100%); color: #fff; padding: 32px 0 30px; }
+    .topo .container { display: flex; align-items: center; gap: 20px; }
+    .topo img { width: 64px; height: auto; flex-shrink: 0; }
+    .topo h1 { font-size: clamp(1.45rem, 4vw, 2rem); font-weight: 900; letter-spacing: -0.5px; }
+    .topo p { color: #cbd5e1; margin-top: 6px; font-size: 0.95rem; line-height: 1.5; max-width: 720px; }
 
-    .topo .container { display: flex; align-items: center; gap: 22px; }
-    .topo img { width: 72px; height: auto; flex-shrink: 0; }
-    .topo h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 900; letter-spacing: -0.5px; }
-    .topo p { color: #cbd5e1; margin-top: 6px; font-size: 0.98rem; line-height: 1.5; }
+    /* ---------- navegação ---------- */
+    .nav { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid var(--borda); box-shadow: 0 4px 16px rgba(15, 23, 42, .05); }
+    .nav .container { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+    .aba { border: 0; background: transparent; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: .93rem; color: var(--muted); cursor: pointer; transition: background .15s ease, color .15s ease; }
+    .aba:hover { background: var(--fundo); color: var(--texto); }
+    .aba[aria-current="true"] { background: var(--azul); color: #fff; }
+    .busca { margin-left: auto; flex: 1 1 220px; max-width: 320px; border: 1px solid var(--borda); border-radius: 10px; padding: 10px 14px; font: inherit; font-size: .92rem; }
+    .busca:focus { outline: 2px solid var(--dourado); border-color: transparent; }
 
-    main { padding: 36px 0 70px; }
-
+    main { padding: 38px 0 80px; }
+    .vista[hidden] { display: none; }
+    .intro { color: #475569; line-height: 1.6; margin-bottom: 22px; max-width: 760px; }
+    .intro b { color: var(--texto); }
     .vazio, .erro { text-align: center; color: var(--muted); padding: 60px 0; }
 
-    /* ---------- campanha ---------- */
-    .campanha {
-      background: #fff;
-      border: 1px solid var(--borda);
-      border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 32px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    }
+    /* ---------- etiquetas de frente ---------- */
+    .tag { display: inline-flex; align-items: center; gap: 7px; font-size: .74rem; font-weight: 800; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); }
+    .tag::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--cor, var(--azul)); box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--borda); }
+    .serie { font-size: .78rem; color: var(--muted); }
 
-    .cab {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
+    /* ---------- agenda ---------- */
+    .semana { margin-bottom: 26px; }
+    .semana h2 { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 10px; }
+    .semana.atual h2 { color: var(--verde); }
+    .linha { width: 100%; display: grid; grid-template-columns: 74px 56px 1fr auto; gap: 16px; align-items: center; text-align: left; background: #fff; border: 1px solid var(--borda); border-left: 5px solid var(--cor); border-radius: 14px; padding: 12px 16px 12px 14px; margin-bottom: 8px; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+    .linha:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(15, 23, 42, .07); }
+    .linha .dia { text-align: center; line-height: 1.1; }
+    .linha .dia b { display: block; font-size: 1.5rem; font-weight: 900; color: var(--azul); }
+    .linha .dia small { font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+    .linha .mini { width: 56px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; background: #0b1324; }
+    .linha .txt strong { display: block; font-size: 1rem; font-weight: 800; color: var(--texto); margin: 4px 0 2px; }
+    .linha .abrir { font-weight: 800; font-size: .85rem; color: var(--azul); white-space: nowrap; }
+    details.passadas { margin-top: 30px; }
+    details.passadas summary { cursor: pointer; font-weight: 800; color: var(--muted); padding: 10px 0; }
 
-    .data {
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--verde);
-    }
+    /* ---------- por frente ---------- */
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
+    .chip { border: 1px solid var(--borda); background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: 700; font-size: .87rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--texto); }
+    .chip i { width: 10px; height: 10px; border-radius: 50%; background: var(--cor); }
+    .chip small { color: var(--muted); font-weight: 600; }
+    .chip[aria-pressed="true"] { background: var(--texto); color: #fff; border-color: var(--texto); }
+    .chip[aria-pressed="true"] small { color: #cbd5e1; }
+    .bloco-frente { margin-bottom: 40px; }
+    .bloco-frente > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-bottom: 3px solid var(--cor); padding-bottom: 10px; margin-bottom: 18px; }
+    .bloco-frente h2 { font-size: 1.4rem; font-weight: 900; color: var(--azul); }
+    .bloco-frente h3 { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin: 18px 0 12px; }
+    .link-kit { font-size: .87rem; font-weight: 800; color: var(--azul); background: none; border: 0; cursor: pointer; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 16px; }
+    .card { text-align: left; background: #fff; border: 1px solid var(--borda); border-radius: 14px; overflow: hidden; cursor: pointer; padding: 0; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(15, 23, 42, .09); }
+    .card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #0b1324; display: block; }
+    .card div { padding: 10px 12px 12px; }
+    .card small { font-size: .74rem; font-weight: 700; color: var(--verde); text-transform: uppercase; letter-spacing: .6px; }
+    .card strong { display: block; font-size: .9rem; line-height: 1.35; margin-top: 4px; color: var(--texto); }
 
-    .cab h2 { font-size: 1.5rem; font-weight: 800; color: var(--azul); margin-top: 4px; }
-    .desc { color: #475569; line-height: 1.6; max-width: 760px; margin-top: 8px; }
+    /* ---------- mídia kits ---------- */
+    .kits { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 20px; }
+    .kit { background: #fff; border: 1px solid var(--borda); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
+    .kit .logos { display: flex; gap: 8px; padding: 14px; border-bottom: 1px solid var(--borda); }
+    .kit .logos span { flex: 1; height: 86px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 10px; }
+    .kit .logos img { max-width: 100%; max-height: 66px; object-fit: contain; }
+    .kit .corpo { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+    .kit h2 { font-size: 1.2rem; font-weight: 900; color: var(--azul); }
+    .kit h2 em { font-style: normal; color: var(--muted); font-weight: 700; }
+    .kit p { color: #475569; font-size: .9rem; line-height: 1.55; }
+    .kit h4 { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+    .amostras { display: flex; flex-wrap: wrap; gap: 6px; }
+    .amostra { width: 38px; height: 38px; border-radius: 9px; border: 1px solid rgba(15, 23, 42, .12); cursor: pointer; position: relative; }
+    .amostra:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+    .fontes { list-style: none; font-size: .88rem; line-height: 1.7; }
+    .fontes a { color: var(--azul); font-weight: 700; }
+    .fontes span { color: var(--muted); }
+    .acoes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+    .aviso-copia { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--texto); color: #fff; padding: 10px 16px; border-radius: 10px; font-size: .88rem; font-weight: 700; opacity: 0; transition: opacity .2s ease, transform .2s ease; pointer-events: none; z-index: 60; }
+    .aviso-copia.on { opacity: 1; transform: translate(-50%, 0); }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 0.92rem;
-      border-radius: 10px;
-      padding: 12px 18px;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      transition: transform 0.15s ease, background 0.2s ease;
-    }
+    /* ---------- como usar ---------- */
+    .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-bottom: 34px; }
+    .passo { background: #fff; border: 1px solid var(--borda); border-radius: 16px; padding: 20px; }
+    .passo b { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; background: var(--dourado); color: var(--azul); align-items: center; justify-content: center; font-weight: 900; margin-bottom: 10px; }
+    .passo h3 { font-size: 1rem; font-weight: 800; margin-bottom: 6px; color: var(--azul); }
+    .passo p { font-size: .9rem; color: #475569; line-height: 1.55; }
+    .glossario { background: #fff; border: 1px solid var(--borda); border-radius: 16px; overflow: hidden; }
+    .glossario div { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 14px 20px; border-top: 1px solid var(--borda); font-size: .92rem; line-height: 1.55; }
+    .glossario div:first-child { border-top: 0; }
+    .glossario dt { font-weight: 800; color: var(--azul); }
+    .glossario dd { color: #475569; }
+    .h-sec { font-size: 1.15rem; font-weight: 900; color: var(--azul); margin: 0 0 14px; }
 
+    /* ---------- botões ---------- */
+    .btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 800; font-size: .9rem; border-radius: 10px; padding: 11px 16px; border: none; cursor: pointer; transition: transform .15s ease, background .2s ease; }
     .btn:active { transform: scale(0.97); }
     .btn-ouro { background: var(--dourado); color: var(--azul); }
     .btn-ouro:hover { background: #ffd733; }
     .btn-azul { background: var(--azul); color: #fff; }
     .btn-azul:hover { background: var(--verde); }
+    .btn-linha { background: #fff; color: var(--azul); border: 1px solid var(--borda); }
+    .btn-linha:hover { border-color: var(--azul); }
 
-    .orient {
-      background: #f8fafc;
-      border: 1px solid var(--borda);
-      border-radius: 12px;
-      padding: 14px 18px 14px 34px;
-      margin-bottom: 22px;
-      color: #334155;
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-
-    .secao-titulo {
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--muted);
-      margin: 6px 0 12px;
-    }
-
-    /* ---------- arquivos ---------- */
-    .grade {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
-      gap: 16px;
-      align-items: start;
-      margin-bottom: 26px;
-    }
-
-    .arquivo {
-      border: 1px solid var(--borda);
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .previa {
-      background: #0b1324;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* cada prévia assume a proporção real da peça (feed 4:5, story 9:16) */
+    /* ---------- detalhe da campanha ---------- */
+    dialog.detalhe { border: 0; padding: 0; width: min(1100px, 100% - 24px); max-height: calc(100% - 24px); margin: auto; border-radius: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, .35); }
+    dialog.detalhe::backdrop { background: rgba(2, 8, 23, .6); }
+    .det-cab { position: sticky; top: 0; background: #fff; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 22px 26px 16px; border-bottom: 1px solid var(--borda); }
+    .det-cab h2 { font-size: 1.35rem; font-weight: 900; color: var(--azul); margin-top: 6px; line-height: 1.25; }
+    .det-cab .quando { font-size: .82rem; font-weight: 800; color: var(--verde); margin-top: 6px; }
+    .fechar { border: 0; background: var(--fundo); width: 40px; height: 40px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; }
+    .fechar:hover { background: var(--borda); }
+    .det-corpo { padding: 20px 26px 28px; }
+    .desc { color: #475569; line-height: 1.6; margin-bottom: 16px; }
+    .det-acoes { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .orient { background: #f8fafc; border: 1px solid var(--borda); border-radius: 12px; padding: 14px 18px 14px 34px; margin-bottom: 22px; color: #334155; font-size: .92rem; line-height: 1.6; }
+    .secao-titulo { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin: 6px 0 12px; }
+    .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 14px; align-items: start; margin-bottom: 24px; }
+    .arquivo { border: 1px solid var(--borda); border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+    .previa { background: #0b1324; display: flex; align-items: center; justify-content: center; }
     .previa img, .previa video { width: 100%; height: auto; display: block; }
     .previa .lottie { width: 80%; aspect-ratio: 1; margin: 10% 0; }
     .previa a { display: contents; }
-
-    .meta {
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 0.8rem;
-    }
-
+    .meta { padding: 9px 11px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: .78rem; }
     .meta span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .meta a { flex-shrink: 0; color: var(--azul); font-weight: 800; text-decoration: none; }
+    .legendas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 14px; }
+    .legenda { border: 1px solid var(--borda); border-radius: 12px; display: flex; flex-direction: column; }
+    .legenda header { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px 9px 16px; border-bottom: 1px solid var(--borda); font-weight: 800; color: var(--azul); }
+    .legenda pre { font-family: inherit; white-space: pre-wrap; word-break: break-word; font-size: .87rem; line-height: 1.6; color: #334155; padding: 14px 16px; max-height: 320px; overflow: auto; }
+    .btn-copiar { padding: 7px 12px; font-size: .8rem; }
 
-    .meta a {
-      flex-shrink: 0;
-      color: var(--azul);
-      font-weight: 800;
-      text-decoration: none;
+    @media (max-width: 680px) {
+      .topo img { width: 50px; }
+      .busca { max-width: none; margin-left: 0; order: 9; }
+      .linha { grid-template-columns: 54px 1fr; gap: 10px; }
+      .linha .mini, .linha .abrir { display: none; }
+      .glossario div { grid-template-columns: 1fr; gap: 4px; }
+      .det-cab, .det-corpo { padding-left: 18px; padding-right: 18px; }
     }
-
-    .meta a:hover { color: var(--verde); }
-
-    /* ---------- legendas ---------- */
-    .legendas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
-
-    .legenda {
-      border: 1px solid var(--borda);
-      border-radius: 14px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .legenda header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 12px 10px 16px;
-      border-bottom: 1px solid var(--borda);
-      font-weight: 800;
-      color: var(--azul);
-    }
-
-    .legenda pre {
-      font-family: inherit;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: #334155;
-      padding: 14px 16px;
-      max-height: 320px;
-      overflow: auto;
-    }
-
-    .btn-copiar { padding: 8px 12px; font-size: 0.82rem; }
-
-    @media (max-width: 600px) {
-      .campanha { padding: 20px; border-radius: 16px; }
-      .topo img { width: 54px; }
-      .cab .btn { width: 100%; justify-content: center; }
-    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
@@ -218,42 +178,242 @@
     <div class="container">
       <img src="/img/folinha-hero.png" alt="Cerrado Finanças & Tech">
       <div>
-        <h1>Central de Conteúdos</h1>
-        <p>Posts, stories, vídeos e legendas prontos para publicar. Baixe o pacote completo ou peça por peça. O .zip traz as imagens e as legendas; os vídeos baixam aqui ao lado.</p>
+        <h1>Central de Marketing</h1>
+        <p>Tudo o que a equipe precisa para postar: a agenda do que sai em cada dia, as campanhas de cada frente com peças, vídeos e legendas prontas, e o mídia kit de cada marca.</p>
       </div>
     </div>
   </header>
 
-  <main class="container" id="lista">
-    <p class="vazio">Carregando conteúdos…</p>
+  <nav class="nav" aria-label="Seções">
+    <div class="container">
+      <button class="aba" data-vista="agenda" type="button">📅 Agenda</button>
+      <button class="aba" data-vista="frentes" type="button">🗂️ Por frente</button>
+      <button class="aba" data-vista="kits" type="button">🎨 Mídia kits</button>
+      <button class="aba" data-vista="como-usar" type="button">❓ Como usar</button>
+      <input class="busca" id="busca" type="search" placeholder="Buscar campanha (ex.: consignado, MEI, ERP)" aria-label="Buscar campanha">
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="vista" id="v-agenda">
+      <p class="intro" id="intro-agenda">Carregando a agenda…</p>
+      <div id="agenda"></div>
+    </section>
+
+    <section class="vista" id="v-frentes" hidden>
+      <p class="intro">Cada <b>frente</b> é uma marca com identidade própria. Dentro dela, as campanhas estão agrupadas por <b>série</b>. Clique numa campanha para ver as peças, baixar o pacote e copiar as legendas.</p>
+      <div class="chips" id="chips"></div>
+      <div id="frentes"></div>
+    </section>
+
+    <section class="vista" id="v-kits" hidden>
+      <p class="intro">O <b>mídia kit</b> de cada frente traz as logos, as cores, as fontes e um guia em PDF com as regras. Use para criar qualquer peça nova (Canva, Figma, apresentação) no padrão da marca. Clique numa cor para copiar o código.</p>
+      <div class="kits" id="kits"></div>
+    </section>
+
+    <section class="vista" id="v-como-usar" hidden>
+      <h2 class="h-sec">Passo a passo para postar</h2>
+      <div class="passos">
+        <div class="passo"><b>1</b><h3>Veja a agenda</h3><p>Na aba <strong>Agenda</strong> está o que sai em cada dia, da semana atual em diante. A cor da borda mostra a frente.</p></div>
+        <div class="passo"><b>2</b><h3>Abra a campanha</h3><p>Clique na campanha. Leia as <strong>orientações</strong> no topo: dia, rede, ordem dos slides e o link do story.</p></div>
+        <div class="passo"><b>3</b><h3>Baixe as peças</h3><p><strong>Baixar pacote (.zip)</strong> traz todas as imagens e legendas. Os vídeos (.mp4) baixam um a um, no botão de cada vídeo.</p></div>
+        <div class="passo"><b>4</b><h3>Copie a legenda</h3><p>Cada rede tem a sua legenda pronta. Clique em <strong>Copiar</strong> e cole na postagem, sem cortar o aviso legal quando houver.</p></div>
+      </div>
+
+      <h2 class="h-sec">O que é cada arquivo</h2>
+      <dl class="glossario">
+        <div><dt>carrossel-01 a 06.png</dt><dd>Os slides do carrossel do feed (1080×1350). Poste na ordem dos números.</dd></div>
+        <div><dt>story.png</dt><dd>O story (1080×1920). Adicione o sticker de link indicado nas orientações.</dd></div>
+        <div><dt>carrossel-animado.mp4</dt><dd>Os mesmos slides do carrossel em vídeo, com trilha. É o vídeo padrão das campanhas novas: use em Reels e no feed.</dd></div>
+        <div><dt>video-vertical.mp4 / video-16x9.mp4</dt><dd>Vídeos extras: o vertical vai para Reels, Stories e TikTok; o 16:9, para YouTube, LinkedIn e site.</dd></div>
+        <div><dt>reel-*.mp4</dt><dd>Reels das primeiras campanhas (outubro).</dd></div>
+        <div><dt>Legendas</dt><dd>Textos prontos por rede (Instagram, LinkedIn), com hashtags. Ficam dentro de cada campanha e também no .zip.</dd></div>
+        <div><dt>Frente</dt><dd>A marca da campanha: Cerrado Tech, Contabilidade, Crédito, Consultorias, CerraClass, Cerra.AI ou Institucional.</dd></div>
+        <div><dt>Série</dt><dd>Um grupo de campanhas com o mesmo formato, que sai em sequência (ex.: "Você sabia?", "Produto a produto").</dd></div>
+      </dl>
+    </section>
   </main>
+
+  <dialog class="detalhe" id="detalhe" aria-labelledby="det-titulo"></dialog>
+  <div class="aviso-copia" id="aviso-copia" role="status" aria-live="polite"></div>
 
   <script>
     const base = 'entregas/';
+    const baseKits = 'kits/';
     const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+    const semanaDias = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+    const FRENTES = {
+      institucional: { nome: 'Institucional', cor: '#006430', kit: 'institucional' },
+      tech: { nome: 'Cerrado Tech', cor: '#001f5c', kit: 'institucional' },
+      contabilidade: { nome: 'Contabilidade', cor: '#0c3b2e', kit: 'contabilidade' },
+      credito: { nome: 'Crédito', cor: '#1f3ae0', kit: 'credito' },
+      consultorias: { nome: 'Consultorias', cor: '#e4570e', kit: 'consultoria' },
+      cerraclass: { nome: 'CerraClass e cursos', cor: '#ffc83d', kit: 'cerraclass' },
+      cerraai: { nome: 'Cerra.AI', cor: '#e2873b', kit: 'cerraai' },
+    };
+    const ORDEM = Object.keys(FRENTES);
+
+    let campanhas = [], kits = [], filtroFrente = 'todas', termo = '';
 
     function el(tag, attrs = {}, ...filhos) {
       const e = document.createElement(tag);
       for (const [k, v] of Object.entries(attrs)) {
         if (k === 'text') e.textContent = v;
+        else if (k === 'style') e.style.cssText = v;
+        else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
         else e.setAttribute(k, v);
       }
       filhos.forEach(f => f && e.append(f));
       return e;
     }
 
-    function dataBR(iso) {
-      const [a, m, d] = iso.split('-').map(Number);
-      return `${d} ${meses[m - 1]} ${a}`;
+    const dataLocal = iso => { const [a, m, d] = iso.split('-').map(Number); return new Date(a, m - 1, d); };
+    const dataBR = iso => { const d = dataLocal(iso); return `${d.getDate()} ${meses[d.getMonth()]} ${d.getFullYear()}`; };
+    const tamanho = kb => kb >= 1024 ? (kb / 1024).toFixed(1).replace('.', ',') + ' MB' : kb + ' KB';
+    const frenteDe = c => FRENTES[c.frente] || FRENTES.institucional;
+    const hoje = (() => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); })();
+    const capaUrl = c => c.capa ? base + c.pasta + '/' + c.capa : '';
+    const normal = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const casa = c => !termo || normal(`${c.titulo} ${c.descricao} ${c.serie} ${frenteDe(c).nome} ${c.pasta}`).includes(termo);
+
+    function aviso(texto) {
+      const a = document.getElementById('aviso-copia');
+      a.textContent = texto;
+      a.classList.add('on');
+      clearTimeout(aviso.t);
+      aviso.t = setTimeout(() => a.classList.remove('on'), 1600);
     }
 
-    function tamanho(kb) {
-      return kb >= 1024 ? (kb / 1024).toFixed(1).replace('.', ',') + ' MB' : kb + ' KB';
+    async function copiar(texto, msg) {
+      try { await navigator.clipboard.writeText(texto); aviso(msg); }
+      catch { aviso('Não deu para copiar: selecione e copie'); }
     }
 
+    function tagFrente(c) {
+      return el('span', { class: 'tag', style: `--cor: ${frenteDe(c).cor}`, text: frenteDe(c).nome });
+    }
+
+    /* ---------- agenda ---------- */
+    function inicioSemana(d) { const x = new Date(d); x.setDate(x.getDate() - ((x.getDay() + 6) % 7)); return x; }
+
+    function linhaAgenda(c) {
+      const d = dataLocal(c.data);
+      const capa = capaUrl(c);
+      return el('button', { class: 'linha', type: 'button', style: `--cor: ${frenteDe(c).cor}`, onclick: () => abrir(c.pasta) },
+        el('span', { class: 'dia' }, el('b', { text: String(d.getDate()) }), el('small', { text: `${semanaDias[d.getDay()]} · ${meses[d.getMonth()]}` })),
+        capa ? el('img', { class: 'mini', src: capa, alt: '', loading: 'lazy' }) : el('span'),
+        el('span', { class: 'txt' }, tagFrente(c), el('strong', { text: c.titulo }), el('span', { class: 'serie', text: c.serie })),
+        el('span', { class: 'abrir', text: 'Abrir →' }));
+    }
+
+    function renderAgenda() {
+      const box = document.getElementById('agenda');
+      box.innerHTML = '';
+      const lista = campanhas.filter(casa).slice().sort((a, b) => a.data.localeCompare(b.data));
+      const futuras = lista.filter(c => dataLocal(c.data) >= hoje);
+      const passadas = lista.filter(c => dataLocal(c.data) < hoje).reverse();
+      const semAtual = inicioSemana(hoje).getTime();
+      document.getElementById('intro-agenda').innerHTML =
+        `Hoje é <b>${hoje.getDate()} de ${meses[hoje.getMonth()]}</b>. ${futuras.length ? `Há <b>${futuras.length}</b> campanhas agendadas daqui para a frente` : 'Nenhuma campanha agendada daqui para a frente'}${termo ? ' para esta busca' : ''}. Clique numa linha para abrir a campanha.`;
+      const grupos = new Map();
+      futuras.forEach(c => {
+        const k = inicioSemana(dataLocal(c.data)).getTime();
+        if (!grupos.has(k)) grupos.set(k, []);
+        grupos.get(k).push(c);
+      });
+      grupos.forEach((itens, k) => {
+        const ini = new Date(k), fim = new Date(k); fim.setDate(fim.getDate() + 6);
+        const titulo = k === semAtual ? 'Esta semana' : `Semana de ${ini.getDate()} ${meses[ini.getMonth()]} a ${fim.getDate()} ${meses[fim.getMonth()]}`;
+        const sec = el('section', { class: 'semana' + (k === semAtual ? ' atual' : '') }, el('h2', { text: `${titulo} · ${itens.length}` }));
+        itens.forEach(c => sec.append(linhaAgenda(c)));
+        box.append(sec);
+      });
+      if (passadas.length) {
+        const det = el('details', { class: 'passadas' }, el('summary', { text: `Acervo: ${passadas.length} campanhas com data já passada (podem ser repostadas)` }));
+        passadas.forEach(c => det.append(linhaAgenda(c)));
+        box.append(det);
+      }
+      if (!lista.length) box.append(el('p', { class: 'vazio', text: 'Nada encontrado.' }));
+    }
+
+    /* ---------- por frente ---------- */
+    function renderChips() {
+      const box = document.getElementById('chips');
+      box.innerHTML = '';
+      const chip = (id, nome, cor, n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(filtroFrente === id), style: cor ? `--cor: ${cor}` : '',
+        onclick: () => { filtroFrente = id; location.hash = id === 'todas' ? 'frentes' : 'frentes/' + id; } },
+        cor ? el('i') : null, document.createTextNode(nome), el('small', { text: String(n) }));
+      box.append(chip('todas', 'Todas', null, campanhas.length));
+      ORDEM.forEach(f => {
+        const n = campanhas.filter(c => c.frente === f).length;
+        if (n) box.append(chip(f, FRENTES[f].nome, FRENTES[f].cor, n));
+      });
+    }
+
+    function cardCampanha(c) {
+      const capa = capaUrl(c);
+      return el('button', { class: 'card', type: 'button', onclick: () => abrir(c.pasta) },
+        capa ? el('img', { src: capa, alt: '', loading: 'lazy' }) : null,
+        el('div', {}, el('small', { text: dataBR(c.data) }), el('strong', { text: c.titulo })));
+    }
+
+    function renderFrentes() {
+      renderChips();
+      const box = document.getElementById('frentes');
+      box.innerHTML = '';
+      let total = 0;
+      ORDEM.filter(f => filtroFrente === 'todas' || filtroFrente === f).forEach(f => {
+        const lista = campanhas.filter(c => c.frente === f && casa(c));
+        if (!lista.length) return;
+        total += lista.length;
+        const meta = FRENTES[f];
+        const sec = el('section', { class: 'bloco-frente', style: `--cor: ${meta.cor}` },
+          el('header', {}, el('h2', { text: `${meta.nome} · ${lista.length}` }),
+            el('button', { class: 'link-kit', type: 'button', text: '🎨 Ver o mídia kit', onclick: () => { location.hash = 'kits/' + meta.kit; } })));
+        const series = [...new Set(lista.map(c => c.serie))];
+        series.forEach(s => {
+          const itens = lista.filter(c => c.serie === s).sort((a, b) => a.data.localeCompare(b.data));
+          sec.append(el('h3', { text: `${s} · ${itens.length}` }));
+          const grade = el('div', { class: 'cards' });
+          itens.forEach(c => grade.append(cardCampanha(c)));
+          sec.append(grade);
+        });
+        box.append(sec);
+      });
+      if (!total) box.append(el('p', { class: 'vazio', text: 'Nada encontrado.' }));
+    }
+
+    /* ---------- mídia kits ---------- */
+    function renderKits() {
+      const box = document.getElementById('kits');
+      box.innerHTML = '';
+      kits.forEach(k => {
+        const logos = el('div', { class: 'logos' });
+        k.logos.slice(0, 3).forEach(l => logos.append(el('span', { style: `background: ${l.fundo}`, title: l.uso },
+          el('img', { src: baseKits + l.arquivo, alt: l.uso, loading: 'lazy' }))));
+        const amostras = el('div', { class: 'amostras' });
+        k.cores.forEach(c => amostras.append(el('button', { class: 'amostra', type: 'button', style: `background: ${c.hex}`,
+          title: `${c.nome} ${c.hex.toUpperCase()}: ${c.uso}`, 'aria-label': `Copiar ${c.nome} ${c.hex}`,
+          onclick: () => copiar(c.hex.toUpperCase(), `${c.nome} ${c.hex.toUpperCase()} copiado`) })));
+        const fontes = el('ul', { class: 'fontes' });
+        k.fontes.forEach(f => fontes.append(el('li', {}, el('a', { href: f.link, target: '_blank', rel: 'noopener', text: f.nome }), el('span', { text: ` · ${f.uso}` }))));
+        const frente = k.frentes[k.frentes.length - 1];
+        box.append(el('article', { class: 'kit', id: 'kit-' + k.slug }, logos,
+          el('div', { class: 'corpo' },
+            el('h2', {}, document.createTextNode(k.nome + ' '), el('em', { text: `"${k.apelido}"` })),
+            el('p', { text: k.conceito }),
+            el('div', {}, el('h4', { text: 'Cores' }), amostras),
+            el('div', {}, el('h4', { text: 'Fontes' }), fontes),
+            el('div', { class: 'acoes' },
+              el('a', { class: 'btn btn-ouro', href: baseKits + k.zip.nome, download: k.zip.nome, text: `⬇ Baixar kit (${tamanho(k.zip.kb)})` }),
+              el('a', { class: 'btn btn-linha', href: baseKits + k.guia, target: '_blank', rel: 'noopener', text: 'Guia (PDF)' }),
+              el('button', { class: 'btn btn-linha', type: 'button', text: 'Campanhas', onclick: () => { location.hash = 'frentes/' + frente; } })))));
+      });
+    }
+
+    /* ---------- detalhe ---------- */
     function previa(c, a) {
       const url = base + c.pasta + '/' + a.nome;
-      // #t=1.5: a prévia mostra um quadro com conteúdo (o primeiro costuma ser escuro)
       if (a.tipo === 'video') return el('video', { src: url + '#t=1.5', controls: '', muted: '', playsinline: '', preload: 'metadata' });
       if (a.tipo === 'lottie') {
         const box = el('div', { class: 'lottie' });
@@ -265,70 +425,113 @@
 
     function cardArquivo(c, a) {
       const url = base + c.pasta + '/' + a.nome;
-      return el('div', { class: 'arquivo' },
-        el('div', { class: 'previa' }, previa(c, a)),
-        el('div', { class: 'meta' },
-          el('span', { text: `${a.nome} · ${tamanho(a.kb)}`, title: a.nome }),
-          el('a', { href: url, download: a.nome, text: 'Baixar' })));
+      return el('div', { class: 'arquivo' }, el('div', { class: 'previa' }, previa(c, a)),
+        el('div', { class: 'meta' }, el('span', { text: `${a.nome} · ${tamanho(a.kb)}`, title: a.nome }), el('a', { href: url, download: a.nome, text: 'Baixar' })));
     }
 
     function cardLegenda(l) {
-      const btn = el('button', { class: 'btn btn-azul btn-copiar', type: 'button', text: 'Copiar' });
-      btn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(l.texto);
-          btn.textContent = 'Copiado!';
-        } catch {
-          btn.textContent = 'Selecione e copie';
-        }
-        setTimeout(() => (btn.textContent = 'Copiar'), 1800);
-      });
       return el('div', { class: 'legenda' },
-        el('header', {}, el('span', { text: l.rede }), btn),
+        el('header', {}, el('span', { text: l.rede }),
+          el('button', { class: 'btn btn-azul btn-copiar', type: 'button', text: 'Copiar', onclick: () => copiar(l.texto, `Legenda do ${l.rede} copiada`) })),
         el('pre', { text: l.texto }));
     }
 
-    function campanha(c) {
-      const sec = el('section', { class: 'campanha', id: c.pasta });
-      sec.append(el('div', { class: 'cab' },
-        el('div', {},
-          el('p', { class: 'data', text: dataBR(c.data) }),
-          el('h2', { text: c.titulo }),
-          el('p', { class: 'desc', text: c.descricao })),
-        el('a', { class: 'btn btn-ouro', href: base + c.pasta + '/' + c.pacote.nome, download: c.pacote.nome,
-          text: `⬇ Baixar pacote (.zip, ${tamanho(c.pacote.kb)})` })));
+    function abrir(pasta) {
+      if (location.hash !== '#c=' + pasta) { history.pushState(null, '', '#c=' + pasta); }
+      mostrarDetalhe(pasta);
+    }
 
+    function mostrarDetalhe(pasta) {
+      const c = campanhas.find(x => x.pasta === pasta);
+      const dlg = document.getElementById('detalhe');
+      if (!c) return;
+      dlg.innerHTML = '';
+      const meta = frenteDe(c);
+      const futuro = dataLocal(c.data) >= hoje;
+      dlg.append(el('div', { class: 'det-cab' },
+        el('div', {}, tagFrente(c), el('h2', { id: 'det-titulo', text: c.titulo }),
+          el('p', { class: 'quando', text: `${futuro ? 'Postar em' : 'Data sugerida (já passou):'} ${dataBR(c.data)} · ${c.serie}` })),
+        el('button', { class: 'fechar', type: 'button', 'aria-label': 'Fechar', text: '×', onclick: fechar })));
+      const corpo = el('div', { class: 'det-corpo' }, el('p', { class: 'desc', text: c.descricao }),
+        el('div', { class: 'det-acoes' },
+          el('a', { class: 'btn btn-ouro', href: base + c.pasta + '/' + c.pacote.nome, download: c.pacote.nome, text: `⬇ Baixar pacote (.zip, ${tamanho(c.pacote.kb)})` }),
+          el('button', { class: 'btn btn-linha', type: 'button', text: '🎨 Mídia kit da frente', onclick: () => { fechar(); location.hash = 'kits/' + meta.kit; } }),
+          el('button', { class: 'btn btn-linha', type: 'button', text: '🔗 Copiar link', onclick: () => copiar(location.href, 'Link da campanha copiado') })));
       if (c.orientacoes && c.orientacoes.length) {
         const ul = el('ul', { class: 'orient' });
         c.orientacoes.forEach(o => ul.append(el('li', { text: o })));
-        sec.append(ul);
+        corpo.append(el('p', { class: 'secao-titulo', text: 'Orientações' }), ul);
       }
-
-      sec.append(el('p', { class: 'secao-titulo', text: 'Peças' }));
       const grade = el('div', { class: 'grade' });
       c.arquivos.forEach(a => grade.append(cardArquivo(c, a)));
-      sec.append(grade);
-
+      corpo.append(el('p', { class: 'secao-titulo', text: `Peças · ${c.arquivos.length}` }), grade);
       if (c.legendas.length) {
-        sec.append(el('p', { class: 'secao-titulo', text: 'Legendas' }));
         const ls = el('div', { class: 'legendas' });
         c.legendas.forEach(l => ls.append(cardLegenda(l)));
-        sec.append(ls);
+        corpo.append(el('p', { class: 'secao-titulo', text: 'Legendas' }), ls);
       }
-      return sec;
+      dlg.append(corpo);
+      if (!dlg.open) dlg.showModal();
+      dlg.scrollTop = 0;
     }
 
-    fetch(base + 'conteudos.json', { cache: 'no-store' })
-      .then(r => r.json())
-      .then(lista => {
-        const main = document.getElementById('lista');
-        main.innerHTML = '';
-        if (!lista.length) main.append(el('p', { class: 'vazio', text: 'Nenhum conteúdo publicado ainda.' }));
-        lista.forEach(c => main.append(campanha(c)));
-      })
-      .catch(() => {
-        document.getElementById('lista').innerHTML = '<p class="erro">Não foi possível carregar os conteúdos. Atualize a página.</p>';
-      });
+    function fechar() {
+      const dlg = document.getElementById('detalhe');
+      if (dlg.open) dlg.close();
+    }
+
+    document.getElementById('detalhe').addEventListener('close', () => {
+      document.querySelectorAll('#detalhe video').forEach(v => v.pause());
+      if (location.hash.startsWith('#c=')) history.pushState(null, '', '#' + (ultimaVista || 'agenda'));
+    });
+    document.getElementById('detalhe').addEventListener('click', e => { if (e.target.id === 'detalhe') fechar(); });
+
+    /* ---------- rotas: #agenda, #frentes/<frente>, #kits/<kit>, #como-usar, #c=<pasta> ---------- */
+    let ultimaVista = 'agenda';
+    function rota() {
+      const h = decodeURIComponent(location.hash.slice(1));
+      if (h.startsWith('c=')) {
+        if (!document.querySelector('.vista:not([hidden])')) mostrarVista('agenda');
+        mostrarDetalhe(h.slice(2));
+        return;
+      }
+      fechar();
+      const [vista, sub] = h.split('/');
+      if (vista === 'frentes') filtroFrente = sub && FRENTES[sub] ? sub : 'todas';
+      mostrarVista(['agenda', 'frentes', 'kits', 'como-usar'].includes(vista) ? vista : 'agenda');
+      ultimaVista = h || 'agenda';
+      if (vista === 'kits' && sub) requestAnimationFrame(() => document.getElementById('kit-' + sub)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      else window.scrollTo({ top: 0 });
+    }
+
+    function mostrarVista(v) {
+      document.querySelectorAll('.vista').forEach(s => { s.hidden = s.id !== 'v-' + v; });
+      document.querySelectorAll('.aba').forEach(b => b.setAttribute('aria-current', String(b.dataset.vista === v)));
+      document.getElementById('busca').hidden = !['agenda', 'frentes'].includes(v);
+      if (v === 'agenda') renderAgenda();
+      if (v === 'frentes') renderFrentes();
+      if (v === 'kits') renderKits();
+    }
+
+    document.querySelectorAll('.aba').forEach(b => b.addEventListener('click', () => { location.hash = b.dataset.vista; }));
+    document.getElementById('busca').addEventListener('input', e => {
+      termo = normal(e.target.value.trim());
+      const v = document.querySelector('.vista:not([hidden])')?.id;
+      if (v === 'v-agenda') renderAgenda();
+      if (v === 'v-frentes') renderFrentes();
+    });
+    window.addEventListener('hashchange', rota);
+
+    Promise.all([
+      fetch(base + 'conteudos.json', { cache: 'no-store' }).then(r => r.json()),
+      fetch(baseKits + 'kits.json', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
+    ]).then(([lista, ks]) => {
+      campanhas = lista;
+      kits = ks;
+      rota();
+    }).catch(() => {
+      document.querySelector('main').innerHTML = '<p class="erro">Não foi possível carregar os conteúdos. Atualize a página.</p>';
+    });
   </script>
 </body>
 </html>

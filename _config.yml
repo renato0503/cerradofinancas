@@ -13,11 +13,12 @@ exclude:
   - context.md
   - PROXIMOS_PASSOS.md
   - LICENSE.txt
-  # Estúdio de conteúdo: só marketing/index.html (Central de Conteúdos) e
-  # marketing/entregas/ são publicados. Pasta nova em marketing/ deve entrar aqui.
+  # Estúdio de conteúdo: só marketing/index.html (Central de Marketing),
+  # marketing/entregas/ e marketing/kits/ são publicados. Pasta nova em marketing/ deve entrar aqui.
   - marketing/.claude
   - marketing/README.md
   - marketing/HISTORICO.md
+  - marketing/PLANEJAMENTO-credito-consultorias.md
   - marketing/brand
   - marketing/posts
   - marketing/tools

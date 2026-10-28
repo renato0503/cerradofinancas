@@ -1,0 +1,13 @@
+Mídia kit: Cerrado Contabilidade ("Partida dobrada")
+
+guia.pdf     o resumo da identidade: cores, fontes, logos, recursos e regras
+logos/       os arquivos de logo em PNG transparente
+fontes/      as fontes das peças e o link para instalar cada uma (LINKS.txt)
+exemplos/    peças prontas para referência
+
+Cores:
+  Papel: #F1F6F0 (fundo, com pauta)
+  Pauta: #CFE0D4 (linhas do papel)
+  Tinta verde: #0C3B2E (texto, linhas, slide invertido)
+  Verde-claro: #D8EFDF (marca-texto)
+  Vermelho: #D23A2C (margem, carimbo e só a dor do cliente)

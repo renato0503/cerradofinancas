@@ -2,8 +2,17 @@
 
 Posts, carrosséis, stories, vídeos e animações da marca.
 
-**Central de Conteúdos (para o time de marketing):** https://www.cerradofinancas.com.br/marketing/
-Só a página (`index.html`) e a pasta `entregas/` são publicadas. As áreas de trabalho
+**Central de Marketing (para o time de marketing):** https://www.cerradofinancas.com.br/marketing/
+A página tem quatro abas:
+- **Agenda:** o que sai em cada dia, da semana atual em diante. O acervo com as datas passadas fica no fim.
+- **Por frente:** as campanhas de cada marca, agrupadas por série.
+- **Mídia kits:** logos, cores, fontes e o guia em PDF de cada frente.
+- **Como usar:** o passo a passo para postar e o que é cada arquivo.
+
+Cada campanha abre numa janela com orientações, peças, pacote .zip e legendas. Dá para mandar o link direto para
+alguém: `#c=<pasta>`.
+
+Só a página (`index.html`), `entregas/` e `kits/` são publicadas. As áreas de trabalho
 (`posts/`, `videos/`, `tools/`, `brand/`, `animacoes/`, `.claude/`) ficam fora do site pelo
 `_config.yml` da raiz. **Ao criar uma pasta nova aqui, acrescente-a no `exclude` do `_config.yml`.**
 A página tem `noindex` e não aparece no menu nem no sitemap.
@@ -18,7 +27,8 @@ A página tem `noindex` e não aparece no menu nem no sitemap.
 | `videos/` | Projetos Remotion (Reels 1080×1920) de Cerrado Tech e Cerrado Finanças |
 | `filmes/` | Vídeos HyperFrames (HTML + GSAP) de Cerra.AI e CerraClass, em 16:9 e 9:16. Ver `filmes/README.md` |
 | `animacoes/` | Logos e ícones animados (Lottie, GIF, MP4) |
-| `tools/` | `exportar.py` (HTML → PNG em `entregas/`) e `publicar.py` (gera .zip e `conteudos.json`) |
+| `kits/` | **Publicado.** Mídia kit de cada frente (logos, fontes, guia.pdf, exemplos e .zip), gerado por `tools/gerar_kits.py` |
+| `tools/` | `exportar.py` (HTML → PNG em `entregas/`), `publicar.py` (gera .zip e `conteudos.json`, com a frente e a série de cada campanha) e os geradores de série |
 | `.claude/skills/` | Skills usadas pelo Claude dentro desta pasta |
 
 As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img/ls-logo.png` etc.
@@ -37,6 +47,9 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    grava `entregas/AAAA-MM-tema/carrossel-animado.mp4` (mesma arte, slides deslizando, com trilha).
    Comerciais HyperFrames (`filmes/`) só quando pedidos, como vídeo extra.
 5. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
+   A frente e a série saem do nome da pasta (`REGRAS` em `publicar.py`). Um prefixo novo precisa entrar lá, senão
+   a campanha cai em "Institucional · Avulsa".
+6. Mudou uma identidade (cor, fonte, logo)? Atualize `KITS_DADOS` em `tools/gerar_kits.py` e rode o gerador.
 
 ## Vídeos e folinha animada (`videos/`, Remotion)
 

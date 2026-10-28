@@ -1,0 +1,5 @@
+Para instalar no computador ou no Canva, baixe as fontes no Google Fonts (gratuitas):
+
+Inter: https://fonts.google.com/specimen/Inter  (títulos 900 e texto 400–700)
+
+Os arquivos .woff2 desta pasta são os mesmos usados nas peças (servem para web).
