@@ -19,7 +19,8 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 26/10 | `b5f715f` | Os 11 cursos presenciais do catálogo da CerraClass, gerados automaticamente dos dados oficiais |
 | 26/10 | (esta rodada) | Catálogo dos 11 cursos no site (`/cursos/`), `.zip` sem os vídeos (~115 MB a menos), medição do áudio dos 19 vídeos, sitemap completo |
 | 26/10 | (esta rodada) | Campanha do Cerra.AI: carrossel de 7, story, Reel de 15s e legendas |
-| 28/10 | (esta rodada) | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
+| 28/10 | (esta rodada) | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
+| 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
@@ -89,11 +90,16 @@ Fonte única: `tools/gerar_contabilidade.py`. Posicionamento: "do MEI à média 
 Série A, "Para quem atendemos": MEI, Simples Nacional, Lucro Presumido, da micro à média. Série B, "O que fazemos":
 abertura, fiscal e tributário, departamento pessoal, contábil, consultivo e troca de contador. Identidade própria
 ("Partida dobrada", `brand/contabilidade/README.md`) para não se confundir com o resto da Cerrado Finanças.
-Só entram serviços confirmados no site e o Lucro Presumido (confirmado pelo Renato). **Pendências:** confirmar os
-demais serviços (inscrição estadual, MEI para ME, alterações e baixa, certidões, certificado digital, DASN-SIMEI, ISS,
-parcelamentos, reforma tributária, pró-labore, escrituração completa, distribuição de lucros, IRPF dos sócios),
-se atendem Lucro Real, e o nome e CRC do responsável técnico. A série educativa ("Você sabia?") fica para depois,
-com revisão de um contador. A página `/contabilidade` ainda cita a DIRF, que foi extinta.
+Serviços confirmados pelo Renato em 28/10: os do site, o Lucro Presumido e toda a lista da estratégia (inscrição
+estadual, MEI para ME, alterações e baixa, certidões, certificado digital, DASN-SIMEI, ISS, parcelamentos, reforma
+tributária, pró-labore, escrituração completa, distribuição de lucros, IRPF dos sócios). Eles entraram nas campanhas
+existentes e em três novas: Regularização, Sócios e Reforma tributária (13 no total, terças e quintas até 15/12).
+**Série "Você sabia?"** (8 posts, sábados de 07/11 a 26/12, `VOCE_SABIA` no mesmo gerador): cada post é uma "nota
+explicativa" numerada (a regra com a base legal, na prática, o erro e o certo, como a gente ajuda). Temas: DASN-SIMEI,
+Fator R, pró-labore, fim da DIRF, IBS e CBS, MEI acima do limite, certidão negativa e CNAE. Regras conferidas com a
+lei em 28/10/2026, sem valores de limite que mudam. **Pendências:** Lucro Real (não citado até confirmar) e o nome e
+CRC do responsável técnico (o Renato pediu para deixar para depois). A página `/contabilidade` trocou a DIRF extinta
+por EFD-Reinf e eSocial.
 
 ## Decisões e regras de conteúdo
 

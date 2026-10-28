@@ -32,10 +32,16 @@ A folinha + "Cerrado Contabilidade" no rodapé.
 
 ## Regras de conteúdo
 
-- Só serviços confirmados (site `contabilidade.html` e `consultorias.html`) e o Lucro Presumido. Itens a confirmar
-  (inscrição estadual, baixa de empresa, IRPF dos sócios, parcelamentos, Lucro Real...) ficam de fora até o OK.
-- Sem limites, alíquotas ou prazos nas peças (mudam por lei), exceto o Fator R de 6%, que está no site.
+- Só serviços confirmados (o site, o Lucro Presumido e a lista confirmada em 28/10). Lucro Real fica de fora até o OK.
+- Sem limites, alíquotas ou prazos que mudam por lei. Exceções: o Fator R (6% e 28%, LC 123) e as datas da reforma
+  tributária (2026 a 2033, EC 132).
 - Publicidade sóbria, conforme o código de ética do CFC: nada de promessa de economia.
 - Pendente: nome e CRC do responsável técnico.
+
+## "Você sabia?": notas explicativas
+
+A série educativa usa o formato das notas explicativas do balanço: `.nota` (o "Nota nº 03" grande em Plex Mono),
+`.regra` (a regra com filete verde à esquerda) e `.fonte` (a base legal). Sequência: capa → a regra → na prática →
+o erro e o certo (razonete) → como a gente ajuda (`.slide.tinta`) → carimbo EM DIA com o aviso de conteúdo informativo.
 
 Gerador: `tools/gerar_contabilidade.py`.

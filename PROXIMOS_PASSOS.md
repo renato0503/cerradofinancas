@@ -52,6 +52,9 @@ HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identid
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
 - [ ] Ajustar o catálogo da CerraClass para 10 alunos por turma (ver acima).
 - [ ] Ouvir as trilhas novas dos vídeos HyperFrames (sintetizadas por `marketing/filmes/ferramentas/trilha.mjs`; volume já medido, escuta pendente).
+- [ ] Contabilidade: confirmar se atendem Lucro Real (as peças ainda não citam) e, quando houver, incluir o nome e
+      o CRC do responsável técnico. A série "Você sabia?" foi conferida com a lei em 28/10/2026; revisar se algo mudar
+      antes da data de cada post.
 
 ## Como publicar uma mudança
 
