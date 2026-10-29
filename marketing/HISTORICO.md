@@ -153,6 +153,7 @@ Palestra do Renato em 29/10/2026, às 14h30. Pasta de trabalho: `posts/2026-10-p
 - Ao imprimir (Ctrl+P), todos os slides saem visíveis, um por página.
 
 **Slides novos ou refeitos na versão animada (em relação ao original de 22)**
+0. 1 · Capa sem data e horário, com o nome "Prof. Renato Rosa" em destaque numa placa dourada junto à foto.
 1. 5 · Sonhos; 6 · Tudo conta (experiências, cursos e vida pessoal no mesmo gráfico de pontos); 8 · Como contar
    a sua história (fato → aprendizado → ponte).
 2. 7 · Hard skills e soft skills ("nem tudo se aprende na escola").

@@ -38,7 +38,7 @@
     .capa-palestra .evento { margin-top: 42px; font-size: 25px; font-weight: 700; letter-spacing: .5px; color: var(--texto-suave); max-width: 1140px; line-height: 1.4; }
     .capa-palestra .evento b { color: #fff; }
     .capa-palestra .autor { margin-top: 14px; font-size: 28px; color: var(--dourado); font-weight: 700; }
-    .capa-palestra .social { margin-top: 8px; font-size: 23px; font-weight: 600; color: var(--texto-suave); }
+    .capa-palestra .social { margin-top: 14px; font-size: 23px; font-weight: 600; color: var(--texto-suave); }
     .retrato {
       position: absolute;
       right: 86px;
@@ -52,6 +52,16 @@
       border: 3px solid color-mix(in srgb, var(--dourado) 55%, transparent);
       box-shadow: 0 40px 90px rgba(0, 0, 0, .5);
     }
+
+    .nome-palestrante {
+      position: absolute; right: 86px; width: 420px; top: calc(50% + 222px);
+      padding: 18px 20px 16px; border-radius: 22px; text-align: center;
+      background: var(--dourado); color: var(--azul);
+      font-size: 46px; font-weight: 900; letter-spacing: -1.5px; line-height: 1;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+    }
+    .nome-palestrante .pre { font-weight: 700; }
+    .nome-palestrante small { display: block; margin-top: 8px; font-size: 17px; font-weight: 800; letter-spacing: 2.4px; text-transform: uppercase; opacity: .78; }
 
     /* ---------------- afirmação ---------------- */
     .afirmacao .mega { font-size: 128px; }
@@ -444,10 +454,10 @@
     <img class="logo-evento" src="../../../img/logo-conexao-carreira.png" alt="Conexão Carreira Indústria">
     <h1>Muito Além<br>do Currículo:<br><span class="ouro">IA na Prática.</span></h1>
     <p class="sub">O que você entrega quando o diploma deixa de ser o diferencial.</p>
-    <p class="evento"><b>29 de outubro · 14h30</b><br>IEL Mato Grosso · Feira de Empregos da Indústria e do Comércio · Unisenai Cuiabá</p>
-    <p class="autor">Renato de Oliveira Rosa · Cerrado Finanças &amp; Tech</p>
+    <p class="evento">IEL Mato Grosso · Feira de Empregos da Indústria e do Comércio · Unisenai Cuiabá</p>
     <p class="social"><span class="ouro">@cerradofinancas</span> · www.cerradofinancas.com.br</p>
-    <img class="retrato" src="../../../img/renato.jpg" alt="Renato de Oliveira Rosa">
+    <img class="retrato" src="../../../img/renato.jpg" alt="Prof. Renato Rosa">
+    <div class="nome-palestrante"><span class="pre">Prof.</span> Renato Rosa<small>Cerrado Finanças &amp; Tech</small></div>
     <div class="rodape">
       <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
       <span data-pagina></span>
@@ -1252,6 +1262,7 @@
           tl.fromTo(retrato, { clipPath: 'inset(100% 0% 0% 0% round 34px)', scale: 1.12 },
             { clipPath: 'inset(0% 0% 0% 0% round 34px)', scale: 1, duration: 1.2, ease: 'expo.out', clearProps: 'clipPath' }, .15);
           tl.from(q('.logo-evento'), { autoAlpha: 0, y: -40, duration: .8, clearProps: LIMPAR }, .3);
+          tl.from(q('.nome-palestrante'), { autoAlpha: 0, y: 40, scale: .9, duration: .8, ease: 'back.out(1.6)', clearProps: 'opacity,visibility' }, .95);
           tl.add(function () { folhaCapa.goToAndPlay(0, true); }, .4);
         }
 
@@ -1422,7 +1433,7 @@
 
       // luz segue o mouse; retrato da capa acompanha de leve; cursor some parado
       var retrato = slides[0].querySelector('.retrato');
-      var rx = gsap.quickTo(retrato, 'x', { duration: .8, ease: 'power3.out' });
+      var rx = gsap.quickTo([retrato, slides[0].querySelector('.nome-palestrante')], 'x', { duration: .8, ease: 'power3.out' });
       var t;
       document.addEventListener('mousemove', function (e) {
         var r = palco.getBoundingClientRect();
