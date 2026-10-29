@@ -25,6 +25,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
+| 29/10 | (esta rodada) | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
 ## Campanhas publicadas (20)
@@ -128,6 +129,54 @@ Fator R, pró-labore, fim da DIRF, IBS e CBS, MEI acima do limite, certidão neg
 lei em 28/10/2026, sem valores de limite que mudam. **Pendências:** Lucro Real (não citado até confirmar) e o nome e
 CRC do responsável técnico (o Renato pediu para deixar para depois). A página `/contabilidade` trocou a DIRF extinta
 por EFD-Reinf e eSocial.
+
+## Palestra "Muito Além do Currículo: IA na Prática" (29/10)
+
+Palestra do Renato em 29/10/2026, às 14h30. Pasta de trabalho: `posts/2026-10-palestra-carreira-ia/`.
+
+| Arquivo | O que é |
+|---|---|
+| `slides.html` | Original, 22 slides em sequência (vira PNG/PDF). Outra IA também mexe nele |
+| `apresentacao.html` | Os mesmos 22 slides em modo apresentação: setas ← →, espaço, Home/End, F (tela cheia), clique e swipe |
+| `apresentacao-animada.html` | **A versão usada na palestra:** 29 slides com transições e animações |
+
+**Online:** https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-ia/apresentacao/ (aceita `#N` no fim para abrir no slide N).
+
+**Como a versão animada funciona**
+- Bibliotecas copiadas em `vendor/` (GSAP 3.14.2 com SplitText e DrawSVG, lottie-web 5.13.0), sem depender de CDN.
+  A folinha animada (Lottie de `entregas/folinha-animada/`) foi convertida em `vendor/folinha-*.js`, porque
+  `file://` bloqueia a leitura de JSON.
+- Transição por slide com `data-transicao`: `cortina`, `mascara`, `zoom` ou deslize (padrão). Quem prefere
+  movimento reduzido no sistema vê só fade.
+- Entrada dos elementos montada em `montarEntrada()`: títulos linha a linha (SplitText), cartões em sequência,
+  traços de SVG desenhados (DrawSVG), contador 2026 → 2036 no slide da frase final.
+- Ao imprimir (Ctrl+P), todos os slides saem visíveis, um por página.
+
+**Slides novos ou refeitos na versão animada (em relação ao original de 22)**
+1. 5 · Sonhos; 6 · Tudo conta (experiências, cursos e vida pessoal no mesmo gráfico de pontos); 8 · Como contar
+   a sua história (fato → aprendizado → ponte).
+2. 7 · Hard skills e soft skills ("nem tudo se aprende na escola").
+3. 9 · "A minha virada" refeito para aplicar os três passos do slide 8 (ERP na Europa → sistema pronto não é
+   resultado → controladoria).
+4. 15 · "Do papel à IA: cinco degraus": digitalizar, automatizar, script, RPA e automação por IA, com o mesmo
+   exemplo (a nota fiscal) em todos e a regra de bolso no fim.
+5. 21 · Mundo corporativo: cultura, gestão de projetos, ágil, plano de ação (5W2H), matriz RACI e sprints.
+6. 22 · "Eu nunca vendi tecnologia" redesenhado (aspas, tags riscadas, selo); trocou de lugar com o slide do
+   mundo corporativo.
+7. 23 · Cerrado Tech com a logo, o que o escritório faz, tipos de software e áreas atendidas (saiu o bloco
+   "Local-first + PWA").
+8. 24 · Cerra.AI com a logo.
+9. 27 · Ecossistema: CAIM descrito como "IDE que roda no celular".
+10. 28 · Frase final sozinha e centralizada; 29 · "Obrigado!" com os QR codes.
+
+**Para republicar depois de mexer na versão animada:** a cópia online fica em
+`entregas/2026-10-palestra-carreira-ia/apresentacao/`, com os caminhos ajustados (CSS e `slides.js` da marca,
+logos e QR codes copiados para dentro da pasta, porque `brand/` e `posts/` não vão para o site). Copie o
+`apresentacao-animada.html` para lá como `index.html` trocando `../../brand/` pelos arquivos locais e
+`../../../img/` por `../../../../img/`, e publique.
+
+**Pendências da palestra:** os slides novos ainda não entraram em `slides.html`, `apresentacao.html` nem nos
+PNGs; o rótulo "Projeto" do QR do CAIM; confirmar o texto do slide 9; os pontos do slide 6 são exemplos genéricos.
 
 ## Decisões e regras de conteúdo
 

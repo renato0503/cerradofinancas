@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="entrega" content="2026-10-palestra-carreira-ia">
+  <meta name="formato" content="1920x1080">
+  <meta name="modo" content="apresentacao-animada">
+  <title>Muito Além do Currículo: IA na Prática</title>
+  <link rel="stylesheet" href="carrossel.css">
+  <style>
+    /* ---------------- palco 16:9 ---------------- */
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      padding: 70px 104px 104px;
+      justify-content: center;
+    }
+    .rodape { left: 104px; right: 104px; bottom: 32px; font-size: 26px; }
+    .marca { gap: 18px; }
+    .marca img { height: 58px; }
+    .slide .kicker { font-size: 21px; padding: 11px 22px; letter-spacing: 2.8px; }
+    .slide .titulo { margin-top: 24px; font-size: 82px; letter-spacing: -2.8px; line-height: 1.02; }
+    .slide .sub { margin-top: 16px; font-size: 33px; line-height: 1.36; max-width: 1440px; }
+
+    .mega { font-size: 118px; font-weight: 900; line-height: .98; letter-spacing: -4.5px; }
+    .mega.pequeno { font-size: 88px; letter-spacing: -3.2px; }
+    .ouro { color: var(--dourado); }
+    .vermelho { color: #f87171; }
+    .apagado { color: var(--texto-suave); }
+
+    /* ---------------- ícones ---------------- */
+    .ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; display: block; }
+
+    /* ---------------- capa ---------------- */
+    .capa-palestra .logo-evento { position: absolute; top: 44px; right: 86px; width: 330px; height: auto; }
+    .capa-palestra h1 { font-size: 116px; font-weight: 900; line-height: .96; letter-spacing: -5px; max-width: 1210px; }
+    .capa-palestra .sub { font-size: 34px; margin-top: 28px; max-width: 1120px; }
+    .capa-palestra .evento { margin-top: 42px; font-size: 25px; font-weight: 700; letter-spacing: .5px; color: var(--texto-suave); max-width: 1140px; line-height: 1.4; }
+    .capa-palestra .evento b { color: #fff; }
+    .capa-palestra .autor { margin-top: 14px; font-size: 28px; color: var(--dourado); font-weight: 700; }
+    .capa-palestra .social { margin-top: 8px; font-size: 23px; font-weight: 600; color: var(--texto-suave); }
+    .retrato {
+      position: absolute;
+      right: 86px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 420px;
+      height: 520px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: 34px;
+      border: 3px solid color-mix(in srgb, var(--dourado) 55%, transparent);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .5);
+    }
+
+    /* ---------------- afirmação ---------------- */
+    .afirmacao .mega { font-size: 128px; }
+    .afirmacao .sub { font-size: 37px; max-width: 1380px; margin-top: 30px; }
+
+    /* ---------------- cartões ---------------- */
+    .cards3 { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .cards4 { margin-top: 34px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .cartao {
+      background: rgba(255,255,255,.06);
+      border: 2px solid rgba(255,255,255,.13);
+      border-radius: 26px;
+      padding: 30px 28px;
+    }
+    .cartao .ico { font-size: 54px; color: var(--dourado); margin-bottom: 14px; }
+    .cartao .etiqueta {
+      display: inline-block;
+      font-size: 17px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--dourado); margin-bottom: 12px;
+    }
+    .cartao h3 { font-size: 38px; font-weight: 800; line-height: 1.08; letter-spacing: -1.2px; }
+    .cartao p { margin-top: 12px; font-size: 25px; line-height: 1.36; color: var(--texto-suave); }
+    .cartao p + p { margin-top: 10px; }
+    .cartao.destaque { background: color-mix(in srgb, var(--dourado) 10%, transparent); border-color: color-mix(in srgb, var(--dourado) 45%, transparent); }
+    .cartao .limite { display: block; margin-top: 14px; font-size: 21px; color: #94a3b8; line-height: 1.34; }
+    .cartao .limite b { color: #fca5a5; font-weight: 700; }
+
+    .nota-rodape { margin-top: 26px; font-size: 26px; line-height: 1.38; color: var(--texto-suave); }
+    .nota-rodape b { color: #fff; }
+
+    /* ---------------- linha do tempo ---------------- */
+    .linha-tempo { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .marco { background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.11); border-radius: 22px; padding: 20px 24px; }
+    .marco .topo { display: flex; align-items: center; gap: 12px; color: var(--dourado); }
+    .marco .ico { font-size: 32px; }
+    .marco .n { font-size: 18px; font-weight: 800; letter-spacing: 2px; }
+    .marco h3 { margin-top: 6px; font-size: 28px; font-weight: 800; line-height: 1.12; letter-spacing: -.6px; }
+    .marco p { margin-top: 6px; font-size: 21px; line-height: 1.3; color: var(--texto-suave); }
+
+    /* ---------------- espiral ---------------- */
+    .duas-colunas { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .voltas { margin-top: 30px; display: flex; flex-direction: column; gap: 16px; }
+    .volta { display: flex; align-items: center; gap: 18px; }
+    .volta .n { flex: 0 0 54px; width: 54px; height: 54px; border-radius: 15px; background: var(--dourado); color: var(--azul); font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+    .volta h3 { font-size: 31px; font-weight: 800; letter-spacing: -.5px; }
+    .volta p { font-size: 22px; color: var(--texto-suave); margin-top: 2px; }
+    .espiral { width: 620px; height: 561px; max-width: 100%; justify-self: center; }
+    .pontos { width: 640px; height: 560px; max-width: 100%; justify-self: center; }
+    .volta .n .ico { font-size: 28px; }
+    .pontos text { font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; fill: #cbd5e1; }
+    .pontos .destino { font-size: 26px; font-weight: 900; fill: #fecb00; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ---------------- três perguntas ---------------- */
+    .perguntas { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .pergunta { border-radius: 26px; padding: 34px 30px; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.12); }
+    .pergunta .ico { font-size: 58px; color: var(--dourado); margin-bottom: 16px; }
+    .pergunta .palavra { font-size: 54px; font-weight: 900; letter-spacing: -2px; color: var(--dourado); line-height: 1; }
+    .pergunta .seta { margin-top: 14px; font-size: 22px; color: var(--texto-suave); }
+    .pergunta .tipo { margin-top: 6px; font-size: 32px; font-weight: 800; line-height: 1.15; }
+
+    /* ---------------- diagrama ---------------- */
+    .diagrama { width: 100%; height: auto; display: block; }
+    .diagrama .caixa { fill: rgba(255,255,255,.06); stroke: rgba(255,255,255,.16); stroke-width: 2.5; }
+    .diagrama .caixa-ouro { fill: rgba(254,203,0,.10); stroke: rgba(254,203,0,.55); stroke-width: 3; }
+    .diagrama .dt { font: 800 34px 'Inter', sans-serif; fill: #fff; }
+    .diagrama .dd { font: 500 24px 'Inter', sans-serif; fill: #cbd5e1; }
+    .diagrama .do { font: 800 22px 'Inter', sans-serif; fill: #fecb00; }
+
+    /* ---------------- QR no copiloto ---------------- */
+    .copiloto-rodape { margin-top: 22px; display: flex; align-items: center; gap: 34px; }
+    .copiloto-rodape .nota-rodape { margin-top: 0; flex: 1; }
+    .qr-mini { flex: 0 0 auto; background: #fff; border-radius: 18px; padding: 12px 16px; display: flex; align-items: center; gap: 16px; }
+    .qr-mini img { width: 96px; height: 96px; display: block; border-radius: 6px; }
+    .qr-mini .rot { display: block; font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; }
+    .qr-mini b { display: block; margin-top: 4px; font-size: 21px; font-weight: 800; color: #001f5c; }
+
+    /* ---------------- autonomia ---------------- */
+    .niveis { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; align-items: end; }
+    .nivel { border-radius: 26px; padding: 32px 28px; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.12); }
+    .nivel .ico { font-size: 58px; color: var(--dourado); margin-bottom: 14px; }
+    .nivel h3 { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
+    .nivel p { margin-top: 10px; font-size: 24px; line-height: 1.35; color: var(--texto-suave); }
+    .nivel:nth-child(2) { margin-bottom: 27px; border-color: color-mix(in srgb, var(--dourado) 45%, transparent); background: color-mix(in srgb, var(--dourado) 9%, transparent); }
+    .nivel:nth-child(3) { margin-bottom: 54px; }
+
+    /* ---------------- lista de casos ---------------- */
+    .casos { margin-top: 32px; display: flex; flex-direction: column; gap: 13px; }
+    .caso { display: flex; align-items: center; gap: 22px; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.11); border-radius: 20px; padding: 18px 26px; }
+    .caso .ico { flex: 0 0 auto; font-size: 38px; color: var(--dourado); }
+    .caso .nome { flex: 0 0 360px; font-size: 30px; font-weight: 800; letter-spacing: -.5px; }
+    .caso .desc { flex: 1; font-size: 23px; line-height: 1.28; color: var(--texto-suave); }
+    .caso .tag { flex: 0 0 auto; font-size: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--dourado); border: 2px solid color-mix(in srgb, var(--dourado) 45%, transparent); background: color-mix(in srgb, var(--dourado) 10%, transparent); border-radius: 999px; padding: 8px 15px; }
+
+    /* ---------------- débito cognitivo ---------------- */
+    .debito { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; margin-top: 22px; }
+    .grafico { width: 100%; height: auto; }
+    .grafico text { font-family: 'Inter', sans-serif; }
+    .legenda { display: flex; gap: 26px; align-items: center; margin-bottom: 12px; font-size: 21px; font-weight: 700; color: var(--texto-suave); }
+    .legenda span { display: flex; align-items: center; gap: 10px; }
+    .legenda i { width: 34px; height: 6px; border-radius: 99px; display: block; }
+    .legenda .g { background: var(--dourado); }
+    .legenda .r { background: #f87171; }
+    .debito-lista { display: flex; flex-direction: column; gap: 14px; }
+    .debito-item { display: flex; gap: 18px; align-items: flex-start; background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.10); border-radius: 20px; padding: 20px 24px; }
+    .debito-item .ico { flex: 0 0 auto; font-size: 34px; color: #f87171; margin-top: 2px; }
+    .debito-item h3 { font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
+    .debito-item p { margin-top: 5px; font-size: 22px; line-height: 1.3; color: var(--texto-suave); }
+
+    /* ---------------- passos ---------------- */
+    .passos.deck { margin-top: 30px; gap: 12px; }
+    .passos.deck .passo { gap: 20px; align-items: center; background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.10); border-radius: 20px; padding: 15px 22px; }
+    .passos.deck .passo .n { width: 56px; height: 56px; border-radius: 16px; font-size: 26px; }
+    .passos.deck .passo h3 { font-size: 29px; }
+    .passos.deck .passo p { margin-top: 3px; font-size: 21px; }
+    .passos.deck .passo .tempo { margin-left: auto; flex: 0 0 auto; font-size: 16px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dourado); }
+
+    /* ---------------- citação ---------------- */
+    .citacao-palestra .mega { font-size: 96px; max-width: 1580px; }
+    .citacao-palestra .autor { margin-top: 34px; font-size: 26px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--dourado); font-weight: 800; max-width: 1300px; line-height: 1.35; }
+
+    /* ---------------- duas frentes / local-first ---------------- */
+    .corp-grid { margin-top: 30px; display: grid; grid-template-columns: .76fr 1.24fr; gap: 22px; align-items: stretch; }
+    .corp-grid .cultura { display: flex; flex-direction: column; justify-content: center; }
+    .corp-grid .cultura h3 { font-size: 46px; }
+    .corp-grid .chips { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 9px; }
+    .corp-grid .chips span { font-size: 19px; font-weight: 800; color: var(--azul); background: var(--dourado); border-radius: 10px; padding: 7px 13px; }
+    .metodos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .metodos .cartao { padding: 20px 22px; border-radius: 22px; }
+    .metodos .cartao .ico { font-size: 38px; margin-bottom: 10px; }
+    .metodos .cartao h3 { font-size: 27px; letter-spacing: -.6px; }
+    .metodos .cartao p { margin-top: 6px; font-size: 19px; line-height: 1.3; }
+    .metodos .raci { margin-top: 10px; gap: 7px; }
+    .metodos .raci span { width: 34px; height: 34px; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; }
+    .logo-cerraai { position: absolute; right: 130px; top: 140px; height: 330px; width: auto; filter: drop-shadow(0 30px 60px rgba(0, 0, 0, .45)); }
+    .tech-grid { margin-top: 30px; display: grid; grid-template-columns: .82fr 1.18fr; gap: 26px; align-items: stretch; }
+    .tech-logo { background: #fff; border-radius: 26px; padding: 30px 32px; display: flex; flex-direction: column; justify-content: center; }
+    .tech-logo img { width: 300px; height: auto; display: block; }
+    .tech-logo p { margin-top: 16px; font-size: 23px; line-height: 1.36; color: #334155; }
+    .tech-logo .chips { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 9px; }
+    .tech-logo .chips span { font-size: 18px; font-weight: 800; color: #001f5c; background: #eef2f7; border-radius: 10px; padding: 7px 13px; }
+    .tipos-sw { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .tipo-sw { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,.06); border: 2px solid rgba(255,255,255,.12); border-radius: 20px; padding: 16px 20px; }
+    .tipo-sw .ico { font-size: 40px; color: var(--dourado); flex: 0 0 auto; }
+    .tipo-sw h3 { font-size: 26px; font-weight: 800; letter-spacing: -.5px; line-height: 1.1; }
+    .tipo-sw p { margin-top: 3px; font-size: 19px; line-height: 1.3; color: var(--texto-suave); }
+    .areas { margin-top: 24px; display: flex; align-items: center; gap: 20px; }
+    .areas .rot { flex: 0 0 auto; font-size: 18px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado); }
+    .areas .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .areas .chips span { font-size: 20px; font-weight: 700; color: #fff; background: rgba(255,255,255,.08); border: 1.5px solid color-mix(in srgb, var(--dourado) 40%, transparent); border-radius: 999px; padding: 8px 16px; }
+    .frentes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .local { background: rgba(255,255,255,.05); border: 2px solid color-mix(in srgb, var(--dourado) 35%, transparent); border-radius: 26px; padding: 26px 28px; }
+    .local h3 { font-size: 31px; font-weight: 800; letter-spacing: -.8px; }
+    .local p { margin-top: 8px; font-size: 22px; line-height: 1.32; color: var(--texto-suave); }
+
+    /* ---------------- cinco camadas ---------------- */
+    .fluxo { margin-top: 44px; display: flex; align-items: stretch; }
+    .etapa { flex: 1; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.12); border-radius: 22px; padding: 24px 20px; position: relative; }
+    .etapa + .etapa { margin-left: 32px; }
+    .etapa + .etapa::before { content: '→'; position: absolute; left: -32px; top: 50%; transform: translate(-50%, -50%); font-size: 30px; color: var(--dourado); }
+    .etapa .ico { font-size: 40px; color: var(--dourado); margin-bottom: 10px; }
+    .etapa h3 { font-size: 28px; font-weight: 800; line-height: 1.1; letter-spacing: -.6px; }
+    .etapa p { margin-top: 8px; font-size: 20px; line-height: 1.28; color: var(--texto-suave); }
+
+    /* ---------------- fecho ---------------- */
+    .fecho .mega { font-size: 72px; max-width: 1580px; margin-top: 18px; }
+    .fecho .handle { margin-top: 16px; font-size: 30px; font-weight: 800; letter-spacing: .5px; color: var(--dourado); }
+
+    /* ---------------- marcas ---------------- */
+    .marcas { margin-top: 34px; display: grid; grid-template-columns: 1.12fr .88fr; gap: 24px; align-items: stretch; }
+    .marca-grande {
+      position: relative;
+      background: #fff;
+      border-radius: 28px;
+      padding: 34px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      border: 4px solid var(--dourado);
+    }
+    .marca-grande .principal {
+      position: absolute; top: 22px; right: 26px;
+      background: var(--dourado); color: var(--azul);
+      font-size: 15px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+      padding: 7px 14px; border-radius: 999px;
+    }
+    .marca-grande img { width: 560px; max-width: 100%; height: auto; }
+    .marca-grande p { margin-top: 8px; font-size: 27px; line-height: 1.32; color: #475569; }
+    .cards2 { margin-top: 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .cards2 .chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .cards2 .chips span { font-size: 20px; font-weight: 700; color: #fff; background: rgba(255,255,255,.09); border: 1.5px solid rgba(255,255,255,.16); border-radius: 12px; padding: 8px 15px; }
+    .cards2 .destaque .chips span { color: var(--azul); background: var(--dourado); border-color: var(--dourado); }
+    .marca-grande .chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .marca-grande .chips span { font-size: 19px; font-weight: 700; color: #001f5c; background: #eef2f7; border-radius: 10px; padding: 8px 14px; }
+
+    .marcas-lado { display: flex; flex-direction: column; gap: 16px; }
+    .marca-item { flex: 1; background: #fff; border-radius: 24px; padding: 18px 24px; display: flex; align-items: center; gap: 22px; }
+    .marca-item img { width: 92px; height: 92px; object-fit: contain; flex: 0 0 auto; }
+    .marca-item h3 { font-size: 31px; font-weight: 900; letter-spacing: -.8px; color: #001f5c; }
+    .marca-item p { margin-top: 2px; font-size: 20px; color: #64748b; }
+    .caim-selo { width: 92px; height: 92px; flex: 0 0 auto; border-radius: 18px; background: #001f5c; color: var(--dourado); display: flex; align-items: center; justify-content: center; font-size: 23px; font-weight: 900; letter-spacing: -1px; }
+
+    /* ---------------- QR codes ---------------- */
+    .qr-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .qr-grid.quatro { grid-template-columns: 1fr 1fr; gap: 18px; }
+    .qr-card { background: #fff; border-radius: 24px; padding: 16px; display: flex; align-items: center; gap: 20px; }
+    .qr-card img { width: 138px; height: 138px; flex: 0 0 auto; display: block; border-radius: 8px; }
+    .qr-card .rot { font-size: 16px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #64748b; }
+    .qr-card h3 { margin-top: 4px; font-size: 27px; font-weight: 800; line-height: 1.1; color: #001f5c; letter-spacing: -.6px; }
+    .qr-card .url { display: block; margin-top: 8px; font-size: 18px; font-weight: 600; line-height: 1.25; color: #00458b; overflow-wrap: anywhere; }
+
+    /* ---------------- degraus: digitalizar → IA ---------------- */
+    .exemplo-fio { font-size: 27px; }
+    .exemplo-fio b { color: var(--dourado); }
+    .escada { margin-top: 30px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: end; }
+    .escada .degrau { padding: 20px 20px 22px; border-radius: 22px; display: flex; flex-direction: column; }
+    .escada .degrau:nth-child(1) { min-height: 380px; }
+    .escada .degrau:nth-child(2) { min-height: 405px; }
+    .escada .degrau:nth-child(3) { min-height: 430px; }
+    .escada .degrau:nth-child(4) { min-height: 455px; }
+    .escada .degrau:nth-child(5) { min-height: 480px; }
+    .degrau .topo-degrau { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .degrau .n { width: 40px; height: 40px; border-radius: 12px; background: var(--dourado); color: var(--azul); font-size: 21px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+    .degrau .ico { font-size: 38px; color: var(--dourado); margin: 0; }
+    .degrau .jeito { margin-left: auto; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--dourado); border: 1.5px solid color-mix(in srgb, var(--dourado) 50%, transparent); border-radius: 999px; padding: 4px 9px; text-align: center; line-height: 1.15; }
+    .escada .degrau h3 { font-size: 30px; letter-spacing: -.8px; }
+    .escada .degrau p { margin-top: 8px; font-size: 19px; line-height: 1.32; }
+    .escada .degrau .ex { margin-top: auto; padding: 10px 12px; font-size: 17.5px; line-height: 1.3; color: #e2e8f0; background: rgba(254,203,0,.07); border-left: 3px solid var(--dourado); border-radius: 10px; }
+    .escada .degrau .ex b { color: var(--dourado); }
+    /* ---------------- a minha virada (aplica o slide anterior) ---------------- */
+    .virada-carreira .mega { font-size: 78px; letter-spacing: -3px; margin-top: 22px; }
+    .fluxo-historia { margin-top: 46px; display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 16px; align-items: center; }
+    .fluxo-historia .cartao { height: 100%; }
+    .fluxo-historia .cartao h3 { font-size: 34px; }
+    .fluxo-historia .seta-h { width: 60px; height: 24px; }
+    /* ---------------- virada: "eu nunca vendi tecnologia" ---------------- */
+    .virada { --r: 1; }
+    .virada .aspas { position: absolute; left: 60px; top: -60px; font-size: 520px; font-weight: 900; line-height: 1; color: var(--dourado); opacity: .09; pointer-events: none; }
+    .virada .nuvem-tech { position: absolute; inset: 0; pointer-events: none; }
+    .virada .tag-tech {
+      position: absolute; font-size: 26px; font-weight: 800; letter-spacing: .5px; color: #fff; white-space: nowrap;
+      border: 2px solid rgba(255,255,255,.28); background: rgba(255,255,255,.04); border-radius: 999px; padding: 10px 22px; opacity: .32;
+    }
+    .virada .kicker { align-self: flex-start; }
+    .virada .linha-1, .virada .linha-2 { font-size: 104px; font-weight: 900; line-height: 1.02; letter-spacing: -4px; }
+    .virada .linha-1 { margin-top: 26px; }
+    .virada .linha-2 { display: flex; align-items: center; gap: 30px; }
+    .virada .riscado { position: relative; display: inline-block; color: #64748b; }
+    .virada .riscado::after {
+      content: ''; position: absolute; left: -2%; right: -2%; top: 54%; height: 12px; border-radius: 6px;
+      background: #f87171; transform: scaleX(var(--r)) rotate(-2deg); transform-origin: left center;
+    }
+    .virada .selo { width: 104px; height: 104px; flex: 0 0 auto; filter: drop-shadow(0 0 22px rgba(254,203,0,.35)); }
+    .virada .contraste { margin-top: 60px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; max-width: 1560px; }
+    .virada .lado { border-radius: 24px; padding: 24px 30px; }
+    .virada .lado .rot { display: block; font-size: 19px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .virada .lado b { display: block; margin-top: 8px; font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1.12; }
+    .virada .fraco { background: rgba(255,255,255,.04); border: 2px solid rgba(255,255,255,.12); }
+    .virada .fraco .rot { color: #94a3b8; }
+    .virada .fraco b { color: var(--texto-suave); }
+    .virada .forte { background: color-mix(in srgb, var(--dourado) 13%, transparent); border: 2px solid color-mix(in srgb, var(--dourado) 60%, transparent); }
+    .virada .forte .rot { color: var(--dourado); }
+    .virada .versus { width: 66px; height: 66px; border-radius: 50%; background: var(--dourado); color: var(--azul); font-size: 38px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+    /* ---------------- frase final e obrigado ---------------- */
+    .frase-final { align-items: center; text-align: center; }
+    .frase-final .kicker { align-self: center; }
+    .frase-final .mega { font-size: 86px; max-width: 1712px; margin-top: 30px; line-height: 1.06; }
+    .frase-final .ano-grande {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%);
+      font-size: 560px; font-weight: 900; letter-spacing: -24px; line-height: 1;
+      color: transparent; -webkit-text-stroke: 3px rgba(254, 203, 0, .16);
+      pointer-events: none; white-space: nowrap;
+    }
+    .obrigado { align-items: center; text-align: center; }
+    .obrigado .mega { font-size: 150px; letter-spacing: -6px; }
+    .obrigado .sub { margin-top: 14px; font-size: 34px; }
+    .obrigado .qr-grid.quatro { margin-top: 40px; width: 100%; max-width: 1560px; text-align: left; gap: 22px; }
+    .obrigado .qr-card { padding: 18px; gap: 24px; }
+    .obrigado .qr-card img { width: 190px; height: 190px; }
+    .obrigado .qr-card h3 { font-size: 32px; }
+    .obrigado .qr-card .url { font-size: 21px; }
+    @page { size: 20in 11.25in; margin: 0; }
+    @media print {
+      html, body { background: #000; }
+      body { display: block; padding: 0; gap: 0; }
+      .slide { margin: 0; break-after: page; page-break-after: always; break-inside: avoid; }
+    }
+
+    /* ---------------- modo apresentação animado ---------------- */
+    .vermelho { display: inline-block; }
+    .pergunta .palavra, .pergunta .seta, .pergunta .tipo { display: block; }
+    .sp-l-mask { padding-bottom: .14em; margin-bottom: -.14em; }
+    @media screen {
+      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      body { display: block; padding: 0; gap: 0; }
+      .palco {
+        position: absolute;
+        left: 50%; top: 50%;
+        width: 1920px; height: 1080px;
+        transform: translate(-50%, -50%) scale(var(--escala, 1));
+        overflow: hidden;
+      }
+      .palco > .slide { position: absolute; left: 0; top: 0; margin: 0; visibility: hidden; will-change: transform, opacity; }
+
+      /* luz que segue o mouse */
+      .luz {
+        position: absolute; inset: 0; z-index: 5; pointer-events: none;
+        background: radial-gradient(520px circle at var(--mx, -999px) var(--my, -999px), rgba(254, 203, 0, .085), transparent 62%);
+        transition: opacity .4s ease;
+      }
+      html.sem-cursor .luz { opacity: 0; }
+
+      /* cortina da transição: faixa dourada + faixa azul com a folinha */
+      .cortina { position: absolute; inset: 0; z-index: 20; pointer-events: none; visibility: hidden; }
+      .cortina i { position: absolute; inset: 0; display: block; }
+      .cortina .c1 { background: var(--dourado); }
+      .cortina .c2 { background: linear-gradient(160deg, var(--azul) 0%, var(--azul-noite) 100%); }
+      .cortina .folha { position: absolute; left: 50%; top: 50%; width: 360px; height: 360px; margin: -180px 0 0 -180px; }
+
+      .folha-lottie { display: inline-block; width: 84px; height: 84px; margin: -13px -13px; }
+
+      /* cartões reagem ao mouse (translate não briga com o transform do GSAP) */
+      .palco .cartao, .palco .marco, .palco .pergunta, .palco .nivel, .palco .caso, .palco .etapa,
+      .palco .passo, .palco .debito-item, .palco .qr-card, .palco .marca-item, .palco .tipo-sw {
+        transition: translate .35s cubic-bezier(.2, .8, .2, 1), border-color .35s ease, background-color .35s ease, box-shadow .35s ease;
+      }
+      .palco .cartao:hover, .palco .marco:hover, .palco .pergunta:hover, .palco .nivel:hover, .palco .caso:hover,
+      .palco .etapa:hover, .palco .passo:hover, .palco .debito-item:hover, .palco .marca-item:hover, .palco .tipo-sw:hover {
+        translate: 0 -8px;
+        border-color: color-mix(in srgb, var(--dourado) 55%, transparent);
+        box-shadow: 0 26px 60px rgba(0, 0, 0, .35);
+      }
+      .palco .qr-card:hover { translate: 0 -8px; box-shadow: 0 26px 60px rgba(0, 0, 0, .45); }
+
+      .progresso { position: fixed; left: 0; bottom: 0; height: 4px; width: 0; background: var(--dourado); z-index: 30; }
+      .dica {
+        position: fixed; right: 16px; top: 14px; z-index: 30;
+        font: 600 13px/1 system-ui, sans-serif; color: rgba(255,255,255,.55);
+        background: rgba(0,0,0,.45); padding: 8px 12px; border-radius: 8px;
+        transition: opacity .6s ease;
+      }
+      .dica.some { opacity: 0; }
+      html.sem-cursor, html.sem-cursor * { cursor: none !important; }
+    }
+    @media print {
+      .palco > .slide { visibility: visible !important; opacity: 1 !important; transform: none !important; clip-path: none !important; }
+      .luz, .cortina, .progresso, .dica { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15l4-5 3 3 5-7"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8A3 3 0 0 0 7 18a3 3 0 0 0 5 2V4.5A2.5 2.5 0 0 0 9.5 4z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 1 5.8A3 3 0 0 1 17 18a3 3 0 0 1-5 2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
+    <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M2 12v3M22 12v3"/></symbol>
+    <symbol id="i-algorithm" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7 8.3l4 7.4M17 8.3l-4 7.4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></symbol>
+    <symbol id="i-wifioff" viewBox="0 0 24 24"><path d="M2 2l20 20"/><path d="M8.5 12.5a5 5 0 0 1 7 0"/><path d="M5 9a10 10 0 0 1 4-2.4"/><path d="M15 6.6A10 10 0 0 1 19 9"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-sign" viewBox="0 0 24 24"><path d="M3 20c4 0 5-12 9-12s3 8 6 8 3-4 3-4"/><path d="M3 20h18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 9v5"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6"/><path d="M18 20a6 6 0 0 0-3-5.2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7l-3 6h6z"/><path d="M17 7l-3 6h6z"/><path d="M8 21h8"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4h-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v13a3 3 0 0 0-3-3H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a3 3 0 0 1 3-3h6z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M3 21l4-1 11-11-3-3L4 17z"/><path d="M14 6l3 3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></symbol>
+  </svg>
+
+  <!-- 1 -->
+  <section class="slide capa-palestra">
+    <img class="logo-evento" src="logo-conexao-carreira.png" alt="Conexão Carreira Indústria">
+    <h1>Muito Além<br>do Currículo:<br><span class="ouro">IA na Prática.</span></h1>
+    <p class="sub">O que você entrega quando o diploma deixa de ser o diferencial.</p>
+    <p class="evento"><b>29 de outubro · 14h30</b><br>IEL Mato Grosso · Feira de Empregos da Indústria e do Comércio · Unisenai Cuiabá</p>
+    <p class="autor">Renato de Oliveira Rosa · Cerrado Finanças &amp; Tech</p>
+    <p class="social"><span class="ouro">@cerradofinancas</span> · www.cerradofinancas.com.br</p>
+    <img class="retrato" src="../../../../img/renato.jpg" alt="Renato de Oliveira Rosa">
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide afirmacao" data-transicao="zoom">
+    <p class="kicker">A tese da conversa</p>
+    <p class="mega">Currículo é estoque.<br><span class="ouro">IA é fluxo.</span></p>
+    <p class="sub">O mercado não paga pelo que você acumulou. Paga pelo que você entrega com o que acumulou.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="duas-colunas">
+      <div>
+        <p class="kicker">Trajetória</p>
+        <h2 class="titulo">Não foi uma linha reta.<br>Foi uma <span class="ouro">espiral</span>.</h2>
+        <div class="voltas">
+          <div class="volta"><span class="n">01</span><div><h3>Construir</h3><p>Programador autodidata aos 15 anos. Software antes de diploma.</p></div></div>
+          <div class="volta"><span class="n">02</span><div><h3>Entender o negócio</h3><p>Consultorias em sistemas de gestão financeira. Administração e ADS.</p></div></div>
+          <div class="volta"><span class="n">03</span><div><h3>Controlar</h3><p>Europa, ERP e controladoria: da ferramenta para a decisão.</p></div></div>
+          <div class="volta"><span class="n">04</span><div><h3>Ensinar</h3><p>Mestrado UFPR, empresa própria e pós-graduação no MT.</p></div></div>
+        </div>
+      </div>
+      <svg class="espiral" viewBox="0 0 520 470" aria-hidden="true">
+        <path d="M260 210 A40 40 0 0 1 300 250 A70 70 0 0 1 260 320 A100 100 0 0 1 160 250 A130 130 0 0 1 260 120 A160 160 0 0 1 420 250"
+              fill="none" stroke="rgba(255,255,255,.16)" stroke-width="26" stroke-linecap="round"/>
+        <path d="M260 210 A40 40 0 0 1 300 250 A70 70 0 0 1 260 320 A100 100 0 0 1 160 250 A130 130 0 0 1 260 120 A160 160 0 0 1 420 250"
+              fill="none" stroke="#fecb00" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+        <circle cx="260" cy="210" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="300" cy="250" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="260" cy="320" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="160" cy="250" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="260" cy="120" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="420" cy="250" r="17" fill="#fecb00" stroke="#001645" stroke-width="5"/>
+      </svg>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <p class="kicker">De 15 anos até aqui</p>
+    <h2 class="titulo">O que veio antes do título</h2>
+    <div class="linha-tempo">
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-code"/></svg><span class="n">01</span></div><h3>15 anos</h3><p>Programador sozinho. Primeiros softwares e primeiros clientes.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-briefcase"/></svg><span class="n">02</span></div><h3>Consultorias</h3><p>Sistemas de gestão financeira: processo, implantação e treinamento.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-grad"/></svg><span class="n">03</span></div><h3>Administração + ADS</h3><p>Uma graduação para o porquê, outra para o como.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-globe"/></svg><span class="n">04</span></div><h3>Europa</h3><p>Desenvolvimento do ERP da empresa. Software em escala.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-chart"/></svg><span class="n">05</span></div><h3>Controladoria</h3><p>Sair da TI vista como suporte para a área que entrega decisão.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-book"/></svg><span class="n">06</span></div><h3>Mestrado UFPR</h3><p>Método: pergunta, evidência, contradição. O que o código não dá.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-home"/></svg><span class="n">07</span></div><h3>Cuiabá</h3><p>Controladoria e compliance em empresas daqui.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-package"/></svg><span class="n">08</span></div><h3>Empresa própria</h3><p>Software, contabilidade e gestão no mesmo lugar.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-users"/></svg><span class="n">09</span></div><h3>Pós-graduação</h3><p>Os principais cursos de pós de Mato Grosso.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+
+  <!-- sonhos -->
+  <section class="slide" data-transicao="cortina">
+    <p class="kicker">Antes do currículo</p>
+    <p class="mega pequeno">Todo currículo começou<br>como um <span class="ouro">sonho</span>.</p>
+    <p class="sub">O sonho não é o destino. É a bússola: mostra para onde virar quando aparece uma escolha.</p>
+    <div class="cards3">
+      <div class="cartao"><svg class="ico"><use href="#i-pen"/></svg><h3>Escreva</h3><p>Coloque o sonho em uma frase. O que não está escrito vira só vontade.</p></div>
+      <div class="cartao destaque"><svg class="ico"><use href="#i-target"/></svg><h3>Traduza em problema</h3><p>Que dor você quer resolver? Sonho de carreira é um problema que você gosta de atacar.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-arrow"/></svg><h3>Dê o próximo passo</h3><p>Um curso, uma conversa, um projeto pequeno. Sonho anda em passos, não em saltos.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- história profissional: tudo conta -->
+  <section class="slide" data-transicao="mascara">
+    <div class="duas-colunas">
+      <div>
+        <p class="kicker">História profissional</p>
+        <h2 class="titulo">Na sua carreira,<br><span class="ouro">tudo conta</span>.</h2>
+        <div class="voltas">
+          <div class="volta"><span class="n"><svg class="ico"><use href="#i-briefcase"/></svg></span><div><h3>Experiências</h3><p>Estágio, bico, freela, voluntariado. Toda entrega vira repertório.</p></div></div>
+          <div class="volta"><span class="n"><svg class="ico"><use href="#i-grad"/></svg></span><div><h3>Cursos</h3><p>Faculdade, curso livre, tutorial de madrugada. Estudar sozinho também é formação.</p></div></div>
+          <div class="volta"><span class="n"><svg class="ico"><use href="#i-home"/></svg></span><div><h3>Vida pessoal</h3><p>Família, mudança de cidade, esporte. Disciplina e resiliência se aprendem fora do crachá.</p></div></div>
+          <div class="volta"><span class="n"><svg class="ico"><use href="#i-loop"/></svg></span><div><h3>Tropeços</h3><p>O projeto que deu errado e o curso que você largou. O que ficou deles também é currículo.</p></div></div>
+        </div>
+      </div>
+      <svg class="pontos" viewBox="0 0 640 560" aria-hidden="true">
+        <path d="M70 470 L190 390 L110 280 L260 250 L360 360 L450 230 L360 130 L560 70" fill="none" stroke="#fecb00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M581 64 L563.4 81.5 L556.6 58.5 Z" fill="#fecb00"/>
+        <circle cx="70" cy="470" r="14" fill="#fecb00" stroke="#001645" stroke-width="4"/>
+        <circle cx="190" cy="390" r="14" fill="#001645" stroke="#fecb00" stroke-width="4"/>
+        <circle cx="110" cy="280" r="14" fill="#001645" stroke="#fecb00" stroke-width="4"/>
+        <circle cx="260" cy="250" r="14" fill="#001645" stroke="#fecb00" stroke-width="4"/>
+        <circle cx="360" cy="360" r="14" fill="#001645" stroke="#fecb00" stroke-width="4"/>
+        <circle cx="450" cy="230" r="14" fill="#001645" stroke="#fecb00" stroke-width="4"/>
+        <circle cx="360" cy="130" r="14" fill="#001645" stroke="#fecb00" stroke-width="4"/>
+        <text x="70" y="514" text-anchor="middle">família</text>
+        <text x="214" y="397">esporte</text>
+        <text x="110" y="250" text-anchor="middle">curso online</text>
+        <text x="260" y="222" text-anchor="middle">primeiro bico</text>
+        <text x="382" y="374">projeto que deu errado</text>
+        <text x="474" y="237">faculdade</text>
+        <text x="338" y="136" text-anchor="end">mudança de cidade</text>
+        <text class="destino" x="540" y="38" text-anchor="middle">direção</text>
+      </svg>
+    </div>
+    <p class="nota-rodape">Ninguém liga os pontos olhando para a frente. Liga olhando para trás — por isso vale <b>guardar e contar todos</b>.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- hard skills e soft skills -->
+  <section class="slide">
+    <p class="kicker">Hard skills · Soft skills</p>
+    <h2 class="titulo">Hard skill se aprende na sala.<br><span class="ouro">Soft skill se aprende no problema.</span></h2>
+    <p class="sub">Nem tudo cabe na grade da escola ou da faculdade. Muito do que te faz contratável vem de lidar com gente, prazo e erro.</p>
+    <div class="cards2">
+      <div class="cartao">
+        <svg class="ico"><use href="#i-cpu"/></svg>
+        <span class="etiqueta">Hard skills · técnicas</span>
+        <h3>O que você sabe fazer</h3>
+        <p>Vêm da escola, da faculdade, do curso e da certificação. Dá para medir e provar.</p>
+        <div class="chips"><span>Excel</span><span>Programação</span><span>Contabilidade</span><span>Idiomas</span><span>Legislação</span></div>
+      </div>
+      <div class="cartao destaque">
+        <svg class="ico"><use href="#i-users"/></svg>
+        <span class="etiqueta">Soft skills · comportamentais</span>
+        <h3>Como você resolve com os outros</h3>
+        <p>Vêm do cliente difícil, do prazo apertado, da família e do erro que foi seu. Ninguém te dá diploma disso.</p>
+        <div class="chips"><span>Comunicação</span><span>Negociação</span><span>Resiliência</span><span>Decisão sob pressão</span><span>Trabalho em equipe</span></div>
+      </div>
+    </div>
+    <p class="nota-rodape"><b>A hard skill te coloca na entrevista. A soft skill te mantém no cargo.</b> E a vida é a escola que mais cobra — e a que mais ensina.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- como contar a história -->
+  <section class="slide">
+    <p class="kicker">Construção de história</p>
+    <h2 class="titulo">Experiência só vira direção<br>quando você <span class="ouro">sabe contar</span>.</h2>
+    <div class="cards3">
+      <div class="cartao"><svg class="ico"><use href="#i-doc"/></svg><span class="etiqueta">1 · O fato</span><h3>O que aconteceu</h3><p>Sem enfeite: onde, quando e qual era o problema.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-brain"/></svg><span class="etiqueta">2 · O aprendizado</span><h3>O que mudou em você</h3><p>A habilidade, o método ou o critério que ficou.</p></div>
+      <div class="cartao destaque"><svg class="ico"><use href="#i-arrow"/></svg><span class="etiqueta">3 · A ponte</span><h3>Onde isso te leva</h3><p>Como aquilo resolve o problema de quem vai te contratar.</p></div>
+    </div>
+    <p class="nota-rodape"><b>Na prática:</b> a virada que mudou a minha carreira, contada com exatamente esses três passos. →</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide virada-carreira">
+    <p class="kicker">Na prática · a minha virada</p>
+    <p class="mega">TI é suporte quando entrega ferramenta.<br><span class="ouro">É estratégia quando entrega decisão.</span></p>
+    <div class="fluxo-historia">
+      <div class="cartao"><svg class="ico"><use href="#i-doc"/></svg><span class="etiqueta">1 · O fato</span><h3>Eu entregava sistema</h3><p>Desenvolvi o ERP de uma empresa na Europa. Software em escala, funcionando.</p></div>
+      <svg class="seta-h" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12 H46" fill="none" stroke="#fecb00" stroke-width="4" stroke-linecap="round"/><path d="M58 12 L44 4 V20 Z" fill="#fecb00"/></svg>
+      <div class="cartao"><svg class="ico"><use href="#i-brain"/></svg><span class="etiqueta">2 · O aprendizado</span><h3>Sistema pronto não é resultado</h3><p>O valor está na decisão que a ferramenta ajuda alguém a tomar.</p></div>
+      <svg class="seta-h" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12 H46" fill="none" stroke="#fecb00" stroke-width="4" stroke-linecap="round"/><path d="M58 12 L44 4 V20 Z" fill="#fecb00"/></svg>
+      <div class="cartao destaque"><svg class="ico"><use href="#i-arrow"/></svg><span class="etiqueta">3 · A ponte</span><h3>Fui para a controladoria</h3><p>Saí da TI para a área que decide. Hoje construo ferramenta que prepara a decisão.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide" data-transicao="mascara">
+    <p class="kicker">Mapa mental</p>
+    <h2 class="titulo">Três tipos de IA. <span class="ouro">Só um é moda.</span></h2>
+    <div class="cards3">
+      <div class="cartao">
+        <svg class="ico"><use href="#i-chat"/></svg>
+        <span class="etiqueta">Chat · generativa</span>
+        <h3>Conversa e produz texto</h3>
+        <p>Rascunho, resumo, explicação de cláusula, resposta difícil.</p>
+        <span class="limite"><b>Limite:</b> alucina, não executa e não conhece o seu processo.</span>
+      </div>
+      <div class="cartao destaque">
+        <svg class="ico"><use href="#i-algorithm"/></svg>
+        <span class="etiqueta">Algorítmica · preditiva</span>
+        <h3>Classifica e prevê</h3>
+        <p>Concilia lançamento, prevê demanda, acha anomalia na folha.</p>
+        <span class="limite"><b>Força:</b> determinística, auditável e roda em hardware modesto.</span>
+      </div>
+      <div class="cartao">
+        <svg class="ico"><use href="#i-robot"/></svg>
+        <span class="etiqueta">Agêntica</span>
+        <h3>Planeja e executa</h3>
+        <p>Lê e-mail, classifica, monta minuta, consulta o ERP e para para aprovação.</p>
+        <span class="limite"><b>Limite:</b> erro composto e risco de ação irreversível.</span>
+      </div>
+    </div>
+    <p class="nota-rodape">E antes de todas elas existe a <b>automação burra</b>: o script, a regra, o fluxo. Resolve 70% dos casos, custa quase nada e ninguém posta no LinkedIn.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <p class="kicker">Critério de escolha</p>
+    <h2 class="titulo">A tarefa precisa de quê?</h2>
+    <div class="perguntas">
+      <div class="pergunta"><svg class="ico"><use href="#i-chat"/></svg><span class="palavra">Linguagem</span><span class="seta">então use</span><span class="tipo">IA de chat</span></div>
+      <div class="pergunta"><svg class="ico"><use href="#i-algorithm"/></svg><span class="palavra">Previsão</span><span class="seta">então use</span><span class="tipo">IA algorítmica</span></div>
+      <div class="pergunta"><svg class="ico"><use href="#i-bolt"/></svg><span class="palavra">Execução</span><span class="seta">então use</span><span class="tipo">IA agêntica</span></div>
+    </div>
+    <p class="nota-rodape">Se a tarefa for sempre igual, é <b>automação</b> — e nem chame de IA. A maioria começa pelo agente, porque é o mais bonito. Devia começar pela algorítmica, porque é a que consegue auditar.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <p class="kicker">Doutorado · FUCAPE</p>
+    <h2 class="titulo">Como usar IA sem terceirizar<br>a <span class="ouro">responsabilidade</span>?</h2>
+    <p class="sub">Compliance vive de três coisas. A IA generativa entrega velocidade — e fragiliza as três.</p>
+    <div class="cards3">
+      <div class="cartao"><svg class="ico"><use href="#i-doc"/></svg><h3>Evidência</h3><p>O que foi feito, com qual documento e em que data.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-search"/></svg><h3>Rastreabilidade</h3><p>De onde veio a informação e por qual caminho ela passou.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-scale"/></svg><h3>Julgamento</h3><p>Quem decide, quem assina e quem responde pelo erro.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide" data-transicao="mascara">
+    <p class="kicker">A proposição da tese</p>
+    <h2 class="titulo"><span class="ouro">Copiloto algorítmico</span></h2>
+    <p class="sub">Não é um chatbot que responde. É um segundo par de olhos que prepara a decisão, mostra o caminho e deixa o rastro para o humano assinar.</p>
+    <svg class="diagrama" viewBox="0 0 1660 240" style="margin: 26px auto 0; max-width: 1560px">
+      <rect class="caixa" x="8" y="42" width="340" height="156" rx="26"/>
+      <text class="dt" x="178" y="112" text-anchor="middle">Pergunta</text>
+      <text class="dd" x="178" y="150" text-anchor="middle">documento, processo, dúvida</text>
+
+      <rect class="caixa-ouro" x="430" y="22" width="770" height="196" rx="28"/>
+      <text class="do" x="815" y="60" text-anchor="middle">COPILOTO ALGORÍTMICO</text>
+      <text class="dt" x="815" y="108" text-anchor="middle">Prepara · cita · declara · registra</text>
+      <text class="dd" x="815" y="152" text-anchor="middle">fonte exata · incerteza explícita · log auditável</text>
+      <text class="dd" x="815" y="188" text-anchor="middle">não decide e não assina</text>
+
+      <rect class="caixa" x="1282" y="42" width="370" height="156" rx="26"/>
+      <text class="dt" x="1467" y="112" text-anchor="middle">Humano assina</text>
+      <text class="dd" x="1467" y="150" text-anchor="middle">decisão e responsabilidade</text>
+
+      <path d="M352 120 H414" stroke="#fecb00" stroke-width="5"/>
+      <path d="M414 120 l-18 -10 v20 z" fill="#fecb00"/>
+      <path d="M1204 120 H1266" stroke="#fecb00" stroke-width="5"/>
+      <path d="M1266 120 l-18 -10 v20 z" fill="#fecb00"/>
+    </svg>
+    <div class="copiloto-rodape">
+      <p class="nota-rodape">O mercado vai precisar de quem sabe projetar isso. E não é só programador: é contador, auditor e administrador que entende de processo e de risco.</p>
+      <div class="qr-mini">
+        <img src="qr-copiloto.png" alt="QR code do copiloto público">
+        <div><span class="rot">Demo pública</span><b>publicopiloto.web.app</b></div>
+      </div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <p class="kicker">Três níveis de autonomia</p>
+    <h2 class="titulo">Quem executa? <span class="ouro">Quem responde?</span></h2>
+    <div class="niveis">
+      <div class="nivel"><svg class="ico"><use href="#i-loop"/></svg><h3>Automação</h3><p>Substitui a mão. Regra fixa, resultado previsível. Falhou, refaz.</p></div>
+      <div class="nivel"><svg class="ico"><use href="#i-eye"/></svg><h3>Copiloto</h3><p>Amplia o cérebro. Prepara, cita e registra. O humano decide e assina.</p></div>
+      <div class="nivel"><svg class="ico"><use href="#i-robot"/></svg><h3>Agente</h3><p>Assume a tarefa. Exige permissão, limite e auditoria.</p></div>
+    </div>
+    <p class="nota-rodape">Compliance precisa saber <b>qual dos três está rodando</b> — e com qual permissão.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- digitalizar, automatizar, script, RPA e IA -->
+  <section class="slide degraus-slide">
+    <p class="kicker">Vocabulário que confunde</p>
+    <h2 class="titulo">Do papel à IA: <span class="ouro">cinco degraus</span><br>que não são a mesma coisa.</h2>
+    <p class="sub exemplo-fio">Um exemplo do começo ao fim: <b>a nota fiscal que chega todo dia</b>.</p>
+    <div class="escada">
+      <div class="cartao degrau"><div class="topo-degrau"><span class="n">1</span><svg class="ico"><use href="#i-doc"/></svg></div><h3>Digitalizar</h3><p>Transformar papel em arquivo. O processo continua o mesmo, só muda o suporte.</p><p class="ex"><b>Na nota fiscal:</b> escanear a nota e salvar em PDF.</p></div>
+      <div class="cartao degrau"><div class="topo-degrau"><span class="n">2</span><svg class="ico"><use href="#i-loop"/></svg></div><h3>Automatizar</h3><p>Fazer a máquina repetir uma regra fixa, sem ninguém apertar o botão.</p><p class="ex"><b>Na nota fiscal:</b> todo PDF que chega no e-mail vai sozinho para a pasta do mês.</p></div>
+      <div class="cartao degrau"><div class="topo-degrau"><span class="n">3</span><svg class="ico"><use href="#i-code"/></svg><span class="jeito">jeito de automatizar</span></div><h3>Script</h3><p>Um programa pequeno que executa a regra. É automação feita por código.</p><p class="ex"><b>Na nota fiscal:</b> um código em Python lê o XML e lança no ERP.</p></div>
+      <div class="cartao degrau"><div class="topo-degrau"><span class="n">4</span><svg class="ico"><use href="#i-robot"/></svg><span class="jeito">jeito de automatizar</span></div><h3>RPA</h3><p>Um robô de software que imita os cliques de uma pessoa na tela, quando não há integração.</p><p class="ex"><b>Na nota fiscal:</b> o robô abre o portal da prefeitura e baixa a nota, campo por campo.</p></div>
+      <div class="cartao degrau destaque"><div class="topo-degrau"><span class="n">5</span><svg class="ico"><use href="#i-brain"/></svg></div><h3>Automação por IA</h3><p>A máquina interpreta o que não tem padrão e sugere o próximo passo. O humano revisa.</p><p class="ex"><b>Na nota fiscal:</b> lê a nota em qualquer formato, classifica a despesa e avisa se o valor fugiu do normal.</p></div>
+    </div>
+    <p class="nota-rodape"><b>Regra de bolso:</b> se dá para escrever a regra, é script ou RPA. Se precisa interpretar, é IA. E se ainda está no papel, comece digitalizando.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <p class="kicker">Rotina real</p>
+    <h2 class="titulo">IA no dia a dia administrativo</h2>
+    <div class="casos">
+      <div class="caso"><svg class="ico"><use href="#i-chart"/></svg><span class="nome">Conciliação bancária</span><span class="desc">Classifica lançamentos por histórico e contraparte. O humano revisa só as exceções.</span><span class="tag">algorítmica + chat</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-doc"/></svg><span class="nome">Contratos e editais</span><span class="desc">Extrai partes, prazos, multas, garantias e obrigações para uma tabela comparável.</span><span class="tag">chat com RAG</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-users"/></svg><span class="nome">Folha e eSocial</span><span class="desc">Cruza folha, eSocial e contas a pagar para achar inconsistência antes do fisco.</span><span class="tag">algorítmica</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-pen"/></svg><span class="nome">Relatório gerencial</span><span class="desc">Transforma extrato e DRE em três parágrafos: o que aconteceu, por que e o que fazer.</span><span class="tag">chat</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-robot"/></svg><span class="nome">Rotina invisível</span><span class="desc">Lê e-mail, classifica, monta a minuta e para para você aprovar. Não envia sozinho.</span><span class="tag">agêntica</span></div>
+    </div>
+    <p class="nota-rodape">A IA não fecha o mês. Ela tira o braçal do seu colo para você fazer o julgamento — que é o que ninguém terceiriza.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide" data-transicao="zoom">
+    <p class="kicker">O risco que ninguém posta</p>
+    <h2 class="titulo">Só usar IA também<br><span class="vermelho">cobra juros</span>.</h2>
+    <div class="debito">
+      <div>
+      <div class="legenda"><span><i class="g"></i> entrega com IA</span><span><i class="r"></i> habilidade própria</span></div>
+      <svg class="grafico" viewBox="0 0 720 360" aria-hidden="true">
+        <line x1="62" y1="34" x2="62" y2="300" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+        <line x1="62" y1="300" x2="702" y2="300" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+        <line x1="62" y1="234" x2="702" y2="234" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <line x1="62" y1="168" x2="702" y2="168" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <line x1="62" y1="102" x2="702" y2="102" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <path d="M80 282 C 240 246, 400 168, 668 82 L 668 286 C 450 240, 260 196, 80 132 Z" fill="rgba(248,113,113,.12)"/>
+        <path d="M80 282 C 240 246, 400 168, 668 82" fill="none" stroke="#fecb00" stroke-width="7" stroke-linecap="round"/>
+        <path d="M80 132 C 260 158, 430 214, 668 286" fill="none" stroke="#f87171" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10"/>
+        <text x="80" y="336" font-size="21" font-weight="600" fill="#94a3b8">hoje</text>
+        <text x="668" y="336" text-anchor="end" font-size="21" font-weight="600" fill="#94a3b8">depois</text>
+        <text x="368" y="206" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">débito cognitivo</text>
+      </svg>
+      </div>
+      <div class="debito-lista">
+        <div class="debito-item"><svg class="ico"><use href="#i-book"/></svg><div><h3>Acadêmico</h3><p>Para de ler a fonte, de escrever e de construir base. Passa a defender o que não entende.</p></div></div>
+        <div class="debito-item"><svg class="ico"><use href="#i-code"/></svg><div><h3>Técnico</h3><p>Entrega código que não depura, arquitetura que não explica e número que não prova.</p></div></div>
+        <div class="debito-item"><svg class="ico"><use href="#i-alert"/></svg><div><h3>Carreira</h3><p>Quando a ferramenta muda, o diferencial desaparece. A ferramenta vira o seu teto.</p></div></div>
+      </div>
+    </div>
+    <p class="nota-rodape">Débito cognitivo é o juro que você paga por terceirizar o que deveria aprender. <b>IA é alavanca. Alavanca sem braço não levanta nada.</b></p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <p class="kicker">Antídoto</p>
+    <h2 class="titulo">Como pagar essa dívida<br><span class="ouro">antes que ela cresça</span>.</h2>
+    <div class="cards4">
+      <div class="cartao"><svg class="ico"><use href="#i-chat"/></svg><h3>Explique sem IA</h3><p>Se não consegue explicar com as suas palavras, você não aprendeu.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-pen"/></svg><h3>Refaça o núcleo à mão</h3><p>Use a IA para rascunhar. Depois refaça a parte que importa sem ela.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-book"/></svg><h3>Volte à fonte</h3><p>Leia o documento, a norma e o código. A IA é o mapa, não o território.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-layers"/></svg><h3>Caderno de fundamentos</h3><p>O que você sabe fazer sem consultar. É isso que não pode ser terceirizado.</p></div>
+    </div>
+    <p class="nota-rodape">Quem só delega nunca constrói critério. E sem critério, a IA entrega rápido — mas você não sabe se está certo.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 14 -->
+  <section class="slide">
+    <p class="kicker">O framework que eu uso</p>
+    <h2 class="titulo">Prompt bom não é criativo.<br>É <span class="ouro">com contexto</span>.</h2>
+    <div class="cards4">
+      <div class="cartao"><span class="etiqueta">C</span><h3>Contexto</h3><p>Quem você é, qual o cenário e qual a regra.</p></div>
+      <div class="cartao"><span class="etiqueta">T</span><h3>Tarefa</h3><p>O que exatamente deve ser feito.</p></div>
+      <div class="cartao"><span class="etiqueta">F</span><h3>Formato</h3><p>Tabela, lista, e-mail, JSON, cinco linhas.</p></div>
+      <div class="cartao"><span class="etiqueta">E</span><h3>Exemplo</h3><p>Um caso resolvido para calibrar o tom.</p></div>
+    </div>
+    <p class="nota-rodape">É igual lançamento contábil: sem histórico, sem documento e sem classificação, ninguém aprova.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 15 -->
+  <section class="slide">
+    <p class="kicker">Diferencial de carreira</p>
+    <h2 class="titulo">Nunca cole dado sigiloso<br>em ferramenta pública.</h2>
+    <p class="sub">Se a empresa não tem política, você propõe a política. Isso não é medo de tecnologia: é competência.</p>
+    <div class="cards3">
+      <div class="cartao"><svg class="ico"><use href="#i-eye"/></svg><span class="etiqueta">Antes de colar</span><h3>Anonimize</h3><p>CPF, CNPJ, RG, telefone, e-mail, processo, prontuário.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-search"/></svg><span class="etiqueta">Antes de assinar</span><h3>Confira a fonte</h3><p>Se a IA não mostra de onde tirou, não está pronta para o seu trabalho.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-lock"/></svg><span class="etiqueta">Antes de escalar</span><h3>Registre</h3><p>O que entrou, o que saiu e quem aprovou.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- mundo corporativo -->
+  <section class="slide" data-transicao="mascara">
+    <p class="kicker">Mundo corporativo</p>
+    <h2 class="titulo">Grande empresa não roda no improviso.<br><span class="ouro">Roda em cultura e método.</span></h2>
+    <p class="sub">Antes da ferramenta, entenda como a empresa decide, quem responde e em que ritmo as coisas andam.</p>
+    <div class="corp-grid">
+      <div class="cartao destaque cultura">
+        <svg class="ico"><use href="#i-globe"/></svg>
+        <span class="etiqueta">Antes do método</span>
+        <h3>Cultura</h3>
+        <p>Toda empresa tem regras que não estão no organograma. Entenda o jeito da casa antes de propor mudança.</p>
+        <div class="chips"><span>Quem decide</span><span>Rituais</span><span>Comitês</span><span>Compliance</span></div>
+      </div>
+      <div class="metodos">
+        <div class="cartao"><svg class="ico"><use href="#i-layers"/></svg><h3>Gestão de projetos</h3><p>Escopo, prazo, custo e risco no mesmo quadro.</p></div>
+        <div class="cartao"><svg class="ico"><use href="#i-loop"/></svg><h3>Método ágil</h3><p>Scrum e Kanban: entrega pequena e revisão frequente.</p></div>
+        <div class="cartao"><svg class="ico"><use href="#i-clock"/></svg><h3>Sprints</h3><p>Ciclos de duas semanas com meta, daily e retrospectiva.</p></div>
+        <div class="cartao"><svg class="ico"><use href="#i-check"/></svg><h3>Plano de ação</h3><p>5W2H: o quê, por quê, onde, quando, quem, como e quanto.</p></div>
+        <div class="cartao"><svg class="ico"><use href="#i-users"/></svg><h3>Matriz RACI</h3><p>Quem executa, aprova, é consultado e é informado.</p><div class="chips raci"><span>R</span><span>A</span><span>C</span><span>I</span></div></div>
+        <div class="cartao"><svg class="ico"><use href="#i-target"/></svg><h3>Metas e indicadores</h3><p>OKR e KPI: todo mundo sabe o que está sendo medido.</p></div>
+      </div>
+    </div>
+    <p class="nota-rodape">Quase ninguém pergunta isso na entrevista com esses nomes. Mas é o que separa <b>quem executa tarefa</b> de <b>quem conduz projeto</b>.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 17 -->
+  <section class="slide virada" data-transicao="cortina">
+    <span class="aspas" data-sangra aria-hidden="true">“</span>
+    <div class="nuvem-tech" data-sangra aria-hidden="true"><span class="tag-tech" style="left:1440px; top:140px">ERP</span><span class="tag-tech" style="left:1710px; top:70px">IA</span><span class="tag-tech" style="left:1130px; top:210px">Dashboard</span><span class="tag-tech" style="left:1650px; top:240px">API</span><span class="tag-tech" style="left:980px; top:90px">Chatbot</span><span class="tag-tech" style="left:1240px; top:46px">PWA</span><span class="tag-tech" style="left:1010px; top:850px">CRM</span><span class="tag-tech" style="left:1500px; top:360px">Cloud</span><span class="tag-tech" style="left:1310px; top:890px">App</span><span class="tag-tech" style="left:1530px; top:836px">Blockchain</span></div>
+    <p class="kicker">Lição de mercado</p>
+    <p class="linha-1">Eu nunca vendi <span class="riscado">tecnologia</span>.</p>
+    <p class="linha-2"><span class="ouro">Eu vendi problema resolvido.</span><svg class="selo" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="#fecb00" stroke-width="7"/><path d="M29 52 L44 66 L72 36" fill="none" stroke="#fecb00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    <div class="contraste">
+      <div class="lado fraco"><span class="rot">Quem só sabe a ferramenta</span><b>compete com a ferramenta.</b></div>
+      <span class="versus">×</span>
+      <div class="lado forte"><span class="rot">Quem entende o processo</span><b>compete com gente — e ganha.</b></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section class="slide">
+    <p class="kicker">Cerrado Tech · Cuiabá</p>
+    <h2 class="titulo">Software, contabilidade e gestão<br><span class="ouro">na mesma casa</span>.</h2>
+    <p class="sub">O problema nunca é o dashboard: é o dado que ninguém confia. Por isso a gente começa pelo processo.</p>
+    <div class="tech-grid">
+      <div class="tech-logo">
+        <img src="logo-cerradotech.png" alt="Cerrado Tech">
+        <p>Fábrica de software em Cuiabá. A gente entende o processo, constrói a ferramenta e cuida da contabilidade e da gestão de quem usa.</p>
+        <div class="chips"><span>Diagnóstico</span><span>Protótipo</span><span>Sistema</span><span>Suporte</span></div>
+      </div>
+      <div class="tipos-sw">
+        <div class="tipo-sw"><svg class="ico"><use href="#i-layers"/></svg><div><h3>ERPs sob medida</h3><p>Estoque, financeiro e fiscal no mesmo lugar.</p></div></div>
+        <div class="tipo-sw"><svg class="ico"><use href="#i-users"/></svg><div><h3>CRMs</h3><p>Funil de vendas, WhatsApp e pós-venda.</p></div></div>
+        <div class="tipo-sw"><svg class="ico"><use href="#i-chart"/></svg><div><h3>Dashboards e BI</h3><p>Indicador que a diretoria entende.</p></div></div>
+        <div class="tipo-sw"><svg class="ico"><use href="#i-cpu"/></svg><div><h3>IA offline</h3><p>Roda no cliente e cita a fonte.</p></div></div>
+        <div class="tipo-sw"><svg class="ico"><use href="#i-shield"/></svg><div><h3>Compliance e auditoria</h3><p>LGPD, trilha e controle interno.</p></div></div>
+        <div class="tipo-sw"><svg class="ico"><use href="#i-package"/></svg><div><h3>PWAs e apps</h3><p>No celular, até sem rede.</p></div></div>
+      </div>
+    </div>
+    <div class="areas">
+      <span class="rot">Áreas que atendemos</span>
+      <div class="chips"><span>Gestão pública</span><span>Cartórios</span><span>Agronegócio</span><span>Saúde</span><span>Contabilidade</span><span>Alimentação e varejo</span><span>Logística</span><span>Educação</span></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 18 -->
+  <section class="slide" data-transicao="mascara">
+    <img class="logo-cerraai" src="../../../../img/logo_cerraai-icone.png" alt="Cerra.AI">
+    <p class="kicker">Projeto Cerra.AI</p>
+    <h2 class="titulo">IA que roda offline.<br>E <span class="ouro">cita a fonte</span>.</h2>
+    <div class="fluxo">
+      <div class="etapa"><svg class="ico"><use href="#i-doc"/></svg><h3>Ingestão</h3><p>PDF, Word, planilha, imagem, áudio.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-database"/></svg><h3>Indexação</h3><p>Base vetorial local, com arquivo e página.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-cpu"/></svg><h3>Modelo local</h3><p>Modelos abertos em cascata, no hardware disponível.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-chat"/></svg><h3>Resposta</h3><p>Com citação do trecho e da fonte.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-shield"/></svg><h3>Auditoria</h3><p>Mascaramento LGPD e registro da consulta.</p></div>
+    </div>
+    <p class="nota-rodape"><b>Ollama · vLLM · ChromaDB · RAG · mascaramento.</b> O dado nunca sai da infraestrutura do cliente. Zero conta de API por pergunta.</p>
+    <p class="nota-rodape" style="margin-top: 8px"><b>Código aberto:</b> github.com/renato0503/cerraai-publico</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 19 -->
+  <section class="slide afirmacao" data-transicao="zoom">
+    <p class="kicker">O que o Cerra.AI prova</p>
+    <p class="mega pequeno">Restrição de hardware<br>não é impedimento técnico.<br><span class="ouro">É requisito de projeto.</span></p>
+    <p class="sub">Modelo local menor erra mais que o topo de linha na nuvem. Por isso o desenho é RAG + citação + revisão humana. Não vendemos onisciência. Vendemos rastreabilidade.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 20 -->
+  <section class="slide">
+    <p class="kicker">Comece amanhã</p>
+    <h2 class="titulo">Cinco movimentos.<br><span class="ouro">Nenhum deles precisa de diploma.</span></h2>
+    <div class="passos deck">
+      <div class="passo"><span class="n">1</span><div><h3>Meça a dor</h3><p>Volte à tarefa que você odeia e cronometre. Você não automatiza o que não mede.</p></div><span class="tempo">10 min</span></div>
+      <div class="passo"><span class="n">2</span><div><h3>Suba um modelo local</h3><p>Ollama, modelo pequeno, uma pergunta com o Wi-Fi desligado.</p></div><span class="tempo">hoje à noite</span></div>
+      <div class="passo"><span class="n">3</span><div><h3>Escolha o tipo certo</h3><p>Linguagem, previsão ou execução. Não comece pelo agente: comece pelo que você audita.</p></div><span class="tempo">esta semana</span></div>
+      <div class="passo"><span class="n">4</span><div><h3>Construa um copiloto, não um oráculo</h3><p>Uma tarefa, com fonte, incerteza declarada e log.</p></div><span class="tempo">este mês</span></div>
+      <div class="passo"><span class="n">5</span><div><h3>Publique os três artefatos</h3><p>Um prompt, uma automação e um caso documentado.</p></div><span class="tempo">sempre</span></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 21 -->
+  <section class="slide" data-transicao="mascara">
+    <p class="kicker">Ecossistema</p>
+    <h2 class="titulo">Marcas que saem da <span class="ouro">mesma fábrica</span>.</h2>
+    <div class="marcas">
+      <div class="marca-grande">
+        <span class="principal">A fábrica</span>
+        <img src="logo-cerradotech.png" alt="Cerrado Tech">
+        <p>Software sob medida, IA offline, GovTech e PWAs que resolvem dor real de organização pública e privada.</p>
+        <div class="chips"><span>ERPs</span><span>CRMs</span><span>IA offline</span><span>GovTech</span><span>PWA</span></div>
+      </div>
+      <div class="marcas-lado">
+        <div class="marca-item">
+          <img src="logo-cerraclass.png" alt="CerraClass">
+          <div><h3>CerraClass</h3><p>Educação em IA aplicada</p></div>
+        </div>
+        <div class="marca-item">
+          <img src="../../../../img/logo_cerraai-icone.png" alt="Cerra.AI">
+          <div><h3>Cerra.AI</h3><p>IA local, com privacidade</p></div>
+        </div>
+        <div class="marca-item">
+          <img src="logo-caim.svg" alt="CAIM">
+          <div><h3>CAIM</h3><p>IDE que roda no celular · caim.web.app</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="nota-rodape">A fábrica é o Cerrado Tech. As outras marcas são o que ela aprende, ensina e devolve para o mercado.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 22 -->
+  <section class="slide frase-final" data-transicao="cortina">
+    <span class="ano-grande" data-sangra aria-hidden="true">2036</span>
+    <p class="kicker">Para levar</p>
+    <p class="mega">Daqui a dez anos ninguém vai perguntar<br>se você sabe usar IA.<br><span class="ouro">Vão perguntar o que você<br>construiu com ela.</span></p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- obrigado -->
+  <section class="slide fecho obrigado" data-transicao="zoom">
+    <p class="mega">Obrigado<span class="ouro">!</span></p>
+    <p class="sub">Aponte a câmera e continue a conversa. <span class="ouro">@cerradofinancas</span></p>
+    <div class="qr-grid quatro">
+      <div class="qr-card">
+        <img src="qr-site.png" alt="QR code do site da Cerrado Finanças">
+        <div><span class="rot">Site</span><h3>Cerrado Finanças &amp; Tech</h3><span class="url">www.cerradofinancas.com.br</span></div>
+      </div>
+      <div class="qr-card">
+        <img src="qr-cerraclass.png" alt="QR code da CerraClass">
+        <div><span class="rot">Cursos</span><h3>CerraClass</h3><span class="url">cerraclass.com.br</span></div>
+      </div>
+      <div class="qr-card">
+        <img src="qr-github.png" alt="QR code do repositório Cerra.AI público">
+        <div><span class="rot">Código aberto</span><h3>Cerra.AI público</h3><span class="url">github.com/renato0503/cerraai-publico</span></div>
+      </div>
+      <div class="qr-card">
+        <img src="qr-caim.png" alt="QR code do CAIM">
+        <div><span class="rot">Projeto</span><h3>CAIM</h3><span class="url">caim.web.app</span></div>
+      </div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <script src="slides.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/SplitText.min.js"></script>
+  <script src="vendor/DrawSVGPlugin.min.js"></script>
+  <script src="vendor/lottie.min.js"></script>
+  <script src="vendor/folinha-entrada.js"></script>
+  <script src="vendor/folinha-loop.js"></script>
+  <script>
+    // Modo apresentação animado: ← → (ou espaço, PageUp/PageDown) passam os slides,
+    // Home/End vão ao primeiro/último, F alterna tela cheia. O slide atual fica no #N da URL.
+    // Transições e entradas com GSAP (SplitText + DrawSVG); a folinha é o Lottie de animacoes/folinha.
+    (function () {
+      gsap.registerPlugin(SplitText, DrawSVGPlugin);
+      gsap.config({ nullTargetWarn: false });
+      var reduzido = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var total = slides.length;
+      var atual = -1;
+      var troca = null, entrada = null, extras = [], cortes = [];
+
+      // a transição de chegada vem do data-transicao de cada slide; sem ele, desliza
+      var ITENS = '.degrau, .tech-logo, .tipo-sw, .areas, .cartao, .marco, .pergunta, .nivel, .caso, .etapa, .passo, .volta, .debito-item, .qr-card, .marca-grande, .marca-item, .local, .qr-mini';
+      var LIMPAR = 'transform,opacity,visibility,filter';
+
+      // ---------- palco, luz, cortina ----------
+      var palco = document.createElement('div');
+      palco.className = 'palco';
+      slides[0].parentNode.insertBefore(palco, slides[0]);
+      slides.forEach(function (s) { palco.appendChild(s); });
+      var luz = document.createElement('div');
+      luz.className = 'luz';
+      palco.appendChild(luz);
+      var cortina = document.createElement('div');
+      cortina.className = 'cortina';
+      cortina.innerHTML = '<i class="c1"></i><i class="c2"></i><div class="folha"></div>';
+      palco.appendChild(cortina);
+
+      function lottieDe(dados, el, loop) {
+        return lottie.loadAnimation({
+          container: el, renderer: 'svg', loop: loop, autoplay: false,
+          animationData: JSON.parse(JSON.stringify(dados))
+        });
+      }
+      var folhaCortina = lottieDe(window.FOLINHA_ENTRADA, cortina.querySelector('.folha'), false);
+      folhaCortina.setSpeed(1.5);
+
+      // folinha animada no rodapé da capa (entrada) e do fecho (loop)
+      function folhaNoRodape(slide, dados, loop) {
+        var img = slide.querySelector('.rodape .marca img');
+        var box = document.createElement('span');
+        box.className = 'folha-lottie';
+        img.replaceWith(box);
+        return lottieDe(dados, box, loop);
+      }
+      var folhaCapa = folhaNoRodape(slides[0], window.FOLINHA_ENTRADA, false);
+      var folhaFecho = folhaNoRodape(slides[total - 1], window.FOLINHA_LOOP, true);
+
+      var barra = document.createElement('div');
+      barra.className = 'progresso';
+      document.body.appendChild(barra);
+      var dica = document.createElement('div');
+      dica.className = 'dica';
+      dica.textContent = '← →  passar slides  ·  F  tela cheia';
+      document.body.appendChild(dica);
+      setTimeout(function () { dica.classList.add('some'); }, 4000);
+
+      var escala = 1;
+      function ajustar() {
+        escala = Math.min(innerWidth / 1920, innerHeight / 1080);
+        document.documentElement.style.setProperty('--escala', escala);
+      }
+
+      // ---------- SVG: traço que se desenha e revelação da esquerda para a direita ----------
+      function revelarSvg(svg) {
+        var vb = svg.viewBox.baseVal;
+        var id = 'corte-' + Math.random().toString(36).slice(2, 8);
+        var ns = 'http://www.w3.org/2000/svg';
+        var cp = document.createElementNS(ns, 'clipPath');
+        cp.id = id;
+        var r = document.createElementNS(ns, 'rect');
+        r.setAttribute('x', vb.x); r.setAttribute('y', vb.y);
+        r.setAttribute('width', 0); r.setAttribute('height', vb.height);
+        cp.appendChild(r);
+        svg.insertBefore(cp, svg.firstChild);
+        return { rect: r, largura: vb.width, clip: 'url(#' + id + ')', no: cp };
+      }
+
+      function animarSvg(tl, svg, inicio) {
+        var q = gsap.utils.selector(svg);
+        var tracos = q('path, line').filter(function (p) {
+          var fill = p.getAttribute('fill');
+          return !p.getAttribute('stroke-dasharray') && (!fill || fill === 'none') && p.getAttribute('stroke');
+        });
+        var resto = q('path, line').filter(function (p) { return tracos.indexOf(p) < 0; });
+        var caixas = q('rect, circle, ellipse');
+        var textos = q('text');
+
+        tl.from(caixas, { autoAlpha: 0, scale: .6, transformOrigin: '50% 50%', duration: .55, ease: 'back.out(1.8)', stagger: .12, clearProps: LIMPAR }, inicio);
+        tl.from(tracos, { drawSVG: 0, duration: .9, ease: 'power2.inOut', stagger: .15 }, inicio + .1);
+        if (resto.length) {
+          // tracejados e áreas: uma máscara que corre da esquerda para a direita
+          var c = revelarSvg(svg);
+          cortes.push({ no: c.no, els: resto });
+          resto.forEach(function (p) { p.setAttribute('clip-path', c.clip); });
+          tl.to(c.rect, { attr: { width: c.largura }, duration: 1.1, ease: 'power2.inOut' }, inicio + .25);
+          tl.add(function () { resto.forEach(function (p) { p.removeAttribute('clip-path'); }); }, '>');
+        }
+        tl.from(textos, { autoAlpha: 0, y: 12, duration: .45, stagger: .05, clearProps: LIMPAR }, inicio + .35);
+      }
+
+      // ---------- entrada dos elementos de cada slide ----------
+      function montarEntrada(slide, atraso) {
+        var q = gsap.utils.selector(slide);
+        var tl = gsap.timeline({ delay: atraso, defaults: { ease: 'power3.out', duration: .7 } });
+        var splits = [];
+        var t = 0;
+
+        if (reduzido) {
+          tl.from(slide.children, { autoAlpha: 0, duration: .4, clearProps: LIMPAR });
+          tl.splits = splits;
+          return tl;
+        }
+
+        // virada: a tecnologia sai de cena e o problema resolvido entra
+        if (slide.classList.contains('virada')) {
+          var tags = q('.tag-tech');
+          tl.fromTo(q('.aspas'), { autoAlpha: 0, scale: 1.6, rotation: -12 }, { autoAlpha: .09, scale: 1, rotation: 0, duration: 1.3, ease: 'expo.out' }, 0);
+          tl.fromTo(tags, { autoAlpha: 0, scale: .5 }, { autoAlpha: .9, scale: 1, duration: .55, ease: 'back.out(2.2)', stagger: { each: .06, from: 'random' } }, .05);
+          extras.push(gsap.to(tags, {
+            x: function () { return gsap.utils.random(-18, 18); }, y: function () { return gsap.utils.random(-22, 22); },
+            duration: function () { return gsap.utils.random(2.4, 4); }, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: atraso + .8
+          }));
+          tl.from(q('.kicker'), { autoAlpha: 0, scale: .6, transformOrigin: 'left center', duration: .5, ease: 'back.out(2.2)', clearProps: LIMPAR }, .15);
+          tl.from(q('.linha-1'), { autoAlpha: 0, y: 60, filter: 'blur(12px)', duration: .8, clearProps: LIMPAR }, .3);
+          tl.fromTo(slide, { '--r': 0 }, { '--r': 1, duration: .5, ease: 'power2.inOut' }, 1.15);
+          tl.fromTo(q('.riscado'), { color: '#ffffff' }, { color: '#64748b', duration: .4 }, 1.25);
+          tl.to(tags, { autoAlpha: .32, scale: .92, duration: .6, ease: 'power2.out', stagger: { each: .03, from: 'random' } }, 1.3);
+          tl.from(q('.linha-2 .ouro'), { autoAlpha: 0, scale: 1.3, filter: 'blur(14px)', transformOrigin: 'left center', duration: .9, ease: 'expo.out', clearProps: LIMPAR }, 1.6);
+          tl.fromTo(q('.linha-2 .ouro'), { textShadow: '0 0 0 rgba(254,203,0,0)' }, { textShadow: '0 0 40px rgba(254,203,0,.6)', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 2.1);
+          tl.from(q('.selo'), { scale: .4, rotation: -30, duration: .7, ease: 'back.out(2)', clearProps: LIMPAR }, 2.0);
+          tl.from(q('.selo circle'), { drawSVG: 0, duration: .6, ease: 'power2.inOut' }, 2.0);
+          tl.from(q('.selo path'), { drawSVG: 0, duration: .4, ease: 'power3.out' }, 2.45);
+          tl.from(q('.fraco'), { autoAlpha: 0, x: -120, duration: .7, clearProps: LIMPAR }, 2.5);
+          tl.from(q('.forte'), { autoAlpha: 0, x: 120, duration: .7, clearProps: LIMPAR }, 2.6);
+          tl.from(q('.versus'), { autoAlpha: 0, scale: 0, rotation: -180, duration: .6, ease: 'back.out(2.4)', clearProps: LIMPAR }, 2.85);
+          tl.fromTo(q('.forte'), { boxShadow: '0 0 0 0 rgba(254,203,0,0)' }, { boxShadow: '0 0 60px 4px rgba(254,203,0,.35)', duration: .6, yoyo: true, repeat: 1, ease: 'sine.inOut', clearProps: 'boxShadow' }, 3.2);
+          tl.from(q('.rodape'), { autoAlpha: 0, duration: .6, clearProps: LIMPAR }, .2);
+          tl.splits = splits;
+          return tl;
+        }
+
+        // kicker: pop in
+        var kicker = q('.kicker');
+        if (kicker.length) {
+          tl.from(kicker, { autoAlpha: 0, scale: .6, transformOrigin: 'left center', duration: .5, ease: 'back.out(2.2)', clearProps: LIMPAR }, t);
+          t += .12;
+        }
+
+        // títulos: word reveal com máscara por linha
+        q('.titulo, .mega, .capa-palestra h1').forEach(function (el) {
+          var sp = SplitText.create(el, { type: 'lines,words', mask: 'lines', linesClass: 'sp-l', wordsClass: 'sp-w' });
+          splits.push(sp);
+          tl.from(sp.words, { yPercent: 115, duration: .85, ease: 'power4.out', stagger: .04 }, t);
+          t += Math.min(.25 + sp.words.length * .04, .9);
+          // destaque dourado acende depois que a frase assenta
+          var ouro = el.querySelectorAll('.ouro');
+          if (ouro.length) tl.fromTo(ouro, { textShadow: '0 0 0 rgba(254,203,0,0)' }, { textShadow: '0 0 34px rgba(254,203,0,.6)', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, t - .2);
+          var verm = el.querySelectorAll('.vermelho');
+          if (verm.length) tl.to(verm, { keyframes: { rotation: [0, -4, 4, -3, 2, 0] }, transformOrigin: '50% 60%', duration: .6, ease: 'none', clearProps: 'transform' }, t - .1);
+        });
+
+        // capa: retrato com mask reveal, logo do evento desce
+        var retrato = q('.retrato')[0];
+        if (retrato) {
+          tl.fromTo(retrato, { clipPath: 'inset(100% 0% 0% 0% round 34px)', scale: 1.12 },
+            { clipPath: 'inset(0% 0% 0% 0% round 34px)', scale: 1, duration: 1.2, ease: 'expo.out', clearProps: 'clipPath' }, .15);
+          tl.from(q('.logo-evento'), { autoAlpha: 0, y: -40, duration: .8, clearProps: LIMPAR }, .3);
+          tl.add(function () { folhaCapa.goToAndPlay(0, true); }, .4);
+        }
+
+        // frase final: o ano ao fundo conta de hoje até daqui a dez anos
+        var ano = q('.ano-grande')[0];
+        if (ano) {
+          var cont = { v: 2026 };
+          ano.textContent = '2026';
+          tl.fromTo(ano, { autoAlpha: 0, scale: .8 }, { autoAlpha: 1, scale: 1, duration: 2.4, ease: 'power2.out', clearProps: 'opacity,visibility,scale' }, 0);
+          tl.to(cont, { v: 2036, duration: 2.2, ease: 'power2.inOut', onUpdate: function () { ano.textContent = Math.round(cont.v); } }, .3);
+          tl.add(function () { ano.textContent = '2036'; });
+        }
+
+        // logo do Cerra.AI: pop in com giro e depois flutua
+        var logoIA = q('.logo-cerraai')[0];
+        if (logoIA) {
+          tl.from(logoIA, { autoAlpha: 0, scale: .5, rotation: -14, duration: 1, ease: 'back.out(1.6)', clearProps: LIMPAR }, .2);
+          extras.push(gsap.to(logoIA, { y: -14, duration: 2.2, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: atraso + 1.4 }));
+        }
+
+        // texto de apoio: blur in
+        var apoio = q('.sub, .evento, .autor, .social, .legenda');
+        if (apoio.length) {
+          tl.from(apoio, { autoAlpha: 0, y: 26, filter: 'blur(10px)', stagger: .12, duration: .7, clearProps: LIMPAR }, t - .15);
+          t += .2;
+        }
+
+        // cartões e blocos: stagger
+        var itens = q(ITENS);
+        if (itens.length) {
+          var passo = itens.length > 6 ? .07 : .12;
+          var fecho = slide.classList.contains('fecho');
+          tl.from(itens, fecho
+            ? { autoAlpha: 0, rotationY: -80, transformPerspective: 1200, transformOrigin: 'left center', stagger: passo, duration: .8, clearProps: LIMPAR }
+            : { autoAlpha: 0, y: 60, scale: .96, stagger: passo, duration: .7, clearProps: LIMPAR }, t);
+          var icones = q('.ico, .n, .etiqueta, .chips span');
+          icones = icones.filter(function (el) { return !el.closest('.kicker') && el.closest(ITENS); });
+          tl.from(icones, { autoAlpha: 0, scale: 0, rotation: -20, duration: .5, ease: 'back.out(2.4)', stagger: passo * .8, clearProps: LIMPAR }, t + .2);
+          // letras do framework: punch zoom
+          var letras = q('.cards4 .etiqueta').filter(function (el) { return el.textContent.trim().length === 1; });
+          if (letras.length) tl.fromTo(letras, { scale: 1 }, { scale: 1.6, duration: .18, yoyo: true, repeat: 1, ease: 'power2.out', stagger: .12, clearProps: 'transform' }, '>-.1');
+          // pergunta → seta → tipo
+          var sequencia = q('.pergunta .seta, .pergunta .tipo');
+          if (sequencia.length) tl.from(sequencia, { autoAlpha: 0, x: -24, stagger: .1, duration: .45, clearProps: LIMPAR }, t + .45);
+          t += .35 + itens.length * passo;
+          // cartão em destaque pulsa uma vez
+          var dest = q('.cartao.destaque');
+          if (dest.length) tl.fromTo(dest, { boxShadow: '0 0 0 0 rgba(254,203,0,0)' }, { boxShadow: '0 0 70px 6px rgba(254,203,0,.38)', duration: .6, yoyo: true, repeat: 1, ease: 'sine.inOut', clearProps: 'boxShadow' }, t - .2);
+        }
+
+        // gráficos e diagramas
+        q('svg.espiral, svg.grafico, svg.diagrama, svg.pontos, svg.seta-h').forEach(function (svg) { animarSvg(tl, svg, Math.max(.3, t - .6)); });
+
+        // ponto final da espiral fica pulsando
+        var ponta = q('.espiral circle:last-of-type, .pontos .destino')[0];
+        if (ponta) extras.push(gsap.to(ponta, { scale: 1.35, transformOrigin: '50% 50%', duration: .9, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: atraso + 2.2 }));
+
+        // fecho da página
+        tl.from(q('.nota-rodape, .handle, .copiloto-rodape > p'), { autoAlpha: 0, y: 20, stagger: .12, duration: .6, clearProps: LIMPAR }, Math.max(t - .1, .5));
+        tl.from(q('.rodape'), { autoAlpha: 0, duration: .6, clearProps: LIMPAR }, .2);
+
+        tl.eventCallback('onComplete', function () { splits.forEach(function (s) { s.revert(); }); });
+        tl.splits = splits;
+        return tl;
+      }
+
+      // ---------- transições ----------
+      function transicao(de, para, dir, tipo) {
+        var tl = gsap.timeline();
+        gsap.set(para, { zIndex: 2 });
+        gsap.set(de, { zIndex: 1 });
+        if (reduzido) tipo = 'fade';
+
+        if (tipo === 'cortina') {
+          var c1 = cortina.querySelector('.c1'), c2 = cortina.querySelector('.c2'), folha = cortina.querySelector('.folha');
+          tl.set(cortina, { visibility: 'visible' })
+            .fromTo(c1, { xPercent: -100 * dir }, { xPercent: 0, duration: .5, ease: 'power3.in' }, 0)
+            .fromTo(c2, { xPercent: -100 * dir }, { xPercent: 0, duration: .5, ease: 'power3.in' }, .1)
+            .fromTo(folha, { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .4, ease: 'back.out(2)' }, .45)
+            .add(function () { folhaCortina.goToAndPlay(0, true); }, .45)
+            .set(de, { autoAlpha: 0 }, .6)
+            .set(para, { autoAlpha: 1 }, .6)
+            .to(folha, { autoAlpha: 0, scale: .8, duration: .25, ease: 'power2.in' }, 1.15)
+            .to(c2, { xPercent: 100 * dir, duration: .55, ease: 'power3.out' }, 1.3)
+            .to(c1, { xPercent: 100 * dir, duration: .55, ease: 'power3.out' }, 1.4)
+            .set(cortina, { visibility: 'hidden' });
+          tl.entrada = 1.35;
+        } else if (tipo === 'mascara') {
+          tl.fromTo(para, { autoAlpha: 1, clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(75% at 50% 50%)', duration: 1, ease: 'power2.inOut', clearProps: 'clipPath' }, 0)
+            .to(de, { scale: .92, autoAlpha: 0, duration: 1, ease: 'power2.inOut' }, 0);
+          tl.entrada = .35;
+        } else if (tipo === 'zoom') {
+          tl.to(de, { scale: 1.3, autoAlpha: 0, duration: .45, ease: 'power2.in' }, 0)
+            .fromTo(para, { scale: .82, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: .8, ease: 'expo.out' }, .3);
+          tl.entrada = .35;
+        } else if (tipo === 'fade') {
+          tl.to(de, { autoAlpha: 0, duration: .3 }, 0).fromTo(para, { autoAlpha: 0 }, { autoAlpha: 1, duration: .3 }, 0);
+          tl.entrada = .1;
+        } else {
+          tl.to(de, { x: -160 * dir, autoAlpha: 0, duration: .55, ease: 'power3.inOut' }, 0)
+            .fromTo(para, { x: 200 * dir, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: .7, ease: 'power3.out' }, .15);
+          tl.entrada = .25;
+        }
+        tl.add(function () { gsap.set(de, { autoAlpha: 0, clearProps: 'transform,clipPath,zIndex' }); });
+        return tl;
+      }
+
+      // ---------- navegação ----------
+      function terminar() {
+        if (troca) troca.progress(1);
+        if (entrada) { entrada.progress(1); entrada.splits.forEach(function (s) { s.revert(); }); }
+        extras.forEach(function (e) { e.revert(); });
+        cortes.forEach(function (c) { c.els.forEach(function (p) { p.removeAttribute('clip-path'); }); c.no.remove(); });
+        extras = []; cortes = [];
+        troca = entrada = null;
+      }
+
+      function ir(i) {
+        i = Math.max(0, Math.min(total - 1, i));
+        if (i === atual) return;
+        var de = slides[atual], para = slides[i];
+        var dir = i > atual ? 1 : -1;
+        terminar();
+        if (de) {
+          var tipo = dir > 0 ? (para.dataset.transicao || 'deslize') : (de.dataset.transicao === 'cortina' ? 'cortina' : 'deslize');
+          troca = transicao(de, para, dir, tipo);
+          entrada = montarEntrada(para, troca.entrada);
+        } else {
+          gsap.set(para, { autoAlpha: 1 });
+          entrada = montarEntrada(para, .2);
+        }
+        atual = i;
+        gsap.to(barra, { width: ((atual + 1) / total * 100) + '%', duration: .6, ease: 'power3.out' });
+        history.replaceState(null, '', '#' + (atual + 1));
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.altKey || e.ctrlKey || e.metaKey) return;
+        switch (e.key) {
+          case 'ArrowRight': case 'ArrowDown': case 'PageDown': case ' ': ir(atual + 1); break;
+          case 'ArrowLeft': case 'ArrowUp': case 'PageUp': case 'Backspace': ir(atual - 1); break;
+          case 'Home': ir(0); break;
+          case 'End': ir(total - 1); break;
+          case 'f': case 'F':
+            if (document.fullscreenElement) document.exitFullscreen();
+            else document.documentElement.requestFullscreen();
+            break;
+          default: return;
+        }
+        e.preventDefault();
+      });
+
+      // clique: metade direita avança, metade esquerda volta
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        ir(atual + (e.clientX > innerWidth / 2 ? 1 : -1));
+      });
+
+      // toque: deslizar para os lados
+      var x0 = null;
+      document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      document.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 40) ir(atual + (dx < 0 ? 1 : -1));
+        x0 = null;
+      });
+
+      // luz segue o mouse; retrato da capa acompanha de leve; cursor some parado
+      var retrato = slides[0].querySelector('.retrato');
+      var rx = gsap.quickTo(retrato, 'x', { duration: .8, ease: 'power3.out' });
+      var t;
+      document.addEventListener('mousemove', function (e) {
+        var r = palco.getBoundingClientRect();
+        var mx = (e.clientX - r.left) / escala, my = (e.clientY - r.top) / escala;
+        luz.style.setProperty('--mx', mx + 'px');
+        luz.style.setProperty('--my', my + 'px');
+        if (atual === 0) rx((mx / 1920 - .5) * -30);
+        document.documentElement.classList.remove('sem-cursor');
+        clearTimeout(t);
+        t = setTimeout(function () { document.documentElement.classList.add('sem-cursor'); }, 2000);
+      });
+
+      // impressão / PDF: tudo no estado final
+      addEventListener('beforeprint', terminar);
+
+      addEventListener('resize', ajustar);
+      addEventListener('hashchange', function () {
+        var n = parseInt(location.hash.slice(1), 10);
+        if (n && n - 1 !== atual) ir(n - 1);
+      });
+      ajustar();
+      gsap.set(slides, { autoAlpha: 0 });
+      (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () {
+        ir((parseInt(location.hash.slice(1), 10) || 1) - 1);
+      });
+    })();
+  </script>
+</body>
+</html>

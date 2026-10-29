@@ -1,0 +1,25 @@
+/* Identidade visual Cerrado Finanças & Tech, a mesma do site */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --azul: #001f5c;
+  --azul-2: #003399;
+  --azul-noite: #000f2e;
+  --dourado: #fecb00;
+  --dourado-2: #eab308;
+  --verde: #006430;
+  --verde-claro: #16a34a;
+  --roxo: #7c3aed;
+  --texto: #0f172a;
+  --texto-suave: #cbd5e1;
+  --muted: #64748b;
+  --borda: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #111;
+}

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="entrega" content="2026-10-palestra-carreira-ia">
+  <meta name="formato" content="1920x1080">
+  <meta name="modo" content="apresentacao">
+  <title>Muito Além do Currículo: IA na Prática</title>
+  <link rel="stylesheet" href="../../brand/carrossel.css">
+  <style>
+    /* ---------------- palco 16:9 ---------------- */
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      padding: 70px 104px 104px;
+      justify-content: center;
+    }
+    .rodape { left: 104px; right: 104px; bottom: 32px; font-size: 26px; }
+    .marca { gap: 18px; }
+    .marca img { height: 58px; }
+    .slide .kicker { font-size: 21px; padding: 11px 22px; letter-spacing: 2.8px; }
+    .slide .titulo { margin-top: 24px; font-size: 82px; letter-spacing: -2.8px; line-height: 1.02; }
+    .slide .sub { margin-top: 16px; font-size: 33px; line-height: 1.36; max-width: 1440px; }
+
+    .mega { font-size: 118px; font-weight: 900; line-height: .98; letter-spacing: -4.5px; }
+    .mega.pequeno { font-size: 88px; letter-spacing: -3.2px; }
+    .ouro { color: var(--dourado); }
+    .vermelho { color: #f87171; }
+    .apagado { color: var(--texto-suave); }
+
+    /* ---------------- ícones ---------------- */
+    .ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; display: block; }
+
+    /* ---------------- capa ---------------- */
+    .capa-palestra .logo-evento { position: absolute; top: 44px; right: 86px; width: 330px; height: auto; }
+    .capa-palestra h1 { font-size: 116px; font-weight: 900; line-height: .96; letter-spacing: -5px; max-width: 1210px; }
+    .capa-palestra .sub { font-size: 34px; margin-top: 28px; max-width: 1120px; }
+    .capa-palestra .evento { margin-top: 42px; font-size: 25px; font-weight: 700; letter-spacing: .5px; color: var(--texto-suave); max-width: 1140px; line-height: 1.4; }
+    .capa-palestra .evento b { color: #fff; }
+    .capa-palestra .autor { margin-top: 14px; font-size: 28px; color: var(--dourado); font-weight: 700; }
+    .capa-palestra .social { margin-top: 8px; font-size: 23px; font-weight: 600; color: var(--texto-suave); }
+    .retrato {
+      position: absolute;
+      right: 86px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 420px;
+      height: 520px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: 34px;
+      border: 3px solid color-mix(in srgb, var(--dourado) 55%, transparent);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .5);
+    }
+
+    /* ---------------- afirmação ---------------- */
+    .afirmacao .mega { font-size: 128px; }
+    .afirmacao .sub { font-size: 37px; max-width: 1380px; margin-top: 30px; }
+
+    /* ---------------- cartões ---------------- */
+    .cards3 { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .cards4 { margin-top: 34px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .cartao {
+      background: rgba(255,255,255,.06);
+      border: 2px solid rgba(255,255,255,.13);
+      border-radius: 26px;
+      padding: 30px 28px;
+    }
+    .cartao .ico { font-size: 54px; color: var(--dourado); margin-bottom: 14px; }
+    .cartao .etiqueta {
+      display: inline-block;
+      font-size: 17px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--dourado); margin-bottom: 12px;
+    }
+    .cartao h3 { font-size: 38px; font-weight: 800; line-height: 1.08; letter-spacing: -1.2px; }
+    .cartao p { margin-top: 12px; font-size: 25px; line-height: 1.36; color: var(--texto-suave); }
+    .cartao p + p { margin-top: 10px; }
+    .cartao.destaque { background: color-mix(in srgb, var(--dourado) 10%, transparent); border-color: color-mix(in srgb, var(--dourado) 45%, transparent); }
+    .cartao .limite { display: block; margin-top: 14px; font-size: 21px; color: #94a3b8; line-height: 1.34; }
+    .cartao .limite b { color: #fca5a5; font-weight: 700; }
+
+    .nota-rodape { margin-top: 26px; font-size: 26px; line-height: 1.38; color: var(--texto-suave); }
+    .nota-rodape b { color: #fff; }
+
+    /* ---------------- linha do tempo ---------------- */
+    .linha-tempo { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .marco { background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.11); border-radius: 22px; padding: 20px 24px; }
+    .marco .topo { display: flex; align-items: center; gap: 12px; color: var(--dourado); }
+    .marco .ico { font-size: 32px; }
+    .marco .n { font-size: 18px; font-weight: 800; letter-spacing: 2px; }
+    .marco h3 { margin-top: 6px; font-size: 28px; font-weight: 800; line-height: 1.12; letter-spacing: -.6px; }
+    .marco p { margin-top: 6px; font-size: 21px; line-height: 1.3; color: var(--texto-suave); }
+
+    /* ---------------- espiral ---------------- */
+    .duas-colunas { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .voltas { margin-top: 30px; display: flex; flex-direction: column; gap: 16px; }
+    .volta { display: flex; align-items: center; gap: 18px; }
+    .volta .n { flex: 0 0 54px; width: 54px; height: 54px; border-radius: 15px; background: var(--dourado); color: var(--azul); font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+    .volta h3 { font-size: 31px; font-weight: 800; letter-spacing: -.5px; }
+    .volta p { font-size: 22px; color: var(--texto-suave); margin-top: 2px; }
+    .espiral { width: 620px; height: 561px; max-width: 100%; justify-self: center; }
+
+    /* ---------------- três perguntas ---------------- */
+    .perguntas { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .pergunta { border-radius: 26px; padding: 34px 30px; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.12); }
+    .pergunta .ico { font-size: 58px; color: var(--dourado); margin-bottom: 16px; }
+    .pergunta .palavra { font-size: 54px; font-weight: 900; letter-spacing: -2px; color: var(--dourado); line-height: 1; }
+    .pergunta .seta { margin-top: 14px; font-size: 22px; color: var(--texto-suave); }
+    .pergunta .tipo { margin-top: 6px; font-size: 32px; font-weight: 800; line-height: 1.15; }
+
+    /* ---------------- diagrama ---------------- */
+    .diagrama { width: 100%; height: auto; display: block; }
+    .diagrama .caixa { fill: rgba(255,255,255,.06); stroke: rgba(255,255,255,.16); stroke-width: 2.5; }
+    .diagrama .caixa-ouro { fill: rgba(254,203,0,.10); stroke: rgba(254,203,0,.55); stroke-width: 3; }
+    .diagrama .dt { font: 800 34px 'Inter', sans-serif; fill: #fff; }
+    .diagrama .dd { font: 500 24px 'Inter', sans-serif; fill: #cbd5e1; }
+    .diagrama .do { font: 800 22px 'Inter', sans-serif; fill: #fecb00; }
+
+    /* ---------------- QR no copiloto ---------------- */
+    .copiloto-rodape { margin-top: 22px; display: flex; align-items: center; gap: 34px; }
+    .copiloto-rodape .nota-rodape { margin-top: 0; flex: 1; }
+    .qr-mini { flex: 0 0 auto; background: #fff; border-radius: 18px; padding: 12px 16px; display: flex; align-items: center; gap: 16px; }
+    .qr-mini img { width: 96px; height: 96px; display: block; border-radius: 6px; }
+    .qr-mini .rot { display: block; font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; }
+    .qr-mini b { display: block; margin-top: 4px; font-size: 21px; font-weight: 800; color: #001f5c; }
+
+    /* ---------------- autonomia ---------------- */
+    .niveis { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; align-items: end; }
+    .nivel { border-radius: 26px; padding: 32px 28px; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.12); }
+    .nivel .ico { font-size: 58px; color: var(--dourado); margin-bottom: 14px; }
+    .nivel h3 { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
+    .nivel p { margin-top: 10px; font-size: 24px; line-height: 1.35; color: var(--texto-suave); }
+    .nivel:nth-child(2) { margin-bottom: 27px; border-color: color-mix(in srgb, var(--dourado) 45%, transparent); background: color-mix(in srgb, var(--dourado) 9%, transparent); }
+    .nivel:nth-child(3) { margin-bottom: 54px; }
+
+    /* ---------------- lista de casos ---------------- */
+    .casos { margin-top: 32px; display: flex; flex-direction: column; gap: 13px; }
+    .caso { display: flex; align-items: center; gap: 22px; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.11); border-radius: 20px; padding: 18px 26px; }
+    .caso .ico { flex: 0 0 auto; font-size: 38px; color: var(--dourado); }
+    .caso .nome { flex: 0 0 360px; font-size: 30px; font-weight: 800; letter-spacing: -.5px; }
+    .caso .desc { flex: 1; font-size: 23px; line-height: 1.28; color: var(--texto-suave); }
+    .caso .tag { flex: 0 0 auto; font-size: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--dourado); border: 2px solid color-mix(in srgb, var(--dourado) 45%, transparent); background: color-mix(in srgb, var(--dourado) 10%, transparent); border-radius: 999px; padding: 8px 15px; }
+
+    /* ---------------- débito cognitivo ---------------- */
+    .debito { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; margin-top: 22px; }
+    .grafico { width: 100%; height: auto; }
+    .grafico text { font-family: 'Inter', sans-serif; }
+    .legenda { display: flex; gap: 26px; align-items: center; margin-bottom: 12px; font-size: 21px; font-weight: 700; color: var(--texto-suave); }
+    .legenda span { display: flex; align-items: center; gap: 10px; }
+    .legenda i { width: 34px; height: 6px; border-radius: 99px; display: block; }
+    .legenda .g { background: var(--dourado); }
+    .legenda .r { background: #f87171; }
+    .debito-lista { display: flex; flex-direction: column; gap: 14px; }
+    .debito-item { display: flex; gap: 18px; align-items: flex-start; background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.10); border-radius: 20px; padding: 20px 24px; }
+    .debito-item .ico { flex: 0 0 auto; font-size: 34px; color: #f87171; margin-top: 2px; }
+    .debito-item h3 { font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
+    .debito-item p { margin-top: 5px; font-size: 22px; line-height: 1.3; color: var(--texto-suave); }
+
+    /* ---------------- passos ---------------- */
+    .passos.deck { margin-top: 30px; gap: 12px; }
+    .passos.deck .passo { gap: 20px; align-items: center; background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.10); border-radius: 20px; padding: 15px 22px; }
+    .passos.deck .passo .n { width: 56px; height: 56px; border-radius: 16px; font-size: 26px; }
+    .passos.deck .passo h3 { font-size: 29px; }
+    .passos.deck .passo p { margin-top: 3px; font-size: 21px; }
+    .passos.deck .passo .tempo { margin-left: auto; flex: 0 0 auto; font-size: 16px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dourado); }
+
+    /* ---------------- citação ---------------- */
+    .citacao-palestra .mega { font-size: 96px; max-width: 1580px; }
+    .citacao-palestra .autor { margin-top: 34px; font-size: 26px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--dourado); font-weight: 800; max-width: 1300px; line-height: 1.35; }
+
+    /* ---------------- duas frentes / local-first ---------------- */
+    .frentes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .local { background: rgba(255,255,255,.05); border: 2px solid color-mix(in srgb, var(--dourado) 35%, transparent); border-radius: 26px; padding: 26px 28px; }
+    .local h3 { font-size: 31px; font-weight: 800; letter-spacing: -.8px; }
+    .local p { margin-top: 8px; font-size: 22px; line-height: 1.32; color: var(--texto-suave); }
+
+    /* ---------------- cinco camadas ---------------- */
+    .fluxo { margin-top: 44px; display: flex; align-items: stretch; }
+    .etapa { flex: 1; background: rgba(255,255,255,.055); border: 2px solid rgba(255,255,255,.12); border-radius: 22px; padding: 24px 20px; position: relative; }
+    .etapa + .etapa { margin-left: 32px; }
+    .etapa + .etapa::before { content: '→'; position: absolute; left: -32px; top: 50%; transform: translate(-50%, -50%); font-size: 30px; color: var(--dourado); }
+    .etapa .ico { font-size: 40px; color: var(--dourado); margin-bottom: 10px; }
+    .etapa h3 { font-size: 28px; font-weight: 800; line-height: 1.1; letter-spacing: -.6px; }
+    .etapa p { margin-top: 8px; font-size: 20px; line-height: 1.28; color: var(--texto-suave); }
+
+    /* ---------------- fecho ---------------- */
+    .fecho .mega { font-size: 72px; max-width: 1580px; margin-top: 18px; }
+    .fecho .handle { margin-top: 16px; font-size: 30px; font-weight: 800; letter-spacing: .5px; color: var(--dourado); }
+
+    /* ---------------- marcas ---------------- */
+    .marcas { margin-top: 34px; display: grid; grid-template-columns: 1.12fr .88fr; gap: 24px; align-items: stretch; }
+    .marca-grande {
+      position: relative;
+      background: #fff;
+      border-radius: 28px;
+      padding: 34px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      border: 4px solid var(--dourado);
+    }
+    .marca-grande .principal {
+      position: absolute; top: 22px; right: 26px;
+      background: var(--dourado); color: var(--azul);
+      font-size: 15px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+      padding: 7px 14px; border-radius: 999px;
+    }
+    .marca-grande img { width: 560px; max-width: 100%; height: auto; }
+    .marca-grande p { margin-top: 8px; font-size: 27px; line-height: 1.32; color: #475569; }
+    .marca-grande .chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .marca-grande .chips span { font-size: 19px; font-weight: 700; color: #001f5c; background: #eef2f7; border-radius: 10px; padding: 8px 14px; }
+
+    .marcas-lado { display: flex; flex-direction: column; gap: 16px; }
+    .marca-item { flex: 1; background: #fff; border-radius: 24px; padding: 18px 24px; display: flex; align-items: center; gap: 22px; }
+    .marca-item img { width: 92px; height: 92px; object-fit: contain; flex: 0 0 auto; }
+    .marca-item h3 { font-size: 31px; font-weight: 900; letter-spacing: -.8px; color: #001f5c; }
+    .marca-item p { margin-top: 2px; font-size: 20px; color: #64748b; }
+    .caim-selo { width: 92px; height: 92px; flex: 0 0 auto; border-radius: 18px; background: #001f5c; color: var(--dourado); display: flex; align-items: center; justify-content: center; font-size: 23px; font-weight: 900; letter-spacing: -1px; }
+
+    /* ---------------- QR codes ---------------- */
+    .qr-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .qr-grid.quatro { grid-template-columns: 1fr 1fr; gap: 18px; }
+    .qr-card { background: #fff; border-radius: 24px; padding: 16px; display: flex; align-items: center; gap: 20px; }
+    .qr-card img { width: 138px; height: 138px; flex: 0 0 auto; display: block; border-radius: 8px; }
+    .qr-card .rot { font-size: 16px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: #64748b; }
+    .qr-card h3 { margin-top: 4px; font-size: 27px; font-weight: 800; line-height: 1.1; color: #001f5c; letter-spacing: -.6px; }
+    .qr-card .url { display: block; margin-top: 8px; font-size: 18px; font-weight: 600; line-height: 1.25; color: #00458b; overflow-wrap: anywhere; }
+
+    @page { size: 20in 11.25in; margin: 0; }
+    @media print {
+      html, body { background: #000; }
+      body { display: block; padding: 0; gap: 0; }
+      .slide { margin: 0; break-after: page; page-break-after: always; break-inside: avoid; }
+    }
+
+    /* ---------------- modo apresentação (um slide por vez) ---------------- */
+    @media screen {
+      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      body { display: block; padding: 0; gap: 0; }
+      .slide {
+        position: absolute;
+        top: 50%; left: 50%;
+        margin: 0;
+        transform: translate(-50%, -50%) scale(var(--escala, 1));
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .35s ease, visibility 0s linear .35s;
+      }
+      .slide.ativo { visibility: visible; opacity: 1; transition: opacity .35s ease; }
+      .progresso { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--dourado); transition: width .35s ease; z-index: 10; }
+      .dica {
+        position: fixed; right: 16px; top: 14px; z-index: 10;
+        font: 600 13px/1 system-ui, sans-serif; color: rgba(255,255,255,.55);
+        background: rgba(0,0,0,.45); padding: 8px 12px; border-radius: 8px;
+        transition: opacity .6s ease;
+      }
+      .dica.some { opacity: 0; }
+      html.sem-cursor, html.sem-cursor * { cursor: none !important; }
+    }
+    @media print { .progresso, .dica { display: none; } }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15l4-5 3 3 5-7"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8A3 3 0 0 0 7 18a3 3 0 0 0 5 2V4.5A2.5 2.5 0 0 0 9.5 4z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 1 5.8A3 3 0 0 1 17 18a3 3 0 0 1-5 2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
+    <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M2 12v3M22 12v3"/></symbol>
+    <symbol id="i-algorithm" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7 8.3l4 7.4M17 8.3l-4 7.4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></symbol>
+    <symbol id="i-wifioff" viewBox="0 0 24 24"><path d="M2 2l20 20"/><path d="M8.5 12.5a5 5 0 0 1 7 0"/><path d="M5 9a10 10 0 0 1 4-2.4"/><path d="M15 6.6A10 10 0 0 1 19 9"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-sign" viewBox="0 0 24 24"><path d="M3 20c4 0 5-12 9-12s3 8 6 8 3-4 3-4"/><path d="M3 20h18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 9v5"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6"/><path d="M18 20a6 6 0 0 0-3-5.2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7l-3 6h6z"/><path d="M17 7l-3 6h6z"/><path d="M8 21h8"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4h-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v13a3 3 0 0 0-3-3H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a3 3 0 0 1 3-3h6z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M3 21l4-1 11-11-3-3L4 17z"/><path d="M14 6l3 3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></symbol>
+  </svg>
+
+  <!-- 1 -->
+  <section class="slide capa-palestra">
+    <img class="logo-evento" src="../../../img/logo-conexao-carreira.png" alt="Conexão Carreira Indústria">
+    <h1>Muito Além<br>do Currículo:<br><span class="ouro">IA na Prática.</span></h1>
+    <p class="sub">O que você entrega quando o diploma deixa de ser o diferencial.</p>
+    <p class="evento"><b>29 de outubro · 14h30</b><br>IEL Mato Grosso · Feira de Empregos da Indústria e do Comércio · Unisenai Cuiabá</p>
+    <p class="autor">Renato de Oliveira Rosa · Cerrado Finanças &amp; Tech</p>
+    <p class="social"><span class="ouro">@cerradofinancas</span> · www.cerradofinancas.com.br</p>
+    <img class="retrato" src="../../../img/renato.jpg" alt="Renato de Oliveira Rosa">
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide afirmacao">
+    <p class="kicker">A tese da conversa</p>
+    <p class="mega">Currículo é estoque.<br><span class="ouro">IA é fluxo.</span></p>
+    <p class="sub">O mercado não paga pelo que você acumulou. Paga pelo que você entrega com o que acumulou.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="duas-colunas">
+      <div>
+        <p class="kicker">Trajetória</p>
+        <h2 class="titulo">Não foi uma linha reta.<br>Foi uma <span class="ouro">espiral</span>.</h2>
+        <div class="voltas">
+          <div class="volta"><span class="n">01</span><div><h3>Construir</h3><p>Programador autodidata aos 15 anos. Software antes de diploma.</p></div></div>
+          <div class="volta"><span class="n">02</span><div><h3>Entender o negócio</h3><p>Consultorias em sistemas de gestão financeira. Administração e ADS.</p></div></div>
+          <div class="volta"><span class="n">03</span><div><h3>Controlar</h3><p>Europa, ERP e controladoria: da ferramenta para a decisão.</p></div></div>
+          <div class="volta"><span class="n">04</span><div><h3>Ensinar</h3><p>Mestrado UFPR, empresa própria e pós-graduação no MT.</p></div></div>
+        </div>
+      </div>
+      <svg class="espiral" viewBox="0 0 520 470" aria-hidden="true">
+        <path d="M260 210 A40 40 0 0 1 300 250 A70 70 0 0 1 260 320 A100 100 0 0 1 160 250 A130 130 0 0 1 260 120 A160 160 0 0 1 420 250"
+              fill="none" stroke="rgba(255,255,255,.16)" stroke-width="26" stroke-linecap="round"/>
+        <path d="M260 210 A40 40 0 0 1 300 250 A70 70 0 0 1 260 320 A100 100 0 0 1 160 250 A130 130 0 0 1 260 120 A160 160 0 0 1 420 250"
+              fill="none" stroke="#fecb00" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+        <circle cx="260" cy="210" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="300" cy="250" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="260" cy="320" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="160" cy="250" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="260" cy="120" r="17" fill="#001645" stroke="#fecb00" stroke-width="5"/>
+        <circle cx="420" cy="250" r="17" fill="#fecb00" stroke="#001645" stroke-width="5"/>
+      </svg>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <p class="kicker">De 15 anos até aqui</p>
+    <h2 class="titulo">O que veio antes do título</h2>
+    <div class="linha-tempo">
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-code"/></svg><span class="n">01</span></div><h3>15 anos</h3><p>Programador sozinho. Primeiros softwares e primeiros clientes.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-briefcase"/></svg><span class="n">02</span></div><h3>Consultorias</h3><p>Sistemas de gestão financeira: processo, implantação e treinamento.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-grad"/></svg><span class="n">03</span></div><h3>Administração + ADS</h3><p>Uma graduação para o porquê, outra para o como.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-globe"/></svg><span class="n">04</span></div><h3>Europa</h3><p>Desenvolvimento do ERP da empresa. Software em escala.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-chart"/></svg><span class="n">05</span></div><h3>Controladoria</h3><p>Sair da TI vista como suporte para a área que entrega decisão.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-book"/></svg><span class="n">06</span></div><h3>Mestrado UFPR</h3><p>Método: pergunta, evidência, contradição. O que o código não dá.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-home"/></svg><span class="n">07</span></div><h3>Cuiabá</h3><p>Controladoria e compliance em empresas daqui.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-package"/></svg><span class="n">08</span></div><h3>Empresa própria</h3><p>Software, contabilidade e gestão no mesmo lugar.</p></div>
+      <div class="marco"><div class="topo"><svg class="ico"><use href="#i-users"/></svg><span class="n">09</span></div><h3>Pós-graduação</h3><p>Os principais cursos de pós de Mato Grosso.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide citacao-palestra">
+    <p class="mega">TI é suporte quando entrega ferramenta.<br><span class="ouro">É estratégia quando entrega decisão.</span></p>
+    <p class="autor">Foi por isso que eu saí da TI e fui para controladoria</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <p class="kicker">Mapa mental</p>
+    <h2 class="titulo">Três tipos de IA. <span class="ouro">Só um é moda.</span></h2>
+    <div class="cards3">
+      <div class="cartao">
+        <svg class="ico"><use href="#i-chat"/></svg>
+        <span class="etiqueta">Chat · generativa</span>
+        <h3>Conversa e produz texto</h3>
+        <p>Rascunho, resumo, explicação de cláusula, resposta difícil.</p>
+        <span class="limite"><b>Limite:</b> alucina, não executa e não conhece o seu processo.</span>
+      </div>
+      <div class="cartao destaque">
+        <svg class="ico"><use href="#i-algorithm"/></svg>
+        <span class="etiqueta">Algorítmica · preditiva</span>
+        <h3>Classifica e prevê</h3>
+        <p>Concilia lançamento, prevê demanda, acha anomalia na folha.</p>
+        <span class="limite"><b>Força:</b> determinística, auditável e roda em hardware modesto.</span>
+      </div>
+      <div class="cartao">
+        <svg class="ico"><use href="#i-robot"/></svg>
+        <span class="etiqueta">Agêntica</span>
+        <h3>Planeja e executa</h3>
+        <p>Lê e-mail, classifica, monta minuta, consulta o ERP e para para aprovação.</p>
+        <span class="limite"><b>Limite:</b> erro composto e risco de ação irreversível.</span>
+      </div>
+    </div>
+    <p class="nota-rodape">E antes de todas elas existe a <b>automação burra</b>: o script, a regra, o fluxo. Resolve 70% dos casos, custa quase nada e ninguém posta no LinkedIn.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <p class="kicker">Critério de escolha</p>
+    <h2 class="titulo">A tarefa precisa de quê?</h2>
+    <div class="perguntas">
+      <div class="pergunta"><svg class="ico"><use href="#i-chat"/></svg><span class="palavra">Linguagem</span><span class="seta">então use</span><span class="tipo">IA de chat</span></div>
+      <div class="pergunta"><svg class="ico"><use href="#i-algorithm"/></svg><span class="palavra">Previsão</span><span class="seta">então use</span><span class="tipo">IA algorítmica</span></div>
+      <div class="pergunta"><svg class="ico"><use href="#i-bolt"/></svg><span class="palavra">Execução</span><span class="seta">então use</span><span class="tipo">IA agêntica</span></div>
+    </div>
+    <p class="nota-rodape">Se a tarefa for sempre igual, é <b>automação</b> — e nem chame de IA. A maioria começa pelo agente, porque é o mais bonito. Devia começar pela algorítmica, porque é a que consegue auditar.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <p class="kicker">Doutorado · FUCAPE</p>
+    <h2 class="titulo">Como usar IA sem terceirizar<br>a <span class="ouro">responsabilidade</span>?</h2>
+    <p class="sub">Compliance vive de três coisas. A IA generativa entrega velocidade — e fragiliza as três.</p>
+    <div class="cards3">
+      <div class="cartao"><svg class="ico"><use href="#i-doc"/></svg><h3>Evidência</h3><p>O que foi feito, com qual documento e em que data.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-search"/></svg><h3>Rastreabilidade</h3><p>De onde veio a informação e por qual caminho ela passou.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-scale"/></svg><h3>Julgamento</h3><p>Quem decide, quem assina e quem responde pelo erro.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <p class="kicker">A proposição da tese</p>
+    <h2 class="titulo"><span class="ouro">Copiloto algorítmico</span></h2>
+    <p class="sub">Não é um chatbot que responde. É um segundo par de olhos que prepara a decisão, mostra o caminho e deixa o rastro para o humano assinar.</p>
+    <svg class="diagrama" viewBox="0 0 1660 240" style="margin: 26px auto 0; max-width: 1560px">
+      <rect class="caixa" x="8" y="42" width="340" height="156" rx="26"/>
+      <text class="dt" x="178" y="112" text-anchor="middle">Pergunta</text>
+      <text class="dd" x="178" y="150" text-anchor="middle">documento, processo, dúvida</text>
+
+      <rect class="caixa-ouro" x="430" y="22" width="770" height="196" rx="28"/>
+      <text class="do" x="815" y="60" text-anchor="middle">COPILOTO ALGORÍTMICO</text>
+      <text class="dt" x="815" y="108" text-anchor="middle">Prepara · cita · declara · registra</text>
+      <text class="dd" x="815" y="152" text-anchor="middle">fonte exata · incerteza explícita · log auditável</text>
+      <text class="dd" x="815" y="188" text-anchor="middle">não decide e não assina</text>
+
+      <rect class="caixa" x="1282" y="42" width="370" height="156" rx="26"/>
+      <text class="dt" x="1467" y="112" text-anchor="middle">Humano assina</text>
+      <text class="dd" x="1467" y="150" text-anchor="middle">decisão e responsabilidade</text>
+
+      <path d="M352 120 H414" stroke="#fecb00" stroke-width="5"/>
+      <path d="M414 120 l-18 -10 v20 z" fill="#fecb00"/>
+      <path d="M1204 120 H1266" stroke="#fecb00" stroke-width="5"/>
+      <path d="M1266 120 l-18 -10 v20 z" fill="#fecb00"/>
+    </svg>
+    <div class="copiloto-rodape">
+      <p class="nota-rodape">O mercado vai precisar de quem sabe projetar isso. E não é só programador: é contador, auditor e administrador que entende de processo e de risco.</p>
+      <div class="qr-mini">
+        <img src="qr-copiloto.png" alt="QR code do copiloto público">
+        <div><span class="rot">Demo pública</span><b>publicopiloto.web.app</b></div>
+      </div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <p class="kicker">Três níveis de autonomia</p>
+    <h2 class="titulo">Quem executa? <span class="ouro">Quem responde?</span></h2>
+    <div class="niveis">
+      <div class="nivel"><svg class="ico"><use href="#i-loop"/></svg><h3>Automação</h3><p>Substitui a mão. Regra fixa, resultado previsível. Falhou, refaz.</p></div>
+      <div class="nivel"><svg class="ico"><use href="#i-eye"/></svg><h3>Copiloto</h3><p>Amplia o cérebro. Prepara, cita e registra. O humano decide e assina.</p></div>
+      <div class="nivel"><svg class="ico"><use href="#i-robot"/></svg><h3>Agente</h3><p>Assume a tarefa. Exige permissão, limite e auditoria.</p></div>
+    </div>
+    <p class="nota-rodape">Compliance precisa saber <b>qual dos três está rodando</b> — e com qual permissão.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <p class="kicker">Rotina real</p>
+    <h2 class="titulo">IA no dia a dia administrativo</h2>
+    <div class="casos">
+      <div class="caso"><svg class="ico"><use href="#i-chart"/></svg><span class="nome">Conciliação bancária</span><span class="desc">Classifica lançamentos por histórico e contraparte. O humano revisa só as exceções.</span><span class="tag">algorítmica + chat</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-doc"/></svg><span class="nome">Contratos e editais</span><span class="desc">Extrai partes, prazos, multas, garantias e obrigações para uma tabela comparável.</span><span class="tag">chat com RAG</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-users"/></svg><span class="nome">Folha e eSocial</span><span class="desc">Cruza folha, eSocial e contas a pagar para achar inconsistência antes do fisco.</span><span class="tag">algorítmica</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-pen"/></svg><span class="nome">Relatório gerencial</span><span class="desc">Transforma extrato e DRE em três parágrafos: o que aconteceu, por que e o que fazer.</span><span class="tag">chat</span></div>
+      <div class="caso"><svg class="ico"><use href="#i-robot"/></svg><span class="nome">Rotina invisível</span><span class="desc">Lê e-mail, classifica, monta a minuta e para para você aprovar. Não envia sozinho.</span><span class="tag">agêntica</span></div>
+    </div>
+    <p class="nota-rodape">A IA não fecha o mês. Ela tira o braçal do seu colo para você fazer o julgamento — que é o que ninguém terceiriza.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide">
+    <p class="kicker">O risco que ninguém posta</p>
+    <h2 class="titulo">Só usar IA também<br><span class="vermelho">cobra juros</span>.</h2>
+    <div class="debito">
+      <div>
+      <div class="legenda"><span><i class="g"></i> entrega com IA</span><span><i class="r"></i> habilidade própria</span></div>
+      <svg class="grafico" viewBox="0 0 720 360" aria-hidden="true">
+        <line x1="62" y1="34" x2="62" y2="300" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+        <line x1="62" y1="300" x2="702" y2="300" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+        <line x1="62" y1="234" x2="702" y2="234" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <line x1="62" y1="168" x2="702" y2="168" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <line x1="62" y1="102" x2="702" y2="102" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <path d="M80 282 C 240 246, 400 168, 668 82 L 668 286 C 450 240, 260 196, 80 132 Z" fill="rgba(248,113,113,.12)"/>
+        <path d="M80 282 C 240 246, 400 168, 668 82" fill="none" stroke="#fecb00" stroke-width="7" stroke-linecap="round"/>
+        <path d="M80 132 C 260 158, 430 214, 668 286" fill="none" stroke="#f87171" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10"/>
+        <text x="80" y="336" font-size="21" font-weight="600" fill="#94a3b8">hoje</text>
+        <text x="668" y="336" text-anchor="end" font-size="21" font-weight="600" fill="#94a3b8">depois</text>
+        <text x="368" y="206" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">débito cognitivo</text>
+      </svg>
+      </div>
+      <div class="debito-lista">
+        <div class="debito-item"><svg class="ico"><use href="#i-book"/></svg><div><h3>Acadêmico</h3><p>Para de ler a fonte, de escrever e de construir base. Passa a defender o que não entende.</p></div></div>
+        <div class="debito-item"><svg class="ico"><use href="#i-code"/></svg><div><h3>Técnico</h3><p>Entrega código que não depura, arquitetura que não explica e número que não prova.</p></div></div>
+        <div class="debito-item"><svg class="ico"><use href="#i-alert"/></svg><div><h3>Carreira</h3><p>Quando a ferramenta muda, o diferencial desaparece. A ferramenta vira o seu teto.</p></div></div>
+      </div>
+    </div>
+    <p class="nota-rodape">Débito cognitivo é o juro que você paga por terceirizar o que deveria aprender. <b>IA é alavanca. Alavanca sem braço não levanta nada.</b></p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <p class="kicker">Antídoto</p>
+    <h2 class="titulo">Como pagar essa dívida<br><span class="ouro">antes que ela cresça</span>.</h2>
+    <div class="cards4">
+      <div class="cartao"><svg class="ico"><use href="#i-chat"/></svg><h3>Explique sem IA</h3><p>Se não consegue explicar com as suas palavras, você não aprendeu.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-pen"/></svg><h3>Refaça o núcleo à mão</h3><p>Use a IA para rascunhar. Depois refaça a parte que importa sem ela.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-book"/></svg><h3>Volte à fonte</h3><p>Leia o documento, a norma e o código. A IA é o mapa, não o território.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-layers"/></svg><h3>Caderno de fundamentos</h3><p>O que você sabe fazer sem consultar. É isso que não pode ser terceirizado.</p></div>
+    </div>
+    <p class="nota-rodape">Quem só delega nunca constrói critério. E sem critério, a IA entrega rápido — mas você não sabe se está certo.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 14 -->
+  <section class="slide">
+    <p class="kicker">O framework que eu uso</p>
+    <h2 class="titulo">Prompt bom não é criativo.<br>É <span class="ouro">com contexto</span>.</h2>
+    <div class="cards4">
+      <div class="cartao"><span class="etiqueta">C</span><h3>Contexto</h3><p>Quem você é, qual o cenário e qual a regra.</p></div>
+      <div class="cartao"><span class="etiqueta">T</span><h3>Tarefa</h3><p>O que exatamente deve ser feito.</p></div>
+      <div class="cartao"><span class="etiqueta">F</span><h3>Formato</h3><p>Tabela, lista, e-mail, JSON, cinco linhas.</p></div>
+      <div class="cartao"><span class="etiqueta">E</span><h3>Exemplo</h3><p>Um caso resolvido para calibrar o tom.</p></div>
+    </div>
+    <p class="nota-rodape">É igual lançamento contábil: sem histórico, sem documento e sem classificação, ninguém aprova.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 15 -->
+  <section class="slide">
+    <p class="kicker">Diferencial de carreira</p>
+    <h2 class="titulo">Nunca cole dado sigiloso<br>em ferramenta pública.</h2>
+    <p class="sub">Se a empresa não tem política, você propõe a política. Isso não é medo de tecnologia: é competência.</p>
+    <div class="cards3">
+      <div class="cartao"><svg class="ico"><use href="#i-eye"/></svg><span class="etiqueta">Antes de colar</span><h3>Anonimize</h3><p>CPF, CNPJ, RG, telefone, e-mail, processo, prontuário.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-search"/></svg><span class="etiqueta">Antes de assinar</span><h3>Confira a fonte</h3><p>Se a IA não mostra de onde tirou, não está pronta para o seu trabalho.</p></div>
+      <div class="cartao"><svg class="ico"><use href="#i-lock"/></svg><span class="etiqueta">Antes de escalar</span><h3>Registre</h3><p>O que entrou, o que saiu e quem aprovou.</p></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section class="slide">
+    <p class="kicker">Cerrado Tech · Cuiabá</p>
+    <h2 class="titulo">Software, contabilidade e gestão<br><span class="ouro">na mesma casa</span>.</h2>
+    <p class="sub">Quem entende o processo e constrói a ferramenta não precisa escolher entre as duas coisas.</p>
+    <div style="display:grid; grid-template-columns: 1.08fr .92fr; gap: 34px; align-items:center; margin-top: 30px">
+      <div class="frentes">
+        <div class="cartao"><svg class="ico"><use href="#i-code"/></svg><span class="etiqueta">Cerrado Tech</span><h3>Fábrica de software</h3><p>ERPs, CRMs, dashboards, compliance, GovTech e B2B.</p></div>
+        <div class="cartao"><svg class="ico"><use href="#i-chart"/></svg><span class="etiqueta">Cerrado Finanças</span><h3>Consultoria e contabilidade</h3><p>Controladoria, BPO financeiro, planejamento tributário e BI.</p></div>
+      </div>
+      <div class="local">
+        <h3>Local-first + PWA</h3>
+        <p>O sistema roda no dispositivo e sincroniza quando há rede. O dado fica com o cliente.</p>
+        <svg class="diagrama" viewBox="0 0 620 210" style="margin-top: 18px" aria-hidden="true">
+          <rect x="8" y="52" width="190" height="110" rx="20" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)" stroke-width="2.5"/>
+          <text x="103" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#fff">Dispositivo</text>
+          <text x="103" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" fill="#cbd5e1">PWA</text>
+          <path d="M206 107 H268" stroke="#fecb00" stroke-width="4"/>
+          <path d="M268 107 l-15 -8 v16 z" fill="#fecb00"/>
+          <rect x="280" y="40" width="220" height="134" rx="20" fill="rgba(254,203,0,.10)" stroke="rgba(254,203,0,.55)" stroke-width="3"/>
+          <text x="390" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#fff">Servidor local</text>
+          <text x="390" y="128" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" fill="#cbd5e1">dados do cliente</text>
+          <path d="M508 107 H570" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-dasharray="8 8"/>
+          <text x="578" y="82" text-anchor="end" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#94a3b8">nuvem</text>
+          <text x="578" y="108" text-anchor="end" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#94a3b8">opcional</text>
+        </svg>
+      </div>
+    </div>
+    <p class="nota-rodape">Cartório, prefeitura e agro. O problema nunca é o dashboard: é o dado que ninguém confia.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 17 -->
+  <section class="slide citacao-palestra">
+    <p class="mega">Eu nunca vendi tecnologia.<br><span class="ouro">Eu vendi problema resolvido.</span></p>
+    <p class="autor">Quem só sabe a ferramenta compete com a ferramenta. Quem entende o processo compete com gente — e ganha.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 18 -->
+  <section class="slide">
+    <p class="kicker">Projeto Cerra.AI</p>
+    <h2 class="titulo">IA que roda offline.<br>E <span class="ouro">cita a fonte</span>.</h2>
+    <div class="fluxo">
+      <div class="etapa"><svg class="ico"><use href="#i-doc"/></svg><h3>Ingestão</h3><p>PDF, Word, planilha, imagem, áudio.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-database"/></svg><h3>Indexação</h3><p>Base vetorial local, com arquivo e página.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-cpu"/></svg><h3>Modelo local</h3><p>Modelos abertos em cascata, no hardware disponível.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-chat"/></svg><h3>Resposta</h3><p>Com citação do trecho e da fonte.</p></div>
+      <div class="etapa"><svg class="ico"><use href="#i-shield"/></svg><h3>Auditoria</h3><p>Mascaramento LGPD e registro da consulta.</p></div>
+    </div>
+    <p class="nota-rodape"><b>Ollama · vLLM · ChromaDB · RAG · mascaramento.</b> O dado nunca sai da infraestrutura do cliente. Zero conta de API por pergunta.</p>
+    <p class="nota-rodape" style="margin-top: 8px"><b>Código aberto:</b> github.com/renato0503/cerraai-publico</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 19 -->
+  <section class="slide afirmacao">
+    <p class="kicker">O que o Cerra.AI prova</p>
+    <p class="mega pequeno">Restrição de hardware<br>não é impedimento técnico.<br><span class="ouro">É requisito de projeto.</span></p>
+    <p class="sub">Modelo local menor erra mais que o topo de linha na nuvem. Por isso o desenho é RAG + citação + revisão humana. Não vendemos onisciência. Vendemos rastreabilidade.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 20 -->
+  <section class="slide">
+    <p class="kicker">Comece amanhã</p>
+    <h2 class="titulo">Cinco movimentos.<br><span class="ouro">Nenhum deles precisa de diploma.</span></h2>
+    <div class="passos deck">
+      <div class="passo"><span class="n">1</span><div><h3>Meça a dor</h3><p>Volte à tarefa que você odeia e cronometre. Você não automatiza o que não mede.</p></div><span class="tempo">10 min</span></div>
+      <div class="passo"><span class="n">2</span><div><h3>Suba um modelo local</h3><p>Ollama, modelo pequeno, uma pergunta com o Wi-Fi desligado.</p></div><span class="tempo">hoje à noite</span></div>
+      <div class="passo"><span class="n">3</span><div><h3>Escolha o tipo certo</h3><p>Linguagem, previsão ou execução. Não comece pelo agente: comece pelo que você audita.</p></div><span class="tempo">esta semana</span></div>
+      <div class="passo"><span class="n">4</span><div><h3>Construa um copiloto, não um oráculo</h3><p>Uma tarefa, com fonte, incerteza declarada e log.</p></div><span class="tempo">este mês</span></div>
+      <div class="passo"><span class="n">5</span><div><h3>Publique os três artefatos</h3><p>Um prompt, uma automação e um caso documentado.</p></div><span class="tempo">sempre</span></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 21 -->
+  <section class="slide">
+    <p class="kicker">Ecossistema</p>
+    <h2 class="titulo">Marcas que saem da <span class="ouro">mesma fábrica</span>.</h2>
+    <div class="marcas">
+      <div class="marca-grande">
+        <span class="principal">A fábrica</span>
+        <img src="logo-cerradotech.png" alt="Cerrado Tech">
+        <p>Software sob medida, IA offline, GovTech e PWAs que resolvem dor real de organização pública e privada.</p>
+        <div class="chips"><span>ERPs</span><span>CRMs</span><span>IA offline</span><span>GovTech</span><span>PWA</span></div>
+      </div>
+      <div class="marcas-lado">
+        <div class="marca-item">
+          <img src="../../brand/cerraclass/logo.png" alt="CerraClass">
+          <div><h3>CerraClass</h3><p>Educação em IA aplicada</p></div>
+        </div>
+        <div class="marca-item">
+          <img src="../../../img/logo_cerraai-icone.png" alt="Cerra.AI">
+          <div><h3>Cerra.AI</h3><p>IA local, com privacidade</p></div>
+        </div>
+        <div class="marca-item">
+          <img src="logo-caim.svg" alt="CAIM">
+          <div><h3>CAIM</h3><p>caim.web.app</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="nota-rodape">A fábrica é o Cerrado Tech. As outras marcas são o que ela aprende, ensina e devolve para o mercado.</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <!-- 22 -->
+  <section class="slide fecho">
+    <p class="kicker">Para levar</p>
+    <p class="mega">Daqui a dez anos ninguém vai perguntar se você sabe usar IA.<br><span class="ouro">Vão perguntar o que você construiu com ela.</span></p>
+    <div class="qr-grid quatro">
+      <div class="qr-card">
+        <img src="qr-site.png" alt="QR code do site da Cerrado Finanças">
+        <div><span class="rot">Site</span><h3>Cerrado Finanças &amp; Tech</h3><span class="url">www.cerradofinancas.com.br</span></div>
+      </div>
+      <div class="qr-card">
+        <img src="qr-cerraclass.png" alt="QR code da CerraClass">
+        <div><span class="rot">Cursos</span><h3>CerraClass</h3><span class="url">cerraclass.com.br</span></div>
+      </div>
+      <div class="qr-card">
+        <img src="qr-github.png" alt="QR code do repositório Cerra.AI público">
+        <div><span class="rot">Código aberto</span><h3>Cerra.AI público</h3><span class="url">github.com/renato0503/cerraai-publico</span></div>
+      </div>
+      <div class="qr-card">
+        <img src="qr-caim.png" alt="QR code do CAIM">
+        <div><span class="rot">Projeto</span><h3>CAIM</h3><span class="url">caim.web.app</span></div>
+      </div>
+    </div>
+    <p class="handle">@cerradofinancas</p>
+    <div class="rodape">
+      <span class="marca"><img src="../../../img/folinha.png" alt=""> Cerrado Finanças &amp; Tech</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <script src="../../brand/slides.js"></script>
+  <script>
+    // Modo apresentação: ← → (ou espaço, PageUp/PageDown) passam os slides,
+    // Home/End vão ao primeiro/último, F alterna tela cheia. O slide atual fica no #N da URL.
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var total = slides.length;
+      var atual = 0;
+
+      var barra = document.createElement('div');
+      barra.className = 'progresso';
+      document.body.appendChild(barra);
+      var dica = document.createElement('div');
+      dica.className = 'dica';
+      dica.textContent = '← →  passar slides  ·  F  tela cheia';
+      document.body.appendChild(dica);
+      setTimeout(function () { dica.classList.add('some'); }, 4000);
+
+      function ajustar() {
+        var escala = Math.min(innerWidth / 1920, innerHeight / 1080);
+        document.documentElement.style.setProperty('--escala', escala);
+      }
+
+      function ir(i) {
+        i = Math.max(0, Math.min(total - 1, i));
+        slides[atual].classList.remove('ativo');
+        atual = i;
+        slides[atual].classList.add('ativo');
+        barra.style.width = ((atual + 1) / total * 100) + '%';
+        history.replaceState(null, '', '#' + (atual + 1));
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.altKey || e.ctrlKey || e.metaKey) return;
+        switch (e.key) {
+          case 'ArrowRight': case 'ArrowDown': case 'PageDown': case ' ': ir(atual + 1); break;
+          case 'ArrowLeft': case 'ArrowUp': case 'PageUp': case 'Backspace': ir(atual - 1); break;
+          case 'Home': ir(0); break;
+          case 'End': ir(total - 1); break;
+          case 'f': case 'F':
+            if (document.fullscreenElement) document.exitFullscreen();
+            else document.documentElement.requestFullscreen();
+            break;
+          default: return;
+        }
+        e.preventDefault();
+      });
+
+      // clique: metade direita avança, metade esquerda volta
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        ir(atual + (e.clientX > innerWidth / 2 ? 1 : -1));
+      });
+
+      // toque: deslizar para os lados
+      var x0 = null;
+      document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      document.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 40) ir(atual + (dx < 0 ? 1 : -1));
+        x0 = null;
+      });
+
+      // esconde o cursor parado
+      var t;
+      document.addEventListener('mousemove', function () {
+        document.documentElement.classList.remove('sem-cursor');
+        clearTimeout(t);
+        t = setTimeout(function () { document.documentElement.classList.add('sem-cursor'); }, 2000);
+      });
+
+      addEventListener('resize', ajustar);
+      addEventListener('hashchange', function () {
+        var n = parseInt(location.hash.slice(1), 10);
+        if (n && n - 1 !== atual) ir(n - 1);
+      });
+      ajustar();
+      ir((parseInt(location.hash.slice(1), 10) || 1) - 1);
+    })();
+  </script>
+</body>
+</html>
