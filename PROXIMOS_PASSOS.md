@@ -1,6 +1,6 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 29/10/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 30/10/2026.
 
 ## Onde está cada registro
 
@@ -56,11 +56,16 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
 - [ ] Ajustar o catálogo da CerraClass para 10 alunos por turma (ver acima).
 - [ ] Ouvir as trilhas novas dos vídeos HyperFrames (sintetizadas por `marketing/filmes/ferramentas/trilha.mjs`; volume já medido, escuta pendente).
-- [ ] **Falta conteúdo para manter 1 post por dia:** o @cerra.ai só tem posts até 31/10 (1 carrossel e 2 Reels) e
-      o @cerraclass, até 25/11. O @cerradofinancas está coberto até 30/12 com 1 por dia. Ver a aba Agenda da Central.
+- [ ] **Conteúdo novo acaba antes do fim da agenda** em algumas contas (ver a aba Agenda da Central). Desde 30/10 a
+      agenda repete os posts da conta desde o mais antigo quando o conteúdo novo acaba, então nenhum dia fica vazio,
+      mas o ideal é produzir mais peças para as contas que entram em repetição cedo.
 - [ ] Palestra: levar os slides novos da versão animada para `slides.html`, `apresentacao.html` e os PNGs;
       ao mudar a versão animada, atualizar também a cópia online (passo a passo em `marketing/HISTORICO.md`).
-- [ ] Consultoria acadêmica: definir a conta (Instagram próprio ou @cerradofinancas) e criar a identidade e o conteúdo.
+- [ ] **Guia Acadêmico:** criar o perfil @guiacademico no Instagram (o nome foi usado na agenda e precisa ser
+      confirmado); confirmar se os números do site (+120 trabalhos, 94% de aprovação, 10+ anos) podem ir para as
+      peças; publicar o site novo (`cd D:\Dev\GuiAcademico` e `firebase deploy --only hosting`), que ficou pronto
+      em 30/10 e não foi publicado porque o deploy precisa da sua autorização.
+- [ ] Datas comemorativas de 2027: acrescentar em `marketing/tools/gerar_datas.py` (hoje vão até 01/01/2027).
 - [ ] Crédito: decidir a cidade do atendimento presencial (a LS fica em Campo Grande-MS; o `/credito` diz Cuiabá),
       se o consignado do INSS continua no site (o portfólio da LS lista o INSS só no empréstimo pessoal) e se as peças
       usam o WhatsApp da LS. As peças hoje não citam cidade e usam o WhatsApp da Cerrado.

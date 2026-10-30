@@ -27,6 +27,8 @@ TIPOS = {
 # Frente e série de cada campanha, pelo nome da pasta (sem a data): a primeira regra que casar vale.
 # A página agrupa e filtra por elas; ao criar um prefixo novo, acrescente aqui.
 REGRAS = [
+    ("guiacademico-", "guiacademico", "Cadernos de método"),
+    ("data-", "institucional", "Datas comemorativas"),
     ("tech-", "tech", "O que a Cerrado Tech constrói"),
     ("fabrica-de-software", "tech", "Campanha da frente"),
     ("contabil-sabia-", "contabilidade", "Você sabia?"),

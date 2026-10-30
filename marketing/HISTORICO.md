@@ -25,6 +25,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
+| 30/10 | (esta rodada) | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
 | 29/10 | (esta rodada) | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
@@ -129,6 +130,39 @@ Fator R, pró-labore, fim da DIRF, IBS e CBS, MEI acima do limite, certidão neg
 lei em 28/10/2026, sem valores de limite que mudam. **Pendências:** Lucro Real (não citado até confirmar) e o nome e
 CRC do responsável técnico (o Renato pediu para deixar para depois). A página `/contabilidade` trocou a DIRF extinta
 por EFD-Reinf e eSocial.
+
+## Guia Acadêmico, a consultoria acadêmica (30/10)
+
+A frente "Consultoria acadêmica", que aparecia como "em breve" na agenda, é o **Guia Acadêmico**
+(guiacademico.com.br, projeto em `D:\Dev\GuiAcademico`, Firebase). Virou a 4ª conta da agenda, **@guiacademico**
+(o perfil ainda precisa ser criado ou confirmado), com 1 post por dia.
+
+- **Identidade "Artigo"** (`brand/guiacademico/`): cada peça é um artigo de periódico, com cabeça corrida, resumo,
+  palavras-chave, controle de alterações, quadro com filetes e nota de rodapé. Azul-marinho e dourado da bússola da
+  logo. Guia completo em `brand/guiacademico/README.md`; mídia kit em `kits/guiacademico/`.
+- **Série "Cadernos de método"** (`tools/gerar_guiacademico.py`, 15 campanhas `2026-11-guiacademico-*`): apresentação,
+  problema de pesquisa, estatística, qualitativa, web scraping, IA acadêmica, ABNT, banca, ética, revisão
+  sistemática, tamanho da amostra, questionário, cronograma, Comitê de Ética e como funciona. Cada uma tem carrossel
+  de 6, story, carrossel animado (Reel, 4 posts depois do carrossel) e legendas de Instagram e LinkedIn.
+- **Regras:** ética em toda peça ("não executamos trabalhos por terceiros"), sem preço e sem os números do site até o
+  Renato confirmar; exemplos com número dizem que são ilustrativos.
+- **Site:** o `index.html` do Guia foi refeito na mesma identidade (mesmo conteúdo, formulários e login por CPF).
+  Correções: o botão de agendar apontava para `[LINK_CALENDLY]` (agora abre o WhatsApp); o material gratuito dizia
+  "enviado para o seu e-mail" sem enviar nada (agora é pedido pelo WhatsApp); o FAQ abria sozinho ao rolar (a
+  animação de entrada e o FAQ usavam a mesma classe). Backup da versão anterior não foi para o repositório; o
+  histórico do git do projeto tem a original. **Falta publicar:** `firebase deploy --only hosting`.
+
+## Datas comemorativas e repetição da agenda (30/10)
+
+Pedidos do Renato em 30/10:
+- **Datas comemorativas:** só as nacionais, com post estático (feed do Instagram e LinkedIn) e story, **sem vídeo**.
+  `tools/gerar_datas.py` gera as de Finados, Proclamação da República, Dia da Bandeira, Consciência Negra, Natal e
+  Ano-Novo (`AAAA-MM-data-*`), no @cerradofinancas, na identidade do site (Finados e Consciência Negra em tom sóbrio).
+  O agendador põe cada uma no dia fixo, além do post normal.
+- **Repetição:** quando uma conta fica sem post novo, a agenda repete os posts dela desde o mais antigo, na mesma
+  ordem, até o fim da agenda. Datas comemorativas nunca se repetem. Na Central, aparecem como "(repetição)".
+- **Início:** o Felipe ainda não tinha começado; a agenda inteira recomeça em **sábado, 31/10/2026**
+  (`python tools/agendar.py 2026-10-31`).
 
 ## Palestra "Muito Além do Currículo: IA na Prática" (29/10)
 

@@ -1,0 +1,30 @@
+Quantas pessoas precisam responder?
+
+O tamanho da amostra depende da população, da margem de erro, do nível de confiança e da análise prevista. “Quanto mais, melhor” não é critério.
+
+Como a amostra costuma ser definida:
+• Um número que “parece bastante”
+• Sem prever a taxa de resposta
+• Conveniência tratada como representativa
+• Cálculo feito depois da coleta
+
+Na prática: "Aplicamos o questionário a 50 alunos." → "Com população de 1.200 alunos, 95% de confiança e 5% de margem de erro, a amostra mínima é de 292 respondentes."
+Com a conta declarada, a banca discute o método, não o número.
+
+O que entra no cálculo:
+▸ População: quantas pessoas existem no grupo estudado
+▸ Nível de confiança: em geral, 95%
+▸ Margem de erro: quanto o resultado pode variar
+▸ Análise prevista: cada teste ou modelo pede um tamanho
+▸ Ferramentas: g*Power, R e fórmulas declaradas
+
+Como o Guia Acadêmico ajuda:
+1. Calcular a amostra com você
+2. Justificar o cálculo no texto
+3. Planejar a coleta com folga para não respostas
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+Amostra justificada, não chutada. Agende o diagnóstico: guiacademico.com.br
+
+#Amostragem #Estatistica #Metodologia #Questionario #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC

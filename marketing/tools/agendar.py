@@ -1,8 +1,13 @@
 """Monta a agenda de postagens por conta de Instagram e grava as datas nas campanhas.
 
 Regras (pedido do Renato em 28/10):
-- **Contas:** são três por enquanto: @cerradofinancas (Cerrado Tech, Contabilidade, Crédito, Consultorias e
-  Institucional), @cerra.ai e @cerraclass. A Consultoria acadêmica entra como frente futura, ainda sem conta.
+- **Contas:** @cerradofinancas (Cerrado Tech, Contabilidade, Crédito, Consultorias e Institucional), @cerra.ai,
+  @cerraclass e, desde 30/10, @guiacademico (a consultoria acadêmica).
+- **Início:** o Felipe começa a postar em 31/10/2026; rode com essa data para manter a ordem.
+- **Repetição (30/10):** quando uma conta fica sem post novo, a agenda repete os posts dela desde o mais antigo,
+  na mesma ordem, até o fim da agenda. As datas comemorativas nunca se repetem.
+- **Datas comemorativas (30/10):** só as nacionais, com post estático e story, sem vídeo (tools/gerar_datas.py).
+  Saem no dia fixo (campo "data_fixa" do info.json), ao lado do post normal da conta.
 - **Ritmo:** cada conta posta pelo menos 1 vez por dia e no máximo 2 (POR_DIA), enquanto houver conteúdo. Quando o
   conteúdo de uma conta acaba, a agenda mostra o dia como "falta conteúdo".
 - **Ordem:** no @cerradofinancas, o lançamento e as campanhas de cada frente saem primeiro. Depois as séries se
@@ -32,9 +37,10 @@ CONTAS = [
          frentes=["institucional", "tech", "contabilidade", "credito", "consultorias"]),
     dict(id="cerraai", nome="Cerra.AI", arroba="@cerra.ai", cor="#e2873b", frentes=["cerraai"]),
     dict(id="cerraclass", nome="CerraClass", arroba="@cerraclass", cor="#ffc83d", frentes=["cerraclass"]),
+    dict(id="guiacademico", nome="Guia Acadêmico", arroba="@guiacademico", cor="#1e2a44", frentes=["guiacademico"]),
 ]
-FUTURAS = [dict(nome="Consultoria acadêmica", obs="frente nova, ainda sem conta e sem conteúdo")]
-POR_DIA = {"cerradofinancas": 1, "cerraai": 1, "cerraclass": 1}  # mínimo 1, máximo 2
+FUTURAS = []
+POR_DIA = {"cerradofinancas": 1, "cerraai": 1, "cerraclass": 1, "guiacademico": 1}  # mínimo 1, máximo 2
 FORA_DA_AGENDA = {"folinha-animada"}  # material de apoio, não é postagem
 
 CARROSSEL = "Carrossel + story"
@@ -53,6 +59,10 @@ def campanhas():
                             titulo=json.loads((p / "info.json").read_text(encoding="utf-8"))["titulo"],
                             arquivos={f.name for f in p.iterdir()}))
     return out
+
+
+def data_fixa(pasta):
+    return json.loads((ENTREGAS / pasta / "info.json").read_text(encoding="utf-8")).get("data_fixa")
 
 
 def post(c, peca=CARROSSEL, arquivo=None):
@@ -125,6 +135,20 @@ def fila_cerraclass(cs):
     return fila
 
 
+def fila_guiacademico(cs):
+    """A apresentação primeiro e depois os temas, na ordem do gerador. O carrossel animado de cada tema sai como Reel
+    separado, quatro posts depois do carrossel."""
+    datas = {p.name: json.loads((p / "info.json").read_text(encoding="utf-8"))["data"] for p in ENTREGAS.iterdir() if (p / "info.json").exists()}
+    ordem = sorted(cs, key=lambda c: (not c["pasta"].endswith("-lancamento"), datas[c["pasta"]]))
+    reels = [post(c, "Reel: carrossel animado", "carrossel-animado.mp4") for c in ordem if "carrossel-animado.mp4" in c["arquivos"]]
+    fila, atraso = [], 4
+    for i, c in enumerate(ordem):
+        fila.append(post(c))
+        if i >= atraso and i - atraso < len(reels):
+            fila.append(reels[i - atraso])
+    return fila + reels[max(0, len(ordem) - atraso):]
+
+
 def distribuir(fila, inicio, por_dia):
     out, d = [], inicio
     for i in range(0, len(fila), por_dia):
@@ -136,23 +160,41 @@ def distribuir(fila, inicio, por_dia):
 
 def main():
     inicio = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today() + timedelta(days=1)
-    cs = campanhas()
+    todas = campanhas()
+    fixas = [c for c in todas if data_fixa(c["pasta"])]
+    cs = [c for c in todas if not data_fixa(c["pasta"])]
     filas = {
         "cerradofinancas": fila_financas([c for c in cs if conta_de(c["frente"]) == "cerradofinancas"]),
         "cerraai": fila_cerraai([c for c in cs if conta_de(c["frente"]) == "cerraai"]),
         "cerraclass": fila_cerraclass([c for c in cs if conta_de(c["frente"]) == "cerraclass"]),
+        "guiacademico": fila_guiacademico([c for c in cs if conta_de(c["frente"]) == "guiacademico"]),
     }
-    posts = []
+    novos = {}
     for conta, fila in filas.items():
         assert 1 <= POR_DIA[conta] <= 2
-        for p in distribuir(fila, inicio, POR_DIA[conta]):
-            posts.append({**p, "conta": conta})
-    fim = max(p["data"] for p in posts)
+        novos[conta] = distribuir(fila, inicio, POR_DIA[conta])
+    fim = max([p["data"] for ps in novos.values() for p in ps] + [data_fixa(c["pasta"]) for c in fixas])
+    posts = []
+    for conta, ps in novos.items():
+        fila = filas[conta]
+        # sem post novo: repete a fila da conta desde o post mais antigo, até o fim da agenda
+        if fila and ps[-1]["data"] < fim:
+            prox = date.fromisoformat(ps[-1]["data"]) + timedelta(days=1)
+            vagas = ((date.fromisoformat(fim) - prox).days + 1) * POR_DIA[conta]
+            reps = [{**fila[i % len(fila)], "peca": fila[i % len(fila)]["peca"] + " (repetição)", "repeticao": True} for i in range(vagas)]
+            ps = ps + distribuir(reps, prox, POR_DIA[conta])
+        posts += [{**p, "conta": conta} for p in ps]
+    # datas comemorativas: no dia fixo, além do post normal da conta
+    for c in fixas:
+        if data_fixa(c["pasta"]) >= inicio.isoformat():
+            posts.append({**post(c, "Data comemorativa: post + story"), "data": data_fixa(c["pasta"]),
+                          "conta": conta_de(c["frente"]), "fixa": True})
 
     # cada campanha: data da primeira postagem, conta e a orientação de quando postar
     por_pasta = {}
     for p in sorted(posts, key=lambda p: p["data"]):
-        por_pasta.setdefault(p["pasta"], []).append(p)
+        if not p.get("repeticao") and not p.get("fixa"):
+            por_pasta.setdefault(p["pasta"], []).append(p)
     for pasta, ps in por_pasta.items():
         arq = ENTREGAS / pasta / "info.json"
         info = json.loads(arq.read_text(encoding="utf-8"))
@@ -161,7 +203,7 @@ def main():
             else date.fromisoformat(ps[0]["data"]).strftime("%d/%m")
         info["data"] = ps[0]["data"]
         info["conta"] = conta["arroba"]
-        info["orientacoes"] = [f"Postar em {quando} no {conta['arroba']} (agenda de 28/10: de 1 a 2 posts por dia em cada conta)."] + \
+        info["orientacoes"] = [f"Postar em {quando} no {conta['arroba']} (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta)."] + \
             [o for o in info.get("orientacoes", []) if not o.startswith("Postar em")]
         arq.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -169,13 +211,14 @@ def main():
         "inicio": inicio.isoformat(), "fim": fim, "por_dia": POR_DIA,
         "contas": [{k: c[k] for k in ("id", "nome", "arroba", "cor", "frentes")} for c in CONTAS],
         "futuras": FUTURAS,
+        "novos_ate": {conta: ps[-1]["data"] for conta, ps in novos.items() if ps},
         "posts": sorted(posts, key=lambda p: (p["data"], p["conta"])),
     }
     (ENTREGAS / "agenda.json").write_text(json.dumps(agenda, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for conta, fila in filas.items():
-        dias = -(-len(fila) // POR_DIA[conta])
-        ultimo = inicio + timedelta(days=dias - 1)
-        print(f"{conta}: {len(fila)} posts, {POR_DIA[conta]}/dia, de {inicio.strftime('%d/%m')} a {ultimo.strftime('%d/%m')}")
+        ultimo = date.fromisoformat(novos[conta][-1]["data"])
+        print(f"{conta}: {len(fila)} posts novos, {POR_DIA[conta]}/dia, de {inicio.strftime('%d/%m')} a {ultimo.strftime('%d/%m')}; depois repete")
+    print(f"datas comemorativas: {len(fixas)}")
     print(f"agenda até {date.fromisoformat(fim).strftime('%d/%m/%Y')}")
 
 

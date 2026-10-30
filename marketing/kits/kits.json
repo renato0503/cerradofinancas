@@ -424,5 +424,75 @@
       "nome": "consultoria.zip",
       "kb": 867
     }
+  },
+  {
+    "slug": "guiacademico",
+    "frentes": [
+      "guiacademico"
+    ],
+    "nome": "Guia Acadêmico",
+    "apelido": "Artigo",
+    "conceito": "O Guia Acadêmico orienta pesquisa científica, então cada peça é diagramada como um artigo de periódico: papel creme, cabeça corrida com filete duplo, resumo, palavras-chave, quadro com filetes, nota de rodapé e o controle de alterações da revisão. As cores saem da bússola da logo.",
+    "cores": [
+      {
+        "nome": "Papel",
+        "hex": "#f6f2e9",
+        "uso": "fundo"
+      },
+      {
+        "nome": "Azul-marinho",
+        "hex": "#1e2a44",
+        "uso": "texto, filetes e slide invertido"
+      },
+      {
+        "nome": "Dourado",
+        "hex": "#a8822a",
+        "uso": "rubricas e números"
+      },
+      {
+        "nome": "Dourado claro",
+        "hex": "#d9b46a",
+        "uso": "destaques sobre o azul"
+      },
+      {
+        "nome": "Marca-texto",
+        "hex": "#ecdba8",
+        "uso": "sublinhado da palavra em destaque"
+      },
+      {
+        "nome": "Caneta",
+        "hex": "#a8322a",
+        "uso": "só no riscado da revisão"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Newsreader",
+        "uso": "títulos 600 e texto 400; itálico no destaque",
+        "link": "https://fonts.google.com/specimen/Newsreader"
+      },
+      {
+        "nome": "DM Mono",
+        "uso": "rubricas, números de seção e rodapé",
+        "link": "https://fonts.google.com/specimen/DM+Mono"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "guiacademico/logos/guia-academico.png",
+        "uso": "Logo completa (bússola e \"Seu Mentor\"), sobre fundo claro",
+        "fundo": "#f2f2f2"
+      },
+      {
+        "arquivo": "guiacademico/logos/guia-academico-bussola.png",
+        "uso": "Só a bússola: rodapé e marca d'água",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "guiacademico/guia.pdf",
+    "zip": {
+      "nome": "guiacademico.zip",
+      "kb": 2042
+    }
   }
 ]

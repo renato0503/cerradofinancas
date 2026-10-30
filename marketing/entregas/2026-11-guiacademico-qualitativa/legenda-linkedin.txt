@@ -1,0 +1,29 @@
+Entrevista transcrita ainda não é análise.
+
+Pesquisa qualitativa tem método: categorias, codificação e critérios de validade. Sem isso, o capítulo de resultados vira uma colagem de falas.
+
+Onde a análise se perde:
+• Falas citadas sem categorias que as organizem
+• O método não declarado no texto
+• Codificação sem um livro de códigos
+• Uma única fonte, sem triangulação
+
+Na prática: "Os entrevistados disseram que gostam do programa." → "Na categoria “percepção de utilidade”, 9 das 12 falas associam o programa à redução de retrabalho (E3, E7, E11)."
+A fala vira evidência quando entra numa categoria e pode ser rastreada.
+
+Métodos e ferramentas:
+▸ Análise de conteúdo: bardin: pré-análise, exploração e tratamento
+▸ Grounded theory: codificação aberta, axial e seletiva
+▸ Delineamentos: fenomenologia, estudo de caso, análise do discurso
+▸ Software: iRAMUTEQ, NVivo, Atlas.ti e MAXQDA
+
+Como o Guia Acadêmico ajuda:
+1. Montar o livro de códigos com você
+2. Rodar e interpretar no software
+3. Revisar a validade: triangulação e validação por pares
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+Das falas às categorias. Agende o diagnóstico: guiacademico.com.br
+
+#PesquisaQualitativa #Bardin #NVivo #IRAMUTEQ #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC

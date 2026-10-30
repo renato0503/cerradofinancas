@@ -1,0 +1,16 @@
+p < 0,05 não é conclusão.
+
+Significância estatística indica que um efeito provavelmente existe, não que ele seja grande ou importante. Interpretar o resultado é diferente de rodar o teste.
+
+Erros comuns na análise:
+• Escolher o teste depois de ver o resultado
+• Ignorar os pressupostos do teste
+• Reportar só o valor-p, sem o tamanho de efeito
+• Tratar correlação como causa
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+Resultado que você sabe explicar. Diagnóstico pelo WhatsApp (67) 99351-5206
+🔗 guiacademico.com.br
+
+#Estatistica #AnaliseDeDados #STATA #RStats #Econometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC

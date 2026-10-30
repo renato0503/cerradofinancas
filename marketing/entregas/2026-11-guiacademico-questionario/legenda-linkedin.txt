@@ -1,0 +1,31 @@
+Questionário bom se valida antes de aplicar.
+
+Escalas do tipo Likert medem o que não se vê, como satisfação ou confiança. Para isso, o instrumento precisa de validade e de confiabilidade.
+
+Problemas que invalidam respostas:
+• Perguntas com duas ideias ao mesmo tempo
+• Uma escala diferente em cada bloco
+• Nenhum teste piloto antes da coleta
+• Escala estrangeira traduzida sem adaptação
+
+Na prática: "O atendimento foi rápido e educado?" → "1. O atendimento foi rápido.
+2. O atendente foi educado."
+Com duas ideias numa pergunta, ninguém sabe o que a resposta mede.
+
+Como validar o instrumento:
+▸ Validade de conteúdo: avaliação por especialistas
+▸ Confiabilidade: alfa de Cronbach e confiabilidade composta
+▸ Validade de construto: análise fatorial exploratória e confirmatória
+▸ Modelagem: sEM e PLS-SEM (SmartPLS)
+▸ Adaptação: tradução e retrotradução
+
+Como o Guia Acadêmico ajuda:
+1. Revisar as perguntas e a escala
+2. Planejar o piloto
+3. Rodar e interpretar a validação
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+Medir o que você quer medir. Agende o diagnóstico: guiacademico.com.br
+
+#Questionario #EscalaLikert #SmartPLS #Psicometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC

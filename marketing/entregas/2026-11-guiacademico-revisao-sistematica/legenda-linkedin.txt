@@ -1,0 +1,30 @@
+Revisão sistemática tem protocolo.
+
+Diferente da revisão narrativa, a sistemática define antes a pergunta, as bases, os termos de busca e os critérios de inclusão, e qualquer pessoa consegue refazer a busca.
+
+Quando ainda não é sistemática:
+• Busca só no Google Acadêmico
+• Critérios de inclusão definidos depois
+• Nenhum registro do que saiu em cada etapa
+• Uma revisão narrativa com outro nome
+
+Na prática: "Foram encontrados vários artigos sobre o tema." → "A busca em três bases retornou 412 registros; após a triagem, 27 estudos foram incluídos (fluxograma PRISMA)."
+Cada número do fluxograma pode ser conferido por quem lê.
+
+Etapas da revisão:
+▸ Protocolo: pergunta, bases, termos e critérios
+▸ Registro: pROSPERO, quando a área pede
+▸ Relato: diretriz PRISMA e fluxograma
+▸ Síntese: narrativa ou meta-análise
+▸ Mapeamento: vOSviewer: redes de autores e termos
+
+Como o Guia Acadêmico ajuda:
+1. Montar o protocolo e as buscas
+2. Organizar a triagem dos estudos
+3. Revisar o relato pelo PRISMA
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+Uma busca que qualquer um refaz. Agende o diagnóstico: guiacademico.com.br
+
+#RevisaoSistematica #PRISMA #MetaAnalise #RevisaoDeLiteratura #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC

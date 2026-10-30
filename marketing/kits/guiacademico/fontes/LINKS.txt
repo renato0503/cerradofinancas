@@ -1,0 +1,6 @@
+Para instalar no computador ou no Canva, baixe as fontes no Google Fonts (gratuitas):
+
+Newsreader: https://fonts.google.com/specimen/Newsreader  (títulos 600 e texto 400; itálico no destaque)
+DM Mono: https://fonts.google.com/specimen/DM+Mono  (rubricas, números de seção e rodapé)
+
+Os arquivos .woff2 desta pasta são os mesmos usados nas peças (servem para web).

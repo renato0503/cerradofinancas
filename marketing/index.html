@@ -68,7 +68,7 @@
     .conta small.alerta { color: #b45309; }
     .conta.futura { border: 1px dashed #94a3b8; border-top: 5px dashed #94a3b8; background: transparent; }
     .conta.futura small { color: var(--muted); }
-    .cal-cab, .dia-linha { display: grid; grid-template-columns: 96px repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .cal-cab, .dia-linha { display: grid; grid-template-columns: 96px repeat(var(--contas, 3), minmax(0, 1fr)); gap: 10px; }
     .cal-cab { position: sticky; top: 62px; z-index: 5; background: var(--fundo); padding: 8px 0; }
     .cal-cab span { font-size: .8rem; font-weight: 900; color: var(--azul); border-bottom: 3px solid var(--cor, transparent); padding-bottom: 6px; }
     .dia-linha { margin-bottom: 8px; }
@@ -233,7 +233,7 @@
     <section class="vista" id="v-como-usar" hidden>
       <h2 class="h-sec">Passo a passo para postar</h2>
       <div class="passos">
-        <div class="passo"><b>1</b><h3>Veja a agenda</h3><p>Na aba <strong>Agenda</strong> está o que sai em cada dia, numa coluna por Instagram (@cerradofinancas, @cerra.ai e @cerraclass). Cada conta posta de 1 a 2 vezes por dia.</p></div>
+        <div class="passo"><b>1</b><h3>Veja a agenda</h3><p>Na aba <strong>Agenda</strong> está o que sai em cada dia, numa coluna por Instagram (@cerradofinancas, @cerra.ai, @cerraclass e @guiacademico). Cada conta posta de 1 a 2 vezes por dia. Quando acaba o conteúdo novo, a agenda repete os posts da conta desde o mais antigo (aparecem como "repetição"). Nas datas comemorativas nacionais sai um post a mais no dia.</p></div>
         <div class="passo"><b>2</b><h3>Abra a campanha</h3><p>Clique na campanha. Leia as <strong>orientações</strong> no topo: dia, rede, ordem dos slides e o link do story.</p></div>
         <div class="passo"><b>3</b><h3>Baixe as peças</h3><p><strong>Baixar pacote (.zip)</strong> traz todas as imagens e legendas. Os vídeos (.mp4) baixam um a um, no botão de cada vídeo.</p></div>
         <div class="passo"><b>4</b><h3>Copie a legenda</h3><p>Cada rede tem a sua legenda pronta. Clique em <strong>Copiar</strong> e cole na postagem, sem cortar o aviso legal quando houver.</p></div>
@@ -269,6 +269,7 @@
       consultorias: { nome: 'Consultorias', cor: '#e4570e', kit: 'consultoria' },
       cerraclass: { nome: 'CerraClass e cursos', cor: '#ffc83d', kit: 'cerraclass' },
       cerraai: { nome: 'Cerra.AI', cor: '#e2873b', kit: 'cerraai' },
+      guiacademico: { nome: 'Guia Acadêmico', cor: '#1e2a44', kit: 'guiacademico' },
     };
     const ORDEM = Object.keys(FRENTES);
 
@@ -332,6 +333,7 @@
       box.innerHTML = '';
       if (!agenda) { box.append(el('p', { class: 'vazio', text: 'A agenda ainda não foi montada.' })); return; }
       const contas = agenda.contas;
+      box.style.setProperty('--contas', contas.length);
       const casaPost = p => !termo || normal(`${p.titulo} ${p.peca} ${p.pasta} ${(FRENTES[p.frente] || {}).nome || ''}`).includes(termo);
       const posts = agenda.posts.filter(casaPost);
       const ultimo = {};
@@ -341,11 +343,12 @@
       const legenda = el('div', { class: 'contas' });
       contas.forEach(ct => {
         const n = agenda.posts.filter(p => p.conta === ct.id).length;
-        const acaba = ultimo[ct.id] && ultimo[ct.id] < agenda.fim;
+        const novos = (agenda.novos_ate || {})[ct.id] || ultimo[ct.id];
+        const acaba = novos && novos < agenda.fim;
         legenda.append(el('div', { class: 'conta', style: `--cor: ${ct.cor}` },
           el('b', { text: ct.arroba }),
           el('span', { text: ct.frentes.map(f => (FRENTES[f] || {}).nome).filter(Boolean).join(', ') }),
-          el('small', { class: acaba ? 'alerta' : '', text: `${n} posts · ${agenda.por_dia[ct.id]} por dia · ${acaba ? 'conteúdo só até ' + dataBR(ultimo[ct.id]) : 'coberto até ' + dataBR(agenda.fim)}` })));
+          el('small', { class: acaba ? 'alerta' : '', text: `${n} posts · ${agenda.por_dia[ct.id]} por dia · ${acaba ? 'conteúdo novo até ' + dataBR(novos) + ', depois repete' : 'conteúdo novo até ' + dataBR(agenda.fim)}` })));
       });
       (agenda.futuras || []).forEach(f => legenda.append(el('div', { class: 'conta futura' },
         el('b', { text: f.nome }), el('span', { text: 'Em breve' }), el('small', { text: f.obs }))));
@@ -353,7 +356,7 @@
 
       document.getElementById('intro-agenda').innerHTML =
         `Hoje é <b>${hoje.getDate()} de ${meses[hoje.getMonth()]}</b>. Cada conta posta <b>de 1 a 2 vezes por dia</b>; cada coluna é um Instagram. ` +
-        `Onde aparece <b>"falta conteúdo"</b>, a conta precisa de peças novas. Clique num post para abrir a campanha.`;
+        `Quando o conteúdo novo de uma conta acaba, os posts dela se repetem desde o mais antigo (marcados como <b>repetição</b>). Clique num post para abrir a campanha.`;
 
       const cab = el('div', { class: 'cal-cab' }, el('span'));
       contas.forEach(ct => cab.append(el('span', { style: `--cor: ${ct.cor}`, text: ct.arroba })));

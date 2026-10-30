@@ -1,0 +1,29 @@
+A IA inventa referências. Quem assina é você.
+
+Modelos de linguagem ajudam a ler, organizar e revisar, mas podem criar citações que não existem. Usar IA na pesquisa exige método e conferência.
+
+Usos que comprometem a pesquisa:
+• Citar referências do chatbot sem conferir
+• Entregar texto gerado como se fosse seu
+• Subir dados sigilosos em serviços abertos
+• Não declarar o uso quando a instituição exige
+
+Na prática: "Escreva a minha revisão de literatura sobre evasão escolar." → "Organize os achados destes 20 artigos que eu selecionei por método, amostra e resultado, indicando a página de cada trecho."
+A IA trabalha sobre as suas fontes, e você confere cada trecho.
+
+IA a serviço da pesquisa:
+▸ Revisão de literatura: triagem e organização de PDFs
+▸ Extração: achados, métodos e amostras de um corpus
+▸ NLP: topic modeling, classificação e sentimento
+▸ Ferramentas: spaCy, Hugging Face e Gensim
+
+Como o Guia Acadêmico ajuda:
+1. Mentoria prática de IA acadêmica
+2. Fluxos com fonte e página conferíveis
+3. Uso alinhado às regras da sua instituição
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+IA como ferramenta, não como autora. Agende o diagnóstico: guiacademico.com.br
+
+#IAAcademica #InteligenciaArtificial #RevisaoDeLiteratura #EticaEmPesquisa #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC

@@ -1,0 +1,146 @@
+/* Identidade Guia Acadêmico: "Artigo"
+   O Guia Acadêmico orienta pesquisa científica, então cada peça é diagramada como um artigo de periódico:
+   papel creme, cabeça corrida com filete duplo, rubrica de seção, resumo, palavras-chave, nota de rodapé,
+   quadro com filetes e o controle de alterações da revisão (riscado e inserido).
+   Cores da bússola da logo: azul-marinho e dourado. Vermelho de caneta só no riscado da revisão.
+   Tipografia: Newsreader (títulos e texto, itálico no destaque), DM Mono (rubricas, números, rodapé).
+   Marca: a bússola + "Guia Acadêmico". */
+@font-face { font-family: 'Newsreader'; src: url('../fontes/newsreader-400-normal.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Newsreader'; src: url('../fontes/newsreader-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Newsreader'; src: url('../fontes/newsreader-600-normal.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Newsreader'; src: url('../fontes/newsreader-600-italic.woff2') format('woff2'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'DM Mono'; src: url('../fontes/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('../fontes/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root {
+  --papel: #f6f2e9;
+  --papel-escuro: #ece5d6;
+  --tinta: #1e2a44;
+  --tinta-suave: #5b6478;
+  --ouro: #a8822a;
+  --ouro-vivo: #d9b46a;
+  --marca-texto: #ecdba8;
+  --caneta: #a8322a;
+  --filete: #cfc6b2;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #2b2b2b; font-family: 'Newsreader', serif; -webkit-font-smoothing: antialiased; }
+body { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+html.exportando body { padding: 0; gap: 0; }
+
+.slide {
+  position: relative; width: 1080px; height: 1350px; overflow: hidden;
+  color: var(--tinta); padding: 0 90px; display: flex; flex-direction: column;
+  background: var(--papel);
+}
+.slide.story { height: 1920px; padding: 250px 90px 250px; }
+/* margem do caderno: um filete fino à esquerda, como a coluna de um periódico */
+.slide::after { content: ''; position: absolute; top: 0; bottom: 0; left: 52px; width: 1px; background: var(--filete); pointer-events: none; }
+
+/* Cabeça corrida com filete duplo */
+.cabeca {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+  padding: 64px 0 18px; margin-bottom: 64px; border-bottom: 5px double var(--tinta);
+  font-family: 'DM Mono', monospace; font-size: 21px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+}
+.cabeca b { font-weight: 500; color: var(--ouro); }
+.story .cabeca { padding-top: 0; }
+
+/* Tipografia */
+.rubrica { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ouro); margin-bottom: 26px; }
+.mega { font-weight: 600; font-size: 116px; line-height: 1.02; letter-spacing: -0.025em; }
+.titulo { font-weight: 600; font-size: 84px; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 44px; }
+.mega em, .titulo em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(transparent 62%, var(--marca-texto) 62%, var(--marca-texto) 92%, transparent 92%);
+  padding: 0 .06em; margin: 0 -.06em;
+}
+.sub { font-size: 38px; line-height: 1.34; color: var(--tinta-suave); }
+sup.ref { font-family: 'DM Mono', monospace; font-size: .45em; color: var(--ouro); vertical-align: super; margin-left: 2px; }
+
+/* Resumo e palavras-chave */
+.resumo { margin-top: 48px; padding-left: 30px; border-left: 4px solid var(--ouro-vivo); }
+.resumo .lbl, .rot { font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); display: block; margin-bottom: 12px; }
+.resumo p { font-size: 41px; line-height: 1.38; }
+.chaves { margin-top: 34px; font-size: 32px; line-height: 1.4; color: var(--tinta-suave); }
+.chaves b { color: var(--tinta); font-weight: 600; }
+
+/* Lista numerada como subseções (1.1, 1.2...) */
+.secoes { list-style: none; display: flex; flex-direction: column; }
+.secoes li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 34px 0; border-top: 1px solid var(--filete); font-size: 45px; line-height: 1.22; }
+.secoes li:last-child { border-bottom: 1px solid var(--filete); }
+.secoes li span { font-family: 'DM Mono', monospace; font-size: 26px; color: var(--ouro); padding-top: 9px; }
+
+/* Revisão: controle de alterações */
+.revisao { display: flex; flex-direction: column; gap: 26px; }
+.versao { background: #fffdf8; border: 1px solid var(--filete); padding: 34px 38px 40px; box-shadow: 8px 8px 0 var(--papel-escuro); }
+.versao p { font-size: 42px; line-height: 1.34; }
+.versao.antes p { text-decoration: line-through; text-decoration-color: var(--caneta); text-decoration-thickness: 3px; color: #6f6a62; }
+.versao.antes .rot { color: var(--caneta); }
+.versao.depois { border-left: 6px solid var(--ouro-vivo); }
+.versao.depois p { background: linear-gradient(transparent 0, transparent 100%); }
+.versao.depois .rot { color: var(--ouro); }
+.seta-rev { align-self: center; font-family: 'DM Mono', monospace; font-size: 24px; color: var(--tinta-suave); letter-spacing: .12em; text-transform: uppercase; }
+.explica { margin-top: 44px; font-size: 41px; line-height: 1.36; font-style: italic; }
+
+/* Quadro com filetes (estilo tabela de artigo) */
+.quadro-tit { font-size: 27px; color: var(--tinta-suave); margin-bottom: 14px; }
+.quadro-tit b { color: var(--tinta); font-weight: 600; }
+.quadro { border-top: 4px solid var(--tinta); border-bottom: 4px solid var(--tinta); }
+.quadro .linha { display: grid; grid-template-columns: 340px 1fr; gap: 26px; padding: 25px 0; border-top: 1px solid var(--filete); }
+.quadro .linha:first-child { border-top: 0; }
+.quadro .linha b { font-size: 36px; font-weight: 600; line-height: 1.2; }
+.quadro .linha span { font-size: 34px; line-height: 1.3; color: var(--tinta-suave); }
+.fonte { margin-top: 12px; font-size: 22px; color: var(--tinta-suave); font-style: italic; }
+
+/* Nota de rodapé (fica logo acima do rodapé) */
+.nota-rodape { margin-top: auto; margin-bottom: 186px; padding-top: 16px; font-size: 25px; line-height: 1.35; color: var(--tinta-suave); position: relative; }
+.nota-rodape::before { content: ''; position: absolute; top: 0; left: 0; width: 260px; border-top: 2px solid var(--tinta-suave); }
+.nota-rodape sup { font-family: 'DM Mono', monospace; color: var(--ouro); margin-right: 6px; }
+.respiro { margin-top: auto; margin-bottom: 186px; }
+
+/* Slide invertido: a nota do orientador */
+.slide.tinta { background: var(--tinta); color: var(--papel); }
+.slide.tinta::after { background: rgba(246, 242, 233, .18); }
+.tinta .cabeca { border-bottom-color: var(--papel); }
+.tinta .cabeca b, .tinta .rubrica { color: var(--ouro-vivo); }
+.tinta .titulo em, .tinta .mega em { background: none; color: var(--ouro-vivo); }
+.passos { list-style: none; display: flex; flex-direction: column; gap: 34px; margin-top: 20px; }
+.passos li { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 18px; font-size: 46px; line-height: 1.22; }
+.passos li span {
+  width: 80px; height: 80px; border: 2px solid var(--ouro-vivo); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Mono', monospace; font-size: 26px; color: var(--ouro-vivo);
+}
+.autor { margin-top: auto; margin-bottom: 186px; display: flex; align-items: center; gap: 26px; font-size: 38px; font-style: italic; }
+.autor::before { content: ''; flex: 0 0 120px; height: 2px; background: var(--ouro-vivo); }
+
+/* Selo e contatos */
+.selo {
+  align-self: flex-start; font-family: 'DM Mono', monospace; font-size: 22px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ouro); border: 2px solid var(--ouro); padding: 10px 18px; margin-bottom: 34px;
+}
+.contatos { margin-top: 52px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.contato { font-family: 'DM Mono', monospace; font-size: 36px; font-weight: 500; }
+.contato.principal { background: var(--tinta); color: var(--papel); padding: 24px 36px; font-size: 38px; margin-bottom: 10px; }
+.etica { margin-top: auto; margin-bottom: 186px; font-size: 30px; line-height: 1.4; color: var(--tinta-suave); padding: 22px 26px; border: 1px dashed var(--tinta-suave); }
+.etica b { color: var(--tinta); }
+
+/* A bússola grande, sangrando na borda (decorativa) */
+.bussola { position: absolute; right: -130px; bottom: -120px; width: 400px; opacity: .13; pointer-events: none; }
+
+/* Rodapé: a marca e a página */
+.rodape {
+  position: absolute; left: 90px; right: 90px; bottom: 54px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 22px; border-top: 2px solid currentColor;
+  font-family: 'DM Mono', monospace; font-size: 22px; letter-spacing: .06em;
+}
+.rodape .marca { display: flex; align-items: center; gap: 16px; font-family: 'Newsreader', serif; font-size: 31px; font-weight: 600; letter-spacing: 0; }
+.rodape .marca img { width: 56px; height: auto; }
+.rodape .marca small { font-family: 'DM Mono', monospace; font-size: 19px; font-weight: 400; letter-spacing: .08em; color: var(--tinta-suave); text-transform: uppercase; }
+.tinta .rodape .marca small { color: #b9c0cf; }
+.tinta .rodape .marca img { filter: drop-shadow(0 0 1px rgba(246,242,233,.6)); }
+.revisao.compacta .versao p { font-size: 37px; }
+.revisao.compacta + .explica { font-size: 37px; margin-top: 34px; }

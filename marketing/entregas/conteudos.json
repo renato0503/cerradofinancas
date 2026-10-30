@@ -1,14 +1,57 @@
 [
   {
+    "pasta": "2027-01-data-ano-novo",
+    "frente": "institucional",
+    "serie": "Datas comemorativas",
+    "capa": "post.png",
+    "titulo": "Data comemorativa · Feliz 2027",
+    "data": "2027-01-01",
+    "data_fixa": "2027-01-01",
+    "descricao": "Data comemorativa nacional: só post estático (feed) e story, sem vídeo.",
+    "orientacoes": [
+      "Postar no dia 01/01 no @cerradofinancas e no LinkedIn, além do post normal do dia.",
+      "Feed: post.png (1080×1350). Story: story.png.",
+      "Não entra na repetição de conteúdo da agenda."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 574
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 736
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Feliz 2027!\n\nObrigado por estar com a gente em 2026. Que o novo ano venha com saúde, bons projetos e ótimas decisões.\n\n#AnoNovo #Feliz2027 #CerradoFinancas\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Feliz 2027!\n\nObrigado por estar com a gente em 2026. Que o novo ano venha com saúde, bons projetos e ótimas decisões.\n\n#AnoNovo #Feliz2027 #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2027-01-data-ano-novo.zip",
+      "kb": 1310
+    }
+  },
+  {
     "pasta": "2026-11-tech-web3",
     "frente": "tech",
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Web3 & Blockchain",
-    "data": "2026-12-30",
+    "data": "2027-01-01",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (16 de 16): Web3 & Blockchain (Smart Contracts · Tokens). Contratos inteligentes, tokens e rastreabilidade para casos que exigem confiança e imutabilidade.",
     "orientacoes": [
-      "Postar em 30/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 01/01 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/blockchain",
@@ -80,10 +123,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · A reforma tributária já começou.",
-    "data": "2026-12-29",
+    "data": "2026-12-31",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (13 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 29/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 31/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -155,10 +198,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Seguros e planos de saúde",
-    "data": "2026-12-28",
+    "data": "2026-12-30",
     "descricao": "Série do Crédito produto a produto (11 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 28/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 30/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -231,10 +274,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 08 · O CNAE errado pode custar caro?",
-    "data": "2026-12-27",
+    "data": "2026-12-29",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (8 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 27/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 29/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -307,10 +350,10 @@
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · Consultoria GovTech",
-    "data": "2026-12-26",
+    "data": "2026-12-28",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 7 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 26/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 28/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/consultorias",
@@ -382,10 +425,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Produto White-Label",
-    "data": "2026-12-25",
+    "data": "2026-12-27",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (15 de 16): Produto White-Label (Branding próprio). Sistemas prontos que você revende com a própria marca: contabilidade, consultoria, educação e outros.",
     "orientacoes": [
-      "Postar em 25/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 27/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -457,10 +500,10 @@
     "serie": "Antes de assinar, entenda",
     "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 4 · Margem consignável: usar tudo é o erro.",
-    "data": "2026-12-24",
+    "data": "2026-12-26",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (4 de 4).",
     "orientacoes": [
-      "Postar em 24/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 26/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -529,15 +572,58 @@
     }
   },
   {
+    "pasta": "2026-12-data-natal",
+    "frente": "institucional",
+    "serie": "Datas comemorativas",
+    "capa": "post.png",
+    "titulo": "Data comemorativa · Feliz Natal",
+    "data": "2026-12-25",
+    "data_fixa": "2026-12-25",
+    "descricao": "Data comemorativa nacional: só post estático (feed) e story, sem vídeo.",
+    "orientacoes": [
+      "Postar no dia 25/12 no @cerradofinancas e no LinkedIn, além do post normal do dia.",
+      "Feed: post.png (1080×1350). Story: story.png.",
+      "Não entra na repetição de conteúdo da agenda."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 563
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 722
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Feliz Natal!\n\nQue a sua casa tenha mesa cheia, gente querida por perto e muitos motivos para agradecer. Boas festas da equipe Cerrado Finanças & Tech.\n\n#FelizNatal #Natal #CerradoFinancas\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Feliz Natal!\n\nQue a sua casa tenha mesa cheia, gente querida por perto e muitos motivos para agradecer. Boas festas da equipe Cerrado Finanças & Tech.\n\n#FelizNatal #Natal #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-12-data-natal.zip",
+      "kb": 1285
+    }
+  },
+  {
     "pasta": "2026-11-contabil-socios",
     "frente": "contabilidade",
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · O que é da empresa e o que é seu?",
-    "data": "2026-12-23",
+    "data": "2026-12-25",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (12 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 23/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 25/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -609,10 +695,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Consórcio de serviços e energia solar",
-    "data": "2026-12-22",
+    "data": "2026-12-24",
     "descricao": "Série do Crédito produto a produto (10 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 22/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 24/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -685,10 +771,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 07 · Para que serve a certidão negativa?",
-    "data": "2026-12-21",
+    "data": "2026-12-23",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (7 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 21/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 23/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -761,10 +847,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · GovTech & Legal-Tech",
-    "data": "2026-12-20",
+    "data": "2026-12-22",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (14 de 16): GovTech & Legal-Tech (Lei 14.133 · eSocial · RPPS). Sistemas para gestão pública, contratações e automação de processos jurídicos e cartorários.",
     "orientacoes": [
-      "Postar em 20/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 22/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -836,10 +922,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · CNPJ com pendência? A gente regulariza.",
-    "data": "2026-12-19",
+    "data": "2026-12-21",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (11 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 19/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 21/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -911,10 +997,10 @@
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · Venture building",
-    "data": "2026-12-18",
+    "data": "2026-12-20",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 6 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 18/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 20/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/startups",
@@ -986,10 +1072,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Machine Learning & Previsão",
-    "data": "2026-12-17",
+    "data": "2026-12-19",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (13 de 16): Machine Learning & Previsão (Data Science). Modelos que aprendem com o histórico e preveem o que vai acontecer.",
     "orientacoes": [
-      "Postar em 17/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 19/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -1061,10 +1147,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Consórcio",
-    "data": "2026-12-16",
+    "data": "2026-12-18",
     "descricao": "Série do Crédito produto a produto (9 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 16/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 18/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -1137,10 +1223,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Insatisfeito com o contador atual?",
-    "data": "2026-12-15",
+    "data": "2026-12-17",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (10 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 15/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 17/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -1212,10 +1298,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Compliance & LGPD",
-    "data": "2026-12-14",
+    "data": "2026-12-16",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (12 de 16): Compliance & LGPD (DPO as a Service). Adequação à Lei Geral de Proteção de Dados e trilhas de auditoria para operações reguladas.",
     "orientacoes": [
-      "Postar em 14/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 16/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/compliance",
@@ -1287,10 +1373,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 06 · Seu MEI passou do limite?",
-    "data": "2026-12-13",
+    "data": "2026-12-15",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (6 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 13/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 15/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -1363,10 +1449,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Financiamento de veículo",
-    "data": "2026-12-12",
+    "data": "2026-12-14",
     "descricao": "Série do Crédito produto a produto (8 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 12/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 14/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -1439,10 +1525,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · E-commerce & PWA",
-    "data": "2026-12-11",
+    "data": "2026-12-13",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (11 de 16): E-commerce & PWA (Progressive Web Apps). Loja online que funciona no celular como um app, com e sem internet, sem a burocracia das lojas de aplicativo.",
     "orientacoes": [
-      "Postar em 11/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 13/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/ecommerce",
@@ -1514,10 +1600,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Seu contador te mostra onde está o lucro?",
-    "data": "2026-12-10",
+    "data": "2026-12-12",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (9 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 10/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 12/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -1589,10 +1675,10 @@
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · Planejamento tributário e inovação",
-    "data": "2026-12-09",
+    "data": "2026-12-11",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 5 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 09/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 11/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/leidobem",
@@ -1664,10 +1750,10 @@
     "serie": "Antes de assinar, entenda",
     "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 3 · Consórcio ou financiamento: qual faz sentido?",
-    "data": "2026-12-08",
+    "data": "2026-12-10",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (3 de 4).",
     "orientacoes": [
-      "Postar em 08/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 10/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -1741,10 +1827,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Assinatura Digital",
-    "data": "2026-12-07",
+    "data": "2026-12-09",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (10 de 16): Assinatura Digital (ICP-Brasil · GOV.br). Documentos assinados pela internet com validade jurídica, sem papel e sem deslocamento.",
     "orientacoes": [
-      "Postar em 07/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 09/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -1816,10 +1902,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Financiamento de imóvel",
-    "data": "2026-12-06",
+    "data": "2026-12-08",
     "descricao": "Série do Crédito produto a produto (7 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 06/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 08/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -1892,10 +1978,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Balanço e DRE que você entende.",
-    "data": "2026-12-05",
+    "data": "2026-12-07",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (8 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 05/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 07/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -1967,10 +2053,10 @@
     "serie": "Antes de assinar, entenda",
     "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 2 · Portabilidade é um direito seu.",
-    "data": "2026-12-04",
+    "data": "2026-12-06",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (2 de 4).",
     "orientacoes": [
-      "Postar em 04/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 06/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -2044,10 +2130,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 05 · O que são IBS e CBS?",
-    "data": "2026-12-03",
+    "data": "2026-12-05",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (5 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 03/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 05/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -2120,10 +2206,10 @@
     "serie": "Antes de assinar, entenda",
     "capa": "carrossel-01.png",
     "titulo": "Antes de assinar, entenda 1 · A taxa de juros não é o custo do empréstimo.",
-    "data": "2026-12-02",
+    "data": "2026-12-04",
     "descricao": "Série educativa do Crédito, \"Antes de assinar, entenda\" (1 de 4).",
     "orientacoes": [
-      "Postar em 02/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 04/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -2197,10 +2283,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · OCR & Documentos Inteligentes",
-    "data": "2026-12-01",
+    "data": "2026-12-03",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (9 de 16): OCR & Documentos Inteligentes (Optical Character Recognition). Transforma PDFs, fotos e papéis escaneados em texto pesquisável e organizado.",
     "orientacoes": [
-      "Postar em 01/12 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 03/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -2272,10 +2358,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Crédito com garantia",
-    "data": "2026-11-30",
+    "data": "2026-12-02",
     "descricao": "Série do Crédito produto a produto (6 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 30/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 02/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -2348,10 +2434,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Contratou? A burocracia fica com a gente.",
-    "data": "2026-11-29",
+    "data": "2026-12-01",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (7 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 29/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 01/12 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -2423,10 +2509,10 @@
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · Governança, risco e compliance",
-    "data": "2026-11-28",
+    "data": "2026-11-30",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 4 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 28/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 30/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/cerraplan",
@@ -2498,10 +2584,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 04 · A DIRF acabou. Você sabia?",
-    "data": "2026-11-27",
+    "data": "2026-11-29",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (4 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 27/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 29/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -2574,10 +2660,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · IA Offline & RAG",
-    "data": "2026-11-26",
+    "data": "2026-11-28",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (8 de 16): IA Offline & RAG (Retrieval-Augmented Generation). Assistente de IA que responde usando apenas os seus documentos, rodando localmente, sem internet e com proteção LGPD.",
     "orientacoes": [
-      "Postar em 26/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 28/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/ia-offline",
@@ -2649,10 +2735,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Seu imposto, apurado com precisão.",
-    "data": "2026-11-25",
+    "data": "2026-11-27",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (6 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 25/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 27/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -2724,10 +2810,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Antecipação do FGTS",
-    "data": "2026-11-24",
+    "data": "2026-11-26",
     "descricao": "Série do Crédito produto a produto (5 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 24/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 26/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -2800,10 +2886,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Organização de Dados",
-    "data": "2026-11-23",
+    "data": "2026-11-25",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (7 de 16): Organização de Dados (Data Organization · Self-service BI). Estruturamos os dados na conta do cliente (nuvem, no-code ou planilhas) para que a própria equipe monte BIs, relatórios e automações com dados organizados e confiáveis.",
     "orientacoes": [
-      "Postar em 23/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 25/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -2875,10 +2961,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Prototipação de Apps com IA",
-    "data": "2026-11-23",
+    "data": "2026-11-25",
     "descricao": "Tire ideias do papel criando protótipos funcionais de aplicativos com ferramentas de IA. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 23/11 (carrossel + story); 25/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 25/11 (carrossel + story); 27/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-prototipacao-apps-ia",
@@ -2955,15 +3041,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-como-funciona",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Como funciona a mentoria",
+    "data": "2026-11-24",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 15 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 24/11 (carrossel + story); 29/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 146
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 118
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 104
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 92
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 107
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 116
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3999
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 169
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Como funciona a mentoria.\n\nUm processo em três etapas, com escopo claro, entregas parciais e sigilo sobre o seu tema e os seus dados. Você acompanha tudo pela Área do Aluno.\n\nO protocolo, passo a passo:\n• Diagnóstico: a sua necessidade e a viabilidade técnica\n• Proposta: escopo, cronograma de entregas e orçamento\n• Execução: acompanhamento com entregas parciais\n• Área do Aluno: arquivos e andamento do projeto\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nComece pelo diagnóstico. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#Mentoria #OrientacaoAcademica #PosGraduacao #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Como funciona a mentoria.\n\nUm processo em três etapas, com escopo claro, entregas parciais e sigilo sobre o seu tema e os seus dados. Você acompanha tudo pela Área do Aluno.\n\nO protocolo, passo a passo:\n• Diagnóstico: a sua necessidade e a viabilidade técnica\n• Proposta: escopo, cronograma de entregas e orçamento\n• Execução: acompanhamento com entregas parciais\n• Área do Aluno: arquivos e andamento do projeto\n\nNa prática: \"Mandar o arquivo e esperar a resposta.\" → \"Diagnóstico, proposta com cronograma e entregas parciais que você acompanha pela Área do Aluno.\"\nVocê sabe o que vai receber, quando e por quê.\n\nPara quem é:\n▸ Graduação: tCC, do projeto à banca\n▸ Especialização: artigo e trabalho final\n▸ Mestrado: dissertação e análises\n▸ Doutorado: tese, artigos e submissão\n\nComo o Guia Acadêmico ajuda:\n1. Diagnóstico da sua pesquisa\n2. Proposta personalizada\n3. Acompanhamento até a entrega\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nComece pelo diagnóstico. Agende o diagnóstico: guiacademico.com.br\n\n#Mentoria #OrientacaoAcademica #PosGraduacao #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-como-funciona.zip",
+      "kb": 795
+    }
+  },
+  {
     "pasta": "2026-11-consultoria-csc-strategy",
     "frente": "consultorias",
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · CSC Strategy",
-    "data": "2026-11-22",
+    "data": "2026-11-24",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 3 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 22/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 24/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/csc-strategy",
@@ -3035,10 +3196,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Vai abrir o seu primeiro CNPJ?",
-    "data": "2026-11-21",
+    "data": "2026-11-23",
     "descricao": "Série da Cerrado Contabilidade, \"O que fazemos\" (5 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 21/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 23/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -3110,10 +3271,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso BI e Dashboards com IA",
-    "data": "2026-11-21",
+    "data": "2026-11-23",
     "descricao": "Construa painéis de BI completos e use IA para modelar, analisar e comunicar os dados. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 21/11 (carrossel + story); 24/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 23/11 (carrossel + story); 26/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-bi-dashboards-ia",
@@ -3195,10 +3356,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Integrações",
-    "data": "2026-11-20",
+    "data": "2026-11-22",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (6 de 16): Integrações (APIs · Webhooks). Conecta os seus sistemas entre si para acabar com o retrabalho de digitar duas vezes.",
     "orientacoes": [
-      "Postar em 20/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 22/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -3265,15 +3426,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-comite-de-etica",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Comitê de Ética",
+    "data": "2026-11-22",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 14 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 22/11 (carrossel + story); 28/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 170
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 94
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 107
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 117
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 112
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4215
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 167
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Pesquisa com pessoas passa pelo Comitê de Ética.\n\nEntrevistas, questionários e dados de participantes exigem, em regra, a aprovação de um Comitê de Ética em Pesquisa (CEP), pela Plataforma Brasil, antes da coleta.\n\nO que atrasa a aprovação:\n• Coletar dados antes do parecer\n• Termo de consentimento genérico\n• Cronograma sem o prazo de análise do CEP\n• Faltar a anuência da instituição da coleta\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nColeta aprovada antes de começar. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#ComiteDeEtica #PlataformaBrasil #EticaEmPesquisa #CEP #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Pesquisa com pessoas passa pelo Comitê de Ética.\n\nEntrevistas, questionários e dados de participantes exigem, em regra, a aprovação de um Comitê de Ética em Pesquisa (CEP), pela Plataforma Brasil, antes da coleta.\n\nO que atrasa a aprovação:\n• Coletar dados antes do parecer\n• Termo de consentimento genérico\n• Cronograma sem o prazo de análise do CEP\n• Faltar a anuência da instituição da coleta\n\nNa prática: \"Aplicar o questionário na semana que vem e submeter ao comitê depois.\" → \"Submeter na Plataforma Brasil, receber o parecer de aprovação e só então começar a coleta.\"\nDado coletado antes da aprovação pode não ser aceito na pesquisa.\n\nO que a submissão envolve:\n▸ Normas: resoluções CNS 466/2012 e 510/2016\n▸ Plataforma Brasil: onde o projeto é submetido\n▸ TCLE: o termo de consentimento livre e esclarecido\n▸ Documentos: projeto, instrumentos, cronograma e anuências\n\nComo o Guia Acadêmico ajuda:\n1. Organizar a documentação\n2. Revisar o TCLE e os instrumentos\n3. Ajustar o cronograma à análise do comitê\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nColeta aprovada antes de começar. Agende o diagnóstico: guiacademico.com.br\n\n#ComiteDeEtica #PlataformaBrasil #EticaEmPesquisa #CEP #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-comite-de-etica.zip",
+      "kb": 836
+    }
+  },
+  {
     "pasta": "2026-11-credito-emprestimo-pessoal",
     "frente": "credito",
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Empréstimo pessoal",
-    "data": "2026-11-19",
+    "data": "2026-11-21",
     "descricao": "Série do Crédito produto a produto (4 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 19/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 21/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -3346,10 +3582,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso IA na Farma",
-    "data": "2026-11-19",
+    "data": "2026-11-21",
     "descricao": "Aplicações de inteligência artificial no setor farmacêutico, da gestão ao atendimento. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 19/11 (carrossel + story); 22/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 21/11 (carrossel + story); 24/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-ia-farma",
@@ -3426,15 +3662,133 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-cronograma",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Cronograma de pesquisa",
+    "data": "2026-11-20",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 13 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 20/11 (carrossel + story); 27/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 152
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 96
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 122
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 116
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 111
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 121
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4135
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 158
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "O TCC não atrasa no fim. Atrasa no começo.\n\nSem etapas e prazos curtos, o trabalho se acumula nas últimas semanas. Um cronograma realista divide a pesquisa em entregas que cabem na sua rotina.\n\nPor que o prazo escapa:\n• Só existe o prazo da entrega final\n• A coleta marcada para o último mês\n• Nenhuma folga para a revisão do orientador\n• Escrever tudo para revisar depois\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nEntregue no prazo, sem virar noites. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#Cronograma #TCC #Produtividade #VidaAcademica #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "O TCC não atrasa no fim. Atrasa no começo.\n\nSem etapas e prazos curtos, o trabalho se acumula nas últimas semanas. Um cronograma realista divide a pesquisa em entregas que cabem na sua rotina.\n\nPor que o prazo escapa:\n• Só existe o prazo da entrega final\n• A coleta marcada para o último mês\n• Nenhuma folga para a revisão do orientador\n• Escrever tudo para revisar depois\n\nNa prática: \"Novembro: fazer o TCC.\" → \"Semana 1: problema e objetivos. Semana 2: dez artigos-chave fichados. Semana 3: instrumento de coleta.\"\nMeta semanal, pequena e verificável: dá para saber se o projeto está em dia.\n\nAs etapas de um cronograma:\n▸ Projeto: problema, objetivos e método\n▸ Referencial: leitura e fichamento\n▸ Coleta: com folga para imprevistos\n▸ Análise: e escrita dos resultados\n▸ Revisão: orientador, formatação e banca\n\nComo o Guia Acadêmico ajuda:\n1. Um cronograma realista feito com você\n2. Metas semanais e acompanhamento\n3. Ajustes conforme a sua rotina\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nEntregue no prazo, sem virar noites. Agende o diagnóstico: guiacademico.com.br\n\n#Cronograma #TCC #Produtividade #VidaAcademica #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-cronograma.zip",
+      "kb": 819
+    }
+  },
+  {
+    "pasta": "2026-11-data-consciencia-negra",
+    "frente": "institucional",
+    "serie": "Datas comemorativas",
+    "capa": "post.png",
+    "titulo": "Data comemorativa · Dia Nacional de Zumbi e da Consciência Negra",
+    "data": "2026-11-20",
+    "data_fixa": "2026-11-20",
+    "descricao": "Data comemorativa nacional: só post estático (feed) e story, sem vídeo.",
+    "orientacoes": [
+      "Postar no dia 20/11 no @cerradofinancas e no LinkedIn, além do post normal do dia.",
+      "Feed: post.png (1080×1350). Story: story.png.",
+      "Não entra na repetição de conteúdo da agenda."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 545
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 659
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "20 de novembro: Dia Nacional de Zumbi e da Consciência Negra.\n\nUm dia para reconhecer a história, a luta e a contribuição da população negra na construção do Brasil.\n\n#ConscienciaNegra #20DeNovembro #CerradoFinancas\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "20 de novembro: Dia Nacional de Zumbi e da Consciência Negra.\n\nUm dia para reconhecer a história, a luta e a contribuição da população negra na construção do Brasil.\n\n#ConscienciaNegra #20DeNovembro #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-data-consciencia-negra.zip",
+      "kb": 1203
+    }
+  },
+  {
     "pasta": "2026-11-contabil-sabia-pro-labore",
     "frente": "contabilidade",
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 03 · Sócio que trabalha na empresa precisa de pró-labore?",
-    "data": "2026-11-18",
+    "data": "2026-11-20",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (3 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 18/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 20/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -3507,10 +3861,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Chatbots & Assistentes",
-    "data": "2026-11-17",
+    "data": "2026-11-19",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (5 de 16): Chatbots & Assistentes (Large Language Models). Atendimento automático com IA, 24h, treinado no conteúdo da empresa.",
     "orientacoes": [
-      "Postar em 17/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 19/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -3577,15 +3931,58 @@
     }
   },
   {
+    "pasta": "2026-11-data-dia-da-bandeira",
+    "frente": "institucional",
+    "serie": "Datas comemorativas",
+    "capa": "post.png",
+    "titulo": "Data comemorativa · Dia da Bandeira",
+    "data": "2026-11-19",
+    "data_fixa": "2026-11-19",
+    "descricao": "Data comemorativa nacional: só post estático (feed) e story, sem vídeo.",
+    "orientacoes": [
+      "Postar no dia 19/11 no @cerradofinancas e no LinkedIn, além do post normal do dia.",
+      "Feed: post.png (1080×1350). Story: story.png.",
+      "Não entra na repetição de conteúdo da agenda."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 571
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 730
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "19 de novembro: Dia da Bandeira.\n\nA bandeira republicana foi adotada em 19 de novembro de 1889, com o lema \"Ordem e Progresso\" no centro.\n\n#DiaDaBandeira #Brasil #CerradoFinancas\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "19 de novembro: Dia da Bandeira.\n\nA bandeira republicana foi adotada em 19 de novembro de 1889, com o lema \"Ordem e Progresso\" no centro.\n\n#DiaDaBandeira #Brasil #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-data-dia-da-bandeira.zip",
+      "kb": 1301
+    }
+  },
+  {
     "pasta": "2026-10-curso-ciencia-de-dados",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Ciência de Dados Aplicada",
-    "data": "2026-11-17",
+    "data": "2026-11-19",
     "descricao": "Do dado bruto ao modelo: análise, estatística e machine learning aplicados a problemas reais. Imersão · 22h · 2 sextas à noite + 2 sábados o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 17/11 (carrossel + story); 20/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 19/11 (carrossel + story); 22/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-ciencia-dados-aplicada",
@@ -3662,15 +4059,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-questionario",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Questionário e escalas",
+    "data": "2026-11-18",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 12 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 18/11 (carrossel + story); 26/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 157
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 112
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 103
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 131
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 119
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4174
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 162
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Questionário bom se valida antes de aplicar.\n\nEscalas do tipo Likert medem o que não se vê, como satisfação ou confiança. Para isso, o instrumento precisa de validade e de confiabilidade.\n\nProblemas que invalidam respostas:\n• Perguntas com duas ideias ao mesmo tempo\n• Uma escala diferente em cada bloco\n• Nenhum teste piloto antes da coleta\n• Escala estrangeira traduzida sem adaptação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nMedir o que você quer medir. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#Questionario #EscalaLikert #SmartPLS #Psicometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Questionário bom se valida antes de aplicar.\n\nEscalas do tipo Likert medem o que não se vê, como satisfação ou confiança. Para isso, o instrumento precisa de validade e de confiabilidade.\n\nProblemas que invalidam respostas:\n• Perguntas com duas ideias ao mesmo tempo\n• Uma escala diferente em cada bloco\n• Nenhum teste piloto antes da coleta\n• Escala estrangeira traduzida sem adaptação\n\nNa prática: \"O atendimento foi rápido e educado?\" → \"1. O atendimento foi rápido.\n2. O atendente foi educado.\"\nCom duas ideias numa pergunta, ninguém sabe o que a resposta mede.\n\nComo validar o instrumento:\n▸ Validade de conteúdo: avaliação por especialistas\n▸ Confiabilidade: alfa de Cronbach e confiabilidade composta\n▸ Validade de construto: análise fatorial exploratória e confirmatória\n▸ Modelagem: sEM e PLS-SEM (SmartPLS)\n▸ Adaptação: tradução e retrotradução\n\nComo o Guia Acadêmico ajuda:\n1. Revisar as perguntas e a escala\n2. Planejar o piloto\n3. Rodar e interpretar a validação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nMedir o que você quer medir. Agende o diagnóstico: guiacademico.com.br\n\n#Questionario #EscalaLikert #SmartPLS #Psicometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-questionario.zip",
+      "kb": 832
+    }
+  },
+  {
     "pasta": "2026-11-contabil-micro-a-media",
     "frente": "contabilidade",
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Do primeiro CNPJ à média empresa, o mesmo contador.",
-    "data": "2026-11-16",
+    "data": "2026-11-18",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (4 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 16/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 18/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -3742,10 +4214,10 @@
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Portabilidade e refinanciamento",
-    "data": "2026-11-15",
+    "data": "2026-11-17",
     "descricao": "Série do Crédito produto a produto (3 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 15/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 17/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -3818,10 +4290,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Introdução à Automação com IA",
-    "data": "2026-11-15",
+    "data": "2026-11-17",
     "descricao": "Automatize tarefas repetitivas do dia a dia combinando ferramentas no-code e IA. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 15/11 (carrossel + story); 18/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 17/11 (carrossel + story); 20/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-intro-automacao-ia",
@@ -3903,10 +4375,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · Automação de Processos",
-    "data": "2026-11-14",
+    "data": "2026-11-16",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (4 de 16): Automação de Processos (Robotic Process Automation · Workflows). Robôs que executam tarefas repetitivas no seu lugar, liberando tempo da equipe para o que importa.",
     "orientacoes": [
-      "Postar em 14/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 16/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/portfolio",
@@ -3973,15 +4445,133 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-tamanho-da-amostra",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Tamanho da amostra",
+    "data": "2026-11-16",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 11 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 16/11 (carrossel + story); 25/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 163
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 100
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 125
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 110
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4288
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 161
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quantas pessoas precisam responder?\n\nO tamanho da amostra depende da população, da margem de erro, do nível de confiança e da análise prevista. “Quanto mais, melhor” não é critério.\n\nComo a amostra costuma ser definida:\n• Um número que “parece bastante”\n• Sem prever a taxa de resposta\n• Conveniência tratada como representativa\n• Cálculo feito depois da coleta\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAmostra justificada, não chutada. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#Amostragem #Estatistica #Metodologia #Questionario #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Quantas pessoas precisam responder?\n\nO tamanho da amostra depende da população, da margem de erro, do nível de confiança e da análise prevista. “Quanto mais, melhor” não é critério.\n\nComo a amostra costuma ser definida:\n• Um número que “parece bastante”\n• Sem prever a taxa de resposta\n• Conveniência tratada como representativa\n• Cálculo feito depois da coleta\n\nNa prática: \"Aplicamos o questionário a 50 alunos.\" → \"Com população de 1.200 alunos, 95% de confiança e 5% de margem de erro, a amostra mínima é de 292 respondentes.\"\nCom a conta declarada, a banca discute o método, não o número.\n\nO que entra no cálculo:\n▸ População: quantas pessoas existem no grupo estudado\n▸ Nível de confiança: em geral, 95%\n▸ Margem de erro: quanto o resultado pode variar\n▸ Análise prevista: cada teste ou modelo pede um tamanho\n▸ Ferramentas: g*Power, R e fórmulas declaradas\n\nComo o Guia Acadêmico ajuda:\n1. Calcular a amostra com você\n2. Justificar o cálculo no texto\n3. Planejar a coleta com folga para não respostas\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAmostra justificada, não chutada. Agende o diagnóstico: guiacademico.com.br\n\n#Amostragem #Estatistica #Metodologia #Questionario #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-tamanho-da-amostra.zip",
+      "kb": 850
+    }
+  },
+  {
+    "pasta": "2026-11-data-proclamacao-da-republica",
+    "frente": "institucional",
+    "serie": "Datas comemorativas",
+    "capa": "post.png",
+    "titulo": "Data comemorativa · Proclamação da República",
+    "data": "2026-11-15",
+    "data_fixa": "2026-11-15",
+    "descricao": "Data comemorativa nacional: só post estático (feed) e story, sem vídeo.",
+    "orientacoes": [
+      "Postar no dia 15/11 no @cerradofinancas e no LinkedIn, além do post normal do dia.",
+      "Feed: post.png (1080×1350). Story: story.png.",
+      "Não entra na repetição de conteúdo da agenda."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 578
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 739
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "15 de novembro: Proclamação da República.\n\nEm 1889, o Brasil se tornou uma república. Construir um país é trabalho de todos os dias, e a gente segue fazendo a nossa parte.\n\n#ProclamacaoDaRepublica #15DeNovembro #CerradoFinancas\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "15 de novembro: Proclamação da República.\n\nEm 1889, o Brasil se tornou uma república. Construir um país é trabalho de todos os dias, e a gente segue fazendo a nossa parte.\n\n#ProclamacaoDaRepublica #15DeNovembro #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-data-proclamacao-da-republica.zip",
+      "kb": 1317
+    }
+  },
+  {
     "pasta": "2026-11-contabil-lucro-presumido",
     "frente": "contabilidade",
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Cresceu? O regime cresce junto.",
-    "data": "2026-11-13",
+    "data": "2026-11-15",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (3 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 13/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 15/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -4053,10 +4643,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Processos Empresariais BPMN com IA",
-    "data": "2026-11-13",
+    "data": "2026-11-15",
     "descricao": "Mapeie e melhore processos com a notação BPMN, usando IA para modelar e documentar. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 13/11 (carrossel + story); 16/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 15/11 (carrossel + story); 18/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-bpmn-ia",
@@ -4133,15 +4723,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-revisao-sistematica",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Revisão sistemática",
+    "data": "2026-11-14",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 10 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 14/11 (carrossel + story); 23/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 162
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 110
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 137
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 111
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 110
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 121
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4272
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 161
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Revisão sistemática tem protocolo.\n\nDiferente da revisão narrativa, a sistemática define antes a pergunta, as bases, os termos de busca e os critérios de inclusão, e qualquer pessoa consegue refazer a busca.\n\nQuando ainda não é sistemática:\n• Busca só no Google Acadêmico\n• Critérios de inclusão definidos depois\n• Nenhum registro do que saiu em cada etapa\n• Uma revisão narrativa com outro nome\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nUma busca que qualquer um refaz. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#RevisaoSistematica #PRISMA #MetaAnalise #RevisaoDeLiteratura #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Revisão sistemática tem protocolo.\n\nDiferente da revisão narrativa, a sistemática define antes a pergunta, as bases, os termos de busca e os critérios de inclusão, e qualquer pessoa consegue refazer a busca.\n\nQuando ainda não é sistemática:\n• Busca só no Google Acadêmico\n• Critérios de inclusão definidos depois\n• Nenhum registro do que saiu em cada etapa\n• Uma revisão narrativa com outro nome\n\nNa prática: \"Foram encontrados vários artigos sobre o tema.\" → \"A busca em três bases retornou 412 registros; após a triagem, 27 estudos foram incluídos (fluxograma PRISMA).\"\nCada número do fluxograma pode ser conferido por quem lê.\n\nEtapas da revisão:\n▸ Protocolo: pergunta, bases, termos e critérios\n▸ Registro: pROSPERO, quando a área pede\n▸ Relato: diretriz PRISMA e fluxograma\n▸ Síntese: narrativa ou meta-análise\n▸ Mapeamento: vOSviewer: redes de autores e termos\n\nComo o Guia Acadêmico ajuda:\n1. Montar o protocolo e as buscas\n2. Organizar a triagem dos estudos\n3. Revisar o relato pelo PRISMA\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nUma busca que qualquer um refaz. Agende o diagnóstico: guiacademico.com.br\n\n#RevisaoSistematica #PRISMA #MetaAnalise #RevisaoDeLiteratura #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-revisao-sistematica.zip",
+      "kb": 855
+    }
+  },
+  {
     "pasta": "2026-11-consultoria-controladoria",
     "frente": "consultorias",
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · Controladoria estruturada",
-    "data": "2026-11-12",
+    "data": "2026-11-14",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 2 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 12/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 14/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/consultorias",
@@ -4213,10 +4878,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 02 · Empresa de serviço pode pagar 6% no Simples?",
-    "data": "2026-11-11",
+    "data": "2026-11-13",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (2 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 11/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 13/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -4289,10 +4954,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Introdução à Análise de Dados",
-    "data": "2026-11-11",
+    "data": "2026-11-13",
     "descricao": "Os fundamentos para organizar, analisar e tirar conclusões a partir de dados reais. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 11/11 (carrossel + story); 14/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 13/11 (carrossel + story); 16/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-intro-analise-dados",
@@ -4374,10 +5039,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · BI & Dashboards",
-    "data": "2026-11-10",
+    "data": "2026-11-12",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (3 de 16): BI & Dashboards (Business Intelligence). Transforma os dados em gráficos e indicadores para decidir melhor, em vez de trabalhar no escuro.",
     "orientacoes": [
-      "Postar em 10/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 12/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/dashboards",
@@ -4444,15 +5109,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-etica",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Mentoria ética",
+    "data": "2026-11-12",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 9 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 12/11 (carrossel + story); 21/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 145
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 91
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 91
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 115
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 120
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3878
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 148
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Ter orientação não é plágio.\n\nExiste uma diferença clara entre coautoria indevida e mentoria ética. O Guia Acadêmico orienta, ensina, analisa e revisa: o autor da pesquisa é você.\n\nO que o Guia faz:\n• Orientação metodológica\n• Capacitação técnica nas ferramentas\n• Análise de dados com script comentado\n• Revisão estrutural e de formatação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nVocê é o autor. A gente orienta. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#EticaEmPesquisa #IntegridadeAcademica #Mentoria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Ter orientação não é plágio.\n\nExiste uma diferença clara entre coautoria indevida e mentoria ética. O Guia Acadêmico orienta, ensina, analisa e revisa: o autor da pesquisa é você.\n\nO que o Guia faz:\n• Orientação metodológica\n• Capacitação técnica nas ferramentas\n• Análise de dados com script comentado\n• Revisão estrutural e de formatação\n\nNa prática: \"Escrever o trabalho para você entregar como seu.\" → \"Orientar, ensinar e revisar, para que você escreva e defenda o próprio trabalho.\"\nVocê é o autor; nós somos o suporte técnico para garantir o rigor científico.\n\nSigilo e autoria:\n▸ Acordo de sigilo: nDA digital sobre o tema e os dados\n▸ LGPD: dados tratados conforme a lei\n▸ Autoria: o trabalho é seu, do começo ao fim\n\nComo o Guia Acadêmico ajuda:\n1. Diagnóstico do que você precisa aprender\n2. Sessões técnicas e revisões\n3. Sigilo sobre o seu tema e os seus dados\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nVocê é o autor. A gente orienta. Agende o diagnóstico: guiacademico.com.br\n\n#EticaEmPesquisa #IntegridadeAcademica #Mentoria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-etica.zip",
+      "kb": 761
+    }
+  },
+  {
     "pasta": "2026-11-credito-consignado-clt",
     "frente": "credito",
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Consignado CLT",
-    "data": "2026-11-09",
+    "data": "2026-11-11",
     "descricao": "Série do Crédito produto a produto (2 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 09/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 11/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -4525,10 +5265,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Consultoria Financeira com IA",
-    "data": "2026-11-09",
+    "data": "2026-11-11",
     "descricao": "Diagnóstico financeiro, fluxo de caixa e indicadores com apoio de IA para consultoria. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 09/11 (carrossel + story); 12/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 11/11 (carrossel + story); 14/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-consultoria-financeira-ia",
@@ -4605,15 +5345,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-banca",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Preparação para a banca",
+    "data": "2026-11-10",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 8 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 10/11 (carrossel + story); 19/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 145
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 98
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 103
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 111
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 109
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 124
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4032
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 154
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Na banca, quem defende é você.\n\nPreparar a defesa é treinar a explicação do método e dos resultados, antecipar as perguntas e montar slides que sustentam o argumento.\n\nO que complica a defesa:\n• Slides com parágrafos inteiros\n• Não saber explicar a escolha do método\n• Resultados longe da pergunta de pesquisa\n• Ser surpreendido por limitações óbvias\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nChegue à banca seguro do que fez. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#Defesa #Banca #Dissertacao #Tese #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Na banca, quem defende é você.\n\nPreparar a defesa é treinar a explicação do método e dos resultados, antecipar as perguntas e montar slides que sustentam o argumento.\n\nO que complica a defesa:\n• Slides com parágrafos inteiros\n• Não saber explicar a escolha do método\n• Resultados longe da pergunta de pesquisa\n• Ser surpreendido por limitações óbvias\n\nNa prática: \"Tabela com 40 linhas e todos os coeficientes do modelo.\" → \"“H1: efeito positivo e pequeno”, com um gráfico desse único resultado.\"\nA tabela completa fica no texto; o slide mostra o achado.\n\nRoteiro de uma defesa:\n▸ Problema e objetivo: em um ou dois slides\n▸ Método: por que este, e não outro\n▸ Resultados: um achado por slide\n▸ Limitações: antes que a banca aponte\n▸ Contribuição: o que muda com a sua pesquisa\n\nComo o Guia Acadêmico ajuda:\n1. Revisão dos slides\n2. Simulação de banca com perguntas\n3. Treino da explicação do método\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nChegue à banca seguro do que fez. Agende o diagnóstico: guiacademico.com.br\n\n#Defesa #Banca #Dissertacao #Tese #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-banca.zip",
+      "kb": 789
+    }
+  },
+  {
     "pasta": "2026-11-contabil-simples-nacional",
     "frente": "contabilidade",
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · Você paga o DAS certo ou só paga?",
-    "data": "2026-11-08",
+    "data": "2026-11-10",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (2 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 08/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 10/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -4685,10 +5500,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · CRM",
-    "data": "2026-11-07",
+    "data": "2026-11-09",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (2 de 16): CRM (Customer Relationship Management). Gestão do relacionamento com clientes: cada contato, proposta e venda em um único painel.",
     "orientacoes": [
-      "Postar em 07/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 09/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/crm-inteligente",
@@ -4760,10 +5575,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Consultoria Contábil com IA",
-    "data": "2026-11-07",
+    "data": "2026-11-09",
     "descricao": "Aplique IA na rotina contábil e transforme o escritório em consultoria de valor para o cliente. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 07/11 (carrossel + story); 10/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 09/11 (carrossel + story); 12/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-consultoria-contabil-ia",
@@ -4840,15 +5655,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-abnt",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Formatação ABNT",
+    "data": "2026-11-08",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 7 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 08/11 (carrossel + story); 17/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 155
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 124
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 108
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 114
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 124
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4140
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 157
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Formatação errada rouba a atenção do conteúdo.\n\nCitação fora da norma, sumário digitado à mão, referência incompleta: a banca nota antes de chegar ao seu argumento.\n\nO que a banca nota primeiro:\n• Sumário digitado à mão\n• Citação longa sem recuo\n• Referências incompletas ou fora de ordem\n• Figuras sem número e sem fonte\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nForma certa, conteúdo em destaque. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#ABNT #NormasABNT #Formatacao #TCC #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Formatação errada rouba a atenção do conteúdo.\n\nCitação fora da norma, sumário digitado à mão, referência incompleta: a banca nota antes de chegar ao seu argumento.\n\nO que a banca nota primeiro:\n• Sumário digitado à mão\n• Citação longa sem recuo\n• Referências incompletas ou fora de ordem\n• Figuras sem número e sem fonte\n\nNa prática: \"Silva – Metodologia científica, editora X\" → \"SOBRENOME, Nome. Título: subtítulo. 2. ed. Cidade: Editora, ano.\"\nA NBR 6023 define a ordem e a pontuação de cada elemento da referência.\n\nNormas e entregas:\n▸ ABNT: nBR 14724, 6023 e 10520\n▸ Outras normas: aPA, Vancouver e as regras de cada periódico\n▸ Automação: sumário, listas e numeração automáticos\n▸ Tradução técnica: inglês e português\n\nComo o Guia Acadêmico ajuda:\n1. Revisão da formatação do trabalho inteiro\n2. Modelo do documento com estilos prontos\n3. Ensinar a manter tudo automático\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nForma certa, conteúdo em destaque. Agende o diagnóstico: guiacademico.com.br\n\n#ABNT #NormasABNT #Formatacao #TCC #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-abnt.zip",
+      "kb": 821
+    }
+  },
+  {
     "pasta": "2026-11-consultoria-bpo-financeiro",
     "frente": "consultorias",
     "serie": "Pranchas das consultorias",
     "capa": "carrossel-01.png",
     "titulo": "Consultoria · BPO financeiro",
-    "data": "2026-11-06",
+    "data": "2026-11-08",
     "descricao": "Série das Consultorias da Cerrado Finanças (prancha 1 de 7), na identidade própria \"Planta\".",
     "orientacoes": [
-      "Postar em 06/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 08/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: no LinkedIn, subir os 6 PNGs como documento ou carrossel; no Instagram, na ordem (carrossel-01 a 06).",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/consultorias",
@@ -4920,10 +5810,10 @@
     "serie": "Você sabia?",
     "capa": "carrossel-01.png",
     "titulo": "Você sabia? Nota nº 01 · MEI que não faturou também declara?",
-    "data": "2026-11-05",
+    "data": "2026-11-07",
     "descricao": "Série educativa da Cerrado Contabilidade, \"Você sabia?\" (1 de 8), no formato das notas explicativas do balanço.",
     "orientacoes": [
-      "Postar em 05/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 07/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -4996,10 +5886,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso Excel com IA",
-    "data": "2026-11-05",
+    "data": "2026-11-07",
     "descricao": "Fórmulas, análises e relatórios no Excel acelerados com assistentes de IA. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 05/11 (carrossel + story); 08/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 07/11 (carrossel + story); 10/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-excel-ia",
@@ -5076,15 +5966,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-ia-academica",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · IA acadêmica",
+    "data": "2026-11-06",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 6 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 06/11 (carrossel + story); 15/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 158
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 112
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 119
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 115
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 115
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 122
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4295
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 161
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "A IA inventa referências. Quem assina é você.\n\nModelos de linguagem ajudam a ler, organizar e revisar, mas podem criar citações que não existem. Usar IA na pesquisa exige método e conferência.\n\nUsos que comprometem a pesquisa:\n• Citar referências do chatbot sem conferir\n• Entregar texto gerado como se fosse seu\n• Subir dados sigilosos em serviços abertos\n• Não declarar o uso quando a instituição exige\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nIA como ferramenta, não como autora. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#IAAcademica #InteligenciaArtificial #RevisaoDeLiteratura #EticaEmPesquisa #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "A IA inventa referências. Quem assina é você.\n\nModelos de linguagem ajudam a ler, organizar e revisar, mas podem criar citações que não existem. Usar IA na pesquisa exige método e conferência.\n\nUsos que comprometem a pesquisa:\n• Citar referências do chatbot sem conferir\n• Entregar texto gerado como se fosse seu\n• Subir dados sigilosos em serviços abertos\n• Não declarar o uso quando a instituição exige\n\nNa prática: \"Escreva a minha revisão de literatura sobre evasão escolar.\" → \"Organize os achados destes 20 artigos que eu selecionei por método, amostra e resultado, indicando a página de cada trecho.\"\nA IA trabalha sobre as suas fontes, e você confere cada trecho.\n\nIA a serviço da pesquisa:\n▸ Revisão de literatura: triagem e organização de PDFs\n▸ Extração: achados, métodos e amostras de um corpus\n▸ NLP: topic modeling, classificação e sentimento\n▸ Ferramentas: spaCy, Hugging Face e Gensim\n\nComo o Guia Acadêmico ajuda:\n1. Mentoria prática de IA acadêmica\n2. Fluxos com fonte e página conferíveis\n3. Uso alinhado às regras da sua instituição\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nIA como ferramenta, não como autora. Agende o diagnóstico: guiacademico.com.br\n\n#IAAcademica #InteligenciaArtificial #RevisaoDeLiteratura #EticaEmPesquisa #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-ia-academica.zip",
+      "kb": 847
+    }
+  },
+  {
     "pasta": "2026-11-credito-consignado-servidor",
     "frente": "credito",
     "serie": "Produto a produto",
     "capa": "carrossel-01.png",
     "titulo": "Crédito · Consignado do servidor",
-    "data": "2026-11-04",
+    "data": "2026-11-06",
     "descricao": "Série do Crédito produto a produto (1 de 11), na identidade \"Antes de assinar\", com a LS Intermediação Financeira.",
     "orientacoes": [
-      "Postar em 04/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 06/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/credito",
@@ -5157,10 +6122,10 @@
     "serie": "Para quem atendemos e o que fazemos",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade · MEI também merece um contador de verdade.",
-    "data": "2026-11-03",
+    "data": "2026-11-05",
     "descricao": "Série da Cerrado Contabilidade, \"Para quem atendemos\" (1 de 13). Identidade própria \"Partida dobrada\".",
     "orientacoes": [
-      "Postar em 03/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 05/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade",
@@ -5232,10 +6197,10 @@
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso IA na Gestão",
-    "data": "2026-11-03",
+    "data": "2026-11-05",
     "descricao": "Use inteligência artificial para planejar, decidir e acompanhar resultados na gestão do negócio. Curso de um dia · 8h · 1 sábado, o dia todo. Campanha gerada a partir do catálogo oficial da Cerraclass.",
     "orientacoes": [
-      "Postar em 03/11 (carrossel + story); 06/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 05/11 (carrossel + story); 08/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo (15s, com som): versão vertical para Reels, TikTok e Shorts; versão 16:9 para LinkedIn e YouTube.",
       "Story: adicionar o sticker de link para https://cerraclass.com.br/presencial/pres-ia-gestao",
@@ -5317,10 +6282,10 @@
     "serie": "O que a Cerrado Tech constrói",
     "capa": "carrossel-01.png",
     "titulo": "Cerrado Tech · ERP Customizado",
-    "data": "2026-11-02",
+    "data": "2026-11-04",
     "descricao": "Série \"O que a Cerrado Tech constrói\" (1 de 16): ERP Customizado (Enterprise Resource Planning). Sistema de gestão integrada: financeiro, estoque, vendas e produção em uma plataforma única, desenhada do jeito do negócio.",
     "orientacoes": [
-      "Postar em 02/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 04/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, para Reels e feed. Pode usar a legenda do Instagram.",
       "Story: adicionar o sticker de link para https://www.cerradofinancas.com.br/erp-customizado",
@@ -5387,15 +6352,165 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-web-scraping",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Mineração de dados",
+    "data": "2026-11-04",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 5 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 04/11 (carrossel + story); 13/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 170
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 107
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 130
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 115
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 109
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 128
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4260
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 158
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Os seus dados já estão na internet.\n\nDiários oficiais, portais de transparência, bases da CAPES e da SciELO: muita pesquisa depende de dados públicos que ninguém quer copiar à mão, página por página.\n\nQuando a coleta trava a pesquisa:\n• Copiar e colar centenas de páginas\n• Planilhas com formatos misturados\n• Uma coleta que ninguém consegue refazer\n• Desistir do tema por falta de dados\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nDados públicos, coleta reprodutível. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#WebScraping #Python #DadosAbertos #CienciaDeDados #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Os seus dados já estão na internet.\n\nDiários oficiais, portais de transparência, bases da CAPES e da SciELO: muita pesquisa depende de dados públicos que ninguém quer copiar à mão, página por página.\n\nQuando a coleta trava a pesquisa:\n• Copiar e colar centenas de páginas\n• Planilhas com formatos misturados\n• Uma coleta que ninguém consegue refazer\n• Desistir do tema por falta de dados\n\nNa prática: \"Copiar edital por edital do diário oficial, durante meses.\" → \"Um script coleta, padroniza e salva os editais; a coleta pode ser refeita e conferida pela banca.\"\nO código entra no método: qualquer pessoa consegue reproduzir a base.\n\nDa fonte ao dataset:\n▸ Fontes: portais acadêmicos, diários oficiais e bases do governo\n▸ Coleta: aPIs, JSON, XML e páginas HTML\n▸ Tratamento: limpeza e padronização da base\n▸ Ferramentas: python: Requests, BeautifulSoup, Scrapy, Playwright\n\nComo o Guia Acadêmico ajuda:\n1. Definir a fonte e o que coletar\n2. Script documentado e base limpa\n3. Ensinar você a rodar a coleta de novo\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nDados públicos, coleta reprodutível. Agende o diagnóstico: guiacademico.com.br\n\n#WebScraping #Python #DadosAbertos #CienciaDeDados #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-web-scraping.zip",
+      "kb": 862
+    }
+  },
+  {
+    "pasta": "2026-11-guiacademico-qualitativa",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Análise qualitativa",
+    "data": "2026-11-03",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 4 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 03/11 (carrossel + story); 11/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 155
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 98
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 132
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 118
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 114
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4255
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 159
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Entrevista transcrita ainda não é análise.\n\nPesquisa qualitativa tem método: categorias, codificação e critérios de validade. Sem isso, o capítulo de resultados vira uma colagem de falas.\n\nOnde a análise se perde:\n• Falas citadas sem categorias que as organizem\n• O método não declarado no texto\n• Codificação sem um livro de códigos\n• Uma única fonte, sem triangulação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nDas falas às categorias. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#PesquisaQualitativa #Bardin #NVivo #IRAMUTEQ #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Entrevista transcrita ainda não é análise.\n\nPesquisa qualitativa tem método: categorias, codificação e critérios de validade. Sem isso, o capítulo de resultados vira uma colagem de falas.\n\nOnde a análise se perde:\n• Falas citadas sem categorias que as organizem\n• O método não declarado no texto\n• Codificação sem um livro de códigos\n• Uma única fonte, sem triangulação\n\nNa prática: \"Os entrevistados disseram que gostam do programa.\" → \"Na categoria “percepção de utilidade”, 9 das 12 falas associam o programa à redução de retrabalho (E3, E7, E11).\"\nA fala vira evidência quando entra numa categoria e pode ser rastreada.\n\nMétodos e ferramentas:\n▸ Análise de conteúdo: bardin: pré-análise, exploração e tratamento\n▸ Grounded theory: codificação aberta, axial e seletiva\n▸ Delineamentos: fenomenologia, estudo de caso, análise do discurso\n▸ Software: iRAMUTEQ, NVivo, Atlas.ti e MAXQDA\n\nComo o Guia Acadêmico ajuda:\n1. Montar o livro de códigos com você\n2. Rodar e interpretar no software\n3. Revisar a validade: triangulação e validação por pares\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nDas falas às categorias. Agende o diagnóstico: guiacademico.com.br\n\n#PesquisaQualitativa #Bardin #NVivo #IRAMUTEQ #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-qualitativa.zip",
+      "kb": 842
+    }
+  },
+  {
     "pasta": "2026-10-curso-ia-farma",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso IA em Ação Farma",
-    "data": "2026-11-01",
+    "data": "2026-11-03",
     "descricao": "Campanha do curso IA em Ação Farma (Cerraclass) para propagandistas: tarefas da semana, o que se constrói com o Antigravity, IAs aplicadas ao campo, público, instrutor e chamada para turmas de 10 pessoas. Sem preço nem data nas peças. Na identidade própria da CerraClass.",
     "orientacoes": [
-      "Postar em 01/11 (carrossel + story); 04/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 03/11 (carrossel + story); 06/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo vertical (video-vertical.mp4, 1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
       "Vídeo 16:9 (video-16x9.mp4, 1920×1080, 15s, com som): LinkedIn, YouTube e apresentações.",
@@ -5479,10 +6594,10 @@
     "serie": "Campanha da frente",
     "capa": "carrossel-01.png",
     "titulo": "Crédito",
-    "data": "2026-11-01",
+    "data": "2026-11-03",
     "descricao": "Campanha de crédito multi bancos, na identidade própria do Crédito (\"Antes de assinar\": papel, caneta azul e marca-texto) com a LS Intermediação Financeira: produtos, consignado (novo, portabilidade e refinanciamento), como funciona e diferenciais. Contém aviso legal de correspondente bancário.",
     "orientacoes": [
-      "Postar em 01/11 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 03/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Vídeo vertical (video-vertical.mp4, 1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
       "Vídeo 16:9 (video-16x9.mp4, 1920×1080, 15s, com som): LinkedIn, YouTube e apresentações.",
@@ -5556,15 +6671,133 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-estatistica",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Análise estatística",
+    "data": "2026-11-02",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 3 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 02/11 (carrossel + story); 09/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 150
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 96
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 143
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 122
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 122
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 123
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4295
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 153
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "p < 0,05 não é conclusão.\n\nSignificância estatística indica que um efeito provavelmente existe, não que ele seja grande ou importante. Interpretar o resultado é diferente de rodar o teste.\n\nErros comuns na análise:\n• Escolher o teste depois de ver o resultado\n• Ignorar os pressupostos do teste\n• Reportar só o valor-p, sem o tamanho de efeito\n• Tratar correlação como causa\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nResultado que você sabe explicar. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#Estatistica #AnaliseDeDados #STATA #RStats #Econometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "p < 0,05 não é conclusão.\n\nSignificância estatística indica que um efeito provavelmente existe, não que ele seja grande ou importante. Interpretar o resultado é diferente de rodar o teste.\n\nErros comuns na análise:\n• Escolher o teste depois de ver o resultado\n• Ignorar os pressupostos do teste\n• Reportar só o valor-p, sem o tamanho de efeito\n• Tratar correlação como causa\n\nNa prática: \"Os resultados foram significativos (p = 0,03), comprovando a hipótese.\" → \"O efeito foi estatisticamente significativo (p = 0,03) e de magnitude pequena (d = 0,21); os dados são compatíveis com a hipótese, sem estabelecer causalidade.\"\nUm teste não “comprova” hipótese: relata-se o efeito, o tamanho e os limites.\n\nAnálises que orientamos:\n▸ Regressões: múltipla, logística e multinomial\n▸ Painel e séries temporais: econometria aplicada\n▸ ANOVA e MANOVA: comparação entre grupos\n▸ Fatorial e SEM: construtos e modelos estruturais\n▸ Ferramentas: sTATA, R, Python, SPSS e EViews\n\nComo o Guia Acadêmico ajuda:\n1. Script comentado em R, STATA ou Python\n2. Sessões para você entender cada passo\n3. Interpretação que você consegue defender na banca\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nResultado que você sabe explicar. Agende o diagnóstico: guiacademico.com.br\n\n#Estatistica #AnaliseDeDados #STATA #RStats #Econometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-estatistica.zip",
+      "kb": 856
+    }
+  },
+  {
+    "pasta": "2026-11-data-finados",
+    "frente": "institucional",
+    "serie": "Datas comemorativas",
+    "capa": "post.png",
+    "titulo": "Data comemorativa · Dia de Finados",
+    "data": "2026-11-02",
+    "data_fixa": "2026-11-02",
+    "descricao": "Data comemorativa nacional: só post estático (feed) e story, sem vídeo.",
+    "orientacoes": [
+      "Postar no dia 02/11 no @cerradofinancas e no LinkedIn, além do post normal do dia.",
+      "Feed: post.png (1080×1350). Story: story.png.",
+      "Não entra na repetição de conteúdo da agenda."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 517
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 632
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Dia de Finados.\n\nHoje é dia de lembrar, com carinho, de quem fez parte da nossa história.\n\n#Finados #CerradoFinancas\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Dia de Finados.\n\nHoje é dia de lembrar, com carinho, de quem fez parte da nossa história.\n\n#Finados #CerradoFinancas\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-data-finados.zip",
+      "kb": 1149
+    }
+  },
+  {
     "pasta": "2026-10-curso-ia-na-pratica",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
     "capa": "carrossel-01.png",
     "titulo": "Curso IA na Prática",
-    "data": "2026-10-31",
+    "data": "2026-11-02",
     "descricao": "Campanha do curso IA na Prática (Cerraclass): dores, o que se constrói, impacto, público, instrutor e chamada para as turmas de 10 vagas. Sem preço nem data nas peças: inscrições e agenda pelo site da Cerraclass. Na identidade própria da CerraClass.",
     "orientacoes": [
-      "Postar em 31/10 (carrossel + story); 02/11 (reel do curso) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 02/11 (carrossel + story); 04/11 (reel do curso) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo vertical (video-vertical.mp4, 1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts.",
       "Vídeo 16:9 (video-16x9.mp4, 1920×1080, 15s, com som): LinkedIn, YouTube e apresentações.",
@@ -5648,10 +6881,10 @@
     "serie": "Campanha da frente",
     "capa": "carrossel-01.png",
     "titulo": "Contabilidade",
-    "data": "2026-10-31",
+    "data": "2026-11-02",
     "descricao": "Campanha da Cerrado Contabilidade: serviços do CNPJ à folha, públicos atendidos (PJ, saúde, comércio), as 4 fases da consultoria de dados e a troca de contador.",
     "orientacoes": [
-      "Postar em 31/10 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 02/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
       "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/contabilidade.html",
@@ -5718,15 +6951,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-problema-de-pesquisa",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · Problema de pesquisa",
+    "data": "2026-11-01",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 2 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 01/11 (carrossel + story); 07/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 164
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 102
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 131
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 113
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 119
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 127
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4350
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 157
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Tema não é problema de pesquisa.\n\nBoa parte dos projetos trava no primeiro passo: um assunto amplo, sem pergunta e sem recorte. Veja como transformar o tema numa pergunta que os dados conseguem responder.\n\nSinais de que ainda é só um tema:\n• Cabe em qualquer lugar e em qualquer época\n• Não dá para responder com dados\n• Os objetivos repetem o título\n• A justificativa fala só da importância do assunto\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nUma boa pergunta é metade da pesquisa. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#ProjetoDePesquisa #ProblemaDePesquisa #Metodologia #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Tema não é problema de pesquisa.\n\nBoa parte dos projetos trava no primeiro passo: um assunto amplo, sem pergunta e sem recorte. Veja como transformar o tema numa pergunta que os dados conseguem responder.\n\nSinais de que ainda é só um tema:\n• Cabe em qualquer lugar e em qualquer época\n• Não dá para responder com dados\n• Os objetivos repetem o título\n• A justificativa fala só da importância do assunto\n\nNa prática: \"O impacto da tecnologia nas empresas.\" → \"A adoção de um sistema de gestão (ERP) reduziu o prazo do fechamento contábil em pequenas empresas de Mato Grosso entre 2020 e 2025?\"\nObjeto, população, lugar e tempo definidos: agora dá para responder com dados.\n\nDo tema ao projeto:\n▸ Tema: o assunto amplo\n▸ Problema: a pergunta que a pesquisa responde\n▸ Objetivo geral: o que será feito para responder\n▸ Objetivos específicos: as etapas, com verbos de ação\n▸ Justificativa: por que a resposta importa, e para quem\n\nComo o Guia Acadêmico ajuda:\n1. Lapidar a pergunta junto com você\n2. Alinhar objetivos, método e dados\n3. Revisar a coerência do projeto antes da qualificação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nUma boa pergunta é metade da pesquisa. Agende o diagnóstico: guiacademico.com.br\n\n#ProjetoDePesquisa #ProblemaDePesquisa #Metodologia #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-problema-de-pesquisa.zip",
+      "kb": 857
+    }
+  },
+  {
     "pasta": "2026-10-fabrica-de-software",
     "frente": "tech",
     "serie": "Campanha da frente",
     "capa": "carrossel-01.png",
     "titulo": "Fábrica de Software",
-    "data": "2026-10-30",
+    "data": "2026-11-01",
     "descricao": "Campanha da Cerrado Tech: software sob medida contra o de prateleira, o que construímos (ERP, CRM, IA, BI), como trabalhamos e GovTech.",
     "orientacoes": [
-      "Postar em 30/10 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 01/11 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Reel (1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
       "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/fabrica.html",
@@ -5793,15 +7101,90 @@
     }
   },
   {
+    "pasta": "2026-11-guiacademico-lancamento",
+    "frente": "guiacademico",
+    "serie": "Cadernos de método",
+    "capa": "carrossel-01.png",
+    "titulo": "Guia Acadêmico · O Guia Acadêmico",
+    "data": "2026-10-31",
+    "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 1 de 15), na identidade própria \"Artigo\".",
+    "orientacoes": [
+      "Postar em 31/10 (carrossel + story); 05/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: adicionar o sticker de link para https://guiacademico.com.br",
+      "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários."
+    ],
+    "conta": "@guiacademico",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 167
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 99
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 108
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 147
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 115
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 125
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 4330
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 163
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Sua pesquisa precisa de um mentor, não de um atalho.\n\nOrientação metodológica e análise de dados para quem está no TCC, na especialização, no mestrado ou no doutorado. Você escreve; a gente orienta, ensina e revisa.\n\nOnde a pesquisa costuma travar:\n• Um problema de pesquisa amplo demais\n• O método escolhido depois da coleta\n• Dados que ninguém sabe analisar\n• A formatação deixada para a última semana\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nPesquisa com rigor, do projeto à banca. Diagnóstico pelo WhatsApp (67) 99351-5206\n🔗 guiacademico.com.br\n\n#OrientacaoAcademica #Metodologia #AnaliseDeDados #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Sua pesquisa precisa de um mentor, não de um atalho.\n\nOrientação metodológica e análise de dados para quem está no TCC, na especialização, no mestrado ou no doutorado. Você escreve; a gente orienta, ensina e revisa.\n\nOnde a pesquisa costuma travar:\n• Um problema de pesquisa amplo demais\n• O método escolhido depois da coleta\n• Dados que ninguém sabe analisar\n• A formatação deixada para a última semana\n\nNa prática: \"Quero pesquisar sobre IA na educação.\" → \"Como professores do ensino médio da rede pública usam IA generativa no planejamento das aulas?\"\nUm tema vira pesquisa quando ganha recorte: quem, onde e o quê.\n\nAs frentes do Guia:\n▸ Orientação metodológica: do problema ao delineamento quali, quanti ou misto\n▸ Análise estatística: sTATA, R, Python e SPSS\n▸ Análise qualitativa: iRAMUTEQ, NVivo e Atlas.ti\n▸ Mineração de dados: raspagem de bases públicas\n▸ IA acadêmica: uso ético de modelos de linguagem\n▸ Formatação e submissão: aBNT, APA, Vancouver e periódicos\n\nComo o Guia Acadêmico ajuda:\n1. Diagnóstico da sua pesquisa\n2. Proposta com escopo e cronograma\n3. Acompanhamento com entregas parciais e revisões\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nPesquisa com rigor, do projeto à banca. Agende o diagnóstico: guiacademico.com.br\n\n#OrientacaoAcademica #Metodologia #AnaliseDeDados #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-guiacademico-lancamento.zip",
+      "kb": 870
+    }
+  },
+  {
     "pasta": "2026-10-lancamento-4-frentes",
     "frente": "institucional",
     "serie": "Lançamento",
     "capa": "carrossel-01.png",
     "titulo": "Lançamento das 4 frentes",
-    "data": "2026-10-29",
+    "data": "2026-10-31",
     "descricao": "Apresenta o novo posicionamento: Fábrica de Software, Contabilidade, Crédito (com a LS) e Cursos (Cerraclass). Carrossel de 7 slides para o feed, story para Instagram e status do WhatsApp e Reel de 21s com trilha e efeitos sonoros.",
     "orientacoes": [
-      "Postar em 29/10 no @cerradofinancas (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 31/10 no @cerradofinancas (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07), no Instagram e no LinkedIn.",
       "Reel (reel-4-frentes.mp4, 1080×1920, 21s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a mesma legenda do Instagram.",
       "Story: no Instagram, adicionar o sticker de link para https://www.cerradofinancas.com.br/",
@@ -5878,10 +7261,10 @@
     "serie": "Campanha da frente",
     "capa": "carrossel-01.png",
     "titulo": "Cursos Cerraclass",
-    "data": "2026-10-29",
+    "data": "2026-10-31",
     "descricao": "Campanha da Cerraclass: formato das turmas, o que se aprende (Antigravity, Claude, Gemini, ChatGPT), antes e depois, e as turmas (IA na Prática, IA em Ação Farma, in company). Na identidade própria da CerraClass.",
     "orientacoes": [
-      "Postar em 29/10 (carrossel + story); 30/10 (reel: o app da cerraclass) no @cerraclass (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 31/10 (carrossel + story); 01/11 (reel: o app da cerraclass) no @cerraclass (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 6 PNGs na ordem (carrossel-01 a 06) no Instagram e no LinkedIn.",
       "Vídeo extra (video-extra-app-vertical.mp4 e video-extra-app-16x9.mp4, 30s, com som): o catálogo da CerraClass no celular, estilo lançamento de app. Use como peça a mais, para Reels, anúncios ou LinkedIn.",
       "Story: no Instagram, adicionar o sticker de link para https://cerraclass.com.br/",
@@ -5958,10 +7341,10 @@
     "serie": "Lançamento",
     "capa": "carrossel-01.png",
     "titulo": "Cerra.AI",
-    "data": "2026-10-29",
+    "data": "2026-10-31",
     "descricao": "Campanha do Cerra.AI, na identidade própria do produto (cobre e grafite), o assistente corporativo 100% local da Cerrado Tech: a IA que roda no seu computador, com RAG nos documentos da empresa, OCR e transcrição offline, anonimização e auditoria LGPD, e três cenários com base própria.",
     "orientacoes": [
-      "Postar em 29/10 (carrossel + story); 30/10 (reel: comercial); 31/10 (reel: lançamento) no @cerra.ai (agenda de 28/10: de 1 a 2 posts por dia em cada conta).",
+      "Postar em 31/10 (carrossel + story); 01/11 (reel: comercial); 02/11 (reel: lançamento) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "Carrossel: postar os 7 PNGs na ordem (carrossel-01 a 07) no Instagram e no LinkedIn.",
       "Vídeo vertical (video-vertical.mp4, 1080×1920, 15s, com som): Instagram Reels, TikTok e YouTube Shorts. Pode usar a legenda do Instagram.",
       "Vídeo 16:9 (video-16x9.mp4, 1920×1080, 15s, com som): LinkedIn, YouTube e apresentações.",

@@ -1,0 +1,14 @@
+Mídia kit: Guia Acadêmico ("Artigo")
+
+guia.pdf     o resumo da identidade: cores, fontes, logos, recursos e regras
+logos/       os arquivos de logo em PNG transparente
+fontes/      as fontes das peças e o link para instalar cada uma (LINKS.txt)
+exemplos/    peças prontas para referência
+
+Cores:
+  Papel: #F6F2E9 (fundo)
+  Azul-marinho: #1E2A44 (texto, filetes e slide invertido)
+  Dourado: #A8822A (rubricas e números)
+  Dourado claro: #D9B46A (destaques sobre o azul)
+  Marca-texto: #ECDBA8 (sublinhado da palavra em destaque)
+  Caneta: #A8322A (só no riscado da revisão)

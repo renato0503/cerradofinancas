@@ -1,0 +1,30 @@
+p < 0,05 não é conclusão.
+
+Significância estatística indica que um efeito provavelmente existe, não que ele seja grande ou importante. Interpretar o resultado é diferente de rodar o teste.
+
+Erros comuns na análise:
+• Escolher o teste depois de ver o resultado
+• Ignorar os pressupostos do teste
+• Reportar só o valor-p, sem o tamanho de efeito
+• Tratar correlação como causa
+
+Na prática: "Os resultados foram significativos (p = 0,03), comprovando a hipótese." → "O efeito foi estatisticamente significativo (p = 0,03) e de magnitude pequena (d = 0,21); os dados são compatíveis com a hipótese, sem estabelecer causalidade."
+Um teste não “comprova” hipótese: relata-se o efeito, o tamanho e os limites.
+
+Análises que orientamos:
+▸ Regressões: múltipla, logística e multinomial
+▸ Painel e séries temporais: econometria aplicada
+▸ ANOVA e MANOVA: comparação entre grupos
+▸ Fatorial e SEM: construtos e modelos estruturais
+▸ Ferramentas: sTATA, R, Python, SPSS e EViews
+
+Como o Guia Acadêmico ajuda:
+1. Script comentado em R, STATA ou Python
+2. Sessões para você entender cada passo
+3. Interpretação que você consegue defender na banca
+
+Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.
+
+Resultado que você sabe explicar. Agende o diagnóstico: guiacademico.com.br
+
+#Estatistica #AnaliseDeDados #STATA #RStats #Econometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC
