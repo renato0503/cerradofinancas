@@ -150,7 +150,8 @@ A frente "Consultoria acadêmica", que aparecia como "em breve" na agenda, é o 
   Correções: o botão de agendar apontava para `[LINK_CALENDLY]` (agora abre o WhatsApp); o material gratuito dizia
   "enviado para o seu e-mail" sem enviar nada (agora é pedido pelo WhatsApp); o FAQ abria sozinho ao rolar (a
   animação de entrada e o FAQ usavam a mesma classe). Backup da versão anterior não foi para o repositório; o
-  histórico do git do projeto tem a original. **Falta publicar:** `firebase deploy --only hosting`.
+  histórico do git do projeto tem a original. Publicado em 30/10 com `firebase deploy --only hosting --account comercial@cerradofinancas.com.br` (o projeto
+  `guiacademicostorage` é dessa conta, não da gestor.renatorosa).
 
 ## Datas comemorativas e repetição da agenda (30/10)
 

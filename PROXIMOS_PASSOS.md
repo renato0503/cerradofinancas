@@ -63,8 +63,8 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       ao mudar a versão animada, atualizar também a cópia online (passo a passo em `marketing/HISTORICO.md`).
 - [ ] **Guia Acadêmico:** criar o perfil @guiacademico no Instagram (o nome foi usado na agenda e precisa ser
       confirmado); confirmar se os números do site (+120 trabalhos, 94% de aprovação, 10+ anos) podem ir para as
-      peças; publicar o site novo (`cd D:\Dev\GuiAcademico` e `firebase deploy --only hosting`), que ficou pronto
-      em 30/10 e não foi publicado porque o deploy precisa da sua autorização.
+      peças. O site novo foi publicado em 30/10; o projeto Firebase (`guiacademicostorage`) é da conta
+      comercial@cerradofinancas.com.br: `firebase deploy --only hosting --account comercial@cerradofinancas.com.br`.
 - [ ] Datas comemorativas de 2027: acrescentar em `marketing/tools/gerar_datas.py` (hoje vão até 01/01/2027).
 - [ ] Crédito: decidir a cidade do atendimento presencial (a LS fica em Campo Grande-MS; o `/credito` diz Cuiabá),
       se o consignado do INSS continua no site (o portfólio da LS lista o INSS só no empréstimo pessoal) e se as peças
