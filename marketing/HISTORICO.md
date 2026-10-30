@@ -25,12 +25,16 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
-| 30/10 | (esta rodada) | Cerra.AI, extras: glossário da IA local (5), Pergunte ao Cerra.AI (chamada + 2 dúvidas comuns), comparativo com a nuvem, 8 stories interativos, checklist IA e LGPD em PDF e kit de vendas (one-pager e deck) |
-| 30/10 | (esta rodada) | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
-| 29/10 | (esta rodada) | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
+| 30/10 | `359e0d9` | Cerra.AI, extras: glossário da IA local (5), Pergunte ao Cerra.AI (chamada + 2 dúvidas comuns), comparativo com a nuvem, 8 stories interativos, checklist IA e LGPD em PDF e kit de vendas (one-pager e deck) |
+| 30/10 | `9a6b5c9` | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
+| 29/10 | `97484c0`, `619e9f7` | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
 
 ## Campanhas publicadas (20)
+
+> **Panorama em 30/10/2026:** a Central tem **112 campanhas** publicadas: Contabilidade 22, Cerrado Tech 17, Crédito 16,
+> Guia Acadêmico 15, CerraClass 14, Cerra.AI 13, Institucional 8 (lançamento, folinha e 6 datas comemorativas) e
+> Consultorias 7. A lista abaixo é a primeira leva (26/10); as séries seguintes estão nas seções de cada data.
 
 Cada campanha tem carrossel (6 ou 7 slides, 1080×1350), story (1080×1920), Reel com som (1080×1920)
 e legendas para Instagram e LinkedIn, exceto onde indicado.
@@ -344,6 +348,17 @@ Valem para todas as próximas campanhas.
 
 9. **Vídeo padrão = carrossel animado.** Toda campanha nova sai com `carrossel-animado.mp4`, feito do próprio
    carrossel. Comerciais especiais são extras (ex.: `video-extra-app-*.mp4` da CerraClass). O que já está feito fica.
+10. **Datas comemorativas (30/10):** só as nacionais, só post estático e story, **sem vídeo**, no @cerradofinancas,
+    no dia fixo e fora da repetição. Tom sóbrio em Finados e Consciência Negra.
+11. **Agenda (30/10):** começa em **31/10/2026** (quando o Felipe começou); de 1 a 2 posts por dia por conta; quando o
+    conteúdo novo de uma conta acaba, os posts dela se repetem desde o mais antigo. Rodar `agendar.py 2026-10-31`.
+12. **Guia Acadêmico:** ética em toda peça ("não executamos trabalhos por terceiros"; o autor é o aluno); sem preço e sem
+    os números do site até confirmar; nada de "garantia de aprovação" (estava nas artes antigas) nem "limpeza de plágio".
+13. **Pergunta "real" é real.** Na série Pergunte ao Cerra.AI, só entra pergunta que chegou de verdade, com a origem;
+    as que antecipamos ficam marcadas como "Dúvida comum".
+14. **Commit com outra IA trabalhando no repositório:** nunca `git add -A`. Quando um arquivo compartilhado (como
+    `agendar.py`) tem mudanças não commitadas de outra pessoa, gerar e commitar numa cópia limpa (`git worktree`), depois
+    aplicar o mesmo patch na pasta principal e `git reset --mixed <commit>` (passo a passo em "Como foi feito").
 
 ## Como garantimos a qualidade
 
@@ -362,11 +377,19 @@ Valem para todas as próximas campanhas.
 
 - [ ] **Ouvir o áudio dos Reels** antes de postar. Os sons são sintetizados por código e nunca foram ouvidos por uma pessoa.
 - [ ] **Alinhar o catálogo da CerraClass para 10 alunos** por turma (hoje diz 15).
+- [ ] **Guia Acadêmico:** confirmar o perfil @guiacademico e os números do site; dizer se a logo antiga (capelo e livros,
+      pasta `GuiAcademico/` na raiz) ainda vale.
+- [ ] **Cerra.AI:** publicar ou não as 25 campanhas paradas da outra IA; levar as perguntas reais para
+      `dados/pergunte-cerraai.json`.
 - [ ] Atualizar as campanhas dos cursos quando o catálogo da CerraClass mudar (sequência no README).
 - [ ] Ideias de campanhas futuras: promoção de consignado, cases de clientes da Fábrica, depoimentos de alunos,
       turmas com data definida (aí sim com data, em peça de vida curta), conteúdo educativo de contabilidade.
 - [ ] Skills instaladas e ainda não usadas: `threejs-*` (3D) e `lemo-opuscar` (curtas cinematográficos, pesado).
-- [ ] **Espaço no GitHub Pages:** o limite é 1 GB por site. `entregas/` usava ~405 MB (19 campanhas) e foi
+- [ ] **ESPAÇO NO GITHUB PAGES (urgente):** em 30/10 o que é publicado (`entregas/` + `kits/`) soma **~894 MB**
+      (vídeos .mp4 518 MB, PNG 187 MB, .zip 175 MB), perto do limite de 1 GB. Antes da próxima leva grande de vídeos,
+      mover os .mp4 antigos para outro armazenamento (Google Drive, Firebase Storage ou YouTube não listado) e
+      apontar a Central para lá, ou tirar os .zip (dá para baixar peça por peça).
+- [ ] Histórico do espaço no GitHub Pages: o limite é 1 GB por site. `entregas/` usava ~405 MB (19 campanhas) e foi
       reduzida para **~290 MB** em 26/10 (e voltou a ~425 MB em 28/10, com a série da Cerrado Tech e os vídeos novos): o `.zip` de cada campanha passou a levar só as imagens e as legendas,
       não os vídeos (o time baixa o vídeo direto na Central de Conteúdos). Os `.zip` caíram de 198 MB para 84 MB.
       Se apertar o limite de novo, o próximo passo é mover os vídeos antigos para outro armazenamento

@@ -30,9 +30,18 @@ Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml
 - `gerar_gamma.py` sem chave no código: a chave vem da variável de ambiente `GAMMA_API_KEY`
   (`.env`, ignorado pelo git).
 
-**Marketing:** 20 campanhas publicadas (lançamento, 4 frentes, 13 cursos, folinha animada e Cerra.AI). Detalhes em `marketing/HISTORICO.md`.
+**Marketing:** **112 campanhas** publicadas na Central em 30/10 (Contabilidade 22, Cerrado Tech 17, Crédito 16, Guia Acadêmico 15, CerraClass 14, Cerra.AI 13, Institucional 8, Consultorias 7). Detalhes em `marketing/HISTORICO.md`.
 Em 28/10, Cerra.AI e CerraClass (com os cursos) ganharam **identidade visual própria** e vídeos novos em
 HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identidade do site.
+
+**30/10:**
+- **Guia Acadêmico** (consultoria acadêmica) virou a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas,
+  mídia kit, e o site guiacademico.com.br refeito na mesma identidade e publicado (Firebase, conta
+  comercial@cerradofinancas.com.br).
+- **Datas comemorativas** nacionais (6, até 01/01/2027) e **agenda** recomeçando em 31/10, com repetição do conteúdo
+  quando ele acaba.
+- **Cerra.AI, extras:** glossário (5), Pergunte ao Cerra.AI (3), comparativo com a nuvem, 8 stories interativos,
+  checklist IA e LGPD em PDF e kit de vendas (one-pager e deck). O @cerra.ai tem conteúdo novo até 23/11.
 
 **Palestra "Muito Além do Currículo: IA na Prática" (29/10):** versão animada com 29 slides
 (`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
@@ -51,6 +60,8 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       (o site e as peças já dizem 10).
 
 ### Marketing
+- [ ] **Espaço no GitHub Pages (urgente):** o que é publicado já soma ~894 MB de 1 GB (vídeos 518 MB, PNG 187 MB,
+      .zip 175 MB). Antes da próxima leva de vídeos, mover os .mp4 antigos para outro armazenamento ou tirar os .zip.
 - [ ] Ouvir o áudio dos Reels antes de postar (sons sintetizados, nunca revisados por uma pessoa).
       Medido em 26/10 com `marketing/tools/conferir_audio.py`: os 19 vídeos têm trilha, sem clipping e sem
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
