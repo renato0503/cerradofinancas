@@ -165,6 +165,69 @@ Pedidos do Renato em 30/10:
 - **Início:** o Felipe ainda não tinha começado; a agenda inteira recomeça em **sábado, 31/10/2026**
   (`python tools/agendar.py 2026-10-31`).
 
+## Como foi feito, passo a passo (30/10)
+
+Registro técnico da rodada do Guia Acadêmico, das datas comemorativas e da agenda nova, para repetir ou ajustar depois.
+
+**1. Fontes do conteúdo.** Tudo saiu do site do Guia (`D:\Dev\GuiAcademico\index.html`): serviços, ferramentas,
+protocolo de atendimento e FAQ. O `MARKETING_ARSENAL.md` do projeto foi lido, mas os posts antigos de "limpeza de plágio"
+e as artes antigas (pasta `GuiAcademico/` na raiz do cerradofinancas, com "garantia de aprovação") ficaram de fora por
+conflitarem com a regra de ética do próprio site.
+
+**2. Marca e fontes.** A bússola foi recortada do `logo3d.png` do projeto (pelo canal alfa, com limiar 20) em
+`brand/guiacademico/logo.png` e `logo-icone.png`. A Newsreader (400, 400 itálico, 600, 600 itálico) foi baixada do
+fontsource 5.2.10 pelo jsDelivr para `brand/fontes/`. A identidade está em `brand/guiacademico/marca.css` e no README.
+
+**3. Gerador da série.** `tools/gerar_guiacademico.py` tem os 15 temas na lista `TEMAS` (gancho, resumo, palavras-chave,
+lista, antes e depois, quadro, como ajuda, CTA e hashtags). Ele grava `posts/2026-11-guiacademico-<tema>/carrossel.html`
+e `story.html`, as legendas e o `info.json` em `entregas/`. A data do `info.json` só guarda a ordem; a data real vem
+do agendador. Ajustes feitos depois do `verificar.py`:
+- a bússola da capa encostava no resumo: ficou menor e mais para baixo (`.bussola`: 400px, `bottom: -120px`);
+- o texto justificado abria buracos (o Chrome não hifeniza português): passou a alinhado à esquerda;
+- o slide "Na prática" estourava quando o antes e depois somam mais de 190 caracteres: ganha a classe `compacta`.
+
+**4. Exportar e vídeos.** `python tools/exportar.py posts/2026-11-guiacademico-*/carrossel.html .../story.html`
+(105 PNGs) e, em `filmes/`, `node ferramentas/animar-carrossel.mjs <carrossel.html> --render --clima pb`. Com os 15
+de uma vez, o render travou no 4º (código 3221226505, o navegador do HyperFrames caiu); a solução foi rodar um por
+um, com uma segunda tentativa se falhar. Cada vídeo tem uns 4 MB.
+
+**5. Datas comemorativas.** `tools/gerar_datas.py` (lista `DATAS`) gera `post.html` e `story.html` na identidade do
+site e o `info.json` com `data_fixa`. Os anéis decorativos viraram `::before`/`::after`, porque como elementos o
+`verificar.py` acusava sobreposição com o texto (falso positivo).
+
+**6. Agendador** (`tools/agendar.py`):
+- conta `guiacademico` em `CONTAS` e `POR_DIA`; `FUTURAS` ficou vazia;
+- `fila_guiacademico`: a apresentação primeiro, depois os temas na ordem do gerador, com o carrossel animado de cada
+  tema como Reel 4 posts depois;
+- campanhas com `data_fixa` saem da fila e entram no dia fixo (`"fixa": true`);
+- o fim da agenda é o último dia de conteúdo novo de qualquer conta (ou a última data fixa); a conta que acaba antes
+  repete a própria fila desde o começo (`"repeticao": true`, peça com "(repetição)");
+- repetições e datas fixas não reescrevem o "Postar em…" do `info.json`; o `agenda.json` ganhou `novos_ate` por conta.
+- `tools/publicar.py`: prefixos `guiacademico-` (frente `guiacademico`, série "Cadernos de método") e `data-`
+  (institucional, "Datas comemorativas").
+
+**7. Central** (`index.html`): a grade da agenda usa `--contas` (número de colunas vem do `agenda.json`); frente
+`guiacademico` em `FRENTES`; o cartão de cada conta mostra "conteúdo novo até…, depois repete"; textos de "Como usar"
+e da introdução da agenda falam das 4 contas e da repetição. Mídia kit: entrada nova em `KITS_DADOS`
+(`tools/gerar_kits.py`), gerada sozinha (`gerar(k)` só para ela e junção no `kits.json`), para não regravar os PDFs e
+zips dos outros kits.
+
+**8. Commit sem levar o trabalho da outra IA.** O `agendar.py` e o `publicar.py` tinham alterações não commitadas da
+outra IA (série do Cerra.AI), e as campanhas `2026-11-cerraai-*` dela ainda não estavam publicadas. Por isso:
+1. `git worktree add --detach <scratchpad>/wt HEAD` (uma cópia limpa do último commit);
+2. cópia dos meus arquivos para lá e o mesmo patch do agendador aplicado no `agendar.py`/`publicar.py` do commit;
+3. `agendar.py 2026-10-31` e `publicar.py` rodados lá (assim o `agenda.json` e o `conteudos.json` não citam as campanhas
+   não publicadas); os `.zip` das campanhas antigas voltaram ao commitado com `git checkout`;
+4. commit e push de lá (`9a6b5c9`); na pasta principal, o mesmo patch aplicado por cima das mudanças da outra IA, os
+   arquivos gerados copiados de volta e `git reset --mixed 9a6b5c9`. Resultado: o `git status` da pasta principal
+   mostra só o trabalho da outra IA, intacto; o worktree foi removido.
+
+**9. Site do Guia Acadêmico.** O `index.html` foi reescrito com o mesmo conteúdo, os mesmos ids e scripts (login por
+CPF, cadastro, menu, modal) e o CSS novo na identidade "Artigo" (Newsreader e DM Mono pelo Google Fonts, `bussola.png`
+e `favicon.png` novos). Testado com Playwright em 1440px e 390px. O deploy foi feito só depois de comparar os outros
+arquivos com os do ar (iguais). O projeto Firebase é da conta comercial@cerradofinancas.com.br, adicionada pelo Renato
+com `firebase login:add`; deploy: `firebase deploy --only hosting --account comercial@cerradofinancas.com.br`.
+
 ## Palestra "Muito Além do Currículo: IA na Prática" (29/10)
 
 Palestra do Renato em 29/10/2026, às 14h30. Pasta de trabalho: `posts/2026-10-palestra-carreira-ia/`.
