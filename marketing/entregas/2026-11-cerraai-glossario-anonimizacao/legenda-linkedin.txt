@@ -1,0 +1,12 @@
+Glossário da IA local, 4/5: Anonimização.
+
+Trocar os dados que identificam uma pessoa por marcas, antes de o texto seguir adiante. É passar a caneta preta no nome, no CPF e no telefone antes de mostrar o papel.
+
+Como o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:
+• Relatório LGPD: os dados são anonimizados antes de chegar ao modelo
+• Anonimizar: cole um texto ou um arquivo; nada é gravado
+• Minimização: CPF, RG e telefone só chegam ao modelo se a pergunta pedir
+
+Usar só o dado necessário é princípio da LGPD (art. 6º, III).
+
+Demonstração com o seu caso de uso: cerradofinancas.com.br/cerraai

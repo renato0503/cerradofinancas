@@ -1,0 +1,12 @@
+Glossário da IA local, 2/5: RAG.
+
+A IA busca nos seus documentos os trechos que respondem à pergunta e só então escreve a resposta. É uma prova com consulta: antes de responder, ela abre os seus arquivos.
+
+Como o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:
+• Cada trecho guarda a página de origem, para a citação
+• Nos cenários, a busca é híbrida: por sentido e por palavra exata, com as siglas da área
+• Cada workspace tem a sua base: um cliente não aparece no outro
+
+A resposta fala da sua empresa, não da internet.
+
+Demonstração com o seu caso de uso: cerradofinancas.com.br/cerraai

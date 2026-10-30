@@ -1,0 +1,10 @@
+“Quais arquivos ele consegue ler?” (dúvida comum sobre o Cerra.AI)
+
+Quase tudo que o escritório já tem.
+• PDF escaneado também: o OCR lê a página
+• Áudio e vídeo viram texto, transcritos na máquina
+• .doc e .xls antigos: ele pede para salvar no formato novo
+
+Tudo vira texto na sua máquina. Nenhum arquivo é enviado para fora para ser convertido.
+
+Cerra.AI, a IA corporativa 100% local da Cerrado Tech: cerradofinancas.com.br/cerraai

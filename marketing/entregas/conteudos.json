@@ -2579,6 +2579,92 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-material-kit-vendas",
+    "frente": "cerraai",
+    "serie": "Materiais (PDF)",
+    "capa": "deck-01.png",
+    "titulo": "Cerra.AI · Kit de vendas (one-pager e deck)",
+    "data": "2026-11-30",
+    "descricao": "Material comercial: one-pager A4 e deck de 8 slides, para mandar depois da conversa. Não é post.",
+    "orientacoes": [
+      "Não é post: fica fora da agenda.",
+      "one-pager.pdf e deck.pdf; as prévias em PNG mostram o conteúdo."
+    ],
+    "arquivos": [
+      {
+        "nome": "deck-01.png",
+        "tipo": "imagem",
+        "kb": 215
+      },
+      {
+        "nome": "deck-02.png",
+        "tipo": "imagem",
+        "kb": 98
+      },
+      {
+        "nome": "deck-03.png",
+        "tipo": "imagem",
+        "kb": 94
+      },
+      {
+        "nome": "deck-04.png",
+        "tipo": "imagem",
+        "kb": 112
+      },
+      {
+        "nome": "deck-05.png",
+        "tipo": "imagem",
+        "kb": 95
+      },
+      {
+        "nome": "deck-06.png",
+        "tipo": "imagem",
+        "kb": 103
+      },
+      {
+        "nome": "deck-07.png",
+        "tipo": "imagem",
+        "kb": 79
+      },
+      {
+        "nome": "deck-08.png",
+        "tipo": "imagem",
+        "kb": 96
+      },
+      {
+        "nome": "deck.pdf",
+        "tipo": "documento",
+        "kb": 916
+      },
+      {
+        "nome": "one-pager.pdf",
+        "tipo": "documento",
+        "kb": 776
+      },
+      {
+        "nome": "one-pager.png",
+        "tipo": "imagem",
+        "kb": 259
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Kit de vendas do Cerra.AI: para mandar depois da conversa ou da demonstração.\n\none-pager.pdf: uma página A4 com o que é, o que faz, o que protege, para quem e como começa.\ndeck.pdf: 8 slides 16:9 para conduzir a demonstração (problema, como funciona, tela, LGPD, áreas, o que ele não é, próximo passo).\n\nMensagem sugerida para o WhatsApp:\n\"Obrigado pela conversa! Segue o resumo do Cerra.AI, a IA que roda no computador da empresa e responde com a fonte de cada informação. Quando quiser, marcamos a demonstração com os seus próprios documentos.\"\n\nSem preço e sem prazo nos materiais: isso é tratado na conversa.\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Kit de vendas do Cerra.AI: para mandar depois da conversa ou da demonstração.\n\none-pager.pdf: uma página A4 com o que é, o que faz, o que protege, para quem e como começa.\ndeck.pdf: 8 slides 16:9 para conduzir a demonstração (problema, como funciona, tela, LGPD, áreas, o que ele não é, próximo passo).\n\nMensagem sugerida para o WhatsApp:\n\"Obrigado pela conversa! Segue o resumo do Cerra.AI, a IA que roda no computador da empresa e responde com a fonte de cada informação. Quando quiser, marcamos a demonstração com os seus próprios documentos.\"\n\nSem preço e sem prazo nos materiais: isso é tratado na conversa.\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-material-kit-vendas.zip",
+      "kb": 2621
+    }
+  },
+  {
     "pasta": "2026-11-contabil-sabia-dirf",
     "frente": "contabilidade",
     "serie": "Você sabia?",
@@ -3974,6 +4060,75 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-glossario-trecho-consultado",
+    "frente": "cerraai",
+    "serie": "Glossário da IA local",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Glossário · Trecho consultado",
+    "data": "2026-11-19",
+    "descricao": "Glossário da IA local (5 de 5): Trecho consultado, explicado sem jargão e mostrado no Cerra.AI.",
+    "orientacoes": [
+      "Postar em 19/11 (carrossel + story); 23/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 161
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 33
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 88
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2593
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 64
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Glossário da IA local, 5/5: Trecho consultado.\n\nA etiqueta embaixo da resposta que diz de qual arquivo e de qual página veio a informação.\n\nSem jargão: É a nota de rodapé da IA.\n\nNo Cerra.AI:\n▪️ Mostra arquivo e página (ou aba da planilha, ou slide)\n▪️ Abriu o arquivo, conferiu em segundos\n▪️ Se não há trecho que responda, ele diz que não consta\n\nConfiar na IA sem acreditar cegamente nela.\n\nSalve para consultar depois. Demonstração pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraai\n\n#TrechosConsultados #IAConfiavel #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Glossário da IA local, 5/5: Trecho consultado.\n\nA etiqueta embaixo da resposta que diz de qual arquivo e de qual página veio a informação. É a nota de rodapé da IA.\n\nComo o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:\n• Mostra arquivo e página (ou aba da planilha, ou slide)\n• Abriu o arquivo, conferiu em segundos\n• Se não há trecho que responda, ele diz que não consta\n\nConfiar na IA sem acreditar cegamente nela.\n\nDemonstração com o seu caso de uso: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-glossario-trecho-consultado.zip",
+      "kb": 474
+    }
+  },
+  {
     "pasta": "2026-10-curso-ciencia-de-dados",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
@@ -4282,6 +4437,75 @@
     "pacote": {
       "nome": "2026-11-credito-portabilidade.zip",
       "kb": 735
+    }
+  },
+  {
+    "pasta": "2026-11-cerraai-pergunte-arquivos",
+    "frente": "cerraai",
+    "serie": "Pergunte ao Cerra.AI",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+    "data": "2026-11-17",
+    "descricao": "Pergunte ao Cerra.AI (dúvida comum): a pergunta e a resposta com a tela do produto.",
+    "orientacoes": [
+      "Postar em 17/11 (carrossel + story); 22/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 155
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 52
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 103
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 81
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 80
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2662
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 73
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Pergunte ao Cerra.AI (dúvida comum): “Quais arquivos ele consegue ler?”\n\nQuase tudo que o escritório já tem.\n\n▪️ PDF escaneado também: o OCR lê a página\n▪️ Áudio e vídeo viram texto, transcritos na máquina\n▪️ .doc e .xls antigos: ele pede para salvar no formato novo\n\nTudo vira texto na sua máquina. Nenhum arquivo é enviado para fora para ser convertido.\n\nTem outra dúvida? Comente aqui ou mande no WhatsApp (67) 99351-5206.\n🔗 cerradofinancas.com.br/cerraai\n\n#PergunteAoCerraAI #OCR #Transcricao #Documentos #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "“Quais arquivos ele consegue ler?” (dúvida comum sobre o Cerra.AI)\n\nQuase tudo que o escritório já tem.\n• PDF escaneado também: o OCR lê a página\n• Áudio e vídeo viram texto, transcritos na máquina\n• .doc e .xls antigos: ele pede para salvar no formato novo\n\nTudo vira texto na sua máquina. Nenhum arquivo é enviado para fora para ser convertido.\n\nCerra.AI, a IA corporativa 100% local da Cerrado Tech: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-pergunte-arquivos.zip",
+      "kb": 498
     }
   },
   {
@@ -4638,6 +4862,75 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-glossario-anonimizacao",
+    "frente": "cerraai",
+    "serie": "Glossário da IA local",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Glossário · Anonimização",
+    "data": "2026-11-15",
+    "descricao": "Glossário da IA local (4 de 5): Anonimização, explicado sem jargão e mostrado no Cerra.AI.",
+    "orientacoes": [
+      "Postar em 15/11 (carrossel + story); 21/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 153
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 55
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 56
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 101
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2670
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 56
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Glossário da IA local, 4/5: Anonimização.\n\nTrocar os dados que identificam uma pessoa por marcas, antes de o texto seguir adiante.\n\nSem jargão: É passar a caneta preta no nome, no CPF e no telefone antes de mostrar o papel.\n\nNo Cerra.AI:\n▪️ Relatório LGPD: os dados são anonimizados antes de chegar ao modelo\n▪️ Anonimizar: cole um texto ou um arquivo; nada é gravado\n▪️ Minimização: CPF, RG e telefone só chegam ao modelo se a pergunta pedir\n\nUsar só o dado necessário é princípio da LGPD (art. 6º, III).\n\nSalve para consultar depois. Demonstração pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraai\n\n#Anonimizacao #ProtecaoDeDados #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Glossário da IA local, 4/5: Anonimização.\n\nTrocar os dados que identificam uma pessoa por marcas, antes de o texto seguir adiante. É passar a caneta preta no nome, no CPF e no telefone antes de mostrar o papel.\n\nComo o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:\n• Relatório LGPD: os dados são anonimizados antes de chegar ao modelo\n• Anonimizar: cole um texto ou um arquivo; nada é gravado\n• Minimização: CPF, RG e telefone só chegam ao modelo se a pergunta pedir\n\nUsar só o dado necessário é princípio da LGPD (art. 6º, III).\n\nDemonstração com o seu caso de uso: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-glossario-anonimizacao.zip",
+      "kb": 462
+    }
+  },
+  {
     "pasta": "2026-10-curso-bpmn-com-ia",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
@@ -4946,6 +5239,75 @@
     "pacote": {
       "nome": "2026-11-contabil-sabia-fator-r.zip",
       "kb": 593
+    }
+  },
+  {
+    "pasta": "2026-11-cerraai-pergunte-inventa",
+    "frente": "cerraai",
+    "serie": "Pergunte ao Cerra.AI",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+    "data": "2026-11-13",
+    "descricao": "Pergunte ao Cerra.AI (dúvida comum): a pergunta e a resposta com a tela do produto.",
+    "orientacoes": [
+      "Postar em 13/11 (carrossel + story); 20/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 169
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 50
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 72
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 84
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 88
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2589
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 84
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Pergunte ao Cerra.AI (dúvida comum): “Se a informação não estiver nos documentos, ele inventa?”\n\nNão. Ele diz que não consta.\n\n▪️ Normas e dados da empresa: só pelos documentos\n▪️ Se não consta, ele diz que não consta\n▪️ Código, cálculo e redação: usa o conhecimento geral\n\nRevisar continua sendo papel de quem assina. A IA ajuda a achar e a resumir; a decisão e a responsabilidade continuam com o profissional.\n\nTem outra dúvida? Comente aqui ou mande no WhatsApp (67) 99351-5206.\n🔗 cerradofinancas.com.br/cerraai\n\n#PergunteAoCerraAI #IAConfiavel #RAG #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "“Se a informação não estiver nos documentos, ele inventa?” (dúvida comum sobre o Cerra.AI)\n\nNão. Ele diz que não consta.\n• Normas e dados da empresa: só pelos documentos\n• Se não consta, ele diz que não consta\n• Código, cálculo e redação: usa o conhecimento geral\n\nRevisar continua sendo papel de quem assina. A IA ajuda a achar e a resumir; a decisão e a responsabilidade continuam com o profissional.\n\nCerra.AI, a IA corporativa 100% local da Cerrado Tech: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-pergunte-inventa.zip",
+      "kb": 500
     }
   },
   {
@@ -5260,6 +5622,91 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-material-checklist-lgpd",
+    "frente": "cerraai",
+    "serie": "Materiais (PDF)",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
+    "data": "2026-11-11",
+    "descricao": "Checklist em PDF \"Como usar IA no escritório sem ferir a LGPD\" (isca para a demonstração) e o post que divulga.",
+    "orientacoes": [
+      "Postar em 11/11 (carrossel + story); 18/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai",
+      "O PDF (checklist-ia-lgpd.pdf) vai para quem comentar CHECKLIST ou pedir no WhatsApp. Link direto: https://www.cerradofinancas.com.br/marketing/entregas/2026-11-cerraai-material-checklist-lgpd/checklist-ia-lgpd.pdf"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 158
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 68
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 54
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 76
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 73
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2457
+      },
+      {
+        "nome": "checklist-ia-lgpd.pdf",
+        "tipo": "documento",
+        "kb": 869
+      },
+      {
+        "nome": "checklist-pagina-1.png",
+        "tipo": "imagem",
+        "kb": 242
+      },
+      {
+        "nome": "checklist-pagina-2.png",
+        "tipo": "imagem",
+        "kb": 243
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 83
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Como usar IA no escritório sem ferir a LGPD: um checklist de 12 itens, em PDF, grátis.\n\n1. Mapeie os dados pessoais\n2. Defina a finalidade\n3. Identifique a base legal\n4. Saiba para onde o texto vai\n5. Envie só o necessário\n6. Anonimize antes de colar\n7. Separe as bases\n8. Confira a fonte da resposta\n9. Tenha uma política de uso de IA\n10. Registre o uso\n11. Atenda aos pedidos dos titulares\n12. Envolva o encarregado (DPO)\n\nComente CHECKLIST ou peça pelo WhatsApp (67) 99351-5206 que a gente manda o PDF.\n\nMaterial educativo, não é parecer jurídico.\n\n#ChecklistLGPD #ProtecaoDeDados #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Sua equipe já usa IA com documentos de clientes? Preparamos um checklist de 12 itens para fazer isso sem ferir a LGPD: finalidade, base legal, minimização, anonimização, bases separadas, registro de uso, direitos dos titulares e o papel do encarregado.\n\nPeça o PDF gratuito pelo WhatsApp (67) 99351-5206 ou nos comentários.\n\nMaterial educativo, não é parecer jurídico. Cerra.AI, a IA 100% local da Cerrado Tech: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-material-checklist-lgpd.zip",
+      "kb": 1720
+    }
+  },
+  {
     "pasta": "2026-10-curso-consultoria-financeira-ia",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
@@ -5567,6 +6014,75 @@
     "pacote": {
       "nome": "2026-11-tech-crm.zip",
       "kb": 4012
+    }
+  },
+  {
+    "pasta": "2026-11-cerraai-glossario-ocr",
+    "frente": "cerraai",
+    "serie": "Glossário da IA local",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Glossário · OCR",
+    "data": "2026-11-09",
+    "descricao": "Glossário da IA local (3 de 5): OCR, explicado sem jargão e mostrado no Cerra.AI.",
+    "orientacoes": [
+      "Postar em 09/11 (carrossel + story); 16/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 155
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 60
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 67
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 91
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2671
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 56
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Glossário da IA local, 3/5: OCR.\n\nA técnica que transforma a imagem de um texto, como uma página escaneada, em texto de verdade.\n\nSem jargão: PDF escaneado é uma foto da página: sem OCR, a IA vê a foto, não as palavras.\n\nNo Cerra.AI:\n▪️ Lê PDF escaneado e imagens (PNG, JPG, TIFF, WEBP…)\n▪️ Avisa o que fez: “12 páginas, 3 lidas por OCR”\n▪️ Tudo offline: a página não sai da máquina para ser lida\n\nO arquivo esquecido no fundo da pasta também vira resposta.\n\nSalve para consultar depois. Demonstração pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraai\n\n#OCR #Digitalizacao #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Glossário da IA local, 3/5: OCR.\n\nA técnica que transforma a imagem de um texto, como uma página escaneada, em texto de verdade. PDF escaneado é uma foto da página: sem OCR, a IA vê a foto, não as palavras.\n\nComo o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:\n• Lê PDF escaneado e imagens (PNG, JPG, TIFF, WEBP…)\n• Avisa o que fez: “12 páginas, 3 lidas por OCR”\n• Tudo offline: a página não sai da máquina para ser lida\n\nO arquivo esquecido no fundo da pasta também vira resposta.\n\nDemonstração com o seu caso de uso: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-glossario-ocr.zip",
+      "kb": 470
     }
   },
   {
@@ -5881,6 +6397,78 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-stories-interativos",
+    "frente": "cerraai",
+    "serie": "Stories interativos",
+    "capa": "stories-01.png",
+    "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
+    "data": "2026-11-07",
+    "descricao": "8 stories com enquete, quiz, caixinha e slider, com o lugar do sticker marcado.",
+    "orientacoes": [
+      "Postar em 07/11 no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Um story por dia, nos dias sem story de campanha: stories-01 a stories-08. O texto de cada sticker está na legenda abaixo."
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "stories-01.png",
+        "tipo": "imagem",
+        "kb": 75
+      },
+      {
+        "nome": "stories-02.png",
+        "tipo": "imagem",
+        "kb": 66
+      },
+      {
+        "nome": "stories-03.png",
+        "tipo": "imagem",
+        "kb": 92
+      },
+      {
+        "nome": "stories-04.png",
+        "tipo": "imagem",
+        "kb": 74
+      },
+      {
+        "nome": "stories-05.png",
+        "tipo": "imagem",
+        "kb": 74
+      },
+      {
+        "nome": "stories-06.png",
+        "tipo": "imagem",
+        "kb": 47
+      },
+      {
+        "nome": "stories-07.png",
+        "tipo": "imagem",
+        "kb": 68
+      },
+      {
+        "nome": "stories-08.png",
+        "tipo": "imagem",
+        "kb": 72
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Stories interativos do @cerra.ai: um por dia, entre os carrosséis.\n\nComo postar: suba o stories-0N.png, adicione o sticker indicado em cima da caixa tracejada (o sticker cobre a caixa) e use o texto abaixo.\n\nStory 1 (Enquete): A sua equipe já cola contrato em chat da internet? → Sim, às vezes · Acho que não\nStory 2 (Quiz): A IA local precisa de internet para responder? → Sim · Não, depois de instalada (certa) · Só às vezes\nStory 3 (Caixinha): Que documento você perguntaria a uma IA, se ele não saísse da empresa? → Caixinha de perguntas aberta\nStory 4 (Slider): Quanto te preocupa um vazamento de dado de cliente? → Slider de emoji 😬\nStory 5 (Enquete): Você confere a fonte quando a IA responde? → Sempre · Quase nunca\nStory 6 (Quiz): O que é OCR? → Um tipo de IA · Ler o texto de uma imagem (certa) · Um formato de arquivo\nStory 7 (Caixinha): Pergunte ao Cerra.AI: mande a sua dúvida. → Caixinha: a resposta vira post\nStory 8 (Enquete): Prefere ver o Cerra.AI funcionando em vídeo ou ao vivo? → Vídeo · Ao vivo\n\nRespostas da caixinha que forem dúvidas viram post da série Pergunte ao Cerra.AI (dados/pergunte-cerraai.json).\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Stories interativos do @cerra.ai: um por dia, entre os carrosséis.\n\nComo postar: suba o stories-0N.png, adicione o sticker indicado em cima da caixa tracejada (o sticker cobre a caixa) e use o texto abaixo.\n\nStory 1 (Enquete): A sua equipe já cola contrato em chat da internet? → Sim, às vezes · Acho que não\nStory 2 (Quiz): A IA local precisa de internet para responder? → Sim · Não, depois de instalada (certa) · Só às vezes\nStory 3 (Caixinha): Que documento você perguntaria a uma IA, se ele não saísse da empresa? → Caixinha de perguntas aberta\nStory 4 (Slider): Quanto te preocupa um vazamento de dado de cliente? → Slider de emoji 😬\nStory 5 (Enquete): Você confere a fonte quando a IA responde? → Sempre · Quase nunca\nStory 6 (Quiz): O que é OCR? → Um tipo de IA · Ler o texto de uma imagem (certa) · Um formato de arquivo\nStory 7 (Caixinha): Pergunte ao Cerra.AI: mande a sua dúvida. → Caixinha: a resposta vira post\nStory 8 (Enquete): Prefere ver o Cerra.AI funcionando em vídeo ou ao vivo? → Vídeo · Ao vivo\n\nRespostas da caixinha que forem dúvidas viram post da série Pergunte ao Cerra.AI (dados/pergunte-cerraai.json).\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-stories-interativos.zip",
+      "kb": 497
+    }
+  },
+  {
     "pasta": "2026-10-curso-excel-com-ia",
     "frente": "cerraclass",
     "serie": "Um curso por campanha",
@@ -6117,6 +6705,80 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-glossario-rag",
+    "frente": "cerraai",
+    "serie": "Glossário da IA local",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Glossário · RAG",
+    "data": "2026-11-06",
+    "descricao": "Glossário da IA local (2 de 5): RAG, explicado sem jargão e mostrado no Cerra.AI.",
+    "orientacoes": [
+      "Postar em 06/11 (carrossel + story); 14/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 153
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 52
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 109
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 89
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 99
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3558
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 56
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Glossário da IA local, 2/5: RAG.\n\nA IA busca nos seus documentos os trechos que respondem à pergunta e só então escreve a resposta.\n\nSem jargão: É uma prova com consulta: antes de responder, ela abre os seus arquivos.\n\nNo Cerra.AI:\n▪️ Cada trecho guarda a página de origem, para a citação\n▪️ Nos cenários, a busca é híbrida: por sentido e por palavra exata, com as siglas da área\n▪️ Cada workspace tem a sua base: um cliente não aparece no outro\n\nA resposta fala da sua empresa, não da internet.\n\nSalve para consultar depois. Demonstração pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraai\n\n#RAG #IAGenerativa #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Glossário da IA local, 2/5: RAG.\n\nA IA busca nos seus documentos os trechos que respondem à pergunta e só então escreve a resposta. É uma prova com consulta: antes de responder, ela abre os seus arquivos.\n\nComo o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:\n• Cada trecho guarda a página de origem, para a citação\n• Nos cenários, a busca é híbrida: por sentido e por palavra exata, com as siglas da área\n• Cada workspace tem a sua base: um cliente não aparece no outro\n\nA resposta fala da sua empresa, não da internet.\n\nDemonstração com o seu caso de uso: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-glossario-rag.zip",
+      "kb": 592
+    }
+  },
+  {
     "pasta": "2026-11-contabil-mei",
     "frente": "contabilidade",
     "serie": "Para quem atendemos e o que fazemos",
@@ -6189,6 +6851,80 @@
     "pacote": {
       "nome": "2026-11-contabil-mei.zip",
       "kb": 601
+    }
+  },
+  {
+    "pasta": "2026-11-cerraai-comparativo-nuvem",
+    "frente": "cerraai",
+    "serie": "Comparativo",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+    "data": "2026-11-05",
+    "descricao": "Comparativo honesto, critério por critério, incluindo onde a nuvem é melhor.",
+    "orientacoes": [
+      "Postar em 05/11 (carrossel + story); 12/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 143
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 106
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 110
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 75
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 80
+      },
+      {
+        "nome": "carrossel-06.png",
+        "tipo": "imagem",
+        "kb": 83
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 3528
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 75
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "IA na nuvem × Cerra.AI: o comparativo honesto.\n\n▪️ Onde fica o dado: nuvem, no servidor do provedor, fora da empresa; Cerra.AI, no computador da empresa\n▪️ Internet: nuvem, precisa, a cada pergunta; Cerra.AI, não precisa, depois de instalado\n▪️ Fonte da resposta: nuvem, depende do serviço; Cerra.AI, arquivo e página, quando usa documento\n▪️ Documentos internos: nuvem, depende de enviar ou integrar; Cerra.AI, lê os arquivos do workspace\n▪️ Dado pessoal: nuvem, segue junto com a pergunta; Cerra.AI, anonimização e minimização antes do modelo\n▪️ Foco por área: nuvem, depende do serviço; Cerra.AI, bases isoladas e recusa fora do tema\n\nE onde a nuvem ganha: modelos maiores, sem precisar de placa de vídeo e com acesso de qualquer lugar. Texto público vai bem na nuvem; contrato, prontuário e dado de cliente pedem IA local.\n\n(Comparação genérica, sem citar nenhum serviço.)\n\nDemonstração pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraai\n\n#IANaNuvem #Comparativo #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "IA na nuvem ou IA local? Um comparativo honesto, critério por critério.\n\n• Onde fica o dado: nuvem, no servidor do provedor, fora da empresa; Cerra.AI, no computador da empresa\n• Internet: nuvem, precisa, a cada pergunta; Cerra.AI, não precisa, depois de instalado\n• Fonte da resposta: nuvem, depende do serviço; Cerra.AI, arquivo e página, quando usa documento\n• Documentos internos: nuvem, depende de enviar ou integrar; Cerra.AI, lê os arquivos do workspace\n• Dado pessoal: nuvem, segue junto com a pergunta; Cerra.AI, anonimização e minimização antes do modelo\n• Foco por área: nuvem, depende do serviço; Cerra.AI, bases isoladas e recusa fora do tema\n\nA nuvem ganha em tamanho de modelo, em não exigir hardware e no acesso de qualquer lugar. O Cerra.AI ganha quando o documento não pode sair da empresa. Comparação genérica, sem citar nenhum serviço.\n\ncerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-comparativo-nuvem.zip",
+      "kb": 617
     }
   },
   {
@@ -6427,6 +7163,75 @@
     }
   },
   {
+    "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+    "frente": "cerraai",
+    "serie": "Pergunte ao Cerra.AI",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+    "data": "2026-11-04",
+    "descricao": "Chamada da série Pergunte ao Cerra.AI: o público manda dúvidas e cada uma vira um post.",
+    "orientacoes": [
+      "Postar em 04/11 (carrossel + story); 10/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 151
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 74
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 76
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 69
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 79
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2659
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 55
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Pergunte ao Cerra.AI.\n\nTem dúvida sobre IA local, LGPD ou sobre o que acontece com os seus documentos? Mande aqui nos comentários, na caixinha dos stories ou no WhatsApp (67) 99351-5206. A resposta vira um post, com a tela do Cerra.AI.\n\nNão publicamos o nome de quem perguntou sem autorização, e preço e prazo a gente conversa direto.\n\n🔗 cerradofinancas.com.br/cerraai\n\n#PergunteAoCerraAI #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Pergunte ao Cerra.AI: a série em que as dúvidas viram post.\n\nIA que roda sem internet, o destino dos documentos, LGPD, anonimização, o que a IA não faz: mande a sua pergunta nos comentários ou pelo WhatsApp (67) 99351-5206. A resposta sai com a tela do Cerra.AI, a IA 100% local da Cerrado Tech.\n\ncerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-pergunte-mande-sua-duvida.zip",
+      "kb": 458
+    }
+  },
+  {
     "pasta": "2026-11-guiacademico-qualitativa",
     "frente": "guiacademico",
     "serie": "Cadernos de método",
@@ -6499,6 +7304,75 @@
     "pacote": {
       "nome": "2026-11-guiacademico-qualitativa.zip",
       "kb": 842
+    }
+  },
+  {
+    "pasta": "2026-11-cerraai-glossario-modelo-local",
+    "frente": "cerraai",
+    "serie": "Glossário da IA local",
+    "capa": "carrossel-01.png",
+    "titulo": "Cerra.AI · Glossário · Modelo local",
+    "data": "2026-11-03",
+    "descricao": "Glossário da IA local (1 de 5): Modelo local, explicado sem jargão e mostrado no Cerra.AI.",
+    "orientacoes": [
+      "Postar em 03/11 (carrossel + story); 08/11 (reel: carrossel animado) no @cerra.ai (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Carrossel: no Instagram, na ordem; no LinkedIn, os PNGs como documento.",
+      "Carrossel animado (carrossel-animado.mp4): os mesmos slides em vídeo, postado como Reel em outro dia.",
+      "Story: sticker de link para https://www.cerradofinancas.com.br/cerraai"
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "carrossel-01.png",
+        "tipo": "imagem",
+        "kb": 160
+      },
+      {
+        "nome": "carrossel-02.png",
+        "tipo": "imagem",
+        "kb": 56
+      },
+      {
+        "nome": "carrossel-03.png",
+        "tipo": "imagem",
+        "kb": 73
+      },
+      {
+        "nome": "carrossel-04.png",
+        "tipo": "imagem",
+        "kb": 101
+      },
+      {
+        "nome": "carrossel-05.png",
+        "tipo": "imagem",
+        "kb": 87
+      },
+      {
+        "nome": "carrossel-animado.mp4",
+        "tipo": "video",
+        "kb": 2794
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 60
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Glossário da IA local, 1/5: Modelo local.\n\nUm modelo de linguagem que roda no computador da empresa, e não no servidor de outra empresa.\n\nSem jargão: É ter o especialista dentro da sala, em vez de mandar o documento pelo correio.\n\nNo Cerra.AI:\n▪️ Um roteador escolhe o modelo para cada pergunta: um leve para saudações, um maior para o resto\n▪️ O teste de interface confirma zero requisições externas\n▪️ Os modelos são baixados uma vez, na instalação\n\nSigilo profissional, LGPD e trabalho que não para quando a internet cai.\n\nSalve para consultar depois. Demonstração pelo WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/cerraai\n\n#ModeloLocal #LLM #CerraAI #IALocal #IAOffline #LGPD #CerradoTech\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Glossário da IA local, 1/5: Modelo local.\n\nUm modelo de linguagem que roda no computador da empresa, e não no servidor de outra empresa. É ter o especialista dentro da sala, em vez de mandar o documento pelo correio.\n\nComo o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:\n• Um roteador escolhe o modelo para cada pergunta: um leve para saudações, um maior para o resto\n• O teste de interface confirma zero requisições externas\n• Os modelos são baixados uma vez, na instalação\n\nSigilo profissional, LGPD e trabalho que não para quando a internet cai.\n\nDemonstração com o seu caso de uso: cerradofinancas.com.br/cerraai\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-glossario-modelo-local.zip",
+      "kb": 491
     }
   },
   {

@@ -1,0 +1,12 @@
+Glossário da IA local, 1/5: Modelo local.
+
+Um modelo de linguagem que roda no computador da empresa, e não no servidor de outra empresa. É ter o especialista dentro da sala, em vez de mandar o documento pelo correio.
+
+Como o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:
+• Um roteador escolhe o modelo para cada pergunta: um leve para saudações, um maior para o resto
+• O teste de interface confirma zero requisições externas
+• Os modelos são baixados uma vez, na instalação
+
+Sigilo profissional, LGPD e trabalho que não para quando a internet cai.
+
+Demonstração com o seu caso de uso: cerradofinancas.com.br/cerraai

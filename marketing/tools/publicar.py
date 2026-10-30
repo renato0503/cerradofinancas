@@ -23,10 +23,16 @@ TIPOS = {
     ".png": "imagem", ".jpg": "imagem", ".gif": "imagem",
     ".mp4": "video", ".webm": "video", ".mov": "video",
     ".json": "lottie",
+    ".pdf": "documento",
 }
 # Frente e série de cada campanha, pelo nome da pasta (sem a data): a primeira regra que casar vale.
 # A página agrupa e filtra por elas; ao criar um prefixo novo, acrescente aqui.
 REGRAS = [
+    ("cerraai-glossario-", "cerraai", "Glossário da IA local"),
+    ("cerraai-pergunte-", "cerraai", "Pergunte ao Cerra.AI"),
+    ("cerraai-stories-", "cerraai", "Stories interativos"),
+    ("cerraai-comparativo-", "cerraai", "Comparativo"),
+    ("cerraai-material-", "cerraai", "Materiais (PDF)"),
     ("guiacademico-", "guiacademico", "Cadernos de método"),
     ("data-", "institucional", "Datas comemorativas"),
     ("tech-", "tech", "O que a Cerrado Tech constrói"),

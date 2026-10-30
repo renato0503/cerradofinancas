@@ -25,6 +25,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
+| 30/10 | (esta rodada) | Cerra.AI, extras: glossário da IA local (5), Pergunte ao Cerra.AI (chamada + 2 dúvidas comuns), comparativo com a nuvem, 8 stories interativos, checklist IA e LGPD em PDF e kit de vendas (one-pager e deck) |
 | 30/10 | (esta rodada) | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
 | 29/10 | (esta rodada) | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
@@ -164,6 +165,37 @@ Pedidos do Renato em 30/10:
   ordem, até o fim da agenda. Datas comemorativas nunca se repetem. Na Central, aparecem como "(repetição)".
 - **Início:** o Felipe ainda não tinha começado; a agenda inteira recomeça em **sábado, 31/10/2026**
   (`python tools/agendar.py 2026-10-31`).
+
+## Cerra.AI: os extras (30/10)
+
+Pedido do Renato depois de ver as sugestões. Gerador próprio, `tools/gerar_cerraai_extras.py`, separado do
+`gerar_cerraai.py` da outra IA (as 25 campanhas dela, `2026-11-cerraai-*` do planejamento, continuam paradas, sem vídeo
+e fora da agenda). CSS próprio em `brand/cerraai/extras.css`, com a tela do produto copiada, para não depender das
+mudanças não commitadas da outra IA no `marca.css`.
+
+| Peça | Pasta(s) | O que tem |
+|---|---|---|
+| Glossário da IA local | `2026-11-cerraai-glossario-*` (5) | Modelo local, RAG, OCR, anonimização e trecho consultado: verbete, "sem jargão", na prática ou na tela, como o Cerra.AI usa, CTA |
+| Pergunte ao Cerra.AI | `2026-11-cerraai-pergunte-*` (3) | A chamada ("mande a sua dúvida") e 2 dúvidas comuns ("ele inventa?", "quais arquivos lê?") |
+| Comparativo | `2026-11-cerraai-comparativo-nuvem` | 6 critérios em duas tabelas, **onde a nuvem ganha** e quando usar cada um |
+| Stories interativos | `2026-11-cerraai-stories-interativos` | 8 stories (enquete, quiz, caixinha, slider) com a caixa tracejada onde vai o sticker; o texto de cada sticker está na legenda |
+| Checklist LGPD | `2026-11-cerraai-material-checklist-lgpd` | `checklist-ia-lgpd.pdf` (2 páginas A4, 12 itens com o artigo da LGPD) + carrossel e story que divulgam ("comente CHECKLIST") |
+| Kit de vendas | `2026-11-cerraai-material-kit-vendas` | `one-pager.pdf` (A4) e `deck.pdf` (8 slides 16:9) para mandar depois da conversa; **fora da agenda** |
+
+- **Perguntas reais:** entram em `dados/pergunte-cerraai.json` (com a origem: comentário, caixinha ou WhatsApp, sem nome
+  sem autorização) e o gerador cria uma campanha por pergunta. As duas primeiras são marcadas "Dúvida comum".
+- **Regras seguidas:** só funções ✅ do `docs/FUNCIONALIDADES.md` do Cerra.AI; exemplos de tela com o selo "Exemplo
+  ilustrativo"; sem preço, prazo, cliente, nuvem ou certificação ("ajuda a cumprir a LGPD"); o checklist diz que não é
+  parecer jurídico. Artigos citados no checklist conferidos: 5º I, 6º I, III, VII e X, 7º, 11, 12, 18, 33, 37, 38, 41 e 50.
+  O item "confira a fonte" ficou como "boa prática", sem artigo.
+- **Como foi feito:** `python tools/gerar_cerraai_extras.py --pdf` gera os HTML, as legendas, os `info.json` e, com
+  `--pdf`, os PDFs e as prévias pelo Chromium do Playwright (A4 com `page.pdf(format="A4")`; o deck em 1920×1080).
+  Depois `exportar.py` (carrosséis, stories e deck), `verificar.py` (só o deck acusou o emblema perto do título;
+  ajustado) e `animar-carrossel.mjs --clima cobre` um por um nos 10 carrosséis.
+- **Central:** `publicar.py` reconhece `.pdf` (tipo "documento") e a Central mostra um cartão "PDF · Abrir o documento";
+  séries novas nas `REGRAS`; o kit de vendas está em `FORA_DA_AGENDA`. No @cerra.ai, a fila passou a usar o carrossel
+  animado como Reel 4 posts depois (o mesmo texto que a outra IA já tinha escrito na cópia dela) e os stories
+  interativos aparecem como "Stories interativos (1 por dia)".
 
 ## Como foi feito, passo a passo (30/10)
 

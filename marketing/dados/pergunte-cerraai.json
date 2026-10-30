@@ -1,0 +1,39 @@
+{
+  "_como_usar": "Cada pergunta vira uma campanha 'Pergunte ao Cerra.AI' (python tools/gerar_cerraai_extras.py). Use só pergunta real (comentário, caixinha ou WhatsApp) e diga a origem; sem nome da pessoa, a não ser que ela autorize. A resposta precisa estar no docs/FUNCIONALIDADES.md do Cerra.AI (função ✅). As duas primeiras são dúvidas comuns, marcadas como tal.",
+  "perguntas": [
+    {
+      "slug": "inventa",
+      "origem": "Dúvida comum",
+      "pergunta": "Se a informação não estiver nos documentos, ele inventa?",
+      "resposta_curta": "Não. Ele diz que *não consta*.",
+      "tela": {
+        "ws": "Documentos da empresa",
+        "eu": "Qual é o salário do diretor financeiro?",
+        "ia": "Essa informação **não consta** nos documentos deste workspace."
+      },
+      "itens": [
+        "Normas e dados da empresa: **só pelos documentos**",
+        "Se não consta, ele **diz que não consta**",
+        "Código, cálculo e redação: usa o **conhecimento geral**"
+      ],
+      "fecho": "Revisar continua sendo papel de *quem assina*.",
+      "fecho_sub": "A IA ajuda a achar e a resumir; a decisão e a responsabilidade continuam com o profissional.",
+      "tags": "#IAConfiavel #RAG"
+    },
+    {
+      "slug": "arquivos",
+      "origem": "Dúvida comum",
+      "pergunta": "Quais arquivos ele consegue ler?",
+      "resposta_curta": "Quase tudo que *o escritório já tem*.",
+      "parede": ["PDF", "DOCX", "XLSX", "PPTX", "CSV", "ODT", "TXT", "JPG", "PNG", "MP3", "WAV", "MP4"],
+      "itens": [
+        "**PDF escaneado** também: o OCR lê a página",
+        "**Áudio e vídeo** viram texto, transcritos na máquina",
+        "**.doc e .xls antigos:** ele pede para salvar no formato novo"
+      ],
+      "fecho": "Tudo vira texto *na sua máquina*.",
+      "fecho_sub": "Nenhum arquivo é enviado para fora para ser convertido.",
+      "tags": "#OCR #Transcricao #Documentos"
+    }
+  ]
+}

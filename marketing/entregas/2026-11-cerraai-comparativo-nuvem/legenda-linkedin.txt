@@ -1,0 +1,12 @@
+IA na nuvem ou IA local? Um comparativo honesto, critério por critério.
+
+• Onde fica o dado: nuvem, no servidor do provedor, fora da empresa; Cerra.AI, no computador da empresa
+• Internet: nuvem, precisa, a cada pergunta; Cerra.AI, não precisa, depois de instalado
+• Fonte da resposta: nuvem, depende do serviço; Cerra.AI, arquivo e página, quando usa documento
+• Documentos internos: nuvem, depende de enviar ou integrar; Cerra.AI, lê os arquivos do workspace
+• Dado pessoal: nuvem, segue junto com a pergunta; Cerra.AI, anonimização e minimização antes do modelo
+• Foco por área: nuvem, depende do serviço; Cerra.AI, bases isoladas e recusa fora do tema
+
+A nuvem ganha em tamanho de modelo, em não exigir hardware e no acesso de qualquer lugar. O Cerra.AI ganha quando o documento não pode sair da empresa. Comparação genérica, sem citar nenhum serviço.
+
+cerradofinancas.com.br/cerraai

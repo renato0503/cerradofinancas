@@ -1,0 +1,12 @@
+Glossário da IA local, 5/5: Trecho consultado.
+
+A etiqueta embaixo da resposta que diz de qual arquivo e de qual página veio a informação. É a nota de rodapé da IA.
+
+Como o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:
+• Mostra arquivo e página (ou aba da planilha, ou slide)
+• Abriu o arquivo, conferiu em segundos
+• Se não há trecho que responda, ele diz que não consta
+
+Confiar na IA sem acreditar cegamente nela.
+
+Demonstração com o seu caso de uso: cerradofinancas.com.br/cerraai

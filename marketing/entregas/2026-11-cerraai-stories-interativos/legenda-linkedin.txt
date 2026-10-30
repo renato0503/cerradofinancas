@@ -1,0 +1,14 @@
+Stories interativos do @cerra.ai: um por dia, entre os carrosséis.
+
+Como postar: suba o stories-0N.png, adicione o sticker indicado em cima da caixa tracejada (o sticker cobre a caixa) e use o texto abaixo.
+
+Story 1 (Enquete): A sua equipe já cola contrato em chat da internet? → Sim, às vezes · Acho que não
+Story 2 (Quiz): A IA local precisa de internet para responder? → Sim · Não, depois de instalada (certa) · Só às vezes
+Story 3 (Caixinha): Que documento você perguntaria a uma IA, se ele não saísse da empresa? → Caixinha de perguntas aberta
+Story 4 (Slider): Quanto te preocupa um vazamento de dado de cliente? → Slider de emoji 😬
+Story 5 (Enquete): Você confere a fonte quando a IA responde? → Sempre · Quase nunca
+Story 6 (Quiz): O que é OCR? → Um tipo de IA · Ler o texto de uma imagem (certa) · Um formato de arquivo
+Story 7 (Caixinha): Pergunte ao Cerra.AI: mande a sua dúvida. → Caixinha: a resposta vira post
+Story 8 (Enquete): Prefere ver o Cerra.AI funcionando em vídeo ou ao vivo? → Vídeo · Ao vivo
+
+Respostas da caixinha que forem dúvidas viram post da série Pergunte ao Cerra.AI (dados/pergunte-cerraai.json).

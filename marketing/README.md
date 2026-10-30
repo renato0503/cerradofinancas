@@ -51,6 +51,9 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    @guiacademico), de 1 a 2 por dia em cada conta (`POR_DIA`). Quando o conteúdo novo de uma conta acaba, ele repete
    os posts dela desde o mais antigo, até o fim da agenda. Grava a data e a conta no `info.json` de cada campanha e
    escreve `entregas/agenda.json`. Rode depois de qualquer gerador de série, porque eles regravam as datas antigas.
+   **Cerra.AI, extras:** `python tools/gerar_cerraai_extras.py --pdf` (glossário, Pergunte ao Cerra.AI, comparativo,
+   stories interativos, checklist LGPD e kit de vendas). Pergunta real nova: acrescente em `dados/pergunte-cerraai.json`
+   e rode de novo. PDF entra na Central como documento.
    **Datas comemorativas:** só as nacionais, só post estático e story (sem vídeo), geradas por
    `tools/gerar_datas.py` (lista `DATAS`). Saem no dia fixo (`data_fixa` no `info.json`), além do post normal da
    conta, e nunca entram na repetição. Ao virar o ano, acrescente as datas do ano novo na lista.

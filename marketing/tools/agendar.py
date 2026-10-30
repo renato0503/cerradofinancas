@@ -41,7 +41,7 @@ CONTAS = [
 ]
 FUTURAS = []
 POR_DIA = {"cerradofinancas": 1, "cerraai": 1, "cerraclass": 1, "guiacademico": 1}  # mínimo 1, máximo 2
-FORA_DA_AGENDA = {"folinha-animada"}  # material de apoio, não é postagem
+FORA_DA_AGENDA = {"folinha-animada", "2026-11-cerraai-material-kit-vendas"}  # material de apoio, não é postagem
 
 CARROSSEL = "Carrossel + story"
 
@@ -104,12 +104,24 @@ def fila_financas(cs):
 
 
 def fila_cerraai(cs):
+    """A campanha de lançamento (carrossel e os 2 comerciais) e depois a série de conteúdo, na ordem do gerador.
+    O carrossel animado de cada campanha da série sai como Reel separado, quatro posts depois do carrossel."""
+    datas = {p.name: json.loads((p / "info.json").read_text(encoding="utf-8"))["data"] for p in ENTREGAS.iterdir() if (p / "info.json").exists()}
+    lancamento = [c for c in cs if c["serie"] == "Lançamento"]
+    serie = sorted((c for c in cs if c["serie"] != "Lançamento"), key=lambda c: datas[c["pasta"]])
     fila = []
-    for c in cs:
+    for c in lancamento:
         fila.append(post(c))
         for peca, arq in (("Reel: comercial", "video-vertical.mp4"), ("Reel: lançamento", "video-lancamento-vertical.mp4")):
             if arq in c["arquivos"]:
                 fila.append(post(c, peca, arq))
+    reels = [post(c, "Reel: carrossel animado", "carrossel-animado.mp4") for c in serie if "carrossel-animado.mp4" in c["arquivos"]]
+    atraso = 4
+    for i, c in enumerate(serie):
+        fila.append(post(c, "Stories interativos (1 por dia)") if "-stories-" in c["pasta"] else post(c))
+        if i >= atraso and i - atraso < len(reels):
+            fila.append(reels[i - atraso])
+    fila += reels[max(0, len(serie) - atraso):]
     return fila
 
 

@@ -173,6 +173,9 @@
     .previa { background: #0b1324; display: flex; align-items: center; justify-content: center; }
     .previa img, .previa video { width: 100%; height: auto; display: block; }
     .previa .lottie { width: 80%; aspect-ratio: 1; margin: 10% 0; }
+    .previa a.pdf { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; width: 100%; aspect-ratio: 4 / 5; color: #fff; text-decoration: none; }
+    .previa a.pdf b { font-size: 1.6rem; font-weight: 900; border: 3px solid #fff; border-radius: 8px; padding: 10px 14px; }
+    .previa a.pdf span { font-size: .8rem; opacity: .8; }
     .previa a { display: contents; }
     .meta { padding: 9px 11px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: .78rem; }
     .meta span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -470,6 +473,7 @@
     function previa(c, a) {
       const url = base + c.pasta + '/' + a.nome;
       if (a.tipo === 'video') return el('video', { src: url + '#t=1.5', controls: '', muted: '', playsinline: '', preload: 'metadata' });
+      if (a.tipo === 'documento') return el('a', { class: 'pdf', href: url, target: '_blank', rel: 'noopener' }, el('b', { text: 'PDF' }), el('span', { text: 'Abrir o documento' }));
       if (a.tipo === 'lottie') {
         const box = el('div', { class: 'lottie' });
         lottie.loadAnimation({ container: box, renderer: 'svg', loop: true, autoplay: true, path: url });

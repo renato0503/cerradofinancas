@@ -1,0 +1,12 @@
+Glossário da IA local, 3/5: OCR.
+
+A técnica que transforma a imagem de um texto, como uma página escaneada, em texto de verdade. PDF escaneado é uma foto da página: sem OCR, a IA vê a foto, não as palavras.
+
+Como o Cerra.AI, a IA 100% local da Cerrado Tech, usa isso:
+• Lê PDF escaneado e imagens (PNG, JPG, TIFF, WEBP…)
+• Avisa o que fez: “12 páginas, 3 lidas por OCR”
+• Tudo offline: a página não sai da máquina para ser lida
+
+O arquivo esquecido no fundo da pasta também vira resposta.
+
+Demonstração com o seu caso de uso: cerradofinancas.com.br/cerraai

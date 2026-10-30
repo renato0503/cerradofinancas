@@ -1,0 +1,9 @@
+Kit de vendas do Cerra.AI: para mandar depois da conversa ou da demonstração.
+
+one-pager.pdf: uma página A4 com o que é, o que faz, o que protege, para quem e como começa.
+deck.pdf: 8 slides 16:9 para conduzir a demonstração (problema, como funciona, tela, LGPD, áreas, o que ele não é, próximo passo).
+
+Mensagem sugerida para o WhatsApp:
+"Obrigado pela conversa! Segue o resumo do Cerra.AI, a IA que roda no computador da empresa e responde com a fonte de cada informação. Quando quiser, marcamos a demonstração com os seus próprios documentos."
+
+Sem preço e sem prazo nos materiais: isso é tratado na conversa.
