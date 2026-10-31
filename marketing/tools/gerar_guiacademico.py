@@ -3,6 +3,11 @@
 Identidade "Artigo" (brand/guiacademico/marca.css): cada peça é diagramada como um artigo de periódico, com cabeça
 corrida, resumo, palavras-chave, controle de alterações, quadro com filetes e nota de rodapé.
 
+Cada campanha tem carrossel (6 slides), story e, desde 31/10, o post de Facebook: uma arte única (facebook.png,
+1080x1350) para usar no feed no lugar do carrossel, com a legenda do Facebook. No Facebook pode ir a arte ou o
+carrossel-animado.mp4 como vídeo. A legenda do Facebook usa sempre o link do WhatsApp
+(https://api.whatsapp.com/send?phone=5567993515206), que o Facebook transforma em link clicável.
+
 Fonte do conteúdo: o site do Guia Acadêmico (D:\\Dev\\GuiAcademico\\index.html): serviços, ferramentas, protocolo e
 FAQ. Regras: sem preço; sem os números do site (+120 trabalhos, 94% de aprovação, 10+ anos) até o Renato confirmar;
 a ética aparece em toda campanha ("Não executamos trabalhos por terceiros": orientação, capacitação, análise de dados
@@ -19,6 +24,8 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 SITE = "guiacademico.com.br"
 WHATS = "(67) 99351-5206"
+# link que vira clicável na legenda do Facebook
+LINK_WHATS = "https://api.whatsapp.com/send?phone=5567993515206"
 ICONE = "../../brand/guiacademico/logo-icone.png"
 TAGS_BASE = "#GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC"
 ETICA = ("<b>Não executamos trabalhos por terceiros.</b> Atuamos em orientação metodológica, capacitação técnica, "
@@ -457,6 +464,50 @@ def story(t, n, entrega):
 """ + FIM
 
 
+def facebook(t, n, entrega):
+    """Uma arte só, no lugar do carrossel: o gancho, o resumo e a chamada, sem os slides de método."""
+    tamanho = 108 if len(plano(t["gancho"])) <= 26 else 96 if len(plano(t["gancho"])) <= 36 else \
+        84 if len(plano(t["gancho"])) <= 48 else 72 if len(plano(t["gancho"])) <= 62 else 64
+    return CAB.format(entrega=entrega, formato="1080x1350",
+                      titulo=f"Facebook: Guia Acadêmico, {escape(t['nome'])}") + f"""  <section class="slide fb">
+{cabeca(n)}
+    <p class="rubrica">§ {n} · {escape(t['rubrica'])}</p>
+    <h1 class="mega" style="font-size: {tamanho}px">{destacar(t['gancho'])}</h1>
+    <div class="resumo"><span class="lbl">Resumo</span><p>{escape(t['resumo'])}</p></div>
+    <p class="chaves"><b>Palavras-chave:</b> {escape('; '.join(t['chaves']))}.</p>
+    <div class="fb-cta">
+      <span class="selo">Diagnóstico da pesquisa</span>
+      <span class="contato principal">WhatsApp {WHATS}</span>
+    </div>
+    <p class="etica">{ETICA}</p>
+    <div class="rodape">
+      <span class="marca"><img src="{ICONE}" alt=""> Guia Acadêmico <small>Seu mentor</small></span>
+      <span>{SITE}</span>
+    </div>
+  </section>
+""" + FIM
+
+
+def legenda_facebook(t):
+    lista = "\n".join(f"• {x}" for x in t["lista"])
+    etica = ("Não executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, "
+             "análise de dados e revisão. O autor da pesquisa é você.")
+    return f"""{plano(t['gancho'])}
+
+{t['resumo']}
+
+{plano(t['t_lista'])}:
+{lista}
+
+{etica}
+
+Agende o diagnóstico pelo WhatsApp: {LINK_WHATS}
+Site: https://{SITE}
+
+{t['tags']} {TAGS_BASE}
+"""
+
+
 def legendas(t):
     lista = "\n".join(f"• {x}" for x in t["lista"])
     quadro = "\n".join(f"▸ {a}: {b[0].lower() + b[1:]}" for a, b in t["quadro"])
@@ -509,9 +560,11 @@ def main():
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(carrossel(t, n, entrega), encoding="utf-8")
         (post / "story.html").write_text(story(t, n, entrega), encoding="utf-8")
+        (post / "facebook.html").write_text(facebook(t, n, entrega), encoding="utf-8")
         ig, li = legendas(t)
         (ent / "legenda-instagram.txt").write_text(ig, encoding="utf-8")
         (ent / "legenda-linkedin.txt").write_text(li, encoding="utf-8")
+        (ent / "legenda-facebook.txt").write_text(legenda_facebook(t), encoding="utf-8")
         arq = ent / "info.json"
         antigo = json.loads(arq.read_text(encoding="utf-8")) if arq.exists() else {}
         info = {
@@ -520,11 +573,13 @@ def main():
             "data": antigo.get("data", f"2026-11-{n:02d}"),
             "descricao": f"Série do Guia Acadêmico, consultoria acadêmica (caderno {n} de {len(TEMAS)}), na identidade própria \"Artigo\".",
             "orientacoes": [o for o in antigo.get("orientacoes", []) if o.startswith("Postar em")] + [
+                "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
                 "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
                 "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
                 f"Story: adicionar o sticker de link para https://{SITE}",
                 "Legendas prontas abaixo. Nada de preço nem dos números do site nas respostas aos comentários.",
             ],
+            "conta": antigo.get("conta", "@guiacademico"),
         }
         arq.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"{n:2d}. {entrega}")

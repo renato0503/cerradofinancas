@@ -26,6 +26,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
 | 31/10 | `8622f19` | Apresentação institucional ("Prazer, ...") de Cerra.AI, Cerrado Tech, CerraClass e Guia Acadêmico, cada uma na identidade da marca, para fixar no perfil; a agenda passou a começar por elas (31/10) e o Reel sai em 07/11 |
+| 31/10 | (esta rodada) | Guia Acadêmico no Facebook: uma arte única por campanha (`facebook.png`) e legenda de Facebook com o link do WhatsApp clicável; o carrossel animado pode ir como vídeo |
 | 30/10 | `359e0d9` | Cerra.AI, extras: glossário da IA local (5), Pergunte ao Cerra.AI (chamada + 2 dúvidas comuns), comparativo com a nuvem, 8 stories interativos, checklist IA e LGPD em PDF e kit de vendas (one-pager e deck) |
 | 30/10 | `9a6b5c9` | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
 | 29/10 | `97484c0`, `619e9f7` | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
@@ -207,6 +208,23 @@ animado.
 
   Os vídeos saem **sem áudio**, porque a trilha sintetizada ficou ruim (`--com-audio` reativa). Cada um tem de 39 a
   44 s. Conferidos com `hyperframes snapshot` antes do render e com os quadros do MP4 depois. Commit `8b77cd3`.
+
+## Guia Acadêmico no Facebook (31/10)
+
+Pedido do Renato: o Guia Acadêmico também posta no Facebook, com uma arte única no lugar do carrossel (ou o vídeo) e
+uma legenda própria com o link do WhatsApp clicável.
+
+- **Arte** (`facebook.html` → `facebook.png`, 1080×1350): a identidade "Artigo" com o gancho, o resumo, as
+  palavras-chave, o selo do diagnóstico, o WhatsApp e o site, mais a ética em toda peça. A classe `.slide.fb` fica em
+  `brand/guiacademico/marca.css`.
+- **Legenda** (`legenda-facebook.txt`): gancho, resumo, a lista do carrossel, a ética e o link do WhatsApp
+  `https://api.whatsapp.com/send?phone=5567993515206` (URL completa, porque é ela que o Facebook transforma em link
+  clicável; o número solto não vira). Depois, o site e as hashtags.
+- **Peças:** as 15 campanhas dos Cadernos e a apresentação institucional, geradas por `tools/gerar_guiacademico.py` e
+  `tools/gerar_apresentacoes.py`. A Central de Conteúdos mostra o `facebook.png` e a legenda do Facebook em cada
+  campanha.
+- **Publicação:** `publicar.py` já reconhece a rede `facebook` (mapa `REDES`). A agenda não muda: é a mesma campanha
+  com mais uma peça e uma legenda.
 
 ## Cerra.AI: os extras (30/10)
 
@@ -397,6 +415,9 @@ Valem para todas as próximas campanhas.
 14. **Commit com outra IA trabalhando no repositório:** nunca `git add -A`. Quando um arquivo compartilhado (como
     `agendar.py`) tem mudanças não commitadas de outra pessoa, gerar e commitar numa cópia limpa (`git worktree`), depois
     aplicar o mesmo patch na pasta principal e `git reset --mixed <commit>` (passo a passo em "Como foi feito").
+15. **Facebook (31/10):** o Guia Acadêmico posta uma arte única (`facebook.png`, 1080×1350) no lugar do carrossel, ou o
+    `carrossel-animado.mp4` como vídeo. A legenda do Facebook sempre traz o link
+    `https://api.whatsapp.com/send?phone=5567993515206` (URL completa, para virar clicável), além do site.
 
 ## Como garantimos a qualidade
 

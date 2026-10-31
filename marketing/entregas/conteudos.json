@@ -3136,6 +3136,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 15 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 26/11 (carrossel + story); 01/12 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -3179,12 +3180,22 @@
         "kb": 3999
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 153
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 169
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Como funciona a mentoria.\n\nUm processo em três etapas, com escopo claro, entregas parciais e sigilo sobre o seu tema e os seus dados. Você acompanha tudo pela Área do Aluno.\n\nO protocolo, passo a passo:\n• Diagnóstico: a sua necessidade e a viabilidade técnica\n• Proposta: escopo, cronograma de entregas e orçamento\n• Execução: acompanhamento com entregas parciais\n• Área do Aluno: arquivos e andamento do projeto\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#Mentoria #OrientacaoAcademica #PosGraduacao #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -3198,7 +3209,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-como-funciona.zip",
-      "kb": 795
+      "kb": 941
     }
   },
   {
@@ -3521,6 +3532,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 14 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 24/11 (carrossel + story); 30/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -3564,12 +3576,22 @@
         "kb": 4215
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 170
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 167
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Pesquisa com pessoas passa pelo Comitê de Ética.\n\nEntrevistas, questionários e dados de participantes exigem, em regra, a aprovação de um Comitê de Ética em Pesquisa (CEP), pela Plataforma Brasil, antes da coleta.\n\nO que atrasa a aprovação:\n• Coletar dados antes do parecer\n• Termo de consentimento genérico\n• Cronograma sem o prazo de análise do CEP\n• Faltar a anuência da instituição da coleta\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#ComiteDeEtica #PlataformaBrasil #EticaEmPesquisa #CEP #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -3583,7 +3605,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-comite-de-etica.zip",
-      "kb": 836
+      "kb": 999
     }
   },
   {
@@ -3757,6 +3779,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 13 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 22/11 (carrossel + story); 29/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -3800,12 +3823,22 @@
         "kb": 4135
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 154
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 158
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "O TCC não atrasa no fim. Atrasa no começo.\n\nSem etapas e prazos curtos, o trabalho se acumula nas últimas semanas. Um cronograma realista divide a pesquisa em entregas que cabem na sua rotina.\n\nPor que o prazo escapa:\n• Só existe o prazo da entrega final\n• A coleta marcada para o último mês\n• Nenhuma folga para a revisão do orientador\n• Escrever tudo para revisar depois\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#Cronograma #TCC #Produtividade #VidaAcademica #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -3819,7 +3852,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-cronograma.zip",
-      "kb": 819
+      "kb": 966
     }
   },
   {
@@ -4137,6 +4170,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 12 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 20/11 (carrossel + story); 28/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -4180,12 +4214,22 @@
         "kb": 4174
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 157
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 162
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Questionário bom se valida antes de aplicar.\n\nEscalas do tipo Likert medem o que não se vê, como satisfação ou confiança. Para isso, o instrumento precisa de validade e de confiabilidade.\n\nProblemas que invalidam respostas:\n• Perguntas com duas ideias ao mesmo tempo\n• Uma escala diferente em cada bloco\n• Nenhum teste piloto antes da coleta\n• Escala estrangeira traduzida sem adaptação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#Questionario #EscalaLikert #SmartPLS #Psicometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -4199,7 +4243,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-questionario.zip",
-      "kb": 832
+      "kb": 982
     }
   },
   {
@@ -4678,6 +4722,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 11 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 18/11 (carrossel + story); 27/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -4721,12 +4766,22 @@
         "kb": 4288
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 166
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 161
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Quantas pessoas precisam responder?\n\nO tamanho da amostra depende da população, da margem de erro, do nível de confiança e da análise prevista. “Quanto mais, melhor” não é critério.\n\nComo a amostra costuma ser definida:\n• Um número que “parece bastante”\n• Sem prever a taxa de resposta\n• Conveniência tratada como representativa\n• Cálculo feito depois da coleta\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#Amostragem #Estatistica #Metodologia #Questionario #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -4740,7 +4795,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-tamanho-da-amostra.zip",
-      "kb": 850
+      "kb": 1009
     }
   },
   {
@@ -4982,6 +5037,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 10 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 16/11 (carrossel + story); 25/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -5025,12 +5081,22 @@
         "kb": 4272
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 160
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 161
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Revisão sistemática tem protocolo.\n\nDiferente da revisão narrativa, a sistemática define antes a pergunta, as bases, os termos de busca e os critérios de inclusão, e qualquer pessoa consegue refazer a busca.\n\nQuando ainda não é sistemática:\n• Busca só no Google Acadêmico\n• Critérios de inclusão definidos depois\n• Nenhum registro do que saiu em cada etapa\n• Uma revisão narrativa com outro nome\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#RevisaoSistematica #PRISMA #MetaAnalise #RevisaoDeLiteratura #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -5044,7 +5110,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-revisao-sistematica.zip",
-      "kb": 855
+      "kb": 1008
     }
   },
   {
@@ -5480,6 +5546,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 9 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 14/11 (carrossel + story); 23/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -5523,12 +5590,22 @@
         "kb": 3878
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 147
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 148
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Ter orientação não é plágio.\n\nExiste uma diferença clara entre coautoria indevida e mentoria ética. O Guia Acadêmico orienta, ensina, analisa e revisa: o autor da pesquisa é você.\n\nO que o Guia faz:\n• Orientação metodológica\n• Capacitação técnica nas ferramentas\n• Análise de dados com script comentado\n• Revisão estrutural e de formatação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#EticaEmPesquisa #IntegridadeAcademica #Mentoria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -5542,7 +5619,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-etica.zip",
-      "kb": 761
+      "kb": 900
     }
   },
   {
@@ -5801,6 +5878,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 8 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 12/11 (carrossel + story); 21/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -5844,12 +5922,22 @@
         "kb": 4032
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 149
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 154
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Na banca, quem defende é você.\n\nPreparar a defesa é treinar a explicação do método e dos resultados, antecipar as perguntas e montar slides que sustentam o argumento.\n\nO que complica a defesa:\n• Slides com parágrafos inteiros\n• Não saber explicar a escolha do método\n• Resultados longe da pergunta de pesquisa\n• Ser surpreendido por limitações óbvias\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#Defesa #Banca #Dissertacao #Tese #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -5863,7 +5951,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-banca.zip",
-      "kb": 789
+      "kb": 930
     }
   },
   {
@@ -6180,6 +6268,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 7 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 10/11 (carrossel + story); 19/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -6223,12 +6312,22 @@
         "kb": 4140
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 157
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 157
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Formatação errada rouba a atenção do conteúdo.\n\nCitação fora da norma, sumário digitado à mão, referência incompleta: a banca nota antes de chegar ao seu argumento.\n\nO que a banca nota primeiro:\n• Sumário digitado à mão\n• Citação longa sem recuo\n• Referências incompletas ou fora de ordem\n• Figuras sem número e sem fonte\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#ABNT #NormasABNT #Formatacao #TCC #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -6242,7 +6341,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-abnt.zip",
-      "kb": 821
+      "kb": 971
     }
   },
   {
@@ -6563,6 +6662,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 6 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 08/11 (carrossel + story); 17/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -6606,12 +6706,22 @@
         "kb": 4295
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 161
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 161
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "A IA inventa referências. Quem assina é você.\n\nModelos de linguagem ajudam a ler, organizar e revisar, mas podem criar citações que não existem. Usar IA na pesquisa exige método e conferência.\n\nUsos que comprometem a pesquisa:\n• Citar referências do chatbot sem conferir\n• Entregar texto gerado como se fosse seu\n• Subir dados sigilosos em serviços abertos\n• Não declarar o uso quando a instituição exige\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#IAAcademica #InteligenciaArtificial #RevisaoDeLiteratura #EticaEmPesquisa #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -6625,7 +6735,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-ia-academica.zip",
-      "kb": 847
+      "kb": 1000
     }
   },
   {
@@ -7097,6 +7207,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 5 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 05/11 (carrossel + story); 15/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -7140,12 +7251,22 @@
         "kb": 4260
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 172
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 158
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Os seus dados já estão na internet.\n\nDiários oficiais, portais de transparência, bases da CAPES e da SciELO: muita pesquisa depende de dados públicos que ninguém quer copiar à mão, página por página.\n\nQuando a coleta trava a pesquisa:\n• Copiar e colar centenas de páginas\n• Planilhas com formatos misturados\n• Uma coleta que ninguém consegue refazer\n• Desistir do tema por falta de dados\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#WebScraping #Python #DadosAbertos #CienciaDeDados #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -7159,7 +7280,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-web-scraping.zip",
-      "kb": 862
+      "kb": 1027
     }
   },
   {
@@ -7241,6 +7362,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 4 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 04/11 (carrossel + story); 13/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -7284,12 +7406,22 @@
         "kb": 4255
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 157
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 159
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Entrevista transcrita ainda não é análise.\n\nPesquisa qualitativa tem método: categorias, codificação e critérios de validade. Sem isso, o capítulo de resultados vira uma colagem de falas.\n\nOnde a análise se perde:\n• Falas citadas sem categorias que as organizem\n• O método não declarado no texto\n• Codificação sem um livro de códigos\n• Uma única fonte, sem triangulação\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#PesquisaQualitativa #Bardin #NVivo #IRAMUTEQ #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -7303,7 +7435,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-qualitativa.zip",
-      "kb": 842
+      "kb": 992
     }
   },
   {
@@ -7554,6 +7686,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 3 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 03/11 (carrossel + story); 11/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -7597,12 +7730,22 @@
         "kb": 4295
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 154
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 153
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "p < 0,05 não é conclusão.\n\nSignificância estatística indica que um efeito provavelmente existe, não que ele seja grande ou importante. Interpretar o resultado é diferente de rodar o teste.\n\nErros comuns na análise:\n• Escolher o teste depois de ver o resultado\n• Ignorar os pressupostos do teste\n• Reportar só o valor-p, sem o tamanho de efeito\n• Tratar correlação como causa\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#Estatistica #AnaliseDeDados #STATA #RStats #Econometria #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -7616,7 +7759,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-estatistica.zip",
-      "kb": 856
+      "kb": 1003
     }
   },
   {
@@ -7791,6 +7934,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 2 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 02/11 (carrossel + story); 09/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -7834,12 +7978,22 @@
         "kb": 4350
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 163
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 157
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Tema não é problema de pesquisa.\n\nBoa parte dos projetos trava no primeiro passo: um assunto amplo, sem pergunta e sem recorte. Veja como transformar o tema numa pergunta que os dados conseguem responder.\n\nSinais de que ainda é só um tema:\n• Cabe em qualquer lugar e em qualquer época\n• Não dá para responder com dados\n• Os objetivos repetem o título\n• A justificativa fala só da importância do assunto\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#ProjetoDePesquisa #ProblemaDePesquisa #Metodologia #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -7853,7 +8007,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-problema-de-pesquisa.zip",
-      "kb": 857
+      "kb": 1014
     }
   },
   {
@@ -7984,6 +8138,7 @@
     "descricao": "Série do Guia Acadêmico, consultoria acadêmica (caderno 1 de 15), na identidade própria \"Artigo\".",
     "orientacoes": [
       "Postar em 01/11 (carrossel + story); 06/11 (reel: carrossel animado) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: no Instagram, na ordem (carrossel-01 a 06); no LinkedIn, subir os 6 PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4, 1080×1350, com som): os mesmos slides em vídeo, postado como Reel em outro dia.",
       "Story: adicionar o sticker de link para https://guiacademico.com.br",
@@ -8027,12 +8182,22 @@
         "kb": 4330
       },
       {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 160
+      },
+      {
         "nome": "story.png",
         "tipo": "imagem",
         "kb": 163
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Sua pesquisa precisa de um mentor, não de um atalho.\n\nOrientação metodológica e análise de dados para quem está no TCC, na especialização, no mestrado ou no doutorado. Você escreve; a gente orienta, ensina e revisa.\n\nOnde a pesquisa costuma travar:\n• Um problema de pesquisa amplo demais\n• O método escolhido depois da coleta\n• Dados que ninguém sabe analisar\n• A formatação deixada para a última semana\n\nNão executamos trabalhos por terceiros: atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#OrientacaoAcademica #Metodologia #AnaliseDeDados #GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -8046,7 +8211,7 @@
     ],
     "pacote": {
       "nome": "2026-11-guiacademico-lancamento.zip",
-      "kb": 870
+      "kb": 1022
     }
   },
   {
@@ -8319,6 +8484,7 @@
     "orientacoes": [
       "Postar em 31/10 (apresentação: carrossel + story (fixar no perfil)); 07/11 (reel: apresentação animada) no @guiacademico (agenda de 30/10, a partir de 31/10: de 1 a 2 posts por dia em cada conta).",
       "É o primeiro post do @guiacademico: fixar no topo do perfil.",
+      "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.",
       "Carrossel: carrossel-01 a 06, na ordem. No LinkedIn, os PNGs como documento.",
       "Carrossel animado (carrossel-animado.mp4): o Reel da apresentação, uma semana depois (está na agenda).",
       "Story: também vale guardar nos destaques como \"Quem somos\"."
@@ -8358,7 +8524,12 @@
       {
         "nome": "carrossel-animado.mp4",
         "tipo": "video",
-        "kb": 4355
+        "kb": 3901
+      },
+      {
+        "nome": "facebook.png",
+        "tipo": "imagem",
+        "kb": 151
       },
       {
         "nome": "story.png",
@@ -8367,6 +8538,11 @@
       }
     ],
     "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Prazer, Guia Acadêmico.\n\nConsultoria acadêmica de orientação metodológica e análise de dados para quem está no TCC, na especialização, no mestrado ou no doutorado, com o Prof. Renato Rosa (mestre em Contabilidade pela UFPR e doutorando).\n\nO que fazemos: orientação metodológica, análise estatística (STATA, R, Python, SPSS), análise qualitativa (IRAMUTEQ, NVivo, Atlas.ti), mineração de dados, IA acadêmica com ética e formatação ABNT, APA e Vancouver.\n\nNão executamos trabalhos por terceiros: orientamos, ensinamos, analisamos e revisamos. O autor da pesquisa é você.\n\nAgende o diagnóstico pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSite: https://guiacademico.com.br\n\n#GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC #Metodologia\n"
+      },
       {
         "rede": "Instagram",
         "arquivo": "legenda-instagram.txt",
@@ -8380,7 +8556,7 @@
     ],
     "pacote": {
       "nome": "2026-11-apresentacao-guiacademico.zip",
-      "kb": 988
+      "kb": 1132
     }
   },
   {

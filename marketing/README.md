@@ -41,7 +41,7 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
 2. Verifique e exporte: `python tools/verificar.py ...` (acusa estouro de rodapé, de área segura e sobreposição de
    ícone/logo sobre texto) e `python tools/exportar.py posts/AAAA-MM-tema/carrossel.html posts/AAAA-MM-tema/story.html`
 3. Em `entregas/AAAA-MM-tema/`, crie o `info.json` (`titulo`, `data`, `descricao`, `orientacoes`)
-   e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt` etc. Vídeos e GIFs finais também vão aqui.
+   e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt`, `legenda-facebook.txt` etc. Vídeos e GIFs finais também vão aqui.
 4. **Carrossel animado (padrão de vídeo desde 28/10):**
    `cd filmes && node ferramentas/animar-carrossel.mjs ../posts/AAAA-MM-tema/carrossel.html --render`
    grava `entregas/AAAA-MM-tema/carrossel-animado.mp4` (mesma arte, slides deslizando, com trilha).
@@ -88,6 +88,9 @@ A animação Lottie da folinha é gerada por `python animacoes/folinha/gerar_lot
 
 Formatos usados:
 - Feed (Instagram/LinkedIn): **1080×1350**
+- Facebook: **1080×1350** numa arte única (`facebook.png`), no lugar do carrossel, ou o `carrossel-animado.mp4` como
+  vídeo. A legenda do Facebook (`legenda-facebook.txt`) sempre traz o link do WhatsApp
+  `https://api.whatsapp.com/send?phone=5567993515206`, que o Facebook transforma em link clicável.
 - Stories / status / Reels: **1080×1920**, com cerca de 250px livres no topo e na base
 
 ## Logo do produto (Cerra.AI)
@@ -166,3 +169,5 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 - **2026-10 · Folinha animada**: vinheta MP4, GIF em loop, WebM transparente e Lottie (entrada e loop).
 - **2026-10 · Cerra.AI**: carrossel de 7 slides, story, Reel de 15s e legendas. O texto vem do projeto
   `D:\Dev\Cerra.AI` — o que pode e o que não pode ser afirmado está na regra 8 do `HISTORICO.md`.
+- **2026-11 · Guia Acadêmico**: 15 cadernos de método (carrossel, story, carrossel animado e legendas) e, desde 31/10,
+  uma arte única de Facebook (`facebook.png`) com legenda própria e o link do WhatsApp clicável.

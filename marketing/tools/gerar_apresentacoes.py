@@ -9,6 +9,9 @@ Cada um: carrossel de 6 + story + legendas (Instagram e LinkedIn) + carrossel an
 perfil. Abrem a agenda: são o primeiro post de cada conta (31/10/2026, quando o Felipe começou), e o carrossel animado
 sai como Reel uma semana depois (o tools/agendar.py põe a apresentação na frente da fila de cada conta).
 
+O Guia Acadêmico ganhou também a arte única de Facebook (`facebook.png`, 1080x1350) e a legenda do Facebook, com o link
+do WhatsApp https://api.whatsapp.com/send?phone=5567993515206.
+
 Fontes: home e fabrica.html do site, landings da CerraClass, o projeto Cerra.AI (regra 8 do HISTORICO.md) e o site do
 Guia Acadêmico. Sem preço, sem cliente, sem números não confirmados. As credenciais do Renato são as que já estão nas
 landings (mestre em Contabilidade pela UFPR, doutorando, ICTI/Itaú Unibanco, fundador da Cerrado Tech).
@@ -23,6 +26,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 WHATS = "(67) 99351-5206"
+LINK_WHATS = "https://api.whatsapp.com/send?phone=5567993515206"
 DATA = "2026-10-31"
 FOTO = "../../../img/renato.jpg"
 FIM = '  <script src="../../brand/slides.js"></script>\n</body>\n</html>\n'
@@ -510,29 +514,71 @@ Protocolo: diagnóstico, proposta com cronograma e acompanhamento com entregas p
 
 guiacademico.com.br
 """
-    return entrega, "Guia Acadêmico", car, st, ig, li, "@guiacademico"
+    fb = cab(entrega, "1080x1350", "Facebook: apresentação Guia Acadêmico", css) + f"""  <section class="slide fb">
+{cabeca}
+    <p class="rubrica">§ 0 · Apresentação</p>
+    <h1 class="mega" style="font-size: 100px">Prazer, <em>Guia Acadêmico</em>.</h1>
+    <div class="resumo"><span class="lbl">Resumo</span><p>Consultoria acadêmica de orientação metodológica e análise de dados, para quem está no TCC, na especialização, no mestrado ou no doutorado.</p></div>
+    <p class="chaves"><b>Palavras-chave:</b> mentoria; metodologia; análise de dados; ética.</p>
+    <div class="fb-cta">
+      <span class="selo">Diagnóstico da pesquisa</span>
+      <span class="contato principal">WhatsApp {WHATS}</span>
+    </div>
+    <p class="etica"><b>Não executamos trabalhos por terceiros.</b> Atuamos em orientação metodológica, capacitação técnica, análise de dados e revisão. O autor da pesquisa é você.</p>
+    <div class="rodape">
+      <span class="marca"><img src="{icone}" alt=""> Guia Acadêmico <small>Seu mentor</small></span>
+      <span>guiacademico.com.br</span>
+    </div>
+  </section>
+""" + FIM
+    fb_legenda = f"""Prazer, Guia Acadêmico.
+
+Consultoria acadêmica de orientação metodológica e análise de dados para quem está no TCC, na especialização, no mestrado ou no doutorado, com o Prof. Renato Rosa (mestre em Contabilidade pela UFPR e doutorando).
+
+O que fazemos: orientação metodológica, análise estatística (STATA, R, Python, SPSS), análise qualitativa (IRAMUTEQ, NVivo, Atlas.ti), mineração de dados, IA acadêmica com ética e formatação ABNT, APA e Vancouver.
+
+Não executamos trabalhos por terceiros: orientamos, ensinamos, analisamos e revisamos. O autor da pesquisa é você.
+
+Agende o diagnóstico pelo WhatsApp: {LINK_WHATS}
+Site: https://guiacademico.com.br
+
+#GuiaAcademico #PesquisaCientifica #Mestrado #Doutorado #TCC #Metodologia
+"""
+    return entrega, "Guia Acadêmico", car, st, ig, li, "@guiacademico", fb, fb_legenda
 
 
 def main():
     for f in (cerraai, cerradotech, cerraclass, guiacademico):
-        entrega, nome, car, st, ig, li, conta = f()
+        dados = f()
+        entrega, nome, car, st, ig, li, conta = dados[:7]
+        fb = dados[7] if len(dados) > 7 else None
+        fb_legenda = dados[8] if len(dados) > 8 else None
         post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(car, encoding="utf-8")
         (post / "story.html").write_text(st, encoding="utf-8")
+        if fb:
+            (post / "facebook.html").write_text(fb, encoding="utf-8")
+            (ent / "legenda-facebook.txt").write_text(fb_legenda, encoding="utf-8")
         (ent / "legenda-instagram.txt").write_text(ig, encoding="utf-8")
         (ent / "legenda-linkedin.txt").write_text(li, encoding="utf-8")
+        arq = ent / "info.json"
+        antigo = json.loads(arq.read_text(encoding="utf-8")) if arq.exists() else {}
+        orientacoes = [o for o in antigo.get("orientacoes", []) if o.startswith("Postar em")] + [
+            f"É o primeiro post do {conta}: fixar no topo do perfil.",
+            "Carrossel: carrossel-01 a 06, na ordem. No LinkedIn, os PNGs como documento.",
+            "Carrossel animado (carrossel-animado.mp4): o Reel da apresentação, uma semana depois (está na agenda).",
+            "Story: também vale guardar nos destaques como \"Quem somos\".",
+        ]
+        if fb:
+            orientacoes.insert(2, "Facebook: postar a arte única (facebook.png) no feed, no lugar do carrossel, ou o carrossel-animado.mp4 como vídeo. A legenda do Facebook já traz o link do WhatsApp clicável.")
         info = {
             "titulo": f"Apresentação institucional · {nome}",
-            "data": DATA,
+            "data": antigo.get("data", DATA),
             "descricao": f"Post de apresentação do {nome} (\"Prazer, {nome}\"), para fixar no topo do perfil {conta}.",
-            "orientacoes": [
-                f"É o primeiro post do {conta}: fixar no topo do perfil.",
-                "Carrossel: carrossel-01 a 06, na ordem. No LinkedIn, os PNGs como documento.",
-                "Carrossel animado (carrossel-animado.mp4): o Reel da apresentação, uma semana depois (está na agenda).",
-                "Story: também vale guardar nos destaques como \"Quem somos\".",
-            ],
+            "orientacoes": orientacoes,
+            "conta": antigo.get("conta", conta),
         }
         (ent / "info.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(entrega)

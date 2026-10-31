@@ -14,6 +14,9 @@ diagramada como um artigo de periódico.
 - **o quadro com filetes** (`.quadro`), com "Quadro 3 · …" em cima e "Fonte: …" embaixo, como tabela de artigo;
 - **a nota de rodapé** (`.nota-rodape`): chamada ¹ no texto e a nota acima do rodapé (exemplos ilustrativos dizem isso aqui);
 - **a nota do orientador** (`.slide.tinta`): o slide invertido em azul-marinho, sempre com "Você continua sendo o autor";
+- **o post de Facebook** (`.slide.fb`, desde 31/10): uma arte única com o gancho, o resumo, as palavras-chave e a chamada
+  (selo, WhatsApp e site), sem os slides de método. No Facebook ela substitui o carrossel; o carrossel animado pode ir
+  como vídeo. O link do WhatsApp fica clicável na legenda;
 - **a bússola** da logo como marca d'água sangrando na borda (`.bussola`).
 
 ## Cores
@@ -51,5 +54,7 @@ de `D:\Dev\GuiAcademico\logo3d.png`. O rodapé das peças usa a bússola + "Guia
 
 ## Gerador
 
-`tools/gerar_guiacademico.py` (15 temas em `TEMAS`) → `posts/2026-11-guiacademico-<tema>/` → exportar, verificar e
-`filmes/ferramentas/animar-carrossel.mjs --clima pb` → `tools/agendar.py 2026-10-31` → `tools/publicar.py`.
+`tools/gerar_guiacademico.py` (15 temas em `TEMAS`) → `posts/2026-11-guiacademico-<tema>/` (carrossel, story e
+facebook) → exportar, verificar e `filmes/ferramentas/animar-carrossel.mjs --clima pb` → `tools/agendar.py 2026-10-31`
+→ `tools/publicar.py`. A peça de Facebook (`facebook.html` → `facebook.png`) e a legenda (`legenda-facebook.txt`)
+saem no mesmo gerador; a apresentação institucional ganhou a sua em `tools/gerar_apresentacoes.py`.
