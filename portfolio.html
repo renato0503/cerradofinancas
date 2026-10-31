@@ -186,16 +186,72 @@ permalink: /portfolio/
       .passo-ico { grid-row: span 2; margin: 0; }
     }
 
-    /* Modelo comercial */
-    .model-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-    .model-card { background: #fff; border: 1px solid var(--linha); border-radius: 20px; padding: 30px 26px; transition: opacity .8s var(--sai), transform .8s var(--sai), box-shadow .3s, border-color .3s; transition-delay: calc(var(--i, 0) * 90ms), calc(var(--i, 0) * 90ms), 0s, 0s; }
-    .model-card.visible:hover { transform: translateY(-4px); border-color: var(--ouro); box-shadow: 0 18px 38px rgba(0,31,92,.08); transition-delay: 0s; }
-    .m-icon { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 18px; color: var(--c); background: var(--f); transition: transform .45s var(--sai); }
-    .model-card:hover .m-icon { transform: translateY(-3px) rotate(-6deg); }
-    .model-card h3 { font-size: 1.12rem; font-weight: 900; color: var(--azul); margin-bottom: 8px; }
-    .model-card p { font-size: .92rem; color: #475569; line-height: 1.62; }
-    .model-card b { color: var(--azul); }
-    @media (max-width: 992px) { .model-grid { grid-template-columns: 1fr; } }
+    /* Modelo comercial em destaque: fundo escuro, três etapas ligadas e o gráfico do investimento no tempo */
+    .modelo { position: relative; overflow: hidden; padding: 100px 0; background: radial-gradient(ellipse at 50% 0%, #0a3a8c 0%, var(--azul) 40%, var(--noite) 100%); color: #fff; }
+    .modelo-fundo { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px); background-size: 26px 26px; mask-image: linear-gradient(to bottom, #000, transparent 85%); -webkit-mask-image: linear-gradient(to bottom, #000, transparent 85%); }
+    .modelo .container { position: relative; }
+    .modelo h2.title { color: #fff; }
+    .modelo .sub { color: #cbd5e1; }
+    .tag-ouro { color: var(--ouro); }
+    .etapas { display: grid; grid-template-columns: 1fr 56px 1fr 56px 1fr; align-items: stretch; margin-top: 50px; }
+    .etapa { position: relative; display: flex; flex-direction: column; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 26px 24px 26px; backdrop-filter: blur(6px); transition: opacity .8s var(--sai), transform .8s var(--sai), border-color .3s, background .3s, box-shadow .3s; transition-delay: calc(var(--i, 0) * 110ms), calc(var(--i, 0) * 110ms), 0s, 0s, 0s; }
+    .etapa::before { content: ''; position: absolute; left: 24px; right: 24px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--c); box-shadow: 0 0 18px var(--c); }
+    .etapa.visible:hover { transform: translateY(-6px); border-color: var(--c); background: rgba(255,255,255,.08); box-shadow: 0 24px 50px rgba(0,0,0,.35); transition-delay: 0s; }
+    .etapa-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+    .etapa-n { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: .95rem; color: var(--noite); background: var(--c); }
+    .etapa-freq { display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; color: var(--c); border: 1px solid currentColor; border-radius: 50px; padding: 5px 11px; }
+    .etapa-ico { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; font-size: 1.9rem; color: var(--c); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); margin-bottom: 18px; transition: transform .5s var(--sai); }
+    .etapa:hover .etapa-ico { transform: translateY(-4px) rotate(-8deg) scale(1.06); }
+    .etapa-ico.gira .ico { animation: gira 8s linear infinite; }
+    .etapa:hover .etapa-ico.gira { transform: translateY(-4px) scale(1.06); }
+    .etapa h3 { font-size: 1.4rem; font-weight: 900; letter-spacing: -.3px; color: #fff; }
+    .etapa-lead { font-size: .96rem; color: #cbd5e1; line-height: 1.55; margin: 6px 0 16px; }
+    .etapa-lead b { color: #fff; }
+    .etapa ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .etapa li { display: flex; gap: 10px; align-items: flex-start; font-size: .92rem; color: #e2e8f0; line-height: 1.45; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.08); }
+    .etapa li:first-child { border-top: 0; padding-top: 0; }
+    .etapa li .ico { flex: 0 0 auto; margin-top: 2px; color: var(--c); stroke-width: 2.6; }
+    .etapa-rodape { margin-top: auto; padding-top: 18px; display: flex; gap: 8px; align-items: flex-start; font-size: .86rem; font-weight: 600; color: var(--c); line-height: 1.45; }
+    .etapa-rodape .ico { flex: 0 0 auto; margin-top: 2px; }
+    /* a seta entre as etapas: uma linha tracejada que corre e a ponta no fim */
+    .etapa-seta { position: relative; display: grid; place-items: center; color: rgba(255,255,255,.5); }
+    .etapa-seta span { position: absolute; left: 6px; right: 14px; top: 50%; height: 2px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.45) 0 6px, transparent 6px 12px); background-size: 24px 2px; animation: corre 1.2s linear infinite; }
+    .etapa-seta .ico { position: relative; margin-left: auto; font-size: 1.1rem; }
+    @keyframes corre { to { background-position: 24px 0; } }
+
+    /* gráfico ilustrativo */
+    .grafico { margin-top: 34px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 28px 28px 20px; }
+    .grafico-cab { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+    .grafico h3 { font-size: 1.15rem; font-weight: 900; color: #fff; }
+    .grafico-cab p { font-size: .9rem; color: #94a3b8; margin-top: 4px; max-width: 520px; line-height: 1.5; }
+    .legenda { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+    .legenda span { display: inline-flex; align-items: center; gap: 8px; font-size: .84rem; font-weight: 700; color: #e2e8f0; }
+    .legenda i { width: 12px; height: 12px; border-radius: 4px; background: var(--c); }
+    .barras { display: grid; grid-template-columns: repeat(13, 1fr); gap: 10px; align-items: end; height: 220px; margin-top: 26px; border-bottom: 1px solid rgba(255,255,255,.15); padding-bottom: 0; }
+    .col { display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; position: relative; }
+    .pilha { width: 100%; max-width: 44px; height: 180px; display: flex; flex-direction: column; justify-content: flex-end; gap: 3px; }
+    .pilha span { display: block; width: 100%; height: var(--h); border-radius: 6px 6px 3px 3px; transform: scaleY(0); transform-origin: bottom; transition: transform .9s var(--sai); transition-delay: calc(.15s + var(--k) * 70ms); }
+    .b-imp { background: linear-gradient(to top, #0284c7, #38bdf8); box-shadow: 0 0 22px rgba(56,189,248,.35); }
+    .b-men { background: linear-gradient(to top, #15803d, #4ade80); }
+    .b-mod { background: linear-gradient(to top, #ca8a04, #fecb00); box-shadow: 0 0 18px rgba(254,203,0,.35); transition-delay: calc(.6s + var(--k) * 70ms) !important; }
+    .grafico.cresce .pilha span { transform: scaleY(1); }
+    .col small { position: absolute; bottom: -24px; font-size: .7rem; font-weight: 700; color: #94a3b8; white-space: nowrap; }
+    .grafico-nota { margin-top: 36px; font-size: .78rem; color: #64748b; }
+    @media (max-width: 992px) {
+      .etapas { grid-template-columns: 1fr; gap: 0; max-width: 560px; margin-left: auto; margin-right: auto; }
+      .etapa-seta { height: 44px; }
+      .etapa-seta span { left: 50%; right: auto; top: 4px; bottom: 14px; width: 2px; height: auto; background: repeating-linear-gradient(180deg, rgba(255,255,255,.45) 0 6px, transparent 6px 12px); background-size: 2px 24px; animation-name: desce; }
+      .etapa-seta .ico { margin: auto 0 0; transform: rotate(90deg); }
+      @keyframes desce { to { background-position: 0 24px; } }
+    }
+    @media (max-width: 640px) {
+      .grafico { padding: 22px 16px 16px; }
+      .barras { gap: 4px; height: 170px; }
+      .pilha { height: 140px; }
+      .col small { display: none; }
+      .col:first-child small, .col:nth-child(7) small, .col:last-child small { display: block; font-size: .62rem; }
+    }
+
     .dif-box { position: relative; overflow: hidden; display: flex; gap: 26px; background: linear-gradient(135deg, var(--azul) 0%, var(--azul-2) 100%); border-radius: 22px; padding: 42px 40px; color: #fff; margin-top: 40px; }
     .dif-box::after { content: ''; position: absolute; width: 340px; height: 340px; right: -120px; top: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(254,203,0,.25), transparent 70%); animation: pulso 5s ease-in-out infinite; }
     .dif-ico { flex: 0 0 auto; width: 64px; height: 64px; border-radius: 18px; background: rgba(254,203,0,.14); border: 1px solid rgba(254,203,0,.4); display: grid; place-items: center; font-size: 1.9rem; color: var(--ouro); }
@@ -300,6 +356,18 @@ permalink: /portfolio/
   <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 5v5h-5"/><path d="M3 19v-5h5"/><path d="M19 10a7 7 0 0 0-12-3L3 10"/><path d="M5 14a7 7 0 0 0 12 3l4-3"/></symbol>
   <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
   <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/><path d="m14 4-4 16"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7z"/><path d="M19 15c.3 1.6 1 2.4 2.5 2.6-1.5.3-2.2 1-2.5 2.6-.3-1.6-1-2.3-2.5-2.6 1.5-.2 2.2-1 2.5-2.6z"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></symbol>
+  <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
 
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
@@ -818,32 +886,78 @@ permalink: /portfolio/
   </div>
 </section>
 
-<!-- MODELO COMERCIAL -->
-<section class="section" id="como-trabalhamos">
+<!-- MODELO COMERCIAL (destaque) -->
+<section class="modelo" id="como-trabalhamos">
+  <div class="modelo-fundo" aria-hidden="true"></div>
   <div class="container">
     <div class="fade-up center">
-      <span class="tag">Como trabalhamos</span>
-      <h2 class="title">Um modelo comercial simples e transparente</h2>
+      <span class="tag tag-ouro">Como trabalhamos</span>
+      <h2 class="title">Um modelo comercial <span class="gold">simples e transparente</span></h2>
       <p class="sub">Três partes que deixam claro quanto custa, o que está incluso e como cresce junto com a sua empresa.</p>
     </div>
-    <div class="model-grid">
-      <div class="model-card fade-up" style="--i:0">
-        <div class="m-icon" style="--c:#0284c7;--f:#e0f2fe"><svg class="ico"><use href="#i-rocket"/></svg></div>
+    <div class="etapas">
+      <div class="etapa fade-up" style="--i:0;--c:#38bdf8">
+        <div class="etapa-topo"><span class="etapa-n">1</span><span class="etapa-freq"><svg class="ico"><use href="#i-check"/></svg> Pagamento único</span></div>
+        <div class="etapa-ico"><svg class="ico"><use href="#i-rocket"/></svg></div>
         <h3>Implantação</h3>
-        <p><b>Investimento único</b> para colocar a solução no ar: levantamento de requisitos, configuração, integrações com os sistemas atuais, migração de dados e treinamento inicial da equipe.</p>
+        <p class="etapa-lead"><b>Investimento único</b> para colocar a solução no ar.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Levantamento de requisitos</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Configuração</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Integrações com os sistemas atuais</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Migração de dados</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Treinamento inicial da equipe</li>
+        </ul>
       </div>
-      <div class="model-card fade-up" style="--i:1">
-        <div class="m-icon" style="--c:#16a34a;--f:#dcfce7"><svg class="ico"><use href="#i-refresh"/></svg></div>
+      <div class="etapa-seta fade-up" style="--i:1" aria-hidden="true"><span></span><svg class="ico"><use href="#i-arrow-right"/></svg></div>
+      <div class="etapa fade-up" style="--i:2;--c:#4ade80">
+        <div class="etapa-topo"><span class="etapa-n">2</span><span class="etapa-freq"><svg class="ico"><use href="#i-refresh"/></svg> Todo mês</span></div>
+        <div class="etapa-ico gira"><svg class="ico"><use href="#i-refresh"/></svg></div>
         <h3>Mensalidade</h3>
-        <p><b>Valor recorrente</b> com custo previsível: suporte, manutenção, atualizações, segurança, LGPD e hospedagem. O sistema continua evoluindo sem sustos no orçamento.</p>
+        <p class="etapa-lead"><b>Valor recorrente</b> com custo previsível.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Suporte e manutenção</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Atualizações</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Segurança e LGPD</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Hospedagem</li>
+        </ul>
+        <p class="etapa-rodape"><svg class="ico"><use href="#i-sparkle"/></svg> O sistema continua evoluindo, sem sustos no orçamento.</p>
       </div>
-      <div class="model-card fade-up" style="--i:2">
-        <div class="m-icon" style="--c:#ca8a04;--f:#fef3c7"><svg class="ico"><use href="#i-puzzle"/></svg></div>
+      <div class="etapa-seta fade-up" style="--i:3" aria-hidden="true"><span></span><svg class="ico"><use href="#i-arrow-right"/></svg></div>
+      <div class="etapa fade-up" style="--i:4;--c:#fecb00">
+        <div class="etapa-topo"><span class="etapa-n">3</span><span class="etapa-freq"><svg class="ico"><use href="#i-plus"/></svg> Quando precisar</span></div>
+        <div class="etapa-ico"><svg class="ico"><use href="#i-puzzle"/></svg></div>
         <h3>Módulos sob demanda</h3>
-        <p><b>Precisa de uma funcionalidade nova?</b> Desenvolvemos por projeto, dimensionado e orçado para o que a sua empresa realmente precisa.</p>
+        <p class="etapa-lead"><b>Precisa de uma funcionalidade nova?</b></p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Desenvolvida por projeto</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Dimensionada para o que a sua empresa realmente precisa</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Orçada antes de começar</li>
+        </ul>
       </div>
     </div>
 
+    <div class="grafico fade-up" id="grafico">
+      <div class="grafico-cab">
+        <div>
+          <h3>Como o investimento se distribui no tempo</h3>
+          <p>Um valor maior para começar, uma mensalidade previsível e um módulo novo só quando fizer sentido.</p>
+        </div>
+        <div class="legenda">
+          <span><i style="--c:#38bdf8"></i>Implantação</span>
+          <span><i style="--c:#4ade80"></i>Mensalidade</span>
+          <span><i style="--c:#fecb00"></i>Módulo novo</span>
+        </div>
+      </div>
+      <div class="barras"><div class="col" style="--k:0"><div class="pilha"><span class="b-imp" style="--h:100%"></span></div><small>Início</small></div><div class="col" style="--k:1"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 1</small></div><div class="col" style="--k:2"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 2</small></div><div class="col" style="--k:3"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 3</small></div><div class="col" style="--k:4"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 4</small></div><div class="col" style="--k:5"><div class="pilha"><span class="b-mod" style="--h:26%"></span><span class="b-men" style="--h:20%"></span></div><small>Mês 5</small></div><div class="col" style="--k:6"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 6</small></div><div class="col" style="--k:7"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 7</small></div><div class="col" style="--k:8"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 8</small></div><div class="col" style="--k:9"><div class="pilha"><span class="b-mod" style="--h:26%"></span><span class="b-men" style="--h:20%"></span></div><small>Mês 9</small></div><div class="col" style="--k:10"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 10</small></div><div class="col" style="--k:11"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 11</small></div><div class="col" style="--k:12"><div class="pilha"><span class="b-men" style="--h:20%"></span></div><small>Mês 12</small></div></div>
+      <p class="grafico-nota">Ilustrativo: os valores dependem do escopo de cada projeto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SALA DE FORMAÇÃO -->
+<section class="section" id="formacao">
+  <div class="container">
     <div class="dif-box fade-up">
       <div class="dif-ico"><svg class="ico"><use href="#i-cap"/></svg></div>
       <div>
@@ -978,6 +1092,7 @@ permalink: /portfolio/
       if (!e.isIntersecting) return;
       vigia.unobserve(e.target);
       if (e.target.classList.contains('trilha')) e.target.classList.add('desenhada');
+      if (e.target.id === 'grafico') e.target.classList.add('cresce');
       if (e.target.classList.contains('contador')) {
         var ate = +e.target.dataset.ate, t0 = performance.now(), el = e.target;
         if (reduzido) return;
@@ -989,7 +1104,7 @@ permalink: /portfolio/
       }
     });
   }, { threshold: 0.35 });
-  document.querySelectorAll('.trilha, .contador').forEach(function (el) { vigia.observe(el); });
+  document.querySelectorAll('.trilha, .contador, #grafico').forEach(function (el) { vigia.observe(el); });
 })();
 
 </script>
