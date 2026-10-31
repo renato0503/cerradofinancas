@@ -196,6 +196,17 @@ animado.
 - **Como foi feito:** gerador → `exportar.py` → `verificar.py` (um título estourava no Cerra.AI; reduzido) → revisão das
   4 folhas de contato → `animar-carrossel.mjs` (trilhas: cobre no Cerra.AI e na Cerrado Tech, sala na CerraClass,
   pb no Guia) → agenda e Central na cópia limpa (worktree), como nas rodadas anteriores.
+- **Vídeos refeitos (31/10, pedido do Renato):** alguns vídeos estavam quebrados, e no Guia o quadro "As frentes"
+  desmontava porque o embrulho de cada slide também usava a classe `.quadro`. Além disso, os vídeos só passavam os
+  slides. Agora cada um tem uma **coreografia própria da marca** (`filmes/coreografias/<entrega>.mjs`): cada slide
+  fica parado, cada elemento entra com o seu movimento e o conteúdo sai antes da troca.
+  - **Cerra.AI:** terminal. Rótulos digitados, varredura da esquerda, chat digitado e cortina cobre.
+  - **Cerrado Tech:** peças encaixando e ícones girando.
+  - **CerraClass:** etiqueta que quica, título em soco, cadeiras com contagem até 10 e polaroide.
+  - **Guia Acadêmico:** fios desenhados, marca-texto, quadro impresso linha a linha, carimbo e virada de página.
+
+  Os vídeos saem **sem áudio**, porque a trilha sintetizada ficou ruim (`--com-audio` reativa). Cada um tem de 39 a
+  44 s. Conferidos com `hyperframes snapshot` antes do render e com os quadros do MP4 depois. Commit `8b77cd3`.
 
 ## Cerra.AI: os extras (30/10)
 
