@@ -34,6 +34,44 @@ ease out; itens com stagger de 0,15 s; fecho com punch zoom no produto". O vocab
 Hoje o carrossel animado usa slide in (power3.inOut, 0,55 s) na troca de slide, e blur in com stagger de 0,09 s
 (expo.out) nos itens.
 
+**Sem áudio (31/10):** a trilha sintetizada (`trilha.mjs`) não ficou boa, então o carrossel animado sai mudo por padrão.
+`--com-audio` volta a gerar a trilha.
+
+## Coreografia própria (31/10)
+
+Quando existe `coreografias/<entrega>.mjs`, o vídeo não passa slides: cada slide fica parado, os elementos entram um a
+um, o conteúdo sai antes da troca e o rodapé (e o cabeçalho, se a marca tiver) fica no lugar. Quando a cor de fundo
+muda, o slide novo entra como cortina. A coreografia define:
+
+- `duracoes`: os segundos de cada slide.
+- `revela`: a cortina da troca de cor (`esq`, `dir`, `cima`, `baixo` ou `circulo`).
+- `saida`: como o conteúdo deixa o slide (as propriedades do GSAP).
+- `fixos`: o que não sai na troca (o padrão é `.rodape`).
+- `slides`: uma função por slide, com os movimentos. O tempo é contado do início do slide.
+
+| Movimento | O que faz |
+|---|---|
+| `A.palavras(sel, t, {x, y, rot, escala, stagger, ease})` | word reveal: palavra por palavra |
+| `A.letras(sel, t, {cps})` | typewriter: letra por letra |
+| `A.surgir(sel, t, {x, y, escala, op})` | fade/slide in |
+| `A.pop(sel, t, {de, rot, origem})` | pop in com overshoot |
+| `A.revelar(sel, t, {dir})` | mask reveal / draw-on numa direção |
+| `A.contar(sel, t, ate)` | contagem do número |
+| `A.marcar(sel, t)` | marca-texto passando (fundo em gradiente) |
+| `A.mover(sel, t, de, para)` | qualquer `fromTo` |
+| `A.continuo(sel, t, para)` | movimento lento até o fim do slide (girar, aproximar) |
+| `A.onda(sel, t, para, periodo)` | vai e volta (flutuar, pulsar) |
+
+As quatro apresentações institucionais têm cada uma o movimento da sua marca:
+
+- **Cerra.AI:** terminal. Rótulos digitados, varredura da esquerda, chat digitado e cortina cobre.
+- **Cerrado Tech:** fábrica. Peças encaixando, ícones girando e CTA em círculo.
+- **CerraClass:** sala de aula. Etiqueta que quica, título em soco, cadeiras com contagem até 10 e polaroide.
+- **Guia Acadêmico:** periódico. Fios desenhados, marca-texto, quadro impresso, carimbo e virada de página.
+
+O embrulho de cada slide no projeto gerado é `.hf-quadro`. Antes era `.quadro` e quebrava o quadro do Guia Acadêmico,
+que usa a mesma classe.
+
 ## Estrutura de um filme
 
 ```
