@@ -40,6 +40,7 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    e cada slide é um elemento `class="slide"`. Abra no navegador para revisar (os slides aparecem empilhados).
 2. Verifique e exporte: `python tools/verificar.py ...` (acusa estouro de rodapé, de área segura e sobreposição de
    ícone/logo sobre texto) e `python tools/exportar.py posts/AAAA-MM-tema/carrossel.html posts/AAAA-MM-tema/story.html`
+   (some `posts/AAAA-MM-tema/facebook.html` nas campanhas do Guia Acadêmico, que têm a arte única de Facebook).
 3. Em `entregas/AAAA-MM-tema/`, crie o `info.json` (`titulo`, `data`, `descricao`, `orientacoes`)
    e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt`, `legenda-facebook.txt` etc. Vídeos e GIFs finais também vão aqui.
 4. **Carrossel animado (padrão de vídeo desde 28/10):**
@@ -60,6 +61,9 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    `tools/gerar_datas.py` (lista `DATAS`). Saem no dia fixo (`data_fixa` no `info.json`), além do post normal da
    conta, e nunca entram na repetição. Ao virar o ano, acrescente as datas do ano novo na lista.
 6. Publique: `python tools/publicar.py`, depois commit e push. A página atualiza sozinha.
+   **Atenção:** `publicar.py` varre todas as pastas de `entregas/`; se houver campanha de outra pessoa ainda sem
+   commit no disco, ela entra na Central. Nesse caso, atualize só as suas pastas (um merge em `entregas/conteudos.json`
+   com `publicar_pasta()`, como em 31/10 no Guia Acadêmico) ou gere numa cópia limpa (`git worktree`).
    A frente e a série saem do nome da pasta (`REGRAS` em `publicar.py`). Um prefixo novo precisa entrar lá, senão
    a campanha cai em "Institucional · Avulsa".
 7. Mudou uma identidade (cor, fonte, logo)? Atualize `KITS_DADOS` em `tools/gerar_kits.py` e rode o gerador.

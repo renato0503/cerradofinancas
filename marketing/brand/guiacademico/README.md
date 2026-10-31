@@ -47,6 +47,9 @@ de `D:\Dev\GuiAcademico\logo3d.png`. O rodapé das peças usa a bússola + "Guia
   o autor é o aluno. Nada de "fazemos o seu TCC", "limpeza de plágio" ou parecido.
 - **Sem preço** nas peças (o site tem a tabela) e **sem os números do site** (+120 trabalhos, 94% de aprovação,
   10+ anos) até o Renato confirmar.
+- **Facebook:** a legenda (`legenda-facebook.txt`) sempre traz o link inteiro
+  `https://api.whatsapp.com/send?phone=5567993515206` — é a URL completa que vira clique; o número solto, não. Na arte
+  (`facebook.png`) o WhatsApp aparece escrito, porque imagem não é clicável.
 - Exemplo com número é ilustrativo e a nota de rodapé diz isso.
 - Fatos conferidos em 30/10/2026: NBR 6023 (referências), 10520 (citações) e 14724 (trabalhos acadêmicos);
   Resoluções CNS 466/2012 e 510/2016 e Plataforma Brasil; PRISMA 2020; o cálculo de 292 respondentes

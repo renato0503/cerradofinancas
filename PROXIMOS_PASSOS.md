@@ -1,6 +1,6 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 30/10/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 31/10/2026.
 
 ## Onde está cada registro
 
@@ -45,6 +45,11 @@ HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identid
 
 **31/10:** apresentação institucional ("Prazer, ...") de Cerra.AI, Cerrado Tech, CerraClass e Guia Acadêmico,
 cada uma na identidade da marca, para fixar no topo de cada perfil. A agenda começa por elas (31/10) e o Reel sai em 07/11.
+Também em 31/10, o **Guia Acadêmico ganhou o post de Facebook**: uma arte única (`facebook.png`, 1080×1350) no lugar do
+carrossel, ou o `carrossel-animado.mp4` como vídeo, e uma legenda própria (`legenda-facebook.txt`) com o link do
+WhatsApp inteiro (`https://api.whatsapp.com/send?phone=5567993515206`), que o Facebook transforma em link clicável.
+Vale para as 15 campanhas dos Cadernos de método e para a apresentação; a Central já mostra a peça e o card "Facebook".
+Detalhes em `marketing/HISTORICO.md`.
 
 **Palestra "Muito Além do Currículo: IA na Prática" (29/10):** versão animada com 29 slides
 (`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
@@ -79,6 +84,9 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       confirmado); confirmar se os números do site (+120 trabalhos, 94% de aprovação, 10+ anos) podem ir para as
       peças. O site novo foi publicado em 30/10; o projeto Firebase (`guiacademicostorage`) é da conta
       comercial@cerradofinancas.com.br: `firebase deploy --only hosting --account comercial@cerradofinancas.com.br`.
+      Confirmar (ou criar) também a página do Guia Acadêmico no Facebook: a arte e a legenda já estão na Central.
+- [ ] **Legendas por rede:** só a do Facebook usa a URL completa do WhatsApp; a do Instagram ainda escreve só o
+      telefone e a do LinkedIn só o site. Padronizar se fizer sentido (no LinkedIn a URL vira clique; no Instagram, não).
 - [ ] **Cerra.AI:** as 25 campanhas do planejamento (`2026-11-cerraai-*` da outra IA) estão prontas em PNG, mas sem
       vídeo, fora da agenda e sem commit; decidir se publica. Respostas reais da caixinha e dos comentários vão para
       `marketing/dados/pergunte-cerraai.json`. Nos stories interativos, o sticker é posto à mão no Instagram.

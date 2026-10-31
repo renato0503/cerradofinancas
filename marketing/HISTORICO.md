@@ -26,7 +26,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
 | 31/10 | `8622f19` | Apresentação institucional ("Prazer, ...") de Cerra.AI, Cerrado Tech, CerraClass e Guia Acadêmico, cada uma na identidade da marca, para fixar no perfil; a agenda passou a começar por elas (31/10) e o Reel sai em 07/11 |
-| 31/10 | (esta rodada) | Guia Acadêmico no Facebook: uma arte única por campanha (`facebook.png`) e legenda de Facebook com o link do WhatsApp clicável; o carrossel animado pode ir como vídeo |
+| 31/10 | `0fb3590` | Guia Acadêmico no Facebook: uma arte única por campanha (`facebook.png`, 1080×1350) e legenda de Facebook com o link do WhatsApp clicável; o carrossel animado pode ir como vídeo. Publicado na Central e no ar (GitHub Pages) |
 | 30/10 | `359e0d9` | Cerra.AI, extras: glossário da IA local (5), Pergunte ao Cerra.AI (chamada + 2 dúvidas comuns), comparativo com a nuvem, 8 stories interativos, checklist IA e LGPD em PDF e kit de vendas (one-pager e deck) |
 | 30/10 | `9a6b5c9` | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
 | 29/10 | `97484c0`, `619e9f7` | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
@@ -150,7 +150,8 @@ A frente "Consultoria acadêmica", que aparecia como "em breve" na agenda, é o 
 - **Série "Cadernos de método"** (`tools/gerar_guiacademico.py`, 15 campanhas `2026-11-guiacademico-*`): apresentação,
   problema de pesquisa, estatística, qualitativa, web scraping, IA acadêmica, ABNT, banca, ética, revisão
   sistemática, tamanho da amostra, questionário, cronograma, Comitê de Ética e como funciona. Cada uma tem carrossel
-  de 6, story, carrossel animado (Reel, 4 posts depois do carrossel) e legendas de Instagram e LinkedIn.
+  de 6, story, carrossel animado (Reel, 4 posts depois do carrossel) e legendas de Instagram e LinkedIn — e, desde
+  31/10, a arte única e a legenda de Facebook (ver a seção própria abaixo).
 - **Regras:** ética em toda peça ("não executamos trabalhos por terceiros"), sem preço e sem os números do site até o
   Renato confirmar; exemplos com número dizem que são ilustrativos.
 - **Site:** o `index.html` do Guia foi refeito na mesma identidade (mesmo conteúdo, formulários e login por CPF).
@@ -211,20 +212,57 @@ animado.
 
 ## Guia Acadêmico no Facebook (31/10)
 
-Pedido do Renato: o Guia Acadêmico também posta no Facebook, com uma arte única no lugar do carrossel (ou o vídeo) e
-uma legenda própria com o link do WhatsApp clicável.
+Pedido do Renato: o Guia Acadêmico também posta no Facebook, com **uma arte única** no lugar do carrossel (ou o vídeo) e
+uma legenda própria. O link do WhatsApp tem de entrar inteiro
+(`https://api.whatsapp.com/send?phone=5567993515206`), porque é a URL completa que o Facebook transforma em link
+clicável — o número solto não vira.
 
-- **Arte** (`facebook.html` → `facebook.png`, 1080×1350): a identidade "Artigo" com o gancho, o resumo, as
-  palavras-chave, o selo do diagnóstico, o WhatsApp e o site, mais a ética em toda peça. A classe `.slide.fb` fica em
-  `brand/guiacademico/marca.css`.
-- **Legenda** (`legenda-facebook.txt`): gancho, resumo, a lista do carrossel, a ética e o link do WhatsApp
-  `https://api.whatsapp.com/send?phone=5567993515206` (URL completa, porque é ela que o Facebook transforma em link
-  clicável; o número solto não vira). Depois, o site e as hashtags.
-- **Peças:** as 15 campanhas dos Cadernos e a apresentação institucional, geradas por `tools/gerar_guiacademico.py` e
-  `tools/gerar_apresentacoes.py`. A Central de Conteúdos mostra o `facebook.png` e a legenda do Facebook em cada
-  campanha.
-- **Publicação:** `publicar.py` já reconhece a rede `facebook` (mapa `REDES`). A agenda não muda: é a mesma campanha
-  com mais uma peça e uma legenda.
+**O que foi gerado (16 campanhas)**
+- As **15 campanhas dos Cadernos de método** (`2026-11-guiacademico-*`), por `tools/gerar_guiacademico.py`.
+- A **apresentação institucional** (`2026-11-apresentacao-guiacademico`), por `tools/gerar_apresentacoes.py` (só o
+  Guia ganhou Facebook; as outras três marcas ficaram como estavam).
+- Em cada uma: `posts/<campanha>/facebook.html` (fonte), `entregas/<campanha>/facebook.png` (1080×1350) e
+  `entregas/<campanha>/legenda-facebook.txt`. Os `.zip` de cada campanha foram refeitos e passaram a incluir os dois.
+
+**A arte** (`facebook.html` → `facebook.png`, 1080×1350)
+- A identidade "Artigo": cabeça corrida com o número do caderno, rubrica de seção, gancho em destaque com marca-texto,
+  resumo, palavras-chave, o selo "Diagnóstico da pesquisa", o botão do WhatsApp, a caixa da ética e o rodapé com a
+  bússola e o site.
+- **Sem** a bússola como marca d'água da capa do carrossel: nesta arte ela encostaria no texto e o `verificar.py`
+  acusaria sobreposição. A bússola aparece só no rodapé.
+- O gancho escolhe o corpo pelo tamanho (108, 96, 84, 72 ou 64 px; o menor é para os ganchos com mais de 62
+  caracteres). O resumo ficou em 38 px e as palavras-chave em 30 px para caber sem aperto.
+- O rodapé desta peça leva "Guia Acadêmico · Seu mentor" à esquerda e `guiacademico.com.br` à direita (não usa o
+  contador de página do carrossel, que não faria sentido numa arte só).
+- A classe `.slide.fb` (e `.fb .resumo`, `.fb .chaves`, `.fb .fb-cta`, `.fb .etica`) está em
+  `brand/guiacademico/marca.css`. A ética fica 160 px acima da base, livres do rodapé.
+
+**A legenda** (`legenda-facebook.txt`)
+- Gancho, resumo, a lista "onde trava" do carrossel (o Facebook não tem swipe, então o conteúdo vai no texto), a ética
+  e a chamada com o **link completo do WhatsApp**; depois o site (`https://guiacademico.com.br`) e as hashtags.
+- Sem preço e sem os números do site, como no resto da série. A apresentação institucional tem legenda própria
+  ("Prazer, Guia Acadêmico").
+
+**Central de Conteúdos**
+- `publicar.py` já reconhece a rede `facebook` (mapa `REDES`), então o card "Facebook" com o botão de copiar aparece
+  sozinho em cada campanha, ao lado de Instagram e LinkedIn, junto do `facebook.png` na grade de peças.
+- O hub foi atualizado **só nas 16 campanhas do Guia**, com um merge em `entregas/conteudos.json` usando
+  `publicar_pasta()` (mesmo formato do `publicar.py`) — e não com `publicar.py` inteiro, porque havia 25 campanhas
+  `2026-11-cerraai-*` de outra IA no disco, ainda sem commit, que entrariam na Central sem querer. O total continuou
+  em 116 campanhas.
+
+**Conferência e publicação**
+- `tools/verificar.py` nas 16 peças: todas **OK** (sem estouro de rodapé, sem sobreposição). A revisão visual
+  com os PNGs pegou dois ajustes: o rodapé estava faltando na primeira versão da arte, e a caixa da ética encostava
+  no rodapé; a legenda do site saiu do bloco de chamada (o site já está no rodapé) e a margem inferior foi a 160 px.
+- Commit `0fb3590` na `main` (88 arquivos, só o Guia; o trabalho da outra IA ficou intacto e fora do commit) e push.
+  O GitHub Pages construiu; conferido no ar: `facebook.png` responde 200 e o `conteudos.json` lista
+  "Facebook, Instagram, LinkedIn".
+
+**Pendências**
+- Confirmar (ou criar) a página do Guia Acadêmico no Facebook; as peças já estão na Central.
+- As legendas de Instagram (telefone escrito) e LinkedIn (só o site) não têm o link do WhatsApp. Só a do Facebook usa
+  a URL completa; decidir se padroniza as outras.
 
 ## Cerra.AI: os extras (30/10)
 
@@ -437,7 +475,11 @@ Valem para todas as próximas campanhas.
 - [ ] **Ouvir o áudio dos Reels** antes de postar. Os sons são sintetizados por código e nunca foram ouvidos por uma pessoa.
 - [ ] **Alinhar o catálogo da CerraClass para 10 alunos** por turma (hoje diz 15).
 - [ ] **Guia Acadêmico:** confirmar o perfil @guiacademico e os números do site; dizer se a logo antiga (capelo e livros,
-      pasta `GuiAcademico/` na raiz) ainda vale.
+      pasta `GuiAcademico/` na raiz) ainda vale; confirmar/criar a página do Facebook (as peças e a legenda já estão na
+      Central, com o link do WhatsApp clicável).
+- [ ] **Legendas por rede:** só a do Facebook usa a URL completa do WhatsApp (`https://api.whatsapp.com/send?phone=...`).
+      A do Instagram ainda escreve só o telefone e a do LinkedIn só o site; decidir se padronizam (no LinkedIn a URL
+      vira clique; no Instagram, não).
 - [ ] **Cerra.AI:** publicar ou não as 25 campanhas paradas da outra IA; levar as perguntas reais para
       `dados/pergunte-cerraai.json`.
 - [ ] Atualizar as campanhas dos cursos quando o catálogo da CerraClass mudar (sequência no README).
