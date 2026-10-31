@@ -1,0 +1,64 @@
+/* Hero 3D do /portfolio/: o palco (canvas) fica preso no topo enquanto os 360vh do hero rolam por cima.
+   Sem WebGL, no celular ou com movimento reduzido, a página vira html.hero-estatico: pôster + texto, sem Three.js. */
+.hero-3d { position: relative; min-height: 360vh; background: #000a1e; color: #fff; }
+.h3d-palco { position: sticky; top: 0; height: 100vh; margin-bottom: -100vh; overflow: hidden; z-index: 0;
+  background: radial-gradient(120% 80% at 70% 30%, #1a2a55 0%, #000a1e 55%, #00030a 100%); }
+.h3d-palco canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1.2s ease; }
+.hero-3d-pronto .h3d-palco canvas { opacity: 1; }
+.h3d-poster { position: absolute; inset: 0; background: url(/img/hero3d-poster.webp) 68% center / cover no-repeat; opacity: .9; }
+.hero-3d-pronto .h3d-poster { opacity: 0; transition: opacity 1.2s ease; }
+.h3d-scrim { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,10,30,.86) 0%, rgba(0,10,30,.46) 40%, transparent 68%), linear-gradient(0deg, rgba(0,10,30,.6), transparent 30%); }
+.h3d-callouts { position: absolute; inset: 0; pointer-events: none; }
+
+.h3d-abertura { position: relative; z-index: 2; min-height: 100vh; display: flex; align-items: center; padding-top: 90px; }
+.h3d-abertura > div { max-width: 640px; }
+.h3d-capitulos { position: relative; z-index: 2; }
+.h3d-cap { min-height: 65vh; display: flex; align-items: center; }
+.h3d-cap > div { max-width: 460px; padding: 28px 30px; border-radius: 18px; background: rgba(0,10,30,.55); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.h3d-num { display: inline-block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .8rem; font-weight: 700; letter-spacing: 1.5px; color: #fecb00; border: 1px solid rgba(254,203,0,.4); border-radius: 50px; padding: 4px 12px; margin-bottom: 14px; }
+.h3d-cap h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 900; letter-spacing: -.8px; line-height: 1.1; color: #fff; }
+.h3d-cap p { color: #cbd5e1; font-size: 1.05rem; line-height: 1.6; margin-top: 10px; }
+.h3d-cap ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
+.h3d-cap li { display: flex; gap: 10px; color: #e2e8f0; font-size: .95rem; }
+.h3d-cap li .ico { color: #fecb00; margin-top: 3px; }
+.h3d-cap .btn-whats { margin-top: 20px; }
+.h3d-cap--fim { min-height: 100vh; }
+
+/* Índice dos capítulos, preso à direita */
+.h3d-indice { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.h3d-indice ol { position: sticky; top: calc(50vh - 110px); margin: 0 0 0 auto; width: max-content; padding: 0 28px 0 0; list-style: none; display: grid; gap: 14px; }
+.h3d-indice li { display: flex; align-items: center; justify-content: flex-end; gap: 10px; font-size: .74rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,.4); transition: color .4s; }
+.h3d-indice li span { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.h3d-indice li::after { content: ''; width: 18px; height: 2px; border-radius: 2px; background: currentColor; transition: width .4s cubic-bezier(.16,1,.3,1); }
+.h3d-indice li.ativo { color: #fecb00; }
+.h3d-indice li.ativo::after { width: 42px; }
+
+/* Callouts presos às peças do 3D */
+.h3d-callout { position: absolute; left: 0; top: 0; visibility: hidden; will-change: transform, opacity; }
+.h3d-callout__ponto { position: absolute; width: 10px; height: 10px; margin: -5px; border-radius: 50%; background: #fecb00; box-shadow: 0 0 0 4px rgba(254,203,0,.25), 0 0 16px #fecb00; }
+.h3d-callout__linha { position: absolute; left: 0; top: 0; width: var(--len); height: 1.5px; background: linear-gradient(90deg, #fecb00, rgba(254,203,0,.3)); transform-origin: 0 50%; transform: rotate(var(--ang)); }
+.h3d-callout__card { position: absolute; left: var(--dx); top: var(--dy); transform: translate(0, -50%); white-space: nowrap; padding: 9px 14px; border-radius: 12px; background: rgba(0,10,30,.78); border: 1px solid rgba(254,203,0,.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.h3d-callout[data-lado="esq"] .h3d-callout__card { transform: translate(-100%, -50%); }
+.h3d-callout__card b { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .78rem; letter-spacing: 1px; color: #fecb00; }
+.h3d-callout__card span { display: block; font-size: .84rem; color: #e2e8f0; margin-top: 2px; }
+
+@media (max-width: 1100px) { .h3d-indice { display: none; } }
+
+/* Modo estático: pôster, texto e os capítulos em grade (celular, movimento reduzido, sem WebGL) */
+.hero-estatico .hero-3d { min-height: 0; }
+.hero-estatico .h3d-palco { position: absolute; inset: 0; height: auto; margin: 0; }
+.hero-estatico .h3d-palco canvas, .hero-estatico .h3d-indice, .hero-estatico .h3d-callouts { display: none; }
+.hero-estatico .h3d-poster { animation: h3d-respira 14s ease-in-out infinite alternate; }
+.hero-estatico .h3d-scrim { background: linear-gradient(180deg, rgba(0,10,30,.55) 0%, rgba(0,10,30,.88) 60%, #000a1e 100%); }
+.hero-estatico .h3d-abertura { min-height: 0; padding: 170px 0 50px; }
+.hero-estatico .h3d-capitulos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding-bottom: 80px; }
+.hero-estatico .h3d-cap { min-height: 0; }
+.hero-estatico .h3d-cap > div { max-width: none; height: 100%; }
+@keyframes h3d-respira { from { transform: scale(1); } to { transform: scale(1.06); } }
+@media (max-width: 760px) {
+  .hero-estatico .h3d-capitulos { grid-template-columns: 1fr; }
+  .hero-estatico .h3d-abertura { padding: 140px 0 36px; text-align: center; }
+  .hero-estatico .h3d-poster { background-position: 60% 30%; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-estatico .h3d-poster { animation: none; } }

@@ -23,6 +23,20 @@ permalink: /portfolio/
   <link rel="stylesheet" href="{{ '/css/menu.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/css/footer.css' | relative_url }}">
 
+  <link rel="stylesheet" href="{{ '/css/hero3d.css' | relative_url }}">
+  <script>
+    (function () {
+      var m = function (q) { return window.matchMedia(q).matches; };
+      if (m('(prefers-reduced-motion: reduce)') || !m('(min-width: 768px)') || m('(pointer: coarse)') || (navigator.hardwareConcurrency || 8) <= 4)
+        document.documentElement.classList.add('hero-estatico');
+    })();
+  </script>
+  <script type="importmap">
+  { "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  } }
+  </script>
   <style>
     :root { --azul: #001f5c; --azul-2: #003399; --noite: #000a1e; --ouro: #fecb00; --verde: #16a34a; --tinta: #0f172a; --suave: #64748b; --linha: #e2e8f0; --sai: cubic-bezier(0.16, 1, 0.3, 1); }
     body { font-family: 'Inter', sans-serif; background: #fff; color: var(--tinta); }
@@ -36,10 +50,6 @@ permalink: /portfolio/
     .ico { width: 1em; height: 1em; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.14em; }
 
     /* HERO */
-    .hero { position: relative; padding: 180px 0 110px; background: linear-gradient(135deg, var(--azul) 0%, var(--noite) 100%); color: #fff; overflow: hidden; }
-    .hero-fundo { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%); animation: grade 24s linear infinite; }
-    @keyframes grade { to { background-position: 48px 48px, 48px 48px; } }
-    .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 50px; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(254,203,0,.12); border: 1px solid rgba(254,203,0,.35); color: var(--ouro); padding: 7px 16px; border-radius: 50px; font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; }
     .hero-badge .ico { animation: brilho 2.4s ease-in-out infinite; }
     @keyframes brilho { 0%,100% { transform: scale(1) rotate(0); opacity: 1; } 50% { transform: scale(1.25) rotate(20deg); opacity: .7; } }
@@ -49,7 +59,7 @@ permalink: /portfolio/
     .hero-titulo .ln:nth-child(2) > span { animation-delay: .12s; } .hero-titulo .ln:nth-child(3) > span { animation-delay: .24s; }
     @keyframes linha { to { transform: none; } }
     .gold { color: var(--ouro); }
-    .hero .lead { color: #cbd5e1; font-size: 1.08rem; line-height: 1.7; max-width: 580px; margin-bottom: 30px; }
+    .hero-3d .lead { color: #cbd5e1; font-size: 1.08rem; line-height: 1.7; max-width: 580px; margin-bottom: 30px; }
     .hero-acoes { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .btn-whats { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--verde); color: #fff; padding: 16px 30px; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: transform .25s var(--sai), background .2s, box-shadow .25s; box-shadow: 0 10px 24px rgba(22,163,74,.28); white-space: nowrap; }
     .btn-whats:hover { transform: translateY(-2px); background: #15803d; box-shadow: 0 14px 30px rgba(22,163,74,.38); }
@@ -62,30 +72,7 @@ permalink: /portfolio/
     .hero-selo { display: flex; align-items: center; gap: 8px; font-size: .9rem; color: #e2e8f0; }
     .hero-selo .ico { color: var(--ouro); font-size: 1.2rem; }
 
-    /* O logo no centro, com dois anéis e oito ícones em órbita (cada ícone gira ao contrário para ficar em pé) */
-    .hero-visual { position: relative; width: 440px; height: 440px; margin: 0 auto; display: grid; place-items: center; }
-    .hero-visual::before { content: ''; position: absolute; inset: 15%; border-radius: 50%; background: radial-gradient(circle, rgba(254,203,0,.22) 0%, rgba(254,203,0,.05) 50%, transparent 72%); animation: pulso 4s ease-in-out infinite; }
-    @keyframes pulso { 0%,100% { transform: scale(.92); opacity: .7; } 50% { transform: scale(1.05); opacity: 1; } }
-    .hero-visual img { position: relative; z-index: 2; width: 230px; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,.6)); animation: flutua 6s ease-in-out infinite; }
-    @keyframes flutua { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-    .anel { position: absolute; border-radius: 50%; border: 1px dashed rgba(254,203,0,.28); }
-    .anel-1 { inset: 4%; animation: gira 60s linear infinite; }
-    .anel-2 { inset: 22%; border-style: solid; border-color: rgba(255,255,255,.08); }
-    .orbita { position: absolute; inset: 4%; animation: gira 40s linear infinite; }
-    .orb { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px; transform: rotate(calc(var(--k) * 45deg)) translateY(-196px); }
-    .orb .ico { width: 54px; height: 54px; padding: 13px; border-radius: 16px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: var(--ouro); backdrop-filter: blur(6px); animation: gira 40s linear infinite reverse; transform-origin: center; }
-    .orb { animation: none; }
-    .orb .ico { rotate: calc(var(--k) * -45deg); }
-    @keyframes gira { to { transform: rotate(360deg); } }
-    @media (max-width: 992px) {
-      .hero { padding: 150px 0 80px; }
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero .lead { margin: 0 auto 30px; } .hero-acoes, .hero-selos { justify-content: center; }
-      .hero-visual { width: 320px; height: 320px; margin-top: 10px; }
-      .hero-visual img { width: 170px; }
-      .orb { width: 44px; height: 44px; margin: -22px; transform: rotate(calc(var(--k) * 45deg)) translateY(-142px); }
-      .orb .ico { width: 44px; height: 44px; padding: 11px; border-radius: 13px; }
-    }
+    @media (max-width: 760px) { .hero-acoes, .hero-selos { justify-content: center; } }
 
     /* Faixa rolando com as capacidades */
     .ticker { background: var(--ouro); color: var(--azul); overflow: hidden; border-block: 1px solid rgba(0,31,92,.15); }
@@ -404,37 +391,76 @@ permalink: /portfolio/
   <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
   <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/><path d="m14 4-4 16"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7z"/><path d="M19 15c.3 1.6 1 2.4 2.5 2.6-1.5.3-2.2 1-2.5 2.6-.3-1.6-1-2.3-2.5-2.6 1.5-.2 2.2-1 2.5-2.6z"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></symbol>
+  <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
 
 {% include header.html titulo="Cerrado Tech" %}
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-fundo" aria-hidden="true"></div>
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="hero-badge fade-up"><svg class="ico"><use href="#i-sparkle"/></svg> Fábrica de Software · Sob demanda</span>
-        <h1 class="hero-titulo"><span class="ln"><span>Software sob medida,</span></span> <span class="ln"><span class="gold">construído em torno</span></span> <span class="ln"><span class="gold">do seu negócio.</span></span></h1>
-        <p class="lead fade-up delay-2">Quando o que a sua empresa precisa ainda não existe pronto, a Cerrado Tech desenha e constrói: gestão, dados, inteligência artificial, automações e integrações, com a sua equipe treinada para usar.</p>
-        <div class="hero-acoes fade-up delay-3">
-          <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1%21%20Quero%20conversar%20com%20a%20Cerrado%20Tech%20sobre%20um%20software%20sob%20medida." target="_blank" rel="noopener" class="btn-whats"><svg class="ico"><use href="#i-whatsapp"/></svg> Falar com um especialista</a>
-          <a href="#capacidades" class="btn-linha">Ver as 16 capacidades <svg class="ico"><use href="#i-arrow-right"/></svg></a>
-        </div>
-        <div class="hero-selos fade-up delay-3">
-          <span class="hero-selo"><svg class="ico"><use href="#i-code"/></svg> O código é seu</span>
-          <span class="hero-selo"><svg class="ico"><use href="#i-link"/></svg> Integra com o que você já usa</span>
-          <span class="hero-selo"><svg class="ico"><use href="#i-presentation"/></svg> Equipe treinada na sala de formação</span>
-        </div>
+<!-- HERO 3D: o canvas é decorativo; todo o conteúdo está no HTML -->
+<section class="hero-3d" id="hero-3d">
+  <div class="h3d-palco" aria-hidden="true">
+    <div class="h3d-poster"></div>
+    <canvas id="gl"></canvas>
+    <div class="h3d-scrim"></div>
+    <div class="h3d-callouts" id="h3d-callouts"></div>
+  </div>
+
+  <div class="container h3d-abertura">
+    <div>
+      <span class="hero-badge"><svg class="ico"><use href="#i-sparkle"/></svg> Fábrica de Software · Sob demanda</span>
+      <h1 class="hero-titulo"><span class="ln"><span>Software sob medida,</span></span> <span class="ln"><span class="gold">construído em torno</span></span> <span class="ln"><span class="gold">do seu negócio.</span></span></h1>
+      <p class="lead">Quando o que a sua empresa precisa ainda não existe pronto, a Cerrado Tech desenha e constrói: gestão, dados, inteligência artificial, automações e integrações, com a sua equipe treinada para usar.</p>
+      <div class="hero-acoes">
+        <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1%21%20Quero%20conversar%20com%20a%20Cerrado%20Tech%20sobre%20um%20software%20sob%20medida." target="_blank" rel="noopener" class="btn-whats"><svg class="ico"><use href="#i-whatsapp"/></svg> Falar com um especialista</a>
+        <a href="#capacidades" class="btn-linha">Ver as 16 capacidades <svg class="ico"><use href="#i-arrow-right"/></svg></a>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="anel anel-1"></div>
-        <div class="anel anel-2"></div>
-        <div class="orbita"><span class="orb" style="--k:0"><svg class="ico"><use href="#i-grid"/></svg></span><span class="orb" style="--k:1"><svg class="ico"><use href="#i-users"/></svg></span><span class="orb" style="--k:2"><svg class="ico"><use href="#i-chart-pie"/></svg></span><span class="orb" style="--k:3"><svg class="ico"><use href="#i-brain"/></svg></span><span class="orb" style="--k:4"><svg class="ico"><use href="#i-robot"/></svg></span><span class="orb" style="--k:5"><svg class="ico"><use href="#i-link"/></svg></span><span class="orb" style="--k:6"><svg class="ico"><use href="#i-shield-check"/></svg></span><span class="orb" style="--k:7"><svg class="ico"><use href="#i-database"/></svg></span></div>
-        <img src="{{ '/img/logohome.png' | relative_url }}" alt="">
+      <div class="hero-selos">
+        <span class="hero-selo"><svg class="ico"><use href="#i-code"/></svg> O código é seu</span>
+        <span class="hero-selo"><svg class="ico"><use href="#i-link"/></svg> Integra com o que você já usa</span>
+        <span class="hero-selo"><svg class="ico"><use href="#i-presentation"/></svg> Equipe treinada na sala de formação</span>
       </div>
     </div>
   </div>
+
+  <div class="container h3d-capitulos">
+    <article class="h3d-cap"><div>
+      <span class="h3d-num">01 · Volume</span>
+      <h2>Do traço ao volume</h2>
+      <p>Arquitetura de software desenhada antes da primeira linha de código.</p>
+      <ul><li><svg class="ico"><use href="#i-compass"/></svg>Descoberta com a sua equipe</li><li><svg class="ico"><use href="#i-layers"/></svg>Stack, integrações e dados sob medida</li></ul>
+    </div></article>
+    <article class="h3d-cap"><div>
+      <span class="h3d-num">02 · Matéria</span>
+      <h2>A matéria</h2>
+      <p>Cada módulo ganha forma, regra de negócio e integração.</p>
+    </div></article>
+    <article class="h3d-cap"><div>
+      <span class="h3d-num">03 · Anatomia</span>
+      <h2>Anatomia</h2>
+      <p>API, IA, dados, mobile, compliance. Tudo conversa.</p>
+    </div></article>
+    <article class="h3d-cap h3d-cap--fim"><div>
+      <span class="h3d-num">04 · Produto</span>
+      <h2>O produto</h2>
+      <p>Pronto para operar. E pronto para evoluir.</p>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1%21%20Quero%20conversar%20com%20a%20Cerrado%20Tech%20sobre%20um%20software%20sob%20medida." target="_blank" rel="noopener" class="btn-whats"><svg class="ico"><use href="#i-whatsapp"/></svg> Falar com um especialista</a>
+    </div></article>
+  </div>
+
+  <nav class="h3d-indice" aria-hidden="true"><ol>
+    <li class="ativo"><span>00</span> Blueprint</li><li><span>01</span> Volume</li><li><span>02</span> Matéria</li><li><span>03</span> Anatomia</li><li><span>04</span> Produto</li>
+  </ol></nav>
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-trilho"><div class="ticker-grupo"><span><svg class="ico"><use href="#i-grid"/></svg>ERP Customizado</span><span><svg class="ico"><use href="#i-users"/></svg>CRM</span><span><svg class="ico"><use href="#i-storefront"/></svg>E-commerce &amp; PWA</span><span><svg class="ico"><use href="#i-certificate"/></svg>Produto White-Label</span><span><svg class="ico"><use href="#i-chart-pie"/></svg>BI &amp; Dashboards</span><span><svg class="ico"><use href="#i-database"/></svg>Organização de Dados</span><span><svg class="ico"><use href="#i-search-chart"/></svg>Machine Learning &amp; Previsão</span><span><svg class="ico"><use href="#i-brain"/></svg>IA Offline &amp; RAG</span><span><svg class="ico"><use href="#i-chat"/></svg>Chatbots &amp; Assistentes</span><span><svg class="ico"><use href="#i-type"/></svg>OCR &amp; Documentos Inteligentes</span><span><svg class="ico"><use href="#i-robot"/></svg>Automação de Processos</span><span><svg class="ico"><use href="#i-link"/></svg>Integrações</span><span><svg class="ico"><use href="#i-signature"/></svg>Assinatura Digital</span><span><svg class="ico"><use href="#i-shield-check"/></svg>Compliance &amp; LGPD</span><span><svg class="ico"><use href="#i-buildings"/></svg>GovTech &amp; Legal-Tech</span><span><svg class="ico"><use href="#i-seal-check"/></svg>Web3 &amp; Blockchain</span></div><div class="ticker-grupo"><span><svg class="ico"><use href="#i-grid"/></svg>ERP Customizado</span><span><svg class="ico"><use href="#i-users"/></svg>CRM</span><span><svg class="ico"><use href="#i-storefront"/></svg>E-commerce &amp; PWA</span><span><svg class="ico"><use href="#i-certificate"/></svg>Produto White-Label</span><span><svg class="ico"><use href="#i-chart-pie"/></svg>BI &amp; Dashboards</span><span><svg class="ico"><use href="#i-database"/></svg>Organização de Dados</span><span><svg class="ico"><use href="#i-search-chart"/></svg>Machine Learning &amp; Previsão</span><span><svg class="ico"><use href="#i-brain"/></svg>IA Offline &amp; RAG</span><span><svg class="ico"><use href="#i-chat"/></svg>Chatbots &amp; Assistentes</span><span><svg class="ico"><use href="#i-type"/></svg>OCR &amp; Documentos Inteligentes</span><span><svg class="ico"><use href="#i-robot"/></svg>Automação de Processos</span><span><svg class="ico"><use href="#i-link"/></svg>Integrações</span><span><svg class="ico"><use href="#i-signature"/></svg>Assinatura Digital</span><span><svg class="ico"><use href="#i-shield-check"/></svg>Compliance &amp; LGPD</span><span><svg class="ico"><use href="#i-buildings"/></svg>GovTech &amp; Legal-Tech</span><span><svg class="ico"><use href="#i-seal-check"/></svg>Web3 &amp; Blockchain</span></div></div></div>
@@ -1108,5 +1134,6 @@ permalink: /portfolio/
 })();
 
 </script>
+<script type="module" src="{{ '/js/hero3d/main.js' | relative_url }}"></script>
 </body>
 </html>
