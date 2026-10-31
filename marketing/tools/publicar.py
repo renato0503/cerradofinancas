@@ -28,6 +28,10 @@ TIPOS = {
 # Frente e série de cada campanha, pelo nome da pasta (sem a data): a primeira regra que casar vale.
 # A página agrupa e filtra por elas; ao criar um prefixo novo, acrescente aqui.
 REGRAS = [
+    ("apresentacao-cerraai", "cerraai", "Apresentação institucional"),
+    ("apresentacao-cerradotech", "tech", "Apresentação institucional"),
+    ("apresentacao-cerraclass", "cerraclass", "Apresentação institucional"),
+    ("apresentacao-guiacademico", "guiacademico", "Apresentação institucional"),
     ("cerraai-glossario-", "cerraai", "Glossário da IA local"),
     ("cerraai-pergunte-", "cerraai", "Pergunte ao Cerra.AI"),
     ("cerraai-stories-", "cerraai", "Stories interativos"),

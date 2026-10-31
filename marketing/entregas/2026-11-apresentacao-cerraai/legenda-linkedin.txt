@@ -1,0 +1,7 @@
+Prazer, Cerra.AI.
+
+A Cerrado Tech desenvolveu um assistente de IA que roda 100% no computador da empresa: lê os documentos do escritório (inclusive PDF escaneado, áudio e vídeo), responde citando arquivo e página e anonimiza o dado pessoal antes de chegar ao modelo. Sem enviar nada para fora e sem depender de internet.
+
+Cenários prontos para contabilidade, oncologia e advocacia penal; outras áreas por cenário configurável.
+
+Demonstração com os seus documentos: cerradofinancas.com.br/cerraai

@@ -25,6 +25,7 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 28/10 | 42e20f7 | Contabilidade: serviços confirmados nas peças, 3 campanhas novas (Regularização, Sócios, Reforma tributária) e a série educativa "Você sabia?" (8 notas explicativas, sábados de 07/11 a 26/12); DIRF trocada por EFD-Reinf no site |
 | 28/10 | ac24cc6 | Série da Cerrado Contabilidade (10 campanhas: 4 "Para quem atendemos" e 6 "O que fazemos") na identidade própria "Partida dobrada", terças e quintas de 03/11 a 03/12 |
 | 28/10 | (esta rodada) | Série "O que a Cerrado Tech constrói": 16 campanhas, uma por capacidade do portfólio (carrossel de 6, story, carrossel animado, legendas e data sugerida de 02/11 a 07/12); carrossel animado vira o vídeo padrão |
+| 31/10 | (esta rodada) | Apresentação institucional ("Prazer, ...") de Cerra.AI, Cerrado Tech, CerraClass e Guia Acadêmico, cada uma na identidade da marca, para fixar no perfil; a agenda passou a começar por elas (31/10) e o Reel sai em 07/11 |
 | 30/10 | `359e0d9` | Cerra.AI, extras: glossário da IA local (5), Pergunte ao Cerra.AI (chamada + 2 dúvidas comuns), comparativo com a nuvem, 8 stories interativos, checklist IA e LGPD em PDF e kit de vendas (one-pager e deck) |
 | 30/10 | `9a6b5c9` | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
 | 29/10 | `97484c0`, `619e9f7` | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
@@ -169,6 +170,32 @@ Pedidos do Renato em 30/10:
   ordem, até o fim da agenda. Datas comemorativas nunca se repetem. Na Central, aparecem como "(repetição)".
 - **Início:** o Felipe ainda não tinha começado; a agenda inteira recomeça em **sábado, 31/10/2026**
   (`python tools/agendar.py 2026-10-31`).
+
+## Apresentações institucionais (31/10)
+
+Um post "Prazer, ..." por marca, para **fixar no topo do perfil**, cada um na identidade da própria marca
+(`tools/gerar_apresentacoes.py`, pastas `2026-11-apresentacao-<marca>`): carrossel de 6, story, legendas e carrossel
+animado.
+
+| Marca | Conta | Identidade | Roteiro do carrossel |
+|---|---|---|---|
+| Cerra.AI | @cerra.ai | Silício local | o que é → o que faz → a tela (exemplo ilustrativo) → para quem → o que tem no perfil → demonstração |
+| Cerrado Tech | @cerradofinancas | a do site | o que é → quem somos → o que construímos → produtos do ecossistema (Cerra.AI, GovTech, CerraClass, venture builder) → quem está por trás → CTA |
+| CerraClass | @cerraclass | Sábado de sala | o que é → turma de até 10 → os cursos → quem está por trás → o que tem no perfil → CTA |
+| Guia Acadêmico | @guiacademico | Artigo | "nº 00": resumo → quem orienta (Figura 1) → as frentes (Quadro 0) → protocolo → os Cadernos de método → diagnóstico e ética |
+
+- **Agenda (pedido do Renato):** a agenda **começa pelas apresentações**: o "Prazer, ..." é o primeiro post de cada
+  conta (31/10) e o resto da fila andou um dia. O carrossel animado sai como Reel uma semana depois (07/11). No
+  `agendar.py`, as campanhas com `-apresentacao-` no nome entram na frente da fila da conta (rótulo "Apresentação:
+  carrossel + story (fixar no perfil)") e o Reel entra 7 posts depois.
+- **Fatos:** só o que está no site, nas landings e no projeto Cerra.AI. As credenciais do Renato são as que já estão
+  publicadas nas landings (mestre em Contabilidade pela UFPR, doutorando em algoritmos e compliance, ICTI/Itaú
+  Unibanco, fundador da Cerrado Tech). Dois ajustes na revisão: a CerraClass diz "Quem está por trás" (e não "Quem
+  ensina", porque não é certo que o Renato dá todos os cursos), e o Cerra.AI não promete a série "Mostra como faz",
+  que ainda não foi publicada.
+- **Como foi feito:** gerador → `exportar.py` → `verificar.py` (um título estourava no Cerra.AI; reduzido) → revisão das
+  4 folhas de contato → `animar-carrossel.mjs` (trilhas: cobre no Cerra.AI e na Cerrado Tech, sala na CerraClass,
+  pb no Guia) → agenda e Central na cópia limpa (worktree), como nas rodadas anteriores.
 
 ## Cerra.AI: os extras (30/10)
 

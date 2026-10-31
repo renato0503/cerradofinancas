@@ -6,6 +6,8 @@ Regras (pedido do Renato em 28/10):
 - **Início:** o Felipe começa a postar em 31/10/2026; rode com essa data para manter a ordem.
 - **Repetição (30/10):** quando uma conta fica sem post novo, a agenda repete os posts dela desde o mais antigo,
   na mesma ordem, até o fim da agenda. As datas comemorativas nunca se repetem.
+- **Apresentação institucional (31/10):** o "Prazer, ..." de cada marca (pastas com `-apresentacao-`) é o primeiro
+  post da conta, e o carrossel animado dele sai como Reel uma semana depois.
 - **Datas comemorativas (30/10):** só as nacionais, com post estático e story, sem vídeo (tools/gerar_datas.py).
   Saem no dia fixo (campo "data_fixa" do info.json), ao lado do post normal da conta.
 - **Ritmo:** cada conta posta pelo menos 1 vez por dia e no máximo 2 (POR_DIA), enquanto houver conteúdo. Quando o
@@ -174,13 +176,20 @@ def main():
     inicio = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today() + timedelta(days=1)
     todas = campanhas()
     fixas = [c for c in todas if data_fixa(c["pasta"])]
-    cs = [c for c in todas if not data_fixa(c["pasta"])]
+    apresentacoes = [c for c in todas if "-apresentacao-" in c["pasta"] and not data_fixa(c["pasta"])]
+    cs = [c for c in todas if not data_fixa(c["pasta"]) and c not in apresentacoes]
     filas = {
         "cerradofinancas": fila_financas([c for c in cs if conta_de(c["frente"]) == "cerradofinancas"]),
         "cerraai": fila_cerraai([c for c in cs if conta_de(c["frente"]) == "cerraai"]),
         "cerraclass": fila_cerraclass([c for c in cs if conta_de(c["frente"]) == "cerraclass"]),
         "guiacademico": fila_guiacademico([c for c in cs if conta_de(c["frente"]) == "guiacademico"]),
     }
+    # a apresentação institucional abre a fila da conta; o Reel dela sai uma semana depois
+    for c in apresentacoes:
+        fila = filas[conta_de(c["frente"])]
+        fila.insert(0, post(c, "Apresentação: carrossel + story (fixar no perfil)"))
+        if "carrossel-animado.mp4" in c["arquivos"]:
+            fila.insert(min(7 * POR_DIA[conta_de(c["frente"])], len(fila)), post(c, "Reel: apresentação animada", "carrossel-animado.mp4"))
     novos = {}
     for conta, fila in filas.items():
         assert 1 <= POR_DIA[conta] <= 2

@@ -43,6 +43,9 @@ HyperFrames (16:9 e 9:16); Cerrado Tech e Cerrado Finanças seguem com a identid
 - **Cerra.AI, extras:** glossário (5), Pergunte ao Cerra.AI (3), comparativo com a nuvem, 8 stories interativos,
   checklist IA e LGPD em PDF e kit de vendas (one-pager e deck). O @cerra.ai tem conteúdo novo até 23/11.
 
+**31/10:** apresentação institucional ("Prazer, ...") de Cerra.AI, Cerrado Tech, CerraClass e Guia Acadêmico,
+cada uma na identidade da marca, para fixar no topo de cada perfil. A agenda começa por elas (31/10) e o Reel sai em 07/11.
+
 **Palestra "Muito Além do Currículo: IA na Prática" (29/10):** versão animada com 29 slides
 (`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
 https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-ia/apresentacao/. Detalhes em `marketing/HISTORICO.md`.

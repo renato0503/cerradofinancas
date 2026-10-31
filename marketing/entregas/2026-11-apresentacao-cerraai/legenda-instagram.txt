@@ -1,0 +1,14 @@
+Prazer, Cerra.AI: a IA da empresa, dentro da empresa.
+
+Um assistente de inteligência artificial que roda no computador da empresa e responde com base nos seus documentos:
+▪️ Lê PDF (também escaneado), Word, Excel, imagens, áudio e vídeo
+▪️ Mostra o arquivo e a página de onde tirou a informação
+▪️ Anonimiza o dado pessoal antes de chegar ao modelo
+▪️ Funciona sem internet, depois de instalado
+
+Aqui você vai ver o glossário da IA local, a série Pergunte ao Cerra.AI, comparativos honestos e materiais gratuitos.
+
+Demonstração com os seus documentos: WhatsApp (67) 99351-5206
+🔗 cerradofinancas.com.br/cerraai
+
+#CerraAI #IALocal #IAOffline #LGPD #CerradoTech

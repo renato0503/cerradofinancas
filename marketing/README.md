@@ -54,6 +54,8 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    **Cerra.AI, extras:** `python tools/gerar_cerraai_extras.py --pdf` (glossário, Pergunte ao Cerra.AI, comparativo,
    stories interativos, checklist LGPD e kit de vendas). Pergunta real nova: acrescente em `dados/pergunte-cerraai.json`
    e rode de novo. PDF entra na Central como documento.
+   **Apresentações institucionais:** `python tools/gerar_apresentacoes.py` (uma por marca; o agendador põe cada uma
+   como primeiro post da conta e o Reel uma semana depois).
    **Datas comemorativas:** só as nacionais, só post estático e story (sem vídeo), geradas por
    `tools/gerar_datas.py` (lista `DATAS`). Saem no dia fixo (`data_fixa` no `info.json`), além do post normal da
    conta, e nunca entram na repetição. Ao virar o ano, acrescente as datas do ano novo na lista.
