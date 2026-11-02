@@ -72,7 +72,7 @@
     "guia": "institucional/guia.pdf",
     "zip": {
       "nome": "institucional.zip",
-      "kb": 4001
+      "kb": 2449
     }
   },
   {
@@ -137,7 +137,7 @@
     "guia": "cerraai/guia.pdf",
     "zip": {
       "nome": "cerraai.zip",
-      "kb": 5433
+      "kb": 2621
     }
   },
   {
@@ -242,7 +242,7 @@
     "guia": "cerraclass/guia.pdf",
     "zip": {
       "nome": "cerraclass.zip",
-      "kb": 1059
+      "kb": 693
     }
   },
   {
@@ -307,7 +307,7 @@
     "guia": "credito/guia.pdf",
     "zip": {
       "nome": "credito.zip",
-      "kb": 988
+      "kb": 689
     }
   },
   {
@@ -367,7 +367,7 @@
     "guia": "contabilidade/guia.pdf",
     "zip": {
       "nome": "contabilidade.zip",
-      "kb": 659
+      "kb": 445
     }
   },
   {
@@ -422,7 +422,7 @@
     "guia": "consultoria/guia.pdf",
     "zip": {
       "nome": "consultoria.zip",
-      "kb": 867
+      "kb": 595
     }
   },
   {
@@ -492,7 +492,7 @@
     "guia": "guiacademico/guia.pdf",
     "zip": {
       "nome": "guiacademico.zip",
-      "kb": 2042
+      "kb": 1328
     }
   }
 ]
