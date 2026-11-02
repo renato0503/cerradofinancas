@@ -499,7 +499,14 @@ bang-motion (estilo + conceito de abertura + curvas) e as curvas medidas do moti
   Contabilidade (abertura), CerraClass (IA na Gestão), Crédito (portabilidade), Guia Acadêmico (ABNT),
   Consultoria (GRC) e a edição 01 da "IA da semana" (Cerra.AI).
 
-## "O cobre": o primeiro filme 3D do estúdio (02/11)
+## "O cobre": o primeiro filme 3D do estúdio (02/11) — REPROVADO E APAGADO
+
+> **O Renato reprovou o resultado ("ficou muito feio") e mandou apagar.** As peças publicadas foram removidas
+> (commit `3f0c0eb`) e a campanha saiu da Central. A fonte editável ficou em `filmes/cerraai-cobre/fonte/`
+> (não é publicada). Não refazer o 3D em CSS 3D: antes, definir com o Renato o que o 3D tem que ser aqui e
+> pedir aprovação antes de renderizar. O resto deste capítulo fica como registro do que foi tentado.
+
+### O que foi feito (e não foi aceito)
 
 `marketing/filmes/cerraai-cobre/` — 12 s, 16:9 e 9:16, sem áudio. A folha de cobre do Cerra.AI levita
 sobre as trilhas do chip; a luz atravessa a superfície; a marca assenta.
