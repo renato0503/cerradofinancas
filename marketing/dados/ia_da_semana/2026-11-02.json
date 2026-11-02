@@ -1,0 +1,71 @@
+{
+  "entrega": "2026-11-cerraai-ia-da-semana-01",
+  "data": "2026-11-02",
+  "periodo": "semana de 02 a 08 de novembro de 2026",
+  "edicao": "IA da semana · edição 01",
+  "conta": "@cerra.ai",
+  "titulo": "IA da semana: o modelo, a escolha e o controle",
+  "capa": {
+    "titulo": "O que a IA mostrou <c>nesta semana</c>",
+    "sub": "Três movimentos da semana que mudam a conversa sobre IA dentro da empresa.",
+    "rotulo": "IA da semana · edição 01"
+  },
+  "noticias": [
+    {
+      "rotulo": "Notícia 1 · segurança",
+      "titulo": "0,1% do texto de treino <c>envenenado</c> já abre uma porta",
+      "resumo": "Um paper da Anthropic mostra que envenenar 0,1% dos dados de pré-treino basta para plantar uma backdoor de execução remota em um agente. O ataque passa limpo pelos ajustes seguintes, e no modelo de 4 bilhões de parâmetros a taxa de sucesso do ataque chegou a cerca de 92%.",
+      "pratica": [
+        "**Modelo é insumo**: quem monta um agente sobre um modelo que não treinou herda o risco desse modelo.",
+        "**O envenenamento é do pré-treino**, não da sua base: a base da empresa é justamente o que dá para auditar."
+      ],
+      "fonte": "Fonte: Anthropic · arXiv:2610.37741 · 27/10/2026",
+      "url": "https://arxiv.org/abs/2610.37741"
+    },
+    {
+      "rotulo": "Notícia 2 · onde a IA roda",
+      "titulo": "Um modelo de <c>1 trilhão</c> de parâmetros com pesos abertos",
+      "resumo": "O Mistral Large 4 (ML4) tem 1 trilhão de parâmetros, 52 bilhões ativos, é multimodal e foi apresentado para cargas críticas de empresa: cibersegurança, finanças e direito. Os pesos foram liberados no fim de outubro.",
+      "pratica": [
+        "**Peso aberto não é IA local**: um trilhão de parâmetros pede servidor, não notebook.",
+        "**A escolha é onde a inferência acontece**: na nuvem, na sua máquina ou no seu servidor — e isso decide quem enxerga o seu dado."
+      ],
+      "fonte": "Fonte: Mistral · Large 4 · 06/10/2026",
+      "url": "https://mistral.ai/news/mistral-large-4"
+    },
+    {
+      "rotulo": "Notícia 3 · decisão",
+      "titulo": "A IA prepara a decisão, <c>o servidor decide</c>",
+      "resumo": "O PlanAssist, do Google DeepMind, reduziu em até 58% o tempo de análise dos pedidos de obra, mais de 70% dos relatórios gerados foram aprovados sem edição e a ferramenta entra em mais 12 conselhos. A decisão final continua com o servidor, e o relatório vem citado.",
+      "pratica": [
+        "**Rascunho com fonte**: a IA monta o relatório e mostra de onde tirou cada ponto.",
+        "**A pessoa decide**: a ferramenta prepara; quem responde pelo resultado não é o modelo."
+      ],
+      "fonte": "Fonte: Google DeepMind · 31/10/2026",
+      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/"
+    }
+  ],
+  "muda": {
+    "titulo": "O que isso muda <c>na sua empresa</c>",
+    "linhas": [
+      "**Antes de contratar IA, pergunte de onde vem o modelo** — e de quem são os documentos que ele lê.",
+      "**Decida onde a inferência acontece.** Se o dado não pode sair, a escolha não é o modelo: é o lugar.",
+      "**Exija resposta com fonte e registro de auditoria.** Resposta sem origem não serve para decisão."
+    ],
+    "nota": "Esta série resume o que foi publicado na semana e confere a fonte original antes de usar. Resumo de anúncio não é fato verificado: os links estão na legenda."
+  },
+  "cta": {
+    "titulo": "Veja com os <c>seus documentos</c>.",
+    "sub": "Demonstração com os seus próprios documentos, na sua máquina.",
+    "link": "cerradofinancas.com.br/cerraai"
+  },
+  "story": {
+    "titulo": "3 movimentos <c>da semana</c>",
+    "linhas": [
+      "**0,1%** do treino envenenado planta backdoor",
+      "**1 trilhão** de parâmetros com pesos abertos",
+      "**58%** menos tempo — e a decisão fica com a pessoa"
+    ],
+    "selo": "fontes conferidas em 02/11"
+  }
+}

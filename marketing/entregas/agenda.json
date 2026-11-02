@@ -52,7 +52,7 @@
   "futuras": [],
   "novos_ate": {
     "cerradofinancas": "2027-01-03",
-    "cerraai": "2026-11-25",
+    "cerraai": "2026-11-27",
     "cerraclass": "2026-11-29",
     "guiacademico": "2026-12-01"
   },
@@ -212,9 +212,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Modelo local",
+      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-04",
@@ -248,9 +248,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "pasta": "2026-11-cerraai-glossario-modelo-local",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+      "titulo": "Cerra.AI · Glossário · Modelo local",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-05",
@@ -284,9 +284,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-comparativo-nuvem",
+      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-06",
@@ -356,9 +356,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-rag",
+      "pasta": "2026-11-cerraai-comparativo-nuvem",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · RAG",
+      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-08",
@@ -392,10 +392,10 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-stories-interativos",
+      "pasta": "2026-11-cerraai-glossario-rag",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
-      "peca": "Stories interativos (1 por dia)",
+      "titulo": "Cerra.AI · Glossário · RAG",
+      "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-09",
       "conta": "cerraai"
@@ -428,9 +428,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Modelo local",
+      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-10",
@@ -464,10 +464,10 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-ocr",
+      "pasta": "2026-11-cerraai-stories-interativos",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · OCR",
-      "peca": "Carrossel + story",
+      "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
+      "peca": "Stories interativos (1 por dia)",
       "arquivo": null,
       "data": "2026-11-11",
       "conta": "cerraai"
@@ -500,9 +500,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "pasta": "2026-11-cerraai-glossario-modelo-local",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+      "titulo": "Cerra.AI · Glossário · Modelo local",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-12",
@@ -536,9 +536,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-material-checklist-lgpd",
+      "pasta": "2026-11-cerraai-glossario-ocr",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
+      "titulo": "Cerra.AI · Glossário · OCR",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-13",
@@ -572,9 +572,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-comparativo-nuvem",
+      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-14",
@@ -608,9 +608,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-inventa",
+      "pasta": "2026-11-cerraai-material-checklist-lgpd",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-15",
@@ -654,9 +654,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-rag",
+      "pasta": "2026-11-cerraai-comparativo-nuvem",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · RAG",
+      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-16",
@@ -690,9 +690,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-anonimizacao",
+      "pasta": "2026-11-cerraai-pergunte-inventa",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Anonimização",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-17",
@@ -726,9 +726,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-ocr",
+      "pasta": "2026-11-cerraai-glossario-rag",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · OCR",
+      "titulo": "Cerra.AI · Glossário · RAG",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-18",
@@ -762,9 +762,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-arquivos",
+      "pasta": "2026-11-cerraai-glossario-anonimizacao",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "titulo": "Cerra.AI · Glossário · Anonimização",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-19",
@@ -808,9 +808,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-material-checklist-lgpd",
+      "pasta": "2026-11-cerraai-glossario-ocr",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
+      "titulo": "Cerra.AI · Glossário · OCR",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-20",
@@ -854,9 +854,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
+      "pasta": "2026-11-cerraai-pergunte-arquivos",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-21",
@@ -890,9 +890,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-inventa",
+      "pasta": "2026-11-cerraai-material-checklist-lgpd",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-22",
@@ -926,11 +926,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-anonimizacao",
+      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Anonimização",
-      "peca": "Reel: carrossel animado",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "peca": "Carrossel + story",
+      "arquivo": null,
       "data": "2026-11-23",
       "conta": "cerraai"
     },
@@ -962,9 +962,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-arquivos",
+      "pasta": "2026-11-cerraai-pergunte-inventa",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-24",
@@ -998,9 +998,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
+      "pasta": "2026-11-cerraai-glossario-anonimizacao",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "titulo": "Cerra.AI · Glossário · Anonimização",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-25",
@@ -1034,12 +1034,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-apresentacao-cerraai",
+      "pasta": "2026-11-cerraai-pergunte-arquivos",
       "frente": "cerraai",
-      "titulo": "Apresentação institucional · Cerra.AI",
-      "peca": "Apresentação: carrossel + story (fixar no perfil) (repetição)",
-      "arquivo": null,
-      "repeticao": true,
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-26",
       "conta": "cerraai"
     },
@@ -1071,12 +1070,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-10-cerra-ai",
+      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
       "frente": "cerraai",
-      "titulo": "Cerra.AI",
-      "peca": "Carrossel + story (repetição)",
-      "arquivo": null,
-      "repeticao": true,
+      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-27",
       "conta": "cerraai"
     },
@@ -1108,11 +1106,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-10-cerra-ai",
+      "pasta": "2026-11-apresentacao-cerraai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI",
-      "peca": "Reel: comercial (repetição)",
-      "arquivo": "video-vertical.mp4",
+      "titulo": "Apresentação institucional · Cerra.AI",
+      "peca": "Apresentação: carrossel + story (fixar no perfil) (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2026-11-28",
       "conta": "cerraai"
@@ -1148,8 +1146,8 @@
       "pasta": "2026-10-cerra-ai",
       "frente": "cerraai",
       "titulo": "Cerra.AI",
-      "peca": "Reel: lançamento (repetição)",
-      "arquivo": "video-lancamento-vertical.mp4",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2026-11-29",
       "conta": "cerraai"
@@ -1182,11 +1180,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "pasta": "2026-10-cerra-ai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Modelo local",
-      "peca": "Carrossel + story (repetição)",
-      "arquivo": null,
+      "titulo": "Cerra.AI",
+      "peca": "Reel: comercial (repetição)",
+      "arquivo": "video-vertical.mp4",
       "repeticao": true,
       "data": "2026-11-30",
       "conta": "cerraai"
@@ -1220,11 +1218,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "pasta": "2026-10-cerra-ai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
-      "peca": "Carrossel + story (repetição)",
-      "arquivo": null,
+      "titulo": "Cerra.AI",
+      "peca": "Reel: lançamento (repetição)",
+      "arquivo": "video-lancamento-vertical.mp4",
       "repeticao": true,
       "data": "2026-12-01",
       "conta": "cerraai"
@@ -1258,9 +1256,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-comparativo-nuvem",
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1297,11 +1295,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-apresentacao-cerraai",
+      "pasta": "2026-11-cerraai-glossario-modelo-local",
       "frente": "cerraai",
-      "titulo": "Apresentação institucional · Cerra.AI",
-      "peca": "Reel: apresentação animada (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI · Glossário · Modelo local",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2026-12-03",
       "conta": "cerraai"
@@ -1336,9 +1334,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-rag",
+      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · RAG",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1375,11 +1373,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-stories-interativos",
+      "pasta": "2026-11-apresentacao-cerraai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
-      "peca": "Stories interativos (1 por dia) (repetição)",
-      "arquivo": null,
+      "titulo": "Apresentação institucional · Cerra.AI",
+      "peca": "Reel: apresentação animada (repetição)",
+      "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
       "data": "2026-12-05",
       "conta": "cerraai"
@@ -1414,11 +1412,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "pasta": "2026-11-cerraai-comparativo-nuvem",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Modelo local",
-      "peca": "Reel: carrossel animado (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2026-12-06",
       "conta": "cerraai"
@@ -1453,9 +1451,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-ocr",
+      "pasta": "2026-11-cerraai-glossario-rag",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · OCR",
+      "titulo": "Cerra.AI · Glossário · RAG",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1492,9 +1490,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1531,10 +1529,10 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-material-checklist-lgpd",
+      "pasta": "2026-11-cerraai-stories-interativos",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
-      "peca": "Carrossel + story (repetição)",
+      "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
+      "peca": "Stories interativos (1 por dia) (repetição)",
       "arquivo": null,
       "repeticao": true,
       "data": "2026-12-09",
@@ -1570,9 +1568,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-comparativo-nuvem",
+      "pasta": "2026-11-cerraai-glossario-modelo-local",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "titulo": "Cerra.AI · Glossário · Modelo local",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1609,9 +1607,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-inventa",
+      "pasta": "2026-11-cerraai-glossario-ocr",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "titulo": "Cerra.AI · Glossário · OCR",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1648,9 +1646,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-rag",
+      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · RAG",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1687,9 +1685,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-anonimizacao",
+      "pasta": "2026-11-cerraai-material-checklist-lgpd",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Anonimização",
+      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1726,9 +1724,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-ocr",
+      "pasta": "2026-11-cerraai-comparativo-nuvem",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · OCR",
+      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1765,9 +1763,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-arquivos",
+      "pasta": "2026-11-cerraai-pergunte-inventa",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1804,9 +1802,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-material-checklist-lgpd",
+      "pasta": "2026-11-cerraai-glossario-rag",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
+      "titulo": "Cerra.AI · Glossário · RAG",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1843,9 +1841,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
+      "pasta": "2026-11-cerraai-glossario-anonimizacao",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "titulo": "Cerra.AI · Glossário · Anonimização",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1882,9 +1880,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-inventa",
+      "pasta": "2026-11-cerraai-glossario-ocr",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "titulo": "Cerra.AI · Glossário · OCR",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1921,11 +1919,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-anonimizacao",
+      "pasta": "2026-11-cerraai-pergunte-arquivos",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Anonimização",
-      "peca": "Reel: carrossel animado (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2026-12-19",
       "conta": "cerraai"
@@ -1960,9 +1958,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-arquivos",
+      "pasta": "2026-11-cerraai-material-checklist-lgpd",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -2002,8 +2000,8 @@
       "pasta": "2026-11-cerraai-glossario-trecho-consultado",
       "frente": "cerraai",
       "titulo": "Cerra.AI · Glossário · Trecho consultado",
-      "peca": "Reel: carrossel animado (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2026-12-21",
       "conta": "cerraai"
@@ -2038,11 +2036,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-apresentacao-cerraai",
+      "pasta": "2026-11-cerraai-pergunte-inventa",
       "frente": "cerraai",
-      "titulo": "Apresentação institucional · Cerra.AI",
-      "peca": "Apresentação: carrossel + story (fixar no perfil) (repetição)",
-      "arquivo": null,
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
       "data": "2026-12-22",
       "conta": "cerraai"
@@ -2077,11 +2075,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-10-cerra-ai",
+      "pasta": "2026-11-cerraai-glossario-anonimizacao",
       "frente": "cerraai",
-      "titulo": "Cerra.AI",
-      "peca": "Carrossel + story (repetição)",
-      "arquivo": null,
+      "titulo": "Cerra.AI · Glossário · Anonimização",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
       "data": "2026-12-23",
       "conta": "cerraai"
@@ -2116,11 +2114,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-10-cerra-ai",
+      "pasta": "2026-11-cerraai-pergunte-arquivos",
       "frente": "cerraai",
-      "titulo": "Cerra.AI",
-      "peca": "Reel: comercial (repetição)",
-      "arquivo": "video-vertical.mp4",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
       "data": "2026-12-24",
       "conta": "cerraai"
@@ -2155,11 +2153,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-10-cerra-ai",
+      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
       "frente": "cerraai",
-      "titulo": "Cerra.AI",
-      "peca": "Reel: lançamento (repetição)",
-      "arquivo": "video-lancamento-vertical.mp4",
+      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
       "data": "2026-12-25",
       "conta": "cerraai"
@@ -2204,10 +2202,10 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "pasta": "2026-11-apresentacao-cerraai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Modelo local",
-      "peca": "Carrossel + story (repetição)",
+      "titulo": "Apresentação institucional · Cerra.AI",
+      "peca": "Apresentação: carrossel + story (fixar no perfil) (repetição)",
       "arquivo": null,
       "repeticao": true,
       "data": "2026-12-26",
@@ -2243,9 +2241,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "pasta": "2026-10-cerra-ai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+      "titulo": "Cerra.AI",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -2282,11 +2280,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-comparativo-nuvem",
+      "pasta": "2026-10-cerra-ai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
-      "peca": "Carrossel + story (repetição)",
-      "arquivo": null,
+      "titulo": "Cerra.AI",
+      "peca": "Reel: comercial (repetição)",
+      "arquivo": "video-vertical.mp4",
       "repeticao": true,
       "data": "2026-12-28",
       "conta": "cerraai"
@@ -2321,11 +2319,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-apresentacao-cerraai",
+      "pasta": "2026-10-cerra-ai",
       "frente": "cerraai",
-      "titulo": "Apresentação institucional · Cerra.AI",
-      "peca": "Reel: apresentação animada (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI",
+      "peca": "Reel: lançamento (repetição)",
+      "arquivo": "video-lancamento-vertical.mp4",
       "repeticao": true,
       "data": "2026-12-29",
       "conta": "cerraai"
@@ -2360,9 +2358,9 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-rag",
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · RAG",
+      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -2399,10 +2397,10 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-stories-interativos",
+      "pasta": "2026-11-cerraai-glossario-modelo-local",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
-      "peca": "Stories interativos (1 por dia) (repetição)",
+      "titulo": "Cerra.AI · Glossário · Modelo local",
+      "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
       "data": "2026-12-31",
@@ -2438,11 +2436,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · Modelo local",
-      "peca": "Reel: carrossel animado (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2027-01-01",
       "conta": "cerraai"
@@ -2487,11 +2485,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-glossario-ocr",
+      "pasta": "2026-11-apresentacao-cerraai",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Glossário · OCR",
-      "peca": "Carrossel + story (repetição)",
-      "arquivo": null,
+      "titulo": "Apresentação institucional · Cerra.AI",
+      "peca": "Reel: apresentação animada (repetição)",
+      "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
       "data": "2027-01-02",
       "conta": "cerraai"
@@ -2526,11 +2524,11 @@
       "conta": "guiacademico"
     },
     {
-      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "pasta": "2026-11-cerraai-comparativo-nuvem",
       "frente": "cerraai",
-      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
-      "peca": "Reel: carrossel animado (repetição)",
-      "arquivo": "carrossel-animado.mp4",
+      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
       "repeticao": true,
       "data": "2027-01-03",
       "conta": "cerraai"

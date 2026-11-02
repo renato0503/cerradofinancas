@@ -1,0 +1,26 @@
+IA da semana · edição 01 — semana de 02 a 08 de novembro de 2026
+
+Três movimentos da semana que mudam a conversa sobre IA dentro da empresa.
+
+1. 0,1% do texto de treino envenenado já abre uma porta
+Um paper da Anthropic mostra que envenenar 0,1% dos dados de pré-treino basta para plantar uma backdoor de execução remota em um agente. O ataque passa limpo pelos ajustes seguintes, e no modelo de 4 bilhões de parâmetros a taxa de sucesso do ataque chegou a cerca de 92%.
+
+2. Um modelo de 1 trilhão de parâmetros com pesos abertos
+O Mistral Large 4 (ML4) tem 1 trilhão de parâmetros, 52 bilhões ativos, é multimodal e foi apresentado para cargas críticas de empresa: cibersegurança, finanças e direito. Os pesos foram liberados no fim de outubro.
+
+3. A IA prepara a decisão, o servidor decide
+O PlanAssist, do Google DeepMind, reduziu em até 58% o tempo de análise dos pedidos de obra, mais de 70% dos relatórios gerados foram aprovados sem edição e a ferramenta entra em mais 12 conselhos. A decisão final continua com o servidor, e o relatório vem citado.
+
+O que isso muda na prática:
+Antes de contratar IA, pergunte de onde vem o modelo — e de quem são os documentos que ele lê.
+Decida onde a inferência acontece. Se o dado não pode sair, a escolha não é o modelo: é o lugar.
+Exija resposta com fonte e registro de auditoria. Resposta sem origem não serve para decisão.
+
+Fontes (confira a original):
+· Anthropic · arXiv:2610.37741 · 27/10/2026 — https://arxiv.org/abs/2610.37741
+· Mistral · Large 4 · 06/10/2026 — https://mistral.ai/news/mistral-large-4
+· Google DeepMind · 31/10/2026 — https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/
+
+Série IA da semana · edição 01: toda semana, o que mudou na IA e o que muda dentro da empresa. O texto é conferido na fonte original antes de publicar.
+
+Demonstração: cerradofinancas.com.br/cerraai
