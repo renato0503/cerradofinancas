@@ -113,9 +113,11 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       vídeos, rodar `python tools/otimizar_publicacoes.py` (a ferramenta só mexe em arquivo versionado e sem
       mudança de outra IA) e refazer os .zip. O `.git` continua com ~1,4 GB de histórico: para reduzir isso de
       verdade seria preciso reescrever o histórico, o que não é recomendado com duas IAs no mesmo repositório.
-- [ ] **Publicar o site da CerraClass** com o texto "10 alunos por turma": o `firebase login` expirou.
-      `firebase login --reauth` e, em `D:\Dev\CerraClass`, `npm run build` e
-      `firebase deploy --only hosting --account comercial@cerradofinancas.com.br`.
+- [x] **Publicar o site da CerraClass** com o texto "10 alunos por turma": o `firebase login` estava expirado.
+      **FEITO em 02/11:** o projeto `cerraclass` fica na conta **gestor.renatorosa@gmail.com** (é o "current"
+      do `.firebaserc`, com 30 projetos), não na comercial. Deploy com `firebase deploy --only hosting` na conta
+      padrão; conferido no ar: "Máximo de 10 alunos por turma". A conta comercial@cerradofinancas.com.br é a do
+      projeto **guiacademicostorage** (Guia Acadêmico) e continua com credenciais expiradas.
 - [ ] **"IA da semana":** a edição 01 saiu em 04/11. Para a edição 02, rodar
       `python tools/gerar_ia_da_semana.py --coletar 2026-11-09`, escolher 3 notícias **abrindo a fonte
       original**, escrever o JSON da edição e rodar o gerador. A regra: resumo de anúncio não é fato

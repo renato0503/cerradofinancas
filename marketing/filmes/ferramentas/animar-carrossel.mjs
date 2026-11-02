@@ -23,6 +23,23 @@ const MARKETING = join(FILMES, "..");
 const CLI = join(FILMES, "node_modules", "hyperframes", "bin", "hyperframes.mjs");
 const PHOSPHOR = join(FILMES, "node_modules", "@phosphor-icons", "web", "src");
 
+// Identidade de movimento por marca (brand/movimentos.json): estilo, conceito de abertura, curva de
+// entrada/saída, tipo de troca, câmera e grão. O guia com o raciocínio está em brand/MOVIMENTO.md.
+const MOVIMENTOS = JSON.parse(readFileSync(join(MARKETING, "brand", "movimentos.json"), "utf8"));
+const MARCAS = [
+  [/cerraai|cerra-ai/, "cerraai"],
+  [/guiacademico/, "guiacademico"],
+  [/contabil/, "contabilidade"],
+  [/credito/, "credito"],
+  [/consultoria/, "consultoria"],
+  [/cursos?-/, "cerraclass"],
+  [/^2026-\d\d-tech-/, "cerradotech"],
+];
+function movimentoDe(entrega) {
+  const marca = (MARCAS.find(([re]) => re.test(entrega)) || [])[1] || "padrao";
+  return { marca, mov: MOVIMENTOS[marca] || MOVIMENTOS.padrao };
+}
+
 const args = process.argv.slice(2);
 const renderizarVideo = args.includes("--render");
 const comAudio = args.includes("--com-audio");
@@ -44,6 +61,7 @@ async function montar(arquivoHtml) {
   const [, W, H] = html.match(/<meta name="formato" content="(\d+)x(\d+)"/);
   const entrega = html.match(/<meta name="entrega" content="([\w-]+)"/)[1];
   const destino = join(FILMES, "carrosseis", entrega);
+  const { marca, mov } = movimentoDe(entrega);
   const arqCoreo = join(FILMES, "coreografias", `${entrega}.mjs`);
   const coreo = existsSync(arqCoreo) ? (await import(pathToFileURL(arqCoreo).href + `?v=${Date.now()}`)).default : null;
   // limpa só o que é gerado (apagar a pasta inteira falha no Windows se algum processo estiver nela)
@@ -112,8 +130,13 @@ async function montar(arquivoHtml) {
     // Na coreografia o slide aparece um pouco antes do seu início (quando o anterior já esvaziou) e fica por baixo
     // do próximo enquanto a cortina dele passa.
     const { inicio, dur } = tempos[i];
-    const aparece = i === 0 ? 0 : inicio - (coreo ? 0.12 : TRANSICAO);
-    const some = i === total - 1 ? duracao : inicio + dur + (coreo ? 0.8 : 0);
+    // "corte": o slide novo entra por cima e o anterior termina exatamente na hora do corte (corte em movimento);
+    // "desliza": os dois ficam colados, como num carrossel de verdade.
+    const modo = coreo ? "desliza" : mov.transicao;
+    const aparece = i === 0 ? 0 : inicio - (coreo ? 0.12 : modo === "corte" ? 0.3 : TRANSICAO);
+    const prox = i + 1 < total ? tempos[i + 1] : null;
+    const some = !prox ? duracao
+      : (coreo ? prox.inicio + prox.dur + 0.8 : modo === "corte" ? prox.inicio : prox.inicio + prox.dur);
     return `      <div id="q${i + 1}" class="hf-quadro clip" data-start="${aparece.toFixed(2)}" data-duration="${(some - aparece).toFixed(2)}" data-track-index="1" style="z-index: ${i + 2}" data-layout-allow-overflow data-layout-allow-overlap>
 ${sec}
       </div>`;
@@ -123,6 +146,8 @@ ${sec}
 (function () {
   var tl = gsap.timeline({ paused: true });
   var W = ${W}, TEMPOS = ${JSON.stringify(tempos)}, TRANS = ${TRANSICAO};
+  var MOV = ${JSON.stringify(mov)};
+  var MODO = MOV.transicao, TR = MOV.transicaoDur, TE = MOV.transicaoEase;
   // Grupos (grades, listas, passos, contatos, chips) animam os filhos um a um; o resto anima inteiro
   function blocos(slide) {
     var lista = [];
@@ -136,22 +161,47 @@ ${sec}
     });
     return lista;
   }
+  // Câmera: a cena respira o filme inteiro, para não haver quadro morto.
+  if (MOV.camera && MOV.camera.escala) {
+    tl.fromTo(document.querySelectorAll(".hf-quadro"), { scale: 1, x: 0, y: 0 },
+      { scale: MOV.camera.escala, x: MOV.camera.x, y: MOV.camera.y, duration: TEMPOS[TEMPOS.length - 1].inicio + TEMPOS[TEMPOS.length - 1].dur, ease: "none" }, 0);
+  }
+  // Grão: o filme tem superfície, não é cor chapada.
+  var grao = document.querySelector(".hf-grao");
+  if (grao && MOV.grao) {
+    tl.fromTo(grao, { backgroundPosition: "0px 0px" },
+      { backgroundPosition: "48px 36px", duration: TEMPOS[TEMPOS.length - 1].inicio + TEMPOS[TEMPOS.length - 1].dur, ease: "steps(14)" }, 0);
+  }
   for (var i = 0; i < TEMPOS.length; i++) {
     var s = document.getElementById("s" + (i + 1));
     var t0 = TEMPOS[i].inicio;
-    // entrada do slide: desliza da direita (o primeiro já começa no lugar)
+    var E = MOV.entrada;
     if (i > 0) {
-      tl.fromTo(s, { x: W }, { x: 0, duration: TRANS, ease: "power3.inOut" }, t0 - TRANS);
-      var anterior = document.getElementById("s" + i);
-      // o anterior anda junto, colado no novo, como num carrossel de verdade (sem faixa vazia entre os dois)
-      tl.to(anterior, { x: -W, duration: TRANS, ease: "power3.inOut" }, t0 - TRANS);
+      if (MODO === "virada") {
+        // virada de página: a folha anterior gira sobre a próxima
+        var qNovo = document.getElementById("q" + (i + 1)), qAnt = document.getElementById("q" + i);
+        tl.set(qNovo, { zIndex: i + 1 }, t0 - TR);
+        tl.set(qAnt, { zIndex: i + 2 }, t0 - TR);
+        tl.fromTo(qAnt, { rotateY: 0 }, { rotateY: -102, duration: TR, ease: "power2.in", transformOrigin: "right center" }, t0 - TR);
+        tl.fromTo(qNovo, { rotateY: 14 }, { rotateY: 0, duration: TR * 0.85, ease: "power2.out", transformOrigin: "left center" }, t0 - TR * 0.9);
+      } else if (MODO === "corte") {
+        // corte em movimento: nada desliza, o slide novo entra por cima e o anterior termina na hora
+        tl.set(s, { x: 0 }, t0 - 0.3);
+      } else {
+        tl.fromTo(s, { x: W }, { x: 0, duration: TR, ease: TE }, t0 - TR);
+        var anterior = document.getElementById("s" + i);
+        // o anterior anda junto, colado no novo, como num carrossel de verdade (sem faixa vazia entre os dois)
+        tl.to(anterior, { x: -W, duration: TR, ease: TE }, t0 - TR);
+      }
     } else {
       tl.set(s, { x: 0 }, 0);
     }
     var itens = blocos(s);
-    tl.fromTo(itens, { opacity: 0, y: 46, filter: "blur(8px)" },
-      // os itens começam a entrar enquanto o slide ainda desliza, para a troca não chegar vazia
-      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "expo.out", stagger: 0.09 }, i > 0 ? t0 - 0.3 : 0.25);
+    // entrada só por transformação: nada de fade (a medição do motionmaxxing é 3.392 entradas por
+    // transformação contra 584 fades) e nada de blur.
+    tl.fromTo(itens, { opacity: E.op, x: E.x, y: E.y, scale: E.escala },
+      { opacity: 1, x: 0, y: 0, scale: 1, duration: E.dur, ease: E.ease, stagger: E.stagger },
+      i > 0 ? t0 - (MODO === "corte" ? 0.3 : 0.26) : 0.25);
   }
   window.__timelines = window.__timelines || {};
   window.__timelines["main"] = tl;
@@ -170,11 +220,16 @@ ${css}
       html, body { margin: 0 !important; padding: 0 !important; width: ${W}px; height: ${H}px; overflow: hidden; display: block !important; background: #000; }
       #root { position: relative; width: ${W}px; height: ${H}px; overflow: hidden; ${estiloBody} }
       .hf-quadro { position: absolute; inset: 0; }
+      #root { perspective: 1600px; }
+      .hf-grao { position: absolute; inset: 0; pointer-events: none; z-index: 9999; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='240' height='240' filter='url(%23n)' opacity='0.55'/></svg>");
+        background-size: 240px 240px; opacity: ${mov.grao || 0}; }
       .hf-quadro .slide { position: absolute; left: 0; top: 0; }
       .hf-w, .hf-pag { display: inline-block; }
     </style>
   </head>
   <body>
+    <div class="hf-grao"></div>
     <div id="root" data-composition-id="main" data-start="0" data-duration="${duracao}" data-width="${W}" data-height="${H}" data-fps="30"${coreo ? "" : ' data-motion-blur="on"'} style="${estiloBody}">
 ${quadros.join("\n")}
 ${comAudio ? `      <audio id="trilha" class="clip" data-start="0" data-duration="${duracao}" data-track-index="9" data-volume="1" src="assets/trilha.wav"></audio>
@@ -194,7 +249,7 @@ ${comAudio ? `      <audio id="trilha" class="clip" data-start="0" data-duration
     if (k === tempos.length - 2) deixas.push({ t: inicio + 0.2, som: "brilho" });
   });
   if (comAudio) writeFileSync(join(destino, "assets", "trilha.wav"), renderizar({ duracao, bpm: 120, clima, musicaEntra: 0, musicaSai: duracao, deixas }));
-  console.log(`${entrega}: ${total} slides, ${duracao}s${coreo ? ", coreografia própria" : ""}${comAudio ? "" : ", sem áudio"} → filmes/carrosseis/${entrega}/`);
+  console.log(`${entrega}: ${total} slides, ${duracao}s${coreo ? ", coreografia própria" : `, ${marca} · ${mov.estilo} · ${mov.conceito}`}${comAudio ? "" : ", sem áudio"} → filmes/carrosseis/${entrega}/`);
   return { entrega, destino };
 }
 

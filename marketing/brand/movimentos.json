@@ -1,0 +1,98 @@
+{
+  "_leia-me": "Identidade de movimento por marca. Consumido por filmes/ferramentas/animar-carrossel.mjs (a peça de feed) e porfiling/coreografias (os filmes). O guia com o raciocínio está em brand/MOVIMENTO.md. As curvas seguem as 12 medidas do motionmaxxing (softLand, snapSettle, accelExit), traduzidas para as eases do GSAP.",
+  "padrao": {
+    "estilo": "Editorial light",
+    "conceito": "Claim → how → result",
+    "transicao": "desliza",
+    "transicaoDur": 0.5,
+    "transicaoEase": "power3.inOut",
+    "entrada": { "x": 0, "y": 34, "escala": 1, "op": 1, "dur": 0.5, "ease": "power4.out", "stagger": 0.07 },
+    "camera": { "escala": 1.025, "x": -6, "y": 5 },
+    "grao": 0.012,
+    "cor": "sem cor de câmera"
+  },
+  "cerradotech": {
+    "estilo": "Cinematic dark",
+    "conceito": "Object relay",
+    "transicao": "desliza",
+    "transicaoDur": 0.42,
+    "transicaoEase": "power4.out",
+    "entrada": { "x": 0, "y": 40, "escala": 1, "op": 1, "dur": 0.46, "ease": "power4.out", "stagger": 0.06 },
+    "camera": { "escala": 1.04, "x": -10, "y": 8 },
+    "grao": 0.018,
+    "cor": "sem cor de câmera",
+    "nota": "A fábrica: peças se passando. Entrada seca e pesada (softLand), nunca elástica."
+  },
+  "contabilidade": {
+    "estilo": "Paper & print",
+    "conceito": "Object metaphor",
+    "transicao": "virada",
+    "transicaoDur": 0.62,
+    "transicaoEase": "power2.inOut",
+    "entrada": { "x": 0, "y": 26, "escala": 1, "op": 1, "dur": 0.52, "ease": "power3.out", "stagger": 0.08 },
+    "camera": { "escala": 1.02, "x": 0, "y": 6 },
+    "grao": 0.02,
+    "cor": "sem cor de câmera",
+    "nota": "O livro-razão: o objeto (o razonete) muda de significado. A troca é uma virada de página."
+  },
+  "cerraai": {
+    "estilo": "Grainy gradient",
+    "conceito": "Journey inside the UI",
+    "transicao": "corte",
+    "transicaoDur": 0.34,
+    "transicaoEase": "power4.out",
+    "entrada": { "x": 0, "y": 22, "escala": 1, "op": 1, "dur": 0.4, "ease": "power4.out", "stagger": 0.05 },
+    "camera": { "escala": 1.035, "x": -7, "y": 4 },
+    "grao": 0.03,
+    "cor": "sem cor de câmera",
+    "nota": "A câmera entra na interface. Corte seco em movimento, nada de fade; o cobre é a luz."
+  },
+  "cerraclass": {
+    "estilo": "Poster color-block",
+    "conceito": "Rhythmic collage",
+    "transicao": "desliza",
+    "transicaoDur": 0.38,
+    "transicaoEase": "power4.out",
+    "entrada": { "x": 0, "y": 30, "escala": 1, "op": 1, "dur": 0.42, "ease": "back.out(1.35)", "stagger": 0.05 },
+    "camera": { "escala": 1.03, "x": -9, "y": 7 },
+    "grao": 0.01,
+    "cor": "sem cor de câmera",
+    "nota": "A aula: bloco de cor que bate. Overshoot leve, como cadeira que arrasta."
+  },
+  "credito": {
+    "estilo": "Editorial light",
+    "conceito": "Pure typography",
+    "transicao": "virada",
+    "transicaoDur": 0.6,
+    "transicaoEase": "power2.inOut",
+    "entrada": { "x": 0, "y": 20, "escala": 1, "op": 1, "dur": 0.55, "ease": "power3.out", "stagger": 0.09 },
+    "camera": { "escala": 1.015, "x": 0, "y": 4 },
+    "grao": 0.016,
+    "cor": "sem cor de câmera",
+    "nota": "O contrato no papel: a linha de assinatura se desenha. Nada de número."
+  },
+  "guiacademico": {
+    "estilo": "Visual journalism",
+    "conceito": "Claim → how → result",
+    "transicao": "corte",
+    "transicaoDur": 0.36,
+    "transicaoEase": "power4.out",
+    "entrada": { "x": 0, "y": 24, "escala": 1, "op": 1, "dur": 0.46, "ease": "power4.out", "stagger": 0.07 },
+    "camera": { "escala": 1.02, "x": -5, "y": 3 },
+    "grao": 0.014,
+    "cor": "sem cor de câmera",
+    "nota": "O artigo: anotações, marca-texto e fonte citada. Corte em movimento."
+  },
+  "consultoria": {
+    "estilo": "Brutalist mono",
+    "conceito": "Before / after",
+    "transicao": "corte",
+    "transicaoDur": 0.3,
+    "transicaoEase": "power3.out",
+    "entrada": { "x": 0, "y": 28, "escala": 1, "op": 1, "dur": 0.38, "ease": "power3.out", "stagger": 0.04 },
+    "camera": { "escala": 1.028, "x": -8, "y": 5 },
+    "grao": 0.01,
+    "cor": "sem cor de câmera",
+    "nota": "A prancha técnica: corte duro, grade que se desloca, um único laranja de destaque."
+  }
+}
