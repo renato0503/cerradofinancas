@@ -79,10 +79,14 @@ Detalhes em `marketing/HISTORICO.md`.
     `marketing/brand/MOVIMENTO.md`. O carrossel animado (`filmes/ferramentas/animar-carrossel.mjs`) já lê
     essa configuração pelo nome da campanha: nada de fade, corte em movimento, câmera que respira.
     Seis vídeos re-renderizados como amostra (uma peça por marca).
-  - **3D nas artes de marketing:** o filme do Cerra.AI "o cobre" (12 s, 16:9 e 9:16) foi **reprovado pelo
-    Renato e apagado** (commit `3f0c0eb`): a camada 3D em CSS ficou feia. A fonte editável ficou em
-    `marketing/filmes/cerraai-cobre/fonte/` (não é publicada); só refazer o 3D com outra abordagem
-    (WebGL/Three.js ou um conceito de objeto diferente) e com aprovação antes.
+  - **3D nas artes de marketing:** o filme do Cerra.AI "o cobre" (12 s, 16:9 e 9:16) foi **reprovado** na
+    primeira versão e apagado das entregas (`c951cf2`): a folha virava um leque de folhas ao dobrar (eram 16
+    cópias a 3 px em `translateZ`). **Corrigido em `bcaa034`:** 9 cópias a 1,1 px e inclinação discreta, sem
+    dobrar. Está renderizado em `marketing/filmes/out/cerraai-cobre-16x9.mp4` e `-9x16.mp4`, **não publicado**,
+    esperando o aval do Renato. Se ele não gostar, apagar `marketing/filmes/cerraai-cobre/` e parar por aqui.
+  - **Virada de página corrigida (`bcaa034`):** a folha anterior rodava até -102° e mostrava o verso do papel
+    ao avesso, com as duas folhas sobrepostas. Agora a folha nova entra até 72° e a anterior escurece atrás.
+    Contabilidade e Crédito re-renderizados e no ar.
   - **Site da CerraClass publicado** com "10 alunos por turma" (o projeto fica na conta
     `gestor.renatorosa@gmail.com`, não na comercial).
 - **02/11 (sessão do Renato com outra IA):**
@@ -154,10 +158,10 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       como amostra). Para as outras: `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`,
       uma por vez (o render trava se forem várias no mesmo comando). Depois, `python tools/otimizar_publicacoes.py`
       para encolher os MP4.
-- [ ] **3D nas artes:** a primeira tentativa (folha em CSS 3D, `filmes/cerraai-cobre/`) foi **reprovada**.
-      Antes de refazer, definir com o Renato o que o 3D tem que ser aqui: logo como objeto de luz, produto
-      real, ou interface em folha dimensional (dimensional-drawing, para o white-label). Não refazer a mesma
-      coisa em CSS 3D.
+- [ ] **3D nas artes:** a primeira tentativa (folha em CSS 3D, `filmes/cerraai-cobre/`) foi **reprovada**;
+  a segunda (sem o leque de cópias) está renderizada em `filmes/out/` e **espera o aval do Renato**. Se ele
+  aprovar, publicar como `entregas/2026-11-cerraai-cobre-3d/` (frente Cerra.AI, série "Filme 3D") e rodar
+  `tools/publicar.py`. Se não, apagar a fonte. Não refazer 3D em CSS sem essa definição.
 - [ ] **Identidade de movimento por marca:** as sete marcas já estão declaradas em `brand/MOVIMENTO.md`.
       Falta aplicar a gramática às quatro **apresentações** (que têm coreografia própria) e aos filmes
       comerciais (`cerra-ai-comercial`, `cerra-ai-lancamento`, `cerraclass-curso`, `cerraclass-lancamento`,
@@ -265,11 +269,12 @@ Regras:
 - Ao terminar cada pedido, atualize PROXIMOS_PASSOS.md (feito e pendente) e, se for marketing,
   marketing/HISTORICO.md.
 
-Onde parei: a última coisa entregue foi a **série "IA da semana" do @cerra.ai** (edição 01 no ar, 04/11) e o
-**espaço do GitHub Pages resolvido** (de ~968 MB para ~370 MB, com `marketing/tools/otimizar_publicacoes.py`).
-O `/portfolio/` continua como estava (só Sob Demanda, ícones Phosphor duotone; o hero 3D foi reprovado e
-revertido, não refaça). O estudo de motion design e 3D está em `marketing/dados/estudo-motion-design.md`:
-o plano é declarar a identidade de movimento de cada marca (`brand/<marca>/movimento.md`) e fazer o filme
-do white-label como folha dimensional. Para continuar, pergunte ao Renato o que ele quer agora ou siga as
-pendências de "Portfólio e vídeos (de 31/10 a 02/11)".
+Onde parei: entregues nesta sessão a **série "IA da semana" do @cerra.ai** (edição 01 no ar, 04/11), o
+**espaço do GitHub Pages resolvido** (~968 MB → ~370 MB, `marketing/tools/otimizar_publicacoes.py`) e a
+**identidade de movimento das 7 marcas** (`brand/movimentos.json` + `brand/MOVIMENTO.md`, aplicada ao
+carrossel animado). Corrigi a virada de página (mostrava o verso do papel) e o leque de cópias do filme 3D.
+O filme 3D do Cerra.AI ("o cobre") está renderizado em `marketing/filmes/out/` e **espera o aval do Renato**
+antes de publicar; se ele não gostar, apagar `marketing/filmes/cerraai-cobre/`. O `/portfolio/` continua como
+estava (o hero 3D foi reprovado e revertido, não refaça). Para continuar: re-renderizar as ~104 campanhas com
+a nova gramática e seguir as pendências de "Portfólio e vídeos (de 31/10 a 02/11)".
 ```

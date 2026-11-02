@@ -34,6 +34,10 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 02/11 | `ab4c235`, `3be97cb` | Espaço do GitHub Pages: o publicado saiu de ~968 MB para ~370 MB (PNG em 256 cores, MP4 sem áudio em crf 24, .zip refeitos, mídia kit); ferramenta nova `tools/otimizar_publicacoes.py` |
 | 02/11 | `b962c8a` | Série "IA da semana" do @cerra.ai: gerador dirigido por dados (`tools/gerar_ia_da_semana.py`), edição 01 no ar (04/11 o post, 10/11 o Reel), fontes conferidas na origem |
 | 02/11 | (sem commit) | Estudo de motion design e 3D (`dados/estudo-motion-design.md`): motionmaxxing, bang-motion, dimensional-drawing e img2threejs; catálogo da CerraClass alinhado para 10 alunos no projeto `D:\Dev\CerraClass` (falta publicar) |
+| 02/11 | `5926711` | Identidade de movimento por marca (7 marcas) em `brand/movimentos.json` + `brand/MOVIMENTO.md`; o carrossel animado passa a ler a marca pelo nome da campanha (nada de fade, corte em movimento, câmera e grão) |
+| 02/11 | `6f4b89e` | Filme 3D do Cerra.AI ("o cobre") e 6 peças re-renderizadas como amostra |
+| 02/11 | `c951cf2` | O filme 3D foi reprovado pelo Renato e apagado das entregas (a fonte ficou) |
+| 02/11 | `bcaa034` | Correção da virada de página (não mostra mais o verso nem sobrepõe as folhas) e do leque de cópias da lâmina 3D; Contabilidade e Crédito re-renderizados |
 
 ## Campanhas publicadas (20)
 
@@ -498,26 +502,38 @@ bang-motion (estilo + conceito de abertura + curvas) e as curvas medidas do moti
 - **Amostra re-renderizada** (uma peça por marca, para conferir o resultado): Cerrado Tech (ERP),
   Contabilidade (abertura), CerraClass (IA na Gestão), Crédito (portabilidade), Guia Acadêmico (ABNT),
   Consultoria (GRC) e a edição 01 da "IA da semana" (Cerra.AI).
+- **Correção da virada de página (02/11, commit `bcaa034`):** a primeira versão da virada rodava a folha
+  anterior até **-102°**. Passando dos 90°, aparecia o **verso do papel com o texto ao avesso**, e as duas
+  folhas ficavam sobrepostas na tela — o Renato reprovou ("ficou ruim"). Agora a folha **nova** entra girando
+  em torno da margem esquerda (até 72°, nunca cruza os 90°) e a anterior fica atrás, só escurecendo
+  (`brightness(0.74)`). Sem verso, sem sobreposição. Contabilidade e Crédito re-renderizados e no ar.
 
-## "O cobre": o primeiro filme 3D do estúdio (02/11) — REPROVADO E APAGADO
+## "O cobre": o primeiro filme 3D do estúdio (02/11) — reprovado, corrigido, aguardando aval
 
-> **O Renato reprovou o resultado ("ficou muito feio") e mandou apagar.** As peças publicadas foram removidas
-> (commit `3f0c0eb`) e a campanha saiu da Central. A fonte editável ficou em `filmes/cerraai-cobre/fonte/`
-> (não é publicada). Não refazer o 3D em CSS 3D: antes, definir com o Renato o que o 3D tem que ser aqui e
-> pedir aprovação antes de renderizar. O resto deste capítulo fica como registro do que foi tentado.
+> **Estado em 02/11:** o Renato reprovou a primeira versão ("ficou muito feio" — a folha, ao dobrar, virava um
+> leque de folhas na tela) e mandou apagar as peças publicadas (commit `c951cf2`; a campanha saiu da Central).
+> A causa e a correção estão abaixo (commit `bcaa034`). O filme novo está renderizado em `filmes/out/`, **ainda
+> não publicado**: espera o aval do Renato. A fonte editável fica em `filmes/cerraai-cobre/fonte/` (não é
+> publicada). Se ele continuar achando ruim, a decisão é apagar a fonte e deixar o 3D de lado — fazer 3D de
+> verdade aqui exigiria WebGL (Three.js), que é outro trabalho.
 
-### O que foi feito (e não foi aceito)
+### O que foi feito
 
 `marketing/filmes/cerraai-cobre/` — 12 s, 16:9 e 9:16, sem áudio. A folha de cobre do Cerra.AI levita
 sobre as trilhas do chip; a luz atravessa a superfície; a marca assenta.
 
-- **3D de verdade em CSS**: a lâmina tem 16 cópias em `translateZ` (daí a borda de cobre), o palco tem
-  perspectiva e o objeto gira em `rotationX/rotationY`; a luz é um gradiente que varre em `mix-blend-mode:
-  screen`, e o grão dá superfície ao fundo.
+- **3D em CSS**: a lâmina tem cópias em `translateZ` (daí a borda de cobre), o palco tem perspectiva
+  (`perspective: 1500px`) e o objeto gira em `rotationX/rotationY`; a luz é um gradiente que varre em
+  `mix-blend-mode: screen`, e o grão dá superfície ao fundo.
 - **Identidade do Cerra.AI** ("Grainy gradient"): chega de maior e desacelera (`power4.out`), o fim é
   menor que o começo e a câmera recua no último terço.
-- **Publicação:** `entregas/2026-11-cerraai-cobre-3d/` com os dois formatos, na frente Cerra.AI, série
-  "Filme 3D". O material editável fica em `filmes/cerraai-cobre/fonte/` (HTML + GSAP).
+- **Erro da primeira versão:** a espessura eram **16 cópias a 3 px** (48 px de profundidade). Ao dobrar a
+  folha, cada cópia projetava numa posição diferente e apareciam dez folhas em leque. **Correção:** 9 cópias
+  a 1,1 px (≈10 px de profundidade, leem-se como espessura) e a lâmina chega com inclinação discreta
+  (`rotationX` 24° → 15°, `rotationY` −19° → −9°) em vez de dobrar. A profundidade vem da espessura, da luz
+  e da perspectiva, não do giro.
+- **Publicação (quando aprovado):** `entregas/2026-11-cerraai-cobre-3d/` com os dois formatos, na frente
+  Cerra.AI, série "Filme 3D"; o `.zip` da campanha fica sem os vídeos, como manda a regra.
 - O `hyperframes check` passa sem erro (o aviso de `fromTo` sem linha de base foi corrigido com
   `immediateRender: false`).
 
@@ -576,6 +592,11 @@ Valem para todas as próximas campanhas.
 17. **Espaço do GitHub Pages (02/11):** antes de gerar uma leva grande de peças, rodar
     `python tools/otimizar_publicacoes.py` (PNG em 256 cores, MP4 sem áudio em crf 24, .zip refeito). A Central
     mostra o tamanho novo.
+18. **Virada de página e 3D (02/11, depois de duas reprovações):** nada de girar a folha além de 90° — o verso
+    do papel aparece com o texto ao avesso. Na virada, a folha nova entra até 72° e a anterior só escurece
+    atrás. E, em 3D por camadas, a espessura tem que ser **fina** (poucas cópias, ~1 px): com 16 cópias a 3 px
+    a folha vira um leque na tela. Conferir sempre com quadros extraídos em volta da transição, não só no meio
+    do slide.
 
 ## Como garantimos a qualidade
 
@@ -593,7 +614,16 @@ Valem para todas as próximas campanhas.
 ## Pendências e próximos passos
 
 - [ ] **Ouvir o áudio dos Reels** antes de postar. Os sons são sintetizados por código e nunca foram ouvidos por uma pessoa.
-- [ ] **Alinhar o catálogo da CerraClass para 10 alunos** por turma (hoje diz 15).
+- [x] **Alinhar o catálogo da CerraClass para 10 alunos** por turma. Feito em 02/11 nos 5 textos do projeto
+      `D:\Dev\CerraClass` e publicado (o projeto Firebase `cerraclass` é da conta `gestor.renatorosa@gmail.com`).
+- [ ] **Re-renderizar as ~104 campanhas** com a nova gramática de movimento (`animar-carrossel.mjs --render`,
+      uma por vez), depois `python tools/otimizar_publicacoes.py`. Só 7 peças foram re-renderizadas como amostra.
+- [ ] **Filme 3D do Cerra.AI ("o cobre")**: corrigido e renderizado em `filmes/out/`, esperando o aval do Renato.
+      Se aprovar, publicar como `entregas/2026-11-cerraai-cobre-3d/` e rodar `tools/publicar.py`; se não, apagar
+      `filmes/cerraai-cobre/` e deixar o 3D de lado (fazer 3D de verdade exigiria WebGL/Three.js).
+- [ ] **Aplicar a gramática de movimento aos filmes** (`cerra-ai-comercial`, `cerra-ai-lancamento`,
+      `cerraclass-curso`, `cerraclass-lancamento`, `credito-comercial`) e às 4 apresentações, que ainda usam o
+      movimento antigo.
 - [ ] **Guia Acadêmico:** confirmar o perfil @guiacademico e os números do site; dizer se a logo antiga (capelo e livros,
       pasta `GuiAcademico/` na raiz) ainda vale; confirmar/criar a página do Facebook (as peças e a legenda já estão na
       Central, com o link do WhatsApp clicável).
@@ -606,10 +636,11 @@ Valem para todas as próximas campanhas.
 - [ ] Ideias de campanhas futuras: promoção de consignado, cases de clientes da Fábrica, depoimentos de alunos,
       turmas com data definida (aí sim com data, em peça de vida curta), conteúdo educativo de contabilidade.
 - [ ] Skills instaladas e ainda não usadas: `threejs-*` (3D) e `lemo-opuscar` (curtas cinematográficos, pesado).
-- [ ] **ESPAÇO NO GITHUB PAGES (urgente):** em 30/10 o que é publicado (`entregas/` + `kits/`) soma **~894 MB**
-      (vídeos .mp4 518 MB, PNG 187 MB, .zip 175 MB), perto do limite de 1 GB. Antes da próxima leva grande de vídeos,
-      mover os .mp4 antigos para outro armazenamento (Google Drive, Firebase Storage ou YouTube não listado) e
-      apontar a Central para lá, ou tirar os .zip (dá para baixar peça por peça).
+- [x] **ESPAÇO NO GITHUB PAGES (resolvido em 02/11):** o publicado somava ~968 MB de 1 GB. Passou a ~370 MB:
+      PNG quantizados em 256 cores (197 → 81 MB), MP4 sem a trilha e reencode em crf 24 (522 → 179 MB), .zip
+      refeitos (161 → 59 MB) e mídia kit (31 → 18 MB). Ferramenta: `tools/otimizar_publicacoes.py`. O `.git`
+      continua com ~1,4 GB de histórico; reduzir isso exigiria reescrever o histórico (não recomendado com
+      duas IAs no mesmo repositório).
 - [ ] Histórico do espaço no GitHub Pages: o limite é 1 GB por site. `entregas/` usava ~405 MB (19 campanhas) e foi
       reduzida para **~290 MB** em 26/10 (e voltou a ~425 MB em 28/10, com a série da Cerrado Tech e os vídeos novos): o `.zip` de cada campanha passou a levar só as imagens e as legendas,
       não os vídeos (o time baixa o vídeo direto na Central de Conteúdos). Os `.zip` caíram de 198 MB para 84 MB.
