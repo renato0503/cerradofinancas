@@ -473,6 +473,47 @@ e elementos 3D também"), em `dados/estudo-motion-design.md`. Resumo:
 Pendências: aprovação do Renato para 3D em vídeo (o hero 3D do site foi reprovado e não volta lá sem pedido
 explícito) e os 3 candidatos de conceito de cada marca antes de qualquer render.
 
+## Identidade de movimento por marca (02/11)
+
+Cada marca já tinha identidade **visual**. Agora também tem identidade de **movimento**, com o método do
+bang-motion (estilo + conceito de abertura + curvas) e as curvas medidas do motionmaxxing.
+
+| Marca | Estilo | Conceito | Troca |
+|---|---|---|---|
+| Cerrado Tech | Cinematic dark | Object relay | desliza |
+| Cerrado Contabilidade | Paper & print | Object metaphor | virada de página |
+| Cerra.AI | Grainy gradient | Journey inside the UI | corte em movimento |
+| CerraClass | Poster color-block | Rhythmic collage | desliza |
+| Crédito | Editorial light | Pure typography | virada de página |
+| Guia Acadêmico | Visual journalism | Claim → how → result | corte em movimento |
+| Consultorias | Brutalist mono | Before / after | corte em movimento |
+
+- **Fonte única:** `brand/movimentos.json` (estilo, conceito, `transicao`, `entrada`, `camera`, `grao`).
+  Guia com o raciocínio em `brand/MOVIMENTO.md`, incluindo o que cada marca nunca faz.
+- **No carrossel animado** (`filmes/ferramentas/animar-carrossel.mjs`): a marca sai do nome da campanha.
+  Antes, todas as peças usavam o mesmo movimento (deslize da direita + entrada com fade e blur). Agora:
+  **nada de fade** (entrada só por transformação), **corte em movimento** (o slide novo entra por cima e o
+  anterior termina na hora), **câmera que respira** (escala e deslocamento lentos no filme inteiro) e
+  **grão de superfície**. A virada de página é CSS 3D (rotateY com perspectiva no palco).
+- **Amostra re-renderizada** (uma peça por marca, para conferir o resultado): Cerrado Tech (ERP),
+  Contabilidade (abertura), CerraClass (IA na Gestão), Crédito (portabilidade), Guia Acadêmico (ABNT),
+  Consultoria (GRC) e a edição 01 da "IA da semana" (Cerra.AI).
+
+## "O cobre": o primeiro filme 3D do estúdio (02/11)
+
+`marketing/filmes/cerraai-cobre/` — 12 s, 16:9 e 9:16, sem áudio. A folha de cobre do Cerra.AI levita
+sobre as trilhas do chip; a luz atravessa a superfície; a marca assenta.
+
+- **3D de verdade em CSS**: a lâmina tem 16 cópias em `translateZ` (daí a borda de cobre), o palco tem
+  perspectiva e o objeto gira em `rotationX/rotationY`; a luz é um gradiente que varre em `mix-blend-mode:
+  screen`, e o grão dá superfície ao fundo.
+- **Identidade do Cerra.AI** ("Grainy gradient"): chega de maior e desacelera (`power4.out`), o fim é
+  menor que o começo e a câmera recua no último terço.
+- **Publicação:** `entregas/2026-11-cerraai-cobre-3d/` com os dois formatos, na frente Cerra.AI, série
+  "Filme 3D". O material editável fica em `filmes/cerraai-cobre/fonte/` (HTML + GSAP).
+- O `hyperframes check` passa sem erro (o aviso de `fromTo` sem linha de base foi corrigido com
+  `immediateRender: false`).
+
 ## Decisões e regras de conteúdo
 
 Valem para todas as próximas campanhas.

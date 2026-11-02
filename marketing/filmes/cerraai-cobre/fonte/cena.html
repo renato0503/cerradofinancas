@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Cerra.AI: o cobre (3D)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada clip" data-start="0" data-duration="12" data-track-index="0" style="z-index: 1"></div>
+
+      <!-- 0,0-2,6: o cobre acende: as trilhas do chip ligam uma a uma -->
+      <div id="trilhas" class="camada clip" data-start="0" data-duration="12" data-track-index="1" style="z-index: 2" data-layout-allow-overflow></div>
+
+      <!-- 2,2-12: a lâmina de cobre em 3D -->
+      <div id="palco" class="camada clip" data-start="0" data-duration="12" data-track-index="2" style="z-index: 3" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="objeto">
+          <div id="lamina"><img src="assets/emblema.png" alt="" /></div>
+          <div id="luz"></div>
+        </div>
+      </div>
+
+      <!-- 5,4-12: a marca assenta -->
+      <div id="marca" class="cena clip" data-start="5.2" data-duration="6.8" data-track-index="4" style="z-index: 5" data-layout-allow-overflow data-layout-allow-overlap>
+        <p class="wordmark"><span>Cerra</span><span class="ponto">.</span><span>AI</span></p>
+        <p class="assinatura">by Cerrado Tech</p>
+      </div>
+
+      <div id="grao" class="camada clip" data-start="0" data-duration="12" data-track-index="9" style="z-index: 9"></div>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+/* Cerra.AI "o cobre": a lâmina de cobre em 3D, na identidade "Grainy gradient"
+   (cobre sobre grafite, grão, luz que atravessa). */
+
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'JetBrains Mono'; src: url('assets/fonts/jetbrains-mono.woff2') format('woff2'); font-weight: 100 800; }
+
+:root {
+  --cobre: #e2873b;
+  --cobre-escuro: #9c5521;
+  --grafite: #0d0f0e;
+  --grafite-2: #171a18;
+  --tinta: #f1ece3;
+  --tinta-suave: #a39d93;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #000; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; }
+#root { position: relative; overflow: hidden; }
+
+.camada { position: absolute; inset: 0; }
+.cena { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+
+/* Fundo: grafite com o brilho do cobre bem ao fundo */
+#fundo {
+  background:
+    radial-gradient(120% 80% at 50% 42%, rgba(226, 135, 59, .16) 0%, rgba(13, 15, 14, 0) 62%),
+    linear-gradient(180deg, #101311 0%, #0d0f0e 55%, #080909 100%);
+}
+
+/* Trilhas do chip */
+#trilhas { display: grid; place-items: center; }
+.trilha {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(226, 135, 59, 0) 0%, var(--cobre) 22%, var(--cobre) 78%, rgba(226, 135, 59, 0) 100%);
+  transform-origin: left center;
+  opacity: 0;
+  box-shadow: 0 0 18px rgba(226, 135, 59, .35);
+}
+.trilha.vertical { width: 2px; height: var(--h); background: linear-gradient(180deg, rgba(226,135,59,0) 0%, var(--cobre) 22%, var(--cobre) 78%, rgba(226,135,59,0) 100%); transform-origin: center top; }
+
+/* Palco: a câmera tem perspectiva; o objeto gira dentro dela */
+#palco { perspective: 1500px; perspective-origin: 50% 44%; }
+#objeto { position: absolute; inset: 0; transform-style: preserve-3d; }
+
+/* A lâmina: a folha de cobre com espessura (as cópias em translateZ viram a borda) */
+#lamina { position: absolute; left: 50%; top: 44%; transform-style: preserve-3d; }
+#lamina img { position: absolute; left: 0; top: 0; display: block; width: 520px; }
+.vertical #lamina img { width: 640px; }
+
+/* Luz: o reflexo que atravessa a superfície */
+#luz {
+  position: absolute; left: 50%; top: 44%;
+  width: 150%; height: 150%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(46% 40% at 50% 50%, rgba(255, 236, 214, .55) 0%, rgba(226, 135, 59, .22) 38%, rgba(226, 135, 59, 0) 72%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Marca */
+#marca { align-items: center; justify-content: flex-end; padding-bottom: 9%; }
+.wordmark {
+  font-weight: 900; font-stretch: 125%; text-transform: uppercase;
+  font-size: 148px; line-height: .95; color: var(--tinta); display: flex; gap: .04em;
+}
+.vertical .wordmark { font-size: 150px; }
+.wordmark .ponto { color: var(--cobre); }
+.assinatura {
+  margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-suave);
+}
+
+/* Grão: superfície de filme, não cor chapada */
+#grao {
+  pointer-events: none; mix-blend-mode: overlay; opacity: .05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='240' height='240' filter='url(%23n)' opacity='0.55'/></svg>");
+  background-size: 240px 240px;
+}

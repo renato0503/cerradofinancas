@@ -8905,5 +8905,44 @@
       "nome": "folinha-animada.zip",
       "kb": 1784
     }
+  },
+  {
+    "pasta": "2026-11-cerraai-cobre-3d",
+    "frente": "cerraai",
+    "serie": "Filme 3D",
+    "capa": null,
+    "titulo": "Cerra.AI · o cobre (filme 3D)",
+    "data": "2026-11-04",
+    "descricao": "Filme de marca do Cerra.AI em 3D (12s, sem áudio): a folha de cobre levita sobre as trilhas do chip, a luz atravessa a superfície e a marca assenta. Em 16:9 e 9:16, para Reel, Stories ou abertura de perfil.",
+    "orientacoes": [
+      "Peça de vídeo, sem carrossel: não entra na agenda de postagem.",
+      "Vertical (9:16): Reel ou Stories do @cerra.ai. Horizontal (16:9): LinkedIn ou abertura de perfil.",
+      "Sem áudio: o filme foi feito para ser assistido mudo.",
+      "O material editável está em marketing/filmes/cerraai-cobre/fonte (HTML + GSAP)."
+    ],
+    "conta": "@cerra.ai",
+    "arquivos": [
+      {
+        "nome": "video-16x9.mp4",
+        "tipo": "video",
+        "kb": 2243
+      },
+      {
+        "nome": "video-vertical.mp4",
+        "tipo": "video",
+        "kb": 2842
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "O cobre, em 3D. Doze segundos do Cerra.AI: a folha de cobre sobre as trilhas do chip,\na luz atravessando a superfície e a marca assentando.\n\nA IA da empresa, dentro da empresa: responde com base nos seus documentos, mostra a fonte e\nnão envia nada para fora.\n\nDemonstração com os seus documentos: WhatsApp (67) 99351-5206\n🔗 cerradofinanzas.com.br/cerraai\n\n#CerraAI #IALocal #IAOffline #InteligenciaArtificial #CerradoTech\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-cerraai-cobre-3d.zip",
+      "kb": 0
+    }
   }
 ]

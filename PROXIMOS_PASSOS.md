@@ -73,6 +73,16 @@ Detalhes em `marketing/HISTORICO.md`.
 - **Estudo do repositório github.com/drix10/ai-resources** (02/11): `marketing/dados/estudo-ai-resources.md`.
   É um acervo de notícias de IA com fonte (CC BY 4.0). Serve como pauta "IA da semana" para o Cerra.AI e a CerraClass,
   como radar de ferramentas e como base de demonstração de RAG. Para construir sites, quase nada.
+- **02/11 (terceira rodada):**
+  - **Identidade de movimento por marca:** cada marca ganhou estilo, conceito de abertura, curvas,
+    tipo de troca, câmera e grão. Fonte única em `marketing/brand/movimentos.json`, guia em
+    `marketing/brand/MOVIMENTO.md`. O carrossel animado (`filmes/ferramentas/animar-carrossel.mjs`) já lê
+    essa configuração pelo nome da campanha: nada de fade, corte em movimento, câmera que respira.
+    Seis vídeos re-renderizados como amostra (uma peça por marca).
+  - **3D nas artes de marketing:** filme novo do Cerra.AI, "o cobre" (12 s, 16:9 e 9:16, sem áudio),
+    em `marketing/filmes/cerraai-cobre/` e publicado na Central como `2026-11-cerraai-cobre-3d`.
+  - **Site da CerraClass publicado** com "10 alunos por turma" (o projeto fica na conta
+    `gestor.renatorosa@gmail.com`, não na comercial).
 - **02/11 (sessão do Renato com outra IA):**
   - **Espaço do GitHub Pages resolvido:** o publicado saiu de **~968 MB para ~370 MB** (limite de 1 GB).
     Ferramenta nova `marketing/tools/otimizar_publicacoes.py`: PNG quantizado em 256 cores (197 MB → 81 MB),
@@ -137,6 +147,18 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       mas o ideal é produzir mais peças para as contas que entram em repetição cedo.
 - [ ] Palestra: levar os slides novos da versão animada para `slides.html`, `apresentacao.html` e os PNGs;
       ao mudar a versão animada, atualizar também a cópia online (passo a passo em `marketing/HISTORICO.md`).
+- [ ] **Re-renderizar as ~104 campanhas com a nova gramática de movimento.** Agora o `animar-carrossel.mjs`
+      lê `brand/movimentos.json` pelo nome da campanha, mas só 6 peças foram re-renderizadas (uma por marca,
+      como amostra). Para as outras: `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`,
+      uma por vez (o render trava se forem várias no mesmo comando). Depois, `python tools/otimizar_publicacoes.py`
+      para encolher os MP4.
+- [ ] **3D para as outras marcas:** o modelo do Cerra.AI (`filmes/cerraai-cobre/`) serve de base: folha em
+      CSS 3D com espessura, trilhas de cobre acendendo, luz que atravessa. Fazer o do Cerrado Tech (a folha
+      dourada na fábrica) e, se quiser, o white-label como folha dimensional (dimensional-drawing).
+- [ ] **Identidade de movimento por marca:** as sete marcas já estão declaradas em `brand/MOVIMENTO.md`.
+      Falta aplicar a gramática às quatro **apresentações** (que têm coreografia própria) e aos filmes
+      comerciais (`cerra-ai-comercial`, `cerra-ai-lancamento`, `cerraclass-curso`, `cerraclass-lancamento`,
+      `credito-comercial`), que ainda usam o movimento antigo.
 - [ ] **Guia Acadêmico:** criar o perfil @guiacademico no Instagram (o nome foi usado na agenda e precisa ser
       confirmado); confirmar se os números do site (+120 trabalhos, 94% de aprovação, 10+ anos) podem ir para as
       peças. O site novo foi publicado em 30/10; o projeto Firebase (`guiacademicostorage`) é da conta
