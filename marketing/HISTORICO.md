@@ -31,6 +31,9 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 30/10 | `9a6b5c9` | Guia Acadêmico (consultoria acadêmica) vira a 4ª conta, @guiacademico: identidade "Artigo", 15 campanhas (carrossel de 6, story, carrossel animado, legendas) e mídia kit; datas comemorativas nacionais (6, só post e story); agenda recomeça em 31/10 e passa a repetir o conteúdo quando ele acaba |
 | 29/10 | `97484c0`, `619e9f7` | Palestra "Muito Além do Currículo: IA na Prática": versão com setas (`apresentacao.html`) e versão animada com 29 slides (`apresentacao-animada.html`, GSAP + Lottie), publicada em `entregas/2026-10-palestra-carreira-ia/apresentacao/` |
 | 28/10 | (esta rodada) | Identidades próprias para Cerra.AI ("Silício local", cobre e grafite) e CerraClass ("Sábado de sala", uma cor por curso); as 14 campanhas refeitas; vídeos novos em HyperFrames (16:9 e 9:16) no lugar dos Reels antigos |
+| 02/11 | `ab4c235`, `3be97cb` | Espaço do GitHub Pages: o publicado saiu de ~968 MB para ~370 MB (PNG em 256 cores, MP4 sem áudio em crf 24, .zip refeitos, mídia kit); ferramenta nova `tools/otimizar_publicacoes.py` |
+| 02/11 | `b962c8a` | Série "IA da semana" do @cerra.ai: gerador dirigido por dados (`tools/gerar_ia_da_semana.py`), edição 01 no ar (04/11 o post, 10/11 o Reel), fontes conferidas na origem |
+| 02/11 | (sem commit) | Estudo de motion design e 3D (`dados/estudo-motion-design.md`): motionmaxxing, bang-motion, dimensional-drawing e img2threejs; catálogo da CerraClass alinhado para 10 alunos no projeto `D:\Dev\CerraClass` (falta publicar) |
 
 ## Campanhas publicadas (20)
 
@@ -407,6 +410,69 @@ logos e QR codes copiados para dentro da pasta, porque `brand/` e `posts/` não 
 **Pendências da palestra:** os slides novos ainda não entraram em `slides.html`, `apresentacao.html` nem nos
 PNGs; o rótulo "Projeto" do QR do CAIM; confirmar o texto do slide 9; os pontos do slide 6 são exemplos genéricos.
 
+## Espaço do GitHub Pages (02/11)
+
+O publicado tinha crescido para ~968 MB (limite de 1 GB). A solução foi encolher os arquivos, sem mexer no
+que o time de marketing vê:
+
+| O quê | Antes | Depois | Como |
+|---|---|---|---|
+| PNG das peças | 197 MB | 81 MB | quantização para 256 cores (o design tem poucas cores); logos com transparência usam FASTOCTREE |
+| MP4 | 522 MB | 179 MB | trilha sintetizada removida (a regra é vídeo sem áudio) e reencode em libx264 crf 24, preset medium |
+| .zip das campanhas | 161 MB | 59 MB | refeitos com as peças já encolhidas |
+| mídia kits | 31 MB | 18 MB | idem |
+| **publicado total** | **~968 MB** | **~370 MB** | |
+
+- **Medido, não estimado:** SSIM 0,9937 entre o MP4 original e o reencodado (visualmente idêntico) e diferença
+  média de 0,42 por canal entre o PNG original e o quantizado. A comparação visual lado a lado não mostrou
+  diferença perceptível.
+- **Ferramenta:** `tools/otimizar_publicacoes.py`. Ela só mexe em arquivo **versionado e sem mudança não
+  commitada** (ou seja, não encosta no trabalho de outra pessoa), só troca o arquivo quando o novo é menor,
+  refaz o .zip de cada campanha e atualiza o `conteudos.json` **só das campanhas tratadas** — o `publicar.py`
+  inteiro não pode rodar junto, porque ele varreria as campanhas de outra IA que ainda não foram commitadas.
+- **O `.git` continua com ~1,4 GB** de histórico. Reduzir isso exigiria reescrever o histórico, o que não é
+  recomendado com duas IAs no mesmo repositório.
+- **A Central mostra os tamanhos novos** (o `conteudos.json` foi atualizado com os KB de cada peça).
+
+## "IA da semana", no @cerra.ai (02/11)
+
+Série semanal aprovada pelo Renato, com a pauta no acervo público `github.com/drix10/ai-resources` (CC BY 4.0)
+e o **texto escrito aqui**. Regra da série: *resumo de anúncio não é fato verificado* — todo número usado foi
+conferido abrindo a fonte original, e a fonte aparece na peça e na legenda.
+
+- **Gerador dirigido por dados:** `tools/gerar_ia_da_semana.py` + `dados/ia_da_semana/AAAAMMDD.json` (uma
+  edição por arquivo). `--coletar AAAA-MM-DD` baixa os briefings da semana como pauta; a copy é escrita à mão.
+- **Edição 01** (`2026-11-cerraai-ia-da-semana-01`, semana de 02 a 08/11), 6 slides na identidade do Cerra.AI:
+  1. capa; 2. Anthropic, "Agentic Backdoors via Pretraining Poisoning" (arXiv:2610.37741, 27/10): envenenar
+  0,1% do pré-treino planta backdoor de execução remota, ~92% de taxa de sucesso no modelo de 4B;
+  3. Mistral Large 4 (06/10): 1 trilhão de parâmetros, 52 bilhões ativos, pesos abertos no fim de outubro;
+  4. Google DeepMind, PlanAssist (31/10): até 58% menos tempo de análise, mais de 70% dos relatórios gerados
+  aprovados sem edição, 12 conselhos a mais, decisão final com o servidor;
+  5. a leitura da semana (o que muda na empresa); 6. CTA.
+  Com story, legendas de Instagram e LinkedIn e carrossel animado **sem áudio** (29,4 s).
+- **Na agenda:** 04/11 o post e 10/11 o Reel do @cerra.ai; as campanhas seguintes da conta andaram 2 dias.
+- **Sem número inventado:** nada de preço, prazo, cliente ou "{x}% mais rápido" sem fonte.
+
+## Motion design e 3D: o que pode entrar (02/11)
+
+Estudo de quatro repositórios pedido pelo Renato ("movimentações mais interessantes e personalizadas nos vídeos
+e elementos 3D também"), em `dados/estudo-motion-design.md`. Resumo:
+
+- **motionmaxxing** (Apache-2.0): o runtime `motion.js` (12 curvas medidas, seek-safe) e o `hero3d` (logo
+  extrudado em Three.js) são o que interessa; os portões G0–G5 dão critério objetivo de revisão. **Mas a
+  lista "never ship" dele proíbe o carrossel de feed** (marca no canto, contador, rodapé): vale para os filmes,
+  não para as ~110 peças de feed.
+- **bang-motion** (MIT): é o formato para declarar a **identidade de movimento** de cada marca (10 estilos,
+  19 conceitos, 6 estilos de explainer e o passo de "style brief" com 3 candidatos). Falta escrever
+  `brand/<marca>/movimento.md` e tirar o fade da troca de slide.
+- **dimensional-drawing** (MIT): desenha a anatomia de um componente como folha técnica e a anima — é o
+  formato certo para o **vídeo do white-label** da Cerrado Tech (`2026-11-tech-white-label`), que ainda não
+  foi produzido.
+- **img2threejs** (Apache-2.0): radar. Nosso produto é software; o logo 3D já é resolvido pelo `hero3d`.
+
+Pendências: aprovação do Renato para 3D em vídeo (o hero 3D do site foi reprovado e não volta lá sem pedido
+explícito) e os 3 candidatos de conceito de cada marca antes de qualquer render.
+
 ## Decisões e regras de conteúdo
 
 Valem para todas as próximas campanhas.
@@ -456,6 +522,12 @@ Valem para todas as próximas campanhas.
 15. **Facebook (31/10):** o Guia Acadêmico posta uma arte única (`facebook.png`, 1080×1350) no lugar do carrossel, ou o
     `carrossel-animado.mp4` como vídeo. A legenda do Facebook sempre traz o link
     `https://api.whatsapp.com/send?phone=5567993515206` (URL completa, para virar clicável), além do site.
+16. **"IA da semana" (02/11):** a pauta vem do acervo público ai-resources (CC BY 4.0), mas o texto é escrito aqui.
+    Todo número usado foi conferido **abrindo a fonte original**; a fonte vai na peça e na legenda. Resumo de
+    anúncio não é fato verificado. A copy de cada edição vive em `dados/ia_da_semana/AAAAMMDD.json`.
+17. **Espaço do GitHub Pages (02/11):** antes de gerar uma leva grande de peças, rodar
+    `python tools/otimizar_publicacoes.py` (PNG em 256 cores, MP4 sem áudio em crf 24, .zip refeito). A Central
+    mostra o tamanho novo.
 
 ## Como garantimos a qualidade
 

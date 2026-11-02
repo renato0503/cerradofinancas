@@ -73,6 +73,24 @@ Detalhes em `marketing/HISTORICO.md`.
 - **Estudo do repositório github.com/drix10/ai-resources** (02/11): `marketing/dados/estudo-ai-resources.md`.
   É um acervo de notícias de IA com fonte (CC BY 4.0). Serve como pauta "IA da semana" para o Cerra.AI e a CerraClass,
   como radar de ferramentas e como base de demonstração de RAG. Para construir sites, quase nada.
+- **02/11 (sessão do Renato com outra IA):**
+  - **Espaço do GitHub Pages resolvido:** o publicado saiu de **~968 MB para ~370 MB** (limite de 1 GB).
+    Ferramenta nova `marketing/tools/otimizar_publicacoes.py`: PNG quantizado em 256 cores (197 MB → 81 MB),
+    MP4 sem a trilha sintetizada e reencode em libx264 crf 24 (SSIM 0,994; 522 MB → 179 MB), .zip refeitos
+    (161 MB → 59 MB) e mídia kit (31 MB → 18 MB). A Central foi atualizada com os tamanhos novos.
+    Commits `ab4c235` e `3be97cb`.
+  - **Série "IA da semana" no @cerra.ai** (aprovada pelo Renato): gerador dirigido por dados
+    (`marketing/tools/gerar_ia_da_semana.py` + `marketing/dados/ia_da_semana/AAAAMMDD.json`).
+    Edição 01 publicada (04/11 o post, 10/11 o Reel): Anthropic (envenenamento de 0,1% do pré-treino),
+    Mistral Large 4 (1 trilhão de parâmetros com pesos abertos) e Google DeepMind (PlanAssist).
+    Todo número foi conferido abrindo a fonte original. Commit `b962c8a`.
+  - **Estudo de motion design e 3D** (02/11): `marketing/dados/estudo-motion-design.md` — motionmaxxing,
+    bang-motion, dimensional-drawing e img2threejs, com o que serve e o que não serve para a gente.
+  - **Catálogo da CerraClass alinhado para 10 alunos**: corrigidos os 5 textos do projeto `D:\Dev\CerraClass`
+    (`presencialCourseContent.ts`, `CursoPresencial.tsx`, `Landing.tsx` e `Presenciais.tsx`) e reimportado o
+    catálogo para `marketing/dados/cerraclass-cursos.json`. O site da CerraClass ainda **não foi publicado**
+    (o `firebase login` está expirado): é preciso `firebase login --reauth` e
+    `firebase deploy --only hosting --account comercial@cerradofinancas.com.br` em `D:\Dev\CerraClass`.
 
 **Palestra "Muito Além do Currículo: IA na Prática" (29/10):** versão animada com 29 slides
 (`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
@@ -91,8 +109,22 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       (o site e as peças já dizem 10).
 
 ### Marketing
-- [ ] **Espaço no GitHub Pages (urgente):** o que é publicado já soma ~894 MB de 1 GB (vídeos 518 MB, PNG 187 MB,
-      .zip 175 MB). Antes da próxima leva de vídeos, mover os .mp4 antigos para outro armazenamento ou tirar os .zip.
+- [ ] **Espaço do GitHub Pages: RESOLVIDO em 02/11** (de ~968 MB para ~370 MB). Antes da próxima leva grande de
+      vídeos, rodar `python tools/otimizar_publicacoes.py` (a ferramenta só mexe em arquivo versionado e sem
+      mudança de outra IA) e refazer os .zip. O `.git` continua com ~1,4 GB de histórico: para reduzir isso de
+      verdade seria preciso reescrever o histórico, o que não é recomendado com duas IAs no mesmo repositório.
+- [ ] **Publicar o site da CerraClass** com o texto "10 alunos por turma": o `firebase login` expirou.
+      `firebase login --reauth` e, em `D:\Dev\CerraClass`, `npm run build` e
+      `firebase deploy --only hosting --account comercial@cerradofinancas.com.br`.
+- [ ] **"IA da semana":** a edição 01 saiu em 04/11. Para a edição 02, rodar
+      `python tools/gerar_ia_da_semana.py --coletar 2026-11-09`, escolher 3 notícias **abrindo a fonte
+      original**, escrever o JSON da edição e rodar o gerador. A regra: resumo de anúncio não é fato
+      verificado; nunca usar número sem abrir a fonte.
+- [ ] **Identidade de movimento por marca** (plano em `marketing/dados/estudo-motion-design.md`): escrever
+      `brand/<marca>/movimento.md` no formato do "style brief" do bang-motion (estilo, conceito, curvas,
+      câmera, transições, som) e tirar o fade da troca de slide. Começar pelo Cerra.AI e pelo white-label.
+- [ ] **3D em vídeo:** o `hero3d` do motionmaxxing resolve o logo como objeto de luz real. O hero 3D foi
+      reprovado no site (`/portfolio/`, commit `7f72762`) e não volta lá sem pedido explícito. Precisa de aval.
 - [ ] Ouvir o áudio dos Reels antes de postar (sons sintetizados, nunca revisados por uma pessoa).
       Medido em 26/10 com `marketing/tools/conferir_audio.py`: os 19 vídeos têm trilha, sem clipping e sem
       silêncio longo. O nível está baixo (RMS ≈ -28 dBFS) — vale ouvir e decidir se sobe o volume.
@@ -128,14 +160,20 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       - as 5 perguntas frequentes;
       - os dois benefícios do bloco da sala de formação, "Equipe capacitada" e "Clientes mais bem atendidos". Eles
         substituíram o trecho que falava da receita da própria Cerrado Tech.
+      - **Conferência de 02/11 (feita por outra IA, sem alteração):** os 16 exemplos estão marcados como
+        "Exemplo", nenhum número, preço, cliente ou prazo aparece nos textos novos, e as FAQ não afirmam nada
+        que não esteja no site. Dois pontos para o Renato decidir: o compromisso de "código é seu, sem amarras de fornecedor"
+        (na FAQ "O código e os dados ficam com quem?") e "hospedagem" na mensalidade do modelo comercial.
 - [ ] **`/portfolio/`: a página é editada direto no `portfolio.html`.** O script que a gerou ficou numa pasta temporária
       e não existe mais. As descrições das 16 capacidades também estão em `marketing/tools/gerar_portfolio_tech.py`
       (série "O que a Cerrado Tech constrói"): ao mudar uma, mudar a outra.
 - [ ] **Carrossel animado das outras campanhas:** só as 4 apresentações têm coreografia própria. As outras ~110 usam o
       movimento genérico antigo e ainda **têm áudio**. Se o Renato pedir, re-renderizar sem áudio, com
-      `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`, uma por vez. O espaço do
-      GitHub Pages está no limite: cada .mp4 trocado ocupa o mesmo lugar, mas não pode crescer.
-- [ ] **IA da semana (opcional):** se o Renato aprovar, criar o gerador descrito em `marketing/dados/estudo-ai-resources.md`.
+      `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`, uma por vez.
+      O espaço do GitHub Pages deixou de ser o travão (agora há folga); o custo é o tempo de render.
+- [ ] **IA da semana (opcional):** **FEITO em 02/11** — o Renato aprovou e a edição 01 já está na agenda
+      (04/11). O gerador é `marketing/tools/gerar_ia_da_semana.py`; o passo a passo está no topo das Pendências
+      de Marketing.
 
 ## Como publicar uma mudança
 
@@ -155,9 +193,17 @@ Está resumido acima, em "O que foi feito", no bloco "31/10 a 02/11". Os detalhe
 ### O que falta
 1. A lista "Portfólio e vídeos (de 31/10 a 02/11)", em Pendências, logo acima.
 2. As pendências de Site e de Marketing que já existiam. As mais urgentes:
-   - espaço do GitHub Pages (~894 MB de 1 GB);
+   - publicar o site da CerraClass com "10 alunos por turma" (falta `firebase login --reauth`);
    - confirmar o @guiacademico e os números do site;
-   - decidir se publica as 25 campanhas do Cerra.AI que estão paradas.
+   - decidir se publica as 25 campanhas do Cerra.AI que estão paradas;
+   - a identidade de movimento de cada marca (plano em `marketing/dados/estudo-motion-design.md`).
+
+### Sessão de 02/11 (segunda rodada)
+- **Espaço do GitHub Pages resolvido** (de ~968 MB para ~370 MB), com a ferramenta
+  `marketing/tools/otimizar_publicacoes.py`. Rodar de novo depois de cada leva grande.
+- **Série "IA da semana" aprovada e publicada** (edição 01 no ar, na agenda do @cerra.ai).
+- **Estudo de motion design e 3D** escrito (`marketing/dados/estudo-motion-design.md`).
+- **Catálogo da CerraClass alinhado para 10 alunos** no projeto `D:\Dev\CerraClass`; falta publicar.
 
 ### Regras que valem sempre (aprendidas com o Renato)
 - **Outra IA usa este repositório ao mesmo tempo.** Nunca `git add -A` nem `git add .`: adicione arquivo por arquivo,
@@ -192,9 +238,11 @@ Regras:
 - Ao terminar cada pedido, atualize PROXIMOS_PASSOS.md (feito e pendente) e, se for marketing,
   marketing/HISTORICO.md.
 
-Onde parei: a última coisa entregue foi o /portfolio/ (só Sob Demanda, ícones Phosphor duotone, modelo
-comercial em destaque; o hero 3D foi reprovado e revertido, não refaça). O estudo do repositório
-github.com/drix10/ai-resources está em marketing/dados/estudo-ai-resources.md, com a recomendação de uma
-série "IA da semana" para o Cerra.AI, que ainda precisa da aprovação do Renato. Para continuar, pergunte ao
-Renato o que ele quer agora ou siga as pendências de "Portfólio e vídeos (de 31/10 a 02/11)".
+Onde parei: a última coisa entregue foi a **série "IA da semana" do @cerra.ai** (edição 01 no ar, 04/11) e o
+**espaço do GitHub Pages resolvido** (de ~968 MB para ~370 MB, com `marketing/tools/otimizar_publicacoes.py`).
+O `/portfolio/` continua como estava (só Sob Demanda, ícones Phosphor duotone; o hero 3D foi reprovado e
+revertido, não refaça). O estudo de motion design e 3D está em `marketing/dados/estudo-motion-design.md`:
+o plano é declarar a identidade de movimento de cada marca (`brand/<marca>/movimento.md`) e fazer o filme
+do white-label como folha dimensional. Para continuar, pergunte ao Renato o que ele quer agora ou siga as
+pendências de "Portfólio e vídeos (de 31/10 a 02/11)".
 ```
