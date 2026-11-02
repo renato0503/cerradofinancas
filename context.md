@@ -18,7 +18,7 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 - **CSS3** vanilla com variáveis CSS, glassmorphism, dark mode
 - **JavaScript** vanilla (Intersection Observer, menu mobile, FAQ accordion)
 - **Google Fonts** — 'Inter' (principal), 'Outfit', 'Poppins', 'Plus Jakarta Sans' (páginas específicas)
-- **Phosphor Icons** — A maioria das páginas usa `<i class="ph ph-...">`. CDN: `https://unpkg.com/@phosphor-icons/web`. Efeito 3D com `drop-shadow` CSS nos ícones. Exceção: o `/portfolio/` usa um sprite SVG inline próprio.
+- **Phosphor Icons** — A maioria das páginas usa `<i class="ph ph-...">`. CDN: `https://unpkg.com/@phosphor-icons/web`. Efeito 3D com `drop-shadow` CSS nos ícones. Exceção: o `/portfolio/` usa um sprite SVG inline com os desenhos do Phosphor (duotone; bold nos utilitários), copiados do pacote `@phosphor-icons/core` (MIT), com ids `#i-...`. Ícone novo: copiar o `<path>` do SVG do Phosphor para um `<symbol viewBox="0 0 256 256">` no sprite.
 - **`_config.yml`** — Só tem a lista `exclude` (ao defini-la, a lista padrão do Jekyll deixa de valer, por isso ela é repetida). Exclui as áreas de trabalho de `marketing/` e os arquivos de documentação (`*.md` da raiz), que antes eram publicados (o `context.md` aparecia em `/context.html`).
 
 ### Identidade visual e ícones
@@ -260,3 +260,21 @@ Chaves de API **nunca** no código. `gerar_gamma.py` (fora do git, no `.gitignor
 
 ### Deploy
 GitHub Pages com Jekyll. Domínio customizado: `www.cerradofinancas.com.br` (CNAME). Commit e push direto na branch `main`.
+
+## /portfolio/ (desde 31/10/2026)
+
+`portfolio.html`, página única, editada direto (o script que a gerou não existe mais). Só fala do **Sob Demanda**: a
+seção "Software por segmento" saiu de propósito. De cima para baixo:
+- hero com o logo e 8 ícones em órbita;
+- faixa amarela rolando com as capacidades;
+- `#capacidades`: as 16 capacidades, filtro por área (`data-area`: gestao, dados, ia, auto, reg) e o botão
+  "Incluir na minha solução", que alimenta a barra fixa `#montador` e a mensagem do WhatsApp;
+- `#processo`: a linha do tempo de 5 etapas;
+- `#como-trabalhamos`: o modelo comercial, num bloco escuro em destaque, com 3 etapas e o gráfico `#grafico`;
+- `#formacao`: a sala de formação;
+- `#perguntas`: as perguntas frequentes;
+- o CTA.
+
+O CSS e o JS são inline, e as animações respeitam `prefers-reduced-motion`. As descrições das capacidades também
+estão em `marketing/tools/gerar_portfolio_tech.py`: mantenha as duas iguais. O hero 3D (Three.js) foi testado em
+31/10 e **reprovado**; os arquivos foram apagados (commit `7f72762`).

@@ -1,6 +1,9 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 31/10/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 02/11/2026.
+
+**Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
+ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
 
 ## Onde está cada registro
 
@@ -51,6 +54,26 @@ WhatsApp inteiro (`https://api.whatsapp.com/send?phone=5567993515206`), que o Fa
 Vale para as 15 campanhas dos Cadernos de método e para a apresentação; a Central já mostra a peça e o card "Facebook".
 Detalhes em `marketing/HISTORICO.md`.
 
+**31/10 a 02/11 (sessão do Renato com o Claude):**
+- **Vídeos institucionais refeitos** (`8b77cd3`, `dadf112`):
+  - O que mudou: o carrossel animado das 4 apresentações ("Prazer, ...") deixou de só passar slides. Agora cada
+    elemento entra com o seu movimento, numa coreografia própria de cada marca, em `marketing/filmes/coreografias/`.
+  - Áudio: os vídeos saem **sem áudio**, porque a trilha sintetizada foi reprovada. `--com-audio` reativa.
+  - Correção: o quadro do Guia Acadêmico desmontava por causa de um conflito com a classe `.quadro`, já corrigido.
+  - Como usar: `marketing/filmes/README.md`, seção "Coreografia própria".
+- **`/portfolio/` refeito, só com o Sob Demanda:**
+  - `7f1f4e1`: saiu "Software por segmento". Entraram:
+    - as 16 capacidades com filtro por área, cada uma com "na prática", exemplo e "você recebe";
+    - "monte a sua solução", com a lista enviada pelo WhatsApp;
+    - linha do tempo do projeto e perguntas frequentes.
+  - `5be33f7`: modelo comercial em destaque, com 3 etapas ligadas e um gráfico ilustrativo.
+  - `d55bf65`: hero 3D (Three.js) feito a partir de um briefing do Renato. Foi **reprovado** ("ficou uma bela
+    bosta") e revertido em `7f72762`. Não refazer 3D nesta página sem pedido explícito.
+  - `7f72762`: ícones trocados pelos **Phosphor duotone** inline (MIT), com os mesmos ids do sprite.
+- **Estudo do repositório github.com/drix10/ai-resources** (02/11): `marketing/dados/estudo-ai-resources.md`.
+  É um acervo de notícias de IA com fonte (CC BY 4.0). Serve como pauta "IA da semana" para o Cerra.AI e a CerraClass,
+  como radar de ferramentas e como base de demonstração de RAG. Para construir sites, quase nada.
+
 **Palestra "Muito Além do Currículo: IA na Prática" (29/10):** versão animada com 29 slides
 (`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
 https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-ia/apresentacao/. Detalhes em `marketing/HISTORICO.md`.
@@ -99,8 +122,79 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       o CRC do responsável técnico. A série "Você sabia?" foi conferida com a lei em 28/10/2026; revisar se algo mudar
       antes da data de cada post.
 
+### Portfólio e vídeos (de 31/10 a 02/11)
+- [ ] **`/portfolio/`: o Renato revisar os textos novos.** Ninguém revisou ainda os que eu escrevi:
+      - o exemplo de entrega e a lista "você recebe" de cada uma das 16 capacidades;
+      - as 5 perguntas frequentes;
+      - os dois benefícios do bloco da sala de formação, "Equipe capacitada" e "Clientes mais bem atendidos". Eles
+        substituíram o trecho que falava da receita da própria Cerrado Tech.
+- [ ] **`/portfolio/`: a página é editada direto no `portfolio.html`.** O script que a gerou ficou numa pasta temporária
+      e não existe mais. As descrições das 16 capacidades também estão em `marketing/tools/gerar_portfolio_tech.py`
+      (série "O que a Cerrado Tech constrói"): ao mudar uma, mudar a outra.
+- [ ] **Carrossel animado das outras campanhas:** só as 4 apresentações têm coreografia própria. As outras ~110 usam o
+      movimento genérico antigo e ainda **têm áudio**. Se o Renato pedir, re-renderizar sem áudio, com
+      `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`, uma por vez. O espaço do
+      GitHub Pages está no limite: cada .mp4 trocado ocupa o mesmo lugar, mas não pode crescer.
+- [ ] **IA da semana (opcional):** se o Renato aprovar, criar o gerador descrito em `marketing/dados/estudo-ai-resources.md`.
+
 ## Como publicar uma mudança
 
 Commit na `main` e `git push`: o GitHub Pages reconstrói o site em 1 a 2 minutos
 (acompanhe com `gh run list -R renato0503/cerradofinancas --workflow pages-build-deployment`).
 Depois, confira as páginas alteradas no ar (Ctrl+F5 para fugir do cache).
+
+## Passagem para outra IA (02/11/26)
+
+### O que foi feito nesta sessão (de 31/10 a 02/11)
+Está resumido acima, em "O que foi feito", no bloco "31/10 a 02/11". Os detalhes estão em:
+- `marketing/HISTORICO.md`, na seção "Apresentações institucionais (31/10)": vídeos refeitos, coreografia e sem áudio.
+- `marketing/filmes/README.md`, na seção "Coreografia própria": como fazer um vídeo coreografado.
+- `context.md`, no `/portfolio/`: estrutura atual da página.
+- `marketing/dados/estudo-ai-resources.md`: estudo do repositório de notícias de IA.
+
+### O que falta
+1. A lista "Portfólio e vídeos (de 31/10 a 02/11)", em Pendências, logo acima.
+2. As pendências de Site e de Marketing que já existiam. As mais urgentes:
+   - espaço do GitHub Pages (~894 MB de 1 GB);
+   - confirmar o @guiacademico e os números do site;
+   - decidir se publica as 25 campanhas do Cerra.AI que estão paradas.
+
+### Regras que valem sempre (aprendidas com o Renato)
+- **Outra IA usa este repositório ao mesmo tempo.** Nunca `git add -A` nem `git add .`: adicione arquivo por arquivo,
+  só os seus. Se a outra IA tiver mudanças sem commit no mesmo arquivo, faça o commit num worktree limpo. O passo a
+  passo está na memória "commit só dos meus arquivos" e no `marketing/HISTORICO.md`.
+- Commit na `main` + `git push` publica no ar em 1 a 2 minutos (GitHub Pages). Depois confira a página no ar.
+- Só são publicados: as páginas do site, `marketing/index.html`, `marketing/entregas/` e `marketing/kits/`. Um .md
+  novo na raiz **vai para o ar** se não estiver no `exclude` do `_config.yml`.
+- Vídeos **sem áudio**. Movimento pensado por elemento e por marca, nunca só "passar slides".
+- Não inventar números, preços, clientes ou depoimentos. Exemplo ilustrativo vai marcado como "Exemplo".
+- Responder ao Renato em português, direto. Ele aprova vendo o resultado no ar ou nas capturas.
+- Antes de entregar, testar no navegador (Playwright) em desktop e celular e conferir o console.
+
+### Prompt para colar na outra IA
+
+```
+Você vai continuar o trabalho no repositório D:\Dev\cerradofinancas (site cerradofinancas.com.br, Jekyll no GitHub
+Pages, e o estúdio de marketing em marketing/). Antes de qualquer coisa, leia nesta ordem:
+1. PROXIMOS_PASSOS.md, inteiro, principalmente "Passagem para outra IA (02/11/26)" e as Pendências;
+2. context.md (como o site é feito);
+3. marketing/README.md e marketing/HISTORICO.md (estúdio de conteúdo, agenda e regras);
+4. marketing/filmes/README.md, se o trabalho envolver vídeo.
+
+Regras:
+- Outra IA mexe neste repositório ao mesmo tempo. Nunca rode git add -A nem git add .; adicione só os
+  arquivos que você criou ou alterou. Se um arquivo seu também tiver mudanças da outra IA sem commit, faça o commit
+  num worktree limpo e aplique a mesma mudança na cópia principal.
+- Commit na main + push publica o site em 1 a 2 minutos; confira a página no ar depois.
+- Vídeos sem áudio. Animação pensada elemento por elemento, na identidade de cada marca.
+- Não invente números, preços, clientes nem depoimentos. Exemplo ilustrativo vai marcado como "Exemplo".
+- Teste no navegador (desktop e celular) antes de entregar.
+- Ao terminar cada pedido, atualize PROXIMOS_PASSOS.md (feito e pendente) e, se for marketing,
+  marketing/HISTORICO.md.
+
+Onde parei: a última coisa entregue foi o /portfolio/ (só Sob Demanda, ícones Phosphor duotone, modelo
+comercial em destaque; o hero 3D foi reprovado e revertido, não refaça). O estudo do repositório
+github.com/drix10/ai-resources está em marketing/dados/estudo-ai-resources.md, com a recomendação de uma
+série "IA da semana" para o Cerra.AI, que ainda precisa da aprovação do Renato. Para continuar, pergunte ao
+Renato o que ele quer agora ou siga as pendências de "Portfólio e vídeos (de 31/10 a 02/11)".
+```
