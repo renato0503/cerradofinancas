@@ -178,12 +178,16 @@ ${sec}
     var E = MOV.entrada;
     if (i > 0) {
       if (MODO === "virada") {
-        // virada de página: a folha anterior gira sobre a próxima
+        // Virada de página: a folha nova entra girando em torno da margem esquerda (a espinha),
+        // e a anterior fica atrás, só escurecendo. A folha nova nunca passa dos 90°, então o
+        // verso do papel não aparece — a virada antiga rodava até -102° e mostrava o texto ao avesso.
         var qNovo = document.getElementById("q" + (i + 1)), qAnt = document.getElementById("q" + i);
-        tl.set(qNovo, { zIndex: i + 1 }, t0 - TR);
-        tl.set(qAnt, { zIndex: i + 2 }, t0 - TR);
-        tl.fromTo(qAnt, { rotateY: 0 }, { rotateY: -102, duration: TR, ease: "power2.in", transformOrigin: "right center" }, t0 - TR);
-        tl.fromTo(qNovo, { rotateY: 14 }, { rotateY: 0, duration: TR * 0.85, ease: "power2.out", transformOrigin: "left center" }, t0 - TR * 0.9);
+        tl.set(qNovo, { zIndex: i + 2 }, t0 - TR);
+        tl.set(qAnt, { zIndex: i + 1 }, t0 - TR);
+        tl.fromTo(qNovo, { rotateY: 72, filter: "brightness(0.88)" },
+          { rotateY: 0, filter: "brightness(1)", duration: TR, ease: "power2.out", transformOrigin: "left center" }, t0 - TR);
+        tl.fromTo(qAnt, { filter: "brightness(1)" },
+          { filter: "brightness(0.74)", duration: TR, ease: "power2.in" }, t0 - TR);
       } else if (MODO === "corte") {
         // corte em movimento: nada desliza, o slide novo entra por cima e o anterior termina na hora
         tl.set(s, { x: 0 }, t0 - 0.3);

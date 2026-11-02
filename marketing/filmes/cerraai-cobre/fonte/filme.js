@@ -34,7 +34,10 @@
   // ---- A lâmina: a folha com espessura (as cópias em translateZ viram a borda de cobre) ----
   const lamina = document.querySelector("#lamina");
   const base = lamina.querySelector("img");
-  const COPIAS = 16;
+  // A espessura da lâmina: poucas cópias, muito perto uma da outra. Antes eram 16 cópias a 3 px,
+  // e ao dobrar a folha o leque de cópias aparecia na tela (a "folha" virava dez folhas).
+  const COPIAS = 9;
+  const PASSO = 1.1;
   const camadas = [base];
   for (let i = 1; i < COPIAS; i++) {
     const c = base.cloneNode(true);
@@ -45,11 +48,11 @@
     camadas.push(c);
   }
   camadas.forEach((img, i) => {
-    const z = -i * 3;
+    const z = -i * PASSO;
     const miolo = i > 0 && i < COPIAS - 1;
     gsap.set(img, {
       xPercent: -50, yPercent: -50, z,
-      filter: miolo ? `brightness(${0.30 + (i / COPIAS) * 0.4}) sepia(.55)` : "none",
+      filter: miolo ? `brightness(${0.16 + (i / COPIAS) * 0.3}) sepia(.7)` : "none",
     });
   });
 
@@ -60,9 +63,11 @@
   tl.fromTo("#luz", { opacity: 0 }, { opacity: 0.35, duration: 0.8, ease: "power2.out" }, 1.9);
 
   // ---- 2,2-4,4: a lâmina se levanta (chega de maior e desacelera) ----
+  // A lâmina não dobra: ela chega já quase de frente, com uma inclinação discreta. A profundidade
+  // vem da espessura, da luz que atravessa e da perspectiva da câmera.
   tl.fromTo("#objeto",
-    { rotationX: 76, rotationY: -64, y: 74, scale: 1.3 },
-    { rotationX: 54, rotationY: -26, y: 0, scale: 1, duration: 2.2, ease: "power4.out" }, 2.2);
+    { rotationX: 24, rotationY: -19, y: 46, scale: 1.22 },
+    { rotationX: 15, rotationY: -9, y: 0, scale: 1, duration: 2.2, ease: "power4.out" }, 2.2);
   tl.fromTo("#lamina", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, 2.2);
 
   // ---- 3,4-5,4: a luz atravessa a superfície ----
@@ -79,7 +84,7 @@
     { x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.out" }, 6.05);
 
   // ---- 7,6-12: a câmera recua (o fim é menor que o começo) e as trilhas baixam ----
-  tl.to("#objeto", { rotationY: -18, rotationX: 50, scale: 0.92, duration: 3.4, ease: "power2.inOut" }, 7.6);
+  tl.to("#objeto", { rotationY: -6, rotationX: 12, scale: 0.9, duration: 3.4, ease: "power2.inOut" }, 7.6);
   tl.to(elTrilhas, { opacity: 0.32, duration: 2.2, ease: "power2.inOut" }, 7.8);
   tl.to("#luz", { opacity: 0.16, duration: 2.2, ease: "power2.inOut" }, 7.8);
   tl.to("#palco", { x: V ? 0 : -12, y: V ? -14 : 0, duration: 4.0, ease: "none" }, 7.6);
