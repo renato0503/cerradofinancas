@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transformação Digital e IA na Gestão · ENBRA</title>
+<link rel="icon" href="img/folinha.png">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="mao" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol></svg>
+
+<div id="palco">
+<div id="quadro">
+<canvas id="gl"></canvas>
+
+<!-- BLOCO 0 · ABERTURA -->
+<section class="slide capa" data-cena="capa" data-t="corte" data-bloco="0" data-alvo="1" data-sem-cromo>
+  <div class="meia">
+    <p class="kicker" data-fx="sobe">ENBRA</p>
+    <h1 data-fx="palavras">Transformação Digital e Inteligência Artificial <em>na Gestão</em></h1>
+    <p class="sub" data-fx="sobe" data-d=".7">Do hype ao método, do método ao resultado.</p>
+    <div class="autor" data-fx="sobe" data-d=".8">
+      <img src="img/renato.jpg" alt="Foto de Renato Rosa">
+      <div><b>Prof. Renato Rosa</b><span>Doutorando em Contabilidade · Fucape</span></div>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>Esta tela fica no ar enquanto a plateia entra.</p>
+    <p>Credencial em uma frase: pesquisa em contabilidade na Fucape e uma fábrica de software em Cuiabá.</p>
+    <p>Avise que a palestra tem 45 minutos e 10 de perguntas, e que trata de método, e não de ferramenta.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="numero" data-t="corte" data-bloco="0" data-alvo="2.5" data-sem-cromo>
+  <div class="pilha centro" style="width:1560px">
+    <div data-sai="1" style="text-align:center;margin-top:430px">
+      <p class="kicker" style="margin-bottom:14px" data-fx="sobe" data-d=".9">Meta do próximo trimestre</p>
+      <p class="fonte-v" data-fx="sobe" data-d="1.3" style="font:500 34px/1 'JetBrains Mono',monospace;color:var(--cinza)">Fonte: <span class="cursor" style="display:inline-block;width:20px;height:36px;background:var(--ouro);vertical-align:-5px"></span></p>
+    </div>
+    <p class="voz xl" data-b="1" data-sai="2" data-fx="palavras" style="align-self:center">Na última meta que você recebeu, alguém explicou de onde veio o número?</p>
+    <div data-b="2" data-sai="3" data-fx="sobe" style="align-self:center">
+      <p class="voz l">Quem aqui já recebeu uma meta que todo mundo sabia que era ficção?</p>
+      <p class="mao" style="margin-top:48px"><svg><use href="#mao"/></svg>Mão levantada</p>
+    </div>
+    <p class="sent" data-b="3" data-fx="palavras" style="align-self:center;font-size:84px;line-height:1.06">Se ninguém explica de onde veio o número, <em>o processo nunca foi medido.</em></p>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Silêncio: deixe o número na tela por cinco segundos, sem falar nada.</p>
+    <p data-b="1">Leia a pergunta devagar e conte três segundos de silêncio.</p>
+    <p data-b="2">Peça as mãos e ouça três ou quatro pessoas, sem comentar.</p>
+    <p data-b="3">Feche com a frase da tela e guarde as mãos para o slide 17.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="tese" data-t="voo" data-bloco="0" data-alvo="3.5">
+  <p class="kicker" data-fx="sobe">A tese da conversa</p>
+  <h2 style="max-width:1180px;font-size:100px">
+    <span data-fx="palavras">Transformação digital não é <span class="risca">comprar tecnologia<i class="risco" data-b="1" data-fx="linha"></i></span>,</span>
+    <span data-b="1" data-fx="palavras" data-d=".5"><em>é trocar o critério da decisão.</em></span>
+  </h2>
+  <p class="sub" data-b="2" data-fx="sobe" style="max-width:1120px;font-size:42px;margin-top:44px">IA na gestão não substitui quem decide: muda o que se entrega, com evidência, explicação e rastro.</p>
+  <aside class="notas">
+    <p data-b="0">Leia a primeira metade e pare em comprar tecnologia.</p>
+    <p data-b="1">O clique risca a expressão e entra o critério da decisão.</p>
+    <p data-b="2">Diga que o resto da palestra sustenta esse par com número.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="caminho" data-t="voo" data-bloco="0" data-alvo="4">
+  <p class="kicker" data-fx="sobe">O caminho de hoje</p>
+  <h2 data-fx="palavras">Cinco perguntas, quarenta e cinco minutos.</h2>
+  <div class="linhas" style="margin-top:30px">
+    <div class="linha" data-fx="sobe"><span class="i">01</span><p class="voz s">Você digitalizou ou transformou?</p></div>
+    <div class="linha" data-fx="sobe"><span class="i">02</span><p class="voz s">O ganho foi medido ou foi sentido?</p></div>
+    <div class="linha" data-fx="sobe"><span class="i">03</span><p class="voz s">Quem responde quando a IA erra?</p></div>
+    <div class="linha" data-fx="sobe"><span class="i">04</span><p class="voz s">A sua métrica resiste a uma auditoria?</p></div>
+    <div class="linha" data-fx="sobe"><span class="i">05</span><p class="voz s">O que muda na segunda-feira?</p></div>
+  </div>
+  <p class="mao" data-fx="sobe" data-d=".5" style="margin-top:28px;letter-spacing:.14em">Medir · Explicar · Governar</p>
+  <aside class="notas">
+    <p>Trinta segundos neste slide: leia só as perguntas 1 e 5.</p>
+    <p>O fio é medir, explicar e governar, nessa ordem.</p>
+  </aside>
+</section>
+
+<!-- BLOCO 1 · TRANSFORMAÇÃO DIGITAL -->
+<section class="slide capitulo" data-cena="cap1" data-t="cortina" data-bloco="1" data-alvo="4.5">
+  <p class="kicker" data-fx="sobe">Parte 1 de 5 · Transformação digital</p>
+  <h2 class="voz" data-fx="palavras" style="font-size:104px;max-width:1160px;font-weight:400;letter-spacing:-.012em;line-height:1.04">Você digitalizou ou transformou?</h2>
+  <p class="sub" data-b="1" data-fx="sobe" style="max-width:1120px;font-size:40px;color:var(--branco)">Muita empresa trocou o sistema e manteve o critério da decisão.</p>
+  <p class="kicker" data-b="2" data-fx="sobe" style="margin:44px 0 0">O que vem agora</p>
+  <div class="linhas" style="max-width:1120px;margin-top:16px">
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">1</span><div><b style="font-size:38px">A diferença entre digitalizar e transformar</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">2</span><div><b style="font-size:38px">Cinco níveis de maturidade</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">3</span><div><b style="font-size:38px">Quatro erros e quatro movimentos</b></div></div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Leia a pergunta e faça uma pausa.</p>
+    <p data-b="1">Contexto: a palavra transformação cobre desde um PDF até uma mudança no modelo de operação.</p>
+    <p data-b="2">Anuncie o percurso em uma frase, sem ler os itens um a um.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="camadas3" data-t="voo" data-bloco="1" data-alvo="5.5">
+  <p class="kicker" data-fx="sobe">Transformação digital</p>
+  <h2 data-fx="palavras" style="max-width:1000px">Digitalizar não é transformar.</h2>
+  <div class="linhas meia">
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i">1</span><div><b>Suporte</b><span class="d">O papel virou PDF, e o processo continua igual.</span></div></div>
+    <div class="linha" data-b="2" data-fx="sobe"><span class="i">2</span><div><b>Medição</b><span class="d">O indicador tem série histórica e pode ser comparado.</span></div></div>
+    <div class="linha" data-b="3" data-fx="sobe"><span class="i">3</span><div><b>Decisão</b><span class="d">A meta deriva de evidência, e não de negociação.</span></div></div>
+  </div>
+  <p class="voz m meia" data-b="4" data-fx="blur" style="margin-top:26px">Em qual camada a sua empresa está, e em qual ela diz que está?</p>
+  <aside class="notas">
+    <p data-b="0">Pergunte quem tem processo em PDF e chama isso de transformação.</p>
+    <p data-b="1">A folha na tela é a camada 1: o suporte mudou, e o executor e o tempo não mudaram.</p>
+    <p data-b="2">A folha vira série: você consegue plotar doze meses do indicador?</p>
+    <p data-b="3">A série vira alvo: a meta sai do histórico e vai assinada ao comitê.</p>
+    <p data-b="4">Leia a pergunta e espere: a resposta fica com a plateia.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="quatro" data-t="voo" data-bloco="1" data-alvo="7">
+  <p class="kicker" data-fx="sobe">Transformação digital</p>
+  <h2 data-fx="palavras" style="max-width:1020px">Não é projeto de TI: são quatro camadas que mudam juntas.</h2>
+  <div class="linhas meia">
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i">1</span><div><b>Dado</b><span class="d">O indicador existe, e ninguém sabe de onde veio.</span></div></div>
+    <div class="linha" data-b="2" data-fx="sobe"><span class="i">2</span><div><b>Processo</b><span class="d">A fila continua no mesmo lugar, agora em tela.</span></div></div>
+    <div class="linha" data-b="3" data-fx="sobe"><span class="i">3</span><div><b>Pessoa</b><span class="d">Cada um faz a mesma tarefa do seu jeito.</span></div></div>
+    <div class="linha" data-b="4" data-fx="sobe"><span class="i">4</span><div><b>Governança</b><span class="d">O comitê discute, e ninguém assina.</span></div></div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Diga que a ordem importa: cada camada apoia a seguinte.</p>
+    <p data-b="1">Sem dado, o processo não é mapeável.</p>
+    <p data-b="2">Sem processo mapeado, a automação é chute.</p>
+    <p data-b="3">O ganho vem de escrever o padrão que só existia na cabeça de alguém.</p>
+    <p data-b="4">Pergunte em qual das quatro a empresa está mais fraca, e deixe a resposta na plateia.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="escada" data-t="voo" data-bloco="1" data-alvo="9">
+  <p class="kicker" data-fx="sobe">Maturidade</p>
+  <h2 data-fx="palavras" style="max-width:1080px;font-size:64px">Cinco níveis, e a maioria para no primeiro.</h2>
+  <div class="linhas" style="width:1040px;margin-top:22px">
+    <div class="linha" style="padding:11px 0" data-b="1" data-fx="sobe"><span class="i">1</span><div><b style="font-size:34px">Digitalizado</b><span class="d" style="font-size:27px">Você plota doze meses do indicador.</span></div></div>
+    <div class="linha" style="padding:11px 0" data-b="2" data-fx="sobe"><span class="i">2</span><div><b style="font-size:34px">Instrumentado</b><span class="d" style="font-size:27px">O número tem dono, data e método.</span></div></div>
+    <div class="linha" style="padding:11px 0" data-b="3" data-fx="sobe"><span class="i">3</span><div><b style="font-size:34px">Automatizado</b><span class="d" style="font-size:27px">O prazo cai exatamente onde havia fila.</span></div></div>
+    <div class="linha" style="padding:11px 0" data-b="4" data-fx="sobe"><span class="i">4</span><div><b style="font-size:34px">Assistido por IA</b><span class="d" style="font-size:27px">Você diz por que aquilo foi recomendado.</span></div></div>
+    <div class="linha" style="padding:11px 0" data-b="5" data-fx="sobe"><span class="i">5</span><div><b style="font-size:34px">Otimizado</b><span class="d" style="font-size:27px">O cenário é testado antes do comitê.</span></div></div>
+  </div>
+  <div data-b="6" data-fx="sobe" style="width:1040px;margin-top:14px">
+    <p style="font-size:32px;font-weight:700">Erro do nível 2: medir pela média. Abertura de conta:</p>
+    <div class="pilha-barra">
+      <div style="width:42%;background:var(--ouro)">42% espera</div>
+      <div style="width:28%;background:#c9d3e6">28% processo</div>
+      <div style="width:30%;background:#8d9ab6">30% movimento</div>
+    </div>
+  </div>
+  <p class="fonte" data-b="6" data-fx="sobe">Moschuris e Tsarouchas (2019).</p>
+  <aside class="notas">
+    <p data-b="0">Pergunte: em qual degrau vocês estão, e como sabem?</p>
+    <p data-b="1">Se a resposta for a gente sente, a lacuna está no nível 1.</p>
+    <p data-b="2">Dono, data e método: dá para reconstruir de onde o número saiu.</p>
+    <p data-b="3">Verificação e validação concentram 45% do prazo em 20% das etapas, segundo Cheng e van der Aalst (2022).</p>
+    <p data-b="4">Aqui o modelo explica e a pessoa decide.</p>
+    <p data-b="5">O nível 5 exige governança antes da decisão.</p>
+    <p data-b="6">Automatizar o processamento não move os 42% de espera do cliente.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="erros" data-t="voo" data-bloco="1" data-alvo="10.5">
+  <p class="kicker" data-fx="sobe">Conte os seus pontos</p>
+  <h2 data-fx="palavras" style="font-size:72px">Some um ponto para cada erro que a sua empresa cometeu neste ano.</h2>
+  <div class="g2" style="margin-top:34px">
+    <div class="bloco" data-b="1" data-fx="sobe"><b>Automatizar sem mapear</b><span>Se 42% do prazo é espera, automatizar o processamento não move a fila.</span></div>
+    <div class="bloco" data-b="2" data-fx="sobe"><b>Criar a métrica para provar que funciona</b><span>Ancore o alvo em desfecho observável.</span></div>
+    <div class="bloco" data-b="3" data-fx="sobe"><b>Confundir o indicador com a causa</b><span>IA explicável: 45% dos estudos em crédito, 5% em operações de serviço.</span></div>
+    <div class="bloco" data-b="4" data-fx="sobe"><b>Decidir sem dono</b><span>O comitê discute toda semana, e nada é assinado nem datado.</span></div>
+  </div>
+  <p class="fonte">Moschuris e Tsarouchas (2019); revisão de 348 artigos, 2019 a 2026, Scopus, Web of Science e OpenAlex.</p>
+  <aside class="notas">
+    <p data-b="0">Peça que cada pessoa conte nos dedos, em silêncio.</p>
+    <p data-b="1">A fila continua no mesmo lugar, agora em formato digital.</p>
+    <p data-b="2">Antecipe o slide 29: a minha métrica caiu de 98,27% para 92,62%.</p>
+    <p data-b="3">Quando o indicador piora e ninguém sabe o que moveu, ninguém olhou a causa.</p>
+    <p data-b="4">Pergunte quem fez quatro pontos, e sorria.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="movimentos" data-t="voo" data-bloco="1" data-alvo="12">
+  <p class="kicker" data-fx="sobe">Quatro movimentos simultâneos</p>
+  <div class="meia" style="max-width:1120px;margin-top:6px">
+    <div class="troca" data-fx="sobe"><span class="de">Retroativo</span><span class="seta">→</span><span class="para">Preditivo</span></div>
+    <div class="troca" data-b="1" data-fx="sobe"><span class="de">Agregado</span><span class="seta">→</span><span class="para">Granular</span></div>
+    <div class="troca" data-b="2" data-fx="sobe"><span class="de">Caixa-preta</span><span class="seta">→</span><span class="para">Explicável</span></div>
+    <div class="troca" data-b="3" data-fx="sobe"><span class="de">Cobrança</span><span class="seta">→</span><span class="para">Governança</span></div>
+  </div>
+  <p class="voz m meia" data-b="4" data-fx="blur" style="margin-top:44px">A pergunta deixou de ser usar IA: quem responde quando ela erra?</p>
+  <p class="fonte">Revisão de 348 artigos, 2019 a 2026, Scopus, Web of Science e OpenAlex.</p>
+  <aside class="notas">
+    <p data-b="0">A gestão olhava para trás, e agora olha para a frente.</p>
+    <p data-b="1">A média escondia o problema: a operação real é por etapa.</p>
+    <p data-b="2">Modelo que não explica não passa por gestor nem por regulador.</p>
+    <p data-b="3">A caixa abre na tela: ali fica o rastro.</p>
+    <p data-b="4">Este é o movimento em que a plateia se reconhece.</p>
+  </aside>
+</section>
+
+<!-- BLOCO 2 · MERCADO -->
+<section class="slide capitulo" data-cena="cap2" data-t="cortina" data-bloco="2" data-alvo="12.5">
+  <p class="kicker" data-fx="sobe">Parte 2 de 5 · O mercado</p>
+  <h2 class="voz" data-fx="palavras" style="font-size:104px;max-width:1160px;font-weight:400;letter-spacing:-.012em;line-height:1.04">O ganho foi medido ou foi sentido?</h2>
+  <p class="sub" data-b="1" data-fx="sobe" style="max-width:1120px;font-size:40px;color:var(--branco)">O mercado anuncia ganho de IA, e a pesquisa mede outra coisa.</p>
+  <p class="kicker" data-b="2" data-fx="sobe" style="margin:44px 0 0">O que vem agora</p>
+  <div class="linhas" style="max-width:1120px;margin-top:16px">
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">1</span><div><b style="font-size:38px">O que 348 estudos tratam de fato</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">2</span><div><b style="font-size:38px">A fronteira em que a mesma ferramenta ajuda ou atrapalha</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">3</span><div><b style="font-size:38px">A distância entre o sentido e o medido</b></div></div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Leia a pergunta e faça uma pausa.</p>
+    <p data-b="1">Contexto: a parte anterior tratou da sua empresa, e esta olha para os números de terceiros.</p>
+    <p data-b="2">Avise que a plateia vai apostar antes de ver os números.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="estudos348" data-t="voo" data-bloco="2" data-alvo="14">
+  <p class="kicker" data-fx="sobe">O que a pesquisa mediu</p>
+  <div class="pilha meia" style="max-width:1060px;margin-top:6px">
+    <div data-sai="2">
+      <p class="voz l" data-fx="palavras">Dos 348 estudos sobre IA em gestão, quantos tratam de IA que automatiza?</p>
+      <div class="chips" data-fx="sobe" data-d=".9"><span class="chip">Mais de 100</span><span class="chip">30 a 100</span><span class="chip">Menos de 30</span></div>
+      <p class="mao" data-fx="sobe" data-d="1" style="margin-top:34px"><svg><use href="#mao"/></svg>Mão levantada</p>
+      <p class="num" data-b="1" data-fx="soco" style="font-size:150px;line-height:1;color:var(--ouro);margin-top:26px">8</p>
+    </div>
+    <div data-b="2" data-fx="sobe">
+      <h2 style="font-size:66px">Na gestão, a IA analisa e explica.</h2>
+      <div class="bars" style="margin-top:32px">
+        <div class="bar"><span class="t">Analisa</span><div class="barra"><i style="--v:100%" data-b="2" data-fx="barra"></i></div><span class="n">133</span></div>
+        <div class="bar"><span class="t">Sem IA</span><div class="barra"><i style="--v:66.9%" data-b="2" data-fx="barra"></i></div><span class="n">89</span></div>
+        <div class="bar"><span class="t">Suporta decisão</span><div class="barra"><i style="--v:42.1%" data-b="2" data-fx="barra"></i></div><span class="n">56</span></div>
+        <div class="bar"><span class="t">Outros focos</span><div class="barra"><i style="--v:19.5%" data-b="2" data-fx="barra"></i></div><span class="n">26</span></div>
+        <div class="bar"><span class="t">Gera conteúdo</span><div class="barra"><i style="--v:15.8%" data-b="2" data-fx="barra"></i></div><span class="n">21</span></div>
+        <div class="bar foco"><span class="t">Explicável</span><div class="barra"><i style="--v:11.3%" data-b="2" data-fx="barra"></i></div><span class="n">15</span></div>
+        <div class="bar foco"><span class="t">Automatiza</span><div class="barra"><i style="--v:6%" data-b="2" data-fx="barra"></i></div><span class="n">8</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="fonte">Revisão de 348 artigos, 2019 a 2026, Scopus, Web of Science e OpenAlex.</p>
+  <aside class="notas">
+    <p data-b="0">Faça a plateia votar nas três faixas com a mão.</p>
+    <p data-b="1">Oito pontos acendem na parede de 348.</p>
+    <p data-b="2">Ressalva, se perguntarem: a classificação foi automática por regra, sem anotação humana, e por isso a frase é a distribuição indica.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="fronteira" data-t="voo" data-bloco="2" data-alvo="16">
+  <p class="kicker" data-fx="sobe">A fronteira irregular</p>
+  <h2 data-fx="palavras" style="max-width:900px;font-size:66px">A mesma ferramenta, dois resultados.</h2>
+  <div class="meia" style="max-width:900px;margin-top:22px">
+    <div class="stat" data-b="1" data-fx="pop"><span class="num" style="font-size:86px">+40%</span><span class="tx">de qualidade na tarefa dentro da fronteira</span></div>
+    <div class="stat" data-b="2" data-fx="soco" style="margin-top:12px"><span class="num" style="color:var(--verm);font-size:86px">−19 p.p.</span><span class="tx">de acerto na tarefa fora dela</span></div>
+  </div>
+  <p class="voz m meia" data-b="3" data-fx="blur" style="max-width:900px;margin-top:18px;font-size:60px">O ganho é da tarefa, e não da ferramenta.</p>
+  <p class="sub" data-b="4" data-fx="sobe" style="max-width:900px;font-size:29px;margin-top:10px">Na economia inteira: 0,53% a 0,71% de produtividade total em 10 anos.</p>
+  <p class="fonte">Dell'Acqua et al. (2023), 758 consultores; Acemoglu (2024).</p>
+  <aside class="notas">
+    <p data-b="0">O platô na tela é a fronteira: recortada, e não em linha reta.</p>
+    <p data-b="1">Pontos dourados: tarefas dentro do platô, em que a IA melhora a entrega.</p>
+    <p data-b="2">Pontos vermelhos: tarefas fora dele, em que a confiança na IA derruba o acerto.</p>
+    <p data-b="3">Pergunte quais tarefas da operação estão fora da fronteira, e quem sabe dizer.</p>
+    <p data-b="4">O campo mede tarefa e o macro mede a economia inteira: a diferença é difusão.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="percepcao" data-t="corte" data-bloco="2" data-alvo="18.5">
+  <div class="pilha" style="width:1720px">
+    <div data-sai="1" style="align-self:center;text-align:center">
+      <p class="voz l" data-fx="palavras">Desenvolvedores experientes usaram IA em tarefas reais: ficaram mais rápidos ou mais lentos?</p>
+      <div class="chips" data-fx="sobe" data-d="1" style="justify-content:center"><span class="chip">Mais rápidos</span><span class="chip">Mais lentos</span></div>
+      <p class="mao" data-fx="sobe" data-d="1.1" style="margin-top:32px"><svg><use href="#mao"/></svg>Mão levantada</p>
+    </div>
+    <div data-sai="4" style="align-self:center">
+      <p class="kicker" data-b="1" data-fx="sobe">A percepção erra nos dois sentidos</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:26px">
+        <div class="stat" data-b="1" data-fx="pop"><span class="tx" style="font-size:44px;color:var(--branco);font-weight:700">O que sentiram</span><span class="num" style="font-size:210px">20%</span><span class="tx" style="font-size:44px">mais rápidos</span></div>
+        <div class="stat" data-b="2" data-fx="soco"><span class="tx" style="font-size:44px;color:var(--branco);font-weight:700">O que foi medido</span><span class="num" style="font-size:210px;color:var(--verm)">19%</span><span class="tx" style="font-size:44px">mais lentos</span></div>
+      </div>
+      <div class="g3" data-b="3" data-fx="sobe" style="margin-top:44px">
+        <div class="bloco ap"><b>Efeito nulo</b><span>em renda e horas, 25.000 trabalhadores na Dinamarca</span></div>
+        <div class="bloco ap"><b>3% a 5%</b><span>de horas poupadas relatadas, sem efeito detectável</span></div>
+        <div class="bloco"><b style="color:var(--ouro)">−42%</b><span>de tempo por tarefa, medido em experimento em banco</span></div>
+      </div>
+    </div>
+    <p class="sent centro" data-b="4" data-fx="palavras" style="align-self:center;font-size:96px;line-height:1.06;text-align:center;max-width:1560px">Meça antes, aplique, <em>meça depois.</em></p>
+  </div>
+  <p class="fonte" data-b="3" data-sai="4" data-fx="sobe">Becker et al., METR (2025); Humlum e Vestergaard (2025); Merola (2024); Chatterjee et al. (2024), ANZ, p = 0,001.</p>
+  <aside class="notas">
+    <p data-b="0">Peça o voto e deixe a plateia se expor antes do número.</p>
+    <p data-b="1">Sentiram-se 20% mais rápidos ao final do estudo.</p>
+    <p data-b="2">Foram 19% mais lentos na medição, em 16 desenvolvedores e 246 tarefas, com ferramentas do início de 2025.</p>
+    <p data-b="3">O banco foi de 30,98 para 17,86 minutos, em experimento com cerca de 100 dos 5.000 engenheiros.</p>
+    <p data-b="4">Se perguntarem se vale a pena: vale, com régua.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="evidencia" data-t="voo" data-bloco="2" data-alvo="20">
+  <p class="kicker" data-fx="sobe">Quem mediu?</p>
+  <h2 data-fx="palavras" style="font-size:74px">Quanto mais nova a técnica, menos gente mediu.</h2>
+  <div class="tabela-ev">
+    <span class="cab" data-fx="sobe">Técnica</span><span class="cab" data-fx="sobe">Estudos</span><span class="cab" data-fx="sobe">Experimentos controlados</span>
+    <span class="nm" data-b="1" data-fx="sobe">Especificação</span>
+    <div class="celula" data-b="1" data-fx="sobe"><div class="barra"><i style="--v:1.4%" data-b="1" data-fx="barra"></i></div><span class="v">64</span></div>
+    <div class="celula" data-b="1" data-fx="sobe"><div class="barra ouro"><i style="--v:0%"></i></div><span class="v zero" data-b="1" data-fx="soco" data-d=".35">0</span></div>
+    <span class="nm" data-b="2" data-fx="sobe">Multiagente</span>
+    <div class="celula" data-b="2" data-fx="sobe"><div class="barra"><i style="--v:25.1%" data-b="2" data-fx="barra"></i></div><span class="v">1.140</span></div>
+    <div class="celula" data-b="2" data-fx="sobe"><div class="barra ouro"><i style="--v:.13%" data-b="2" data-fx="barra"></i></div><span class="v">6</span></div>
+    <span class="nm" data-b="3" data-fx="sobe">Agente autônomo</span>
+    <div class="celula" data-b="3" data-fx="sobe"><div class="barra"><i style="--v:100%" data-b="3" data-fx="barra"></i></div><span class="v">4.550</span></div>
+    <div class="celula" data-b="3" data-fx="sobe"><div class="barra ouro"><i style="--v:.42%" data-b="3" data-fx="barra"></i></div><span class="v">19</span></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:34px;gap:48px" data-b="4" data-fx="sobe">
+    <p class="sub" style="margin:0;font-size:32px;max-width:1040px">Enquadramento promissor: 69,3% dos estudos com autoria de fornecedor, 49,7% dos demais.</p>
+    <p class="voz m">Quem vendeu mediu?</p>
+  </div>
+  <p class="fonte">Análise bibliométrica de 32.270 artigos, 2021 a 2026, Semantic Scholar e arXiv.</p>
+  <aside class="notas">
+    <p data-b="0">As barras usam a mesma escala: a diferença é o argumento.</p>
+    <p data-b="1">A técnica mais vendida tem 64 estudos e nenhum experimento.</p>
+    <p data-b="2">Multiagente: 1.140 estudos e 6 experimentos.</p>
+    <p data-b="3">Agente autônomo: 4.550 estudos e 19 experimentos.</p>
+    <p data-b="4">Ressalva, se perguntarem: as variáveis foram anotadas por modelo e parte delas tem concordância baixa com a anotação humana.</p>
+  </aside>
+</section>
+
+<!-- BLOCO 3 · IA NA GESTÃO -->
+<section class="slide capitulo" data-cena="cap3" data-t="cortina" data-bloco="3" data-alvo="20.5">
+  <p class="kicker" data-fx="sobe">Parte 3 de 5 · IA na gestão</p>
+  <h2 class="voz" data-fx="palavras" style="font-size:104px;max-width:1160px;font-weight:400;letter-spacing:-.012em;line-height:1.04">Quem responde quando a IA erra?</h2>
+  <p class="sub" data-b="1" data-fx="sobe" style="max-width:1120px;font-size:40px;color:var(--branco)">A IA já roda em produção, e a responsabilidade costuma ficar sem dono.</p>
+  <p class="kicker" data-b="2" data-fx="sobe" style="margin:44px 0 0">O que vem agora</p>
+  <div class="linhas" style="max-width:1120px;margin-top:16px">
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">1</span><div><b style="font-size:38px">O bloqueio que quase nunca é técnico</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">2</span><div><b style="font-size:38px">Os cinco degraus do papel da IA</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">3</span><div><b style="font-size:38px">O que não se terceiriza, e quem voltou atrás</b></div></div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Leia a pergunta e faça uma pausa.</p>
+    <p data-b="1">Contexto: depois dos números do mercado, a pergunta passa a ser quem assina.</p>
+    <p data-b="2">Avise que a próxima tela pede um nome em voz alta.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="dono" data-t="voo" data-bloco="3" data-alvo="22.5">
+  <p class="kicker" data-fx="sobe">O bloqueio</p>
+  <h2 data-fx="palavras" style="max-width:1100px">O bloqueio quase nunca é técnico: é de dono.</h2>
+  <div class="ficha" data-b="1" data-fx="pop">
+    <p class="tit">Principal indicador da sua área</p>
+    <div class="campo">Indicador <u></u></div>
+    <div class="campo">Dono <u></u></div>
+    <div class="campo">Método e data <u></u></div>
+  </div>
+  <p class="voz m" data-b="2" data-fx="blur" style="margin-top:44px;max-width:1160px">Diga agora, em voz alta, o nome de quem responde por esse número.</p>
+  <aside class="notas">
+    <p data-b="0">Em operações de serviço de alto volume, o limite costuma ser a responsabilidade formal pelo indicador.</p>
+    <p data-b="1">A ficha entra em branco, e esse é o argumento.</p>
+    <p data-b="2">Conte cinco segundos e retome as mãos do slide 2: a meta de ficção não tem dono.</p>
+    <p data-b="2">O que resolve: dono nomeado, versão mensal com ata, trilha de exceções e simulador na mesa do orçamento.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="producao" data-t="voo" data-bloco="3" data-alvo="24">
+  <p class="kicker" data-fx="sobe">Em produção</p>
+  <h2 data-fx="palavras" style="max-width:1000px;font-size:64px">A IA já roda onde o indicador já existia.</h2>
+  <div class="linhas meia" style="max-width:940px">
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i"></span><div><b>Operações de serviço</b><span class="d">−18% de prazo em 3 ciclos</span></div></div>
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i"></span><div><b>Engenharia de software</b><span class="d">−42,36% de tempo por tarefa</span></div></div>
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i"></span><div><b>Risco e crédito</b><span class="d">Alerta antecipado por modelo</span></div></div>
+  </div>
+  <p class="voz m meia" data-b="2" data-fx="blur" style="max-width:940px;margin-top:26px">14 de 343 estudos do setor financeiro mediram ganho.</p>
+  <p class="sub" data-b="3" data-fx="sobe" style="max-width:940px;font-size:30px;margin-top:10px">A IA passou a explicar o que alguém já media.</p>
+  <p class="fonte">Sultana et al. (2025); Chatterjee et al. (2024), ANZ; análise de 343 estudos do setor financeiro.</p>
+  <aside class="notas">
+    <p data-b="0">A parede de 343 pontos é o setor financeiro na literatura.</p>
+    <p data-b="1">Exemplos reais: process mining, gradient boosting e SHAP em instituição financeira.</p>
+    <p data-b="2">Acendem 14, ou 4,1%: 329 estudos não declaram ganho medido.</p>
+    <p data-b="3">Se perguntarem o que fazer primeiro: instrumente um indicador.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="curva" data-t="voo" data-bloco="3" data-alvo="25.5">
+  <p class="kicker" data-fx="sobe">O papel da IA</p>
+  <h2 data-fx="palavras" style="max-width:1120px;font-size:68px">Cinco degraus, e nenhum se pula.</h2>
+  <div class="linhas" style="width:1040px;margin-top:22px">
+    <div class="linha" style="padding:12px 0" data-b="1" data-fx="sobe"><span class="i">133</span><div><b style="font-size:36px">Analisa</b><span class="d" style="font-size:27px">Extrai, mede, compara.</span></div></div>
+    <div class="linha" style="padding:12px 0" data-b="2" data-fx="sobe"><span class="i">15</span><div><b style="font-size:36px">Explica</b><span class="d" style="font-size:27px">Diz por que o resultado aconteceu.</span></div></div>
+    <div class="linha" style="padding:12px 0" data-b="3" data-fx="sobe"><span class="i"></span><div><b style="font-size:36px">Simula</b><span class="d" style="font-size:27px">Testa a decisão antes do investimento.</span></div></div>
+    <div class="linha" style="padding:12px 0" data-b="4" data-fx="sobe"><span class="i">56</span><div><b style="font-size:36px">Apoia a decisão</b><span class="d" style="font-size:27px">Prioriza e recomenda; a pessoa responde.</span></div></div>
+    <div class="linha" style="padding:12px 0" data-b="5" data-fx="sobe"><span class="i">8</span><div><b style="font-size:36px">Automatiza</b><span class="d" style="font-size:27px">Executa, com limite, aprovação e registro.</span></div></div>
+  </div>
+  <p class="sub" data-b="6" data-fx="sobe" style="width:1040px;font-size:30px;margin-top:20px">Texto pede chat, previsão pede algoritmo, execução pede agente; tarefa sempre igual pede automação, e nem chame de IA.</p>
+  <p class="fonte">Estudos por degrau: revisão de 348 artigos, 2019 a 2026.</p>
+  <aside class="notas">
+    <p data-b="0">A esfera dourada sobe degrau a degrau.</p>
+    <p data-b="1">Ao analisar, a IA já está em produção.</p>
+    <p data-b="2">Explicar é onde há menos estudos, e é o degrau da confiança.</p>
+    <p data-b="3">Simular é testar o efeito antes de investir.</p>
+    <p data-b="4">Aqui o viés entra e a responsabilidade precisa ter nome.</p>
+    <p data-b="5">Oito em 348: automatizar sem explicar leva ao incidente.</p>
+    <p data-b="6">A automação por regra resolve boa parte dos casos, e ninguém posta sobre ela.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="areas" data-t="voo" data-bloco="3" data-alvo="26">
+  <p class="kicker" data-fx="sobe">Na prática</p>
+  <h2 data-fx="palavras">Onde a IA resolve, e o que trava cada área.</h2>
+  <div class="g3">
+    <div class="bloco" data-fx="sobe"><b>Financeiro</b><span>Conciliação e DRE que explica a variação.</span><p class="trava">Trava: revisa as exceções</p></div>
+    <div class="bloco" data-fx="sobe"><b>Comercial</b><span>Proposta, precificação e follow-up.</span><p class="trava">Trava: preço é humano</p></div>
+    <div class="bloco" data-fx="sobe"><b>Operações</b><span>Procedimento escrito e previsão de atraso.</span><p class="trava">Trava: instrumentação</p></div>
+    <div class="bloco" data-fx="sobe"><b>Pessoas</b><span>Descrição de cargo e trilha de entrada.</span><p class="trava">Trava: dado e consentimento</p></div>
+    <div class="bloco" data-fx="sobe"><b>Atendimento</b><span>Triagem e preparação da resposta inicial.</span><p class="trava">Trava: não decide</p></div>
+    <div class="bloco" data-fx="sobe"><b>Estratégia</b><span>Relatórios, cenários e atas com responsável.</span><p class="trava">Trava: rastreabilidade</p></div>
+  </div>
+  <p class="sub" data-b="1" data-fx="sobe" style="font-size:38px;color:var(--branco);margin-top:36px">O ganho é tempo para decidir.</p>
+  <aside class="notas">
+    <p data-b="0">Escolha uma área conforme a plateia, sem ler as seis.</p>
+    <p data-b="1">As travas são de organização, e nenhuma delas exige modelo maior.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="limite" data-t="voo" data-bloco="3" data-alvo="27">
+  <p class="kicker" data-fx="sobe">O limite</p>
+  <h2 data-fx="palavras">Cinco coisas que não se terceirizam.</h2>
+  <div class="g5">
+    <div class="bloco" data-fx="sobe" data-b="1"><b>Decisão</b><span>A IA sugere; responde quem tem nome e cargo.</span></div>
+    <div class="bloco" data-fx="sobe" data-b="1"><b>Assinatura</b><span>Contrato tem nome, e não tem prompt.</span></div>
+    <div class="bloco" data-fx="sobe" data-b="1"><b>Estratégia</b><span>Contexto, risco e aposta são julgamento.</span></div>
+    <div class="bloco" data-fx="sobe" data-b="1"><b>Parecer</b><span>Sem fonte conferida, é rascunho.</span></div>
+    <div class="bloco" data-fx="sobe" data-b="1"><b>Dado sigiloso</b><span>Não sai da empresa, não entra em ferramenta pública.</span></div>
+  </div>
+  <p class="sub" data-b="2" data-fx="sobe" style="margin-top:40px;font-size:36px;color:var(--branco)">Modelos têm dificuldade em distinguir pedido especificado de pedido ambíguo.</p>
+  <p class="voz l" data-b="3" data-fx="blur" style="margin-top:30px">Qual destas você já terceirizou neste mês?</p>
+  <p class="fonte" data-b="2" data-fx="sobe">Vijayvargiya et al. (2026), Ambig-SWE, ICLR.</p>
+  <aside class="notas">
+    <p data-b="0">Pergunte antes de mostrar: o que não deve sair das mãos de quem assina?</p>
+    <p data-b="1">Leia assinatura em voz alta: contrato tem nome, e não tem prompt.</p>
+    <p data-b="2">Contexto: o agente executa o pedido mal formulado, sem perceber o que o cliente precisava.</p>
+    <p data-b="2">Negociar prazo com fornecedor, atender cliente insatisfeito e explicar falha de projeto continuam com quem tem nome.</p>
+    <p data-b="3">Silêncio, sem pedir mãos: esta resposta é privada.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="bumerangue" data-t="voo" data-bloco="3" data-alvo="28.5">
+  <p class="kicker" data-fx="sobe">O efeito bumerangue</p>
+  <h2 data-fx="palavras" style="max-width:1040px;font-size:64px">Quem trocou gente por IA começou a contratar de volta.</h2>
+  <div class="linhas meia" style="max-width:1000px;margin-top:24px">
+    <div class="linha" style="padding:13px 0" data-b="1" data-fx="sobe"><span class="i">2024</span><div><b style="font-size:37px">A IA faz o trabalho de 700 atendentes</b><span class="d" style="font-size:28px">A Klarna anuncia o ganho.</span></div></div>
+    <div class="linha" style="padding:13px 0" data-b="2" data-fx="sobe"><span class="i">2025</span><div><b style="font-size:37px">O foco em custo baixou a qualidade</b><span class="d" style="font-size:28px">O CEO admite, e a empresa volta a contratar.</span></div></div>
+  </div>
+  <div class="linhaf" data-b="3" data-fx="sobe" style="gap:52px;margin-top:22px;max-width:1040px">
+    <div class="stat"><span class="num" style="font-size:80px">50%</span><span class="tx" style="font-size:27px">das empresas que cortaram atendimento por IA vão recontratar até 2027 (previsão)</span></div>
+    <div class="stat"><span class="num" style="font-size:80px">55%</span><span class="tx" style="font-size:27px">dos líderes que demitiram por IA admitem decisão errada</span></div>
+  </div>
+  <p class="voz m meia" data-b="4" data-fx="blur" style="margin-top:20px;font-size:60px">Quanto custa recontratar quem você demitiu?</p>
+  <p class="fonte">Klarna, CEO à Bloomberg (2025); Gartner (fev/2026), 321 líderes; Orgvue (2025), 1.000 executivos.</p>
+  <aside class="notas">
+    <p data-b="0">Pergunte quem já ouviu que a IA substituiria uma equipe inteira.</p>
+    <p data-b="1">A Klarna atribuiu à IA o trabalho de 700 atendentes e 75% das conversas.</p>
+    <p data-b="2">A empresa manteve a IA e criou um modelo híbrido: a pessoa continua disponível para o cliente.</p>
+    <p data-b="3">Diga que 50% é previsão e que, na pesquisa do Gartner, 20% dos líderes haviam cortado equipe por IA.</p>
+    <p data-b="4">Os 55% valem para os 39% de líderes que fizeram cortes, e não para todas as empresas.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="quemvende" data-t="voo" data-bloco="3" data-alvo="30">
+  <p class="kicker" data-fx="sobe">Quem vende IA</p>
+  <h2 data-fx="palavras" style="max-width:1040px;font-size:64px">Até quem vende IA manda gente para dentro do cliente.</h2>
+  <div class="pilha" style="max-width:1040px;margin-top:30px">
+    <div data-sai="4">
+      <div class="linhaf" data-b="1" data-fx="sobe" style="gap:56px;margin-top:0">
+        <div class="stat"><span class="num nw" style="font-size:80px">US$ 100 mi</span><span class="tx" style="font-size:27px">Anthropic, parceiros: treinamento e engenheiros em projetos reais</span></div>
+        <div class="stat"><span class="num nw" style="font-size:80px">US$ 1,5 bi</span><span class="tx" style="font-size:27px">empresa de serviços com Blackstone, H&amp;F e Goldman Sachs</span></div>
+      </div>
+      <div class="stat" data-b="2" data-fx="sobe" style="margin-top:24px"><span class="num" style="font-size:80px">+350%</span><span class="tx" style="font-size:27px">vagas de engenheiro alocado no cliente, em um ano</span></div>
+      <p class="voz m" data-b="3" data-fx="blur" style="margin-top:24px;font-size:60px">Se o software resolvesse sozinho, para que mandar engenheiro?</p>
+    </div>
+    <div data-b="4" data-fx="sobe">
+      <p class="kicker" style="margin-bottom:12px">O limite se move</p>
+      <p class="num nw" style="font-size:120px;line-height:1;color:var(--ouro)">2,5% → 21,25%</p>
+      <p class="sub" style="font-size:31px;margin-top:12px">dos projetos freelancer pagos entregues no padrão profissional, em cerca de um ano.</p>
+      <p class="sent" data-b="5" data-fx="sobe" style="font-size:40px;margin-top:26px">Juízes de IA deram aos agentes notas até <em>3 vezes</em> maiores que as humanas.</p>
+      <p class="voz m" data-b="6" data-fx="blur" style="margin-top:20px;font-size:60px">A fronteira muda, e quem confere continua sendo gente.</p>
+    </div>
+  </div>
+  <p class="fonte" data-sai="4">Anthropic (mar/2026); CNBC (mai/2026); Paraform, 1T2025 a 1T2026.</p>
+  <p class="fonte" data-b="4" data-fx="sobe">Remote Labor Index, Scale AI e CAIS, ranking em 08/11/2026; The Decoder (jul/2026).</p>
+  <aside class="notas">
+    <p data-b="0">Avise que a Anthropic vende IA, e que o investimento também é estratégia comercial.</p>
+    <p data-b="1">Os US$ 100 milhões são de 2026; os US$ 1,5 bilhão são compromisso de capital noticiado.</p>
+    <p data-b="2">As estimativas de vagas variam de 350% a 1.165%, e por isso a tela mostra a menor.</p>
+    <p data-b="3">O valor está no problema resolvido, e a ferramenta sozinha não entrega o problema resolvido.</p>
+    <p data-b="4">Contraponto: 240 projetos pagos, e o melhor agente ainda falha em quase 80% deles, com alta rápida.</p>
+    <p data-b="5">A nota inflada apareceu em modelos avaliados por juízes de IA, comparados com avaliadores humanos.</p>
+    <p data-b="6">Volte à fronteira do slide 13: ela se move, e a régua precisa acompanhar.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="revisao" data-t="voo" data-bloco="3" data-alvo="31">
+  <p class="kicker" data-fx="sobe">A revisão humana é o gargalo</p>
+  <div style="display:flex;align-items:baseline;gap:40px;margin-top:6px">
+    <span class="num" data-fx="conta" data-dur="1.6" style="font-size:250px;line-height:1;color:var(--ouro)">61,38%</span>
+  </div>
+  <p class="sent" data-fx="sobe" data-d=".8" style="margin-top:6px;max-width:1400px">dos 33.596 pull requests de agentes foram integrados sem revisão registrada.</p>
+  <div class="linhaf">
+    <div class="stat" data-b="1" data-fx="sobe"><span class="num" style="color:var(--verm)">28,3%</span><span class="tx">integrados em menos de 1 minuto</span></div>
+    <div class="stat" data-b="2" data-fx="sobe"><span class="num">52%</span><span class="tx">das sugestões aceitas ficam retidas depois</span></div>
+    <div class="stat" data-b="2" data-fx="sobe"><span class="num">60,4%</span><span class="tx">dos estudos de agentes não mencionam governança</span></div>
+  </div>
+  <p class="voz m" data-b="3" data-fx="blur" style="margin-top:36px">Quem leu o que a IA escreveu antes de você assinar?</p>
+  <p class="fonte">Duma (2026); Kamali (2025); análise bibliométrica de 32.270 artigos.</p>
+  <aside class="notas">
+    <p data-b="0">Diga o número e deixe a tela falar.</p>
+    <p data-b="1">Menos de um minuto: ninguém lê código nesse tempo.</p>
+    <p data-b="2">Sugestão aceita não é sugestão que permanece.</p>
+    <p data-b="3">A revisão é a superfície de controle, e ela não se terceiriza para a máquina.</p>
+  </aside>
+</section>
+
+<!-- BLOCO 4 · A TESE -->
+<section class="slide capitulo" data-cena="cap4" data-t="cortina" data-bloco="4" data-alvo="31.5">
+  <p class="kicker" data-fx="sobe">Parte 4 de 5 · A tese de doutorado</p>
+  <h2 class="voz" data-fx="palavras" style="font-size:104px;max-width:1160px;font-weight:400;letter-spacing:-.012em;line-height:1.04">A sua métrica resiste a uma auditoria?</h2>
+  <p class="sub" data-b="1" data-fx="sobe" style="max-width:1120px;font-size:40px;color:var(--branco)">Três anos de contratos públicos testam se a paralisia do gestor é medo ou estrutura.</p>
+  <p class="kicker" data-b="2" data-fx="sobe" style="margin:44px 0 0">O que vem agora</p>
+  <div class="linhas" style="max-width:1120px;margin-top:16px">
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">1</span><div><b style="font-size:38px">O que determina o fracasso em 73.201 contratos</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">2</span><div><b style="font-size:38px">Um modelo que explica cada resposta</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">3</span><div><b style="font-size:38px">A métrica que caiu e passou a valer</b></div></div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Leia a pergunta e faça uma pausa.</p>
+    <p data-b="1">Contexto: até aqui os dados eram de terceiros, e agora a pesquisa é minha.</p>
+    <p data-b="2">Diga que o último item é o erro que você quase publicou.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="contratos" data-t="voo" data-bloco="4" data-alvo="33">
+  <p class="kicker" data-fx="sobe">A tese de doutorado</p>
+  <p class="num" data-fx="conta" data-dur="1.8" style="font-size:190px;line-height:1;color:var(--ouro)">572.045</p>
+  <h2 data-fx="sobe" data-d=".7" style="font-size:60px;max-width:880px;margin-top:8px">contratos públicos: cada ponto na tela vale 19 deles.</h2>
+  <div class="linhaf" data-fx="sobe" data-d="1" style="gap:48px;margin-top:30px">
+    <div class="stat"><span class="num" style="font-size:60px">6.567</span><span class="tx">órgãos</span></div>
+    <div class="stat"><span class="num" style="font-size:60px">27</span><span class="tx">UFs</span></div>
+    <div class="stat"><span class="num" style="font-size:60px">R$ 491,9 bi</span><span class="tx">em contratos</span></div>
+  </div>
+  <p class="sub" data-b="1" data-fx="sobe" style="max-width:880px;font-size:34px">A tradição culpa o gestor, e a tese testa a estrutura.</p>
+  <p class="voz l" data-b="2" data-fx="blur" style="margin-top:22px;max-width:1040px;font-size:88px">A paralisia não é medo: é carência estrutural.</p>
+  <p class="fonte">PNCP, set/2021 a ago/2024; pontos de cor: taxa de evento adverso em compras complexas, 4,48%.</p>
+  <aside class="notas">
+    <p data-b="0">Tese: copiloto algorítmico para compras públicas complexas, na Fucape, orientação do Prof. Dr. Olavo Venturim Caldas.</p>
+    <p data-b="1">Os pontos vermelhos mostram eventos adversos em compras complexas, na taxa de 4,48%.</p>
+    <p data-b="2">O apagão das canetas reinterpretado como custo de transação, e não como falha do gestor.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="determinantes" data-t="voo" data-bloco="4" data-alvo="34.5">
+  <p class="kicker" data-fx="sobe">O que determina o fracasso</p>
+  <h2 data-fx="palavras" style="font-size:66px">Três determinantes, em 73.201 contratos.</h2>
+  <div class="fp">
+    <svg viewBox="0 0 1728 440" role="img" aria-label="Razões de chances de evento adverso: complexidade 1,708; vigência 1,482; valor 1,201; complexidade e maturidade 0,855">
+      <g font-family="Inter, sans-serif" fill="#f5f7ff">
+        <line x1="760" y1="16" x2="760" y2="398" stroke="#b4c0d8" stroke-width="2" stroke-dasharray="6 7"/>
+        <text x="760" y="436" fill="#b4c0d8" font-size="26" text-anchor="middle" font-family="JetBrains Mono, monospace">1,0 = sem efeito</text>
+        <g data-b="1" data-fx="sobe">
+          <text x="0" y="66" font-size="38" font-weight="700">Complexidade</text>
+          <line x1="1024" y1="56" x2="1183" y2="56" stroke="#fecb00" stroke-width="5"/><circle cx="1100" cy="56" r="14" fill="#fecb00"/>
+          <text x="1270" y="68" font-size="36" font-weight="800" fill="#fecb00" font-family="JetBrains Mono, monospace">1,708</text><text x="1420" y="66" font-size="30" fill="#b4c0d8">+70,8% de chance</text>
+        </g>
+        <g data-b="2" data-fx="sobe">
+          <text x="0" y="166" font-size="38" font-weight="700">Vigência</text>
+          <line x1="952" y1="156" x2="1034" y2="156" stroke="#fecb00" stroke-width="5"/><circle cx="991" cy="156" r="14" fill="#fecb00"/>
+          <text x="1270" y="168" font-size="36" font-weight="800" fill="#fecb00" font-family="JetBrains Mono, monospace">1,482</text><text x="1420" y="166" font-size="30" fill="#b4c0d8">+48,2% de chance</text>
+        </g>
+        <g data-b="3" data-fx="sobe">
+          <text x="0" y="266" font-size="38" font-weight="700">Valor</text>
+          <line x1="846" y1="256" x2="867" y2="256" stroke="#fecb00" stroke-width="5"/><circle cx="856" cy="256" r="14" fill="#fecb00"/>
+          <text x="1270" y="268" font-size="36" font-weight="800" fill="#fecb00" font-family="JetBrains Mono, monospace">1,201</text><text x="1420" y="266" font-size="30" fill="#b4c0d8">+20,1% de chance</text>
+        </g>
+        <g data-b="4" data-fx="sobe">
+          <text x="0" y="366" font-size="38" font-weight="700">Complexidade × maturidade</text>
+          <line x1="679" y1="356" x2="702" y2="356" stroke="#6f9bff" stroke-width="5"/><circle cx="690" cy="356" r="14" fill="#6f9bff"/>
+          <text x="1270" y="368" font-size="36" font-weight="800" fill="#f5f7ff" font-family="JetBrains Mono, monospace">0,855</text><text x="1420" y="366" font-size="30" fill="#b4c0d8">a capacidade reduz o risco</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <p class="sub" data-b="5" data-fx="sobe" style="font-size:36px;margin-top:18px;color:var(--branco)">Evento adverso: <b style="color:var(--ouro)">4,48%</b> nas compras complexas, <b>1,93%</b> nas comuns.</p>
+  <p class="fonte">Regressão logística, razão de chances com IC 95%, PNCP, 73.201 contratos.</p>
+  <aside class="notas">
+    <p data-b="0">O traço horizontal é o intervalo de confiança de 95%.</p>
+    <p data-b="1">Complexidade: intervalo de 1,550 a 1,882.</p>
+    <p data-b="2">Vigência aumenta o risco porque a exposição acumula, de 1,399 a 1,571.</p>
+    <p data-b="3">Valor: de 1,180 a 1,223, custo de monitoramento.</p>
+    <p data-b="4">O ponto à esquerda da linha reduz o risco: de 0,832 a 0,879.</p>
+    <p data-b="5">Diga o limite do modelo: pseudo R² de 0,062 e AUC de 0,697, e por isso ele explica parte do fenômeno.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="artefato" data-t="voo" data-bloco="4" data-alvo="36">
+  <p class="kicker" data-fx="sobe">O artefato</p>
+  <h2 data-fx="palavras" style="max-width:1000px;font-size:72px">Um modelo que responde por quê.</h2>
+  <div class="linhaf" data-b="1" data-fx="sobe" style="gap:56px;max-width:1090px">
+    <div class="stat"><span class="num">0,9309</span><span class="tx">AUC, modelo em produção com 11 variáveis</span></div>
+    <div class="stat"><span class="num">22,79%</span><span class="tx">da importância vem do texto e da anomalia</span></div>
+  </div>
+  <div data-b="2" data-fx="sobe" style="margin-top:42px;max-width:1040px">
+    <p class="kicker" style="margin-bottom:12px">Exemplo de contrafactual</p>
+    <p class="voz m">Se a vigência fosse de 180 dias, o risco cairia para 47%.</p>
+  </div>
+  <p class="sub" data-b="3" data-fx="sobe" style="font-size:33px;max-width:1040px">A trilha de auditoria sai junto: o porquê de cada variável e a justificativa.</p>
+  <p class="fonte">PubliCopilot, PNCP, SHAP sobre o modelo em produção.</p>
+  <aside class="notas">
+    <p data-b="0">A caixa continua fechada: é assim que a maioria dos modelos chega ao gestor.</p>
+    <p data-b="1">A caixa abre, e os números ficam: acurácia 0,9262, recall 0,6774 e F1 0,3127 com classe rara.</p>
+    <p data-b="2">O contrafactual fala a língua do gestor.</p>
+    <p data-b="3">Estudo de caso: 4 de 5 editais com desfecho confirmado.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="correcao" data-t="corte" data-bloco="4" data-alvo="37.5">
+  <div class="pilha" style="width:1728px">
+    <div data-sai="1" style="align-self:center;text-align:center">
+      <p class="voz l" data-fx="palavras">Qual acurácia você levaria ao comitê?</p>
+      <div class="chips" data-fx="sobe" data-d=".6" style="justify-content:center"><span class="chip num" style="font-size:80px">98,27%</span><span class="chip num" style="font-size:80px">92,62%</span></div>
+      <p class="mao" data-fx="sobe" data-d=".8" style="margin-top:32px"><svg><use href="#mao"/></svg>Mão levantada</p>
+    </div>
+    <div style="align-self:center;text-align:center">
+      <p class="num" data-b="1" data-fx="conta" data-de="98,27%" data-dur="2.4" style="font-size:300px;line-height:1;color:var(--ouro)">92,62%</p>
+      <p class="sent" data-b="2" data-fx="palavras" style="font-size:78px;margin-top:16px">A queda <em>foi</em> a correção.</p>
+      <p class="sub" data-b="2" data-fx="sobe" data-d=".6" style="font-size:36px">O modelo aprendia a repetir a construção do próprio alvo.</p>
+      <div class="linhaf" data-b="3" data-fx="sobe" style="justify-content:center;margin-top:24px"><div class="stat"><span class="tx">AUC de 98,97% para <b style="color:#fff">93,10%</b></span></div><div class="stat"><span class="tx">SHAP de vigência de 76,11% para <b style="color:#fff">14,36%</b></span></div></div>
+      <p class="voz m" data-b="4" data-fx="blur" style="margin-top:30px">Quantos indicadores da sua empresa medem a própria construção?</p>
+    </div>
+  </div>
+  <p class="fonte" data-b="3" data-fx="sobe">Alvo observável no PNCP: aditivo, rescisão e suspensão.</p>
+  <aside class="notas">
+    <p data-b="0">Peça o voto: quem levaria 98,27%, e quem levaria 92,62%?</p>
+    <p data-b="1">O anel se abre: o alvo deixou de se medir a si mesmo, e o número desce.</p>
+    <p data-b="2">Conte em primeira pessoa: eu quase publiquei 98%.</p>
+    <p data-b="3">O alvo sintético usava as mesmas variáveis do modelo, e aí estava a circularidade.</p>
+    <p data-b="4">Traga para a gestão: meta sem processo mede otimismo, e não desempenho.</p>
+  </aside>
+</section>
+
+<!-- BLOCO 5 · MÉTODO -->
+<section class="slide capitulo" data-cena="cap5" data-t="cortina" data-bloco="5" data-alvo="38">
+  <p class="kicker" data-fx="sobe">Parte 5 de 5 · O método</p>
+  <h2 class="voz" data-fx="palavras" style="font-size:104px;max-width:1160px;font-weight:400;letter-spacing:-.012em;line-height:1.04">O que muda na segunda-feira?</h2>
+  <p class="sub" data-b="1" data-fx="sobe" style="max-width:1120px;font-size:40px;color:var(--branco)">Medir e explicar só valem com o dado protegido e alguém que assine.</p>
+  <p class="kicker" data-b="2" data-fx="sobe" style="margin:44px 0 0">O que vem agora</p>
+  <div class="linhas" style="max-width:1120px;margin-top:16px">
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">1</span><div><b style="font-size:38px">A IA que roda dentro da casa e cita a fonte</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">2</span><div><b style="font-size:38px">As regras e o checklist antes de assinar</b></div></div>
+    <div class="linha" style="padding:14px 0" data-b="2" data-fx="sobe"><span class="i">3</span><div><b style="font-size:38px">Cinco movimentos para a semana</b></div></div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Leia a pergunta e faça uma pausa.</p>
+    <p data-b="1">Contexto: as quatro partes anteriores trouxeram o diagnóstico, e esta traz o que fazer.</p>
+    <p data-b="2">Prometa que a plateia sai com um checklist de bolso.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="casa" data-t="voo" data-bloco="5" data-alvo="39">
+  <p class="kicker" data-fx="sobe">O que roda em casa</p>
+  <h2 data-fx="palavras" style="max-width:1000px;font-size:66px">O que roda dentro da casa.</h2>
+  <div class="linhas meia" style="max-width:900px">
+    <div class="linha" data-fx="sobe"><span class="i">1</span><div><b style="font-size:38px">Nuvem</b><span class="d" style="font-size:28px">O dado sai a cada pergunta; a fonte depende do serviço.</span></div></div>
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i">2</span><div><b style="font-size:38px">Local</b><span class="d" style="font-size:28px">O dado fica; a resposta cita arquivo e página.</span></div></div>
+  </div>
+  <div class="linhaf" data-b="2" data-fx="sobe" style="gap:48px;margin-top:24px;max-width:960px">
+    <div class="stat"><span class="num" style="font-size:66px">65 s</span><span class="tx" style="font-size:27px">perfil compacto, 6 perguntas</span></div>
+    <div class="stat"><span class="num nw" style="font-size:66px">45 → 9 s</span><span class="tx" style="font-size:27px">até a primeira palavra</span></div>
+    <div class="stat"><span class="num" style="font-size:66px">&lt; 1%</span><span class="tx" style="font-size:27px">falha em cascata em 30 dias</span></div>
+  </div>
+  <p class="voz m" data-b="3" data-fx="blur" style="margin-top:18px;max-width:1000px;font-size:54px">Quem colou um contrato em um chat público nesta semana?</p>
+  <p class="fonte">Medição de engenharia, RTX 4060 8 GB, em uma máquina; LGPD, art. 6º, III.</p>
+  <aside class="notas">
+    <p data-b="0">Na tela, o dado sai da caixa e vai para a nuvem.</p>
+    <p data-b="1">Agora o dado fica dentro: é o argumento de soberania e LGPD.</p>
+    <p data-b="2">O perfil completo fez 138 s na mesma sequência; diga que é medição de engenharia, e não de cliente.</p>
+    <p data-b="3">Sem pedir mãos; diga onde a nuvem ganha: modelos maiores e acesso de qualquer lugar.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="rag" data-t="voo" data-bloco="5" data-alvo="40">
+  <p class="kicker" data-fx="sobe">Resposta com rastro</p>
+  <h2 data-fx="palavras">Sem fonte, é opinião com sotaque de certeza.</h2>
+  <div class="rag">
+    <svg viewBox="0 0 1728 330" preserveAspectRatio="none" data-fx="traco"><line x1="144" y1="71" x2="1584" y2="71" stroke="#fecb00" stroke-width="3"/></svg>
+    <div class="no" style="left:144px" data-fx="pop" data-d=".1"><i>1</i><b>Documentos</b><span>locais, no workspace</span></div>
+    <div class="no" style="left:432px" data-fx="pop" data-d=".15"><i>2</i><b>Indexação</b><span>arquivo, página, escopo</span></div>
+    <div class="no" style="left:720px" data-fx="pop" data-d=".2"><i>3</i><b>Busca</b><span>por sentido e por palavra</span></div>
+    <div class="no" style="left:1008px" data-fx="pop" data-d=".25"><i>4</i><b>Modelo local</b><span>só com o que encontrou</span></div>
+    <div class="no" style="left:1296px" data-fx="pop" data-d=".3"><i>5</i><b>Resposta citada</b><span>trecho e incerteza</span></div>
+    <div class="no" style="left:1584px" data-fx="pop" data-d=".35"><i>6</i><b style="color:var(--ouro)">Humano assina</b><span>revisa e registra</span></div>
+  </div>
+  <p class="voz l" data-b="1" data-fx="blur" style="margin-top:18px">Se não consta, diz que não consta.</p>
+  <p class="sub" data-b="2" data-fx="sobe" style="font-size:36px;margin-top:18px">Teste de aceitação: desligue a internet e pergunte sobre o seu contrato.</p>
+  <p class="fonte">LGPD, art. 6º, III: mascaramento de CPF, CNPJ e dados de contato antes do modelo.</p>
+  <aside class="notas">
+    <p data-b="0">A IA responde a partir da sua base, e não da memória do modelo.</p>
+    <p data-b="1">A abstenção é uma função, e não uma falha.</p>
+    <p data-b="2">Se o demo ao vivo falhar, pule para o próximo slide e não tente consertar no palco.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="costura" data-t="voo" data-bloco="5" data-alvo="41">
+  <p class="kicker" data-fx="sobe">A costura</p>
+  <h2 data-fx="palavras" style="max-width:960px;font-size:62px">Três camadas do mesmo problema.</h2>
+  <div class="linhas meia" style="max-width:920px">
+    <div class="linha" data-b="1" data-fx="sobe"><span class="i">1</span><div><b>Medir</b><span class="d">O número precisa ser explicável.</span></div></div>
+    <div class="linha" data-b="2" data-fx="sobe"><span class="i">2</span><div><b>Explicar</b><span class="d">A explicação precisa ser auditável.</span></div></div>
+    <div class="linha" data-b="3" data-fx="sobe"><span class="i">3</span><div><b>Proteger</b><span class="d">A resposta precisa citar a fonte.</span></div></div>
+  </div>
+  <p class="voz m meia" data-b="4" data-fx="blur" style="max-width:960px;margin-top:20px;font-size:58px">IA na gestão é problema de governança antes de ser problema de modelo.</p>
+  <p class="fonte">Síntese da pesquisa de doutorado, de medições de produto e da revisão de literatura.</p>
+  <aside class="notas">
+    <p data-b="0">Três anéis entrelaçados: se um sai, os outros soltam.</p>
+    <p data-b="1">Sem medir, não há o que explicar.</p>
+    <p data-b="2">Sem explicar, não há como proteger com critério.</p>
+    <p data-b="3">O dado sensível fica dentro de casa.</p>
+    <p data-b="4">Frase que resume a palestra: leia devagar.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="regras" data-t="voo" data-bloco="5" data-alvo="42">
+  <p class="kicker" data-fx="sobe">Governança</p>
+  <h2 data-fx="palavras">Cinco regras antes de confiar.</h2>
+  <div class="g5">
+    <div class="bloco" data-fx="sobe"><b>Fonte</b><span>Arquivo, página e trecho.</span></div>
+    <div class="bloco" data-fx="sobe"><b>Revisão</b><span>Quem assina lê, confere e assume.</span></div>
+    <div class="bloco" data-fx="sobe"><b>Dado</b><span>Anonimize antes de colar.</span></div>
+    <div class="bloco" data-fx="sobe"><b>Registro</b><span>O que entrou, o que saiu, quem aprovou.</span></div>
+    <div class="bloco" data-fx="sobe"><b>Limite</b><span>Autonomia definida por escrito.</span></div>
+  </div>
+  <p class="voz l" data-b="1" data-fx="blur" style="margin-top:62px">Sem rastro, não existe confiança: existe sorte.</p>
+  <aside class="notas">
+    <p data-b="0">Exemplo de limite: leitura livre, escrita com confirmação, ação destrutiva com confirmação digitada.</p>
+    <p data-b="1">LGPD não tem modo beta.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="checklist" data-t="corte" data-bloco="5" data-alvo="43.5">
+  <p class="voz l" data-fx="palavras" style="font-size:88px">Levante a mão e abaixe no primeiro não.</p>
+  <div class="check">
+    <div class="contador" data-b="0">
+      <span data-sai="1">8</span><span data-b="1" data-sai="2" data-fx="pop">7</span><span data-b="2" data-sai="3" data-fx="pop">6</span><span data-b="3" data-sai="4" data-fx="pop">5</span><span data-b="4" data-sai="5" data-fx="pop">4</span><span data-b="5" data-sai="6" data-fx="pop">3</span><span data-b="6" data-sai="7" data-fx="pop">2</span><span data-b="7" data-sai="8" data-fx="pop">1</span><span data-b="8" data-fx="soco">0</span>
+    </div>
+    <div class="ck">
+      <div data-b="1" data-fx="sobe">A resposta cita a fonte e o trecho?</div>
+      <div data-b="2" data-fx="sobe">Sei explicar sem a IA o que ela me deu?</div>
+      <div data-b="3" data-fx="sobe">O dado é sigiloso, e anonimizei antes?</div>
+      <div data-b="4" data-fx="sobe">Há revisão humana antes de assinar?</div>
+      <div data-b="5" data-fx="sobe">O limite de autonomia está escrito?</div>
+      <div data-b="6" data-fx="sobe">O que entrou e saiu ficou registrado?</div>
+      <div data-b="7" data-fx="sobe">A norma citada está atualizada?</div>
+      <div data-b="8" data-fx="sobe">Sei o que fazer se a IA errar?</div>
+    </div>
+  </div>
+  <aside class="notas">
+    <p data-b="0">Peça que todos levantem a mão, e explique: abaixa no primeiro não.</p>
+    <p data-b="1">Leia uma pergunta por clique, e observe as mãos.</p>
+    <p data-b="4">No meio do caminho, comente quantas mãos ainda estão no alto.</p>
+    <p data-b="8">Quem ficou com a mão levantada ganha o aplauso da sala.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="passos" data-t="voo" data-bloco="5" data-alvo="44.5">
+  <p class="kicker" data-fx="sobe">Segunda-feira</p>
+  <h2 data-fx="palavras">Cinco movimentos que não exigem orçamento.</h2>
+  <div class="passos">
+    <div class="passo" data-fx="sobe"><p class="q">10 min</p><b>Meça</b><span>Cronometre a tarefa que você odeia.</span></div>
+    <div class="passo" data-fx="sobe"><p class="q">hoje à noite</p><b>Teste</b><span>Modelo local, com o Wi-Fi desligado.</span></div>
+    <div class="passo" data-fx="sobe"><p class="q">esta semana</p><b>Escolha</b><span>Comece pelo que audita.</span></div>
+    <div class="passo" data-fx="sobe"><p class="q">este mês</p><b>Construa</b><span>Uma tarefa, com fonte e revisão.</span></div>
+    <div class="passo" data-fx="sobe"><p class="q">sempre</p><b>Documente</b><span>Um prompt e um resultado medido.</span></div>
+  </div>
+  <p class="voz l" data-b="1" data-fx="blur" style="margin-top:62px">Passo zero: defina quem assina o indicador.</p>
+  <aside class="notas">
+    <p data-b="0">Diga que cada passo cabe na semana que começa.</p>
+    <p data-b="1">Sem dono, os outros cinco passos viram ferramenta órfã.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="recado" data-t="corte" data-bloco="5" data-alvo="45" data-sem-cromo>
+  <div class="centro" style="width:1728px;text-align:center;position:absolute;top:64px;left:96px">
+    <p class="sent" data-fx="palavras" style="font-size:66px">Transformação digital é trocar o critério da decisão.</p>
+    <p class="sent" data-b="1" data-fx="palavras" style="font-size:66px;margin-top:26px;color:var(--cinza)">IA na gestão não substitui quem decide.</p>
+    <p class="sent" data-b="2" data-fx="palavras" style="font-size:66px;margin-top:26px">O bloqueio quase nunca é técnico:</p>
+    <p class="voz xl" data-b="3" data-fx="palavras" style="margin-top:10px">é alguém que assine.</p>
+    </div>
+  <p class="voz m" data-b="4" data-fx="sobe" data-d="4.2" style="position:absolute;left:96px;right:96px;bottom:52px;text-align:center;color:var(--branco)">Quem assina na sua empresa?</p>
+  <aside class="notas">
+    <p data-b="0">Primeira frase e pausa.</p>
+    <p data-b="1">Segunda frase e pausa.</p>
+    <p data-b="2">Terceira frase, e deixe em suspenso.</p>
+    <p data-b="3">Termine a frase e fique em silêncio.</p>
+    <p data-b="4">A assinatura se desenha na tela: não fale até o fim do traço e espere o aplauso.</p>
+  </aside>
+</section>
+
+<section class="slide" data-cena="obrigado" data-t="voo" data-bloco="5" data-alvo="45">
+  <h2 data-fx="palavras" style="text-align:center;font-size:110px">Obrigado.</h2>
+  <p class="sub" data-fx="sobe" data-d=".4" style="text-align:center">Aponte a câmera e continue a conversa · @cerradofinancas</p>
+  <div class="qrs">
+    <div class="qr" data-fx="pop"><img src="img/qr-site.png" alt="QR code do site"><b>Site</b><span>www.cerradofinancas.com.br</span></div>
+    <div class="qr" data-fx="pop"><img src="img/qr-ianagestao.png" alt="QR code do curso"><b>Curso IA na Gestão</b><span>ianagestao.web.app</span></div>
+    <div class="qr" data-fx="pop"><img src="img/qr-github.png" alt="QR code do Cerra.AI público"><b>Cerra.AI, código aberto</b><span>github.com/renato0503/cerraai-publico</span></div>
+    <div class="qr" data-fx="pop"><img src="img/qr-cerraclass.png" alt="QR code da CerraClass"><b>CerraClass</b><span>cerraclass.com.br</span></div>
+  </div>
+  <aside class="notas">
+    <p>Abra para perguntas: as respostas previstas estão no guia do palestrante.</p>
+    <p>Registre as perguntas que ninguém soube responder, pois elas são o próximo estudo.</p>
+  </aside>
+</section>
+
+<div id="cortina"></div>
+<div id="cromo"><img src="img/folinha.png" alt=""><span>Cerrado Finanças &amp; Tech</span><div id="trilha"><div id="marcas"></div><div id="fio"></div></div><span id="pag">01 / 38</span></div>
+</div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/DrawSVGPlugin.min.js"></script>
+<script src="vendor/palco3d.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>
