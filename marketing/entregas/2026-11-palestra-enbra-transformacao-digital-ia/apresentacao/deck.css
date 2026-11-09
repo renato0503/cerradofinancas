@@ -64,6 +64,14 @@ h1 em, h2 em, .sent em { font-style: normal; color: var(--ouro); }
 .logos div.esc { background: #0b1430; }
 .logos img { max-height: 46px; max-width: 76px; display: block; }
 
+/* estudos */
+.tp-e { font: 700 22px/1 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--ouro); margin-bottom: 12px; }
+.ests { margin-top: 16px; }
+.est { display: grid; grid-template-columns: 170px 1fr; gap: 14px; padding: 11px 0; border-top: 1px solid var(--fio); align-items: baseline; }
+.bloco .est span { margin-top: 0; }
+.est .r { font-size: 28px !important; font-weight: 700; color: var(--branco) !important; }
+.est .t { font-size: 28px !important; line-height: 1.24; }
+
 /* linhas editoriais */
 .linhas { margin-top: 34px; display: flex; flex-direction: column; }
 .linha { display: grid; grid-template-columns: 70px 1fr; gap: 16px; padding: 20px 0; border-top: 1px solid var(--fio); align-items: baseline; }
