@@ -114,7 +114,8 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
 
 ## O que foi feito (novembro de 2026)
 
-**CerraFood, a plataforma white label de gestão de restaurantes (10/11).** Commits `f6d2d67`, `a0bada7` e `cee3f36`;
+**CerraFood, a plataforma white label de gestão de restaurantes (10/11).** Commits `f6d2d67`, `a0bada7`, `cee3f36` e
+`466a054`;
 no mesmo dia, reposicionado de "sistema para pizzaria" para **restaurantes em geral** (pizzaria, hamburgueria,
 restaurante e delivery): textos, exemplos (X-Burguer, parmegiana, prato executivo) e ilustrações (hambúrguer e prato
 feito ao lado da pizza) nas peças e na página.
@@ -129,6 +130,12 @@ feito ao lado da pizza) nas peças e na página.
 - **Regras:** nunca citar a primeira implantação (o código fica em `D:\Dev\NapoleFood`); só o que está no código; o
   selo "sua marca aqui" só nas peças sobre white label. Detalhes, calendário e o passo a passo da publicação em
   `marketing/HISTORICO.md` (seção "CerraFood"); o que pode e não pode afirmar em `marketing/brand/cerrafood/README.md`.
+
+**Peças da equipe (10/11), fora da agenda.** Post e story de Talita Marques (Consultora Comercial), Felipe Borges
+(Marketing), Renato Rosa (Consultor Técnico e Proprietário) e Camila Anjos (Especialista Contábil), na identidade
+institucional, com a foto em arco (`marketing/brand/anuncio-equipe.css`). Estão na Central em "Institucional ·
+Equipe" para a equipe postar quando quiser. Commits `466a054`, `d2ac000` e `9223395`. Passo a passo para uma pessoa
+nova em `marketing/HISTORICO.md`, seção "Peças da equipe".
 
 ## Pendências
 
@@ -145,6 +152,8 @@ feito ao lado da pizza) nas peças e na página.
       (o site e as peças já dizem 10).
 
 ### Marketing
+- [ ] **Peça da Camila Anjos:** trocar por um retrato mais nítido, se houver, e confirmar se ela é nova no
+      time (o rótulo hoje é "Nosso time").
 - [ ] **Agenda do @cerra.ai:** quando as 25 campanhas paradas da outra IA forem publicadas, rodar o `agendar.py` muda
       as datas de posts do @cerra.ai já postados (04/11 a 10/11). Antes, pôr o Cerra.AI em `ESTREIAS` no `agendar.py`
       (como foi feito com o CerraFood) ou fixar o passado.

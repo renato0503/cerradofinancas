@@ -182,3 +182,6 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
   carrossel animado com coreografia própria), apresentação "Prazer, CerraFood" e 10 campanhas (sua marca, cozinha,
   totem, ficha técnica, estoque, caixa, delivery, fidelidade, relatórios e equipe), cada uma com story, carrossel
   animado e legendas de Instagram, LinkedIn e Facebook. Na agenda do @cerradofinancas desde 11/11.
+- **2026-11 · Peças da equipe** (fora da agenda, série "Equipe"): Talita Marques, Felipe Borges, Renato Rosa e Camila
+  Anjos, post e story com foto em arco, no estilo comum `brand/anuncio-equipe.css`. Para uma pessoa nova, ver
+  "Peças da equipe" no `HISTORICO.md`.

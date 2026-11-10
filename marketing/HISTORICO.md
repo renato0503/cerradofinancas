@@ -40,7 +40,9 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 02/11 | `bcaa034` | Correção da virada de página (não mostra mais o verso nem sobrepõe as folhas) e do leque de cópias da lâmina 3D; Contabilidade e Crédito re-renderizados |
 | 10/11 | `f6d2d67` | CerraFood (plataforma white label de gestão de restaurantes) vira frente no @cerradofinancas: identidade própria "Comanda" (`brand/cerrafood/`), peça global "A plataforma inteira" (8 slides com coreografia), apresentação "Prazer, CerraFood" + série de 10 campanhas (`tools/gerar_cerrafood.py`), carrossel animado, legendas de Instagram, LinkedIn e Facebook, mídia kit. Estreia na agenda em 11/11, um dia sim e outro não, sem mexer no que já foi postado (`ESTREIAS` em `agendar.py`) |
 | 10/11 | `a0bada7`, `cee3f36` | Página `cerrafood.html` do site refeita na identidade "Comanda", só com o que o sistema faz (saíram 23%, PIX integrado, multi-loja, ponto, taxa por distância, 7 dias e a seção Enterprise) |
-| 10/11 | (este commit) | Boas-vindas ao time, fora da agenda: Talita Marques (Consultora Comercial) e Felipe Borges (Marketing), post e story na identidade institucional, com o estilo comum `brand/anuncio-equipe.css`; CerraFood reposicionado para gestão de restaurantes em geral |
+| 10/11 | `466a054` | Boas-vindas ao time, fora da agenda: Talita Marques (Consultora Comercial) e Felipe Borges (Marketing), post e story na identidade institucional, com o estilo comum `brand/anuncio-equipe.css`; CerraFood reposicionado para gestão de restaurantes em geral (textos, exemplos, hambúrguer e prato feito nas ilustrações) |
+| 10/11 | `d2ac000` | Peça da equipe do Renato Rosa (Consultor Técnico e Proprietário), rótulo "Quem lidera a Cerrado" e citação real da página `/iacao/`; arco do story menor nas peças da equipe |
+| 10/11 | `9223395` | Peça da equipe da Camila Anjos (Especialista Contábil), rótulo "Nosso time", foto recortada e ampliada |
 
 ## CerraFood, a plataforma white label de gestão de restaurantes (10/11)
 
@@ -132,7 +134,7 @@ Cerra.AI ainda paradas. Para não publicar o trabalho dela:
 6. O mídia kit: `gerar_kits.py` refaz **todos** os kits; os outros foram restaurados com `git checkout` e só a entrada
    do CerraFood entrou no `kits.json`.
 
-## Boas-vindas ao time (10/11)
+## Peças da equipe (10/11)
 
 Peças avulsas, **fora da agenda** (`FORA_DA_AGENDA` no `agendar.py`): a equipe posta quando decidir. Identidade
 institucional (azul, dourado, a folinha e os anéis das datas comemorativas). A foto entra numa moldura em arco com
@@ -148,6 +150,7 @@ sobre a pessoa.
 
 A do Renato não é boas-vindas: o rótulo é "Quem lidera a Cerrado" e o cargo vai em duas linhas. A legenda usa a citação
 real dele da página `/iacao/` (regra 1). O arco do story ficou um pouco menor (770 px) para caber cargo em duas linhas.
+Na Central, as quatro aparecem em "Institucional · Equipe", sem data de postagem.
 A da Camila usa o rótulo neutro "Nosso time" (não foi dito se ela é nova). A foto original é de corpo inteiro e
 pequena (772×713): `camila_recorte.jpg` é o recorte dos ombros para cima, ampliado; se vier uma foto melhor, trocar.
 
@@ -718,6 +721,9 @@ Valem para todas as próximas campanhas.
     selo "sua marca aqui" só nas peças sobre white label.
 20. **Frente que estreia com a agenda correndo (10/11):** entra em `ESTREIAS` no `agendar.py`, com a data de estreia,
     para não reordenar o que o Felipe já postou.
+21. **Peças da equipe (10/11):** ficam fora da agenda (`FORA_DA_AGENDA`), na série "Equipe". Só nome e cargo como o
+    Renato passou; nada de biografia inventada. "Boas-vindas ao time" só quando a pessoa é nova (foi dito para a Talita
+    e o Felipe); sem essa informação, "Nosso time"; para o Renato, "Quem lidera a Cerrado".
 
 ## Como garantimos a qualidade
 
@@ -741,6 +747,9 @@ Valem para todas as próximas campanhas.
       novo, os posts de 04/11 a 10/11 do @cerra.ai mudam de data (já postados pelo Felipe). Pôr o Cerra.AI em
       `ESTREIAS` ou fixar o passado antes de rodar.
 - [ ] O deploy do GitHub Pages de 09/11 **falhou** (o de 10/11 passou). Ver o motivo se voltar a acontecer.
+- [ ] **Peça da Camila Anjos:** a foto original é pequena e de corpo inteiro; o recorte ampliado fica um pouco
+      suave. Trocar por um retrato mais nítido, se houver, e confirmar se ela é nova no time (aí o rótulo vira
+      "Boas-vindas ao time").
 
 - [ ] **Ouvir o áudio dos Reels** antes de postar. Os sons são sintetizados por código e nunca foram ouvidos por uma pessoa.
 - [x] **Alinhar o catálogo da CerraClass para 10 alunos** por turma. Feito em 02/11 nos 5 textos do projeto
