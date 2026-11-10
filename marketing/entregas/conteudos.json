@@ -7474,54 +7474,6 @@
     }
   },
   {
-    "pasta": "2026-11-felipe-marketing",
-    "frente": "institucional",
-    "serie": "Equipe",
-    "capa": "post.png",
-    "titulo": "Boas-vindas · Felipe Borges, Marketing",
-    "data": "2026-11-10",
-    "descricao": "Anúncio do Felipe Borges no Marketing da Cerrado Finanças & Tech. Peça avulsa, fora da agenda.",
-    "orientacoes": [
-      "Fora da agenda: postar quando a equipe decidir, no @cerradofinancas (e no LinkedIn da empresa).",
-      "Post: post.png (1080×1350). Story: story.png (1080×1920); dá para marcar o perfil do Felipe no story.",
-      "Se o Felipe tiver Instagram/LinkedIn, marcar o perfil dele no post e na legenda.",
-      "Legendas prontas abaixo, uma para cada rede (a do Facebook já traz o link do WhatsApp)."
-    ],
-    "arquivos": [
-      {
-        "nome": "post.png",
-        "tipo": "imagem",
-        "kb": 791
-      },
-      {
-        "nome": "story.png",
-        "tipo": "imagem",
-        "kb": 1029
-      }
-    ],
-    "legendas": [
-      {
-        "rede": "Facebook",
-        "arquivo": "legenda-facebook.txt",
-        "texto": "Boas-vindas, Felipe! 👋\n\nO Felipe Borges chega ao time da Cerrado Finanças & Tech no Marketing. Seja muito bem-vindo, Felipe! 💛💙\n\nFale com a gente no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSaiba mais: https://www.cerradofinancas.com.br\n"
-      },
-      {
-        "rede": "Instagram",
-        "arquivo": "legenda-instagram.txt",
-        "texto": "Boas-vindas, Felipe! 👋\n\nO Felipe Borges chega ao time da Cerrado Finanças & Tech no Marketing.\n\nSeja muito bem-vindo, Felipe! 💛💙\n\n🔗 cerradofinancas.com.br\n\n#CerradoFinancas #CerradoTech #BoasVindas #NossoTime #Marketing\n"
-      },
-      {
-        "rede": "LinkedIn",
-        "arquivo": "legenda-linkedin.txt",
-        "texto": "Boas-vindas, Felipe Borges!\n\nO Felipe chega à Cerrado Finanças & Tech no Marketing. Seja muito bem-vindo ao time!\n\nhttps://www.cerradofinancas.com.br\n"
-      }
-    ],
-    "pacote": {
-      "nome": "2026-11-felipe-marketing.zip",
-      "kb": 1821
-    }
-  },
-  {
     "pasta": "2026-11-talita-consultora",
     "frente": "institucional",
     "serie": "Equipe",
@@ -7544,7 +7496,7 @@
       {
         "nome": "story.png",
         "tipo": "imagem",
-        "kb": 1258
+        "kb": 1226
       }
     ],
     "legendas": [
@@ -7566,7 +7518,103 @@
     ],
     "pacote": {
       "nome": "2026-11-talita-consultora.zip",
-      "kb": 2151
+      "kb": 2120
+    }
+  },
+  {
+    "pasta": "2026-11-felipe-marketing",
+    "frente": "institucional",
+    "serie": "Equipe",
+    "capa": "post.png",
+    "titulo": "Boas-vindas · Felipe Borges, Marketing",
+    "data": "2026-11-10",
+    "descricao": "Anúncio do Felipe Borges no Marketing da Cerrado Finanças & Tech. Peça avulsa, fora da agenda.",
+    "orientacoes": [
+      "Fora da agenda: postar quando a equipe decidir, no @cerradofinancas (e no LinkedIn da empresa).",
+      "Post: post.png (1080×1350). Story: story.png (1080×1920); dá para marcar o perfil do Felipe no story.",
+      "Se o Felipe tiver Instagram/LinkedIn, marcar o perfil dele no post e na legenda.",
+      "Legendas prontas abaixo, uma para cada rede (a do Facebook já traz o link do WhatsApp)."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 791
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 1005
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Boas-vindas, Felipe! 👋\n\nO Felipe Borges chega ao time da Cerrado Finanças & Tech no Marketing. Seja muito bem-vindo, Felipe! 💛💙\n\nFale com a gente no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSaiba mais: https://www.cerradofinancas.com.br\n"
+      },
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Boas-vindas, Felipe! 👋\n\nO Felipe Borges chega ao time da Cerrado Finanças & Tech no Marketing.\n\nSeja muito bem-vindo, Felipe! 💛💙\n\n🔗 cerradofinancas.com.br\n\n#CerradoFinancas #CerradoTech #BoasVindas #NossoTime #Marketing\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Boas-vindas, Felipe Borges!\n\nO Felipe chega à Cerrado Finanças & Tech no Marketing. Seja muito bem-vindo ao time!\n\nhttps://www.cerradofinancas.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-felipe-marketing.zip",
+      "kb": 1797
+    }
+  },
+  {
+    "pasta": "2026-11-renato-rosa",
+    "frente": "institucional",
+    "serie": "Equipe",
+    "capa": "post.png",
+    "titulo": "Equipe · Renato Rosa, Consultor Técnico e Proprietário",
+    "data": "2026-11-10",
+    "descricao": "Apresentação do Renato Rosa, Consultor Técnico e Proprietário da Cerrado Finanças & Tech. Peça avulsa, fora da agenda.",
+    "orientacoes": [
+      "Fora da agenda: postar quando a equipe decidir, no @cerradofinancas (e no LinkedIn da empresa).",
+      "Post: post.png (1080×1350). Story: story.png (1080×1920); dá para marcar o perfil do Renato no story.",
+      "A citação da legenda é real: vem da página /iacao/ do site.",
+      "Legendas prontas abaixo, uma para cada rede (a do Facebook já traz o link do WhatsApp)."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 778
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 984
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Quem lidera a Cerrado Finanças & Tech: Renato Rosa, Consultor Técnico e Proprietário.\n\n\"Hoje, a barreira não é mais saber escrever código, é saber fazer a pergunta certa e estruturar o problema.\"\n\nFale com a gente no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSaiba mais: https://www.cerradofinancas.com.br\n"
+      },
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quem lidera a Cerrado Finanças & Tech: Renato Rosa, Consultor Técnico e Proprietário.\n\n\"Hoje, a barreira não é mais saber escrever código, é saber fazer a pergunta certa e estruturar o problema.\"\n\nPara falar com a gente: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br\n\n#CerradoFinancas #CerradoTech #NossoTime #Lideranca\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Quem lidera a Cerrado Finanças & Tech: Renato Rosa, Consultor Técnico e Proprietário.\n\n\"Hoje, a barreira não é mais saber escrever código, é saber fazer a pergunta certa e estruturar o problema.\"\n\nhttps://www.cerradofinancas.com.br\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-renato-rosa.zip",
+      "kb": 1763
     }
   },
   {

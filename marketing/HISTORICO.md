@@ -143,6 +143,10 @@ sobre a pessoa.
 |---|---|---|---|
 | Talita Marques | Consultora Comercial | `posts/2026-11-talita-consultora/` | `entregas/2026-11-talita-consultora/` |
 | Felipe Borges | Marketing | `posts/2026-11-felipe_borges/` | `entregas/2026-11-felipe-marketing/` |
+| Renato Rosa | Consultor Técnico e Proprietário | `posts/2026-11-renato_rosa/` | `entregas/2026-11-renato-rosa/` |
+
+A do Renato não é boas-vindas: o rótulo é "Quem lidera a Cerrado" e o cargo vai em duas linhas. A legenda usa a citação
+real dele da página `/iacao/` (regra 1). O arco do story ficou um pouco menor (770 px) para caber cargo em duas linhas.
 
 Para uma pessoa nova: copiar a pasta de uma delas, trocar foto, nome, cargo e o `meta entrega`; ajustar o
 `object-position` da foto se o rosto não ficar no centro do arco; exportar; criar legendas e `info.json` (série
