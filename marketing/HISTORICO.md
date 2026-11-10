@@ -58,7 +58,7 @@ logo e as cores dele. O código é o projeto `D:\Dev\NapoleFood`, conferido em 1
   Instagram, LinkedIn e Facebook (com o link do WhatsApp). Telas e gráficos com o selo "Exemplo ilustrativo".
 - **Página do site com afirmações sem base:** `cerrafood.html` promete "ticket médio 23% maior", PIX integrado,
   multi-loja, ponto digital, taxa por distância e "implementação em 7 dias", e nada disso está confirmado. As peças não
-  usam essas afirmações. **A página ainda precisa ser corrigida** (o Renato pediu para focar primeiro nas peças).
+  usam essas afirmações. **Página refeita em 10/11** (commit `a0bada7`): mesma identidade "Comanda", 9 módulos conferidos no código e o white label explicado.
 - **Agenda:** a frente estreou com a agenda já correndo desde 31/10. `ESTREIAS` em `agendar.py` encaixa o CerraFood a
   partir de 11/11 na fila do @cerradofinancas, alternando com os posts que já estavam lá, sem mudar nada do que veio
   antes.
