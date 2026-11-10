@@ -79,3 +79,8 @@
 /* CTA: o espaço da marca grande */
 .suamarca.grande { font-size: 30px; padding: 22px 32px; border-width: 4px; border-radius: 22px; gap: 22px; }
 .suamarca.grande::before { width: 56px; height: 56px; border-width: 4px; }
+
+/* Restaurantes em geral (10/11): hambúrguer e prato feito ao lado da pizza */
+.hamb-capa { position: absolute; width: 330px; left: 330px; bottom: 160px; pointer-events: none; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .35)); }
+.prato-capa { position: absolute; width: 270px; left: 70px; bottom: 190px; pointer-events: none; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .3)); }
+.hamb-capa svg, .prato-capa svg { width: 100%; height: auto; display: block; overflow: visible; }

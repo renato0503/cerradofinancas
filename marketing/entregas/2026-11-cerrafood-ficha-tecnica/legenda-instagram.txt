@@ -1,22 +1,22 @@
-Quanto custa a sua calabresa?
+Quanto custa o seu prato mais vendido?
 
-Com a ficha técnica, o sistema calcula o custo de cada pizza pelos ingredientes.
+Com a ficha técnica, o sistema calcula o custo de cada prato pelos ingredientes.
 
 Preço no chute é margem no escuro.
 🍕 O queijo sobe e o preço fica igual
-🍕 O sabor que mais vende pode ser o que menos dá lucro
-🍕 Ninguém sabe quanto vai em cada sabor
+🍕 O prato que mais vende pode ser o que menos dá lucro
+🍕 Ninguém sabe quanto vai em cada receita
 
 O custo sai sozinho.
 1. Cadastre os ingredientes: Com o custo e a unidade de cada um
-2. Monte a ficha técnica: Quanto de cada ingrediente vai em cada sabor
-3. Veja o custo de cada pizza: Refeito quando o preço de um ingrediente muda
+2. Monte a ficha técnica: Quanto de cada ingrediente vai em cada prato
+3. Veja o custo de cada prato: Refeito quando o preço de um ingrediente muda
 
 Preço bom é preço com o custo na mão.
 
-O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Agende uma demonstração gratuita: WhatsApp (67) 99351-5206
 🔗 cerradofinancas.com.br/cerrafood
 
-#CustoDaPizza #FichaTecnica #Margem #CerraFood #SistemaParaPizzaria #Pizzaria #WhiteLabel #CerradoTech
+#FichaTecnica #CustoDoPrato #CMV #CerraFood #SistemaParaRestaurante #GestaoDeRestaurante #Delivery #WhiteLabel #CerradoTech

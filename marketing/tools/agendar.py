@@ -43,7 +43,8 @@ CONTAS = [
 ]
 FUTURAS = []
 POR_DIA = {"cerradofinancas": 1, "cerraai": 1, "cerraclass": 1, "guiacademico": 1}  # mínimo 1, máximo 2
-FORA_DA_AGENDA = {"folinha-animada", "2026-11-cerraai-material-kit-vendas"}  # material de apoio, não é postagem
+FORA_DA_AGENDA = {"folinha-animada", "2026-11-cerraai-material-kit-vendas",  # material de apoio, não é postagem
+                  "2026-11-talita-consultora", "2026-11-felipe-marketing"}  # boas-vindas: postadas quando a equipe decidir
 
 CARROSSEL = "Carrossel + story"
 

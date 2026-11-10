@@ -11,6 +11,6 @@ O tempo de espera muda a cor.
 🍕 Amarelo: de 15 a 25 minutos, atenção
 🍕 Vermelho: passou de 25 minutos, olhe primeiro
 
-CerraFood, da Cerrado Tech: plataforma white label para pizzaria, com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+CerraFood, da Cerrado Tech: plataforma white label de gestão de restaurantes (pizzaria, hamburgueria, restaurante e delivery), com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Demonstração: https://www.cerradofinancas.com.br/cerrafood

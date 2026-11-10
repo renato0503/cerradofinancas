@@ -3,8 +3,8 @@ O cliente acompanha o pedido sem ligar.
 Taxa por bairro, painel do entregador e o status de cada pedido pelo link.
 
 Etapa por etapa, na tela do cliente.
-1. Confirmado: A pizzaria recebeu o pedido
-2. Preparando: A pizza entrou na cozinha
+1. Confirmado: A casa recebeu o pedido
+2. Preparando: O pedido entrou na cozinha
 3. Saiu para entrega: O entregador marcou a saída
 4. Entregue: Pedido concluído
 
@@ -16,11 +16,11 @@ Do forno à porta.
 WhatsApp sem robô.
 🍕 O entregador avisa o cliente com um toque
 🍕 O cliente chama a loja já com o número do pedido
-🍕 Nenhuma mensagem automática em nome da pizzaria
+🍕 Nenhuma mensagem automática em nome da casa
 
-O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Agende uma demonstração gratuita: WhatsApp (67) 99351-5206
 🔗 cerradofinancas.com.br/cerrafood
 
-#Delivery #Entregas #PizzaDelivery #CerraFood #SistemaParaPizzaria #Pizzaria #WhiteLabel #CerradoTech
+#Delivery #Entregas #DeliveryDeComida #CerraFood #SistemaParaRestaurante #GestaoDeRestaurante #Delivery #WhiteLabel #CerradoTech

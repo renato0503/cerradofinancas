@@ -1,6 +1,7 @@
 # Identidade CerraFood: "Comanda"
 
-Vale para todas as peças do CerraFood, a plataforma white label para pizzaria da Cerrado Tech
+Vale para todas as peças do CerraFood, a plataforma white label de **gestão de restaurantes** da Cerrado Tech
+(pizzaria, hamburgueria, restaurante e delivery; desde 10/11 a pizzaria é **um exemplo**, não o público único)
 (carrossel, story, carrossel animado). Criada em 10/11/2026. Gerador: `tools/gerar_cerrafood.py`.
 
 ## A ideia

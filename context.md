@@ -163,7 +163,7 @@ Todas seguem o mesmo template: Hero com ícone Phosphor + badge "Fábrica de Sof
 | Lei do Bem | `leidobem.html` | Diagnóstico fiscal com IA |
 | Broker Logístico | `brokerlogistico.html` | ERP logístico mobile |
 | CerraZap | `cerrazap.html` | Bot WhatsApp para vendas |
-| CerraFood | `cerrafood.html` | Sistema white label para pizzaria (totem, caixa, cozinha, ficha técnica, estoque, entrega, fidelidade, relatórios). Desde 10/11 tem identidade própria "Comanda" (verde-mata `#0f2a16` e laranja `#f39200`, Outfit + DM Mono), com CSS na própria página; só afirma o que está no código (regras em `marketing/brand/cerrafood/README.md`) |
+| CerraFood | `cerrafood.html` | Sistema white label de gestão de restaurantes: pizzaria, hamburgueria, restaurante e delivery (totem, caixa, cozinha, ficha técnica, estoque, entrega, fidelidade, relatórios). Desde 10/11 tem identidade própria "Comanda" (verde-mata `#0f2a16` e laranja `#f39200`, Outfit + DM Mono), com CSS na própria página; só afirma o que está no código (regras em `marketing/brand/cerrafood/README.md`) |
 | CerraLoan | `cerraloan.html` | Microcrédito |
 | CSC Strategy | `csc-strategy.html` | CSC implementation |
 | MTData | `mtdata.html` | Dados turismo MT |

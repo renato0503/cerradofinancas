@@ -1,4 +1,4 @@
-// CerraFood, a plataforma inteira: o pedido percorre a pizzaria. A pizza entra girando e as coberturas caem uma a uma;
+// CerraFood, a plataforma inteira: o pedido percorre o restaurante. A pizza entra girando e as coberturas caem, o prato chega e o hambúrguer se monta;
 // os aparelhos sobem com a marca de cada um; o totem monta o meio a meio (as metades se juntam) e a comanda sai da
 // impressora; na cozinha os cartões caem nas colunas e os timers correm; as barras de estoque enchem e baixam com a
 // venda; a caixa da pizza anda pelo caminho até a porta; os níveis crescem e o mapa de calor acende em onda.
@@ -17,6 +17,11 @@ export default {
       A.mover(".pizza-capa .corte", 1.4, { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out", stagger: 0.05 });
       A.mover(".pizza-capa .cob", 1.6, { opacity: 0, scale: 2.4, y: -40, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, y: 0, duration: 0.42, ease: "back.out(2)", stagger: 0.045 });
       A.continuo(".pizza-capa .giro", 3.0, { rotation: 22, svgOrigin: "200 200" });
+      // o prato desliza para a mesa e cada porção cai no prato; o hambúrguer se monta de baixo para cima
+      A.mover(".prato-capa", 1.2, { opacity: 0, x: -260, rotation: -30 }, { opacity: 1, x: 0, rotation: 0, duration: 0.9, ease: "power4.out" });
+      A.mover(".prato-capa .item", 1.9, { opacity: 0, scale: 1.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.12 });
+      A.mover(".hamb-capa .camada", 2.2, { opacity: 0, y: -160 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)", stagger: { each: 0.12, from: "end" } });
+      A.onda(".hamb-capa", 3.6, { y: -10 }, 1.8);
       A.palavras(".mega", 0.7, { y: 50, stagger: 0.07, dur: 0.5, ease: "back.out(1.5)" });
       A.surgir(".sub", 2.2, { y: 26 });
     },

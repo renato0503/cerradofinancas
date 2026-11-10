@@ -3,8 +3,8 @@ O cliente acompanha o pedido sem ligar.
 Taxa por bairro, painel do entregador e o status de cada pedido pelo link.
 
 Etapa por etapa, na tela do cliente.
-1. Confirmado: A pizzaria recebeu o pedido
-2. Preparando: A pizza entrou na cozinha
+1. Confirmado: A casa recebeu o pedido
+2. Preparando: O pedido entrou na cozinha
 3. Saiu para entrega: O entregador marcou a saída
 4. Entregue: Pedido concluído
 Do forno à porta.
@@ -12,6 +12,6 @@ Do forno à porta.
 2. Painel do entregador: No celular, pelo navegador, sem instalar app
 3. Cliente informado: O status muda na hora, para todo mundo
 
-CerraFood, da Cerrado Tech: plataforma white label para pizzaria, com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+CerraFood, da Cerrado Tech: plataforma white label de gestão de restaurantes (pizzaria, hamburgueria, restaurante e delivery), com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Demonstração: https://www.cerradofinancas.com.br/cerrafood

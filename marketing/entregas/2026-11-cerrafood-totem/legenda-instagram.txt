@@ -1,17 +1,17 @@
-O cliente monta a pizza sozinho.
+O cliente monta o pedido sozinho.
 
 No totem do balcão ou pelo QR Code, sem esperar o caixa.
 
-Meio a meio sem conta de cabeça.
-🍕 Até quantos sabores o tamanho permitir
-🍕 O preço segue a regra da casa: pelo sabor mais caro ou pela média
+Do jeito que a casa vende.
+🍕 Tamanhos, sabores e opções configurados no cardápio
+🍕 Na pizzaria, o meio a meio segue a regra da casa: sabor mais caro ou média
 🍕 O total aparece antes de confirmar
 
 A fila anda enquanto o caixa atende.
 
-O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Agende uma demonstração gratuita: WhatsApp (67) 99351-5206
 🔗 cerradofinancas.com.br/cerrafood
 
-#Autoatendimento #Totem #Delivery #CerraFood #SistemaParaPizzaria #Pizzaria #WhiteLabel #CerradoTech
+#Autoatendimento #Totem #Delivery #CerraFood #SistemaParaRestaurante #GestaoDeRestaurante #Delivery #WhiteLabel #CerradoTech

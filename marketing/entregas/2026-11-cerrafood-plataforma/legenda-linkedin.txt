@@ -1,10 +1,10 @@
-A pizzaria inteira, num só sistema. Com a marca da pizzaria.
+O restaurante inteiro, num só sistema. Com a marca da casa.
 
-O CerraFood é a plataforma da Cerrado Tech para pizzaria, entregue em white label: site, app, totem e painel com o nome, a logo e as cores do cliente.
+O CerraFood é a plataforma de gestão de restaurantes da Cerrado Tech (pizzaria, hamburgueria, restaurante e delivery), entregue em white label: site, app, totem e painel com o nome, a logo e as cores do cliente.
 
 1. Totem e caixa, com comanda impressa
 2. Tela da cozinha, com a cor pelo tempo de espera
-3. Ficha técnica com o custo de cada pizza e baixa automática de estoque
+3. Ficha técnica com o custo de cada prato e baixa automática de estoque
 4. Entrega com taxa por bairro e acompanhamento pelo link
 5. Fidelidade, caixa com conferência, DRE, curva ABC e mapa de horários
 

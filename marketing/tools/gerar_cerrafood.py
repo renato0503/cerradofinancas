@@ -1,4 +1,4 @@
-"""Gera a série do CerraFood (plataforma white label para pizzaria da Cerrado Tech): apresentação + 10 campanhas.
+"""Gera a série do CerraFood (plataforma white label de gestão de restaurantes da Cerrado Tech; pizzaria é um exemplo): apresentação + 10 campanhas.
 
 Cada campanha: carrossel de 6 slides (1080×1350), story (1080×1920) e legendas de Instagram, LinkedIn e Facebook.
 Identidade "Comanda" (brand/cerrafood/marca.css e README.md).
@@ -23,9 +23,9 @@ SIMBOLO = "../../brand/cerrafood/simbolo.png"
 LINK = "cerradofinancas.com.br/cerrafood"
 WHATS = "(67) 99351-5206"
 WHATS_URL = "https://api.whatsapp.com/send?phone=5567993515206"
-TAGS_BASE = "#CerraFood #SistemaParaPizzaria #Pizzaria #WhiteLabel #CerradoTech"
+TAGS_BASE = "#CerraFood #SistemaParaRestaurante #GestaoDeRestaurante #Delivery #WhiteLabel #CerradoTech"
 ILUSTRATIVO = "Exemplo ilustrativo"
-WHITE_LABEL = ("O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, "
+WHITE_LABEL = ("O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, "
                "a sua logo e as suas cores.")
 
 
@@ -39,25 +39,25 @@ def frase(texto):
 
 COMANDA_TOTEM = dict(numero="#0042", canal="Totem", itens=[
     ("1x", "Pizza Grande", "1/2 Calabresa · 1/2 Quatro queijos", "Borda recheada"),
-    ("1x", "Refrigerante 2 L", None, None),
+    ("1x", "X-Burguer", None, "Sem cebola"),
 ], pe="Para viagem · enviado à cozinha")
 COMANDA_CAIXA = dict(numero="#0043", canal="Caixa", itens=[
-    ("2x", "Pizza Média Margherita", None, "Sem cebola"),
+    ("2x", "Prato executivo", None, "Sem cebola"),
     ("1x", "Suco natural", None, None),
 ], pe="Pagamento: PIX · registrado")
 
 CAMPANHAS = [
     # ---------------- Apresentação ----------------
-    dict(pasta="2026-11-apresentacao-cerrafood", nome="Prazer, CerraFood", tags="#GestaoDePizzaria #Delivery",
+    dict(pasta="2026-11-apresentacao-cerrafood", nome="Prazer, CerraFood", tags="#Pizzaria #Hamburgueria #Restaurante",
          slides=[
-             ("capa", dict(rotulo="Prazer, CerraFood", titulo="A pizzaria inteira *num sistema só.*",
-                           sub="Do pedido no totem à pizza na porta. E com a **sua marca**, não a nossa.")),
-             ("linhas", dict(rotulo="O problema", titulo="Pizzaria não para *para procurar papel.*", itens=[
+             ("capa", dict(rotulo="Prazer, CerraFood", titulo="O restaurante inteiro *num sistema só.*",
+                           sub="Pizzaria, hamburgueria, restaurante ou delivery. Do pedido à entrega, com a **sua marca**.")),
+             ("linhas", dict(rotulo="O problema", titulo="Cozinha cheia não para *para procurar papel.*", itens=[
                  "Pedido anotado à mão e **comanda que se perde**",
                  "Ingrediente que acaba **no meio do sábado**",
-                 "Pizza vendida **sem saber quanto custou**"])),
+                 "Prato vendido **sem saber quanto custou**"])),
              ("fluxo", dict(rotulo="Como funciona", titulo="Do pedido à porta, *sem anotar nada.*", estacoes=[
-                 ("Totem ou caixa", "O cliente monta a pizza ou o caixa lança o pedido"),
+                 ("Totem ou caixa", "O cliente monta o pedido ou o caixa lança"),
                  ("Cozinha", "O pedido aparece na tela, com o tempo de espera"),
                  ("Estoque", "Os ingredientes saem do estoque sozinhos"),
                  ("Entrega", "O cliente acompanha cada etapa pelo link")])),
@@ -66,24 +66,24 @@ CAMPANHAS = [
              ("linhas", dict(rotulo="No sistema", titulo="O que vem *junto*", itens=[
                  "**Totem e caixa**, com comanda impressa",
                  "**Tela da cozinha** no lugar do papel",
-                 "**Ficha técnica** com o custo de cada pizza",
+                 "**Ficha técnica** com o custo de cada prato",
                  "**Estoque, entrega, fidelidade** e relatórios"])),
              cta(),
          ]),
     # ---------------- Série ----------------
     dict(pasta="2026-11-cerrafood-sua-marca", nome="White label", tags="#Marca #Branding #Delivery",
          slides=[
-             ("capa", dict(rotulo="White label", titulo="O cliente vê *a sua pizzaria.* Não a gente.",
+             ("capa", dict(rotulo="White label", titulo="O cliente vê *o seu restaurante.* Não a gente.",
                            sub="O CerraFood sai inteiro com o seu nome: do site à comanda impressa.")),
              ("aparelhos", dict(rotulo="Uma plataforma, várias marcas", titulo="O mesmo sistema, *a cara de cada um.*",
-                                sub="Cada pizzaria com a própria logo e as próprias cores.", selo=ILUSTRATIVO)),
+                                sub="Cada casa com a própria logo e as próprias cores.", selo=ILUSTRATIVO)),
              ("linhas", dict(rotulo="O que leva a sua marca", titulo="Sua marca *de ponta a ponta.*", itens=[
                  "**Site** de pedidos com o seu nome",
                  "**App** que o cliente instala pelo navegador, sem loja de aplicativos",
                  "**Totem** e **comanda impressa** com a sua identidade",
                  "**Painel** da equipe com a sua logo e as suas cores"])),
              ("linhas", dict(rotulo="Por que importa", titulo="O cliente é seu. *O cadastro também.*", itens=[
-                 "Os **pedidos e o cadastro** dos clientes ficam com a sua pizzaria",
+                 "Os **pedidos e o cadastro** dos clientes ficam com o seu restaurante",
                  "Os **pontos de fidelidade** levam o seu nome",
                  "Quem pede **lembra de você**, não do sistema"])),
              frase("A tecnologia é nossa. *A marca é sua.*"),
@@ -102,45 +102,45 @@ CAMPANHAS = [
                  "**Verde:** até 15 minutos de espera",
                  "**Amarelo:** de 15 a 25 minutos, atenção",
                  "**Vermelho:** passou de 25 minutos, olhe primeiro"])),
-             frase("Menos grito, *mais pizza no forno.*"),
+             frase("Menos grito, *mais pedido saindo.*"),
              cta(),
          ]),
     dict(pasta="2026-11-cerrafood-totem", nome="Totem de autoatendimento", tags="#Autoatendimento #Totem #Delivery",
          slides=[
-             ("capa", dict(rotulo="Autoatendimento", titulo="O cliente *monta a pizza* sozinho.",
+             ("capa", dict(rotulo="Autoatendimento", titulo="O cliente *monta o pedido* sozinho.",
                            sub="No totem do balcão ou pelo QR Code, sem esperar o caixa.")),
-             ("monta", dict(rotulo="No totem", titulo="Tamanho, sabores *e borda.*")),
-             ("linhas", dict(rotulo="Meio a meio", titulo="Meio a meio *sem conta de cabeça.*", itens=[
-                 "Até **quantos sabores** o tamanho permitir",
-                 "O preço segue **a regra da casa**: pelo sabor mais caro ou pela média",
+             ("monta", dict(rotulo="No totem · exemplo de pizzaria", titulo="Tamanho, sabores *e borda.*")),
+             ("linhas", dict(rotulo="Cada casa com as suas opções", titulo="Do jeito *que a casa vende.*", itens=[
+                 "**Tamanhos, sabores e opções** configurados no cardápio",
+                 "Na pizzaria, o **meio a meio** segue a regra da casa: sabor mais caro ou média",
                  "O total aparece **antes de confirmar**"])),
              ("comanda", dict(rotulo="Confirmou", titulo="Confirmou, *a cozinha já sabe.*", comanda=COMANDA_TOTEM,
                               sub="O pedido ganha número na hora e vai para a tela da cozinha. Sem internet, o totem avisa e **guarda o carrinho**.")),
              frase("A fila anda *enquanto o caixa atende.*"),
              cta(),
          ]),
-    dict(pasta="2026-11-cerrafood-ficha-tecnica", nome="Ficha técnica e custo", tags="#CustoDaPizza #FichaTecnica #Margem",
+    dict(pasta="2026-11-cerrafood-ficha-tecnica", nome="Ficha técnica e custo", tags="#FichaTecnica #CustoDoPrato #CMV",
          slides=[
-             ("capa", dict(rotulo="Custo real", titulo="Quanto custa *a sua calabresa?*",
-                           sub="Com a ficha técnica, o sistema calcula o custo de cada pizza pelos ingredientes.")),
+             ("capa", dict(rotulo="Custo real", titulo="Quanto custa *o seu prato mais vendido?*",
+                           sub="Com a ficha técnica, o sistema calcula o custo de cada prato pelos ingredientes.")),
              ("linhas", dict(rotulo="O problema", titulo="Preço no chute é *margem no escuro.*", itens=[
                  "O queijo sobe e **o preço fica igual**",
-                 "O sabor que mais vende **pode ser o que menos dá lucro**",
-                 "Ninguém sabe **quanto vai** em cada sabor"])),
-             ("custo", dict(rotulo="Ficha técnica", titulo="Cada pizza *em fatias de custo.*")),
+                 "O prato que mais vende **pode ser o que menos dá lucro**",
+                 "Ninguém sabe **quanto vai** em cada receita"])),
+             ("custo", dict(rotulo="Ficha técnica", titulo="Cada prato *em fatias de custo.*")),
              ("passos", dict(rotulo="Como funciona", titulo="O custo *sai sozinho.*", passos=[
                  ("Cadastre os ingredientes", "Com o custo e a unidade de cada um"),
-                 ("Monte a ficha técnica", "Quanto de cada ingrediente vai em cada sabor"),
-                 ("Veja o custo de cada pizza", "Refeito quando o preço de um ingrediente muda")])),
+                 ("Monte a ficha técnica", "Quanto de cada ingrediente vai em cada prato"),
+                 ("Veja o custo de cada prato", "Refeito quando o preço de um ingrediente muda")])),
              frase("Preço bom é preço *com o custo na mão.*"),
              cta(),
          ]),
     dict(pasta="2026-11-cerrafood-estoque", nome="Estoque automático", tags="#Estoque #ControleDeEstoque #Desperdicio",
          slides=[
-             ("capa", dict(rotulo="Estoque", titulo="Acabou a muçarela *no sábado à noite?*",
+             ("capa", dict(rotulo="Estoque", titulo="Acabou o queijo *no sábado à noite?*",
                            sub="Cada venda baixa os ingredientes do estoque. Sozinha.")),
              ("passos", dict(rotulo="Como funciona", titulo="Vendeu, *baixou, avisou.*", passos=[
-                 ("Vendeu", "A pizza sai pelo totem ou pelo caixa"),
+                 ("Vendeu", "O pedido sai pelo totem ou pelo caixa"),
                  ("Baixou", "A ficha técnica tira cada ingrediente do estoque"),
                  ("Avisou", "Abaixo do mínimo, o sistema alerta a gerência")])),
              ("linhas", dict(rotulo="O estoque que conta a verdade", titulo="Sem *“acho que tem”.*", itens=[
@@ -157,7 +157,7 @@ CAMPANHAS = [
     dict(pasta="2026-11-cerrafood-caixa", nome="Frente de caixa", tags="#PDV #FrenteDeCaixa #FechamentoDeCaixa",
          slides=[
              ("capa", dict(rotulo="Frente de caixa", titulo="O caixa *fecha certinho.*",
-                           sub="Abertura, sangria, suprimento e fechamento com conferência, num caixa feito para pizzaria.")),
+                           sub="Abertura, sangria, suprimento e fechamento com conferência, num caixa feito para restaurante.")),
              ("comanda", dict(rotulo="No balcão", titulo="Pedido no balcão, *comanda na mão.*", comanda=COMANDA_CAIXA,
                               sub="Impressora térmica USB, ligada direto no navegador. Se ela falhar, **a venda não para**.")),
              ("passos", dict(rotulo="O dia do caixa", titulo="Do troco inicial *à conferência.*", passos=[
@@ -171,13 +171,13 @@ CAMPANHAS = [
              frase("Fim de noite *sem conta no papel de pão.*"),
              cta(),
          ]),
-    dict(pasta="2026-11-cerrafood-delivery", nome="Delivery", tags="#Delivery #Entregas #PizzaDelivery",
+    dict(pasta="2026-11-cerrafood-delivery", nome="Delivery", tags="#Delivery #Entregas #DeliveryDeComida",
          slides=[
              ("capa", dict(rotulo="Delivery", titulo="O cliente *acompanha o pedido* sem ligar.",
                            sub="Taxa por bairro, painel do entregador e o status de cada pedido pelo link.")),
              ("fluxo", dict(rotulo="Pelo link do pedido", titulo="Etapa por etapa, *na tela do cliente.*", estacoes=[
-                 ("Confirmado", "A pizzaria recebeu o pedido"),
-                 ("Preparando", "A pizza entrou na cozinha"),
+                 ("Confirmado", "A casa recebeu o pedido"),
+                 ("Preparando", "O pedido entrou na cozinha"),
                  ("Saiu para entrega", "O entregador marcou a saída"),
                  ("Entregue", "Pedido concluído")])),
              ("passos", dict(rotulo="Como funciona", titulo="Do forno *à porta.*", passos=[
@@ -187,14 +187,14 @@ CAMPANHAS = [
              ("linhas", dict(rotulo="WhatsApp por link", titulo="WhatsApp *sem robô.*", itens=[
                  "O entregador **avisa o cliente** com um toque",
                  "O cliente **chama a loja** já com o número do pedido",
-                 "Nenhuma mensagem **automática** em nome da pizzaria"])),
-             frase("Menos *“cadê minha pizza?”* no telefone."),
+                 "Nenhuma mensagem **automática** em nome da casa"])),
+             frase("Menos *“cadê meu pedido?”* no telefone."),
              cta(),
          ]),
     dict(pasta="2026-11-cerrafood-fidelidade", nome="Fidelidade", tags="#Fidelidade #ProgramaDePontos #CRM",
          slides=[
              ("capa", dict(rotulo="Fidelidade", titulo="Quem pede sempre *merece ser lembrado.*",
-                           sub="Pontos por real gasto e níveis de cliente, com o nome da sua pizzaria.")),
+                           sub="Pontos por real gasto e níveis de cliente, com o nome do seu restaurante.")),
              ("niveis", dict(rotulo="Níveis de cliente", titulo="Do Bronze *à Platina.*")),
              ("linhas", dict(rotulo="Pontos", titulo="Cada pedido *vira ponto.*", itens=[
                  "**Pontos** a cada real gasto, quando o pedido é confirmado",
@@ -212,7 +212,7 @@ CAMPANHAS = [
              ("capa", dict(rotulo="Relatórios", titulo="A noite acabou. *Quanto sobrou?*",
                            sub="Faturamento, resultado e o que mais vende, em gráficos que qualquer um entende.")),
              ("abc", dict(rotulo="Curva ABC", titulo="Quem *puxa a venda.*",
-                          sub="A curva ABC separa os sabores que mais faturam dos que quase não saem.")),
+                          sub="A curva ABC separa os pratos que mais faturam dos que quase não saem.")),
              ("mapa", dict(rotulo="Mapa de calor", titulo="Os horários *que lotam.*",
                            sub="Dias e horas com mais pedidos: escala e compra no tamanho certo.")),
              ("linhas", dict(rotulo="Resultado", titulo="O resultado *do mês.*", itens=[
@@ -316,8 +316,8 @@ def comanda_html(c):
     </div>"""
 
 
-APARELHOS = [  # marcas de exemplo: nomes genéricos, nenhuma pizzaria real
-    ("Site", "Sua Pizzaria", "#e0472b", "#fff"),
+APARELHOS = [  # marcas de exemplo: nomes genéricos, nenhum restaurante real
+    ("Site", "Seu Restaurante", "#e0472b", "#fff"),
     ("App", "Sua Marca", "#1f4fd1", "#fff"),
     ("Totem", "Seu Nome Aqui", "#111111", "#f39200"),
 ]
@@ -337,11 +337,11 @@ def aparelhos_html():
 
 def kds_html():
     colunas = [
-        ("Confirmado", [("#0051", "2 min", "", "1 Grande ½ Calabresa ½ Frango", "Iniciar preparo"),
-                        ("#0052", "17 min", "atencao", "2 Médias Margherita", "Iniciar preparo")]),
-        ("Preparando", [("#0048", "27 min", "atraso", "1 Família Portuguesa", "Pronto"),
-                        ("#0050", "9 min", "", "1 Broto Chocolate", "Pronto")]),
-        ("Pronto", [("#0047", "12 min", "", "1 Grande Quatro queijos", None)]),
+        ("Confirmado", [("#0051", "2 min", "", "1 Pizza Grande ½ Calabresa ½ Frango", "Iniciar preparo"),
+                        ("#0052", "17 min", "atencao", "2 X-Salada", "Iniciar preparo")]),
+        ("Preparando", [("#0048", "27 min", "atraso", "1 Parmegiana com fritas", "Pronto"),
+                        ("#0050", "9 min", "", "1 Porção de fritas", "Pronto")]),
+        ("Pronto", [("#0047", "12 min", "", "1 Prato executivo", None)]),
     ]
     cols = []
     for titulo, cards in colunas:
@@ -398,13 +398,13 @@ def slide_html(tipo, d, primeiro, sm=""):
     elif tipo == "comanda":
         corpo = comanda_html(d["comanda"]) + f'<p class="sub">{marca(d["sub"])}</p>'
     elif tipo == "custo":
-        fatias = [("Massa", "var(--laranja)"), ("Queijo", "var(--folha)"), ("Molho", "var(--tomate)"),
-                  ("Recheio", "#f2c14e"), ("Embalagem", "var(--creme-suave)")]
+        fatias = [("Proteína", "var(--laranja)"), ("Acompanhamento", "var(--folha)"), ("Molho", "var(--tomate)"),
+                  ("Queijo", "#f2c14e"), ("Embalagem", "var(--creme-suave)")]
         lis = "".join(f'<li style="--c: {c}">{n}</li>' for n, c in fatias)
-        corpo = (f'<div class="custo"><div class="pizza"></div><ul>{lis}<li class="total">= custo da pizza</li></ul></div>'
-                 '<p class="sub">Cada fatia é um ingrediente da ficha técnica. Somadas, dão <b>o custo de cada sabor e tamanho</b>.</p>' + ilustr)
+        corpo = (f'<div class="custo"><div class="pizza"></div><ul>{lis}<li class="total">= custo do prato</li></ul></div>'
+                 '<p class="sub">Cada fatia é um ingrediente da ficha técnica. Somadas, dão <b>o custo de cada prato e tamanho</b>.</p>' + ilustr)
     elif tipo == "abc":
-        barras = [("A", "Calabresa", 100), ("A", "Margherita", 84), ("B", "Frango", 56), ("B", "Portuguesa", 42), ("C", "Doce de leite", 20)]
+        barras = [("A", "X-Burguer", 100), ("A", "Pizza calabresa", 84), ("B", "Parmegiana", 56), ("B", "Porção de fritas", 42), ("C", "Sobremesa", 20)]
         cor = {"A": "var(--laranja)", "B": "#f2c14e", "C": "var(--creme-suave)"}
         corpo = ('<div class="abc">' + "".join(
             f'<div class="b"><span class="letra">{l}</span><span class="barra" style="--w: {w}%; --c: {cor[l]}">{n if w > 30 else ""}</span></div>'
@@ -422,7 +422,7 @@ def slide_html(tipo, d, primeiro, sm=""):
     elif tipo == "niveis":
         ns = [("Bronze", "#cd8a4b", "300px"), ("Prata", "#c9cdd1", "390px"), ("Ouro", "#f2c14e", "480px"), ("Platina", "#e8ecef", "570px")]
         corpo = ('<div class="niveis">' + "".join(f'<div class="n" style="--c: {c}; --h: {h}"><b>{n}</b></div>' for n, c, h in ns) + "</div>"
-                 '<p class="sub">Quanto mais o cliente pede, mais ele sobe de nível. <b>Os benefícios de cada nível são definidos pela pizzaria.</b></p>')
+                 '<p class="sub">Quanto mais o cliente pede, mais ele sobe de nível. <b>Os benefícios de cada nível são definidos pela casa.</b></p>')
     elif tipo == "perfis":
         corpo = '<div class="perfis">' + "".join(f'<div class="pf"><b>{escape(n)}</b><span>{escape(s)}</span></div>' for n, s in d["perfis"]) + "</div>"
     elif tipo == "frase":
@@ -503,7 +503,7 @@ Agende uma demonstração gratuita: WhatsApp {WHATS}
 
 {chr(10).join(blocos[:2])}
 
-CerraFood, da Cerrado Tech: plataforma white label para pizzaria, com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. {WHITE_LABEL}
+CerraFood, da Cerrado Tech: plataforma white label de gestão de restaurantes (pizzaria, hamburgueria, restaurante e delivery), com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. {WHITE_LABEL}
 
 Demonstração: https://www.{LINK}
 """
@@ -519,6 +519,17 @@ Fale com a gente no WhatsApp: {WHATS_URL}
 Saiba mais: https://www.{LINK}
 """
     return ig, li, fb
+
+
+def manter_agenda(arq, info):
+    """Se a campanha já foi agendada (agendar.py), mantém data, conta e a orientação "Postar em"."""
+    if arq.exists():
+        velho = json.loads(arq.read_text(encoding="utf-8"))
+        if velho.get("conta"):
+            info["data"], info["conta"] = velho["data"], velho["conta"]
+            postar = [o for o in velho.get("orientacoes", []) if o.startswith("Postar em")]
+            info["orientacoes"] = postar + [o for o in info["orientacoes"] if not o.startswith("Postar em")]
+    return info
 
 
 def main():
@@ -537,9 +548,9 @@ def main():
             "titulo": f"CerraFood · {c['nome']}",
             "serie": "Apresentação institucional" if apresentacao else "Série CerraFood",
             "data": f"2026-11-{11 + n:02d}",
-            "descricao": ("Apresentação do CerraFood, a plataforma white label para pizzaria da Cerrado Tech. Fixar no perfil."
+            "descricao": ("Apresentação do CerraFood, a plataforma white label de gestão de restaurantes da Cerrado Tech. Fixar no perfil."
                           if apresentacao else
-                          f"Série do CerraFood (plataforma white label para pizzaria): {c['nome'].lower()}. Identidade \"Comanda\"."),
+                          f"Série do CerraFood (plataforma white label de gestão de restaurantes): {c['nome'].lower()}. Identidade \"Comanda\"."),
             "orientacoes": [
                 f"Carrossel: postar os {len(c['slides'])} PNGs na ordem (carrossel-01 a {len(c['slides']):02d}).",
                 "Carrossel animado (carrossel-animado.mp4, sem áudio): sai como Reel separado, na data da agenda.",
@@ -548,6 +559,7 @@ def main():
                 "Legendas prontas abaixo, uma para cada rede (a do Facebook já traz o link do WhatsApp).",
             ],
         }
+        info = manter_agenda(ent / "info.json", info)
         (ent / "info.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"{n:2d}. {c['pasta']}")
 

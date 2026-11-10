@@ -7,11 +7,11 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CerraFood | O sistema completo da sua pizzaria, com a sua marca</title>
+    <title>CerraFood | Gestão de restaurantes com a sua marca</title>
     <meta name="description"
-        content="Totem, caixa, tela da cozinha, ficha técnica, estoque, entrega, fidelidade e relatórios num só sistema. White label: site, app, totem e painel com o nome, a logo e as cores da sua pizzaria.">
-    <meta property="og:title" content="CerraFood: a pizzaria inteira, num só sistema">
-    <meta property="og:description" content="Plataforma white label para pizzaria da Cerrado Tech: site, app, totem e painel com a sua marca.">
+        content="Totem, caixa, tela da cozinha, ficha técnica, estoque, entrega, fidelidade e relatórios num só sistema. White label: site, app, totem e painel com o nome, a logo e as cores do seu restaurante. Para pizzaria, hamburgueria, restaurante e delivery.">
+    <meta property="og:title" content="CerraFood: o restaurante inteiro, num só sistema">
+    <meta property="og:description" content="Plataforma white label de gestão de restaurantes da Cerrado Tech: site, app, totem e painel com a sua marca.">
     <meta property="og:image" content="https://www.cerradofinancas.com.br/marketing/entregas/2026-11-cerrafood-plataforma/carrossel-01.png">
     <meta property="og:type" content="website">
 
@@ -111,6 +111,13 @@ layout: null
             transform: rotate(-6deg);
         }
         .selo-logo-hero img { width: 92px; height: 92px; object-fit: contain; }
+        /* restaurantes em geral: o prato feito e o hambúrguer ao lado da pizza */
+        .prato-hero { position: absolute; width: 36%; left: -6%; top: -2%; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .35)); }
+        .hamb-hero { position: absolute; width: 42%; right: -4%; bottom: -4%; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .4)); }
+        .prato-hero svg, .hamb-hero svg { width: 100%; height: auto; display: block; overflow: visible; }
+        .hamb-hero .camada { animation: empilhar .5s cubic-bezier(.34, 1.56, .64, 1) both; }
+        .prato-hero .item { animation: cair .45s cubic-bezier(.34, 1.56, .64, 1) both; transform-box: fill-box; transform-origin: 50% 50%; }
+        @keyframes empilhar { from { opacity: 0; transform: translateY(-140px); } to { opacity: 1; transform: none; } }
         @keyframes girar { to { transform: rotate(360deg); } }
         @keyframes cair { from { opacity: 0; transform: translateY(-30px) scale(2.2); } to { opacity: 1; transform: none; } }
 
@@ -255,7 +262,7 @@ layout: null
             .cta .pizza-canto { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .pizza-hero .giro, .cta .pizza-canto .giro, .kds .card.atraso, .pizza-hero .cob, .comanda.imprimir { animation: none; }
+            .pizza-hero .giro, .cta .pizza-canto .giro, .kds .card.atraso, .pizza-hero .cob, .comanda.imprimir, .hamb-hero .camada, .prato-hero .item { animation: none; }
             .sobe { opacity: 1; transform: none; transition: none; }
         }
     </style>
@@ -271,9 +278,9 @@ layout: null
         <section class="hero">
             <div class="container">
                 <div>
-                    <p class="rotulo">CerraFood · sistema para pizzaria</p>
-                    <h1>A pizzaria inteira, <span class="c">num só sistema.</span></h1>
-                    <p class="sub">Totem, caixa, cozinha, estoque, entrega e gestão. E tudo <b>com a sua marca</b>: site, app, totem e painel com o nome, a logo e as cores da sua pizzaria.</p>
+                    <p class="rotulo">CerraFood · gestão de restaurantes</p>
+                    <h1>O restaurante inteiro, <span class="c">num só sistema.</span></h1>
+                    <p class="sub">Pizzaria, hamburgueria, restaurante ou delivery: totem, caixa, cozinha, estoque, entrega e gestão. E tudo <b>com a sua marca</b>: site, app, totem e painel com o nome, a logo e as cores da casa.</p>
                     <div class="acoes">
                         <a class="btn btn-laranja" href="https://api.whatsapp.com/send?phone=5567993515206&text=Ol%C3%A1!%20Quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20CerraFood." target="_blank" rel="noopener">Agendar demonstração</a>
                         <a class="btn btn-linha" href="#como-funciona">Ver como funciona</a>
@@ -285,6 +292,8 @@ layout: null
                 </div>
                 <div class="pizza-hero" aria-hidden="true">
                     <svg viewBox="0 0 400 400" aria-hidden="true"><g class="giro" style="transform-origin: 200px 200px"><circle class="crosta" cx="200" cy="200" r="196" fill="#d99a3b"/><circle class="crosta" cx="200" cy="200" r="184" fill="#e8b25a"/><circle class="molho" cx="200" cy="200" r="168" fill="#e0472b"/><polygon class="queijo" points="356.0,200.0 362.5,214.2 351.5,226.7 344.9,238.8 349.2,254.3 347.2,268.6 330.0,275.1 325.2,287.7 323.1,303.3 313.3,313.3 294.9,313.1 289.9,328.4 280.5,339.5 266.5,342.6 250.3,338.1 241.6,355.4 227.7,357.3 213.5,353.9 200.0,348.2 185.7,363.6 172.8,354.4 160.5,347.5 148.4,341.7 129.8,350.6 123.5,332.4 112.5,324.9 101.0,318.0 82.5,317.5 85.8,295.9 73.9,288.3 64.1,278.4 51.0,269.5 62.6,250.0 48.5,240.6 43.7,227.6 39.3,214.1 55.0,200.0 40.1,186.0 43.5,172.4 47.6,159.2 63.1,150.2 51.5,130.8 63.7,121.3 73.3,111.3 86.5,104.7 82.6,82.6 100.6,81.6 112.3,74.8 124.1,68.5 129.6,49.0 148.3,57.8 160.5,52.5 173.0,46.7 185.6,35.5 200.0,51.6 213.4,46.3 227.6,43.6 241.9,43.4 250.2,62.1 266.3,57.8 280.3,61.0 290.7,70.5 294.5,87.4 313.1,86.9 323.0,96.8 326.2,111.6 329.0,125.5 347.2,131.4 349.4,145.6 345.8,160.9 350.2,173.5 362.9,185.7" fill="#f6cf5c"/><ellipse class="queijo" cx="184" cy="233" rx="20" ry="7" fill="#fbe08a" transform="rotate(18 184 233)"/><ellipse class="queijo" cx="213" cy="173" rx="19" ry="7" fill="#fbe08a" transform="rotate(129 213 173)"/><ellipse class="queijo" cx="206" cy="229" rx="16" ry="8" fill="#fbe08a" transform="rotate(61 206 229)"/><ellipse class="queijo" cx="256" cy="236" rx="19" ry="8" fill="#fbe08a" transform="rotate(57 256 236)"/><ellipse class="queijo" cx="143" cy="138" rx="10" ry="13" fill="#fbe08a" transform="rotate(12 143 138)"/><ellipse class="queijo" cx="225" cy="196" rx="12" ry="11" fill="#fbe08a" transform="rotate(107 225 196)"/><ellipse class="queijo" cx="220" cy="226" rx="14" ry="9" fill="#fbe08a" transform="rotate(26 220 226)"/><ellipse class="queijo" cx="121" cy="156" rx="15" ry="8" fill="#fbe08a" transform="rotate(140 121 156)"/><ellipse class="queijo" cx="181" cy="120" rx="19" ry="10" fill="#fbe08a" transform="rotate(127 181 120)"/><ellipse class="queijo" cx="172" cy="139" rx="15" ry="14" fill="#fbe08a" transform="rotate(149 172 139)"/><ellipse class="queijo" cx="253" cy="172" rx="13" ry="9" fill="#fbe08a" transform="rotate(178 253 172)"/><ellipse class="queijo" cx="205" cy="172" rx="14" ry="14" fill="#fbe08a" transform="rotate(87 205 172)"/><ellipse class="queijo" cx="193" cy="149" rx="11" ry="8" fill="#fbe08a" transform="rotate(131 193 149)"/><ellipse class="queijo" cx="110" cy="251" rx="12" ry="14" fill="#fbe08a" transform="rotate(107 110 251)"/><g class="cob" style="transform-origin: 237px 191px"><circle cx="237" cy="191" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 310px 267px"><ellipse cx="310" cy="267" rx="17" ry="9" fill="#2f9e2a" transform="rotate(101 310 267)"/><line x1="312" y1="255" x2="308" y2="279" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 305px 112px"><circle cx="305" cy="112" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 289px 307px"><circle cx="289" cy="307" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 283px 188px"><circle cx="283" cy="188" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 93px 138px"><ellipse cx="93" cy="138" rx="17" ry="9" fill="#2f9e2a" transform="rotate(107 93 138)"/><line x1="96" y1="127" x2="89" y2="149" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 192px 77px"><ellipse cx="192" cy="77" rx="17" ry="9" fill="#2f9e2a" transform="rotate(169 192 77)"/><line x1="204" y1="75" x2="180" y2="79" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 256px 237px"><circle cx="256" cy="237" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 167px 126px"><ellipse cx="167" cy="126" rx="17" ry="9" fill="#2f9e2a" transform="rotate(123 167 126)"/><line x1="173" y1="116" x2="160" y2="136" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 283px 151px"><circle cx="283" cy="151" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 135px 164px"><circle cx="135" cy="164" r="22" fill="#b8321c"/><circle cx="128" cy="159" r="3.5" fill="#7a1d0f"/><circle cx="141" cy="170" r="3" fill="#7a1d0f"/><circle cx="143" cy="156" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 177px 236px"><ellipse cx="177" cy="236" rx="17" ry="9" fill="#2f9e2a" transform="rotate(81 177 236)"/><line x1="176" y1="224" x2="179" y2="248" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 220px 236px"><circle cx="220" cy="236" r="22" fill="#b8321c"/><circle cx="213" cy="231" r="3.5" fill="#7a1d0f"/><circle cx="226" cy="242" r="3" fill="#7a1d0f"/><circle cx="228" cy="228" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 266px 96px"><circle cx="266" cy="96" r="22" fill="#b8321c"/><circle cx="259" cy="91" r="3.5" fill="#7a1d0f"/><circle cx="272" cy="102" r="3" fill="#7a1d0f"/><circle cx="274" cy="88" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 320px 186px"><circle cx="320" cy="186" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 243px 157px"><circle cx="243" cy="157" r="22" fill="#b8321c"/><circle cx="236" cy="152" r="3.5" fill="#7a1d0f"/><circle cx="249" cy="163" r="3" fill="#7a1d0f"/><circle cx="251" cy="149" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 184px 187px"><ellipse cx="184" cy="187" rx="17" ry="9" fill="#2f9e2a" transform="rotate(167 184 187)"/><line x1="196" y1="184" x2="173" y2="190" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 134px 322px"><circle cx="134" cy="322" r="9" fill="none" stroke="#1b1712" stroke-width="6"/></g><g class="cob" style="transform-origin: 293px 223px"><circle cx="293" cy="223" r="22" fill="#b8321c"/><circle cx="286" cy="218" r="3.5" fill="#7a1d0f"/><circle cx="299" cy="229" r="3" fill="#7a1d0f"/><circle cx="301" cy="215" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 106px 215px"><circle cx="106" cy="215" r="22" fill="#b8321c"/><circle cx="99" cy="210" r="3.5" fill="#7a1d0f"/><circle cx="112" cy="221" r="3" fill="#7a1d0f"/><circle cx="114" cy="207" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 323px 148px"><ellipse cx="323" cy="148" rx="17" ry="9" fill="#2f9e2a" transform="rotate(93 323 148)"/><line x1="324" y1="137" x2="323" y2="160" stroke="#1d6b1a" stroke-width="2"/></g><g class="cob" style="transform-origin: 123px 98px"><circle cx="123" cy="98" r="22" fill="#b8321c"/><circle cx="116" cy="93" r="3.5" fill="#7a1d0f"/><circle cx="129" cy="104" r="3" fill="#7a1d0f"/><circle cx="131" cy="90" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 253px 292px"><circle cx="253" cy="292" r="22" fill="#b8321c"/><circle cx="246" cy="287" r="3.5" fill="#7a1d0f"/><circle cx="259" cy="298" r="3" fill="#7a1d0f"/><circle cx="261" cy="284" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 208px 114px"><circle cx="208" cy="114" r="22" fill="#b8321c"/><circle cx="201" cy="109" r="3.5" fill="#7a1d0f"/><circle cx="214" cy="120" r="3" fill="#7a1d0f"/><circle cx="216" cy="106" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 128px 263px"><circle cx="128" cy="263" r="22" fill="#b8321c"/><circle cx="121" cy="258" r="3.5" fill="#7a1d0f"/><circle cx="134" cy="269" r="3" fill="#7a1d0f"/><circle cx="136" cy="255" r="2.5" fill="#7a1d0f"/></g><g class="cob" style="transform-origin: 194px 298px"><circle cx="194" cy="298" r="22" fill="#b8321c"/><circle cx="187" cy="293" r="3.5" fill="#7a1d0f"/><circle cx="200" cy="304" r="3" fill="#7a1d0f"/><circle cx="202" cy="290" r="2.5" fill="#7a1d0f"/></g><line class="corte" x1="200" y1="200" x2="386.2" y2="237.7" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="305.0" y2="358.4" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="162.3" y2="386.2" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="41.6" y2="305.0" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="13.8" y2="162.3" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="95.0" y2="41.6" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="237.7" y2="13.8" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/><line class="corte" x1="200" y1="200" x2="358.4" y2="95.0" stroke="#c98a32" stroke-width="3.5" stroke-linecap="round" pathLength="1"/></g></svg>
+                    <span class="prato-hero"><svg viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="146" fill="#f4efe2"/><circle cx="150" cy="150" r="146" fill="none" stroke="#d9d1bd" stroke-width="4"/><circle cx="150" cy="150" r="118" fill="#fffdf7"/><g class="item"><path d="M62 150 Q60 96 116 92 Q160 96 158 140 Q150 186 104 184 Q66 182 62 150 Z" fill="#f7f1df"/><ellipse cx="92" cy="120" rx="4" ry="2" fill="#fffaf0" transform="rotate(20 92 120)"/><ellipse cx="105" cy="140" rx="4" ry="2" fill="#fffaf0" transform="rotate(-30 105 140)"/><ellipse cx="120" cy="112" rx="4" ry="2" fill="#fffaf0" transform="rotate(60 120 112)"/><ellipse cx="80" cy="150" rx="4" ry="2" fill="#fffaf0" transform="rotate(0 80 150)"/><ellipse cx="130" cy="150" rx="4" ry="2" fill="#fffaf0" transform="rotate(40 130 150)"/><ellipse cx="98" cy="168" rx="4" ry="2" fill="#fffaf0" transform="rotate(-10 98 168)"/><ellipse cx="115" cy="128" rx="4" ry="2" fill="#fffaf0" transform="rotate(80 115 128)"/><ellipse cx="140" cy="132" rx="4" ry="2" fill="#fffaf0" transform="rotate(-50 140 132)"/></g><g class="item"><circle cx="190" cy="112" r="36" fill="#5a2d17"/><ellipse cx="178" cy="100" rx="6" ry="4" fill="#7a3e20"/><ellipse cx="196" cy="96" rx="6" ry="4" fill="#7a3e20"/><ellipse cx="204" cy="116" rx="6" ry="4" fill="#7a3e20"/><ellipse cx="186" cy="124" rx="6" ry="4" fill="#7a3e20"/><ellipse cx="172" cy="116" rx="6" ry="4" fill="#7a3e20"/><ellipse cx="198" cy="132" rx="6" ry="4" fill="#7a3e20"/></g><g class="item"><path d="M140 196 Q150 168 196 166 Q240 168 240 200 Q236 232 190 232 Q146 230 140 196 Z" fill="#8a4a22"/><path d="M158 186 L222 214 M162 204 L214 228 M170 172 L232 198" stroke="#5e2f14" stroke-width="5" stroke-linecap="round"/></g><g class="item"><ellipse cx="92" cy="214" rx="30" ry="18" fill="#3dbb2f" transform="rotate(-20 92 214)"/><ellipse cx="114" cy="232" rx="24" ry="14" fill="#2f9e2a" transform="rotate(25 114 232)"/><circle cx="76" cy="236" r="12" fill="#e0472b"/><circle cx="76" cy="236" r="6" fill="#f2826b"/></g></svg></span>
+                    <span class="hamb-hero"><svg viewBox="0 0 300 260" aria-hidden="true"><g class="camada"><path d="M28 128 Q28 34 150 34 Q272 34 272 128 Z" fill="#e8a54b"/><path d="M40 118 Q60 60 150 52" fill="none" stroke="#f6c97a" stroke-width="8" stroke-linecap="round"/><ellipse cx="105" cy="62" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(-20 105 62)"/><ellipse cx="140" cy="48" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(10 140 48)"/><ellipse cx="178" cy="55" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(25 178 55)"/><ellipse cx="210" cy="75" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(-10 210 75)"/><ellipse cx="90" cy="92" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(15 90 92)"/><ellipse cx="160" cy="82" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(-25 160 82)"/><ellipse cx="230" cy="100" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(20 230 100)"/><ellipse cx="125" cy="100" rx="6" ry="3.5" fill="#fff3d6" transform="rotate(5 125 100)"/></g><g class="camada"><path d="M20 132 Q40 118 60 132 T100 132 T140 132 T180 132 T220 132 T260 132 T290 132 L284 150 L16 150 Z" fill="#3dbb2f"/></g><g class="camada"><rect x="34" y="146" width="232" height="16" rx="8" fill="#e0472b"/></g><g class="camada"><path d="M26 160 H274 L262 178 L240 172 L222 194 L204 176 L120 178 L98 198 L80 176 L38 178 Z" fill="#f6cf5c"/></g><g class="camada"><rect x="22" y="172" width="256" height="40" rx="20" fill="#6b3a1e"/><path d="M50 186 H250 M60 198 H240" stroke="#4d2814" stroke-width="3" stroke-linecap="round"/></g><g class="camada"><path d="M30 214 H270 Q270 246 240 246 H60 Q30 246 30 214 Z" fill="#e8a54b"/></g></svg></span>
                     <span class="selo-logo-hero"><img src="img/cerrafood-simbolo.png" alt=""></span>
                 </div>
             </div>
@@ -294,13 +303,13 @@ layout: null
         <section class="secao problemas" style="padding-top: 40px">
             <div class="container">
                 <p class="rotulo">O dia a dia</p>
-                <h2 class="sobe">Sua pizzaria ainda <span class="c">funciona assim?</span></h2>
+                <h2 class="sobe">Seu restaurante ainda <span class="c">funciona assim?</span></h2>
                 <div class="grade">
-                    <article class="problema sobe"><span class="n">01 · Pedido</span><h3>Comanda que se perde</h3><p>Pedido anotado à mão, letra que ninguém entende e pizza que sai errada no sábado à noite.</p></article>
-                    <article class="problema sobe"><span class="n">02 · Estoque</span><h3>Estoque "na cabeça"</h3><p>A muçarela acaba no meio do movimento e ninguém sabia que estava no fim.</p></article>
-                    <article class="problema sobe"><span class="n">03 · Custo</span><h3>Preço no chute</h3><p>O queijo sobe e o preço fica igual. O sabor que mais vende pode ser o que menos dá lucro.</p></article>
+                    <article class="problema sobe"><span class="n">01 · Pedido</span><h3>Comanda que se perde</h3><p>Pedido anotado à mão, letra que ninguém entende e prato que sai errado no sábado à noite.</p></article>
+                    <article class="problema sobe"><span class="n">02 · Estoque</span><h3>Estoque "na cabeça"</h3><p>O queijo acaba no meio do movimento e ninguém sabia que estava no fim.</p></article>
+                    <article class="problema sobe"><span class="n">03 · Custo</span><h3>Preço no chute</h3><p>O queijo sobe e o preço fica igual. O prato que mais vende pode ser o que menos dá lucro.</p></article>
                     <article class="problema sobe"><span class="n">04 · Cozinha</span><h3>Pedido fora de ordem</h3><p>Sem saber o que entrou primeiro, a cozinha atrasa quem esperou mais.</p></article>
-                    <article class="problema sobe"><span class="n">05 · Entrega</span><h3>"Cadê minha pizza?"</h3><p>O telefone toca o tempo todo com cliente querendo saber onde está o pedido.</p></article>
+                    <article class="problema sobe"><span class="n">05 · Entrega</span><h3>"Cadê meu pedido?"</h3><p>O telefone toca o tempo todo com cliente querendo saber onde está o pedido.</p></article>
                     <article class="problema sobe"><span class="n">06 · Cliente</span><h3>Cliente fiel esquecido</h3><p>Quem pede toda semana não ganha nada por isso e um dia pede no concorrente.</p></article>
                 </div>
             </div>
@@ -312,7 +321,7 @@ layout: null
                 <p class="rotulo">Como funciona</p>
                 <h2 class="sobe">Do pedido à porta, <span class="c">sem anotar nada.</span></h2>
                 <div class="fluxo">
-                    <div class="etapa sobe"><span class="bola">01</span><h3>Totem ou caixa</h3><p>O cliente monta a pizza no totem, ou o caixa lança o pedido. A comanda sai impressa.</p></div>
+                    <div class="etapa sobe"><span class="bola">01</span><h3>Totem ou caixa</h3><p>O cliente monta o pedido no totem, ou o caixa lança. A comanda sai impressa.</p></div>
                     <div class="etapa sobe"><span class="bola">02</span><h3>Cozinha</h3><p>O pedido aparece na tela da cozinha, na ordem e com o tempo de espera.</p></div>
                     <div class="etapa sobe"><span class="bola">03</span><h3>Estoque</h3><p>A ficha técnica tira cada ingrediente do estoque, sozinha, a cada venda.</p></div>
                     <div class="etapa sobe"><span class="bola">04</span><h3>Entrega</h3><p>O cliente acompanha cada etapa do pedido pelo link, até a porta.</p></div>
@@ -326,7 +335,7 @@ layout: null
                 <div class="sobe">
                     <p class="rotulo">White label</p>
                     <h2>Um sistema. <span class="c">A sua marca.</span></h2>
-                    <p class="lead">O cliente vê a sua pizzaria, não a gente. O CerraFood sai inteiro com o seu nome, do site à comanda impressa.</p>
+                    <p class="lead">O cliente vê o seu restaurante, não a gente. O CerraFood sai inteiro com o seu nome, do site à comanda impressa.</p>
                     <ul>
                         <li><span><b>Site</b> de pedidos com o seu nome</span></li>
                         <li><span><b>App</b> que o cliente instala pelo navegador, sem loja de aplicativos</span></li>
@@ -337,7 +346,7 @@ layout: null
                 </div>
                 <div class="sobe">
                     <div class="aparelhos" aria-hidden="true">
-                        <div class="aparelho" style="--c: #e0472b"><div class="barra">Sua Pizzaria</div><div class="corpo"><div class="item"><i></i><span></span></div><div class="item"><i></i><span class="curta"></span></div><div class="item"><i></i><span></span></div><div class="botao">Pedir</div></div><span class="tipo">Site</span></div>
+                        <div class="aparelho" style="--c: #e0472b"><div class="barra">Seu Restaurante</div><div class="corpo"><div class="item"><i></i><span></span></div><div class="item"><i></i><span class="curta"></span></div><div class="item"><i></i><span></span></div><div class="botao">Pedir</div></div><span class="tipo">Site</span></div>
                         <div class="aparelho alto" style="--c: #1f4fd1"><div class="barra">Sua Marca</div><div class="corpo"><div class="item"><i></i><span></span></div><div class="item"><i></i><span class="curta"></span></div><div class="item"><i></i><span></span></div><div class="botao">Pedir</div></div><span class="tipo">App</span></div>
                         <div class="aparelho" style="--c: #111111; --ct: #f39200"><div class="barra">Seu Nome Aqui</div><div class="corpo"><div class="item"><i></i><span></span></div><div class="item"><i></i><span class="curta"></span></div><div class="item"><i></i><span></span></div><div class="botao">Pedir</div></div><span class="tipo">Totem</span></div>
                     </div>
@@ -350,15 +359,15 @@ layout: null
         <section class="secao modulos">
             <div class="container">
                 <p class="rotulo">Os módulos</p>
-                <h2 class="sobe">Tudo o que a pizzaria usa, <span class="c">num lugar só.</span></h2>
+                <h2 class="sobe">Tudo o que o restaurante usa, <span class="c">num lugar só.</span></h2>
                 <p class="lead sobe">Cada parte conversa com a outra: o pedido do totem chega na cozinha, baixa o estoque, entra no caixa e conta ponto para o cliente.</p>
                 <div class="grade">
                     <article class="modulo sobe"><span class="n">01</span><h3>Totem de autoatendimento</h3><ul>
-                        <li>No balcão ou pelo QR Code</li><li>Tamanho, sabores e borda</li><li>Meio a meio pela regra da casa: pelo sabor mais caro ou pela média</li><li>Sem internet, avisa e guarda o carrinho</li></ul></article>
+                        <li>No balcão ou pelo QR Code</li><li>Tamanhos, sabores e opções de cada item</li><li>Na pizzaria, o meio a meio pela regra da casa: sabor mais caro ou média</li><li>Sem internet, avisa e guarda o carrinho</li></ul></article>
                     <article class="modulo sobe"><span class="n">02</span><h3>Tela da cozinha</h3><ul>
                         <li>Os pedidos na ordem, sem papel</li><li>"Iniciar preparo" e "Pronto" com um toque</li><li>Cor pelo tempo de espera: até 15 min, até 25, passou de 25</li></ul></article>
                     <article class="modulo sobe"><span class="n">03</span><h3>Cardápio e ficha técnica</h3><ul>
-                        <li>Tamanhos, sabores, bordas e preços</li><li>Ficha técnica de cada sabor</li><li>Custo de cada pizza, refeito quando o ingrediente muda de preço</li></ul></article>
+                        <li>Categorias, tamanhos, opções e preços</li><li>Ficha técnica de cada prato</li><li>Custo de cada prato, refeito quando o ingrediente muda de preço</li></ul></article>
                     <article class="modulo sobe"><span class="n">04</span><h3>Frente de caixa</h3><ul>
                         <li>Abertura, sangria, suprimento e fechamento</li><li>Conferência do esperado contra o contado</li><li>PIX, cartão e dinheiro registrados em cada venda</li><li>Comanda na impressora térmica USB</li></ul></article>
                     <article class="modulo sobe"><span class="n">05</span><h3>Estoque</h3><ul>
@@ -368,7 +377,7 @@ layout: null
                     <article class="modulo sobe"><span class="n">07</span><h3>Fidelidade e clientes</h3><ul>
                         <li>Pontos a cada real gasto</li><li>Níveis de cliente: Bronze, Prata, Ouro e Platina</li><li>Histórico, último pedido e total gasto de cada cliente</li></ul></article>
                     <article class="modulo sobe"><span class="n">08</span><h3>Relatórios</h3><ul>
-                        <li>DRE: receita, custos e resultado</li><li>Curva ABC: os sabores que puxam a venda</li><li>Mapa de calor dos horários de pico</li><li>Vendas exportadas em planilha (CSV)</li></ul></article>
+                        <li>DRE: receita, custos e resultado</li><li>Curva ABC: os pratos que puxam a venda</li><li>Mapa de calor dos horários de pico</li><li>Vendas exportadas em planilha (CSV)</li></ul></article>
                     <article class="modulo sobe"><span class="n">09</span><h3>Equipe e acessos</h3><ul>
                         <li>Um perfil para cada função: gerência, caixa, cozinha e entrega</li><li>Funcionário desativado perde o acesso</li><li>Auditoria: quem mudou o quê, e quando</li></ul></article>
                 </div>
@@ -386,15 +395,15 @@ layout: null
                         <div class="barra-tela"><span>Tela da cozinha</span><b>● ao vivo</b></div>
                         <div class="kds">
                             <div class="col"><h4>Confirmado</h4>
-                                <div class="card"><span class="n"><span>#0051</span><span class="t"><span class="m" data-ate="2">2</span> min</span></span><p>1 Grande ½ Calabresa ½ Frango</p><span class="acao">Iniciar preparo</span></div>
-                                <div class="card atencao"><span class="n"><span>#0052</span><span class="t"><span class="m" data-ate="17">17</span> min</span></span><p>2 Médias Margherita</p><span class="acao">Iniciar preparo</span></div>
+                                <div class="card"><span class="n"><span>#0051</span><span class="t"><span class="m" data-ate="2">2</span> min</span></span><p>1 Pizza Grande ½ Calabresa ½ Frango</p><span class="acao">Iniciar preparo</span></div>
+                                <div class="card atencao"><span class="n"><span>#0052</span><span class="t"><span class="m" data-ate="17">17</span> min</span></span><p>2 X-Salada</p><span class="acao">Iniciar preparo</span></div>
                             </div>
                             <div class="col"><h4>Preparando</h4>
-                                <div class="card atraso"><span class="n"><span>#0048</span><span class="t"><span class="m" data-ate="27">27</span> min</span></span><p>1 Família Portuguesa</p><span class="acao">Pronto</span></div>
-                                <div class="card"><span class="n"><span>#0050</span><span class="t"><span class="m" data-ate="9">9</span> min</span></span><p>1 Broto Chocolate</p><span class="acao">Pronto</span></div>
+                                <div class="card atraso"><span class="n"><span>#0048</span><span class="t"><span class="m" data-ate="27">27</span> min</span></span><p>1 Parmegiana com fritas</p><span class="acao">Pronto</span></div>
+                                <div class="card"><span class="n"><span>#0050</span><span class="t"><span class="m" data-ate="9">9</span> min</span></span><p>1 Porção de fritas</p><span class="acao">Pronto</span></div>
                             </div>
                             <div class="col"><h4>Pronto</h4>
-                                <div class="card"><span class="n"><span>#0047</span><span class="t"><span class="m" data-ate="12">12</span> min</span></span><p>1 Grande Quatro queijos</p></div>
+                                <div class="card"><span class="n"><span>#0047</span><span class="t"><span class="m" data-ate="12">12</span> min</span></span><p>1 Prato executivo</p></div>
                             </div>
                         </div>
                     </div>
@@ -406,7 +415,7 @@ layout: null
                         <div class="sep"></div>
                         <div class="it"><span>1x</span><span>Pizza Grande</span></div>
                         <div class="obs">1/2 Calabresa</div><div class="obs">1/2 Quatro queijos</div><div class="obs">Borda recheada</div>
-                        <div class="it"><span>1x</span><span>Refrigerante 2 L</span></div>
+                        <div class="it"><span>1x</span><span>X-Burguer</span></div><div class="obs">sem cebola</div>
                         <div class="sep"></div>
                         <div class="pe">enviado à cozinha</div>
                     </div>
@@ -421,7 +430,7 @@ layout: null
                 <p class="rotulo">Tecnologia</p>
                 <h2 class="sobe">Feito para a correria <span class="c">de sexta à noite.</span></h2>
                 <div class="grade">
-                    <div class="item sobe"><span class="n">01</span><h3>Na nuvem</h3><p>Sem servidor na pizzaria. A gerência acompanha de qualquer lugar.</p></div>
+                    <div class="item sobe"><span class="n">01</span><h3>Na nuvem</h3><p>Sem servidor no restaurante. A gerência acompanha de qualquer lugar.</p></div>
                     <div class="item sobe"><span class="n">02</span><h3>Pelo navegador</h3><p>Totem, caixa, cozinha e entregador abrem no navegador. O app instala sem loja de aplicativos.</p></div>
                     <div class="item sobe"><span class="n">03</span><h3>Em tempo real</h3><p>O pedido muda de status e todo mundo vê na hora: caixa, cozinha, entrega e cliente.</p></div>
                     <div class="item sobe"><span class="n">04</span><h3>Impressora térmica</h3><p>Comanda na impressora USB, direto do navegador. Se ela falhar, a venda não para.</p></div>
@@ -467,6 +476,10 @@ layout: null
             });
             // coberturas da pizza caem uma a uma
             document.querySelectorAll(".pizza-hero .cob").forEach(function (c, i) { c.style.animationDelay = (0.4 + i * 0.05) + "s"; });
+            // o prato recebe as porções e o hambúrguer se monta de baixo para cima
+            document.querySelectorAll(".prato-hero .item").forEach(function (c, i) { c.style.animationDelay = (1.2 + i * 0.12) + "s"; });
+            var camadas = document.querySelectorAll(".hamb-hero .camada");
+            camadas.forEach(function (c, i) { c.style.animationDelay = (1.5 + (camadas.length - 1 - i) * 0.12) + "s"; });
             // a comanda "imprime" e os timers da cozinha correm quando a vitrine aparece
             var vitrine = document.querySelector(".vitrine");
             new IntersectionObserver(function (es, o) {

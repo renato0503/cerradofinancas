@@ -1,14 +1,14 @@
-A pizzaria inteira num sistema só.
+O restaurante inteiro num sistema só.
 
-Do pedido no totem à pizza na porta. E com a sua marca, não a nossa.
+Pizzaria, hamburgueria, restaurante ou delivery. Do pedido à entrega, com a sua marca.
 
-Pizzaria não para para procurar papel.
+Cozinha cheia não para para procurar papel.
 🍕 Pedido anotado à mão e comanda que se perde
 🍕 Ingrediente que acaba no meio do sábado
-🍕 Pizza vendida sem saber quanto custou
+🍕 Prato vendido sem saber quanto custou
 
 Do pedido à porta, sem anotar nada.
-1. Totem ou caixa: O cliente monta a pizza ou o caixa lança o pedido
+1. Totem ou caixa: O cliente monta o pedido ou o caixa lança
 2. Cozinha: O pedido aparece na tela, com o tempo de espera
 3. Estoque: Os ingredientes saem do estoque sozinhos
 4. Entrega: O cliente acompanha cada etapa pelo link
@@ -16,12 +16,12 @@ Do pedido à porta, sem anotar nada.
 O que vem junto
 🍕 Totem e caixa, com comanda impressa
 🍕 Tela da cozinha no lugar do papel
-🍕 Ficha técnica com o custo de cada pizza
+🍕 Ficha técnica com o custo de cada prato
 🍕 Estoque, entrega, fidelidade e relatórios
 
-O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Agende uma demonstração gratuita: WhatsApp (67) 99351-5206
 🔗 cerradofinancas.com.br/cerrafood
 
-#GestaoDePizzaria #Delivery #CerraFood #SistemaParaPizzaria #Pizzaria #WhiteLabel #CerradoTech
+#Pizzaria #Hamburgueria #Restaurante #CerraFood #SistemaParaRestaurante #GestaoDeRestaurante #Delivery #WhiteLabel #CerradoTech

@@ -178,7 +178,7 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
   `D:\Dev\Cerra.AI` — o que pode e o que não pode ser afirmado está na regra 8 do `HISTORICO.md`.
 - **2026-11 · Guia Acadêmico**: 15 cadernos de método (carrossel, story, carrossel animado e legendas) e, desde 31/10,
   uma arte única de Facebook (`facebook.png`) com legenda própria e o link do WhatsApp clicável.
-- **2026-11 · CerraFood** (white label para pizzaria, identidade "Comanda"): peça global "A plataforma inteira" (8 slides,
+- **2026-11 · CerraFood** (white label de gestão de restaurantes, identidade "Comanda"): peça global "A plataforma inteira" (8 slides,
   carrossel animado com coreografia própria), apresentação "Prazer, CerraFood" e 10 campanhas (sua marca, cozinha,
   totem, ficha técnica, estoque, caixa, delivery, fidelidade, relatórios e equipe), cada uma com story, carrossel
   animado e legendas de Instagram, LinkedIn e Facebook. Na agenda do @cerradofinancas desde 11/11.

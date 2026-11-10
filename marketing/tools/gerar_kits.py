@@ -137,7 +137,7 @@ KITS_DADOS = [
                  "Uma palavra em destaque por título"],
          exemplos=["2026-11-guiacademico-estatistica/carrossel-01.png", "2026-11-guiacademico-estatistica/carrossel-03.png"]),
     dict(slug="cerrafood", frentes=["cerrafood"], nome="CerraFood", apelido="Comanda",
-         conceito="O CerraFood é a plataforma white label para pizzaria da Cerrado Tech: o cliente recebe site, app, totem e painel com a marca dele. O objeto da marca é a comanda térmica que o próprio sistema imprime. As cores saem da árvore da logo.",
+         conceito="O CerraFood é a plataforma white label de gestão de restaurantes da Cerrado Tech (pizzaria, hamburgueria, restaurante e delivery): o cliente recebe site, app, totem e painel com a marca dele. O objeto da marca é a comanda térmica que o próprio sistema imprime. As cores saem da árvore da logo.",
          cores=[("Verde-mata", "#0f2a16", "fundo padrão"), ("Laranja", "#f39200", "destaque, frase e CTA"),
                 ("Verde-folha", "#3dbb2f", "\"pronto\" e \"no tempo\""), ("Tomate", "#e0472b", "\"atrasado\"; nunca fundo"),
                 ("Papel", "#fbf6ea", "comanda, totem e slide claro"), ("Creme", "#f4efe2", "texto sobre o verde")],

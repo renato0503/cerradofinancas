@@ -114,7 +114,10 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
 
 ## O que foi feito (novembro de 2026)
 
-**CerraFood, a plataforma white label para pizzaria (10/11).** Commits `f6d2d67`, `a0bada7` e `cee3f36`.
+**CerraFood, a plataforma white label de gestão de restaurantes (10/11).** Commits `f6d2d67`, `a0bada7` e `cee3f36`;
+no mesmo dia, reposicionado de "sistema para pizzaria" para **restaurantes em geral** (pizzaria, hamburgueria,
+restaurante e delivery): textos, exemplos (X-Burguer, parmegiana, prato executivo) e ilustrações (hambúrguer e prato
+feito ao lado da pizza) nas peças e na página.
 - **Marketing:** identidade própria "Comanda" (`marketing/brand/cerrafood/`), peça global "A plataforma inteira"
   (8 slides com ilustrações e carrossel animado com coreografia própria), apresentação "Prazer, CerraFood" e 10
   campanhas, uma por módulo. Cada uma tem story, carrossel animado e legendas de Instagram, LinkedIn e Facebook. Há

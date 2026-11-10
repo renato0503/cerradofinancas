@@ -38,12 +38,22 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 02/11 | `6f4b89e` | Filme 3D do Cerra.AI ("o cobre") e 6 peças re-renderizadas como amostra |
 | 02/11 | `c951cf2` | O filme 3D foi reprovado pelo Renato e apagado das entregas (a fonte ficou) |
 | 02/11 | `bcaa034` | Correção da virada de página (não mostra mais o verso nem sobrepõe as folhas) e do leque de cópias da lâmina 3D; Contabilidade e Crédito re-renderizados |
-| 10/11 | `f6d2d67` | CerraFood (plataforma white label para pizzaria) vira frente no @cerradofinancas: identidade própria "Comanda" (`brand/cerrafood/`), peça global "A plataforma inteira" (8 slides com coreografia), apresentação "Prazer, CerraFood" + série de 10 campanhas (`tools/gerar_cerrafood.py`), carrossel animado, legendas de Instagram, LinkedIn e Facebook, mídia kit. Estreia na agenda em 11/11, um dia sim e outro não, sem mexer no que já foi postado (`ESTREIAS` em `agendar.py`) |
+| 10/11 | `f6d2d67` | CerraFood (plataforma white label de gestão de restaurantes) vira frente no @cerradofinancas: identidade própria "Comanda" (`brand/cerrafood/`), peça global "A plataforma inteira" (8 slides com coreografia), apresentação "Prazer, CerraFood" + série de 10 campanhas (`tools/gerar_cerrafood.py`), carrossel animado, legendas de Instagram, LinkedIn e Facebook, mídia kit. Estreia na agenda em 11/11, um dia sim e outro não, sem mexer no que já foi postado (`ESTREIAS` em `agendar.py`) |
 | 10/11 | `a0bada7`, `cee3f36` | Página `cerrafood.html` do site refeita na identidade "Comanda", só com o que o sistema faz (saíram 23%, PIX integrado, multi-loja, ponto, taxa por distância, 7 dias e a seção Enterprise) |
+| 10/11 | (este commit) | Boas-vindas ao time, fora da agenda: Talita Marques (Consultora Comercial) e Felipe Borges (Marketing), post e story na identidade institucional, com o estilo comum `brand/anuncio-equipe.css`; CerraFood reposicionado para gestão de restaurantes em geral |
 
-## CerraFood, a plataforma white label para pizzaria (10/11)
+## CerraFood, a plataforma white label de gestão de restaurantes (10/11)
 
-O CerraFood é o sistema de pizzaria da Cerrado Tech (totem, caixa, tela da cozinha, ficha técnica, estoque, delivery,
+> **Reposicionado no mesmo dia:** o Renato lembrou que o CerraFood "não é só para pizzaria e sim gestão de
+> restaurantes no geral". Textos, hashtags, legendas e exemplos foram trocados (a tela da cozinha e as comandas
+> passaram a ter X-Burguer, parmegiana, porção de fritas e prato executivo; a ficha técnica fala em "custo de cada
+> prato"). A pizza continua como **um** exemplo: o totem mostra "tamanho, sabores e borda" com o selo "exemplo de
+> pizzaria", porque é assim que o sistema monta o item. Ilustrações novas na capa da global e no topo da página:
+> `hamburguer_svg()` (camadas que se empilham no vídeo) e `prato_svg()` (prato feito visto de cima). Os geradores
+> agora preservam a data, a conta e o "Postar em" que o `agendar.py` gravou (`manter_agenda()`), para poder
+> regerar as peças sem rodar a agenda de novo.
+
+O CerraFood é o sistema de gestão de restaurantes da Cerrado Tech (totem, caixa, tela da cozinha, ficha técnica, estoque, delivery,
 fidelidade, relatórios e equipe), vendido em **white label**: o cliente recebe site, app, totem e painel com o nome, a
 logo e as cores dele. O código é o projeto `D:\Dev\NapoleFood`, conferido em 10/11 para cada afirmação.
 
@@ -121,6 +131,22 @@ Cerra.AI ainda paradas. Para não publicar o trabalho dela:
    o que deixou de diferença só as mudanças da outra IA.
 6. O mídia kit: `gerar_kits.py` refaz **todos** os kits; os outros foram restaurados com `git checkout` e só a entrada
    do CerraFood entrou no `kits.json`.
+
+## Boas-vindas ao time (10/11)
+
+Peças avulsas, **fora da agenda** (`FORA_DA_AGENDA` no `agendar.py`): a equipe posta quando decidir. Identidade
+institucional (azul, dourado, a folinha e os anéis das datas comemorativas). A foto entra numa moldura em arco com
+contorno dourado; o estilo é comum a todas: `brand/anuncio-equipe.css`. Texto só com nome e cargo, sem inventar nada
+sobre a pessoa.
+
+| Pessoa | Cargo | Fonte (post.html, story.html e a foto) | Entrega |
+|---|---|---|---|
+| Talita Marques | Consultora Comercial | `posts/2026-11-talita-consultora/` | `entregas/2026-11-talita-consultora/` |
+| Felipe Borges | Marketing | `posts/2026-11-felipe_borges/` | `entregas/2026-11-felipe-marketing/` |
+
+Para uma pessoa nova: copiar a pasta de uma delas, trocar foto, nome, cargo e o `meta entrega`; ajustar o
+`object-position` da foto se o rosto não ficar no centro do arco; exportar; criar legendas e `info.json` (série
+"Equipe"); pôr a pasta em `FORA_DA_AGENDA`.
 
 ## Campanhas publicadas (20)
 
@@ -680,7 +706,7 @@ Valem para todas as próximas campanhas.
     atrás. E, em 3D por camadas, a espessura tem que ser **fina** (poucas cópias, ~1 px): com 16 cópias a 3 px
     a folha vira um leque na tela. Conferir sempre com quadros extraídos em volta da transição, não só no meio
     do slide.
-19. **CerraFood (10/11):** é white label; nunca citar a primeira implantação (nome, fotos, resultados). Só o que está
+19. **CerraFood (10/11):** é gestão de **restaurantes em geral** (pizzaria é só um exemplo) e é white label; nunca citar a primeira implantação (nome, fotos, resultados). Só o que está
     no código do sistema (lista em `brand/cerrafood/README.md`). Telas e gráficos com o selo "Exemplo ilustrativo". O
     selo "sua marca aqui" só nas peças sobre white label.
 20. **Frente que estreia com a agenda correndo (10/11):** entra em `ESTREIAS` no `agendar.py`, com a data de estreia,

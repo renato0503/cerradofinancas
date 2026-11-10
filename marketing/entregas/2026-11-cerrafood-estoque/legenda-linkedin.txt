@@ -1,9 +1,9 @@
-Acabou a muçarela no sábado à noite?
+Acabou o queijo no sábado à noite?
 
 Cada venda baixa os ingredientes do estoque. Sozinha.
 
 Vendeu, baixou, avisou.
-1. Vendeu: A pizza sai pelo totem ou pelo caixa
+1. Vendeu: O pedido sai pelo totem ou pelo caixa
 2. Baixou: A ficha técnica tira cada ingrediente do estoque
 3. Avisou: Abaixo do mínimo, o sistema alerta a gerência
 Sem “acho que tem”.
@@ -11,6 +11,6 @@ Sem “acho que tem”.
 🍕 Alerta quando um ingrediente fica abaixo do mínimo
 🍕 Venda sem estoque aparece, em vez de sumir
 
-CerraFood, da Cerrado Tech: plataforma white label para pizzaria, com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+CerraFood, da Cerrado Tech: plataforma white label de gestão de restaurantes (pizzaria, hamburgueria, restaurante e delivery), com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: o seu restaurante recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
 
 Demonstração: https://www.cerradofinancas.com.br/cerrafood

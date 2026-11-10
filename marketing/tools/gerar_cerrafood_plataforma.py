@@ -88,6 +88,36 @@ def meio_a_meio_svg():
             '</svg>')
 
 
+def hamburguer_svg():
+    """Hambúrguer de lado, em camadas (cada camada um <g class="camada">, de cima para baixo, para empilhar no vídeo)."""
+    gergelim = "".join(f'<ellipse cx="{x}" cy="{y}" rx="6" ry="3.5" fill="#fff3d6" transform="rotate({r} {x} {y})"/>'
+                       for x, y, r in [(105, 62, -20), (140, 48, 10), (178, 55, 25), (210, 75, -10), (90, 92, 15), (160, 82, -25), (230, 100, 20), (125, 100, 5)])
+    camadas = [
+        f'<path d="M28 128 Q28 34 150 34 Q272 34 272 128 Z" fill="#e8a54b"/><path d="M40 118 Q60 60 150 52" fill="none" stroke="#f6c97a" stroke-width="8" stroke-linecap="round"/>{gergelim}',
+        '<path d="M20 132 Q40 118 60 132 T100 132 T140 132 T180 132 T220 132 T260 132 T290 132 L284 150 L16 150 Z" fill="#3dbb2f"/>',
+        '<rect x="34" y="146" width="232" height="16" rx="8" fill="#e0472b"/>',
+        '<path d="M26 160 H274 L262 178 L240 172 L222 194 L204 176 L120 178 L98 198 L80 176 L38 178 Z" fill="#f6cf5c"/>',
+        '<rect x="22" y="172" width="256" height="40" rx="20" fill="#6b3a1e"/><path d="M50 186 H250 M60 198 H240" stroke="#4d2814" stroke-width="3" stroke-linecap="round"/>',
+        '<path d="M30 214 H270 Q270 246 240 246 H60 Q30 246 30 214 Z" fill="#e8a54b"/>',
+    ]
+    return ('<svg viewBox="0 0 300 260" aria-hidden="true">'
+            + "".join(f'<g class="camada">{c}</g>' for c in camadas) + "</svg>")
+
+
+def prato_svg():
+    """Prato feito visto de cima: arroz, feijão, bife e salada (cada um num <g class="item">)."""
+    graos = "".join(f'<ellipse cx="{x}" cy="{y}" rx="4" ry="2" fill="#fffaf0" transform="rotate({r} {x} {y})"/>'
+                    for x, y, r in [(92, 120, 20), (105, 140, -30), (120, 112, 60), (80, 150, 0), (130, 150, 40), (98, 168, -10), (115, 128, 80), (140, 132, -50)])
+    itens = [
+        f'<path d="M62 150 Q60 96 116 92 Q160 96 158 140 Q150 186 104 184 Q66 182 62 150 Z" fill="#f7f1df"/>{graos}',
+        '<circle cx="190" cy="112" r="36" fill="#5a2d17"/>' + "".join(f'<ellipse cx="{x}" cy="{y}" rx="6" ry="4" fill="#7a3e20"/>' for x, y in [(178, 100), (196, 96), (204, 116), (186, 124), (172, 116), (198, 132)]),
+        '<path d="M140 196 Q150 168 196 166 Q240 168 240 200 Q236 232 190 232 Q146 230 140 196 Z" fill="#8a4a22"/><path d="M158 186 L222 214 M162 204 L214 228 M170 172 L232 198" stroke="#5e2f14" stroke-width="5" stroke-linecap="round"/>',
+        '<ellipse cx="92" cy="214" rx="30" ry="18" fill="#3dbb2f" transform="rotate(-20 92 214)"/><ellipse cx="114" cy="232" rx="24" ry="14" fill="#2f9e2a" transform="rotate(25 114 232)"/><circle cx="76" cy="236" r="12" fill="#e0472b"/><circle cx="76" cy="236" r="6" fill="#f2826b"/>',
+    ]
+    return ('<svg viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="146" fill="#f4efe2"/><circle cx="150" cy="150" r="146" fill="none" stroke="#d9d1bd" stroke-width="4"/>'
+            '<circle cx="150" cy="150" r="118" fill="#fffdf7"/>' + "".join(f'<g class="item">{i}</g>' for i in itens) + "</svg>")
+
+
 CAIXA_PIZZA = ('<svg class="caixa-pizza" viewBox="0 0 92 70" aria-hidden="true"><rect x="3" y="14" width="86" height="52" rx="6" fill="#fbf6ea" stroke="#16130e" stroke-width="4"/>'
                '<path d="M3 26 H89" stroke="#16130e" stroke-width="4"/><circle cx="46" cy="46" r="11" fill="#f39200"/><path d="M28 6 Q46 -2 64 6" fill="none" stroke="#f39200" stroke-width="4" stroke-linecap="round"/></svg>')
 
@@ -104,7 +134,7 @@ def slide(miolo, classe="", primeiro=False):
     return f'  <section class="slide {classe}">\n{miolo}\n{rodape(primeiro)}\n  </section>\n'
 
 
-APARELHOS = [("Site", "Sua Pizzaria", "#e0472b", "#fff"), ("App", "Sua Marca", "#1f4fd1", "#fff"), ("Totem", "Seu Nome Aqui", "#111111", "#f39200")]
+APARELHOS = [("Site", "Seu Restaurante", "#e0472b", "#fff"), ("App", "Sua Marca", "#1f4fd1", "#fff"), ("Totem", "Seu Nome Aqui", "#111111", "#f39200")]
 
 
 def aparelhos():
@@ -120,11 +150,11 @@ def aparelhos():
 
 def kds():
     colunas = [
-        ("Confirmado", [("#0051", 2, "", "1 Grande ½ Calabresa ½ Frango", "Iniciar preparo"),
-                        ("#0052", 17, "atencao", "2 Médias Margherita", "Iniciar preparo")]),
-        ("Preparando", [("#0048", 27, "atraso", "1 Família Portuguesa", "Pronto"),
-                        ("#0050", 9, "", "1 Broto Chocolate", "Pronto")]),
-        ("Pronto", [("#0047", 12, "", "1 Grande Quatro queijos", None)]),
+        ("Confirmado", [("#0051", 2, "", "1 Pizza Grande ½ Calabresa ½ Frango", "Iniciar preparo"),
+                        ("#0052", 17, "atencao", "2 X-Salada", "Iniciar preparo")]),
+        ("Preparando", [("#0048", 27, "atraso", "1 Parmegiana com fritas", "Pronto"),
+                        ("#0050", 9, "", "1 Porção de fritas", "Pronto")]),
+        ("Pronto", [("#0047", 12, "", "1 Prato executivo", None)]),
     ]
     cols = []
     for titulo, cards in colunas:
@@ -150,9 +180,11 @@ def mapa():
 SLIDES = [
     # 1. capa
     slide(f"""    <div class="topo"><p class="rotulo">CerraFood · a plataforma</p></div>
-    <h1 class="mega" style="font-size: 112px">A pizzaria inteira, <span class="c">num só sistema.</span></h1>
-    <p class="sub" style="margin-top: 44px; max-width: 470px">Totem, caixa, cozinha, estoque, entrega e gestão. <b>Com a sua marca.</b></p>
-    <div class="pizza-capa" data-sangra>{pizza_svg()}</div>""", primeiro=True),
+    <h1 class="mega" style="font-size: 108px">O restaurante inteiro, <span class="c">num só sistema.</span></h1>
+    <p class="sub" style="margin-top: 40px; max-width: 470px">Pizzaria, hamburgueria, restaurante ou delivery. <b>Com a sua marca.</b></p>
+    <div class="pizza-capa" data-sangra style="width: 700px; height: 700px; bottom: 70px; right: -230px">{pizza_svg()}</div>
+    <div class="prato-capa" data-sangra>{prato_svg()}</div>
+    <div class="hamb-capa" data-sangra>{hamburguer_svg()}</div>""", primeiro=True),
     # 2. white label
     slide(f"""    <p class="rotulo">01 · White label</p>
     <h2 class="titulo" style="font-size: 88px">Um sistema. <span class="c">A sua marca.</span></h2>
@@ -164,7 +196,7 @@ SLIDES = [
     <div class="base">
       <div class="dupla">
         <div class="monta">
-          <div class="totem-topo"><span>Monte sua pizza</span><span>Totem</span></div>
+          <div class="totem-topo"><span>Monte seu pedido</span><span>Ex.: pizzaria</span></div>
           <div class="opcoes"><span class="op">Média</span><span class="op on">Grande</span><span class="op">Família</span></div>
           <div class="meio"><span class="disco">{meio_a_meio_svg()}</span><p>Metade <b>Calabresa</b><br>Metade <b>Quatro queijos</b></p></div>
           <div class="opcoes"><span class="op">Tradicional</span><span class="op on">Recheada</span></div>
@@ -175,7 +207,7 @@ SLIDES = [
           <div class="sep"></div>
           <div class="it"><span class="q">1x</span><span>Pizza Grande</span></div>
           <div class="obs">1/2 Calabresa</div><div class="obs">1/2 Quatro queijos</div><div class="obs">Borda recheada</div>
-          <div class="it"><span class="q">1x</span><span>Refri 2 L</span></div>
+          <div class="it"><span class="q">1x</span><span>X-Burguer</span></div>
           <div class="sep"></div>
           <div class="pe">enviado à cozinha</div>
         </div>
@@ -194,15 +226,15 @@ SLIDES = [
     <h2 class="titulo" style="font-size: 92px">Vendeu, <span class="c">o estoque baixou.</span></h2>
     <div class="base">
       <div class="custo-estoque">
-        <div><div class="pizza" style="width: 340px; height: 340px; border-radius: 50%; position: relative; background: conic-gradient(var(--laranja) 0 28%, var(--folha) 28% 50%, var(--tomate) 50% 66%, #f2c14e 66% 86%, var(--creme-suave) 86%); box-shadow: 0 0 0 10px var(--mata), 0 0 0 14px var(--linha)"></div><p class="rotulo-pizza">Custo por ficha técnica</p></div>
+        <div><div class="pizza" style="width: 340px; height: 340px; border-radius: 50%; position: relative; background: conic-gradient(var(--laranja) 0 28%, var(--folha) 28% 50%, var(--tomate) 50% 66%, #f2c14e 66% 86%, var(--creme-suave) 86%); box-shadow: 0 0 0 10px var(--mata), 0 0 0 14px var(--linha)"></div><p class="rotulo-pizza">Custo de cada prato</p></div>
         <div class="estoque">
-          <div class="ing"><span class="nome">Farinha <small>ok</small></span><span class="nivel"><i style="--w: 78%"></i></span></div>
-          <div class="ing"><span class="nome">Calabresa <small>ok</small></span><span class="nivel"><i style="--w: 61%"></i></span></div>
+          <div class="ing"><span class="nome">Carne <small>ok</small></span><span class="nivel"><i style="--w: 78%"></i></span></div>
+          <div class="ing"><span class="nome">Pão <small>ok</small></span><span class="nivel"><i style="--w: 61%"></i></span></div>
           <div class="ing"><span class="nome">Molho <small>ok</small></span><span class="nivel"><i style="--w: 52%"></i></span></div>
-          <div class="ing baixo"><span class="nome">Muçarela <span class="alerta">abaixo do mínimo</span></span><span class="nivel"><i style="--w: 14%"></i></span></div>
+          <div class="ing baixo"><span class="nome">Queijo <span class="alerta">abaixo do mínimo</span></span><span class="nivel"><i style="--w: 14%"></i></span></div>
         </div>
       </div>
-      <p class="legenda-baixa">A ficha técnica dá o custo de cada pizza e baixa cada ingrediente a cada venda.</p>
+      <p class="legenda-baixa">A ficha técnica dá o custo de cada prato e baixa cada ingrediente a cada venda.</p>
       <span class="selo">Exemplo ilustrativo</span>
     </div>"""),
     # 6. entrega
@@ -219,7 +251,7 @@ SLIDES = [
         </div>
       </div>
       <div class="celular">
-        <span class="url">suapizzaria.com.br/pedido/…</span>
+        <span class="url">seurestaurante.com.br/pedido/…</span>
         <span class="status">Saiu para entrega</span>
         <span class="info">Pedido #0042 · taxa e tempo de entrega pelo seu bairro</span>
         <span class="zap">Falar com a loja no WhatsApp</span>
@@ -270,8 +302,8 @@ FIM = """  <script src="../../brand/slides.js"></script>
 STORY = f"""  <!-- área segura: ~250px livres no topo e na base -->
   <section class="slide story">
     <div class="topo"><p class="rotulo">CerraFood · a plataforma</p></div>
-    <h1 class="mega" style="font-size: 116px">A pizzaria inteira, <span class="c">num só sistema.</span></h1>
-    <p class="sub" style="margin-top: 44px; max-width: 520px">Totem, caixa, cozinha, estoque, entrega e gestão. <b>Com a sua marca.</b></p>
+    <h1 class="mega" style="font-size: 112px">O restaurante inteiro, <span class="c">num só sistema.</span></h1>
+    <p class="sub" style="margin-top: 44px; max-width: 520px">Pizzaria, hamburgueria, restaurante ou delivery. <b>Com a sua marca.</b></p>
     <div class="base">
       <div class="chips" style="justify-content: flex-start"><span class="chip">Totem</span><span class="chip">Caixa</span><span class="chip">Cozinha</span><span class="chip">Ficha técnica</span><span class="chip">Estoque</span><span class="chip">Entrega</span><span class="chip">Fidelidade</span><span class="chip">Relatórios</span></div>
       <span class="contato principal">{LINK}</span>
@@ -280,28 +312,28 @@ STORY = f"""  <!-- área segura: ~250px livres no topo e na base -->
   </section>
 """
 
-LEGENDA_IG = f"""A pizzaria inteira, num só sistema. Com a sua marca.
+LEGENDA_IG = f"""O restaurante inteiro, num só sistema. Com a sua marca.
 
-O CerraFood é a plataforma da Cerrado Tech para pizzaria, em white label: site, app, totem e painel saem com o seu nome, a sua logo e as suas cores.
+O CerraFood é a plataforma de gestão de restaurantes da Cerrado Tech, para pizzaria, hamburgueria, restaurante e delivery. É white label: site, app, totem e painel saem com o seu nome, a sua logo e as suas cores.
 
-🍕 Totem e caixa: o cliente monta a pizza (tamanho, meio a meio e borda) e a comanda sai impressa
-🍕 Cozinha: cada pedido na tela, com a cor pelo tempo de espera
-🍕 Custo e estoque: a ficha técnica dá o custo de cada pizza e baixa os ingredientes a cada venda
-🍕 Entrega: taxa e tempo por bairro, e o cliente acompanha cada etapa pelo link
-🍕 Gestão: fidelidade por níveis, caixa com conferência, DRE, curva ABC e mapa de horários
+🍔 Totem e caixa: o cliente monta o pedido com as opções da casa (na pizzaria, até o meio a meio) e a comanda sai impressa
+🍳 Cozinha: cada pedido na tela, com a cor pelo tempo de espera
+🧾 Custo e estoque: a ficha técnica dá o custo de cada prato e baixa os ingredientes a cada venda
+🛵 Entrega: taxa e tempo por bairro, e o cliente acompanha cada etapa pelo link
+📊 Gestão: fidelidade por níveis, caixa com conferência, DRE, curva ABC e mapa de horários
 
 Agende uma demonstração gratuita, com o seu cardápio e a sua logo: WhatsApp {WHATS}
 🔗 {LINK}
 
-#CerraFood #SistemaParaPizzaria #Pizzaria #WhiteLabel #Delivery #GestaoDePizzaria #CerradoTech
+#CerraFood #SistemaParaRestaurante #GestaoDeRestaurante #Pizzaria #Hamburgueria #Delivery #WhiteLabel #CerradoTech
 """
-LEGENDA_LI = f"""A pizzaria inteira, num só sistema. Com a marca da pizzaria.
+LEGENDA_LI = f"""O restaurante inteiro, num só sistema. Com a marca da casa.
 
-O CerraFood é a plataforma da Cerrado Tech para pizzaria, entregue em white label: site, app, totem e painel com o nome, a logo e as cores do cliente.
+O CerraFood é a plataforma de gestão de restaurantes da Cerrado Tech (pizzaria, hamburgueria, restaurante e delivery), entregue em white label: site, app, totem e painel com o nome, a logo e as cores do cliente.
 
 1. Totem e caixa, com comanda impressa
 2. Tela da cozinha, com a cor pelo tempo de espera
-3. Ficha técnica com o custo de cada pizza e baixa automática de estoque
+3. Ficha técnica com o custo de cada prato e baixa automática de estoque
 4. Entrega com taxa por bairro e acompanhamento pelo link
 5. Fidelidade, caixa com conferência, DRE, curva ABC e mapa de horários
 
@@ -336,7 +368,13 @@ def main():
             "Legendas prontas abaixo, uma para cada rede (a do Facebook já traz o link do WhatsApp).",
         ],
     }
-    (ent / "info.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    arq = ent / "info.json"
+    if arq.exists():  # mantém a data e a conta que o agendar.py gravou
+        velho = json.loads(arq.read_text(encoding="utf-8"))
+        if velho.get("conta"):
+            info["data"], info["conta"] = velho["data"], velho["conta"]
+            info["orientacoes"] = [o for o in velho["orientacoes"] if o.startswith("Postar em")] + info["orientacoes"]
+    arq.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(PASTA)
 
 
