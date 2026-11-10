@@ -1,6 +1,6 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 02/11/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 10/11/2026.
 
 **Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
 ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
@@ -112,9 +112,26 @@ Detalhes em `marketing/HISTORICO.md`.
 (`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
 https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-ia/apresentacao/. Detalhes em `marketing/HISTORICO.md`.
 
+## O que foi feito (novembro de 2026)
+
+**CerraFood, a plataforma white label para pizzaria (10/11).** Commits `f6d2d67`, `a0bada7` e `cee3f36`.
+- **Marketing:** identidade própria "Comanda" (`marketing/brand/cerrafood/`), peça global "A plataforma inteira"
+  (8 slides com ilustrações e carrossel animado com coreografia própria), apresentação "Prazer, CerraFood" e 10
+  campanhas, uma por módulo. Cada uma tem story, carrossel animado e legendas de Instagram, LinkedIn e Facebook. Há
+  também um mídia kit. Tudo na Central, na agenda do @cerradofinancas de 11/11 a 19/12, um dia sim e outro não, sem
+  mudar o que já tinha sido postado.
+- **Site:** `cerrafood.html` refeita na mesma identidade e só com o que o sistema faz. Saíram as afirmações sem
+  base: "ticket médio 23% maior", PIX integrado, multi-loja, ponto digital, taxa por distância, "implementação em 7
+  dias" e a seção Enterprise.
+- **Regras:** nunca citar a primeira implantação (o código fica em `D:\Dev\NapoleFood`); só o que está no código; o
+  selo "sua marca aqui" só nas peças sobre white label. Detalhes, calendário e o passo a passo da publicação em
+  `marketing/HISTORICO.md` (seção "CerraFood"); o que pode e não pode afirmar em `marketing/brand/cerrafood/README.md`.
+
 ## Pendências
 
 ### Site
+- [ ] **CerraFood:** acrescentar PIX integrado, NFC-e, iFood ou multi-loja na página e nas peças **só** quando o
+      sistema tiver essas partes publicadas (hoje não tem).
 - [ ] **Trocar a chave da API do Gamma**, caso ela tenha circulado. A chave saiu do código (agora vem de
       `GAMMA_API_KEY`) e `gerar_gamma.py` entrou no `.gitignore`, mas a chave antiga continua válida no Gamma.
 - [ ] `analyze_pages.py` teve o caminho corrigido para `D:\Dev\cerradofinancas` (projetos migrados de
@@ -125,6 +142,10 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
       (o site e as peças já dizem 10).
 
 ### Marketing
+- [ ] **Agenda do @cerra.ai:** quando as 25 campanhas paradas da outra IA forem publicadas, rodar o `agendar.py` muda
+      as datas de posts do @cerra.ai já postados (04/11 a 10/11). Antes, pôr o Cerra.AI em `ESTREIAS` no `agendar.py`
+      (como foi feito com o CerraFood) ou fixar o passado.
+- [ ] O deploy do GitHub Pages de 09/11 **falhou** (o de 10/11 passou). Ver o motivo se voltar a acontecer.
 - [ ] **Espaço do GitHub Pages: RESOLVIDO em 02/11** (de ~968 MB para ~370 MB). Antes da próxima leva grande de
       vídeos, rodar `python tools/otimizar_publicacoes.py` (a ferramenta só mexe em arquivo versionado e sem
       mudança de outra IA) e refazer os .zip. O `.git` continua com ~1,4 GB de histórico: para reduzir isso de

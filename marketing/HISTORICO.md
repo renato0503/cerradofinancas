@@ -38,7 +38,8 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 02/11 | `6f4b89e` | Filme 3D do Cerra.AI ("o cobre") e 6 peças re-renderizadas como amostra |
 | 02/11 | `c951cf2` | O filme 3D foi reprovado pelo Renato e apagado das entregas (a fonte ficou) |
 | 02/11 | `bcaa034` | Correção da virada de página (não mostra mais o verso nem sobrepõe as folhas) e do leque de cópias da lâmina 3D; Contabilidade e Crédito re-renderizados |
-| 10/11 | (este commit) | CerraFood (plataforma white label para pizzaria) vira frente no @cerradofinancas: identidade própria "Comanda" (`brand/cerrafood/`), apresentação "Prazer, CerraFood" + série de 10 campanhas (`tools/gerar_cerrafood.py`), carrossel animado, legendas de Instagram, LinkedIn e Facebook, mídia kit. Estreia na agenda em 11/11, um dia sim e outro não, sem mexer no que já foi postado (`ESTREIAS` em `agendar.py`) |
+| 10/11 | `f6d2d67` | CerraFood (plataforma white label para pizzaria) vira frente no @cerradofinancas: identidade própria "Comanda" (`brand/cerrafood/`), peça global "A plataforma inteira" (8 slides com coreografia), apresentação "Prazer, CerraFood" + série de 10 campanhas (`tools/gerar_cerrafood.py`), carrossel animado, legendas de Instagram, LinkedIn e Facebook, mídia kit. Estreia na agenda em 11/11, um dia sim e outro não, sem mexer no que já foi postado (`ESTREIAS` em `agendar.py`) |
+| 10/11 | `a0bada7`, `cee3f36` | Página `cerrafood.html` do site refeita na identidade "Comanda", só com o que o sistema faz (saíram 23%, PIX integrado, multi-loja, ponto, taxa por distância, 7 dias e a seção Enterprise) |
 
 ## CerraFood, a plataforma white label para pizzaria (10/11)
 
@@ -61,7 +62,65 @@ logo e as cores dele. O código é o projeto `D:\Dev\NapoleFood`, conferido em 1
   usam essas afirmações. **Página refeita em 10/11** (commit `a0bada7`): mesma identidade "Comanda", 9 módulos conferidos no código e o white label explicado.
 - **Agenda:** a frente estreou com a agenda já correndo desde 31/10. `ESTREIAS` em `agendar.py` encaixa o CerraFood a
   partir de 11/11 na fila do @cerradofinancas, alternando com os posts que já estavam lá, sem mudar nada do que veio
-  antes.
+  antes. Conferido: os 45 posts até 10/11, em todas as contas, ficaram iguais. Calendário do CerraFood: 11/11
+  apresentação (fixar no perfil), 13/11 peça global, 15/11 white label, 17/11 cozinha, 19/11 totem, 21/11 Reel da
+  apresentação, 23/11 ficha técnica, 25/11 Reel da global, 27/11 estoque e assim por diante, até 19/12 (o carrossel
+  animado de cada campanha sai como Reel quatro posts depois do carrossel).
+
+### A peça global "A plataforma inteira" (10/11)
+
+Pedido do Renato: "um global do CerraFood, que sirva para apresentar a plataforma toda de uma vez, com 8 imagens de
+carrossel, com motion, animações, imagens e transições". Pasta `2026-11-cerrafood-plataforma` (série "Visão geral").
+
+- **Gerador próprio:** `tools/gerar_cerrafood_plataforma.py` (carrossel, story, legendas e info.json) e o CSS extra
+  `brand/cerrafood/plataforma.css`. Os 8 slides: capa, white label, totem e caixa, cozinha, custo e estoque, entrega,
+  gestão e demonstração.
+- **Imagens:** ilustrações vetoriais feitas para a peça, sem foto de cliente: a pizza vista de cima (SVG gerado por
+  `pizza_svg()`, com calabresa, manjericão e azeitona como elementos separados para animar), o meio a meio em duas
+  metades, os aparelhos em três marcas de exemplo, a comanda, a tela da cozinha, as barras de estoque, o caminho da
+  caixa de pizza até a porta e o mapa de calor.
+- **Coreografia:** `filmes/coreografias/2026-11-cerrafood-plataforma.mjs` (54 s). A pizza entra girando e as
+  coberturas caem uma a uma; os aparelhos sobem e as barras se pintam; as metades se juntam e a comanda sai da
+  impressora (revelar "cima" com `steps(14)`); os cartões caem nas colunas e os timers correm (`contar`); as barras de
+  estoque enchem e baixam com a venda; a caixa anda pelo caminho; os níveis crescem e o mapa acende em onda. A troca
+  de cor abre em **círculo** (a pizza).
+- **Duas armadilhas da coreografia, para não repetir:** (1) as funções de slide são copiadas como texto para a página,
+  então **constante de fora da função não existe lá** (o `PIZZA` deu `ReferenceError` e o render travou); escreva o
+  valor dentro da função. (2) `A.letras` em elemento `display: flex` (o `.rotulo` da marca, `.celular .status`)
+  separa as letras, porque cada letra vira item do flex com o `gap`; nesses, use `A.revelar`.
+
+### O selo "sua marca aqui" (10/11)
+
+Na primeira versão o selo tracejado estava na capa, no CTA e no story de **todas** as peças. O Renato não entendeu
+("ficou fora de contexto") e pediu para deixar **só na campanha que trata do white label**. Agora ele aparece só em
+`2026-11-cerrafood-sua-marca` (função `sua_marca()` no gerador) e na seção White label da página do site. A peça global
+e as outras 10 campanhas foram refeitas e re-renderizadas sem ele.
+
+### A página do site (10/11)
+
+`cerrafood.html` foi refeita na mesma identidade (verde-mata, laranja, Outfit + DM Mono, a pizza em SVG e a comanda),
+com o header e o footer do site. Seções: hero, os 6 problemas, como funciona, white label (o único lugar com o selo),
+os 9 módulos (só o que está no código), a vitrine com a tela da cozinha e a comanda, tecnologia e a demonstração.
+Animações: as coberturas caem na pizza, a comanda imprime e os timers correm quando a vitrine aparece, as seções
+sobem ao rolar; com "reduzir movimento" a página fica parada. O `og:image` é a capa da peça global. O símbolo da logo
+foi para `img/cerrafood-simbolo.png` (o `marketing/brand/` não é publicado). Conferido no ar e num celular de 390 px,
+sem rolagem lateral.
+
+### Como foi publicado (10/11)
+
+A outra IA tinha mudanças não commitadas em `agendar.py`, `publicar.py` e `HISTORICO.md`, além das 25 campanhas do
+Cerra.AI ainda paradas. Para não publicar o trabalho dela:
+1. `git worktree add --detach` numa pasta limpa; cópia só dos arquivos do CerraFood; as trocas nos três arquivos
+   compartilhados reaplicadas à mão (só os trechos do CerraFood).
+2. `agendar.py 2026-10-31` na cópia limpa, conferindo que o passado não mudou.
+3. `conteudos.json` atualizado sem o `publicar.py` inteiro: `publicar_pasta()` só nas 12 pastas novas e, nas antigas,
+   só `data`, `orientacoes` e `conta` relidos do `info.json` (os .zip das outras campanhas não foram refeitos).
+4. Os PNG e MP4 novos encolhidos com as funções do `otimizar_publicacoes.py` (que sozinho só mexe em arquivo já
+   versionado): de 68 MB para 22 MB.
+5. Commit e push da cópia limpa; na pasta principal, cópia dos arquivos gerados e `git reset --mixed` no commit novo,
+   o que deixou de diferença só as mudanças da outra IA.
+6. O mídia kit: `gerar_kits.py` refaz **todos** os kits; os outros foram restaurados com `git checkout` e só a entrada
+   do CerraFood entrou no `kits.json`.
 
 ## Campanhas publicadas (20)
 
@@ -621,6 +680,11 @@ Valem para todas as próximas campanhas.
     atrás. E, em 3D por camadas, a espessura tem que ser **fina** (poucas cópias, ~1 px): com 16 cópias a 3 px
     a folha vira um leque na tela. Conferir sempre com quadros extraídos em volta da transição, não só no meio
     do slide.
+19. **CerraFood (10/11):** é white label; nunca citar a primeira implantação (nome, fotos, resultados). Só o que está
+    no código do sistema (lista em `brand/cerrafood/README.md`). Telas e gráficos com o selo "Exemplo ilustrativo". O
+    selo "sua marca aqui" só nas peças sobre white label.
+20. **Frente que estreia com a agenda correndo (10/11):** entra em `ESTREIAS` no `agendar.py`, com a data de estreia,
+    para não reordenar o que o Felipe já postou.
 
 ## Como garantimos a qualidade
 
@@ -636,6 +700,14 @@ Valem para todas as próximas campanhas.
   (código, skills, fontes) **não** são publicadas (dão 404).
 
 ## Pendências e próximos passos
+
+- [ ] **CerraFood:** a página e as peças falam em "pedido pelo celular"/app instalável; no sistema essa parte ainda
+      está em andamento (fase F4 do projeto). Rever quando a F2 e a F4 forem publicadas, e acrescentar PIX integrado,
+      NFC-e e iFood **só** quando estiverem prontos.
+- [ ] **Agenda do @cerra.ai:** quando as 25 campanhas paradas da outra IA forem publicadas e o `agendar.py` rodar de
+      novo, os posts de 04/11 a 10/11 do @cerra.ai mudam de data (já postados pelo Felipe). Pôr o Cerra.AI em
+      `ESTREIAS` ou fixar o passado antes de rodar.
+- [ ] O deploy do GitHub Pages de 09/11 **falhou** (o de 10/11 passou). Ver o motivo se voltar a acontecer.
 
 - [ ] **Ouvir o áudio dos Reels** antes de postar. Os sons são sintetizados por código e nunca foram ouvidos por uma pessoa.
 - [x] **Alinhar o catálogo da CerraClass para 10 alunos** por turma. Feito em 02/11 nos 5 textos do projeto

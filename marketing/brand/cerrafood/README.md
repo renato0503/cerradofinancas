@@ -70,3 +70,17 @@ em 10/11); multi-loja, RH, ponto e escala (desligados); rastreio por GPS ("rastr
 funcionamento offline (só o totem avisa e guarda o carrinho); exportação em PDF.
 
 Telas, comandas, gráficos e marcas dos aparelhos são **exemplos ilustrativos** e levam o selo.
+
+## Onde a identidade está aplicada (10/11/2026)
+
+| Peça | Fonte | Observação |
+|---|---|---|
+| Série (apresentação + 10 campanhas) | `tools/gerar_cerrafood.py` | `slide_html()` monta cada tipo de slide; o selo "sua marca aqui" só sai em `-sua-marca` (`sua_marca()`) |
+| Peça global "A plataforma inteira" | `tools/gerar_cerrafood_plataforma.py` + `plataforma.css` | 8 slides com ilustrações; `pizza_svg()` desenha a pizza com cada cobertura num `<g class="cob">` |
+| Movimento da global | `filmes/coreografias/2026-11-cerrafood-plataforma.mjs` | coreografia própria, troca de cor em círculo |
+| Movimento das outras | `brand/movimentos.json` (`cerrafood`) | o `animar-carrossel.mjs` reconhece "cerrafood" no nome da pasta |
+| Mídia kit | `tools/gerar_kits.py` (`KITS_DADOS`, slug `cerrafood`) | publicado em `kits/cerrafood/` |
+| Página do site | `cerrafood.html` (raiz) | CSS próprio na página com as mesmas cores; Outfit e DM Mono pelo Google Fonts; símbolo em `img/cerrafood-simbolo.png`; a pizza é o mesmo `pizza_svg()` colado no HTML |
+
+Ao mudar a identidade, mudar nos quatro lugares: `marca.css`, `plataforma.css`, o `<style>` do `cerrafood.html` e o
+`KITS_DADOS`.

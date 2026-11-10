@@ -55,7 +55,8 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    **Cerra.AI, extras:** `python tools/gerar_cerraai_extras.py --pdf` (glossário, Pergunte ao Cerra.AI, comparativo,
    stories interativos, checklist LGPD e kit de vendas). Pergunta real nova: acrescente em `dados/pergunte-cerraai.json`
    e rode de novo. PDF entra na Central como documento.
-   **CerraFood:** `python tools/gerar_cerrafood.py` (apresentação + série; identidade em `brand/cerrafood/README.md`).
+   **CerraFood:** `python tools/gerar_cerrafood.py` (apresentação + série) e `python tools/gerar_cerrafood_plataforma.py`
+   (a peça global, com coreografia em `filmes/coreografias/`); identidade em `brand/cerrafood/README.md`.
    Uma frente que estreia com a agenda já correndo entra em `ESTREIAS` no `agendar.py`, para não mudar o passado.
    **Apresentações institucionais:** `python tools/gerar_apresentacoes.py` (uma por marca; o agendador põe cada uma
    como primeiro post da conta e o Reel uma semana depois).
@@ -177,3 +178,7 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
   `D:\Dev\Cerra.AI` — o que pode e o que não pode ser afirmado está na regra 8 do `HISTORICO.md`.
 - **2026-11 · Guia Acadêmico**: 15 cadernos de método (carrossel, story, carrossel animado e legendas) e, desde 31/10,
   uma arte única de Facebook (`facebook.png`) com legenda própria e o link do WhatsApp clicável.
+- **2026-11 · CerraFood** (white label para pizzaria, identidade "Comanda"): peça global "A plataforma inteira" (8 slides,
+  carrossel animado com coreografia própria), apresentação "Prazer, CerraFood" e 10 campanhas (sua marca, cozinha,
+  totem, ficha técnica, estoque, caixa, delivery, fidelidade, relatórios e equipe), cada uma com story, carrossel
+  animado e legendas de Instagram, LinkedIn e Facebook. Na agenda do @cerradofinancas desde 11/11.
