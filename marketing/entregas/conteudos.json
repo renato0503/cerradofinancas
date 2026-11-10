@@ -7618,6 +7618,54 @@
     }
   },
   {
+    "pasta": "2026-11-camila-anjos",
+    "frente": "institucional",
+    "serie": "Equipe",
+    "capa": "post.png",
+    "titulo": "Equipe · Camila Anjos, Especialista Contábil",
+    "data": "2026-11-10",
+    "descricao": "Apresentação da Camila Anjos, Especialista Contábil da Cerrado Finanças & Tech. Peça avulsa, fora da agenda.",
+    "orientacoes": [
+      "Fora da agenda: postar quando a equipe decidir, no @cerradofinancas (e no LinkedIn da empresa).",
+      "Post: post.png (1080×1350). Story: story.png (1080×1920); dá para marcar o perfil da Camila no story.",
+      "Se a Camila tiver Instagram/LinkedIn, marcar o perfil dela no post e na legenda.",
+      "Legendas prontas abaixo, uma para cada rede (a do Facebook já traz o link do WhatsApp)."
+    ],
+    "arquivos": [
+      {
+        "nome": "post.png",
+        "tipo": "imagem",
+        "kb": 720
+      },
+      {
+        "nome": "story.png",
+        "tipo": "imagem",
+        "kb": 900
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Nosso time: Camila Anjos, Especialista Contábil da Cerrado Finanças & Tech. 💛💙\n\nFale com a nossa contabilidade no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\nSaiba mais: https://www.cerradofinancas.com.br/contabilidade\n"
+      },
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Nosso time: Camila Anjos, Especialista Contábil da Cerrado Finanças & Tech. 💛💙\n\nPara falar com a nossa contabilidade: WhatsApp (67) 99351-5206\n🔗 cerradofinancas.com.br/contabilidade\n\n#CerradoFinancas #CerradoContabilidade #NossoTime #Contabilidade\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Nosso time: Camila Anjos, Especialista Contábil da Cerrado Finanças & Tech.\n\nhttps://www.cerradofinancas.com.br/contabilidade\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-camila-anjos.zip",
+      "kb": 1620
+    }
+  },
+  {
     "pasta": "2026-11-contabil-sabia-dasn-simei",
     "frente": "contabilidade",
     "serie": "Você sabia?",
