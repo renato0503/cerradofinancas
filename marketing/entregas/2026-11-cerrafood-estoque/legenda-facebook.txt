@@ -1,0 +1,23 @@
+Acabou a muçarela no sábado à noite?
+
+Cada venda baixa os ingredientes do estoque. Sozinha.
+
+Vendeu, baixou, avisou.
+1. Vendeu: A pizza sai pelo totem ou pelo caixa
+2. Baixou: A ficha técnica tira cada ingrediente do estoque
+3. Avisou: Abaixo do mínimo, o sistema alerta a gerência
+
+Sem “acho que tem”.
+🍕 Baixa automática a cada pedido confirmado
+🍕 Alerta quando um ingrediente fica abaixo do mínimo
+🍕 Venda sem estoque aparece, em vez de sumir
+
+Cancelou, volta pro estoque.
+🍕 Pedido cancelado devolve os ingredientes
+🍕 Toda entrada e saída fica registrada
+🍕 A compra acontece antes de faltar
+
+O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+
+Fale com a gente no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206
+Saiba mais: https://www.cerradofinancas.com.br/cerrafood

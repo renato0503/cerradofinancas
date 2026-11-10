@@ -1,0 +1,16 @@
+O caixa fecha certinho.
+
+Abertura, sangria, suprimento e fechamento com conferência, num caixa feito para pizzaria.
+
+Do troco inicial à conferência.
+1. Abre o caixa: Com o valor inicial em dinheiro
+2. Registra o dia: Vendas, sangrias e suprimentos
+3. Fecha e confere: O esperado contra o contado, com a diferença à vista
+Cada pagamento no seu lugar.
+🍕 PIX, cartão e dinheiro registrados em cada venda
+🍕 Sangria e suprimento lançados no caixa do dia
+🍕 Diferença alta no fechamento pede confirmação
+
+CerraFood, da Cerrado Tech: plataforma white label para pizzaria, com totem, caixa, tela da cozinha, ficha técnica, estoque, delivery, fidelidade e relatórios. O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+
+Demonstração: https://www.cerradofinancas.com.br/cerrafood

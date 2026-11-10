@@ -1,0 +1,20 @@
+Chega de comanda perdida no balcão.
+
+Os pedidos aparecem numa tela da cozinha, na ordem e com o tempo de espera.
+
+Três toques, do pedido ao pronto.
+1. O pedido chega: Do totem ou do caixa, direto para a tela
+2. Iniciar preparo: Um toque e o pedido muda de coluna
+3. Pronto: Caixa e entrega veem na mesma hora
+
+O tempo de espera muda a cor.
+🍕 Verde: até 15 minutos de espera
+🍕 Amarelo: de 15 a 25 minutos, atenção
+🍕 Vermelho: passou de 25 minutos, olhe primeiro
+
+Menos grito, mais pizza no forno.
+
+O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+
+Fale com a gente no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206
+Saiba mais: https://www.cerradofinancas.com.br/cerrafood

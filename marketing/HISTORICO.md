@@ -38,6 +38,30 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 02/11 | `6f4b89e` | Filme 3D do Cerra.AI ("o cobre") e 6 peças re-renderizadas como amostra |
 | 02/11 | `c951cf2` | O filme 3D foi reprovado pelo Renato e apagado das entregas (a fonte ficou) |
 | 02/11 | `bcaa034` | Correção da virada de página (não mostra mais o verso nem sobrepõe as folhas) e do leque de cópias da lâmina 3D; Contabilidade e Crédito re-renderizados |
+| 10/11 | (este commit) | CerraFood (plataforma white label para pizzaria) vira frente no @cerradofinancas: identidade própria "Comanda" (`brand/cerrafood/`), apresentação "Prazer, CerraFood" + série de 10 campanhas (`tools/gerar_cerrafood.py`), carrossel animado, legendas de Instagram, LinkedIn e Facebook, mídia kit. Estreia na agenda em 11/11, um dia sim e outro não, sem mexer no que já foi postado (`ESTREIAS` em `agendar.py`) |
+
+## CerraFood, a plataforma white label para pizzaria (10/11)
+
+O CerraFood é o sistema de pizzaria da Cerrado Tech (totem, caixa, tela da cozinha, ficha técnica, estoque, delivery,
+fidelidade, relatórios e equipe), vendido em **white label**: o cliente recebe site, app, totem e painel com o nome, a
+logo e as cores dele. O código é o projeto `D:\Dev\NapoleFood`, conferido em 10/11 para cada afirmação.
+
+- **Pedido do Renato:** não citar a primeira implantação. Só as funcionalidades, como produto CerraFood, e deixar claro
+  que é white label.
+- **Identidade "Comanda":** verde-mata e laranja tirados da logo (a árvore), Outfit + DM Mono. O objeto da marca é a comanda térmica. O selo tracejado "sua
+  marca aqui" fica **só na campanha White label** (nas outras ficou fora de contexto, disse o Renato). Guia e lista do que pode e não pode afirmar em
+  `brand/cerrafood/README.md`. Movimento: "Kitchen ticket" em `brand/movimentos.json`.
+- **Peças:** peça global "A plataforma inteira" (8 slides, ilustrações e coreografia própria em
+  `filmes/coreografias/2026-11-cerrafood-plataforma.mjs`, gerada por `tools/gerar_cerrafood_plataforma.py`), apresentação
+  (6 slides) + 10 campanhas de 6 slides: sua marca (white label), cozinha, totem, ficha técnica,
+  estoque, caixa, delivery, fidelidade, relatórios e equipe. Cada uma com story, carrossel animado e legendas de
+  Instagram, LinkedIn e Facebook (com o link do WhatsApp). Telas e gráficos com o selo "Exemplo ilustrativo".
+- **Página do site com afirmações sem base:** `cerrafood.html` promete "ticket médio 23% maior", PIX integrado,
+  multi-loja, ponto digital, taxa por distância e "implementação em 7 dias", e nada disso está confirmado. As peças não
+  usam essas afirmações. **A página ainda precisa ser corrigida** (o Renato pediu para focar primeiro nas peças).
+- **Agenda:** a frente estreou com a agenda já correndo desde 31/10. `ESTREIAS` em `agendar.py` encaixa o CerraFood a
+  partir de 11/11 na fila do @cerradofinancas, alternando com os posts que já estavam lá, sem mudar nada do que veio
+  antes.
 
 ## Campanhas publicadas (20)
 

@@ -27,6 +27,7 @@ const PHOSPHOR = join(FILMES, "node_modules", "@phosphor-icons", "web", "src");
 // entrada/saída, tipo de troca, câmera e grão. O guia com o raciocínio está em brand/MOVIMENTO.md.
 const MOVIMENTOS = JSON.parse(readFileSync(join(MARKETING, "brand", "movimentos.json"), "utf8"));
 const MARCAS = [
+  [/cerrafood/, "cerrafood"],
   [/cerraai|cerra-ai/, "cerraai"],
   [/guiacademico/, "guiacademico"],
   [/contabil/, "contabilidade"],

@@ -494,5 +494,75 @@
       "nome": "guiacademico.zip",
       "kb": 1328
     }
+  },
+  {
+    "slug": "cerrafood",
+    "frentes": [
+      "cerrafood"
+    ],
+    "nome": "CerraFood",
+    "apelido": "Comanda",
+    "conceito": "O CerraFood é a plataforma white label para pizzaria da Cerrado Tech: o cliente recebe site, app, totem e painel com a marca dele. O objeto da marca é a comanda térmica que o próprio sistema imprime. As cores saem da árvore da logo.",
+    "cores": [
+      {
+        "nome": "Verde-mata",
+        "hex": "#0f2a16",
+        "uso": "fundo padrão"
+      },
+      {
+        "nome": "Laranja",
+        "hex": "#f39200",
+        "uso": "destaque, frase e CTA"
+      },
+      {
+        "nome": "Verde-folha",
+        "hex": "#3dbb2f",
+        "uso": "\"pronto\" e \"no tempo\""
+      },
+      {
+        "nome": "Tomate",
+        "hex": "#e0472b",
+        "uso": "\"atrasado\"; nunca fundo"
+      },
+      {
+        "nome": "Papel",
+        "hex": "#fbf6ea",
+        "uso": "comanda, totem e slide claro"
+      },
+      {
+        "nome": "Creme",
+        "hex": "#f4efe2",
+        "uso": "texto sobre o verde"
+      }
+    ],
+    "fontes": [
+      {
+        "nome": "Outfit",
+        "uso": "títulos 800 em caixa baixa; texto 400 e 600",
+        "link": "https://fonts.google.com/specimen/Outfit"
+      },
+      {
+        "nome": "DM Mono",
+        "uso": "rótulos, comanda e números (sem o glifo ½: usar 1/2)",
+        "link": "https://fonts.google.com/specimen/DM+Mono"
+      }
+    ],
+    "logos": [
+      {
+        "arquivo": "cerrafood/logos/cerrafood.png",
+        "uso": "Logo completa (árvore e nome), só sobre fundo claro",
+        "fundo": "#f2f2f2"
+      },
+      {
+        "arquivo": "cerrafood/logos/cerrafood-simbolo.png",
+        "uso": "Só a árvore: sempre dentro de um selo ou disco de papel",
+        "fundo": "#f2f2f2"
+      }
+    ],
+    "guia": "cerrafood/guia.pdf",
+    "zip": {
+      "nome": "cerrafood.zip",
+      "kb": 2450
+    }
   }
 ]

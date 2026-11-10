@@ -32,6 +32,8 @@ REGRAS = [
     ("apresentacao-cerradotech", "tech", "Apresentação institucional"),
     ("apresentacao-cerraclass", "cerraclass", "Apresentação institucional"),
     ("apresentacao-guiacademico", "guiacademico", "Apresentação institucional"),
+    ("apresentacao-cerrafood", "cerrafood", "Apresentação institucional"),
+    ("cerrafood-", "cerrafood", "Série CerraFood"),
     ("cerraai-ia-da-semana-", "cerraai", "IA da semana"),
     ("cerraai-glossario-", "cerraai", "Glossário da IA local"),
     ("cerraai-pergunte-", "cerraai", "Pergunte ao Cerra.AI"),

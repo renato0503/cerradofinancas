@@ -1,0 +1,20 @@
+Quem pede sempre merece ser lembrado.
+
+Pontos por real gasto e níveis de cliente, com o nome da sua pizzaria.
+
+Cada pedido vira ponto.
+🍕 Pontos a cada real gasto, quando o pedido é confirmado
+🍕 Cancelou? Os pontos voltam
+🍕 O saldo de cada cliente no cadastro
+
+Conheça quem pede.
+🍕 Quem mais pede e o histórico de pedidos
+🍕 Quando foi o último pedido
+🍕 Quanto cada cliente já gastou
+
+O melhor cliente é o que volta.
+
+O CerraFood é white label: a sua pizzaria recebe site, app, totem e painel com o seu nome, a sua logo e as suas cores.
+
+Fale com a gente no WhatsApp: https://api.whatsapp.com/send?phone=5567993515206
+Saiba mais: https://www.cerradofinancas.com.br/cerrafood

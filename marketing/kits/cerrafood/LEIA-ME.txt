@@ -1,0 +1,14 @@
+Mídia kit: CerraFood ("Comanda")
+
+guia.pdf     o resumo da identidade: cores, fontes, logos, recursos e regras
+logos/       os arquivos de logo em PNG transparente
+fontes/      as fontes das peças e o link para instalar cada uma (LINKS.txt)
+exemplos/    peças prontas para referência
+
+Cores:
+  Verde-mata: #0F2A16 (fundo padrão)
+  Laranja: #F39200 (destaque, frase e CTA)
+  Verde-folha: #3DBB2F ("pronto" e "no tempo")
+  Tomate: #E0472B ("atrasado"; nunca fundo)
+  Papel: #FBF6EA (comanda, totem e slide claro)
+  Creme: #F4EFE2 (texto sobre o verde)

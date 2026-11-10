@@ -94,5 +94,17 @@
     "grao": 0.01,
     "cor": "sem cor de câmera",
     "nota": "A prancha técnica: corte duro, grade que se desloca, um único laranja de destaque."
+  },
+  "cerrafood": {
+    "estilo": "Kitchen ticket",
+    "conceito": "Order journey",
+    "transicao": "desliza",
+    "transicaoDur": 0.4,
+    "transicaoEase": "power4.out",
+    "entrada": { "x": 0, "y": 38, "escala": 1, "op": 1, "dur": 0.44, "ease": "back.out(1.15)", "stagger": 0.06 },
+    "camera": { "escala": 1.03, "x": -8, "y": 6 },
+    "grao": 0.012,
+    "cor": "sem cor de câmera",
+    "nota": "O pedido: a comanda sai da impressora e passa de estação em estação. Entra de baixo e encaixa curto, como papel que sai e para."
   }
 }

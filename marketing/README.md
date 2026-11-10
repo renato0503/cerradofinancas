@@ -21,7 +21,7 @@ A página tem `noindex` e não aparece no menu nem no sitemap.
 
 | Pasta | O que vai nela |
 |---|---|
-| `brand/` | `tokens.css` e `carrossel.css` (Cerrado Tech/Finanças), `cerraai/` e `cerraclass/` (identidades próprias, cada uma com README), `fontes/` e `slides.js` |
+| `brand/` | `tokens.css` e `carrossel.css` (Cerrado Tech/Finanças), `cerraai/`, `cerraclass/`, `cerrafood/` etc. (identidades próprias, cada uma com README), `fontes/` e `slides.js` |
 | `posts/AAAA-MM-tema/` | Fontes de uma campanha: `carrossel.html`, `story.html` etc. |
 | `entregas/AAAA-MM-tema/` | **Publicado.** Arquivos finais, `legenda-<rede>.txt`, `info.json` e o `.zip` |
 | `videos/` | Projetos Remotion (Reels 1080×1920) de Cerrado Tech e Cerrado Finanças |
@@ -55,6 +55,8 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    **Cerra.AI, extras:** `python tools/gerar_cerraai_extras.py --pdf` (glossário, Pergunte ao Cerra.AI, comparativo,
    stories interativos, checklist LGPD e kit de vendas). Pergunta real nova: acrescente em `dados/pergunte-cerraai.json`
    e rode de novo. PDF entra na Central como documento.
+   **CerraFood:** `python tools/gerar_cerrafood.py` (apresentação + série; identidade em `brand/cerrafood/README.md`).
+   Uma frente que estreia com a agenda já correndo entra em `ESTREIAS` no `agendar.py`, para não mudar o passado.
    **Apresentações institucionais:** `python tools/gerar_apresentacoes.py` (uma por marca; o agendador põe cada uma
    como primeiro post da conta e o Reel uma semana depois).
    **Datas comemorativas:** só as nacionais, só post estático e story (sem vídeo), geradas por

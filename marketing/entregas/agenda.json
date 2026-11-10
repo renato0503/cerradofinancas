@@ -1,6 +1,6 @@
 {
   "inicio": "2026-10-31",
-  "fim": "2027-01-03",
+  "fim": "2027-01-27",
   "por_dia": {
     "cerradofinancas": 1,
     "cerraai": 1,
@@ -18,7 +18,8 @@
         "tech",
         "contabilidade",
         "credito",
-        "consultorias"
+        "consultorias",
+        "cerrafood"
       ]
     },
     {
@@ -51,7 +52,7 @@
   ],
   "futuras": [],
   "novos_ate": {
-    "cerradofinancas": "2027-01-03",
+    "cerradofinancas": "2027-01-27",
     "cerraai": "2026-11-27",
     "cerraclass": "2026-11-29",
     "guiacademico": "2026-12-01"
@@ -214,7 +215,7 @@
     {
       "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
+      "titulo": "IA da semana · edição 01",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-04",
@@ -430,7 +431,7 @@
     {
       "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
+      "titulo": "IA da semana · edição 01",
       "peca": "Reel: carrossel animado",
       "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-10",
@@ -482,10 +483,10 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-crm",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · CRM",
-      "peca": "Carrossel + story",
+      "pasta": "2026-11-apresentacao-cerrafood",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Prazer, CerraFood",
+      "peca": "Apresentação: carrossel + story (fixar no perfil)",
       "arquivo": null,
       "data": "2026-11-11",
       "conta": "cerradofinancas"
@@ -518,9 +519,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-simples-nacional",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Você paga o DAS certo ou só paga?",
+      "pasta": "2026-11-tech-crm",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · CRM",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-12",
@@ -554,9 +555,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-consignado-clt",
-      "frente": "credito",
-      "titulo": "Crédito · Consignado CLT",
+      "pasta": "2026-11-cerrafood-plataforma",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · A plataforma inteira",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-13",
@@ -590,9 +591,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-bi",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · BI & Dashboards",
+      "pasta": "2026-11-contabil-simples-nacional",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Você paga o DAS certo ou só paga?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-14",
@@ -626,9 +627,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-fator-r",
-      "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 02 · Empresa de serviço pode pagar 6% no Simples?",
+      "pasta": "2026-11-cerrafood-sua-marca",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · White label",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-15",
@@ -672,9 +673,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-consultoria-controladoria",
-      "frente": "consultorias",
-      "titulo": "Consultoria · Controladoria estruturada",
+      "pasta": "2026-11-credito-consignado-clt",
+      "frente": "credito",
+      "titulo": "Crédito · Consignado CLT",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-16",
@@ -708,9 +709,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-lucro-presumido",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Cresceu? O regime cresce junto.",
+      "pasta": "2026-11-cerrafood-cozinha",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Tela da cozinha",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-17",
@@ -744,9 +745,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-automacao",
+      "pasta": "2026-11-tech-bi",
       "frente": "tech",
-      "titulo": "Cerrado Tech · Automação de Processos",
+      "titulo": "Cerrado Tech · BI & Dashboards",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-18",
@@ -780,9 +781,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-portabilidade",
-      "frente": "credito",
-      "titulo": "Crédito · Portabilidade e refinanciamento",
+      "pasta": "2026-11-cerrafood-totem",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Totem de autoatendimento",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-19",
@@ -826,9 +827,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-micro-a-media",
+      "pasta": "2026-11-contabil-sabia-fator-r",
       "frente": "contabilidade",
-      "titulo": "Contabilidade · Do primeiro CNPJ à média empresa, o mesmo contador.",
+      "titulo": "Você sabia? Nota nº 02 · Empresa de serviço pode pagar 6% no Simples?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-20",
@@ -872,11 +873,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-chatbots",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Chatbots & Assistentes",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-apresentacao-cerrafood",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Prazer, CerraFood",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-21",
       "conta": "cerradofinancas"
     },
@@ -908,9 +909,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-pro-labore",
-      "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 03 · Sócio que trabalha na empresa precisa de pró-labore?",
+      "pasta": "2026-11-consultoria-controladoria",
+      "frente": "consultorias",
+      "titulo": "Consultoria · Controladoria estruturada",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-22",
@@ -944,9 +945,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-emprestimo-pessoal",
-      "frente": "credito",
-      "titulo": "Crédito · Empréstimo pessoal",
+      "pasta": "2026-11-cerrafood-ficha-tecnica",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Ficha técnica e custo",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-23",
@@ -980,9 +981,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-integracoes",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Integrações",
+      "pasta": "2026-11-contabil-lucro-presumido",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Cresceu? O regime cresce junto.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-24",
@@ -1016,11 +1017,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-abertura",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Vai abrir o seu primeiro CNPJ?",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-plataforma",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · A plataforma inteira",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-25",
       "conta": "cerradofinancas"
     },
@@ -1052,9 +1053,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-consultoria-csc-strategy",
-      "frente": "consultorias",
-      "titulo": "Consultoria · CSC Strategy",
+      "pasta": "2026-11-tech-automacao",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Automação de Processos",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-26",
@@ -1088,9 +1089,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-dados",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Organização de Dados",
+      "pasta": "2026-11-cerrafood-estoque",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Estoque automático",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-27",
@@ -1125,9 +1126,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-fgts",
+      "pasta": "2026-11-credito-portabilidade",
       "frente": "credito",
-      "titulo": "Crédito · Antecipação do FGTS",
+      "titulo": "Crédito · Portabilidade e refinanciamento",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-28",
@@ -1162,11 +1163,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-fiscal",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Seu imposto, apurado com precisão.",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-sua-marca",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · White label",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-11-29",
       "conta": "cerradofinancas"
     },
@@ -1200,9 +1201,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-ia-offline",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · IA Offline & RAG",
+      "pasta": "2026-11-contabil-micro-a-media",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Do primeiro CNPJ à média empresa, o mesmo contador.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-11-30",
@@ -1238,9 +1239,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-dirf",
-      "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 04 · A DIRF acabou. Você sabia?",
+      "pasta": "2026-11-cerrafood-caixa",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Frente de caixa",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-01",
@@ -1258,7 +1259,7 @@
     {
       "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
+      "titulo": "IA da semana · edição 01",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -1276,9 +1277,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-consultoria-grc",
-      "frente": "consultorias",
-      "titulo": "Consultoria · Governança, risco e compliance",
+      "pasta": "2026-11-tech-chatbots",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Chatbots & Assistentes",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-02",
@@ -1315,11 +1316,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-departamento-pessoal",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Contratou? A burocracia fica com a gente.",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-cozinha",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Tela da cozinha",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-03",
       "conta": "cerradofinancas"
     },
@@ -1354,9 +1355,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-credito-com-garantia",
-      "frente": "credito",
-      "titulo": "Crédito · Crédito com garantia",
+      "pasta": "2026-11-contabil-sabia-pro-labore",
+      "frente": "contabilidade",
+      "titulo": "Você sabia? Nota nº 03 · Sócio que trabalha na empresa precisa de pró-labore?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-04",
@@ -1393,9 +1394,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-ocr",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · OCR & Documentos Inteligentes",
+      "pasta": "2026-11-cerrafood-delivery",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Delivery",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-05",
@@ -1432,9 +1433,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2027-01-credito-entenda-cet",
+      "pasta": "2026-11-credito-emprestimo-pessoal",
       "frente": "credito",
-      "titulo": "Antes de assinar, entenda 1 · A taxa de juros não é o custo do empréstimo.",
+      "titulo": "Crédito · Empréstimo pessoal",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-06",
@@ -1471,11 +1472,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-ibs-cbs",
-      "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 05 · O que são IBS e CBS?",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-totem",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Totem de autoatendimento",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-07",
       "conta": "cerradofinancas"
     },
@@ -1492,7 +1493,7 @@
     {
       "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
+      "titulo": "IA da semana · edição 01",
       "peca": "Reel: carrossel animado (repetição)",
       "arquivo": "carrossel-animado.mp4",
       "repeticao": true,
@@ -1510,9 +1511,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2027-01-credito-entenda-portabilidade",
-      "frente": "credito",
-      "titulo": "Antes de assinar, entenda 2 · Portabilidade é um direito seu.",
+      "pasta": "2026-11-tech-integracoes",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Integrações",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-08",
@@ -1549,9 +1550,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-contabil",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Balanço e DRE que você entende.",
+      "pasta": "2026-11-cerrafood-fidelidade",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Fidelidade",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-09",
@@ -1588,9 +1589,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-financiamento-imovel",
-      "frente": "credito",
-      "titulo": "Crédito · Financiamento de imóvel",
+      "pasta": "2026-11-contabil-abertura",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Vai abrir o seu primeiro CNPJ?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-10",
@@ -1627,11 +1628,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-assinatura",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Assinatura Digital",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-ficha-tecnica",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Ficha técnica e custo",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-11",
       "conta": "cerradofinancas"
     },
@@ -1666,9 +1667,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2027-01-credito-entenda-consorcio-ou-financiamento",
-      "frente": "credito",
-      "titulo": "Antes de assinar, entenda 3 · Consórcio ou financiamento: qual faz sentido?",
+      "pasta": "2026-11-consultoria-csc-strategy",
+      "frente": "consultorias",
+      "titulo": "Consultoria · CSC Strategy",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-12",
@@ -1705,9 +1706,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-consultoria-planejamento-tributario",
-      "frente": "consultorias",
-      "titulo": "Consultoria · Planejamento tributário e inovação",
+      "pasta": "2026-11-cerrafood-relatorios",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Relatórios",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-13",
@@ -1744,9 +1745,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-consultivo",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Seu contador te mostra onde está o lucro?",
+      "pasta": "2026-11-tech-dados",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Organização de Dados",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-14",
@@ -1783,11 +1784,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-ecommerce",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · E-commerce & PWA",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-estoque",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Estoque automático",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-15",
       "conta": "cerradofinancas"
     },
@@ -1822,9 +1823,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-financiamento-veiculo",
+      "pasta": "2026-11-credito-fgts",
       "frente": "credito",
-      "titulo": "Crédito · Financiamento de veículo",
+      "titulo": "Crédito · Antecipação do FGTS",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-16",
@@ -1861,9 +1862,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-mei-limite",
-      "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 06 · Seu MEI passou do limite?",
+      "pasta": "2026-11-cerrafood-equipe",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Equipe e acessos",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-17",
@@ -1900,9 +1901,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-compliance",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Compliance & LGPD",
+      "pasta": "2026-11-contabil-fiscal",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Seu imposto, apurado com precisão.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-18",
@@ -1939,11 +1940,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-troca-de-contador",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · Insatisfeito com o contador atual?",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-caixa",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Frente de caixa",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-19",
       "conta": "cerradofinancas"
     },
@@ -1978,9 +1979,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-consorcio",
-      "frente": "credito",
-      "titulo": "Crédito · Consórcio",
+      "pasta": "2026-11-tech-ia-offline",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · IA Offline & RAG",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-20",
@@ -2017,11 +2018,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-machine-learning",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Machine Learning & Previsão",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-delivery",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Delivery",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-21",
       "conta": "cerradofinancas"
     },
@@ -2056,9 +2057,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-consultoria-venture-building",
-      "frente": "consultorias",
-      "titulo": "Consultoria · Venture building",
+      "pasta": "2026-11-contabil-sabia-dirf",
+      "frente": "contabilidade",
+      "titulo": "Você sabia? Nota nº 04 · A DIRF acabou. Você sabia?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-22",
@@ -2095,11 +2096,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-regularizacao",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · CNPJ com pendência? A gente regulariza.",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-fidelidade",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Fidelidade",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-23",
       "conta": "cerradofinancas"
     },
@@ -2134,9 +2135,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-govtech",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · GovTech & Legal-Tech",
+      "pasta": "2026-11-consultoria-grc",
+      "frente": "consultorias",
+      "titulo": "Consultoria · Governança, risco e compliance",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-24",
@@ -2173,11 +2174,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-certidao-negativa",
-      "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 07 · Para que serve a certidão negativa?",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-relatorios",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Relatórios",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-25",
       "conta": "cerradofinancas"
     },
@@ -2222,9 +2223,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-consorcio-servicos",
-      "frente": "credito",
-      "titulo": "Crédito · Consórcio de serviços e energia solar",
+      "pasta": "2026-11-contabil-departamento-pessoal",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Contratou? A burocracia fica com a gente.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-26",
@@ -2261,11 +2262,11 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-socios",
-      "frente": "contabilidade",
-      "titulo": "Contabilidade · O que é da empresa e o que é seu?",
-      "peca": "Carrossel + story",
-      "arquivo": null,
+      "pasta": "2026-11-cerrafood-equipe",
+      "frente": "cerrafood",
+      "titulo": "CerraFood · Equipe e acessos",
+      "peca": "Reel: carrossel animado",
+      "arquivo": "carrossel-animado.mp4",
       "data": "2026-12-27",
       "conta": "cerradofinancas"
     },
@@ -2300,9 +2301,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2027-01-credito-entenda-margem-consignavel",
+      "pasta": "2026-11-credito-credito-com-garantia",
       "frente": "credito",
-      "titulo": "Antes de assinar, entenda 4 · Margem consignável: usar tudo é o erro.",
+      "titulo": "Crédito · Crédito com garantia",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-28",
@@ -2339,9 +2340,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-white-label",
+      "pasta": "2026-11-tech-ocr",
       "frente": "tech",
-      "titulo": "Cerrado Tech · Produto White-Label",
+      "titulo": "Cerrado Tech · OCR & Documentos Inteligentes",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-29",
@@ -2360,7 +2361,7 @@
     {
       "pasta": "2026-11-cerraai-ia-da-semana-01",
       "frente": "cerraai",
-      "titulo": "IA da semana · edição 01 · IA da semana: o modelo, a escolha e o controle",
+      "titulo": "IA da semana · edição 01",
       "peca": "Carrossel + story (repetição)",
       "arquivo": null,
       "repeticao": true,
@@ -2378,9 +2379,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-consultoria-govtech",
-      "frente": "consultorias",
-      "titulo": "Consultoria · Consultoria GovTech",
+      "pasta": "2027-01-credito-entenda-cet",
+      "frente": "credito",
+      "titulo": "Antes de assinar, entenda 1 · A taxa de juros não é o custo do empréstimo.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-30",
@@ -2417,9 +2418,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-sabia-cnae",
+      "pasta": "2026-11-contabil-sabia-ibs-cbs",
       "frente": "contabilidade",
-      "titulo": "Você sabia? Nota nº 08 · O CNAE errado pode custar caro?",
+      "titulo": "Você sabia? Nota nº 05 · O que são IBS e CBS?",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2026-12-31",
@@ -2456,9 +2457,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-credito-seguros-e-saude",
+      "pasta": "2027-01-credito-entenda-portabilidade",
       "frente": "credito",
-      "titulo": "Crédito · Seguros e planos de saúde",
+      "titulo": "Antes de assinar, entenda 2 · Portabilidade é um direito seu.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2027-01-01",
@@ -2505,9 +2506,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-contabil-reforma-tributaria",
+      "pasta": "2026-11-contabil-contabil",
       "frente": "contabilidade",
-      "titulo": "Contabilidade · A reforma tributária já começou.",
+      "titulo": "Contabilidade · Balanço e DRE que você entende.",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2027-01-02",
@@ -2544,9 +2545,9 @@
       "conta": "cerraclass"
     },
     {
-      "pasta": "2026-11-tech-web3",
-      "frente": "tech",
-      "titulo": "Cerrado Tech · Web3 & Blockchain",
+      "pasta": "2026-11-credito-financiamento-imovel",
+      "frente": "credito",
+      "titulo": "Crédito · Financiamento de imóvel",
       "peca": "Carrossel + story",
       "arquivo": null,
       "data": "2027-01-03",
@@ -2560,6 +2561,942 @@
       "arquivo": null,
       "repeticao": true,
       "data": "2027-01-03",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-rag",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · RAG",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-04",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ia-na-pratica",
+      "frente": "cerraclass",
+      "titulo": "Curso IA na Prática",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-04",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-assinatura",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Assinatura Digital",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-04",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-lancamento",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · O Guia Acadêmico",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-04",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
+      "frente": "cerraai",
+      "titulo": "IA da semana · edição 01",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-05",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ia-na-gestao",
+      "frente": "cerraclass",
+      "titulo": "Curso IA na Gestão",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-05",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2027-01-credito-entenda-consorcio-ou-financiamento",
+      "frente": "credito",
+      "titulo": "Antes de assinar, entenda 3 · Consórcio ou financiamento: qual faz sentido?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-05",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-problema-de-pesquisa",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Problema de pesquisa",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-05",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-stories-interativos",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Stories interativos · enquetes, quiz e caixinhas",
+      "peca": "Stories interativos (1 por dia) (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-06",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-11-apresentacao-cerraclass",
+      "frente": "cerraclass",
+      "titulo": "Apresentação institucional · CerraClass",
+      "peca": "Reel: apresentação animada (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-06",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-consultoria-planejamento-tributario",
+      "frente": "consultorias",
+      "titulo": "Consultoria · Planejamento tributário e inovação",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-06",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-estatistica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Análise estatística",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-06",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-modelo-local",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · Modelo local",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-07",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ia-farma",
+      "frente": "cerraclass",
+      "titulo": "Curso IA em Ação Farma",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-07",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-consultivo",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Seu contador te mostra onde está o lucro?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-07",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-qualitativa",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Análise qualitativa",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-07",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-ocr",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · OCR",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-08",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-excel-com-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Excel com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-08",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-ecommerce",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · E-commerce & PWA",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-08",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-web-scraping",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Mineração de dados",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-08",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-pergunte-mande-sua-duvida",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Mande a sua dúvida",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-09",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ia-na-gestao",
+      "frente": "cerraclass",
+      "titulo": "Curso IA na Gestão",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-09",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-credito-financiamento-veiculo",
+      "frente": "credito",
+      "titulo": "Crédito · Financiamento de veículo",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-09",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-lancamento",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · O Guia Acadêmico",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-09",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-material-checklist-lgpd",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-10",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-consultoria-contabil-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Consultoria Contábil com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-10",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-sabia-mei-limite",
+      "frente": "contabilidade",
+      "titulo": "Você sabia? Nota nº 06 · Seu MEI passou do limite?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-10",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-apresentacao-guiacademico",
+      "frente": "guiacademico",
+      "titulo": "Apresentação institucional · Guia Acadêmico",
+      "peca": "Reel: apresentação animada (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-10",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-comparativo-nuvem",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Comparativo · IA na nuvem × Cerra.AI",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-11",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-excel-com-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Excel com IA",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-11",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-compliance",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Compliance & LGPD",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-11",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-ia-academica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · IA acadêmica",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-11",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-pergunte-inventa",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-12",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-consultoria-financeira-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Consultoria Financeira com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-12",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-troca-de-contador",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · Insatisfeito com o contador atual?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-12",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-problema-de-pesquisa",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Problema de pesquisa",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-12",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-rag",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · RAG",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-13",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-consultoria-contabil-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Consultoria Contábil com IA",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-13",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-credito-consorcio",
+      "frente": "credito",
+      "titulo": "Crédito · Consórcio",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-13",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-abnt",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Formatação ABNT",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-13",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-anonimizacao",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · Anonimização",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-14",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-analise-de-dados",
+      "frente": "cerraclass",
+      "titulo": "Curso Introdução à Análise de Dados",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-14",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-machine-learning",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Machine Learning & Previsão",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-14",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-estatistica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Análise estatística",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-14",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-ocr",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · OCR",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-15",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-consultoria-financeira-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Consultoria Financeira com IA",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-15",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-consultoria-venture-building",
+      "frente": "consultorias",
+      "titulo": "Consultoria · Venture building",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-15",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-banca",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Preparação para a banca",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-15",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-pergunte-arquivos",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-16",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-bpmn-com-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Processos Empresariais BPMN com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-16",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-regularizacao",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · CNPJ com pendência? A gente regulariza.",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-16",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-qualitativa",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Análise qualitativa",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-16",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-material-checklist-lgpd",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Material · Checklist IA e LGPD (PDF)",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-17",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-analise-de-dados",
+      "frente": "cerraclass",
+      "titulo": "Curso Introdução à Análise de Dados",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-17",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-govtech",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · GovTech & Legal-Tech",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-17",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-etica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Mentoria ética",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-17",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-18",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-automacao-com-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Introdução à Automação com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-18",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-sabia-certidao-negativa",
+      "frente": "contabilidade",
+      "titulo": "Você sabia? Nota nº 07 · Para que serve a certidão negativa?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-18",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-web-scraping",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Mineração de dados",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-18",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-pergunte-inventa",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Se a informação não estiver nos documentos, ele inventa?",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-19",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-bpmn-com-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Processos Empresariais BPMN com IA",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-19",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-credito-consorcio-servicos",
+      "frente": "credito",
+      "titulo": "Crédito · Consórcio de serviços e energia solar",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-19",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-revisao-sistematica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Revisão sistemática",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-19",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-anonimizacao",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · Anonimização",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-20",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ciencia-de-dados",
+      "frente": "cerraclass",
+      "titulo": "Curso Ciência de Dados Aplicada",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-20",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-socios",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · O que é da empresa e o que é seu?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-20",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-ia-academica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · IA acadêmica",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-20",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-pergunte-arquivos",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Pergunte ao Cerra.AI · Quais arquivos ele consegue ler?",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-21",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-automacao-com-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Introdução à Automação com IA",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-21",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2027-01-credito-entenda-margem-consignavel",
+      "frente": "credito",
+      "titulo": "Antes de assinar, entenda 4 · Margem consignável: usar tudo é o erro.",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-21",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-tamanho-da-amostra",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Tamanho da amostra",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-21",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-glossario-trecho-consultado",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI · Glossário · Trecho consultado",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-22",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ia-na-farma",
+      "frente": "cerraclass",
+      "titulo": "Curso IA na Farma",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-22",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-white-label",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Produto White-Label",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-22",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-abnt",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Formatação ABNT",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-22",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-apresentacao-cerraai",
+      "frente": "cerraai",
+      "titulo": "Apresentação institucional · Cerra.AI",
+      "peca": "Apresentação: carrossel + story (fixar no perfil) (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-23",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ciencia-de-dados",
+      "frente": "cerraclass",
+      "titulo": "Curso Ciência de Dados Aplicada",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-23",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-consultoria-govtech",
+      "frente": "consultorias",
+      "titulo": "Consultoria · Consultoria GovTech",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-23",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-questionario",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Questionário e escalas",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-23",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-10-cerra-ai",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-24",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-bi-dashboards-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso BI e Dashboards com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-24",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-sabia-cnae",
+      "frente": "contabilidade",
+      "titulo": "Você sabia? Nota nº 08 · O CNAE errado pode custar caro?",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-24",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-banca",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Preparação para a banca",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-24",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-10-cerra-ai",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI",
+      "peca": "Reel: comercial (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-25",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-ia-na-farma",
+      "frente": "cerraclass",
+      "titulo": "Curso IA na Farma",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-25",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-credito-seguros-e-saude",
+      "frente": "credito",
+      "titulo": "Crédito · Seguros e planos de saúde",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-25",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-cronograma",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Cronograma de pesquisa",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-25",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-10-cerra-ai",
+      "frente": "cerraai",
+      "titulo": "Cerra.AI",
+      "peca": "Reel: lançamento (repetição)",
+      "arquivo": "video-lancamento-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-26",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-prototipacao-apps-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso Prototipação de Apps com IA",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-26",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-contabil-reforma-tributaria",
+      "frente": "contabilidade",
+      "titulo": "Contabilidade · A reforma tributária já começou.",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-26",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-etica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Mentoria ética",
+      "peca": "Reel: carrossel animado (repetição)",
+      "arquivo": "carrossel-animado.mp4",
+      "repeticao": true,
+      "data": "2027-01-26",
+      "conta": "guiacademico"
+    },
+    {
+      "pasta": "2026-11-cerraai-ia-da-semana-01",
+      "frente": "cerraai",
+      "titulo": "IA da semana · edição 01",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-27",
+      "conta": "cerraai"
+    },
+    {
+      "pasta": "2026-10-curso-bi-dashboards-ia",
+      "frente": "cerraclass",
+      "titulo": "Curso BI e Dashboards com IA",
+      "peca": "Reel do curso (repetição)",
+      "arquivo": "video-vertical.mp4",
+      "repeticao": true,
+      "data": "2027-01-27",
+      "conta": "cerraclass"
+    },
+    {
+      "pasta": "2026-11-tech-web3",
+      "frente": "tech",
+      "titulo": "Cerrado Tech · Web3 & Blockchain",
+      "peca": "Carrossel + story",
+      "arquivo": null,
+      "data": "2027-01-27",
+      "conta": "cerradofinancas"
+    },
+    {
+      "pasta": "2026-11-guiacademico-comite-de-etica",
+      "frente": "guiacademico",
+      "titulo": "Guia Acadêmico · Comitê de Ética",
+      "peca": "Carrossel + story (repetição)",
+      "arquivo": null,
+      "repeticao": true,
+      "data": "2027-01-27",
       "conta": "guiacademico"
     }
   ]

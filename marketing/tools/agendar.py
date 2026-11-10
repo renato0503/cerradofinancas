@@ -36,7 +36,7 @@ ENTREGAS = Path(__file__).resolve().parent.parent / "entregas"
 
 CONTAS = [
     dict(id="cerradofinancas", nome="Cerrado Finanças", arroba="@cerradofinancas", cor="#001f5c",
-         frentes=["institucional", "tech", "contabilidade", "credito", "consultorias"]),
+         frentes=["institucional", "tech", "contabilidade", "credito", "consultorias", "cerrafood"]),
     dict(id="cerraai", nome="Cerra.AI", arroba="@cerra.ai", cor="#e2873b", frentes=["cerraai"]),
     dict(id="cerraclass", nome="CerraClass", arroba="@cerraclass", cor="#ffc83d", frentes=["cerraclass"]),
     dict(id="guiacademico", nome="Guia Acadêmico", arroba="@guiacademico", cor="#1e2a44", frentes=["guiacademico"]),
@@ -46,6 +46,10 @@ POR_DIA = {"cerradofinancas": 1, "cerraai": 1, "cerraclass": 1, "guiacademico": 
 FORA_DA_AGENDA = {"folinha-animada", "2026-11-cerraai-material-kit-vendas"}  # material de apoio, não é postagem
 
 CARROSSEL = "Carrossel + story"
+
+# Frentes que estrearam com a agenda já em andamento (10/11: CerraFood). Entram na fila da conta a partir da data,
+# um dia sim e outro não, sem mudar nada do que já foi postado antes dela.
+ESTREIAS = {"cerrafood": date(2026, 11, 11)}
 
 
 def conta_de(frente):
@@ -163,6 +167,31 @@ def fila_guiacademico(cs):
     return fila + reels[max(0, len(ordem) - atraso):]
 
 
+def fila_estreia(cs):
+    """A apresentação primeiro, depois a série na ordem do gerador; o carrossel animado de cada um sai como Reel
+    separado, quatro posts depois."""
+    datas = {p.name: json.loads((p / "info.json").read_text(encoding="utf-8"))["data"] for p in ENTREGAS.iterdir() if (p / "info.json").exists()}
+    ordem = sorted(cs, key=lambda c: ("-apresentacao-" not in c["pasta"], datas[c["pasta"]]))
+    reels = [post(c, "Reel: carrossel animado", "carrossel-animado.mp4") for c in ordem if "carrossel-animado.mp4" in c["arquivos"]]
+    fila, atraso = [], 4
+    for i, c in enumerate(ordem):
+        fila.append(post(c, "Apresentação: carrossel + story (fixar no perfil)") if "-apresentacao-" in c["pasta"] else post(c))
+        if i >= atraso and i - atraso < len(reels):
+            fila.append(reels[i - atraso])
+    return fila + reels[max(0, len(ordem) - atraso):]
+
+
+def encaixar(fila, extra, desde):
+    """Mantém fila[:desde] e, dali em diante, alterna um post de `extra` com um da fila."""
+    out, extra, resto = fila[:desde], list(extra), fila[desde:]
+    while extra or resto:
+        if extra:
+            out.append(extra.pop(0))
+        if resto:
+            out.append(resto.pop(0))
+    return out
+
+
 def distribuir(fila, inicio, por_dia):
     out, d = [], inicio
     for i in range(0, len(fila), por_dia):
@@ -175,6 +204,8 @@ def distribuir(fila, inicio, por_dia):
 def main():
     inicio = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today() + timedelta(days=1)
     todas = campanhas()
+    estreantes = {f: [c for c in todas if c["frente"] == f] for f in ESTREIAS}
+    todas = [c for c in todas if c["frente"] not in ESTREIAS]
     fixas = [c for c in todas if data_fixa(c["pasta"])]
     apresentacoes = [c for c in todas if "-apresentacao-" in c["pasta"] and not data_fixa(c["pasta"])]
     cs = [c for c in todas if not data_fixa(c["pasta"]) and c not in apresentacoes]
@@ -190,6 +221,11 @@ def main():
         fila.insert(0, post(c, "Apresentação: carrossel + story (fixar no perfil)"))
         if "carrossel-animado.mp4" in c["arquivos"]:
             fila.insert(min(7 * POR_DIA[conta_de(c["frente"])], len(fila)), post(c, "Reel: apresentação animada", "carrossel-animado.mp4"))
+    for frente, cs_f in estreantes.items():
+        if cs_f:
+            conta = conta_de(frente)
+            desde = max(0, (ESTREIAS[frente] - inicio).days) * POR_DIA[conta]
+            filas[conta] = encaixar(filas[conta], fila_estreia(cs_f), desde)
     novos = {}
     for conta, fila in filas.items():
         assert 1 <= POR_DIA[conta] <= 2
