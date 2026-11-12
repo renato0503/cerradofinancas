@@ -1,6 +1,6 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 10/11/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 12/11/2026.
 
 **Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
 ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
@@ -114,6 +114,21 @@ https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-
 
 ## O que foi feito (novembro de 2026)
 
+**Cyber Security na Fábrica de Software (12/11).** Commits `b7ffaa9` (página + oferta) e `2987518`
+(header revertido ao original — o menu **não** foi alterado).
+- **Página nova:** [`cyberseguranca.html`](cyberseguranca.html) — Cyber Security & Pentest, com
+  hero, 6 diferenciais (IA local/air-gapped, ROE assinado, análise de código vibecodado, dependências
+  por versão, teste do que está no ar, relatório CISO/técnico), 3 ofertas (passiva, ativa assistida,
+  correção & retest), metodologia em 5 passos, seção de **escopo explícito** (sem DoS, força bruta,
+  persistência ou alteração de dados) e CTA por WhatsApp.
+- **`fabrica.html`:** card "Cyber Security & Pentest" na grade de soluções + faixa de destaque
+  (`.cyber-band`) entre as soluções e a metodologia, com 4 selos e dois CTAs.
+- **Menu:** tentativa de incluir o item no header foi **revertida** a pedido do Renato; o acesso se dá
+  pelo card, pela faixa e pelo sitemap.
+- **`sitemap.xml`:** entrada nova com prioridade 0.8. Deploy do GitHub Pages conferido em produção
+  (página 200 OK, card e faixa presentes).
+- **Regra aprendida:** não alterar `_includes/header.html` sem pedido explícito.
+
 **CerraFood, a plataforma white label de gestão de restaurantes (10/11).** Commits `f6d2d67`, `a0bada7`, `cee3f36` e
 `466a054`;
 no mesmo dia, reposicionado de "sistema para pizzaria" para **restaurantes em geral** (pizzaria, hamburgueria,
@@ -137,7 +152,41 @@ institucional, com a foto em arco (`marketing/brand/anuncio-equipe.css`). Estão
 Equipe" para a equipe postar quando quiser. Commits `466a054`, `d2ac000` e `9223395`. Passo a passo para uma pessoa
 nova em `marketing/HISTORICO.md`, seção "Peças da equipe".
 
+**Filmes 3D das frentes (11/11), aguardando aval.** Um filme de 32 s por frente (Cerra.AI, Cerrado Tech,
+CerraClass, Guia Acadêmico, CerraFood, Contabilidade, Crédito e Consultorias), em 16:9 e 9:16, sem áudio, cada um
+com um objeto 3D próprio em Three.js (chip de cobre, blocos da fábrica, cadeiras da turma, bússola, impressora
+térmica e pizza, razonete e escada, caneta que assina, organograma em arame) e o roteiro tirado só das peças
+aprovadas. Fonte em `marketing/filmes/frente-*/fonte/`, MP4 em `marketing/filmes/out/frente-*.mp4` (fora do git,
+**não publicados**). Como fazer e refazer: `marketing/filmes/README.md`, seção "Filmes 3D das frentes".
+
+**Sessão de 11 e 12/11/2026 (Renato com o Claude): filmes 3D e duas palestras.** Nada foi commitado.
+- **Filmes 3D das frentes** (8 filmes, 32 s, 16:9 e 9:16, Three.js no HyperFrames): `marketing/filmes/frente-*`, MP4 em
+  `marketing/filmes/out/`. Aguardam aval; detalhes em `marketing/filmes/README.md` e no `marketing/HISTORICO.md`.
+- **Palestra ENBRA v3**, "IA na empresa: o dado sai ou fica em casa?" (29 slides, demonstração do Cerra.AI ao vivo):
+  `marketing/Palestras/2026-11-palestra-enbra-transformacao-digital-ia/` (v1 e v2 em `anteriores/`). Registro em
+  `REGISTRO-v3.md`; link privado https://claude.ai/artifact/QSEkRtFs9d9mn9DWKYhfzV.
+- **Palestra "Segurança Cibernética e Soberania Tecnológica" v2** para a ADESG-MT (13/11/2026, 19h, Faculdade FAIPE;
+  39 slides com globo 3D): `marketing/Palestras/2026-11-palestra-ciberseguranca-soberania/`. Registro em `REGISTRO-v2.md`;
+  link privado https://claude.ai/artifact/8vBwVS1zkFia3icPZMoxXM.
+- **Para continuar:** ler o `REGISTRO-*.md` da pasta; os textos da palestra ADESG ficam em `apresentacao-v2/gerar_slides.py`.
+
 ## Pendências
+
+### Palestra ADESG-MT (13/11, 19h, FAIPE)
+- [ ] Antes de sair: atualizar Nvidia, Binance, Smart Sampa e PL 2338 em
+      `marketing/Palestras/2026-11-palestra-ciberseguranca-soberania/apresentacao-v2/gerar_slides.py`, rodar o gerador e o verificador.
+- [ ] Ensaiar com a NVIDIA forçada no Chrome; levar o PDF de contingência.
+
+### Palestra ENBRA v3
+- [ ] **Gravar a demonstração do Cerra.AI** (3 min) e salvar em
+      `marketing/Palestras/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao-v3/video/demo-cerraai.mp4` (plano B, tecla V).
+- [ ] Na véspera: conferir se houve decisão nova no caso NYT × OpenAI (slide 09) e ensaiar com a RTX 4060 forçada no Chrome.
+
+### Marketing: filmes 3D
+- [ ] **Aval do Renato nos 16 vídeos** (`marketing/filmes/out/frente-*.mp4`). Aprovados, criar
+      `entregas/2026-11-filme-<frente>/` (ou pôr o vídeo na campanha da apresentação de cada marca), com `info.json`
+      e legendas, rodar `tools/otimizar_publicacoes.py`, `tools/publicar.py` (com a regra de não varrer pastas de
+      outra IA) e conferir o espaço do GitHub Pages (~4 MB por vídeo, ~64 MB os 16).
 
 ### Site
 - [ ] **CerraFood:** acrescentar PIX integrado, NFC-e, iFood ou multi-loja na página e nas peças **só** quando o

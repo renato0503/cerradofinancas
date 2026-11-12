@@ -132,6 +132,12 @@ Todas seguem o mesmo template: Hero com ícone Phosphor + badge "Fábrica de Sof
 | E-commerce & Vendas | `ecommerce.html` | Verde `#16a34a` |
 | Compliance & Auditoria | `compliance.html` | Vermelho `#e11d48` |
 | Dashboards & Analytics | `dashboards.html` | Laranja `#ea580c` |
+| Cyber Security & Pentest | `cyberseguranca.html` | Azul-escuro `#0b1220` / Dourado `#fecb00` |
+
+> **Cyber Security:** página de serviço (não de software) ligada pela grade e pela faixa
+> `.cyber-band` da `fabrica.html`. Tem hero, 6 diferenciais, 3 ofertas (passiva / ativa assistida /
+> correção e retest), metodologia em 5 passos, seção de escopo explícito (o que não fazemos) e CTA
+> por WhatsApp. **Não** tem item no `_includes/header.html` — decisão do Renato em 12/11/2026.
 
 ---
 

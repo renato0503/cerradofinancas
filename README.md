@@ -33,6 +33,10 @@ Plataformas orientadas à automação, *compliance* e geração de lucro:
 * **Broker Logístico ERP:** Plataforma *Mobile-First* para simulação de fretes, metas de RCAs e prevenção de *Churn*.
 * **EloEleitoral:** CRM Inteligente para captação de demandas cidadãs e gestão de mandatos políticos através de mapas de calor.
 
+### 🛡️ Cyber Security (Fábrica de Software)
+Serviços de segurança para o software que a empresa constrói ou já publicou — com IA rodando localmente:
+* **[Cyber Security & Pentest](cyberseguranca.html):** análise de código gerado por IA (35 regras, CWE), dependências por versão (SCA + SBOM), teste autorizado do que está publicado (rotas descobertas no bundle, sessão autenticada) e retest após a correção. Relatório executivo e técnico com evidência, enquadramento OWASP/CWE Top 25 e ROE assinado antes de qualquer execução.
+
 ---
 
 ## 🛠️ Stack Tecnológico
