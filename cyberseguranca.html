@@ -1,0 +1,350 @@
+---
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Security & Pentest | Cerrado Tech — Segurança Ofensiva com IA Local</title>
+  <meta name="description" content="Análise de código gerado por IA, SCA por versão, pentest autorizado do que já está publicado e relatório com evidência e compliance CWE/OWASP. IA rodando localmente: nenhum dado do cliente sai da máquina.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    :root { --sec-dark: #001f5c; --sec-accent: #fecb00; --sec-ink: #0b1220; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+    .hero-page { position: relative; padding: 140px 0 100px; background: linear-gradient(135deg, #001f5c 0%, #000a1e 100%); color: #fff; border-bottom: 4px solid var(--sec-accent); overflow: hidden; }
+    .hero-page::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(254,203,0,0.07) 1px, transparent 1px); background-size: 22px 22px; opacity: 0.5; pointer-events: none; }
+    .hero-split { display: flex; align-items: center; gap: 60px; position: relative; z-index: 1; }
+    .hero-text { flex: 1.35; }
+    .hero-visual { flex: 0.65; display: flex; justify-content: flex-end; }
+    .hero-icon-big { width: 100px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px; background: rgba(254,203,0,0.12); color: var(--sec-accent); }
+    .hero-page .badge { background: rgba(254,203,0,0.12); border: 1px solid rgba(254,203,0,0.3); color: #fecb00; padding: 8px 18px; border-radius: 50px; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 20px; }
+    .hero-page h1 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 900; line-height: 1.08; margin-bottom: 20px; letter-spacing: -1.5px; }
+    .hero-page h1 .gold { color: var(--sec-accent); }
+    .hero-page h1 + p { font-size: 1.1rem; color: #cbd5e1; max-width: 620px; line-height: 1.7; margin-bottom: 32px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .hero-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #e2e8f0; padding: 7px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; }
+    .hero-pill i { color: var(--sec-accent); }
+    .btn-gold { background: var(--sec-accent); color: #001f5c; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 10px 25px rgba(254,203,0,0.3); }
+    .btn-gold:hover { transform: scale(1.05); background: #ffd733; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: #e2e8f0; padding: 15px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; transition: 0.3s; }
+    .btn-ghost:hover { border-color: var(--sec-accent); color: var(--sec-accent); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-badge-card { width: 300px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 22px; padding: 26px; backdrop-filter: blur(6px); }
+    .hero-badge-card h4 { color: var(--sec-accent); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 14px; }
+    .hero-badge-card ul { list-style: none; padding: 0; margin: 0; }
+    .hero-badge-card li { display: flex; gap: 10px; align-items: flex-start; color: #dbe4ef; font-size: 0.88rem; padding: 7px 0; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+    .hero-badge-card li:last-child { border-bottom: 0; }
+    .hero-badge-card li i { color: #4ade80; margin-top: 2px; }
+    @media (max-width: 992px) { .hero-split { flex-direction: column; text-align: center; } .hero-visual { justify-content: center; } .hero-page h1 + p { margin: 0 auto 28px; } .hero-icon-big { margin: 0 auto 24px; } .hero-actions { justify-content: center; } .hero-pills { justify-content: center; } }
+
+    .section-page { padding: 100px 0; }
+    .section-bg { background: #fff; }
+    .section-dark { background: linear-gradient(135deg, #001f5c 0%, #003399 100%); color: #fff; }
+    .section-header { text-align: center; max-width: 760px; margin: 0 auto 60px; }
+    .section-tag { display: inline-block; padding: 6px 16px; background: rgba(0,31,92,0.06); color: #001f5c; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 50px; margin-bottom: 16px; border: 1px solid rgba(0,31,92,0.1); }
+    .section-dark .section-tag { background: rgba(254,203,0,0.12); color: var(--sec-accent); border-color: rgba(254,203,0,0.3); }
+    .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #001f5c; margin-bottom: 12px; line-height: 1.2; }
+    .section-dark .section-header h2 { color: #fff; }
+    .section-header p { font-size: 1.05rem; color: #64748b; line-height: 1.7; }
+    .section-dark .section-header p { color: #cbd5e1; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1080px; margin: 0 auto; }
+    .feature-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 34px 28px; transition: 0.35s; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,31,92,0.08); border-color: var(--sec-accent); }
+    .feature-card .ficon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px; }
+    .feature-card h3 { font-size: 1.12rem; font-weight: 800; color: #001f5c; margin-bottom: 8px; }
+    .feature-card p { font-size: 0.92rem; color: #64748b; line-height: 1.65; }
+    .feature-card .mini { display: inline-block; margin-top: 14px; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: #0f766e; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 4px 10px; border-radius: 50px; }
+
+    .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; max-width: 1120px; margin: 0 auto; }
+    .offer-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; }
+    .offer-card.featured { border-color: rgba(254,203,0,0.55); box-shadow: 0 0 0 1px rgba(254,203,0,0.15), 0 20px 45px rgba(0,0,0,0.25); background: rgba(254,203,0,0.06); }
+    .offer-card .offer-tag { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--sec-accent); margin-bottom: 10px; }
+    .offer-card h3 { font-size: 1.3rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .offer-card p.lead { font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 18px; }
+    .offer-card ul { list-style: none; padding: 0; margin: 0 0 22px; }
+    .offer-card li { display: flex; gap: 9px; align-items: flex-start; color: #dbe4ef; font-size: 0.88rem; padding: 3px 0; }
+    .offer-card li i { color: #4ade80; margin-top: 2px; }
+    .offer-card .offer-foot { margin-top: auto; font-size: 0.78rem; color: #94a3b8; border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 14px; }
+
+    .how-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; max-width: 1150px; margin: 0 auto; }
+    .how-step { background: #fff; border-radius: 18px; padding: 28px 20px; text-align: center; border: 1px solid #e2e8f0; transition: 0.35s; }
+    .how-step:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,31,92,0.06); border-color: var(--sec-accent); }
+    .how-num { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #001f5c, #003399); color: var(--sec-accent); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; font-weight: 900; margin: 0 auto 14px; }
+    .how-step h4 { font-size: 0.95rem; font-weight: 800; color: #001f5c; margin-bottom: 6px; }
+    .how-step p { font-size: 0.82rem; color: #64748b; line-height: 1.55; }
+    @media (max-width: 1100px) { .how-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .how-grid, .features-grid, .offer-grid { grid-template-columns: 1fr; } }
+
+    .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .scope-col { background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 30px 28px; }
+    .scope-col.yes { border-top: 4px solid #16a34a; }
+    .scope-col.no { border-top: 4px solid #dc2626; }
+    .scope-col h3 { font-size: 1.05rem; font-weight: 800; color: #001f5c; margin-bottom: 14px; display: flex; align-items: center; gap: 9px; }
+    .scope-col ul { list-style: none; padding: 0; margin: 0; }
+    .scope-col li { display: flex; gap: 9px; align-items: flex-start; font-size: 0.9rem; color: #475569; padding: 5px 0; line-height: 1.5; }
+    .scope-col.yes li i { color: #16a34a; margin-top: 2px; }
+    .scope-col.no li i { color: #dc2626; margin-top: 2px; }
+    @media (max-width: 768px) { .scope-grid { grid-template-columns: 1fr; } }
+
+    .cta-section { background: linear-gradient(135deg, #001f5c 0%, #003399 100%); padding: 80px 0; text-align: center; color: #fff; }
+    .btn-white { background: #fff; color: #001f5c; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,255,255,0.3); }
+    .rel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .rel-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; text-align: center; text-decoration: none; transition: 0.3s; }
+    .rel-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,31,92,0.06); border-color: var(--sec-accent); }
+    .rel-card span { font-weight: 800; color: #001f5c; font-size: 0.95rem; }
+    .rel-card i { display: block; font-size: 26px; color: #003399; margin-bottom: 8px; }
+    .disclaimer { max-width: 900px; margin: 26px auto 0; font-size: 0.78rem; color: #94a3b8; text-align: center; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+{% include header.html titulo="Cerrado Tech" %}
+
+<!-- ========== HERO ========== -->
+<section class="hero-page" id="inicio">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero-text">
+        <div class="hero-icon-big fade-up">
+          <i class="ph ph-shield-chevron" style="font-size: 54px;"></i>
+        </div>
+        <span class="badge fade-up">Fábrica de Software · Cyber Security</span>
+        <h1 class="fade-up delay-1">Segurança para o software que <span class="gold">você já publicou</span>.</h1>
+        <p class="fade-up delay-2">
+          Revisamos o código gerado por IA, cruzamos cada biblioteca com vulnerabilidades conhecidas e testamos —
+          com autorização formal — o que o seu sistema realmente expõe na internet. Tudo com IA rodando
+          <strong>na sua infraestrutura</strong>: nenhum dado do cliente sai da máquina.
+        </p>
+        <div class="hero-pills fade-up delay-2">
+          <span class="hero-pill"><i class="ph ph-cpu"></i> IA local (air-gapped)</span>
+          <span class="hero-pill"><i class="ph ph-file-signature"></i> ROE assinado</span>
+          <span class="hero-pill"><i class="ph ph-bug"></i> CWE / OWASP</span>
+          <span class="hero-pill"><i class="ph ph-magnifying-glass"></i> Evidência com hash</span>
+        </div>
+        <div class="hero-actions fade-up delay-3">
+          <a href="#contato" class="btn-gold">Solicitar Diagnóstico <i class="ph ph-arrow-right"></i></a>
+          <a href="#ofertas" class="btn-ghost">Ver as ofertas <i class="ph ph-arrow-down"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-badge-card">
+          <h4>O que entregamos</h4>
+          <ul>
+            <li><i class="ph ph-check-circle"></i> Relatório executivo + técnico</li>
+            <li><i class="ph ph-check-circle"></i> Achados com CWE, CVSS e evidência</li>
+            <li><i class="ph ph-check-circle"></i> SBOM das dependências</li>
+            <li><i class="ph ph-check-circle"></i> Backlog de remediação priorizado</li>
+            <li><i class="ph ph-check-circle"></i> Retest para provar a correção</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIFERENCIAIS ========== -->
+<section class="section-page section-bg" id="diferenciais">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Por que conosco</span>
+      <h2>Segurança que entende de código gerado por IA</h2>
+      <p>Ferramenta de prateleira acha CVE. O que ela não vê é o que a IA escreveu no seu sistema: chave de serviço no bundle, rota administrativa aberta, regra de negócio exposta no JavaScript. É exatamente aí que atuamos.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up delay-1">
+        <div class="ficon" style="background:#e0f2fe;color:#0284c7;"><i class="ph ph-cpu"></i></div>
+        <h3>IA 100% local</h3>
+        <p>O motor roda no seu servidor ou no nosso, sem enviar código, credenciais ou relatórios para nuvem de terceiros. Nada de prompt com dado de cliente saindo para fora.</p>
+        <span class="mini">Air-gapped</span>
+      </div>
+      <div class="feature-card fade-up delay-1">
+        <div class="ficon" style="background:#fef3c7;color:#ca8a04;"><i class="ph ph-file-signature"></i></div>
+        <h3>Autorização formal antes de tocar no alvo</h3>
+        <p>Nenhum teste começa sem ROE assinado: alvo, janela de execução, escopo, limites e técnicas permitidas. Execução fora da janela ou do escopo é bloqueada pelo próprio motor.</p>
+        <span class="mini">Fail-closed</span>
+      </div>
+      <div class="feature-card fade-up delay-2">
+        <div class="ficon" style="background:#ede9fe;color:#7c3aed;"><i class="ph ph-code"></i></div>
+        <h3>Análise de código vibecodado</h3>
+        <p>35 regras dedicadas ao que a IA costuma gerar errado: segredo hardcoded, XSS, SQL por concatenação, path traversal, SSRF, criptografia fraca, rota crítica sem autorização.</p>
+        <span class="mini">35 regras · 38 cenários</span>
+      </div>
+      <div class="feature-card fade-up delay-2">
+        <div class="ficon" style="background:#dcfce7;color:#16a34a;"><i class="ph ph-package"></i></div>
+        <h3>Dependências por versão</h3>
+        <p>Cruzamos cada biblioteca do seu projeto com bases públicas de vulnerabilidade, por versão. Você recebe a lista do que está desatualizado e a versão mínima segura.</p>
+        <span class="mini">16 ecossistemas</span>
+      </div>
+      <div class="feature-card fade-up delay-3">
+        <div class="ficon" style="background:#ffe4e6;color:#e11d48;"><i class="ph ph-crosshair"></i></div>
+        <h3>Teste do que está no ar</h3>
+        <p>Descobrimos no bundle do seu app as rotas e endpoints que ele realmente chama e testamos apenas eles — com limite de requisições, sem força bruta, sem negação de serviço. Com sessão autenticada, quando autorizado.</p>
+        <span class="mini">Somente GET</span>
+      </div>
+      <div class="feature-card fade-up delay-3">
+        <div class="ficon" style="background:#f0fdf4;color:#15803d;"><i class="ph ph-clipboard-text"></i></div>
+        <h3>Relatório para o CISO e para o time técnico</h3>
+        <p>Resumo executivo com o que corrigir primeiro, relatório técnico com arquivo e linha, enquadramento em CWE / OWASP Top 10 / CWE Top 25 e trilha de auditoria de tudo que foi executado.</p>
+        <span class="mini">Compliance incluído</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OFERTAS ========== -->
+<section class="section-page section-dark" id="ofertas">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Ofertas</span>
+      <h2>Três formas de reduzir risco — do preventivo ao corretivo</h2>
+      <p>Comece pelo que não precisa de acesso ao seu sistema e evolua conforme a necessidade.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card featured fade-up delay-1">
+        <div class="offer-tag">Recomendado para começar</div>
+        <h3>Análise Passiva</h3>
+        <p class="lead">Preventiva, sem tocar no seu ambiente. Ideal para quem acabou de colocar um sistema no ar ou desconfia do código gerado por IA.</p>
+        <ul>
+          <li><i class="ph ph-check"></i> Análise estática de código (35 regras, CWE)</li>
+          <li><i class="ph ph-check"></i> SCA por versão + SBOM</li>
+          <li><i class="ph ph-check"></i> Relatório executivo e técnico</li>
+          <li><i class="ph ph-check"></i> Backlog de remediação priorizado</li>
+        </ul>
+        <div class="offer-foot">Não requer acesso ao sistema em produção.</div>
+      </div>
+      <div class="offer-card fade-up delay-2">
+        <div class="offer-tag">Com autorização</div>
+        <h3>Teste Ativo Assistido</h3>
+        <p class="lead">Para quem quer saber o que o sistema realmente expõe na internet, com escopo e limites acordados.</p>
+        <ul>
+          <li><i class="ph ph-check"></i> Descoberta de rotas no bundle</li>
+          <li><i class="ph ph-check"></i> Headers, CSP, cookies, CORS, TLS</li>
+          <li><i class="ph ph-check"></i> Teste das rotas descobertas (somente GET)</li>
+          <li><i class="ph ph-check"></i> Sessão autenticada, quando autorizado</li>
+        </ul>
+        <div class="offer-foot">Exige ROE assinado com janela e escopo.</div>
+      </div>
+      <div class="offer-card fade-up delay-3">
+        <div class="offer-tag">Fechamento</div>
+        <h3>Correção & Retest</h3>
+        <p class="lead">Depois das correções, provamos que o risco caiu — e o que ainda persiste.</p>
+        <ul>
+          <li><i class="ph ph-check"></i> Retest comparando antes × depois</li>
+          <li><i class="ph ph-check"></i> Achados fechados, novos e persistentes</li>
+          <li><i class="ph ph-check"></i> Relatório de verificação</li>
+          <li><i class="ph ph-check"></i> Evidência com hash de integridade</li>
+        </ul>
+        <div class="offer-foot">Ideal para encerrar a auditoria com prova.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== METODOLOGIA ========== -->
+<section class="section-page" id="metodologia" style="background:#f8fafc;">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Metodologia</span>
+      <h2>Do pedido ao relatório: processo auditável</h2>
+      <p>Nada é feito "no escuro". Cada etapa deixa registro, e você acompanha o que foi executado.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step fade-up delay-1"><div class="how-num">01</div><h4>Intake</h4><p>Seu TI preenche o escopo: alvo, janela, contatos e autorização.</p></div>
+      <div class="how-step fade-up delay-2"><div class="how-num">02</div><h4>ROE</h4><p>Geramos o documento assinado com escopo, limites e técnicas permitidas.</p></div>
+      <div class="how-step fade-up delay-3"><div class="how-num">03</div><h4>Análise</h4><p>Código, dependências e superfície publicada — dentro do escopo e da janela.</p></div>
+      <div class="how-step fade-up delay-3"><div class="how-num">04</div><h4>Entrega</h4><p>Relatório executivo e técnico, com evidência e hash de cada arquivo.</p></div>
+      <div class="how-step fade-up delay-3"><div class="how-num">05</div><h4>Retest</h4><p>Após as correções, comparamos e provamos o que fechou.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ESCOPO E LIMITES ========== -->
+<section class="section-page section-bg" id="escopo">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Transparência</span>
+      <h2>O que fazemos — e o que não fazemos</h2>
+      <p>Segurança séria é explícita sobre limites. Preferimos dizer "não testado" a inventar cobertura.</p>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-col yes fade-up delay-1">
+        <h3><i class="ph ph-check-circle"></i> Dentro do escopo</h3>
+        <ul>
+          <li><i class="ph ph-check"></i> Leitura e análise de código e dependências</li>
+          <li><i class="ph ph-check"></i> Requisições GET nas rotas descobertas</li>
+          <li><i class="ph ph-check"></i> Verificação de configuração (headers, TLS, cookies, CORS)</li>
+          <li><i class="ph ph-check"></i> Inventário de host e pacotes (quando autorizado)</li>
+          <li><i class="ph ph-check"></i> Prova de conceito não destrutiva</li>
+        </ul>
+      </div>
+      <div class="scope-col no fade-up delay-2">
+        <h3><i class="ph ph-x-circle"></i> Fora do escopo</h3>
+        <ul>
+          <li><i class="ph ph-x"></i> Negação de serviço (DoS) de qualquer tipo</li>
+          <li><i class="ph ph-x"></i> Força bruta, credential stuffing ou password spraying</li>
+          <li><i class="ph ph-x"></i> Persistência, backdoor ou movimento lateral</li>
+          <li><i class="ph ph-x"></i> Alteração ou exclusão de dados do ambiente</li>
+          <li><i class="ph ph-x"></i> Teste fora da janela ou do escopo autorizado</li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">
+      Todo teste é precedido de autorização formal do cliente. O material produzido é tratado como confidencial:
+      armazenamento cifrado, retenção acordada e destruição com recibo. O motor recusa execução sem autorização válida.
+    </p>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<div class="cta-section" id="contato">
+  <div class="container">
+    <div class="fade-up" style="max-width:640px; margin:0 auto;">
+      <span style="background:rgba(254,203,0,0.15);color:#fecb00;border:1px solid rgba(254,203,0,0.3);padding:6px 14px;border-radius:50px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:20px;">Diagnóstico em 48h</span>
+      <h2 style="font-size:2rem;font-weight:900;margin-bottom:16px;">Descubra o que o seu sistema expõe hoje.</h2>
+      <p style="color:#cbd5e1;margin-bottom:32px;line-height:1.7;">
+        Conte qual é o sistema e o que ele faz. Respondemos com o escopo recomendado, o prazo e o que precisamos
+        de autorização para começar.
+      </p>
+      <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero um diagnóstico de segurança para o meu sistema (análise de código, dependências e superfície publicada)." target="_blank" class="btn-white">Falar no WhatsApp <i class="ph ph-whatsapp-logo"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== EXPLORE TAMBÉM ========== -->
+<section class="section-page section-bg" style="padding-top:80px;">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Explore Também</span>
+      <h2>Soluções complementares da Cerrado Tech</h2>
+    </div>
+    <div class="rel-grid">
+      <a href="fabrica.html" class="rel-card fade-up delay-1"><i class="ph ph-factory"></i><span>Fábrica de Software</span></a>
+      <a href="compliance.html" class="rel-card fade-up delay-1"><i class="ph ph-shield-check"></i><span>Compliance & Auditoria</span></a>
+      <a href="ia-offline.html" class="rel-card fade-up delay-2"><i class="ph ph-cpu"></i><span>IA Offline</span></a>
+      <a href="dashboards.html" class="rel-card fade-up delay-3"><i class="ph ph-chart-bar"></i><span>Dashboards & Analytics</span></a>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
+
+<script src="js/main.js"></script>
+</body>
+</html>

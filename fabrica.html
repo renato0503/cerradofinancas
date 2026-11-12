@@ -811,6 +811,116 @@
       text-align: center;
       color: #fff;
     }
+
+    /* ============= FAIXA CYBER SECURITY ============= */
+    .cyber-band {
+      padding: 80px 0;
+      background: #0b1220;
+      background-image: radial-gradient(rgba(254,203,0,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+      border-top: 4px solid #fecb00;
+      border-bottom: 1px solid #16202e;
+      color: #e2e8f0;
+    }
+
+    .cyber-band-inner {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .cyber-band-text { flex: 1.35; }
+    .cyber-band-visual {
+      flex: 0.65;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 260px;
+    }
+
+    .cyber-ring {
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      border: 1px dashed rgba(254,203,0,0.35);
+      animation: cyberSpin 22s linear infinite;
+    }
+
+    .cyber-icon {
+      font-size: 132px;
+      color: #fecb00;
+      filter: drop-shadow(0 10px 30px rgba(254,203,0,0.35));
+    }
+
+    @keyframes cyberSpin { to { transform: rotate(360deg); } }
+
+    .cyber-band-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(254,203,0,0.1);
+      border: 1px solid rgba(254,203,0,0.35);
+      color: #fecb00;
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 18px;
+    }
+
+    .cyber-band h2 {
+      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .cyber-band p {
+      color: #a9bccf;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 22px;
+      max-width: 620px;
+    }
+
+    .cyber-band p strong { color: #fff; }
+
+    .cyber-band-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .cyber-band-items span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #dbe4ef;
+      padding: 6px 13px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .cyber-band-items i { color: #fecb00; }
+
+    .cyber-band-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    @media (max-width: 992px) {
+      .cyber-band-inner { flex-direction: column; text-align: center; }
+      .cyber-band p { margin: 0 auto 22px; }
+      .cyber-band-items, .cyber-band-actions { justify-content: center; }
+      .cyber-band-visual { min-height: 200px; }
+    }
   </style>
 </head>
 <body>
@@ -975,6 +1085,51 @@
           </div>
         </a>
 
+        <a href="cyberseguranca.html" class="software-card fade-up delay-2">
+          <div class="software-icon" style="background: #0b1220; color: #fecb00;">
+            <i class="ph ph-shield-chevron"></i>
+          </div>
+          <h3>Cyber Security & Pentest</h3>
+          <p>Revisão do código gerado por IA, análise de dependências por versão e teste autorizado do que já está publicado. Relatório com evidência, CWE/OWASP e retest.</p>
+          <div class="software-tags">
+            <span class="highlight">IA 100% Local</span>
+            <span>ROE Assinado</span>
+            <span>Pentest Autorizado</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CYBER SECURITY (destaque) ========== -->
+  <section class="cyber-band" id="cyberseguranca">
+    <div class="container">
+      <div class="cyber-band-inner fade-up">
+        <div class="cyber-band-text">
+          <span class="cyber-band-tag"><i class="ph ph-shield-chevron"></i> Novo na Fábrica</span>
+          <h2>O software está no ar. Alguém já revisou o que ele expõe?</h2>
+          <p>
+            Todo sistema construído hoje carrega código gerado por IA, bibliotecas desatualizadas e rotas que
+            ninguém mapeou. A Cerrado Tech agora entrega <strong>análise passiva</strong> (código + dependências),
+            <strong>teste ativo autorizado</strong> do que está publicado e <strong>retest</strong> após a correção —
+            com IA rodando localmente, sem enviar dado do cliente para fora.
+          </p>
+          <div class="cyber-band-items">
+            <span><i class="ph ph-code"></i> 35 regras para código de IA</span>
+            <span><i class="ph ph-package"></i> SCA por versão + SBOM</span>
+            <span><i class="ph ph-crosshair"></i> Rotas descobertas no bundle</span>
+            <span><i class="ph ph-clipboard-text"></i> Relatório CWE / OWASP</span>
+          </div>
+          <div class="cyber-band-actions">
+            <a href="cyberseguranca.html" class="btn-gold-cta">Conhecer o serviço <i class="ph ph-arrow-right"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=5567993515206&text=Olá! Quero saber mais sobre o serviço de Cyber Security da Cerrado Tech." target="_blank" class="btn-outline-tech">Falar com especialista</a>
+          </div>
+        </div>
+        <div class="cyber-band-visual">
+          <div class="cyber-ring"></div>
+          <i class="ph ph-shield-chevron cyber-icon"></i>
+        </div>
       </div>
     </div>
   </section>
