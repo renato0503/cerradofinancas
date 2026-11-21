@@ -88,6 +88,23 @@
       "kb": 160
      }
     ]
+   },
+   {
+    "versao": 6,
+    "frente": "cartao-v6-frente.png",
+    "verso": "cartao-v6-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v6-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 201
+     },
+     {
+      "nome": "cartao-v6-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 201
+     }
+    ]
    }
   ],
   "folder": {
@@ -121,7 +138,7 @@
   ],
   "zip": {
    "nome": "institucional.zip",
-   "kb": 3553
+   "kb": 3963
   }
  },
  {

@@ -312,6 +312,12 @@ body { font-family: 'Inter', sans-serif; }
 .pilulas { display: flex; flex-wrap: wrap; gap: 1mm; }
 .pilulas span { border: .25mm solid #fecb00; color: #fff; border-radius: 9mm; padding: .5mm 1.8mm; font-size: 5.6pt; font-weight: 600; }
 .qrbox { background: #fff; padding: 1mm; border-radius: 1.2mm; }
+.servicos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm 3mm; align-content: center; margin: 1.6mm 0; }
+.sv { font-size: 4.9pt; line-height: 1.28; }
+.sv b { display: block; font-size: 5.3pt; font-weight: 800; color: #fecb00; letter-spacing: .02em; }
+.sv span { opacity: .88; }
+.ct.linha { flex-direction: row; justify-content: space-between; font-size: 5pt; border-top: .2mm solid rgba(254,203,0,.45); padding-top: 1.4mm; }
+.ct.linha li { gap: 1mm; }
 """
     c = []
     # v1 clássico
@@ -359,6 +365,23 @@ body { font-family: 'Inter', sans-serif; }
       <div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "insta", "local"))}
       <div style="width:15mm">{qr(url, "#001f5c")}</div></div><div class="cresce"></div>
       <p style="font-size:7pt;font-weight:800;color:#fecb00;position:relative;top:2.6mm">cerradofinancas.com.br</p>"""), nome))
+    # v6 frente da v2 + verso da v4 com tudo o que o escritório faz (serviços tirados das páginas do site)
+    servicos = [
+        ("Fábrica de Software", "ERPs, CRMs, IA offline, e-commerce, dashboards e cyber security"),
+        ("Contabilidade", "abertura de empresa, tributos, folha e eSocial, BPO e BI"),
+        ("Crédito", "empréstimos, consignados, financiamentos, seguros e consórcios"),
+        ("Cursos", "IA na prática, IA na gestão, Excel com IA, dados e automação"),
+        ("Consultorias", "CSC, BPO financeiro, controladoria, tributário, GRC, GovTech e Web3"),
+    ]
+    lista_sv = "".join(f'<div class="sv"><b>{t}</b><span>{d}</span></div>' for t, d in servicos)
+    c.append(cartao(6, "noite", """<img src="img/folinha.png" style="position:absolute;height:44mm;right:-8mm;bottom:-6mm;opacity:.95" alt="">""" + s("""
+      <p class="rot">Finanças &amp; Tech</p><div class="cresce"></div>
+      <p class="nome" style="font-size:17pt">Cerrado<br><span>Finanças</span></p>
+      <i style="display:block;width:9mm;height:.7mm;background:#fecb00;margin:2.2mm 0 1.6mm"></i>
+      <p class="tag" style="max-width:40mm;opacity:.85">Um só parceiro para o seu negócio crescer</p>"""),
+        "noite", s(f"""<div class="lin entre"><div class="mini"><img src="img/folinha.png" alt="">Cerrado <span style="color:#fecb00">Finanças</span></div><p class="rot">{CIDADE}</p></div>
+      <div class="servicos cresce">{lista_sv}<div class="qrbox" style="width:12.5mm;align-self:end;justify-self:end">{qr(url, "#001f5c")}</div></div>
+      {contatos(b, ("whats", "email", "site"), cls="ct linha")}"""), nome))
 
     marca_j = '<div class="mini" style="font-size:20pt;gap:4mm"><img src="img/folinha.png" style="height:16mm" alt="">Cerrado&nbsp;<span style="color:#fecb00">Finanças</span></div>'
     motivo = f'<div class="pilulas" style="gap:3mm;justify-content:center">{"".join(f"<span style=\'font-size:14pt;padding:2mm 6mm\'>{f}</span>" for f in frentes)}</div>'
@@ -1153,7 +1176,7 @@ def renderizar(f, caminho, browser):
 
     pdf_page = browser.new_page()
     png300 = browser.new_page(device_scale_factor=300 / 96, viewport={"width": 500, "height": 300})
-    for v in range(1, 6):
+    for v in range(1, versoes(f) + 1):
         for w, h in TAMANHOS:
             abrir(pdf_page, f"p=cartao-v{v}&tam={w}x{h}")
             pdf_page.pdf(path=str(destino / f"cartao-v{v}-{w}x{h}mm.pdf"), width=f"{w + 2 * SANGRIA}mm",
@@ -1200,6 +1223,11 @@ def renderizar(f, caminho, browser):
     print(f"  {f['slug']}: {len(list(destino.iterdir()))} arquivos")
 
 
+def versoes(f):
+    """Quantas versões de cartão a frente tem (5 na maioria; o institucional tem uma 6ª)."""
+    return len(set(re.findall(r'data-grupo="cartao-v(\d+)"', f["pecas"])))
+
+
 def indice(lista):
     itens = []
     for f in lista:
@@ -1209,7 +1237,7 @@ def indice(lista):
         kb = lambda n: round((pasta / n).stat().st_size / 1024)  # noqa: E731
         cartoes = [dict(versao=v, frente=f"cartao-v{v}-frente.png", verso=f"cartao-v{v}-verso.png",
                         pdfs=[dict(nome=f"cartao-v{v}-{w}x{h}mm.pdf", rotulo=f"{str(w / 10).replace('.', ',').replace(',0', '')} x {str(h / 10).replace('.', ',').replace(',0', '')} cm", kb=kb(f"cartao-v{v}-{w}x{h}mm.pdf"))
-                              for w, h in TAMANHOS]) for v in range(1, 6)]
+                              for w, h in TAMANHOS]) for v in range(1, versoes(f) + 1)]
         zipnome = f"{f['slug']}.zip"
         with zipfile.ZipFile(SAIDA / zipnome, "w", zipfile.ZIP_DEFLATED) as z:
             for arq in sorted(pasta.iterdir()):
