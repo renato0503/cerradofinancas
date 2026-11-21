@@ -1,0 +1,44 @@
+/* Cerrado Tech: a identidade do site. Azul-noite de fundo, dourado só no elemento principal. */
+@font-face { font-family: 'Inter'; src: url('assets/fonts/inter.woff2') format('woff2'); font-weight: 100 900; }
+
+:root { --azul: #001f5c; --azul-2: #003399; --noite: #000f2e; --dourado: #fecb00; --suave: #cbd5e1; --linha: #1b2f5e; }
+html, body { background: var(--noite); }
+#root { font-family: 'Inter', sans-serif; color: #fff; background: var(--noite); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--noite); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 41%; border-right: 2px solid var(--linha); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 2px solid var(--linha); }
+.horizontal .conteudo.esq { width: 640px; left: 110px; }
+
+.mega, .titulo { font-weight: 800; letter-spacing: -0.035em; line-height: 1.0; }
+.mega { font-size: 88px; }
+.titulo { font-size: 70px; margin-bottom: 36px; }
+.d { color: var(--dourado); }
+.rotulo { font-size: 24px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8fb0ff; margin-bottom: 28px; }
+.sub { font-size: 34px; line-height: 1.35; color: var(--suave); margin-top: 30px; }
+.titulo + .sub { margin-top: 0; }
+.linhas { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.linhas li { font-size: 31px; color: var(--suave); padding-left: 34px; position: relative; }
+.linhas li::before { content: ''; position: absolute; left: 0; top: .45em; width: 14px; height: 14px; border-radius: 3px; background: var(--azul-2); box-shadow: inset 0 0 0 2px #4d74d6; }
+.linhas b { color: #fff; font-weight: 700; margin-right: 10px; }
+.pilares { list-style: none; display: flex; flex-direction: column; gap: 34px; }
+.pilares li { display: flex; flex-direction: column; gap: 8px; border-left: 4px solid var(--azul-2); padding-left: 28px; }
+.pilares b { font-size: 58px; font-weight: 800; letter-spacing: -0.03em; }
+.pilares span { font-size: 30px; color: var(--suave); }
+
+#cortina { position: absolute; inset: 0; background: var(--azul); }
+.fecho { gap: 0; }
+.fecho .marca { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 800; letter-spacing: -0.02em; }
+.fecho .marca img { width: 80px; height: 80px; object-fit: contain; }
+.fecho .pergunta { font-size: 104px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.02; margin-top: 46px; max-width: 1400px; }
+.fecho .tag { font-size: 38px; color: var(--suave); margin-top: 28px; }
+.fecho .botao { margin-top: 48px; background: var(--dourado); color: var(--azul); font-size: 40px; font-weight: 800; padding: 22px 44px; border-radius: 999px; }
+.fecho .contato { font-size: 30px; color: var(--suave); margin-top: 26px; font-weight: 600; }
+
+.vertical .mega { font-size: 84px; }
+.vertical .titulo { font-size: 66px; margin-bottom: 28px; }
+.vertical .linhas li { font-size: 33px; }
+.vertical .pilares b { font-size: 56px; }
+.vertical .fecho .pergunta { font-size: 92px; }
+.vertical .fecho .botao { font-size: 34px; }

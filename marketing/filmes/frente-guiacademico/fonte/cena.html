@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Guia Acadêmico: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Visual journalism / Claim → how → result": corte em movimento, entrada power4.out
+      window.ESTILO = { ease: "power4.out", dur: 0.55, stagger: 0.05, desloc: 26, saida: 0.34, saidaEase: "power4.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power4.inOut" }, 0.1);
+        tl.fromTo("#cortina", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power4.inOut" }, 27.5);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27.5" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: a bússola assenta no norte -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="cabeca" data-entra="revelar" data-t="0.4">Guia Acadêmico · Cadernos de método · nº 00</p>
+          <p class="rubrica" data-entra="letras" data-t="0.8">§ 0 · Apresentação</p>
+          <h1 class="titulo grande" data-entra="palavras" data-t="1.0">Pesquisa com <em class="mt" data-entra="marcar" data-t="2.0">rigor</em>, do projeto à banca.</h1>
+          <p class="resumo" data-entra="subir" data-t="2.1"><b>Resumo.</b> Orientação metodológica e análise de dados para TCC, especialização, mestrado e doutorado.</p>
+        </div>
+      </div>
+
+      <!-- 5-12,5: a agulha aponta cada frente do Guia -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="7.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rubrica" data-entra="letras" data-t="0.15">1 · O que fazemos</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">As frentes do <em>Guia</em>.</h2>
+          <div class="quadro">
+            <p class="legenda" data-entra="subir" data-t="0.7">Quadro 1 · Serviços de consultoria acadêmica</p>
+            <ul data-entra="lista" data-t="1.0" data-stagger="0.9">
+              <li><b>Orientação metodológica</b><span>Do problema ao delineamento</span></li>
+              <li><b>Análise estatística</b><span>STATA, R, Python e SPSS</span></li>
+              <li><b>Análise qualitativa</b><span>IRAMUTEQ, NVivo e Atlas.ti</span></li>
+              <li><b>Mineração de dados</b><span>Raspagem de bases públicas</span></li>
+              <li><b>IA acadêmica</b><span>Uso ético de modelos de linguagem</span></li>
+              <li><b>Formatação e submissão</b><span>ABNT, APA, Vancouver e periódicos</span></li>
+            </ul>
+            <p class="fonte" data-entra="subir" data-t="6.0">Fonte: guiacademico.com.br.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12,5-19: os cadernos do protocolo caem empilhados -->
+      <div id="p3" class="plano clip" data-start="12.5" data-duration="6.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rubrica" data-entra="letras" data-t="0.15">2 · Como funciona</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">O <em>protocolo</em>.</h2>
+          <ol class="secoes" data-entra="lista" data-t="1.0" data-stagger="0.9">
+            <li><i>3.1</i><span><b>Diagnóstico</b> a sua necessidade e a viabilidade técnica</span></li>
+            <li><i>3.2</i><span><b>Proposta</b> escopo, cronograma de entregas e orçamento</span></li>
+            <li><i>3.3</i><span><b>Acompanhamento</b> sessões técnicas e entregas parciais</span></li>
+            <li><i>3.4</i><span><b>Área do Aluno</b> os seus arquivos e o andamento</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 19-24,5: a nota do orientador (controle de alterações) -->
+      <div id="p4" class="plano clip" data-start="19" data-duration="5.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rubrica" data-entra="letras" data-t="0.15">3 · Nota do orientador</p>
+          <p class="revisao"><span class="riscado" data-entra="riscar" data-t="0.9">Fazer a pesquisa por você.</span></p>
+          <p class="revisada" data-entra="subir" data-t="1.5">Orientar, capacitar, analisar os dados e revisar.</p>
+          <h2 class="titulo" data-entra="palavras" data-t="2.3">Você continua sendo o <em class="mt" data-entra="marcar" data-t="3.3">autor</em> da pesquisa.</h2>
+          <p class="etica" data-entra="subir" data-t="3.6">Não executamos trabalhos por terceiros.</p>
+        </div>
+      </div>
+
+      <!-- 24,5-27,5: quem orienta -->
+      <div id="p5" class="plano clip" data-start="24.5" data-duration="3" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rubrica" data-entra="letras" data-t="0.1">4 · Quem orienta</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.2">Prof. Renato Rosa</h2>
+          <ol class="secoes curtas" data-entra="lista" data-t="0.7" data-stagger="0.3">
+            <li><i>4.1</i><span>Mestre em Contabilidade (UFPR)</span></li>
+            <li><i>4.2</i><span>Doutorando em algoritmos e compliance</span></li>
+            <li><i>4.3</i><span>Bolsista ICTI / Itaú Unibanco em Dados e Machine Learning</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 27,5-32: o diagnóstico -->
+      <div id="p6" class="plano clip" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <img class="logo" src="assets/logo.png" alt="Guia Acadêmico" data-entra="subir" data-t="0.4" />
+          <h2 class="chamada" data-entra="palavras" data-t="0.7">Pesquisa com <em>rigor</em>, do projeto à banca.</h2>
+          <p class="botao" data-entra="revelar" data-t="1.5">Agendar diagnóstico da pesquisa</p>
+          <p class="contato" data-entra="subir" data-t="1.9">guiacademico.com.br · WhatsApp (67) 99351-5206</p>
+          <p class="etica" data-entra="subir" data-t="2.2">Você continua sendo o autor. Não executamos trabalhos por terceiros.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

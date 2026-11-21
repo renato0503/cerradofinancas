@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Crédito: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Editorial light / Pure typography": power3.out, sem pressa, como contrato lido com calma
+      window.ESTILO = { ease: "power3.out", dur: 0.6, stagger: 0.07, desloc: 22, saida: 0.36, saidaEase: "power2.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power3.inOut" }, 0.1);
+        tl.fromTo("#cortina", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.inOut" }, 27);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27.1" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: o contrato e a caneta -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.4">Crédito multi bancos</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.7">Antes de assinar, <span class="grifo" data-entra="marcar" data-t="1.7">compare.</span></h1>
+          <p class="sub" data-entra="subir" data-t="2.0">Vários bancos em uma só consulta, com quem entende de finanças.</p>
+        </div>
+      </div>
+
+      <!-- 5-11: o comparativo -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Uma consulta, vários bancos</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Comparamos o <span class="grifo" data-entra="marcar" data-t="1.4">custo total</span>, não só a parcela.</h2>
+          <p class="miuda" data-entra="subir" data-t="1.8">Ilustração. Taxas e condições variam conforme o perfil e a instituição.</p>
+        </div>
+      </div>
+
+      <!-- 11-16,5: os produtos -->
+      <div id="p3" class="plano clip" data-start="11" data-duration="5.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Produtos</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Crédito para cada momento.</h2>
+          <ul class="pauta" data-entra="lista" data-t="0.9" data-stagger="0.45">
+            <li><b>Empréstimos</b> pessoal, capital de giro e com garantia</li>
+            <li><b>Consignados</b> INSS, servidores, portabilidade e refinanciamento</li>
+            <li><b>Financiamentos</b> imóveis, veículos, máquinas e equipamentos</li>
+            <li><b>Seguros e consórcios</b> vida, auto, empresa e cartas de consórcio</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 16,5-22,5: como funciona (a caneta marca cada etapa no contrato) -->
+      <div id="p4" class="plano clip" data-start="16.5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Como funciona</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Do primeiro contato ao dinheiro na conta.</h2>
+          <ol class="clausulas" data-entra="lista" data-t="0.7" data-stagger="1.1">
+            <li><i>§ 1</i><span><b>Conversa inicial</b> quanto você precisa e quanto cabe no orçamento</span></li>
+            <li><i>§ 2</i><span><b>Simulação em vários bancos</b> taxa, prazo e custo total</span></li>
+            <li><i>§ 3</i><span><b>Você escolhe</b> opções claras, sem pressão</span></li>
+            <li><i>§ 4</i><span><b>Contratação acompanhada</b> da documentação à liberação</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 22,5-27: a assinatura -->
+      <div id="p5" class="plano clip" data-start="22.5" data-duration="4.6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Simulação</p>
+          <h2 class="mega" data-entra="palavras" data-t="0.3"><span class="grifo" data-entra="marcar" data-t="1.1">Gratuita</span> e sem compromisso.</h2>
+          <p class="rubrica" data-entra="revelar" data-t="1.6" data-dur="1.2">Você decide.</p>
+        </div>
+      </div>
+
+      <!-- 27-32: a marca, a parceira e o aviso legal -->
+      <div id="p6" class="plano clip" data-start="27" data-duration="5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <p class="marca" data-entra="subir" data-t="0.5"><img src="assets/folinha.png" alt="" /> Cerrado Finanças <small>Crédito</small></p>
+          <h2 class="chamada" data-entra="palavras" data-t="0.7">Antes de assinar, <span class="grifo">compare.</span></h2>
+          <p class="botao" data-entra="revelar" data-t="1.4">WhatsApp (67) 99351-5206 · cerradofinancas.com.br/credito</p>
+          <p class="parceria" data-entra="subir" data-t="1.8">Em parceria com <img src="assets/ls-logo.png" alt="LS Intermediação Financeira" /></p>
+          <p class="aviso" data-entra="subir" data-t="2.1">Cerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme o perfil e a instituição.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

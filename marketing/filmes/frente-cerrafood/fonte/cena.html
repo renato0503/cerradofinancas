@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>CerraFood: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Kitchen ticket / Order journey": entra de baixo e encaixa curto, como papel que sai e para
+      window.ESTILO = { ease: "back.out(1.15)", dur: 0.48, stagger: 0.05, desloc: 38, saida: 0.34, saidaEase: "power3.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power4.inOut" }, 0.1);
+        tl.fromTo("#cortina", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(75% at 50% 50%)", duration: 0.6, ease: "power3.inOut" }, 27);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27.1" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: a impressora imprime a comanda -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.5">Prazer, CerraFood</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.8">o restaurante inteiro num <span class="l">sistema só.</span></h1>
+          <p class="sub" data-entra="subir" data-t="1.8">Pizzaria, hamburgueria, restaurante ou delivery.</p>
+        </div>
+      </div>
+
+      <!-- 5-11,5: do pedido à porta -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Como funciona</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">do pedido à porta, <span class="l">sem anotar nada.</span></h2>
+          <ol class="passos" data-entra="lista" data-t="1.0" data-stagger="0.7">
+            <li><i>01</i><span><b>Totem ou caixa</b> o cliente monta o pedido ou o caixa lança</span></li>
+            <li><i>02</i><span><b>Cozinha</b> o pedido aparece na tela, com o tempo de espera</span></li>
+            <li><i>03</i><span><b>Estoque</b> os ingredientes saem do estoque sozinhos</span></li>
+            <li><i>04</i><span><b>Entrega</b> o cliente acompanha cada etapa pelo link</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 11,5-17: a tela da cozinha -->
+      <div id="p3" class="plano clip" data-start="11.5" data-duration="5.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Tela da cozinha</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">a cor mostra quanto <span class="l">o pedido espera.</span></h2>
+          <ul class="cores" data-entra="lista" data-t="1.1" data-stagger="0.45">
+            <li><i class="verde"></i>no tempo, até 15 min</li>
+            <li><i class="amarelo"></i>atenção, até 25 min</li>
+            <li><i class="tomate"></i>atrasado, depois disso</li>
+          </ul>
+          <p class="mono" data-entra="subir" data-t="2.8">Tela da cozinha no lugar do papel.</p>
+        </div>
+      </div>
+
+      <!-- 17-22,5: a ficha técnica, fatia por fatia -->
+      <div id="p4" class="plano clip" data-start="17" data-duration="5.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Ficha técnica</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">o custo de cada prato, <span class="l">fatia por fatia.</span></h2>
+          <p class="sub" data-entra="subir" data-t="1.2">Mudou o preço do ingrediente, o custo do prato é recalculado. E o estoque baixa sozinho a cada venda.</p>
+          <p class="selo" data-entra="subir" data-t="2.0">Exemplo ilustrativo</p>
+        </div>
+      </div>
+
+      <!-- 22,5-27: white label -->
+      <div id="p5" class="plano clip" data-start="22.5" data-duration="4.6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">White label</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">tudo com <span class="l">a sua marca.</span></h2>
+          <p class="sub" data-entra="subir" data-t="1.0">Site, app, totem e painel com o seu nome, a sua logo e as suas cores.</p>
+          <p class="mono" data-entra="subir" data-t="1.6">Entrega por bairro · Fidelidade · Relatórios</p>
+        </div>
+      </div>
+
+      <!-- 27-32: a demonstração -->
+      <div id="p6" class="plano clip" data-start="27" data-duration="5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <div class="disco" data-entra="pop" data-t="0.4"><img src="assets/simbolo.png" alt="" /></div>
+          <p class="nome" data-entra="subir" data-t="0.6">Cerra<span class="l">Food</span></p>
+          <h2 class="chamada" data-entra="palavras" data-t="0.8">veja o sistema com <span class="l">a sua marca.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.5">Demonstração gratuita, com o seu cardápio e a sua logo.</p>
+          <p class="botao" data-entra="pop" data-t="1.9" data-rot="0" data-ease="back.out(1.15)">cerradofinancas.com.br/cerrafood</p>
+          <p class="contato" data-entra="subir" data-t="2.3">WhatsApp (67) 99351-5206 · by Cerrado Tech</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

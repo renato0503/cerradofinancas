@@ -115,9 +115,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 424,
+   "kb": 1680,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 426
+   "kb_impressao": 1682
   },
   "jornal": {
    "previa": "jornal.png",
@@ -138,7 +138,7 @@
   ],
   "zip": {
    "nome": "institucional.zip",
-   "kb": 3963
+   "kb": 6428
   }
  },
  {
@@ -240,9 +240,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 249,
+   "kb": 1833,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 250
+   "kb_impressao": 1835
   },
   "jornal": {
    "previa": "jornal.png",
@@ -263,7 +263,7 @@
   ],
   "zip": {
    "nome": "tech.zip",
-   "kb": 3933
+   "kb": 7095
   }
  },
  {
@@ -365,9 +365,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 661,
+   "kb": 2019,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 663
+   "kb_impressao": 2021
   },
   "jornal": {
    "previa": "jornal.png",
@@ -388,7 +388,7 @@
   ],
   "zip": {
    "nome": "cerraai.zip",
-   "kb": 8002
+   "kb": 10704
   }
  },
  {
@@ -490,9 +490,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 389,
+   "kb": 1627,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 391
+   "kb_impressao": 1628
   },
   "jornal": {
    "previa": "jornal.png",
@@ -513,7 +513,7 @@
   ],
   "zip": {
    "nome": "cerraclass.zip",
-   "kb": 4438
+   "kb": 6926
   }
  },
  {
@@ -615,9 +615,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 260,
+   "kb": 1164,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 262
+   "kb_impressao": 1166
   },
   "jornal": {
    "previa": "jornal.png",
@@ -638,7 +638,7 @@
   ],
   "zip": {
    "nome": "credito.zip",
-   "kb": 2471
+   "kb": 4272
   }
  },
  {
@@ -740,9 +740,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 132,
+   "kb": 461,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 134
+   "kb_impressao": 463
   },
   "jornal": {
    "previa": "jornal.png",
@@ -763,7 +763,7 @@
   ],
   "zip": {
    "nome": "contabilidade.zip",
-   "kb": 1812
+   "kb": 2438
   }
  },
  {
@@ -865,9 +865,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 221,
+   "kb": 740,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 222
+   "kb_impressao": 742
   },
   "jornal": {
    "previa": "jornal.png",
@@ -888,7 +888,7 @@
   ],
   "zip": {
    "nome": "consultorias.zip",
-   "kb": 2375
+   "kb": 3419
   }
  },
  {
@@ -990,9 +990,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 452,
+   "kb": 2280,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 454
+   "kb_impressao": 2282
   },
   "jornal": {
    "previa": "jornal.png",
@@ -1013,7 +1013,7 @@
   ],
   "zip": {
    "nome": "guiacademico.zip",
-   "kb": 4739
+   "kb": 8423
   }
  },
  {
@@ -1115,9 +1115,9 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 566,
+   "kb": 1216,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 568
+   "kb_impressao": 1218
   },
   "jornal": {
    "previa": "jornal.png",
@@ -1138,7 +1138,7 @@
   ],
   "zip": {
    "nome": "cerrafood.zip",
-   "kb": 7033
+   "kb": 8312
   }
  }
 ]

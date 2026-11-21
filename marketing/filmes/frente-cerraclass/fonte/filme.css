@@ -1,0 +1,46 @@
+/* CerraClass: "Sábado de sala". Fundo de cor viva, tinta quase-preta, etiquetas adesivas. */
+@font-face { font-family: 'Bricolage Grotesque'; src: url('assets/fonts/bricolage.woff2') format('woff2'); font-weight: 200 800; font-stretch: 75% 100%; }
+
+:root { --campo: #ffc83d; --tinta: #141414; --papel: #ffffff; }
+html, body { background: var(--campo); }
+#root { font-family: 'Bricolage Grotesque', sans-serif; color: var(--tinta); background: var(--campo); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--campo); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 5px solid var(--tinta); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 5px solid var(--tinta); }
+.horizontal .conteudo.esq { width: 660px; left: 110px; }
+
+.mega { font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: 112px; line-height: .9; letter-spacing: -0.01em; }
+.mega .grande { font-size: 1.25em; }
+.etiqueta { align-self: flex-start; background: var(--papel); color: var(--tinta); border: 4px solid var(--tinta); border-radius: 16px; padding: 10px 22px; font-size: 32px; font-weight: 700; box-shadow: 6px 6px 0 var(--tinta); margin-bottom: 36px; }
+.contador { display: flex; align-items: baseline; gap: 22px; margin-bottom: 34px; }
+.contador .num { font-weight: 800; font-stretch: 78%; font-size: 230px; line-height: .8; }
+.contador .alunos { font-size: 46px; font-weight: 700; }
+.linhas { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.linhas li { font-size: 34px; font-weight: 600; padding-left: 42px; position: relative; }
+.linhas li::before { content: ''; position: absolute; left: 0; top: .3em; width: 22px; height: 22px; border-radius: 50%; background: var(--tinta); }
+.cursos { position: relative; height: 170px; margin-top: 40px; overflow: hidden; }
+.curso { position: absolute; left: 0; top: 0; background: var(--tinta); color: var(--papel); font-size: 44px; font-weight: 800; padding: 14px 26px; border-radius: 14px; max-width: 100%; line-height: 1.05; }
+.turmas { list-style: none; display: flex; flex-direction: column; gap: 28px; }
+.turmas li { display: flex; flex-direction: column; gap: 6px; background: var(--papel); border: 4px solid var(--tinta); border-radius: 18px; padding: 20px 26px; box-shadow: 7px 7px 0 var(--tinta); }
+.turmas b { font-size: 50px; font-weight: 800; font-stretch: 78%; text-transform: uppercase; line-height: .95; }
+.turmas span { font-size: 28px; font-weight: 500; }
+.citacao { font-size: 58px; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+.autor { margin-top: 30px; font-size: 32px; font-weight: 700; background: var(--tinta); color: var(--campo); align-self: flex-start; padding: 8px 18px; border-radius: 10px; }
+
+#cortina { position: absolute; inset: 0; background: var(--tinta); }
+.fecho { color: var(--campo); }
+.fecho .selo { width: 190px; height: 190px; border-radius: 50%; background: var(--papel); display: grid; place-items: center; border: 6px solid var(--campo); }
+.fecho .selo img { width: 72%; height: 72%; object-fit: contain; }
+.fecho .chamada { margin-top: 40px; font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: 150px; line-height: .88; color: var(--papel); }
+.fecho .chamada .a { color: var(--campo); }
+.fecho .tag { margin-top: 30px; font-size: 36px; font-weight: 600; color: var(--papel); }
+.fecho .botao { margin-top: 40px; background: var(--campo); color: var(--tinta); font-size: 52px; font-weight: 800; padding: 16px 40px; border-radius: 16px; box-shadow: 7px 7px 0 var(--papel); }
+.fecho .contato { margin-top: 30px; font-size: 30px; font-weight: 600; color: var(--papel); }
+
+.vertical .mega { font-size: 104px; }
+.vertical .contador .num { font-size: 210px; }
+.vertical .citacao { font-size: 56px; }
+.vertical .fecho .chamada { font-size: 128px; }
+.vertical .curso { font-size: 46px; }

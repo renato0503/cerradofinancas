@@ -1,0 +1,62 @@
+/* Consultorias: "Planta". Papel vegetal com grade, grafite e um único laranja de prancheta. */
+@font-face { font-family: 'Fraunces'; src: url('assets/fonts/fraunces-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Fraunces'; src: url('assets/fonts/fraunces-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Fraunces'; src: url('assets/fonts/fraunces-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root { --vegetal: #f3f0e8; --grafite: #23262b; --laranja: #e4570e; }
+html, body { background: var(--vegetal); }
+#root { font-family: 'Instrument Sans', sans-serif; color: var(--grafite); background: var(--vegetal); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background-color: var(--vegetal);
+  background-image: linear-gradient(rgba(35,38,43,.13) 2px, transparent 2px), linear-gradient(90deg, rgba(35,38,43,.13) 2px, transparent 2px),
+    linear-gradient(rgba(35,38,43,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(35,38,43,.07) 1px, transparent 1px);
+  background-size: 150px 150px, 150px 150px, 30px 30px, 30px 30px; }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 3px solid var(--grafite); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 3px solid var(--grafite); }
+.carimbo-prancha { position: absolute; left: 40px; right: 40px; bottom: 34px; display: flex; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 20px; border: 2px solid var(--grafite); background: var(--vegetal); }
+.carimbo-prancha span { padding: 10px 16px; }
+.carimbo-prancha span + span { border-left: 2px solid var(--grafite); }
+.horizontal .conteudo.esq { width: 660px; left: 110px; }
+
+.titulo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 66px; line-height: 1.04; letter-spacing: -0.01em; margin-bottom: 30px; }
+.titulo.grande { font-size: 86px; }
+.titulo em, .chamada em { font-style: italic; font-weight: 400; color: var(--laranja); }
+.rotulo { font-family: 'DM Mono', monospace; font-weight: 500; font-size: 25px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 24px; }
+.cota { position: relative; align-self: stretch; text-align: center; border-top: 3px solid var(--laranja); margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 24px; color: var(--laranja); }
+.cota::before, .cota::after { content: ''; position: absolute; top: -16px; width: 3px; height: 29px; background: var(--laranja); }
+.cota::before { left: 0; } .cota::after { right: 0; }
+.cota span { position: relative; top: -18px; background: var(--vegetal); padding: 0 14px; }
+.corte { display: flex; flex-direction: column; gap: 26px; }
+.antes { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.antes li { font-size: 32px; border: 2px dashed rgba(35,38,43,.55); padding: 10px 18px; align-self: flex-start; color: #5a5d63; }
+.antes li:nth-child(2) { margin-left: 34px; } .antes li:nth-child(3) { margin-left: 12px; }
+.depois { font-size: 34px; font-weight: 600; border-left: 6px solid var(--laranja); padding-left: 20px; line-height: 1.25; }
+.pranchas { list-style: none; border-top: 3px solid var(--grafite); }
+.pranchas li { display: flex; gap: 20px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid rgba(35,38,43,.25); font-size: 31px; font-weight: 600; }
+.pranchas i { font-style: normal; font-family: 'DM Mono', monospace; font-size: 24px; color: var(--laranja); }
+.etapas { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.etapas li { display: flex; gap: 18px; align-items: baseline; }
+.etapas i { font-style: normal; font-family: 'DM Mono', monospace; font-size: 20px; background: var(--grafite); color: var(--vegetal); padding: 4px 10px; white-space: nowrap; }
+.etapas span { font-size: 26px; line-height: 1.25; color: #4a4d53; }
+.etapas b { display: block; font-size: 34px; color: var(--grafite); }
+.selo { align-self: flex-start; font-family: 'DM Mono', monospace; font-weight: 500; font-size: 30px; text-transform: uppercase; color: var(--laranja); border: 4px solid var(--laranja); padding: 12px 22px; margin-bottom: 34px; }
+
+#cortina { position: absolute; inset: 0; background: var(--grafite); }
+.fecho { color: var(--vegetal); }
+.fecho .marca { display: flex; align-items: center; gap: 16px; font-family: 'DM Mono', monospace; font-size: 30px; }
+.fecho .marca img { width: 70px; height: 70px; object-fit: contain; }
+.fecho .chamada { font-family: 'Fraunces', serif; font-weight: 600; font-size: 112px; line-height: 1.02; margin-top: 34px; max-width: 1500px; }
+.fecho .botao { margin-top: 44px; background: var(--laranja); color: #fff; font-weight: 600; font-size: 36px; padding: 20px 40px; }
+.fecho .contato { margin-top: 26px; font-family: 'DM Mono', monospace; font-size: 26px; }
+
+.vertical .titulo { font-size: 66px; }
+.vertical .titulo.grande { font-size: 80px; }
+.vertical .pranchas li { font-size: 30px; padding: 6px 0; }
+.vertical .fecho .chamada { font-size: 92px; }
+.vertical .fecho .contato { font-size: 24px; text-align: center; }
+.vertical .carimbo-prancha { bottom: 60px; }

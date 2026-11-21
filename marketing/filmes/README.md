@@ -72,6 +72,63 @@ As quatro apresentações institucionais têm cada uma o movimento da sua marca:
 O embrulho de cada slide no projeto gerado é `.hf-quadro`. Antes era `.quadro` e quebrava o quadro do Guia Acadêmico,
 que usa a mesma classe.
 
+## Filmes 3D das frentes (11/11)
+
+Um filme por frente (32 s, 16:9 e 9:16, sem áudio) que conta tudo sobre ela, com um objeto 3D real em **Three.js**
+(WebGL de verdade, não camadas de CSS: o 3D por camadas foi reprovado duas vezes, ver regra 18 do HISTORICO).
+A tela é dividida: uma faixa chapada na cor da marca guarda o texto (GSAP) e o 3D ocupa o resto.
+
+| Frente | Pasta | O objeto 3D | O que o filme conta |
+|---|---|---|---|
+| Cerra.AI | `frente-cerraai` | o chip do emblema, trilhas de cobre que se desenham | lê os arquivos, anonimiza (tarja), responde com a fonte, 100% local |
+| Cerrado Tech | `frente-tech` | blocos dos sistemas em volta do cubo dourado "você" | o que constrói, integra, sob medida, produtos do ecossistema |
+| CerraClass | `frente-cerraclass` | as 10 cadeiras da turma e o ingresso | formato (contagem até 10), os 11 cursos (o chão muda de cor), turmas, citação real |
+| Guia Acadêmico | `frente-guiacademico` | a bússola da logo; a agulha aponta cada serviço | as 6 frentes, o protocolo 3.1-3.4, a nota do orientador (ética), quem orienta |
+| CerraFood | `frente-cerrafood` | impressora térmica, comandas da cozinha, pizza em fatias, aparelhos | o fluxo do pedido, a cor da espera, ficha técnica, white label |
+| Contabilidade | `frente-contabilidade` | o razonete "T", a escada MEI→Lucro Presumido, barras, carimbo EM DIA | serviços, para quem, 4 fases, troca de contador |
+| Crédito | `frente-credito` | contrato, caneta que marca os vistos e assina, barras sem números | comparativo, produtos, como funciona, aviso legal completo |
+| Consultorias | `frente-consultoria` | o organograma em arame que ganha corpo | antes/depois, as 7 pranchas, etapas, diagnóstico gratuito |
+
+```
+npm run montar:frentes            # gera frente-*/16x9 e 9x16 (fora do git)
+npm run render:frentes            # renderiza os 16 MP4 em out/frente-<slug>-<formato>.mp4 (crf 24, sem áudio)
+bash ferramentas/render-frentes.sh credito   # só uma frente
+```
+
+- **Fonte de cada filme:** `frente-<slug>/fonte/cena.html` (os planos de texto, com `data-entra`), `filme.css` e
+  `cena3d.js` (a cena). O comum fica em `frentes-comum/`: `palco3d.js` (palco, luz, quadros-chave `K()`, `prog()`,
+  `mola()`, texturas em canvas com as fontes da marca) e `planos.js` (a linha do tempo GSAP lida dos atributos:
+  `palavras`, `letras`, `lista`, `subir`, `revelar`, `pop`, `marcar`, `riscar`, `contar`, `carimbo`).
+- **Determinismo:** o 3D é função pura do tempo (`hf-seek`); nada de relógio. Three.js 0.170.0 fixado no
+  `package.json`, copiado para `assets/` pelo montador, com o `RoomEnvironment` (import map "three").
+- **Cores exatas:** fundos chapados usam `tom: false` (sem tone mapping) e chão `MeshBasicMaterial` + um plano de
+  sombra, senão o amarelo/papel sai desbotado.
+- **Cuidados:** papel nunca dobra além de 90° (a comanda do CerraFood para em 75° e tem verso liso); CSS não pode ter
+  `transform` em elemento que o GSAP anima (as posições usam flex).
+
+### Texto 3D sempre inteiro (regra desde 21/11)
+
+Tudo o que está **escrito** nos objetos 3D (rótulos, etiquetas, contrato, ingresso, mostrador) tem de aparecer inteiro:
+nada cortado pela borda do quadro, escondido atrás de outro objeto ou da coluna de texto HTML. O que não é do trecho
+atual **some** antes de a câmera sair (não fica letreiro cortado no canto).
+
+```
+python ferramentas/checar_texto3d.py                 # confere os 8 filmes nos dois formatos (a cada 0,25 s)
+python ferramentas/checar_texto3d.py tech --formato 9x16
+python ferramentas/quadros.py tech 16x9 6.8,14,26 saida.png   # quadros soltos, sem renderizar o vídeo
+```
+
+- O `palco3d.js` marca as texturas em que houve `fillText` e guarda a caixa de cada palavra; o checador projeta os
+  pontos das palavras na tela, lança raios da câmera até eles e usa `elementsFromPoint` para o HTML. Acusa o que
+  dura mais de 0,6 s (entradas e saídas rápidas ficam de fora). Texto inteiro coberto (pela cortina final) não conta.
+- Rodar **antes de todo render** e só renderizar com "ok" nos 16. Texto que colide dentro da própria textura (ex.: o
+  título do ingresso no "Nº 10") o checador não vê: título em canvas encolhe até caber (`measureText`).
+- Correções de 21/11: Contabilidade (placas de mesa "Você cuida de" / "A gente cuida de" sobre a barra do T, tiras
+  maiores, ficha atrás do texto dos degraus, câmera recuada); Crédito (contrato e rótulos dos bancos somem fora do
+  trecho, câmera recua no fim); Tech (fios translúcidos, alturas em arquibancada, produtos são os blocos de trás);
+  Guia Acadêmico (agulha mais curta que o anel de rótulos); Consultorias (câmera recua na fileira das 7); CerraClass
+  (título do ingresso cabe antes do picote).
+
 ## Estrutura de um filme
 
 ```

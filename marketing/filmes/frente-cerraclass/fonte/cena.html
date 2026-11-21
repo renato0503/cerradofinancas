@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>CerraClass: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Poster color-block / Rhythmic collage": bloco de cor que bate, overshoot leve
+      window.ESTILO = { ease: "back.out(1.35)", dur: 0.48, stagger: 0.05, desloc: 34, saida: 0.32, saidaEase: "power4.in" };
+      // os 11 cursos do catálogo, cada um com a sua cor (a mesma tabela do brand/cerraclass/README.md)
+      window.CURSOS = [
+        ["IA na Gestão", "#ffc83d"], ["Excel com IA", "#4cc274"], ["Consultoria Contábil com IA", "#7cc4f0"],
+        ["Consultoria Financeira com IA", "#ff9f2e"], ["Introdução à Análise de Dados", "#b9a3ff"],
+        ["Processos Empresariais BPMN com IA", "#f2684f"], ["Introdução à Automação com IA", "#cbe847"],
+        ["Ciência de Dados Aplicada", "#3fcfbf"], ["IA na Farma", "#ff8fb8"], ["BI e Dashboards com IA", "#8fa6ff"],
+        ["Prototipação de Apps com IA", "#ff7a5c"],
+      ];
+      window.CURSO_T0 = 12.4; window.CURSO_PASSO = 0.6;
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power4.inOut" }, 0.1);
+        tl.set(".curso", { yPercent: 400 }, 0);
+        // troca de curso: a cor bate na faixa e o nome entra em soco
+        CURSOS.forEach(([nome, cor], i) => {
+          const t = CURSO_T0 + i * CURSO_PASSO;
+          tl.set("#faixa", { backgroundColor: cor }, t);
+          tl.fromTo(`#curso-${i}`, { yPercent: 120, rotate: -4 }, { yPercent: 0, rotate: -1.5, duration: 0.22, ease: "back.out(1.6)" }, t);
+          if (i < CURSOS.length - 1) tl.set(`#curso-${i}`, { yPercent: 400 }, t + CURSO_PASSO);
+        });
+        tl.set("#faixa", { backgroundColor: "#ffc83d" }, 19);
+        tl.fromTo("#cortina", { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: "power4.inOut" }, 27.5);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27.5" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: a primeira cadeira cai -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.4" data-rot-fim="-2">Prazer, CerraClass</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.8">Aprenda IA com quem constrói software.</h1>
+        </div>
+      </div>
+
+      <!-- 5-11: as outras nove cadeiras, com a contagem até 10 -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot-fim="-2">O formato</p>
+          <p class="contador"><span class="num" data-entra="contar" data-de="1" data-ate="10" data-t="0.2" data-dur="3.6">1</span><span class="alunos" data-entra="subir" data-t="0.3">alunos, no máximo</span></p>
+          <ul class="linhas" data-entra="lista" data-t="1.6" data-stagger="0.45">
+            <li>100% prático: você sai com algo funcionando</li>
+            <li>Nenhuma linha de código exigida</li>
+            <li>Presencial, com acompanhamento de perto</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 11-19: os 11 cursos, um bloco de cor para cada -->
+      <div id="p3" class="plano clip" data-start="11" data-duration="8" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot-fim="-2">Os cursos</p>
+          <h2 class="mega" data-entra="palavras" data-t="0.25"><span class="grande">11</span> cursos presenciais.</h2>
+          <div class="cursos">
+            <p id="curso-0" class="curso">IA na Gestão</p>
+            <p id="curso-1" class="curso">Excel com IA</p>
+            <p id="curso-2" class="curso">Consultoria Contábil com IA</p>
+            <p id="curso-3" class="curso">Consultoria Financeira com IA</p>
+            <p id="curso-4" class="curso">Introdução à Análise de Dados</p>
+            <p id="curso-5" class="curso">Processos Empresariais BPMN com IA</p>
+            <p id="curso-6" class="curso">Introdução à Automação com IA</p>
+            <p id="curso-7" class="curso">Ciência de Dados Aplicada</p>
+            <p id="curso-8" class="curso">IA na Farma</p>
+            <p id="curso-9" class="curso">BI e Dashboards com IA</p>
+            <p id="curso-10" class="curso">Prototipação de Apps com IA</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19-24: o ingresso: um curso para cada objetivo -->
+      <div id="p4" class="plano clip" data-start="19" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot-fim="-2">Um curso para cada objetivo</p>
+          <ul class="turmas" data-entra="lista" data-t="0.4" data-stagger="0.45">
+            <li><b>IA na Prática</b><span>Para profissionais e empresas que querem construir com IA</span></li>
+            <li><b>IA em Ação Farma</b><span>Para propagandistas da indústria farmacêutica</span></li>
+            <li><b>In company</b><span>Com os dados e os problemas reais da sua empresa</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 24-27,5: quem está por trás, com a citação real -->
+      <div id="p5" class="plano clip" data-start="24" data-duration="3.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot-fim="-2">Quem está por trás</p>
+          <p class="citacao" data-entra="palavras" data-t="0.3" data-stagger="0.025">“Hoje, a barreira não é mais saber escrever código, é saber fazer a pergunta certa e estruturar o problema.”</p>
+          <p class="autor" data-entra="subir" data-t="1.3">Renato Rosa · Dados, IA e Software</p>
+        </div>
+      </div>
+
+      <!-- 27,5-32: o inverso (tinta) e a chamada -->
+      <div id="p6" class="plano clip" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <div class="selo" data-entra="pop" data-t="0.35"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.55">Pare de só usar IA. <span class="a">Construa com ela.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.4">Agenda, valores e inscrições no site da CerraClass.</p>
+          <p class="botao" data-entra="pop" data-t="1.8" data-rot="-4" data-rot-fim="-1.5">cerraclass.com.br</p>
+          <p class="contato" data-entra="subir" data-t="2.2">WhatsApp (67) 99351-5206 · Turma de até 10 alunos</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

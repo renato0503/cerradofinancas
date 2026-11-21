@@ -1,0 +1,23 @@
+/* Base dos filmes das frentes: o canvas 3D atrás e os planos de texto por cima. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow: hidden; -webkit-font-smoothing: antialiased; }
+#root { position: relative; overflow: hidden; }
+#tela { position: absolute; inset: 0; display: block; }
+.plano { position: absolute; inset: 0; pointer-events: none; }
+.conteudo { position: absolute; }
+.pm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.pp { display: inline-block; will-change: transform; }
+.pl { display: inline; }
+[data-entra="linha"] { display: block; }
+
+/* posições do bloco de texto (sem transform no CSS: o GSAP é dono do transform).
+   16:9: coluna à esquerda ou à direita; 9:16: embaixo. */
+.conteudo { display: flex; flex-direction: column; justify-content: center; }
+.horizontal .conteudo.esq { left: 130px; top: 0; bottom: 0; width: 780px; }
+.horizontal .conteudo.dir { right: 130px; top: 0; bottom: 0; width: 780px; }
+.horizontal .conteudo.centro { left: 160px; right: 160px; top: 0; bottom: 0; align-items: center; text-align: center; }
+.horizontal .conteudo.base { left: 130px; right: 130px; bottom: 110px; justify-content: flex-end; }
+.horizontal .conteudo.topo { left: 130px; right: 130px; top: 100px; justify-content: flex-start; }
+.vertical .conteudo.esq, .vertical .conteudo.dir, .vertical .conteudo.base { left: 90px; right: 90px; bottom: 290px; justify-content: flex-end; }
+.vertical .conteudo.centro { left: 90px; right: 90px; top: 0; bottom: 0; align-items: center; text-align: center; }
+.vertical .conteudo.topo { left: 90px; right: 90px; top: 240px; justify-content: flex-start; }

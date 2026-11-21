@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Cerrado Contabilidade: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Paper & print / Object metaphor": power3.out, assentado como papel
+      window.ESTILO = { ease: "power3.out", dur: 0.55, stagger: 0.06, desloc: 26, saida: 0.36, saidaEase: "power2.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power3.inOut" }, 0.1);
+        tl.fromTo("#cortina", { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.62, ease: "power2.inOut" }, 27);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27.1" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: o razonete sobe do livro -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.4">Cerrado Contabilidade</p>
+          <h1 class="titulo grande" data-entra="palavras" data-t="0.7">Seu contador te ajuda a decidir ou só a pagar <span class="dor">imposto?</span></h1>
+          <p class="sub" data-entra="subir" data-t="2.1">Contabilidade 100% digital, com dados para você tomar decisões.</p>
+        </div>
+      </div>
+
+      <!-- 5-11: os lançamentos -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Burocracia é com a gente</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Do primeiro CNPJ à folha de pagamento.</h2>
+          <ul class="lancamentos" data-entra="lista" data-t="1.0" data-stagger="0.55">
+            <li><span><b>Abertura de CNPJ</b> rápida e 100% digital</span><i>em dia</i></li>
+            <li><span><b>Gestão tributária</b> Simples, notas e declarações</span><i>em dia</i></li>
+            <li><span><b>Folha e eSocial</b> admissões, férias, 13º e guias</span><i>em dia</i></li>
+            <li><span><b>Suporte humano</b> direto no WhatsApp</span><i>em dia</i></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 11-17: a escada do crescimento -->
+      <div id="p3" class="plano clip" data-start="11" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Para quem atendemos</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Do primeiro CNPJ à média empresa, <span class="mv" data-entra="marcar" data-t="1.6">o mesmo contador.</span></h2>
+          <p class="sub" data-entra="subir" data-t="1.4">Prestadores de serviço, profissionais da saúde, comércio e e-commerce.</p>
+        </div>
+      </div>
+
+      <!-- 17-22,5: da planilha ao painel em 4 fases -->
+      <div id="p4" class="plano clip" data-start="17" data-duration="5.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Além do básico</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Da planilha ao painel em 4 fases.</h2>
+          <ol class="fases" data-entra="lista" data-t="0.9" data-stagger="0.6">
+            <li><i>1</i>Mapeamento e diagnóstico</li>
+            <li><i>2</i>Saneamento e BPO</li>
+            <li><i>3</i>Automação e integração</li>
+            <li><i>4</i>DRE, EBITDA e metas no celular</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 22,5-27: a troca de contador e o carimbo -->
+      <div id="p5" class="plano clip" data-start="22.5" data-duration="4.6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">Migração</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Troque de contador sem dor de cabeça.</h2>
+          <ul class="lancamentos" data-entra="lista" data-t="1.0" data-stagger="0.4">
+            <li><span><b>Transparente</b> você acompanha cada etapa</span></li>
+            <li><span><b>CNPJ protegido</b> obrigações em dia durante a troca</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 27-32: decisão baseada em dados -->
+      <div id="p6" class="plano clip" data-start="27" data-duration="5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <p class="marca" data-entra="subir" data-t="0.5"><img src="assets/folinha.png" alt="" /> Cerrado Contabilidade</p>
+          <h2 class="chamada" data-entra="palavras" data-t="0.75">Decisão baseada em dados.</h2>
+          <p class="tag" data-entra="subir" data-t="1.4">Agende um diagnóstico da sua contabilidade.</p>
+          <p class="botao" data-entra="revelar" data-t="1.8">(67) 99351-5206 · cerradofinancas.com.br</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

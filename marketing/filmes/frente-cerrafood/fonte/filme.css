@@ -1,0 +1,50 @@
+/* CerraFood: "Comanda". Verde-mata, laranja do "Food", papel de comanda. */
+@font-face { font-family: 'Outfit'; src: url('assets/fonts/outfit.woff2') format('woff2'); font-weight: 300 900; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500 700; }
+
+:root { --mata: #0f2a16; --laranja: #f39200; --folha: #3dbb2f; --tomate: #e0472b; --papel: #fbf6ea; --creme: #f4efe2; --linha: #24452c; }
+html, body { background: var(--mata); }
+#root { font-family: 'Outfit', sans-serif; color: var(--creme); background: var(--mata); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--mata); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 3px dashed var(--linha); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 3px dashed var(--linha); }
+.horizontal .conteudo.esq { width: 660px; left: 110px; }
+
+.mega, .titulo { font-weight: 800; letter-spacing: -0.03em; line-height: .98; }
+.mega { font-size: 104px; }
+.titulo { font-size: 76px; margin-bottom: 34px; }
+.l { color: var(--laranja); }
+.rotulo { font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 500; color: var(--laranja); margin-bottom: 26px; text-transform: uppercase; letter-spacing: .08em; }
+.sub { font-size: 34px; line-height: 1.32; color: #c9d4c4; margin-top: 26px; }
+.titulo + .sub { margin-top: 0; }
+.mono { font-family: 'DM Mono', monospace; font-size: 26px; color: #c9d4c4; margin-top: 30px; }
+.passos { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.passos li { display: flex; gap: 20px; align-items: baseline; }
+.passos i { font-style: normal; font-family: 'DM Mono', monospace; font-weight: 500; font-size: 28px; color: var(--mata); background: var(--laranja); padding: 4px 10px; border-radius: 6px; }
+.passos span { font-size: 29px; color: #c9d4c4; line-height: 1.25; }
+.passos b { display: block; font-size: 38px; color: var(--creme); font-weight: 700; }
+.cores { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.cores li { display: flex; align-items: center; gap: 20px; font-size: 36px; font-weight: 600; }
+.cores i { width: 40px; height: 40px; border-radius: 8px; }
+.cores .verde { background: var(--folha); } .cores .amarelo { background: #f3c623; } .cores .tomate { background: var(--tomate); }
+.selo { align-self: flex-start; margin-top: 26px; font-family: 'DM Mono', monospace; font-size: 22px; text-transform: uppercase; letter-spacing: .06em; color: #c9d4c4; border: 2px dashed #c9d4c4; padding: 8px 14px; border-radius: 6px; }
+
+#cortina { position: absolute; inset: 0; background: var(--papel); }
+.fecho { color: var(--mata); }
+.fecho .disco { width: 170px; height: 170px; border-radius: 50%; background: #fff; display: grid; place-items: center; border: 6px solid var(--mata); }
+.fecho .disco img { width: 74%; height: 74%; object-fit: contain; }
+.fecho .nome { font-size: 56px; font-weight: 800; margin-top: 18px; letter-spacing: -0.02em; }
+.fecho .chamada { font-size: 108px; font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin-top: 26px; }
+.fecho .tag { font-size: 36px; margin-top: 26px; color: #34503a; }
+.fecho .botao { margin-top: 40px; background: var(--laranja); color: var(--mata); font-size: 38px; font-weight: 800; padding: 20px 40px; border-radius: 999px; }
+.fecho .contato { margin-top: 24px; font-family: 'DM Mono', monospace; font-size: 26px; }
+
+.vertical .mega { font-size: 96px; }
+.vertical .titulo { font-size: 70px; }
+.vertical .passos span { font-size: 30px; }
+.vertical .fecho .chamada { font-size: 92px; }
+.vertical .fecho .botao { font-size: 32px; }
+.fecho .chamada .l { color: var(--mata); background: var(--laranja); padding: 0 .14em; border-radius: 14px; }

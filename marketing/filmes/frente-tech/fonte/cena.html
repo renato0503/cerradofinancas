@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Cerrado Tech: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Cinematic dark / Object relay": entrada seca e pesada (softLand), nunca elástica
+      window.ESTILO = { ease: "power4.out", dur: 0.5, stagger: 0.05, desloc: 40, saida: 0.36, saidaEase: "power3.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power4.inOut" }, 0.1);
+        tl.fromTo("#cortina", { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power4.inOut" }, 27);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: o seu negócio (o cubo dourado) cai no centro -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.5">Prazer, Cerrado Tech</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.9">Software feito em torno do <span class="d">seu negócio.</span></h1>
+          <p class="sub" data-entra="subir" data-t="1.9">A fábrica de software da Cerrado Finanças &amp; Tech.</p>
+        </div>
+      </div>
+
+      <!-- 5-11: os sistemas chegam, um passando para o outro -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">01 · O que construímos</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Do ERP à Inteligência Artificial.</h2>
+          <ul class="linhas" data-entra="lista" data-t="0.9" data-stagger="0.4">
+            <li><b>ERPs</b> financeiro, estoque e fiscal</li>
+            <li><b>CRMs</b> funil e follow-ups</li>
+            <li><b>IA offline</b> os dados ficam em casa</li>
+            <li><b>E-commerce e PDV</b> integrados ao ERP</li>
+            <li><b>Dashboards</b> DRE e KPIs no celular</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 11-17: as conexões se desenham -->
+      <div id="p3" class="plano clip" data-start="11" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">02 · Integra</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Conversa com o que você já usa.</h2>
+          <p class="sub" data-entra="subir" data-t="1.1">SAP®, TOTVS, Power BI, bancos e notas fiscais. Fim da digitação dupla.</p>
+        </div>
+      </div>
+
+      <!-- 17-22,5: cada bloco cresce do tamanho da necessidade -->
+      <div id="p4" class="plano clip" data-start="17" data-duration="5.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">03 · Sob medida, do jeito certo</p>
+          <ul class="pilares" data-entra="lista" data-t="0.3" data-stagger="0.5">
+            <li><b>100% customizado</b><span>Cada função nasce de uma necessidade real</span></li>
+            <li><b>B2B e B2G</b><span>Mercado privado e gestão pública</span></li>
+            <li><b>O código é seu</b><span>Sem amarras de fornecedor</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 22,5-27: os produtos que nasceram aqui sobem do conjunto -->
+      <div id="p5" class="plano clip" data-start="22.5" data-duration="4.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">04 · Nasceram aqui</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Produtos do ecossistema.</h2>
+          <ul class="linhas" data-entra="lista" data-t="0.9" data-stagger="0.3">
+            <li><b>Cerra.AI</b> IA 100% local</li>
+            <li><b>GovTech</b> para a gestão pública</li>
+            <li><b>CerraClass</b> cursos práticos de IA</li>
+            <li><b>Venture builder</b> produtos que viram startups</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 27-32: a pergunta e a chamada -->
+      <div id="p6" class="plano clip" data-start="27" data-duration="5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <p class="marca" data-entra="subir" data-t="0.5"><img src="assets/folinha.png" alt="" /> Cerrado Tech</p>
+          <h2 class="pergunta" data-entra="palavras" data-t="0.7">Qual software o seu negócio precisa?</h2>
+          <p class="tag" data-entra="subir" data-t="1.5">Conte o seu processo e desenhamos a solução com você.</p>
+          <p class="botao" data-entra="pop" data-t="2.0" data-rot="0" data-ease="power4.out">cerradofinancas.com.br/fabrica</p>
+          <p class="contato" data-entra="subir" data-t="2.4">WhatsApp (67) 99351-5206</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

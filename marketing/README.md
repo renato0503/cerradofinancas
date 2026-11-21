@@ -207,6 +207,11 @@ python tools/gerar_formatos.py --render cerraai credito # só algumas
     `folder-impressao-a4.pdf` (2 folhas já imposicionadas: lado de fora 4|1, lado de dentro 2|3), mais `folder-pN.png`;
   - anúncio de jornal 25,5 x 36 cm: `jornal-255x360mm.pdf` + `jornal.png`;
   - banners de site: `banner-1200x90.png` e `banner-300x250.png`, em 1x e `@2x`.
+- **Folder (refeito em 21/11):** capa com o 3D da frente e o botão do WhatsApp, "o que fazemos" em cartões, "como
+  funciona" em passos + segundo 3D + diferenciais, e contracapa com bloco de chamada, QR grande e contatos. Textos no
+  dicionário `FOLDER` (só filmes das frentes e site). O 3D vem de `python tools/gerar_stills3d.py [frentes]`, que tira
+  quadros das cenas Three.js dos filmes (`filmes/frente-*`, montados) com fundo transparente para
+  `posts/2026-11-formatos/img/3d-<frente>-1/2.png`; rodar antes do `gerar_formatos.py --render` quando a cena mudar.
 - **Como renderiza:** Playwright (Chromium) imprime o PDF de cada peça; o Chrome arredonda a página para pixel
   (94 mm vira 94,2 mm), por isso `medida_exata()` corta a sobra, que cai na sangria. A imposição do folder é feita com
   PyMuPDF (`impor()`).

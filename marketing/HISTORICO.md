@@ -808,3 +808,25 @@ livretinho"). Ele lembrou que o cartão é só frente e verso, e não um folder.
 - **Verificação:** prancha de revisão de cada frente; 99 PDFs com a medida exata (96 x 56, 94 x 54, 154 x 216 e
   255 x 360 mm) e o número certo de páginas; aba testada no desktop e no celular, sem erro de JavaScript.
 - **Pendente:** cartão com nome e cargo de cada pessoa do time, se pedirem; prova de cor na gráfica (os PDFs são RGB).
+
+## Folders refeitos com 3D e texto 3D sempre inteiro nos filmes (21/11)
+
+Pedido do Renato: os folders de 4 páginas tinham muito espaço em branco; mais objetivos, com elementos 3D ligados ao
+conteúdo, para chamar atenção e converter. No meio do trabalho, dois pedidos sobre os filmes das frentes: na
+Contabilidade o texto escrito no 3D ficava apagado/cortado atrás dos objetos ("garanta que as partes escritas sempre
+apareçam totalmente nos vídeos"), e o razonete devia ter o texto maior, sobretudo "Você cuida de" e "A gente cuida
+de", de um jeito mais criativo.
+
+- **Folder novo (as 9 frentes):** capa com o 3D da frente, título, uma linha e o botão do WhatsApp; p. 2 "o que
+  fazemos" em cartões que ocupam a página + faixa de destaque; p. 3 "como funciona" em passos numerados + o segundo
+  3D + diferenciais; p. 4 bloco de chamada na cor de acento, QR grande e contatos. Textos só dos filmes das frentes e
+  do site (dicionário `FOLDER` em `tools/gerar_formatos.py`).
+- **3D dos folders:** `tools/gerar_stills3d.py` tira quadros das cenas Three.js aprovadas (sem texto HTML, fundo
+  transparente, pixel ratio 2) para `posts/2026-11-formatos/img/3d-<frente>-1/2.png`. O institucional usa a cena da Tech.
+- **Contabilidade:** os títulos das colunas do razonete viraram placas de mesa que se levantam sobre a barra do T
+  (vermelha "Você cuida de", verde "A gente cuida de"); tiras dos lançamentos maiores; a ficha da escada pula atrás do
+  texto dos degraus; câmera recuada no T.
+- **Regra nova:** texto escrito no 3D aparece inteiro ou não aparece. Ferramenta `filmes/ferramentas/checar_texto3d.py`
+  (borda do quadro, objeto na frente, coluna HTML), rodada nos 8 filmes nos dois formatos: todos "ok" depois das
+  correções em Contabilidade, Crédito, Tech, Guia Acadêmico, Consultorias e CerraClass (detalhes em `filmes/README.md`).
+- **Peso:** `formatos/` foi de ~79 MB para ~118 MB (o 3D nos PDFs dos folders, ~2 MB cada, e as cópias nos .zip).

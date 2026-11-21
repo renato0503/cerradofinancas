@@ -1,0 +1,58 @@
+/* Guia Acadêmico: "Artigo". Papel, azul-marinho e dourado; diagramado como periódico. */
+@font-face { font-family: 'Newsreader'; src: url('assets/fonts/newsreader-400-normal.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Newsreader'; src: url('assets/fonts/newsreader-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Newsreader'; src: url('assets/fonts/newsreader-600-normal.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Newsreader'; src: url('assets/fonts/newsreader-600-italic.woff2') format('woff2'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root { --papel: #f6f2e9; --azul: #1e2a44; --ouro: #a8822a; --ouro-claro: #d9b46a; --marca: #ecdba8; --caneta: #a8322a; }
+html, body { background: var(--papel); }
+#root { font-family: 'Newsreader', serif; color: var(--azul); background: var(--papel); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--papel); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 6px double var(--azul); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 6px double var(--azul); }
+.horizontal .conteudo.esq { width: 660px; left: 110px; }
+
+.cabeca { font-family: 'DM Mono', monospace; font-size: 22px; letter-spacing: .04em; border-bottom: 5px double var(--azul); padding-bottom: 12px; margin-bottom: 40px; align-self: stretch; }
+.rubrica { font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 500; color: var(--ouro); margin-bottom: 22px; }
+.titulo { font-weight: 600; font-size: 72px; line-height: 1.04; letter-spacing: -0.01em; margin-bottom: 30px; }
+.titulo.grande { font-size: 88px; }
+.titulo em { font-style: italic; font-weight: 400; }
+.mt { background: linear-gradient(transparent 58%, var(--marca) 58%) no-repeat left / 0% 100%; padding: 0 .05em; }
+.resumo { font-size: 30px; line-height: 1.38; border-left: 4px solid var(--ouro-claro); padding-left: 22px; }
+.quadro { border-top: 3px solid var(--azul); border-bottom: 3px solid var(--azul); padding: 4px 0 0; }
+.quadro .legenda { font-family: 'DM Mono', monospace; font-size: 20px; padding: 10px 0; border-bottom: 1.5px solid var(--azul); }
+.quadro ul { list-style: none; }
+.quadro li { display: flex; flex-direction: column; padding: 9px 0; border-bottom: 1px solid rgba(30, 42, 68, .25); }
+.quadro li b { font-size: 31px; font-weight: 600; }
+.quadro li span { font-size: 23px; font-family: 'DM Mono', monospace; color: #5c6478; }
+.quadro .fonte { font-family: 'DM Mono', monospace; font-size: 18px; padding: 8px 0; }
+.secoes { list-style: none; display: flex; flex-direction: column; gap: 22px; }
+.secoes li { display: flex; gap: 22px; align-items: baseline; }
+.secoes i { font-style: normal; font-family: 'DM Mono', monospace; font-size: 30px; font-weight: 500; color: var(--ouro); min-width: 64px; }
+.secoes span { font-size: 32px; line-height: 1.25; }
+.secoes b { font-weight: 600; display: block; font-size: 40px; }
+.secoes.curtas span { font-size: 34px; }
+.revisao { font-size: 46px; margin-bottom: 8px; color: #6b7182; }
+.riscado { background: linear-gradient(var(--caneta), var(--caneta)) no-repeat left 58% / 0% 3px; }
+.revisada { font-size: 40px; font-style: italic; border-left: 5px solid var(--ouro-claro); padding-left: 18px; margin-bottom: 40px; }
+.etica { font-family: 'DM Mono', monospace; font-size: 24px; font-weight: 500; color: var(--caneta); }
+
+#cortina { position: absolute; inset: 0; background: var(--papel); border-top: 6px double var(--azul); }
+.fecho .logo { width: 330px; height: auto; }
+.fecho .chamada { font-weight: 600; font-size: 96px; line-height: 1.04; margin-top: 30px; max-width: 1400px; }
+.fecho .chamada em { font-style: italic; font-weight: 400; background: linear-gradient(transparent 58%, var(--marca) 58%); }
+.fecho .botao { margin-top: 44px; background: var(--azul); color: var(--papel); font-family: 'DM Mono', monospace; font-size: 34px; font-weight: 500; padding: 20px 38px; }
+.fecho .contato { margin-top: 26px; font-family: 'DM Mono', monospace; font-size: 28px; }
+.fecho .etica { margin-top: 18px; }
+
+.vertical .titulo { font-size: 70px; }
+.vertical .titulo.grande { font-size: 84px; }
+.vertical .quadro li { flex-direction: row; justify-content: space-between; align-items: baseline; gap: 20px; padding: 7px 0; }
+.vertical .quadro li b { font-size: 30px; }
+.vertical .quadro li span { font-size: 21px; text-align: right; }
+.vertical .fecho .chamada { font-size: 84px; }
+.vertical .fecho .contato { font-size: 26px; }

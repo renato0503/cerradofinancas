@@ -1,0 +1,44 @@
+/* Cerrado Contabilidade: "Partida dobrada". O livro-razão: papel verde-claro, pauta, margem vermelha. */
+@font-face { font-family: 'Plex Cond'; src: url('assets/fonts/plex-cond-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Plex Cond'; src: url('assets/fonts/plex-cond-700.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Plex Mono'; src: url('assets/fonts/plex-mono-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Plex Mono'; src: url('assets/fonts/plex-mono-600.woff2') format('woff2'); font-weight: 600; }
+
+:root { --papel: #f1f6f0; --pauta: #cfe0d4; --tinta: #0c3b2e; --claro: #d8efdf; --vermelho: #d23a2c; }
+html, body { background: var(--papel); }
+#root { font-family: 'Plex Cond', sans-serif; color: var(--tinta); background: var(--papel); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background-color: var(--papel); background-image: repeating-linear-gradient(transparent 0 47px, var(--pauta) 47px 49px); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 3px solid var(--tinta); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 3px solid var(--tinta); }
+#faixa::before { content: ''; position: absolute; top: 0; bottom: 0; left: 80px; width: 3px; background: var(--vermelho); }
+.horizontal .conteudo.esq { width: 640px; left: 120px; }
+.vertical .conteudo.esq { left: 120px; }
+
+.titulo { font-weight: 700; font-size: 74px; line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 30px; }
+.titulo.grande { font-size: 86px; }
+.dor { color: var(--vermelho); }
+.mv { background: linear-gradient(transparent 50%, var(--claro) 50%) no-repeat left / 0% 100%; }
+.rotulo { font-family: 'Plex Mono', monospace; font-weight: 600; font-size: 25px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 24px; }
+.sub { font-size: 34px; font-weight: 500; line-height: 1.3; color: #3f6356; }
+.lancamentos { list-style: none; border-top: 3px solid var(--tinta); }
+.lancamentos li { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 13px 0; border-bottom: 2px solid var(--pauta); font-size: 27px; font-weight: 500; color: #3f6356; }
+.lancamentos b { display: block; font-size: 36px; color: var(--tinta); font-weight: 700; }
+.lancamentos i { font-style: normal; font-family: 'Plex Mono', monospace; font-weight: 600; font-size: 22px; background: var(--claro); padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+.fases { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.fases li { display: flex; align-items: center; gap: 20px; font-size: 36px; font-weight: 700; }
+.fases i { font-style: normal; font-family: 'Plex Mono', monospace; font-weight: 600; font-size: 28px; width: 50px; height: 50px; display: grid; place-items: center; background: var(--tinta); color: var(--papel); border-radius: 50%; flex: 0 0 auto; }
+
+#cortina { position: absolute; inset: 0; background: var(--tinta); }
+.fecho { color: var(--papel); }
+.fecho .marca { display: flex; align-items: center; gap: 16px; font-size: 38px; font-weight: 700; }
+.fecho .marca img { width: 74px; height: 74px; object-fit: contain; }
+.fecho .chamada { font-size: 130px; font-weight: 700; line-height: .98; margin-top: 36px; }
+.fecho .tag { font-size: 40px; font-weight: 500; margin-top: 26px; color: var(--claro); }
+.fecho .botao { margin-top: 42px; font-family: 'Plex Mono', monospace; font-weight: 600; font-size: 32px; background: var(--claro); color: var(--tinta); padding: 18px 34px; border-radius: 6px; }
+
+.vertical .titulo { font-size: 70px; }
+.vertical .titulo.grande { font-size: 80px; }
+.vertical .fecho .chamada { font-size: 110px; }
+.vertical .fecho .botao { font-size: 28px; }

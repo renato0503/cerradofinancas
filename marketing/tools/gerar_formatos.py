@@ -243,7 +243,12 @@ body.render .jornal.folha .corte, body.render .corte { display: none; }
 """
 
 
+ULTIMO_JORNAL = {}
+
+
 def jornal(marca, rotulo, titulo, sub, itens, motivo, cta, b, url, aviso="", campos=("whats", "email", "site", "insta")):
+    ULTIMO_JORNAL.clear()
+    ULTIMO_JORNAL.update(marca=marca, rotulo=rotulo, titulo=titulo, b=b, url=url, aviso=aviso, campos=campos)
     lista = "".join(f"<li><b>{i + 1:02d}</b><span>{t}</span></li>" for i, t in enumerate(itens))
     av = f'<p class="j-aviso">{escape(aviso)}</p>' if aviso else ""
     return peca("jornal", "jornal", f"""<div class="j">
@@ -256,23 +261,49 @@ def jornal(marca, rotulo, titulo, sub, itens, motivo, cta, b, url, aviso="", cam
     <div><p class="j-cta">{cta}</p>{contatos(b, campos)}</div>
     <div class="j-qr">{qr(url, b["qr_tinta"], b["qr_papel"])}aponte a câmera</div>
   </div>{av}
-</div>""", "Jornal · 25,5 x 36 cm") + folder(marca, rotulo, titulo, sub, lista, motivo, cta, b, url, av, campos)
+</div>""", "Jornal · 25,5 x 36 cm")
 
 
-def folder(marca, rotulo, titulo, sub, lista, motivo, cta, b, url, av, campos):
-    """Folder de 4 páginas A5 (A4 dobrada ao meio): capa, quem somos, o que fazemos, contracapa."""
-    def pg(n, corpo, rot):
-        return (f'<section class="peca jornal folha" data-grupo="folder" data-id="folder-p{n}" data-rotulo="Folder · página {n} · {rot}">'
-                f'<div class="j">{corpo}</div><i class="corte"></i></section>\n')
-    return (pg(1, f"""<div class="j-topo"><span></span><span class="j-rot">{rotulo}</span></div>
-  <div class="j-motivo"><div style="zoom:1.5">{marca}</div></div><h1>{titulo}</h1>""", "capa") +
-            pg(2, f"""<p class="j-rot">Quem somos</p><p class="j-sub">{sub}</p>
-  <div class="j-motivo"><div style="zoom:.58;width:172%;display:flex;justify-content:center">{motivo}</div></div><p class="j-cta">{cta}</p>""", "quem somos") +
-            pg(3, f"""<p class="j-rot">O que fazemos</p><ul class="j-lista">{lista}</ul><div class="cresce"></div>
-  <div class="j-topo" style="border:0;padding:0">{marca}</div>""", "o que fazemos") +
-            pg(4, f"""<div class="j-topo">{marca}</div><div class="cresce"></div>
-  <p class="j-cta">{cta}</p>{contatos(b, campos)}
-  <div class="j-qr" style="margin-top:10mm">{qr(url, b["qr_tinta"], b["qr_papel"])}aponte a câmera</div>{av}""", "contracapa"))
+def folder(slug, j, d):
+    """Folder de 4 páginas A5 (A4 dobrada ao meio), feito para converter:
+    1 capa com o 3D da frente e o botão do WhatsApp · 2 o que fazemos (cartões que ocupam a página) ·
+    3 como funciona + o segundo 3D + diferenciais · 4 bloco de chamada, QR grande e contatos.
+    Textos só dos filmes das frentes e do site (FOLDER, abaixo)."""
+    b, marca = j["b"], j["marca"]
+    av = f'<p class="fd-aviso">{escape(j["aviso"])}</p>' if j["aviso"] else ""
+
+    def pg(n, corpo, rot, cls=""):
+        return (f'<section class="peca jornal folha fd {cls}" data-grupo="folder" data-id="folder-p{n}" data-rotulo="Folder · página {n} · {rot}">'
+                f'<div class="fd-pg">{corpo}</div><i class="corte"></i></section>\n')
+
+    def cartoes(itens, cls=""):
+        return f'<div class="fd-cards {cls}">' + "".join(
+            f'<div class="fd-card"><b class="fd-n">{i + 1:02d}</b><div><p class="fd-ct">{t_}</p>' + (f'<p class="fd-cd">{d_}</p>' if d_ else "") + "</div></div>"
+            for i, (t_, d_) in enumerate(itens)) + "</div>"
+
+    def passos(itens):
+        return '<ol class="fd-passos">' + "".join(
+            f'<li><b>{i + 1}</b><div><p class="fd-ct">{t_}</p>' + (f'<p class="fd-cd">{d_}</p>' if d_ else "") + "</div></li>"
+            for i, (t_, d_) in enumerate(itens)) + "</ol>"
+
+    chips = '<div class="fd-chips">' + "".join(f"<span>{c}</span>" for c in d["provas"]) + "</div>"
+    whats = f'<span class="fd-btn">{ico("whats")} {escape(b["whats"])}</span>'
+    colunas = " duas" if len(d["servicos"]) > 5 else ""
+    return (
+        pg(1, f"""<div class="fd-topo"><div class="fd-marca">{marca}</div><span class="j-rot">{j["rotulo"]}</span></div>
+  <div class="fd-hero"><img src="img/3d-{slug}-1.png" alt=""></div>
+  <h1 class="fd-h1">{j["titulo"]}</h1><p class="fd-sub">{d["sub"]}</p>
+  <div class="fd-acao">{whats}<span class="fd-mini">{d["acao"]}</span></div>""", "capa") +
+        pg(2, f"""<p class="j-rot">{d["s_rot"]}</p><h2 class="fd-h2">{d["s_tit"]}</h2>
+  {cartoes(d["servicos"], colunas)}
+  <div class="fd-faixa">{d["destaque"]}</div>""", "o que fazemos") +
+        pg(3, f"""<p class="j-rot">{d["p_rot"]}</p><h2 class="fd-h2">{d["p_tit"]}</h2>
+  {passos(d["passos"])}
+  <div class="fd-hero fd-hero2"><img src="img/3d-{slug}-2.png" alt=""></div>{chips}""", "como funciona") +
+        pg(4, f"""<div class="fd-cta"><p class="j-rot">{d["cta_rot"]}</p><p class="fd-cta-t">{d["cta"]}</p><p class="fd-cta-s">{d["cta_sub"]}</p>{whats}</div>
+  <div class="cresce"></div><div class="fd-base"><div class="fd-qr">{qr(j["url"], b["qr_tinta"], b["qr_papel"])}<span>aponte a câmera</span></div>
+  <div class="fd-ctt">{contatos(b, j["campos"])}</div></div>
+  <div class="cresce"></div>{chips}<div class="fd-rodape" style="margin-top:6mm"><div class="fd-marca">{marca}</div></div>{av}""", "contracapa"))
 
 
 def banners(marca_l, marca_q, titulo, sub, cta, aviso=""):
@@ -1085,7 +1116,178 @@ body { font-family: 'Outfit', sans-serif; }
     return dict(slug="cerrafood", nome="CerraFood", cor="#f39200", css=css + vars_, head="", pecas="".join(c) + j + ban)
 
 
+# =========================================================================== Folders (textos dos filmes das frentes e do site)
+
+CSS_FD = """
+/* Folder novo (.fd): página cheia, 3D da frente, chamada para o WhatsApp */
+.fd .fd-pg { position: absolute; inset: 13mm 13mm 12mm; display: flex; flex-direction: column; }
+.fd .j-rot { font-size: 9.5pt; }
+.fd-topo { display: flex; justify-content: space-between; align-items: center; gap: 4mm; }
+.fd-marca { zoom: .62; }
+.fd-hero { flex: 1; min-height: 0; margin: 3mm -13mm; display: flex; align-items: center; justify-content: center; }
+.fd-hero img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.fd-h1, .fd-h2, .fd-cta-t { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none); letter-spacing: var(--ft-esp, -0.02em); }
+.fd-h1 em, .fd-h2 em, .fd-cta-t em { font-style: var(--em-estilo, normal); color: var(--acento-texto); }
+.jornal.fd h1.fd-h1 { font-size: 29pt; line-height: 1.12; padding-top: 1.5mm; margin-top: 0; }
+.fd-h2 { font-size: 23pt; line-height: 1.03; margin-top: 3mm; }
+.fd-sub { font-size: 12.5pt; line-height: 1.35; margin-top: 4mm; opacity: .9; }
+.fd-acao { display: flex; align-items: center; gap: 4mm; margin-top: 6mm; }
+.fd-btn { display: inline-flex; align-items: center; gap: 2mm; background: var(--acento); color: var(--sobre-acento); font: 700 13pt var(--fb); padding: 3mm 5mm; border-radius: var(--raio, 999px); white-space: nowrap; align-self: flex-start; }
+.fd-btn .ico { width: 1.1em; height: 1.1em; }
+.fd-mini { font: 500 9pt var(--fm); opacity: .85; line-height: 1.3; }
+.fd-cards { flex: 1; min-height: 0; display: grid; grid-auto-rows: 1fr; gap: 3mm; margin-top: 7mm; }
+.fd-cards.duas { grid-template-columns: 1fr 1fr; }
+.fd-card { display: flex; gap: 3.5mm; align-items: center; padding: 3.5mm 4.5mm; border-radius: 3mm;
+  background: color-mix(in srgb, var(--tinta) 7%, transparent); border: .3mm solid color-mix(in srgb, var(--tinta) 16%, transparent); }
+.fd-n { font: 600 10pt var(--fm); color: var(--acento-texto); align-self: flex-start; padding-top: .8mm; }
+.fd-ct { font: 700 15pt var(--fb); line-height: 1.12; }
+.fd-cd { font-size: 11.5pt; line-height: 1.3; opacity: .82; margin-top: 1.2mm; }
+.fd-cards.duas .fd-ct { font-size: 12.5pt; }
+.fd-cards.duas .fd-card { padding: 3mm 3.5mm; gap: 2.5mm; }
+.fd-faixa { margin-top: 5mm; background: var(--acento); color: var(--sobre-acento); font: 700 13pt var(--fb); padding: 4.5mm 5mm; border-radius: 3mm; line-height: 1.25; }
+.fd-passos { list-style: none; display: grid; gap: 3.6mm; margin-top: 6mm; }
+.fd-passos li { display: flex; gap: 4mm; align-items: center; }
+.fd-passos li > b { flex-shrink: 0; width: 9mm; height: 9mm; border-radius: 50%; background: var(--acento); color: var(--sobre-acento);
+  display: flex; align-items: center; justify-content: center; font: 700 12pt var(--fb); }
+.fd-hero2 { margin-top: 2mm; margin-bottom: 3mm; }
+.fd-chips { display: flex; flex-wrap: wrap; gap: 2mm; }
+.fd-chips span { border: .35mm solid var(--acento-texto); border-radius: 99mm; padding: 1.5mm 3.6mm; font: 600 9.5pt var(--fb); }
+.fd-cta { margin: -16mm -16mm 0; padding: 18mm 16mm 11mm; background: var(--acento); color: var(--sobre-acento); }
+.fd-cta .j-rot { color: inherit; opacity: .85; }
+.fd-cta-t { font-size: 29pt; line-height: 1.03; margin-top: 3mm; }
+.fd-cta-t em { color: inherit; }
+.fd-cta-s { font-size: 12.5pt; margin-top: 3mm; line-height: 1.35; opacity: .92; }
+.fd-cta .fd-btn { background: var(--sobre-acento); color: var(--acento); margin-top: 6mm; }
+.fd-base { display: flex; gap: 6mm; align-items: center; }
+.fd-qr { width: 40mm; flex-shrink: 0; text-align: center; font: 500 8.5pt var(--fm); }
+.fd-qr .qr { width: 40mm; height: 40mm; margin-bottom: 1.5mm; }
+.fd-ctt { min-width: 0; }
+.jornal.fd .fd-ctt .ct { font-size: 9.3pt; gap: 3mm; }
+.fd-rodape { padding-top: 5mm; border-top: .5mm solid var(--linha); }
+.fd-aviso { font-size: 7.5pt; line-height: 1.35; margin-top: 4mm; opacity: .85; }
+"""
+
+FOLDER = {
+    "institucional": dict(
+        sub="Software sob medida, contabilidade inteligente, crédito multi bancos e formação prática.",
+        acao="Fale com a gente pelo WhatsApp",
+        s_rot="O que fazemos", s_tit="5 frentes, <em>um só parceiro.</em>",
+        servicos=[("Fábrica de Software", "ERPs, CRMs, IA offline, e-commerce, dashboards e cyber security"),
+                  ("Contabilidade", "abertura de empresa, tributos, folha e eSocial, BPO e BI"),
+                  ("Crédito", "empréstimos, consignados, financiamentos, seguros e consórcios"),
+                  ("Cursos", "IA na prática, IA na gestão, Excel com IA, dados e automação"),
+                  ("Consultorias", "CSC, BPO financeiro, controladoria, tributário, GRC, GovTech e Web3")],
+        destaque="Um só parceiro para o seu negócio crescer.",
+        p_rot="Uma frente para cada desafio", p_tit="Escolha por onde <em>começar.</em>",
+        passos=[("Software feito em torno do seu negócio", "Cerrado Tech"),
+                ("Decisão baseada em dados", "Cerrado Contabilidade"),
+                ("Antes de assinar, compare", "Crédito multi bancos"),
+                ("A arquitetura que sustenta o crescimento", "Consultorias")],
+        provas=["B2B e B2G", "100% customizado", "Atendimento humano"],
+        cta_rot="Vamos conversar", cta="Um só parceiro para o seu negócio <em>crescer.</em>",
+        cta_sub="Fale com a gente pelo WhatsApp."),
+    "tech": dict(
+        sub="A fábrica de software da Cerrado Finanças &amp; Tech.", acao="Conte o seu processo pelo WhatsApp",
+        s_rot="O que construímos", s_tit="Do ERP à <em>Inteligência Artificial.</em>",
+        servicos=[("ERPs", "financeiro, estoque e fiscal"), ("CRMs", "funil e follow-ups"), ("IA offline", "os dados ficam em casa"),
+                  ("E-commerce e PDV", "integrados ao ERP"), ("Dashboards", "DRE e KPIs no celular")],
+        destaque="Integra com SAP®, TOTVS, Power BI, bancos e notas fiscais. Fim da digitação dupla.",
+        p_rot="Como trabalhamos", p_tit="Sob medida, <em>do jeito certo.</em>",
+        passos=[("Descoberta &amp; Imersão", ""), ("Arquitetura &amp; Prototipação", ""), ("Desenvolvimento Ágil", ""), ("Entrega &amp; Evolução", "")],
+        provas=["100% customizado", "B2B e B2G", "O código é seu"],
+        cta_rot="Qual software o seu negócio precisa?", cta="Conte o seu processo e desenhamos <em>a solução com você.</em>",
+        cta_sub="Sem amarras de fornecedor: o código é seu."),
+    "cerraai": dict(
+        sub="A IA da empresa, dentro da empresa. 100% local.", acao="Veja com os seus documentos",
+        s_rot="Como ele trabalha", s_tit="Lê, protege e <em>mostra a fonte.</em>",
+        servicos=[("Lê o que a empresa já tem", "PDF (também escaneado), Word e Excel, imagens, áudio e vídeo"),
+                  ("O dado pessoal vira tarja", "Nome, CPF e endereço são anonimizados antes de chegar ao modelo"),
+                  ("Responde e mostra de onde tirou", "cada resposta vem com os trechos consultados"),
+                  ("Funciona sem internet", "100% local, na estrutura da empresa")],
+        destaque="Zero requisições externas.",
+        p_rot="100% local", p_tit="Funciona <em>sem internet.</em>",
+        passos=[("Zero requisições externas", ""), ("Uma base isolada para cada área", ""), ("Relatório LGPD e auditoria", "")],
+        provas=["PDF e escaneados", "Word e Excel", "Áudio e vídeo", "by Cerrado Tech"],
+        cta_rot="Cerra.AI", cta="Veja com os <em>seus documentos.</em>", cta_sub="Agende uma demonstração pelo WhatsApp."),
+    "cerraclass": dict(
+        sub="Cursos presenciais e práticos de IA, em turma de até 10 alunos.", acao="Agenda, valores e inscrições em cerraclass.com.br",
+        s_rot="Os cursos", s_tit="11 cursos <em>presenciais.</em>",
+        servicos=[(c, "") for c in ["IA na Gestão", "Excel com IA", "Consultoria Contábil com IA", "Consultoria Financeira com IA",
+                                    "Introdução à Análise de Dados", "Processos Empresariais BPMN com IA", "Introdução à Automação com IA",
+                                    "Ciência de Dados Aplicada", "IA na Farma", "BI e Dashboards com IA", "Prototipação de Apps com IA"]],
+        destaque="Pare de só usar IA. Construa com ela.",
+        p_rot="Formatos", p_tit="Um curso para <em>cada objetivo.</em>",
+        passos=[("IA na Prática", "Para profissionais e empresas que querem construir com IA"),
+                ("IA em Ação Farma", "Para propagandistas da indústria farmacêutica"),
+                ("In company", "Com os dados e os problemas reais da sua empresa")],
+        provas=["10 alunos, no máximo", "100% prático", "Nenhuma linha de código exigida", "Presencial"],
+        cta_rot="CerraClass", cta="Pare de só usar IA. <em>Construa com ela.</em>", cta_sub="Agenda, valores e inscrições no site da CerraClass."),
+    "credito": dict(
+        sub="Vários bancos em uma só consulta, com quem entende de finanças.", acao="Simulação gratuita e sem compromisso",
+        s_rot="Produtos", s_tit="Crédito para <em>cada momento.</em>",
+        servicos=[("Empréstimos", "pessoal, capital de giro e com garantia"), ("Consignados", "INSS, servidores, portabilidade e refinanciamento"),
+                  ("Financiamentos", "imóveis, veículos, máquinas e equipamentos"), ("Seguros e consórcios", "vida, auto, empresa e cartas de consórcio")],
+        destaque="Comparamos o custo total, não só a parcela.",
+        p_rot="Como funciona", p_tit="Do primeiro contato <em>ao dinheiro na conta.</em>",
+        passos=[("Conversa inicial", "quanto você precisa e quanto cabe no orçamento"), ("Simulação em vários bancos", "taxa, prazo e custo total"),
+                ("Você escolhe", "opções claras, sem pressão"), ("Contratação acompanhada", "da documentação à liberação")],
+        provas=["Uma consulta, vários bancos", "Gratuita e sem compromisso", "Você decide"],
+        cta_rot="Simulação", cta="Antes de assinar, <em>compare.</em>", cta_sub="Gratuita e sem compromisso. Você decide."),
+    "contabilidade": dict(
+        sub="Contabilidade 100% digital, com dados para você tomar decisões.", acao="Agende um diagnóstico da sua contabilidade",
+        s_rot="Burocracia é com a gente", s_tit="Do primeiro CNPJ <em>à folha de pagamento.</em>",
+        servicos=[("Abertura de CNPJ", "rápida e 100% digital"), ("Gestão tributária", "Simples, notas e declarações"),
+                  ("Folha e eSocial", "admissões, férias, 13º e guias"), ("Suporte humano", "direto no WhatsApp")],
+        destaque="Do primeiro CNPJ à média empresa, o mesmo contador.",
+        p_rot="Além do básico", p_tit="Da planilha ao painel <em>em 4 fases.</em>",
+        passos=[("Mapeamento e diagnóstico", ""), ("Saneamento e BPO", ""), ("Automação e integração", ""), ("DRE, EBITDA e metas no celular", "")],
+        provas=["Troque de contador sem dor de cabeça", "Você acompanha cada etapa", "CNPJ protegido na troca"],
+        cta_rot="Cerrado Contabilidade", cta="Decisão baseada <em>em dados.</em>", cta_sub="Agende um diagnóstico da sua contabilidade."),
+    "consultorias": dict(
+        sub="Consultorias especializadas para empresas e gestão pública.", acao="Diagnóstico gratuito",
+        s_rot="7 pranchas", s_tit="O que a consultoria <em>desenha.</em>",
+        servicos=[(c, "") for c in ["BPO financeiro", "Controladoria estruturada", "CSC Strategy", "Governança, risco e compliance",
+                                    "Planejamento tributário e inovação", "Venture building", "Consultoria GovTech"]],
+        destaque="Estrutura desenhada sob medida, ligada ao centro.",
+        p_rot="Como funciona", p_tit="Cada projeto <em>é único.</em>",
+        passos=[("Diagnóstico gratuito", "uma sessão para entender o seu caso"), ("Roadmap", "o desenho da estrutura e as prioridades"),
+                ("Implantação", "a gente executa junto com o seu time"), ("Acompanhamento", "indicadores para medir o resultado")],
+        provas=["Para empresas e gestão pública", "Diagnóstico gratuito", "Sob medida"],
+        cta_rot="Diagnóstico gratuito", cta="Tudo começa <em>por uma conversa.</em>", cta_sub="Agende o seu diagnóstico gratuito."),
+    "guiacademico": dict(
+        sub="Orientação metodológica e análise de dados para TCC, especialização, mestrado e doutorado.", acao="Agende o diagnóstico da pesquisa",
+        s_rot="O que fazemos", s_tit="As frentes <em>do Guia.</em>",
+        servicos=[("Orientação metodológica", "do problema ao delineamento"), ("Análise estatística", "STATA, R, Python e SPSS"),
+                  ("Análise qualitativa", "IRAMUTEQ, NVivo e Atlas.ti"), ("Mineração de dados", "raspagem de bases públicas"),
+                  ("IA acadêmica", "uso ético de modelos de linguagem"), ("Formatação e submissão", "ABNT, APA, Vancouver e periódicos")],
+        destaque="Você continua sendo o autor da pesquisa.",
+        p_rot="Como funciona", p_tit="O <em>protocolo.</em>",
+        passos=[("Diagnóstico", "a sua necessidade e a viabilidade técnica"), ("Proposta", "escopo, cronograma de entregas e orçamento"),
+                ("Acompanhamento", "sessões técnicas e entregas parciais"), ("Área do Aluno", "os seus arquivos e o andamento")],
+        provas=["Prof. Renato Rosa", "Mestre em Contabilidade (UFPR)", "Não executamos trabalhos por terceiros"],
+        cta_rot="Guia Acadêmico", cta="Pesquisa com rigor, <em>do projeto à banca.</em>", cta_sub="Agende o diagnóstico da pesquisa."),
+    "cerrafood": dict(
+        sub="Pizzaria, hamburgueria, restaurante ou delivery.", acao="Demonstração gratuita com o seu cardápio",
+        s_rot="O que vem no sistema", s_tit="O restaurante inteiro <em>num sistema só.</em>",
+        servicos=[("Tela da cozinha", "a cor mostra quanto o pedido espera"), ("Ficha técnica", "o custo de cada prato, fatia por fatia"),
+                  ("White label", "site, app, totem e painel com o seu nome, a sua logo e as suas cores"),
+                  ("Entrega por bairro, fidelidade e relatórios", "")],
+        destaque="Mudou o preço do ingrediente, o custo do prato é recalculado.",
+        p_rot="Como funciona", p_tit="Do pedido à porta, <em>sem anotar nada.</em>",
+        passos=[("Totem ou caixa", "o cliente monta o pedido ou o caixa lança"), ("Cozinha", "o pedido aparece na tela, com o tempo de espera"),
+                ("Estoque", "os ingredientes saem do estoque sozinhos"), ("Entrega", "o cliente acompanha cada etapa pelo link")],
+        provas=["Com a sua marca", "Estoque automático", "by Cerrado Tech"],
+        cta_rot="CerraFood", cta="Veja o sistema <em>com a sua marca.</em>", cta_sub="Demonstração gratuita, com o seu cardápio e a sua logo."),
+}
+
+
 FRENTES = [institucional, tech, cerraai, cerraclass, credito, contabilidade, consultorias, guiacademico, cerrafood]
+
+
+def montar_frente(fn):
+    f = fn()
+    f["pecas"] += folder(f["slug"], dict(ULTIMO_JORNAL), FOLDER[f["slug"]])
+    return f
 
 JS = """<script>
 (function () {
@@ -1108,7 +1310,7 @@ def gerar_html(f):
 <meta charset="UTF-8">
 <title>Formatos · {escape(f["nome"])}</title>
 {f["head"]}
-<style>{FONTES}{CSS_BASE}{CSS_MOLDES}{f["css"]}</style>
+<style>{FONTES}{CSS_BASE}{CSS_MOLDES}{CSS_FD}{f["css"]}</style>
 </head>
 <body>
 {f["pecas"]}
@@ -1256,7 +1458,7 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     render = "--render" in sys.argv
     preparar_imagens()
-    todas = [fn() for fn in FRENTES]
+    todas = [montar_frente(fn) for fn in FRENTES]
     alvo = [f for f in todas if not args or f["slug"] in args]
     caminhos = {f["slug"]: gerar_html(f) for f in alvo}
     print(f"HTML: {', '.join(caminhos)}")

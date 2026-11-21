@@ -1,0 +1,48 @@
+/* Crédito: "Antes de assinar". Branco-papel, azul-caneta, marca-texto só na palavra que importa. */
+@font-face { font-family: 'Schibsted Grotesk'; src: url('assets/fonts/schibsted.woff2') format('woff2'); font-weight: 400 900; }
+@font-face { font-family: 'Caveat'; src: url('assets/fonts/caveat.woff2') format('woff2'); font-weight: 700; }
+
+:root { --papel: #fbfbf8; --caneta: #1f3ae0; --grifo: #e6ff3d; --tinta: #111522; --linha: #dfe1ea; }
+html, body { background: var(--papel); }
+#root { font-family: 'Schibsted Grotesk', sans-serif; color: var(--tinta); background: var(--papel); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--papel); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 2px solid var(--linha); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 2px solid var(--linha); }
+.horizontal .conteudo.esq { width: 660px; left: 110px; }
+
+.mega, .titulo { font-weight: 900; letter-spacing: -0.035em; line-height: 1.0; }
+.mega { font-size: 100px; }
+.titulo { font-size: 70px; margin-bottom: 30px; }
+.grifo { background: linear-gradient(transparent 12%, var(--grifo) 12%, var(--grifo) 92%, transparent 92%) no-repeat left / 0% 100%; padding: 0 .06em; }
+.rotulo { font-size: 26px; font-weight: 700; color: var(--caneta); margin-bottom: 24px; }
+.sub { font-size: 34px; line-height: 1.32; font-weight: 500; color: #4a4f62; margin-top: 28px; }
+.miuda { font-size: 24px; color: #5d6274; border-top: 1px solid var(--linha); padding-top: 14px; }
+.pauta { list-style: none; border-top: 2px solid var(--tinta); }
+.pauta li { padding: 12px 0; border-bottom: 1px solid var(--linha); font-size: 26px; color: #4a4f62; font-weight: 500; }
+.pauta b { display: block; font-size: 38px; font-weight: 900; color: var(--tinta); letter-spacing: -0.02em; }
+.clausulas { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.clausulas li { display: flex; gap: 18px; align-items: baseline; }
+.clausulas i { font-style: normal; font-weight: 800; font-size: 28px; color: var(--caneta); min-width: 52px; }
+.clausulas span { font-size: 26px; color: #4a4f62; font-weight: 500; line-height: 1.25; }
+.clausulas b { display: block; font-size: 36px; font-weight: 900; color: var(--tinta); letter-spacing: -0.02em; }
+.rubrica { font-family: 'Caveat', cursive; font-weight: 700; font-size: 110px; color: var(--caneta); margin-top: 26px; border-bottom: 3px solid var(--tinta); align-self: flex-start; padding-right: 60px; line-height: 1.05; }
+
+#cortina { position: absolute; inset: 0; background: var(--caneta); }
+.fecho { color: #fff; }
+.fecho .marca { display: flex; align-items: center; gap: 16px; font-size: 38px; font-weight: 900; }
+.fecho .marca img { width: 74px; height: 74px; object-fit: contain; }
+.fecho .marca small { font-weight: 500; font-size: 30px; opacity: .85; }
+.fecho .chamada { font-size: 124px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-top: 30px; }
+.fecho .chamada .grifo { color: var(--tinta); background: var(--grifo); }
+.fecho .botao { margin-top: 36px; background: var(--grifo); color: var(--tinta); font-size: 32px; font-weight: 800; padding: 18px 34px; border-radius: 999px; }
+.fecho .parceria { margin-top: 30px; display: flex; align-items: center; gap: 16px; font-size: 26px; font-weight: 600; }
+.fecho .parceria img { height: 96px; border-radius: 10px; }
+.fecho .aviso { margin-top: 24px; font-size: 22px; line-height: 1.4; max-width: 1300px; opacity: .92; }
+
+.vertical .mega { font-size: 92px; }
+.vertical .titulo { font-size: 66px; }
+.vertical .fecho .chamada { font-size: 100px; }
+.vertical .fecho .botao { font-size: 26px; }
+.vertical .fecho .aviso { font-size: 24px; }

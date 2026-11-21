@@ -1,0 +1,61 @@
+/* Cerra.AI: "Silício local". Duas cores (cobre e grafite), sem gradiente, sem brilho. */
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'JetBrains Mono'; src: url('assets/fonts/jetbrains-mono.woff2') format('woff2'); font-weight: 100 800; }
+
+:root { --grafite: #0d0f0e; --grafite-2: #171a18; --cobre: #e2873b; --tinta: #f1ece3; --suave: #a39d93; --linha: #2a2e2b; }
+html, body { background: var(--grafite); }
+#root { font-family: 'Archivo', sans-serif; color: var(--tinta); background: var(--grafite); }
+
+.mega, .titulo, .marca { font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.015em; line-height: .92; }
+.mega { font-size: 96px; }
+.titulo { font-size: 76px; margin-bottom: 36px; }
+.c { color: var(--cobre); }
+.rotulo { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 600; color: var(--cobre); margin-bottom: 30px; letter-spacing: .02em; }
+.sub { font-size: 36px; line-height: 1.32; color: var(--suave); }
+.linhas { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.linhas li { font-size: 36px; font-weight: 500; padding-left: 40px; position: relative; }
+.linhas li::before { content: ''; position: absolute; left: 0; top: .42em; width: 18px; height: 18px; background: var(--cobre); }
+
+/* faixa chapada do texto (16:9: 41% à esquerda; 9:16: 52% embaixo), com filete */
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--grafite); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 41%; border-right: 2px solid var(--linha); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 55%; border-top: 2px solid var(--linha); }
+.horizontal .conteudo.esq { width: 640px; left: 110px; }
+
+/* a tela do produto, no formato real */
+.tela { border: 2px solid var(--linha); border-radius: 14px; background: var(--grafite-2); overflow: hidden; width: 640px; }
+.tela .barra { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 24px; border-bottom: 2px solid var(--linha); font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; color: var(--suave); }
+.tela .barra b { color: var(--cobre); font-weight: 600; }
+.tela .barra .local { display: inline-flex; align-items: center; gap: 10px; }
+.tela .barra .local::before { content: ''; width: 11px; height: 11px; border-radius: 50%; background: #5bc98a; }
+.tela .corpo { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 20px; }
+.tela .eu { align-self: flex-end; max-width: 90%; background: var(--linha); border-radius: 18px 18px 4px 18px; padding: 14px 20px; font-size: 28px; line-height: 1.3; }
+.tela .ia { font-size: 29px; line-height: 1.38; font-weight: 500; border-left: 5px solid var(--cobre); padding-left: 20px; }
+.tela .ia b { color: var(--cobre); font-weight: 700; }
+.cita { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; border: 2px solid var(--cobre); color: var(--cobre); padding: 9px 14px; border-radius: 6px; }
+.cita::before { content: ''; width: 10px; height: 10px; background: var(--cobre); }
+.selo { align-self: flex-start; margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--suave); border: 2px dashed var(--suave); padding: 8px 14px; border-radius: 6px; }
+
+/* fecho: campo cobre chapado, tinta grafite */
+#cortina { position: absolute; inset: 0; background: var(--cobre); }
+.fecho { color: var(--grafite); gap: 0; }
+.fecho .emblema { width: 210px; height: auto; margin-bottom: 26px; }
+.fecho .marca { font-size: 150px; }
+.fecho .tag { font-size: 40px; font-weight: 600; margin-top: 18px; }
+.fecho .cta { font-size: 46px; font-weight: 900; font-stretch: 125%; text-transform: uppercase; margin-top: 44px; background: var(--grafite); color: var(--cobre); padding: 16px 30px; border-radius: 6px; }
+.fecho .contato { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 600; margin-top: 30px; }
+.fecho .assina { font-family: 'JetBrains Mono', monospace; font-size: 22px; margin-top: 14px; color: #3a210c; }
+
+/* 9:16 */
+.vertical .mega { font-size: 92px; }
+.vertical .titulo { font-size: 70px; margin-bottom: 28px; }
+.vertical .conteudo.esq { bottom: 270px; }
+.vertical .linhas li { font-size: 38px; }
+.vertical .sub { font-size: 38px; max-width: none; }
+.vertical .tela { width: 100%; }
+.vertical .fecho .marca { font-size: 120px; }
+.vertical .fecho .emblema { width: 240px; }
+.vertical .fecho .tag { font-size: 38px; }
+.vertical .fecho .cta { font-size: 40px; }
+.vertical .fecho .contato { font-size: 26px; text-align: center; line-height: 1.5; }

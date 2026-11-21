@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Cerra.AI: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Grainy gradient / Journey inside the UI": entra seco (power4.out), corte em movimento, nada de fade
+      window.ESTILO = { ease: "power4.out", dur: 0.55, stagger: 0.045, desloc: 30, saida: 0.34, saidaEase: "power4.in" };
+      // a cortina cobre sobe e cobre a cena 3D (a troca de cor da marca)
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power4.inOut" }, 0.1);
+        tl.fromTo("#cortina", { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.55, ease: "power4.inOut" }, 26.8);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <!-- faixa grafite chapada onde o texto mora: a tela dividida entre a leitura e o objeto -->
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="26.8" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: as trilhas de cobre se desenham até o chip -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.5">Prazer, Cerra.AI</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.9">A IA da empresa,<br /><span class="c">dentro da empresa.</span></h1>
+        </div>
+      </div>
+
+      <!-- 5-10,6: os arquivos descem para dentro do chip -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="5.6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">01 · O que ele lê</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Lê o que a empresa <span class="c">já tem.</span></h2>
+          <ul class="linhas" data-entra="lista" data-t="0.9" data-stagger="0.32">
+            <li>PDF, também escaneado</li>
+            <li>Word e Excel</li>
+            <li>Imagens</li>
+            <li>Áudio e vídeo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 10,6-15,8: o dado pessoal vira tarja -->
+      <div id="p3" class="plano clip" data-start="10.6" data-duration="5.2" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">02 · Anonimização</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">O dado pessoal <span class="c">vira tarja.</span></h2>
+          <p class="sub" data-entra="subir" data-t="1.1">Nome, CPF e endereço são anonimizados antes de chegar ao modelo.</p>
+        </div>
+      </div>
+
+      <!-- 15,8-21,8: a resposta com a fonte -->
+      <div id="p4" class="plano clip" data-start="15.8" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">03 · Resposta com fonte</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Responde e mostra <span class="c">de onde tirou.</span></h2>
+          <div class="tela" data-entra="subir" data-t="1.0">
+            <div class="barra"><span>Workspace: <b>Escritório de Contabilidade</b></span><span class="local">local</span></div>
+            <div class="corpo">
+              <p class="eu" data-entra="letras" data-t="1.4" data-cps="60">Qual é o prazo de entrega da obrigação do cliente?</p>
+              <p class="ia" data-entra="subir" data-t="2.2">Pelo calendário fiscal da carteira, o prazo é o <b>dia 15</b>. Confira a página indicada.</p>
+              <p class="cita" data-entra="revelar" data-t="2.9" data-dur="0.6">Trechos consultados: calendario_fiscal.pdf (p. 2, 5)</p>
+            </div>
+          </div>
+          <p class="selo" data-entra="subir" data-t="3.6">Exemplo ilustrativo</p>
+        </div>
+      </div>
+
+      <!-- 21,8-26,8: a fronteira da máquina -->
+      <div id="p5" class="plano clip" data-start="21.8" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="rotulo" data-entra="letras" data-t="0.15">04 · 100% local</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Funciona <span class="c">sem internet.</span></h2>
+          <ul class="linhas" data-entra="lista" data-t="1.1" data-stagger="0.3">
+            <li>Zero requisições externas</li>
+            <li>Uma base isolada para cada área</li>
+            <li>Relatório LGPD e auditoria</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 26,8-32: a cortina cobre e a marca -->
+      <div id="p6" class="plano clip" data-start="26.8" data-duration="5.2" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <img id="emblema" class="emblema" src="assets/emblema.png" alt="Cerra.AI" data-entra="pop" data-t="0.45" data-rot="-10" />
+          <h2 class="marca" data-entra="palavras" data-t="0.7">Cerra.AI</h2>
+          <p class="tag" data-entra="subir" data-t="1.15">A IA da empresa, dentro da empresa.</p>
+          <p class="cta" data-entra="revelar" data-t="1.7" data-dur="0.6">Veja com os seus documentos.</p>
+          <p class="contato" data-entra="subir" data-t="2.1">cerradofinancas.com.br/cerraai · WhatsApp (67) 99351-5206</p>
+          <p class="assina" data-entra="letras" data-t="2.5">by Cerrado Tech</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>
