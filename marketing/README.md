@@ -3,7 +3,7 @@
 Posts, carrosséis, stories, vídeos e animações da marca.
 
 **Central de Marketing (para o time de marketing):** https://www.cerradofinancas.com.br/marketing/
-A página tem quatro abas:
+A página tem cinco abas (a quinta, **Formatos**, traz cartões, folder, jornal e banners de cada frente):
 - **Agenda:** o que sai em cada dia, da semana atual em diante. O acervo com as datas passadas fica no fim.
 - **Por frente:** as campanhas de cada marca, agrupadas por série.
 - **Mídia kits:** logos, cores, fontes e o guia em PDF de cada frente.
@@ -12,7 +12,7 @@ A página tem quatro abas:
 Cada campanha abre numa janela com orientações, peças, pacote .zip e legendas. Dá para mandar o link direto para
 alguém: `#c=<pasta>`.
 
-Só a página (`index.html`), `entregas/` e `kits/` são publicadas. As áreas de trabalho
+Só a página (`index.html`), `entregas/`, `kits/` e `formatos/` são publicadas. As áreas de trabalho
 (`posts/`, `videos/`, `tools/`, `brand/`, `animacoes/`, `.claude/`) ficam fora do site pelo
 `_config.yml` da raiz. **Ao criar uma pasta nova aqui, acrescente-a no `exclude` do `_config.yml`.**
 A página tem `noindex` e não aparece no menu nem no sitemap.
@@ -185,3 +185,32 @@ Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da pr
 - **2026-11 · Peças da equipe** (fora da agenda, série "Equipe"): Talita Marques, Felipe Borges, Renato Rosa e Camila
   Anjos, post e story com foto em arco, no estilo comum `brand/anuncio-equipe.css`. Para uma pessoa nova, ver
   "Peças da equipe" no `HISTORICO.md`.
+
+## Formatos para impressão e site (aba "Formatos" da Central)
+
+Cartões de visita, folder, anúncio de jornal e banners de site de cada frente, gerados por um script só:
+
+```
+python tools/gerar_formatos.py --render                 # todas as frentes
+python tools/gerar_formatos.py --render cerraai credito # só algumas
+```
+
+- **Fontes:** `posts/2026-11-formatos/<frente>.html` (abrir no navegador mostra todas as peças com a linha de corte
+  tracejada em rosa) e `posts/2026-11-formatos/img/` (logos recortadas e reduzidas, para o PDF ficar leve).
+- **Saída publicada:** `formatos/<frente>/`, `formatos/<frente>.zip` e `formatos/formatos.json`, que a aba lê.
+  A pasta `formatos/` **é publicada** (não está no `exclude`). Não passa pelo `publicar.py` nem pela agenda.
+- **Por frente (9: institucional, tech, cerraai, cerraclass, credito, contabilidade, consultorias, guiacademico,
+  cerrafood):**
+  - 5 cartões de visita, cada um com frente e verso: `cartao-vN-90x50mm.pdf` e `cartao-vN-88x48mm.pdf` (2 páginas,
+    3 mm de sangria por lado, área segura de 4 mm), mais `cartao-vN-frente.png`/`-verso.png` (prévia em 300 dpi);
+  - folder de 4 páginas A5 (folha A4 dobrada): `folder-paginas-a5.pdf` (as 4 páginas em ordem, com sangria) e
+    `folder-impressao-a4.pdf` (2 folhas já imposicionadas: lado de fora 4|1, lado de dentro 2|3), mais `folder-pN.png`;
+  - anúncio de jornal 25,5 x 36 cm: `jornal-255x360mm.pdf` + `jornal.png`;
+  - banners de site: `banner-1200x90.png` e `banner-300x250.png`, em 1x e `@2x`.
+- **Como renderiza:** Playwright (Chromium) imprime o PDF de cada peça; o Chrome arredonda a página para pixel
+  (94 mm vira 94,2 mm), por isso `medida_exata()` corta a sobra, que cai na sangria. A imposição do folder é feita com
+  PyMuPDF (`impor()`).
+- **Textos:** só o que já está no site, nas legendas das apresentações institucionais e nos guias de marca. Crédito leva
+  o aviso legal em toda peça. Os cartões são institucionais (sem nome de pessoa); um cartão por pessoa do time é só
+  acrescentar nome e cargo na frente.
+- **Cores:** os PDFs saem em RGB; a gráfica converte para CMYK. Pedir prova de cor antes de rodar a tiragem.

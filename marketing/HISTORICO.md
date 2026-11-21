@@ -784,3 +784,27 @@ Valem para todas as próximas campanhas.
       não os vídeos (o time baixa o vídeo direto na Central de Conteúdos). Os `.zip` caíram de 198 MB para 84 MB.
       Se apertar o limite de novo, o próximo passo é mover os vídeos antigos para outro armazenamento
       (Google Drive, Firebase Storage) e deixar no repositório só as peças estáticas.
+
+## Formatos para impressão e site: aba "Formatos" (21/11)
+
+Pedido do Renato, com os formatos que o Felipe passou (jornal 25,5 x 36 cm; site 1200 x 90 e 300 x 250; cartão 9 x 5 cm,
+e também 8,8 x 4,8 cm): pelo menos 5 versões de cartão de visita por frente, frente e verso, e artes nos outros formatos.
+Depois pediu uma aba nova na Central, **📐 Formatos**, para o Felipe baixar, e um **folder de 4 páginas** ("tipo
+livretinho"). Ele lembrou que o cartão é só frente e verso, e não um folder.
+
+- **9 frentes**, cada uma na sua identidade: Cerrado Finanças (institucional), Cerrado Tech, Cerra.AI, CerraClass,
+  Crédito, Contabilidade, Consultorias, Guia Acadêmico e CerraFood.
+- **Por frente:** 5 cartões (cada um com frente e verso; PDF nos dois tamanhos, com 3 mm de sangria), folder A5 de
+  4 páginas (PDF das páginas + PDF imposicionado em A4 frente e verso), anúncio de jornal e os 2 banners (1x e @2x).
+  Ao todo: 45 cartões, 9 folders, 9 anúncios e 18 banners.
+- **Ideia de cada cartão:** os recursos de cada marca (circuito e código na Tech; tarja de anonimização e etiqueta de
+  citação no Cerra.AI; cadeiras, ingresso e régua do dia na CerraClass; assinatura "Você decide", comparativo e
+  cláusulas no Crédito; livro-razão, razonete, carimbo EM DIA e escada no MEI → Lucro Presumido na Contabilidade;
+  carimbo de prancha, cota, organograma e selo "diagnóstico gratuito" nas Consultorias; cabeça corrida, controle de
+  alterações, palavras-chave e nota de rodapé no Guia Acadêmico; comanda e tela da cozinha no CerraFood).
+- **Regras mantidas:** nada inventado, sem preço, aviso legal no Crédito, Guia Acadêmico com a frase de ética, CerraFood
+  sem citar cliente. QR Code (vetorial) aponta para a página de cada frente.
+- **Ferramenta:** `tools/gerar_formatos.py` (passo a passo no README, seção "Formatos para impressão e site").
+- **Verificação:** prancha de revisão de cada frente; 99 PDFs com a medida exata (96 x 56, 94 x 54, 154 x 216 e
+  255 x 360 mm) e o número certo de páginas; aba testada no desktop e no celular, sem erro de JavaScript.
+- **Pendente:** cartão com nome e cargo de cada pessoa do time, se pedirem; prova de cor na gráfica (os PDFs são RGB).

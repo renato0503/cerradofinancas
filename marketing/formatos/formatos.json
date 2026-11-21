@@ -1,0 +1,1127 @@
+[
+ {
+  "slug": "institucional",
+  "nome": "Cerrado Finanças (institucional)",
+  "cor": "#001f5c",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 152
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 166
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 165
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 178
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 161
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 175
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 163
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 163
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 146
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 160
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 424,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 426
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 251
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "institucional.zip",
+   "kb": 3553
+  }
+ },
+ {
+  "slug": "tech",
+  "nome": "Cerrado Tech",
+  "cor": "#003399",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 392
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 392
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 299
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 299
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 146
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 146
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 156
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 156
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 310
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 310
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 249,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 250
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 233
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "tech.zip",
+   "kb": 3933
+  }
+ },
+ {
+  "slug": "cerraai",
+  "nome": "Cerra.AI",
+  "cor": "#e2873b",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 575
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 575
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 585
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 585
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 597
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 597
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 585
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 585
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 591
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 591
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 661,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 663
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 652
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "cerraai.zip",
+   "kb": 8002
+  }
+ },
+ {
+  "slug": "cerraclass",
+  "nome": "CerraClass",
+  "cor": "#ffc83d",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 312
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 312
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 304
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 304
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 335
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 335
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 315
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 315
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 307
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 307
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 389,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 391
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 375
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "cerraclass.zip",
+   "kb": 4438
+  }
+ },
+ {
+  "slug": "credito",
+  "nome": "Crédito",
+  "cor": "#1f3ae0",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 160
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 160
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 170
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 170
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 176
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 176
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 171
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 171
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 173
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 173
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 260,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 262
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 236
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "credito.zip",
+   "kb": 2471
+  }
+ },
+ {
+  "slug": "contabilidade",
+  "nome": "Contabilidade",
+  "cor": "#0c3b2e",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 119
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 119
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 113
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 113
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 121
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 121
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 113
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 113
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 113
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 113
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 132,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 134
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 124
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "contabilidade.zip",
+   "kb": 1812
+  }
+ },
+ {
+  "slug": "consultorias",
+  "nome": "Consultorias",
+  "cor": "#e4570e",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 134
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 134
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 131
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 130
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 131
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 130
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 133
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 133
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 140
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 139
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 221,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 222
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 188
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "consultorias.zip",
+   "kb": 2375
+  }
+ },
+ {
+  "slug": "guiacademico",
+  "nome": "Guia Acadêmico",
+  "cor": "#1e2a44",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 436
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 436
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 282
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 282
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 445
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 445
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 284
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 284
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 29
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 29
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 452,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 454
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 451
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "guiacademico.zip",
+   "kb": 4739
+  }
+ },
+ {
+  "slug": "cerrafood",
+  "nome": "CerraFood",
+  "cor": "#f39200",
+  "cartoes": [
+   {
+    "versao": 1,
+    "frente": "cartao-v1-frente.png",
+    "verso": "cartao-v1-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v1-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 509
+     },
+     {
+      "nome": "cartao-v1-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 509
+     }
+    ]
+   },
+   {
+    "versao": 2,
+    "frente": "cartao-v2-frente.png",
+    "verso": "cartao-v2-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v2-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 510
+     },
+     {
+      "nome": "cartao-v2-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 510
+     }
+    ]
+   },
+   {
+    "versao": 3,
+    "frente": "cartao-v3-frente.png",
+    "verso": "cartao-v3-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v3-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 511
+     },
+     {
+      "nome": "cartao-v3-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 511
+     }
+    ]
+   },
+   {
+    "versao": 4,
+    "frente": "cartao-v4-frente.png",
+    "verso": "cartao-v4-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v4-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 500
+     },
+     {
+      "nome": "cartao-v4-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 500
+     }
+    ]
+   },
+   {
+    "versao": 5,
+    "frente": "cartao-v5-frente.png",
+    "verso": "cartao-v5-verso.png",
+    "pdfs": [
+     {
+      "nome": "cartao-v5-90x50mm.pdf",
+      "rotulo": "9 x 5 cm",
+      "kb": 506
+     },
+     {
+      "nome": "cartao-v5-88x48mm.pdf",
+      "rotulo": "8,8 x 4,8 cm",
+      "kb": 506
+     }
+    ]
+   }
+  ],
+  "folder": {
+   "paginas": [
+    "folder-p1.png",
+    "folder-p2.png",
+    "folder-p3.png",
+    "folder-p4.png"
+   ],
+   "pdf": "folder-paginas-a5.pdf",
+   "kb": 566,
+   "impressao": "folder-impressao-a4.pdf",
+   "kb_impressao": 568
+  },
+  "jornal": {
+   "previa": "jornal.png",
+   "pdf": "jornal-255x360mm.pdf",
+   "kb": 568
+  },
+  "banners": [
+   {
+    "nome": "banner-1200x90.png",
+    "x2": "banner-1200x90@2x.png",
+    "rotulo": "1200 x 90"
+   },
+   {
+    "nome": "banner-300x250.png",
+    "x2": "banner-300x250@2x.png",
+    "rotulo": "300 x 250"
+   }
+  ],
+  "zip": {
+   "nome": "cerrafood.zip",
+   "kb": 7033
+  }
+ }
+]

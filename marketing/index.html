@@ -98,6 +98,22 @@
     .chip small { color: var(--muted); font-weight: 600; }
     .chip[aria-pressed="true"] { background: var(--texto); color: #fff; border-color: var(--texto); }
     .chip[aria-pressed="true"] small { color: #cbd5e1; }
+    /* ---------- formatos ---------- */
+    .fmt-grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; align-items: start; }
+    .fmt { background: #fff; border: 1px solid var(--borda); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+    .fmt .faces { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; background: #e2e8f0; align-items: start; }
+    .fmt .faces.quatro { grid-template-columns: repeat(4, 1fr); }
+    .fmt .faces.uma { grid-template-columns: 1fr; }
+    .fmt .faces a { display: block; }
+    .fmt .faces img { width: 100%; height: auto; display: block; border-radius: 3px; box-shadow: 0 2px 8px rgba(15, 23, 42, .18); }
+    .fmt .faces figcaption { font-size: .68rem; font-weight: 700; color: var(--muted); text-align: center; margin-top: 4px; }
+    .fmt .rodape { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 8px; }
+    .fmt .rodape strong { font-size: .9rem; color: var(--texto); }
+    .fmt .baixar { display: flex; gap: 6px; flex-wrap: wrap; }
+    .fmt .baixar a { font-size: .78rem; font-weight: 800; text-decoration: none; color: var(--azul); border: 1px solid var(--borda); border-radius: 8px; padding: 6px 9px; }
+    .fmt .baixar a:hover { border-color: var(--azul); }
+    .fmt.largo { grid-column: 1 / -1; }
+    @media (max-width: 680px) { .fmt .faces.quatro { grid-template-columns: 1fr 1fr; } }
     .bloco-frente { margin-bottom: 40px; }
     .bloco-frente > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-bottom: 3px solid var(--cor); padding-bottom: 10px; margin-bottom: 18px; }
     .bloco-frente h2 { font-size: 1.4rem; font-weight: 900; color: var(--azul); }
@@ -211,6 +227,7 @@
       <button class="aba" data-vista="agenda" type="button">📅 Agenda</button>
       <button class="aba" data-vista="frentes" type="button">🗂️ Por frente</button>
       <button class="aba" data-vista="kits" type="button">🎨 Mídia kits</button>
+      <button class="aba" data-vista="formatos" type="button">📐 Formatos</button>
       <button class="aba" data-vista="como-usar" type="button">❓ Como usar</button>
       <input class="busca" id="busca" type="search" placeholder="Buscar campanha (ex.: consignado, MEI, ERP)" aria-label="Buscar campanha">
     </div>
@@ -233,6 +250,12 @@
       <div class="kits" id="kits"></div>
     </section>
 
+    <section class="vista" id="v-formatos" hidden>
+      <p class="intro">Artes para <b>impressão e site</b>, por frente: <b>5 cartões de visita</b> (cada um com frente e verso, em PDF nos tamanhos 9 x 5 cm e 8,8 x 4,8 cm), <b>folder de 4 páginas</b> (A5, uma folha A4 dobrada ao meio), <b>anúncio de jornal</b> (25,5 x 36 cm) e <b>banners de site</b> (1200 x 90 e 300 x 250). Para a gráfica, mande sempre o <b>PDF</b>: ele já vem com 3 mm de sangria em cada lado.</p>
+      <div class="chips" id="chips-formatos"></div>
+      <div id="formatos"></div>
+    </section>
+
     <section class="vista" id="v-como-usar" hidden>
       <h2 class="h-sec">Passo a passo para postar</h2>
       <div class="passos">
@@ -251,6 +274,9 @@
         <div><dt>video-vertical.mp4 / video-16x9.mp4</dt><dd>Vídeos extras: o vertical vai para Reels, Stories e TikTok; o 16:9, para YouTube, LinkedIn e site.</dd></div>
         <div><dt>reel-*.mp4</dt><dd>Reels das primeiras campanhas (outubro).</dd></div>
         <div><dt>Legendas</dt><dd>Textos prontos por rede (Instagram, LinkedIn e Facebook), com hashtags. A do Facebook usa o link do WhatsApp que vira clicável. Ficam dentro de cada campanha e também no .zip.</dd></div>
+        <div><dt>cartao-v1-90x50mm.pdf</dt><dd>Aba Formatos. Cartão de visita pronto para a gráfica: página 1 é a frente, página 2 é o verso. Tem 3 mm de sangria em cada lado (o arquivo mede 96 x 56 mm e o corte fica em 90 x 50 mm). O "88x48mm" é o mesmo cartão no tamanho 8,8 x 4,8 cm.</dd></div>
+        <div><dt>folder-impressao-a4.pdf</dt><dd>Aba Formatos. O folder de 4 páginas já montado para imprimir frente e verso numa folha A4 e dobrar ao meio (lado de fora: contracapa e capa; lado de dentro: páginas 2 e 3). O "folder-paginas-a5.pdf" traz as 4 páginas em ordem, para a gráfica que prefere montar ela mesma.</dd></div>
+        <div><dt>jornal-255x360mm.pdf</dt><dd>Aba Formatos. Anúncio de jornal de 25,5 x 36 cm. Os banners de site saem em PNG no tamanho exato e em "@2x" (o dobro, para telas de alta resolução).</dd></div>
         <div><dt>Frente</dt><dd>A marca da campanha: Cerrado Tech, Contabilidade, Crédito, Consultorias, CerraClass, Cerra.AI ou Institucional.</dd></div>
         <div><dt>Série</dt><dd>Um grupo de campanhas com o mesmo formato, que sai em sequência (ex.: "Você sabia?", "Produto a produto").</dd></div>
       </dl>
@@ -263,6 +289,7 @@
   <script>
     const base = 'entregas/';
     const baseKits = 'kits/';
+    const baseFormatos = 'formatos/';
     const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
     const semanaDias = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
     const FRENTES = {
@@ -280,6 +307,7 @@
 
     let agenda = null;
     let campanhas = [], kits = [], filtroFrente = 'todas', termo = '';
+    let formatos = [], filtroFormato = 'todas';
 
     function el(tag, attrs = {}, ...filhos) {
       const e = document.createElement(tag);
@@ -471,6 +499,50 @@
       });
     }
 
+    /* ---------- formatos (impressão e site) ---------- */
+    function renderFormatos() {
+      const chips = document.getElementById('chips-formatos');
+      chips.innerHTML = '';
+      const chip = (id, nome, cor) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(filtroFormato === id), style: cor ? `--cor: ${cor}` : '',
+        onclick: () => { location.hash = id === 'todas' ? 'formatos' : 'formatos/' + id; } }, cor ? el('i') : null, document.createTextNode(nome));
+      chips.append(chip('todas', 'Todas', null));
+      formatos.forEach(f => chips.append(chip(f.slug, f.nome, f.cor)));
+      const box = document.getElementById('formatos');
+      box.innerHTML = '';
+      if (!formatos.length) { box.append(el('p', { class: 'vazio', text: 'Ainda não há formatos publicados.' })); return; }
+      const url = (f, n) => baseFormatos + f.slug + '/' + n;
+      const fig = (f, n, legenda) => el('figure', {}, el('a', { href: url(f, n), target: '_blank', rel: 'noopener' }, el('img', { src: url(f, n), alt: legenda, loading: 'lazy' })), el('figcaption', { text: legenda }));
+      const link = (f, n, rotulo) => el('a', { href: url(f, n), download: n, text: rotulo });
+      formatos.filter(f => filtroFormato === 'todas' || filtroFormato === f.slug).forEach(f => {
+        const sec = el('section', { class: 'bloco-frente', style: `--cor: ${f.cor}` },
+          el('header', {}, el('h2', { text: f.nome }),
+            el('a', { class: 'btn btn-ouro', href: baseFormatos + f.zip.nome, download: f.zip.nome, text: `⬇ Baixar tudo (.zip, ${tamanho(f.zip.kb)})` })));
+        sec.append(el('h3', { text: 'Cartões de visita · 5 versões (frente e verso)' }));
+        const g1 = el('div', { class: 'fmt-grade' });
+        f.cartoes.forEach(c => g1.append(el('div', { class: 'fmt' },
+          el('div', { class: 'faces' }, fig(f, c.frente, 'Frente'), fig(f, c.verso, 'Verso')),
+          el('div', { class: 'rodape' }, el('strong', { text: `Versão ${c.versao}` }),
+            el('div', { class: 'baixar' }, ...c.pdfs.map(p => link(f, p.nome, `PDF ${p.rotulo}`)))))));
+        sec.append(g1);
+        if (f.folder) {
+          sec.append(el('h3', { text: 'Folder de 4 páginas (A5, folha A4 dobrada)' }));
+          sec.append(el('div', { class: 'fmt-grade' }, el('div', { class: 'fmt largo' },
+            el('div', { class: 'faces quatro' }, ...f.folder.paginas.map((n, i) => fig(f, n, ['Capa', 'Página 2', 'Página 3', 'Contracapa'][i]))),
+            el('div', { class: 'rodape' }, el('strong', { text: 'Folder' }),
+              el('div', { class: 'baixar' }, link(f, f.folder.impressao, `PDF para imprimir (A4 frente e verso, ${tamanho(f.folder.kb_impressao)})`),
+                link(f, f.folder.pdf, `PDF das 4 páginas (A5, ${tamanho(f.folder.kb)})`))))));
+        }
+        sec.append(el('h3', { text: 'Jornal e site' }));
+        sec.append(el('div', { class: 'fmt-grade' },
+          el('div', { class: 'fmt' }, el('div', { class: 'faces uma' }, fig(f, f.jornal.previa, 'Jornal 25,5 x 36 cm')),
+            el('div', { class: 'rodape' }, el('strong', { text: 'Anúncio de jornal' }), el('div', { class: 'baixar' }, link(f, f.jornal.pdf, `PDF 25,5 x 36 cm (${tamanho(f.jornal.kb)})`)))),
+          ...f.banners.map(b => el('div', { class: 'fmt' }, el('div', { class: 'faces uma' }, fig(f, b.nome, `Site ${b.rotulo}`)),
+            el('div', { class: 'rodape' }, el('strong', { text: `Banner ${b.rotulo}` }),
+              el('div', { class: 'baixar' }, link(f, b.nome, 'PNG'), link(f, b.x2, 'PNG @2x')))))));
+        box.append(sec);
+      });
+    }
+
     /* ---------- detalhe ---------- */
     function previa(c, a) {
       const url = base + c.pasta + '/' + a.nome;
@@ -565,7 +637,8 @@
       fechar();
       const [vista, sub] = h.split('/');
       if (vista === 'frentes') filtroFrente = sub && FRENTES[sub] ? sub : 'todas';
-      mostrarVista(['agenda', 'frentes', 'kits', 'como-usar'].includes(vista) ? vista : 'agenda');
+      if (vista === 'formatos') filtroFormato = sub && formatos.some(f => f.slug === sub) ? sub : 'todas';
+      mostrarVista(['agenda', 'frentes', 'kits', 'formatos', 'como-usar'].includes(vista) ? vista : 'agenda');
       ultimaVista = h || 'agenda';
       if (vista === 'kits' && sub) requestAnimationFrame(() => document.getElementById('kit-' + sub)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
       else window.scrollTo({ top: 0 });
@@ -578,6 +651,7 @@
       if (v === 'agenda') renderAgenda();
       if (v === 'frentes') renderFrentes();
       if (v === 'kits') renderKits();
+      if (v === 'formatos') renderFormatos();
     }
 
     document.querySelectorAll('.aba').forEach(b => b.addEventListener('click', () => { location.hash = b.dataset.vista; }));
@@ -593,7 +667,9 @@
       fetch(base + 'conteudos.json', { cache: 'no-store' }).then(r => r.json()),
       fetch(baseKits + 'kits.json', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
       fetch(base + 'agenda.json', { cache: 'no-store' }).then(r => r.json()).catch(() => null),
-    ]).then(([lista, ks, ag]) => {
+      fetch(baseFormatos + 'formatos.json', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
+    ]).then(([lista, ks, ag, fm]) => {
+      formatos = fm;
       campanhas = lista;
       agenda = ag;
       kits = ks;
