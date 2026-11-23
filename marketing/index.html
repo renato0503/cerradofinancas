@@ -510,13 +510,16 @@
       const box = document.getElementById('formatos');
       box.innerHTML = '';
       if (!formatos.length) { box.append(el('p', { class: 'vazio', text: 'Ainda não há formatos publicados.' })); return; }
-      const url = (f, n) => baseFormatos + f.slug + '/' + n;
+      // ?v=… muda sempre que as peças da frente são refeitas (os tamanhos no formatos.json mudam):
+      // os arquivos mantêm o nome (cartao-v1-frente.png…), então sem isso o navegador mostra a imagem antiga do cache
+      const rev = f => f._rev || (f._rev = [...JSON.stringify(f)].reduce((h, c) => (h * 33 + c.charCodeAt(0)) >>> 0, 5381).toString(36));
+      const url = (f, n) => baseFormatos + f.slug + '/' + n + '?v=' + rev(f);
       const fig = (f, n, legenda) => el('figure', {}, el('a', { href: url(f, n), target: '_blank', rel: 'noopener' }, el('img', { src: url(f, n), alt: legenda, loading: 'lazy' })), el('figcaption', { text: legenda }));
       const link = (f, n, rotulo) => el('a', { href: url(f, n), download: n, text: rotulo });
       formatos.filter(f => filtroFormato === 'todas' || filtroFormato === f.slug).forEach(f => {
         const sec = el('section', { class: 'bloco-frente', style: `--cor: ${f.cor}` },
           el('header', {}, el('h2', { text: f.nome }),
-            el('a', { class: 'btn btn-ouro', href: baseFormatos + f.zip.nome, download: f.zip.nome, text: `⬇ Baixar tudo (.zip, ${tamanho(f.zip.kb)})` })));
+            el('a', { class: 'btn btn-ouro', href: baseFormatos + f.zip.nome + '?v=' + rev(f), download: f.zip.nome, text: `⬇ Baixar tudo (.zip, ${tamanho(f.zip.kb)})` })));
         sec.append(el('h3', { text: f.cartoes.length > 1 ? `Cartões de visita · ${f.cartoes.length} versões (frente e verso)` : 'Cartão de visita (frente e verso)' }));
         const g1 = el('div', { class: 'fmt-grade' });
         f.cartoes.forEach(c => g1.append(el('div', { class: 'fmt' },
