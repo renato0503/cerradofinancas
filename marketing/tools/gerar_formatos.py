@@ -45,6 +45,9 @@ AVISO_CREDITO = ("Cerrado Finanças, em parceria com a LS Intermediação Financ
 TAMANHOS = [(90, 50), (88, 48)]
 SANGRIA = 3
 
+# Assinatura "folinha + Cerrado Tech" que vai em todas as artes da CerraFood (produto da fábrica).
+ASSINATURA_TECH = '<span class="assin"><img src="img/folinha.png" alt="Cerrado Tech"><b>Cerrado Tech</b></span>'
+
 # --------------------------------------------------------------------------- imagens (cópias leves para o PDF)
 
 LOGOS = {
@@ -176,6 +179,8 @@ img { display: block; }
 .lin { display: flex; align-items: center; }
 .entre { justify-content: space-between; }
 .fim { align-items: flex-end; }
+.assin { display: inline-flex; align-items: center; gap: 1.6mm; font-weight: 800; letter-spacing: -.02em; color: currentColor; white-space: nowrap; }
+.assin img { height: 1.5em; width: auto; }
 """
 
 FONTES = """
@@ -207,6 +212,8 @@ CSS_MOLDES = """
 .jornal { background: var(--fundo); color: var(--tinta); font-family: var(--fb); }
 .jornal .j { position: absolute; inset: 14mm; display: flex; flex-direction: column; }
 .jornal .j-topo { display: flex; justify-content: space-between; align-items: center; padding-bottom: 7mm; border-bottom: .6mm solid var(--linha); }
+.jornal .j-topo-dir { display: flex; align-items: center; gap: 6mm; }
+.jornal .assin { font-size: 12pt; }
 .jornal .j-rot { font: 500 11pt var(--fm); letter-spacing: .12em; text-transform: uppercase; color: var(--acento-texto); }
 .jornal h1 { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none);
   font-size: 54pt; line-height: .98; letter-spacing: var(--ft-esp, -0.02em); margin-top: 14mm; }
@@ -242,6 +249,8 @@ body.render .jornal.folha .corte, body.render .corte { display: none; }
 .b1200 .bt small { display: block; font: 500 13px var(--fb); text-transform: none; letter-spacing: 0; opacity: .85; margin-top: 5px; font-stretch: 100%; }
 .cta { background: var(--acento); color: var(--sobre-acento); font: 700 15px var(--fb); padding: 13px 20px; border-radius: var(--raio, 999px); white-space: nowrap; }
 .b1200 .av { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center; font-size: 8.5px; opacity: .75; }
+.b1200 .assin { font-size: 11px; }
+.b300 .assin { font-size: 9px; }
 .b300 { background: var(--fundo); color: var(--tinta); font-family: var(--fb); padding: 18px 18px 16px; display: flex; flex-direction: column; }
 .b300 .bt { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none);
   font-size: 27px; line-height: 1.02; letter-spacing: var(--ft-esp, -0.01em); margin-top: 14px; }
@@ -255,13 +264,17 @@ body.render .jornal.folha .corte, body.render .corte { display: none; }
 ULTIMO_JORNAL = {}
 
 
-def jornal(marca, rotulo, titulo, sub, itens, motivo, cta, b, url, aviso="", campos=("whats", "email", "site", "insta")):
+def jornal(marca, rotulo, titulo, sub, itens, motivo, cta, b, url, aviso="", campos=("whats", "email", "site", "insta"),
+           assinatura=""):
     ULTIMO_JORNAL.clear()
     ULTIMO_JORNAL.update(marca=marca, rotulo=rotulo, titulo=titulo, b=b, url=url, aviso=aviso, campos=campos)
     lista = "".join(f"<li><b>{i + 1:02d}</b><span>{t}</span></li>" for i, t in enumerate(itens))
     av = f'<p class="j-aviso">{escape(aviso)}</p>' if aviso else ""
+    topo = f'<span class="j-rot">{rotulo}</span>'
+    if assinatura:
+        topo = f'<span class="j-topo-dir">{topo}{assinatura}</span>'
     return peca("jornal", "jornal", f"""<div class="j">
-  <div class="j-topo">{marca}<span class="j-rot">{rotulo}</span></div>
+  <div class="j-topo">{marca}{topo}</div>
   <h1>{titulo}</h1>
   <p class="j-sub">{sub}</p>
   <ul class="j-lista">{lista}</ul>
@@ -273,17 +286,18 @@ def jornal(marca, rotulo, titulo, sub, itens, motivo, cta, b, url, aviso="", cam
 </div>""", "Jornal · 25,5 x 36 cm")
 
 
-def folder(slug, j, d):
+def folder(slug, j, d, assinatura=""):
     """Folder de 4 páginas A5 (A4 dobrada ao meio), feito para converter:
     1 capa com o 3D da frente e o botão do WhatsApp · 2 o que fazemos (cartões que ocupam a página) ·
     3 como funciona + o segundo 3D + diferenciais · 4 bloco de chamada, QR grande e contatos.
     Textos só dos filmes das frentes e do site (FOLDER, abaixo)."""
     b, marca = j["b"], j["marca"]
     av = f'<p class="fd-aviso">{escape(j["aviso"])}</p>' if j["aviso"] else ""
+    rodape_assin = f'<div class="fd-assina">{assinatura}</div>' if assinatura else ""
 
     def pg(n, corpo, rot, cls=""):
         return (f'<section class="peca jornal folha fd {cls}" data-grupo="folder" data-id="folder-p{n}" data-rotulo="Folder · página {n} · {rot}">'
-                f'<div class="fd-pg">{corpo}</div><i class="corte"></i></section>\n')
+                f'<div class="fd-pg">{corpo}{rodape_assin}</div><i class="corte"></i></section>\n')
 
     def cartoes(itens, cls=""):
         return f'<div class="fd-cards {cls}">' + "".join(
@@ -1042,31 +1056,6 @@ body { font-family: 'Outfit', sans-serif; }
       <p>1x totem e caixa</p><p>1x tela da cozinha</p><p>1x estoque e ficha técnica</p><p>1x entrega e fidelidade</p><hr>
       <p class="tot"><span>COM A SUA MARCA</span><span>✓</span></p></div>"""
     c = []
-    c.append(cartao(1, "mata", s(f"""<div class="cresce lin" style="gap:3.4mm">{disco(20)}<div>{nm(17)}
-      <p style="font-size:6.6pt;margin-top:1.4mm;opacity:.85">Gestão de restaurantes com a sua marca</p></div></div>
-      <p class="rot">Pizzaria · hamburgueria · restaurante · delivery</p>"""),
-        "papel", s(f"""<div class="lin entre">{nm(10, "#0f2a16")}<div style="border:.3mm solid #0f2a16;border-radius:50%">{disco(7)}</div></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0f2a16", "#fbf6ea")}</div></div>"""), nome))
-    c.append(cartao(2, "mata", s(f"""<div class="cresce lin" style="gap:3mm"><div style="width:44mm;flex-shrink:0;transform:rotate(-3deg);font-size:0">{comanda.replace('class="comanda"', 'class="comanda" style="font-size:5.1pt"')}</div>
-      <div><p class="t" style="font-size:11pt">do pedido à porta, <span style="color:#f39200">sem anotar nada.</span></p></div></div>"""),
-        "mata", s(f"""<div class="lin entre">{nm(11)}{disco(8)}</div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0f2a16", "#fbf6ea")}</div></div>"""), nome))
-    c.append(cartao(3, "papel", s(f"""<div class="lin entre">{nm(9, "#0f2a16")}<p class="rot">Tela da cozinha</p></div>
-      <div class="cresce lin"><div class="kds" style="width:100%">
-      <div style="background:#3dbb2f">MESA 4<b>06:12</b></div><div style="background:#f5c542">DELIVERY<b>18:40</b></div><div style="background:#e0472b;color:#fbf6ea">BALCÃO<b>27:05</b></div></div></div>
-      <p class="t" style="font-size:10pt">a cozinha sem papel.</p>"""),
-        "mata", s(f"""<div class="lin entre">{nm(11)}{disco(8)}</div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0f2a16", "#fbf6ea")}</div></div>"""), nome))
-    c.append(cartao(4, "laranja", s(f"""<div class="lin entre">{nm(9, "#0f2a16")}{disco(8)}</div>
-      <p class="t cresce lin" style="font-size:15pt">o restaurante inteiro num sistema só.</p>
-      <p class="rot">Site · app · totem · painel</p>"""),
-        "mata", s(f"""<p class="rot">Agende uma demonstração gratuita</p>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0f2a16", "#fbf6ea")}</div></div>"""), nome))
-    c.append(cartao(5, "mata", f'<div class="disco" style="position:absolute;width:52mm;height:52mm;left:-16mm;top:50%;transform:translateY(-50%)"><img src="img/cerrafood.png" alt=""></div>'
-                    + s(f"""<div class="cresce lin" style="margin-left:34mm"><div>{nm(15)}
-      <ul class="mono" style="list-style:none;font-size:6pt;line-height:1.6;margin-top:2mm;opacity:.9"><li>pizzaria</li><li>hamburgueria</li><li>restaurante</li><li>delivery</li></ul></div></div>"""),
-        "papel", s(f"""<p class="t" style="font-size:9pt">com o seu nome, a sua logo e as suas cores.</p>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0f2a16", "#fbf6ea")}</div></div>"""), nome))
 
     motivo = f'<div style="display:flex;gap:14mm;align-items:center"><div style="width:110mm;transform:rotate(-3deg)">{comanda.replace("class=\"comanda\"", "class=\"comanda\" style=\"font-size:13pt;padding:7mm 9mm 10mm;-webkit-mask-size:6mm 100%\"")}</div>{disco(70)}</div>'
     j = jornal(f'<div class="lin" style="gap:4mm">{disco(18)}{nm(30)}</div>', "Gestão de restaurantes",
@@ -1074,9 +1063,9 @@ body { font-family: 'Outfit', sans-serif; }
                "Pizzaria, hamburgueria, restaurante ou delivery. Do pedido à entrega, com a sua marca: site, app, totem e painel com o seu nome, a sua logo e as suas cores.",
                ["Totem e caixa, com comanda impressa", "Tela da cozinha no lugar do papel", "Ficha técnica com o custo de cada prato",
                 "Estoque, entrega, fidelidade e relatórios"],
-               motivo, "Agende uma demonstração gratuita", b, url)
-    ban = banners(f'<div class="lin" style="gap:10px">{disco(15).replace("15mm", "60px")}{nm(20)}</div>',
-                  f'<div class="lin" style="gap:8px">{disco(10).replace("10mm", "40px")}{nm(15)}</div>',
+               motivo, "Agende uma demonstração gratuita", b, url, assinatura=ASSINATURA_TECH)
+    ban = banners(f'<div class="lin" style="gap:10px">{disco(15).replace("15mm", "60px")}{nm(20)}{ASSINATURA_TECH}</div>',
+                  f'<div class="lin" style="gap:8px">{disco(10).replace("10mm", "40px")}{nm(15)}{ASSINATURA_TECH}</div>',
                   "o restaurante inteiro <em>num sistema só.</em>", "Totem, caixa, cozinha, estoque e entrega com a sua marca.", "Agende uma demonstração")
     vars_ = """.jornal, .b1200, .b300 { --fundo: #0f2a16; --tinta: #f4efe2; --acento: #f39200; --acento-texto: #f39200; --sobre-acento: #0f2a16;
   --linha: rgba(243,146,0,.6); --ft: 'Outfit'; --ft-peso: 800; --ft-caixa: lowercase; --ft-esp: -0.03em; --fb: 'Outfit'; --fm: 'DM Mono'; }
@@ -1133,6 +1122,7 @@ CSS_FD = """
 .jornal.fd .fd-ctt .ct { font-size: 9.3pt; gap: 3mm; }
 .fd-rodape { padding-top: 5mm; border-top: .5mm solid var(--linha); }
 .fd-aviso { font-size: 7.5pt; line-height: 1.35; margin-top: 4mm; opacity: .85; }
+.fd-assina { position: absolute; right: 0; bottom: -9mm; font-size: 8pt; opacity: .9; }
 """
 
 FOLDER = {
@@ -1244,7 +1234,7 @@ FOLDER = {
         p_rot="Como funciona", p_tit="Do pedido à porta, <em>sem anotar nada.</em>",
         passos=[("Totem ou caixa", "o cliente monta o pedido ou o caixa lança"), ("Cozinha", "o pedido aparece na tela, com o tempo de espera"),
                 ("Estoque", "os ingredientes saem do estoque sozinhos"), ("Entrega", "o cliente acompanha cada etapa pelo link")],
-        provas=["Com a sua marca", "Estoque automático", "by Cerrado Tech"],
+        provas=["Com a sua marca", "Estoque automático", "Entrega pelo link"],
         cta_rot="CerraFood", cta="Veja o sistema <em>com a sua marca.</em>", cta_sub="Demonstração gratuita, com o seu cardápio e a sua logo."),
 }
 
@@ -1254,7 +1244,8 @@ FRENTES = [institucional, tech, cerraai, cerraclass, credito, contabilidade, con
 
 def montar_frente(fn):
     f = fn()
-    f["pecas"] += folder(f["slug"], dict(ULTIMO_JORNAL), FOLDER[f["slug"]])
+    assinatura = ASSINATURA_TECH if f["slug"] == "cerrafood" else ""
+    f["pecas"] += folder(f["slug"], dict(ULTIMO_JORNAL), FOLDER[f["slug"]], assinatura)
     return f
 
 JS = """<script>

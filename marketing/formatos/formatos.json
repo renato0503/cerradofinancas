@@ -493,93 +493,7 @@
   "slug": "cerrafood",
   "nome": "CerraFood",
   "cor": "#f39200",
-  "cartoes": [
-   {
-    "versao": 1,
-    "frente": "cartao-v1-frente.png",
-    "verso": "cartao-v1-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v1-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 509
-     },
-     {
-      "nome": "cartao-v1-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 509
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 510
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 510
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 511
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 511
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 500
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 500
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 506
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 506
-     }
-    ]
-   }
-  ],
+  "cartoes": [],
   "folder": {
    "paginas": [
     "folder-p1.png",
@@ -588,14 +502,14 @@
     "folder-p4.png"
    ],
    "pdf": "folder-paginas-a5.pdf",
-   "kb": 1216,
+   "kb": 1310,
    "impressao": "folder-impressao-a4.pdf",
-   "kb_impressao": 1218
+   "kb_impressao": 1312
   },
   "jornal": {
    "previa": "jornal.png",
    "pdf": "jornal-255x360mm.pdf",
-   "kb": 568
+   "kb": 660
   },
   "banners": [
    {
@@ -611,7 +525,7 @@
   ],
   "zip": {
    "nome": "cerrafood.zip",
-   "kb": 8312
+   "kb": 3434
   }
  }
 ]

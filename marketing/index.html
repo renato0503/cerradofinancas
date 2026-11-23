@@ -520,13 +520,15 @@
         const sec = el('section', { class: 'bloco-frente', style: `--cor: ${f.cor}` },
           el('header', {}, el('h2', { text: f.nome }),
             el('a', { class: 'btn btn-ouro', href: baseFormatos + f.zip.nome + '?v=' + rev(f), download: f.zip.nome, text: `⬇ Baixar tudo (.zip, ${tamanho(f.zip.kb)})` })));
-        sec.append(el('h3', { text: f.cartoes.length > 1 ? `Cartões de visita · ${f.cartoes.length} versões (frente e verso)` : 'Cartão de visita (frente e verso)' }));
-        const g1 = el('div', { class: 'fmt-grade' });
-        f.cartoes.forEach(c => g1.append(el('div', { class: 'fmt' },
-          el('div', { class: 'faces' }, fig(f, c.frente, 'Frente'), fig(f, c.verso, 'Verso')),
-          el('div', { class: 'rodape' }, f.cartoes.length > 1 ? el('strong', { text: `Versão ${c.versao}` }) : null,
-            el('div', { class: 'baixar' }, ...c.pdfs.map(p => link(f, p.nome, `PDF ${p.rotulo}`)))))));
-        sec.append(g1);
+        if (f.cartoes.length) {
+          sec.append(el('h3', { text: f.cartoes.length > 1 ? `Cartões de visita · ${f.cartoes.length} versões (frente e verso)` : 'Cartão de visita (frente e verso)' }));
+          const g1 = el('div', { class: 'fmt-grade' });
+          f.cartoes.forEach(c => g1.append(el('div', { class: 'fmt' },
+            el('div', { class: 'faces' }, fig(f, c.frente, 'Frente'), fig(f, c.verso, 'Verso')),
+            el('div', { class: 'rodape' }, f.cartoes.length > 1 ? el('strong', { text: `Versão ${c.versao}` }) : null,
+              el('div', { class: 'baixar' }, ...c.pdfs.map(p => link(f, p.nome, `PDF ${p.rotulo}`)))))));
+          sec.append(g1);
+        }
         if (f.folder) {
           sec.append(el('h3', { text: 'Folder de 4 páginas (A5, folha A4 dobrada)' }));
           sec.append(el('div', { class: 'fmt-grade' }, el('div', { class: 'fmt largo' },
