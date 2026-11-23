@@ -534,7 +534,7 @@ def manter_agenda(arq, info):
 
 def main():
     for n, c in enumerate(CAMPANHAS):
-        post, ent = RAIZ / "posts" / c["pasta"], RAIZ / "entregas" / c["pasta"]
+        post, ent = RAIZ / "conteudo" / c["pasta"], RAIZ / "entregas" / c["pasta"]
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(carrossel(c), encoding="utf-8")

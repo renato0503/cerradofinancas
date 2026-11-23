@@ -53,6 +53,7 @@ REGRAS = [
     ("consultoria-", "consultorias", "Pranchas das consultorias"),
     ("curso-", "cerraclass", "Um curso por campanha"),
     ("cursos", "cerraclass", "Campanha da frente"),
+    ("cerraai-", "cerraai", "Série de conteúdo"),
     ("cerra-ai", "cerraai", "Lançamento"),
     ("lancamento-4-frentes", "institucional", "Lançamento"),
     ("folinha-animada", "institucional", "Marca animada"),
@@ -97,6 +98,7 @@ def publicar_pasta(pasta: Path):
                 z.write(f, f.name)
 
     frente, serie = classificar(pasta.name)
+    serie = info.pop("serie", None) or serie  # o gerador pode informar a série no info.json
     imagens = [a["nome"] for a in arquivos if a["tipo"] == "imagem"]
     capa = next((n for n in imagens if n.startswith("carrossel-01")), imagens[0] if imagens else None)
     return {

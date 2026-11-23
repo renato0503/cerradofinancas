@@ -553,7 +553,7 @@ def main():
         entrega, nome, car, st, ig, li, conta = dados[:7]
         fb = dados[7] if len(dados) > 7 else None
         fb_legenda = dados[8] if len(dados) > 8 else None
-        post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+        post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(car, encoding="utf-8")

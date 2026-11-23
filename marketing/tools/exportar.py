@@ -1,8 +1,8 @@
 """Exporta peças HTML (posts, carrosséis, stories) para PNG com o Chrome headless.
 
 Uso:
-    python tools/exportar.py posts/2026-10-lancamento-4-frentes/carrossel.html
-    python tools/exportar.py posts/2026-10-lancamento-4-frentes/story.html
+    python tools/exportar.py conteudo/2026-10-lancamento-4-frentes/carrossel.html
+    python tools/exportar.py conteudo/2026-10-lancamento-4-frentes/story.html
 
 Cada peça declara o tamanho em <meta name="formato" content="1080x1350"> e a
 entrega em <meta name="entrega" content="2026-10-tema">; cada slide é um

@@ -82,9 +82,11 @@
         tl.fromTo(el, { backgroundSize: "0% 3px" }, { backgroundSize: "100% 3px", duration: num(el.dataset.dur, 0.45), ease: "power2.inOut" }, t);
       } else if (tipo === "contar") {
         const ate = +el.dataset.ate;
+        const pad = +el.dataset.pad || 0;
+        const escrever = (v) => (el.textContent = pad ? String(v).padStart(pad, "0") : String(v));
         const o = { v: num(el.dataset.de, 0) };
-        el.textContent = String(o.v);
-        tl.to(o, { v: ate, duration: dur, ease: "none", onUpdate: () => (el.textContent = String(Math.round(o.v))) }, t);
+        escrever(o.v);
+        tl.to(o, { v: ate, duration: dur, ease: "none", onUpdate: () => escrever(Math.round(o.v)) }, t);
       } else if (tipo === "carimbo") {
         tl.fromTo(el, { scale: 2.4, rotate: num(el.dataset.rot, -14), opacity: 0 }, { scale: 1, rotate: num(el.dataset.rotFim, -8), opacity: 1, duration: 0.32, ease: "power4.in" }, t);
       }

@@ -1,4 +1,4 @@
-// Carrossel animado: transforma um carrossel do estúdio (posts/<entrega>/carrossel.html) num vídeo com a mesma arte.
+// Carrossel animado: transforma um carrossel do estúdio (conteudo/<entrega>/carrossel.html) num vídeo com a mesma arte.
 // Os slides passam como num carrossel (deslizando, com desfoque de movimento) e os elementos de cada slide entram
 // em sequência; a trilha marca cada troca. Funciona com qualquer identidade (carrossel.css, cerraai, cerraclass, crédito).
 //
@@ -8,7 +8,7 @@
 // O vídeo sai SEM áudio (a trilha sintetizada não ficou boa); --com-audio volta a gerar a trilha.
 //
 // Uso:
-//   node ferramentas/animar-carrossel.mjs ../posts/2026-11-tech-erp/carrossel.html [outro.html ...] [--render] [--com-audio] [--clima cobre|pb|sala]
+//   node ferramentas/animar-carrossel.mjs ../conteudo/2026-11-tech-erp/carrossel.html [outro.html ...] [--render] [--com-audio] [--clima cobre|pb|sala]
 // Gera filmes/carrosseis/<entrega>/ (projeto HyperFrames, fora do git) e, com --render,
 // entregas/<entrega>/carrossel-animado.mp4.
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, rmSync, existsSync } from "node:fs";

@@ -1,6 +1,6 @@
 """Gera a série "O que a Cerrado Tech constrói": uma campanha por capacidade do portfólio (/portfolio/).
 
-Para cada capacidade: posts/2026-11-tech-<slug>/{carrossel,story}.html e, em entregas/, as legendas
+Para cada capacidade: conteudo/2026-11-tech-<slug>/{carrossel,story}.html e, em entregas/, as legendas
 (Instagram e LinkedIn) e o info.json com a data sugerida de postagem. Identidade: a da Cerrado Tech
 (brand/carrossel.css, azul e dourado), com uma cor de destaque por capacidade.
 
@@ -409,7 +409,7 @@ def main():
     total = len(CAPACIDADES)
     for n, (c, d) in enumerate(zip(CAPACIDADES, datas), start=1):
         entrega = PREFIXO + c["slug"]
-        pasta_post = RAIZ / "posts" / entrega
+        pasta_post = RAIZ / "conteudo" / entrega
         pasta_ent = RAIZ / "entregas" / entrega
         pasta_post.mkdir(parents=True, exist_ok=True)
         pasta_ent.mkdir(parents=True, exist_ok=True)

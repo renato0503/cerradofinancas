@@ -8,5 +8,8 @@ node_modules/
 __pycache__/
 
 # Projeto de vídeo: renders e sons gerados (npm run sfx recria os sons)
-videos/out/
-videos/public/sfx/
+filmes/remotion/out/
+filmes/remotion/public/sfx/
+
+# Cache do kit de vídeo (demo, testes)
+.cache/

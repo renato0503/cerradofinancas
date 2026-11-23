@@ -1,6 +1,6 @@
 # Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 12/11/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 22/11/2026.
 
 **Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
 ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
@@ -14,6 +14,78 @@ ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
 | [`marketing/HISTORICO.md`](marketing/HISTORICO.md) | O que foi produzido em marketing, decisões de conteúdo e pendências |
 
 Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml`).
+
+## Sessão de 21 e 22/11/2026 (institucional, cartões da Contabilidade, conhecimento de vídeo)
+
+**Pronto e publicado no site**
+- **Cartões da Contabilidade** com o contador responsável (Renato Rosa, CRC-MT 021719/O-5): 3 versões (Ficha, Perfil,
+  Tinta) no lugar das 5 antigas, verso "Qual é a sua empresa?" em 3 layouts. Commit `08d62e8`.
+- **Aba Formatos sem imagem velha do cache:** links com `?v=<versão>`. Commit `a8fbf3c`.
+
+**Pronto, mas sem commit (decidir se publica)**
+- **Vídeo institucional v3** "Seu contador enxerga o seu sistema?" em `marketing/entregas/2026-11-escritorio/`:
+  `institucional-16x9.mp4` (4,5 MB), `reel-9x16.mp4` (4,3 MB, legenda karaokê), `story-9x16.mp4` (1,9 MB), legendas,
+  capas, QA e `RELATORIO.md`. Aprovado pelo Renato ("ficou legal"). Fontes: `marketing/conteudo/2026-11-escritorio/`
+  (DIRECAO, roteiro, storyboard, áudio, `trab/`) e `marketing/filmes/frente-escritorio/fonte/`. Refazer tudo:
+  `bash conteudo/2026-11-escritorio/trab/refazer.sh` (de `marketing/`). Histórico das 3 versões em `marketing/HISTORICO.md`.
+- **Conhecimento de vídeo:** `marketing/.claude/skills/video-estudio/references/aprendizados.md` e `direcao-modelo.md`,
+  mais ajustes nas skills `video-estudio`, `video-referencia`, `video-roteiro` e `video-motion`. As 13 skills
+  `video-*` inteiras ainda **não estão no git** (`marketing/.claude/skills/video-*`, não versionadas).
+
+**Pendências**
+- [ ] **Publicar o institucional na Central:** criar `marketing/entregas/2026-11-escritorio/info.json` (título, data,
+      descrição), acrescentar a regra do prefixo `escritorio` em `REGRAS` do `tools/publicar.py`, rodar
+      `python tools/publicar.py`, conferir a Central e o espaço do GitHub Pages (~11 MB de vídeo), commitar só a pasta.
+- [ ] **Commitar as skills de vídeo** (`marketing/.claude/skills/video-*`) e as fontes do institucional
+      (`marketing/conteudo/2026-11-escritorio/`, `marketing/filmes/frente-escritorio/fonte/`); `filmes/frente-*/16x9` e
+      `9x16` são gerados (não versionar).
+- [ ] **Foto do escritório:** `img/escritorio.jpeg` tem o ✦ de edição do Gemini; confirmar se é foto real ou
+      fotografar o espaço. Com mídia real, ela entra no plano 2 do institucional (3,3–7,4 s).
+- [ ] **Regra "só grátis ou local":** decidir (1) quantos funcionários a empresa tem — se forem 4+, o Remotion exige
+      licença paga e os reels de `marketing/filmes/remotion/` não devem ser reaproveitados (migrar para HyperFrames);
+      (2) remover ou marcar como descontinuado `gerar_gamma.py` e `GAMMA_API_KEY` em `.env.example`; (3) testar a voz
+      local **Piper** (pt-BR, conferir licença da voz) no lugar da SAPI.
+- [ ] **Kit de vídeo (`marketing/.claude/skills/video-estudio/scripts/kit.py`):** levar as correções de legenda que
+      fiz à mão (deixa por frase, `\k` medido de início a início, início preso à fala, MarginV 260, Inter TTF 700
+      gerada do woff2 — scripts em `marketing/conteudo/2026-11-escritorio/trab/legenda_v3.py`) e criar os comandos
+      `movimento` (zoom/pan/cortes) e `cor` (brilho, contraste, saturação por cena) para analisar referências.
+- [ ] **Logo do site:** a marca agora é só a folinha, mas o header (`img/logoheader.png`) e o footer (`img/logo.png`)
+      ainda usam o losango roxo antigo.
+- [ ] **CerraFood:** continua com 5 cartões (a única frente com mais de um, além da Contabilidade com 3).
+- [ ] **Reorganizar as pastas de `marketing/`** (pedido do Renato, para outra IA): ver a seção abaixo.
+
+### Reorganizar as pastas de marketing (prompt para outra IA)
+
+Levantamento de 22/11: 162 pastas soltas em `entregas/`; 155 nomes iguais em `conteudo/` (fonte) e `entregas/`
+(publicado); palestras em até 3 lugares (`palestras/`, `entregas/2026-11-palestra-enbra…`, `palestras/2026-11-palestra-enbra-transformacao-digital-ia/artes/`,
+`conteudo/2026-10-palestra-carreira-ia`); peças da equipe com dois nomes (`camila_anjos` × `camila-anjos`,
+`felipe_borges` × `felipe-marketing`, `renato_rosa` × `renato-rosa`); dois sistemas de vídeo (`filmes/` e `filmes/remotion/`).
+**Resolvido em 23/11:** a organização sem apagar nada foi feita (seção do fim). `marketing/conteudo` e
+`marketing/palestras` já estão no `exclude` do `_config.yml`, então commitá-las não publica nada.
+
+Prompt para colar:
+
+```text
+Tarefa: organizar as pastas de marketing do repositório D:\Dev\cerradofinancas (site Jekyll no GitHub Pages).
+Objetivo: fácil de navegar, nada duplicado, nenhuma coisa com dois caminhos. Separar com clareza: (1) post/carrossel
+de Instagram, (2) vídeo, (3) palestra/apresentação, (4) proposta comercial, (5) marca e kits, (6) ferramentas e dados.
+
+Regras: não mova nada antes de eu aprovar um plano (inventário + árvore proposta + tabela de → para + arquivos de
+código/páginas a ajustar + o que seria apagado e por quê). Outra IA trabalha no repo em paralelo: nunca `git add -A`,
+use `git mv`, não mexa em arquivo modificado por outra sessão sem perguntar, não commite sem eu pedir. Nada é apagado
+sem estar na lista aprovada; duplicata só sai com hash (md5) igual. `marketing/entregas/` é publicada: a Central
+(`marketing/index.html`) lê `entregas/conteudos.json`, gerado por `python marketing/tools/publicar.py` (agrupa pelo
+prefixo do nome da pasta, ver REGRAS); a aba Formatos lê `marketing/formatos/formatos.json` (gerado por
+`tools/gerar_formatos.py`). Pasta nova em marketing/ precisa entrar no `exclude` do `_config.yml` se não for pública.
+GitHub Pages está perto de 1 GB: não duplique MP4. Atualize marketing/README.md, marketing/HISTORICO.md e
+PROXIMOS_PASSOS.md no fim.
+
+Contexto já levantado está em PROXIMOS_PASSOS.md, seção "Reorganizar as pastas de marketing". Refaça a varredura de
+duplicatas (md5 de arquivos > 20 KB, ignorando node_modules, .claude e .hyperframes) e informe os MB desperdiçados.
+Fora do escopo: `video/` da raiz (hero do site) e `PortfolioParceriaLS/`.
+Depois da aprovação: execute em etapas, rode os geradores e o publicar.py, confira a Central e me mostre o git status
+final sem commitar.
+```
 
 ## O que foi feito (outubro de 2026)
 
@@ -109,10 +181,30 @@ Detalhes em `marketing/HISTORICO.md`.
     `firebase deploy --only hosting --account comercial@cerradofinancas.com.br` em `D:\Dev\CerraClass`.
 
 **Palestra "Muito Além do Currículo: IA na Prática" (29/10):** versão animada com 29 slides
-(`marketing/posts/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
+(`marketing/conteudo/2026-10-palestra-carreira-ia/apresentacao-animada.html`), online em
 https://www.cerradofinancas.com.br/marketing/entregas/2026-10-palestra-carreira-ia/apresentacao/. Detalhes em `marketing/HISTORICO.md`.
 
 ## O que foi feito (novembro de 2026)
+
+**Reformulação do site como vitrine: fase 0, protótipo (12/11).** Em construção na branch `reformulacao-vitrine`,
+num worktree separado (`D:\Dev\cerradofinancas-vitrine`); o `main` não foi tocado. Nada publicado, nada commitado.
+- **Conceito "casa de marcas":** estrutura Cerrado (azul, dourado, folinha) e cada produto com a própria identidade no miolo.
+- **Decisões do Renato:** do `site_3d/`, aproveitar só os elementos, não o conceito. As 5 startups saem.
+  Os 8 módulos GovTech viram um produto só, o **Cerrado Gov**. Guia Acadêmico e CerraClass ficam fora, e a
+  CerraClass aparece só como menção com link para cerraclass.com.br. Os filmes 3D das frentes foram **aprovados**.
+- **O que existe:**
+  - `_data/produtos.yml`, o catálogo e fonte única, com 28 itens;
+  - `_layouts/v2.html` e `_includes/v2/` (header com mega-menu, footer, cartão, ícones);
+  - `assets/v2/`: CSS, JS, fontes locais, GSAP 3.13 vindo do `site_3d`, loops de 10 s recortados dos filmes
+    das frentes e fotos da equipe em WebP;
+  - páginas `/v2/`, `/v2/produtos/` (filtros com FLIP) e `/v2/cerraai/` (ficha na identidade "Silício local"), todas com `noindex`.
+- **Pré-visualizar sem Jekyll:** o build em liquidjs e o servidor ficaram no scratchpad da sessão. Para refazer,
+  use `npx liquidjs` ou rode o Jekyll.
+- **Falta:**
+  - o aval do Renato no protótipo;
+  - a página unificada do Cerrado Gov (hoje o cartão aponta para `govdash.html`);
+  - redirecionar `/cursos/`, `/iacao/`, `/iafarma/` e `startups.html`;
+  - migrar as demais páginas para o layout v2 (fases 1 a 5 do plano).
 
 **Cyber Security na Fábrica de Software (12/11).** Commits `b7ffaa9` (página + oferta) e `2987518`
 (header revertido ao original — o menu **não** foi alterado).
@@ -163,23 +255,44 @@ aprovadas. Fonte em `marketing/filmes/frente-*/fonte/`, MP4 em `marketing/filmes
 - **Filmes 3D das frentes** (8 filmes, 32 s, 16:9 e 9:16, Three.js no HyperFrames): `marketing/filmes/frente-*`, MP4 em
   `marketing/filmes/out/`. Aguardam aval; detalhes em `marketing/filmes/README.md` e no `marketing/HISTORICO.md`.
 - **Palestra ENBRA v3**, "IA na empresa: o dado sai ou fica em casa?" (29 slides, demonstração do Cerra.AI ao vivo):
-  `marketing/Palestras/2026-11-palestra-enbra-transformacao-digital-ia/` (v1 e v2 em `anteriores/`). Registro em
+  `marketing/palestras/2026-11-palestra-enbra-transformacao-digital-ia/` (v1 e v2 em `anteriores/`). Registro em
   `REGISTRO-v3.md`; link privado https://claude.ai/artifact/QSEkRtFs9d9mn9DWKYhfzV.
 - **Palestra "Segurança Cibernética e Soberania Tecnológica" v2** para a ADESG-MT (13/11/2026, 19h, Faculdade FAIPE;
-  39 slides com globo 3D): `marketing/Palestras/2026-11-palestra-ciberseguranca-soberania/`. Registro em `REGISTRO-v2.md`;
+  39 slides com globo 3D): `marketing/palestras/2026-11-palestra-ciberseguranca-soberania/`. Registro em `REGISTRO-v2.md`;
   link privado https://claude.ai/artifact/8vBwVS1zkFia3icPZMoxXM.
 - **Para continuar:** ler o `REGISTRO-*.md` da pasta; os textos da palestra ADESG ficam em `apresentacao-v2/gerar_slides.py`.
+
+**Apresentação "Pipeline Global Estudos" (Pipeline Global VS2, Itaú / ICTi), 16/11/2026.** Nada commitado nem publicado.
+- 39 slides didáticos (selos de evidência, analogias, notas por clique, uma ficha com pergunta e resultado esperado por frente), 3D próprio (69 colunas + tubo com 8 anéis, sem
+  partículas) e vinheta Remotion: `marketing/palestras/2026-11-itau-pipeline-global-vs2/`. 100% Itaú/ICTi, sem nada da Cerrado.
+  Apresentadores: Renato Rosa e Ian Barreiro. Conteúdo: documento de apoio v2 (status 16/11/2026) e, no DiD, o artigo de resultados da Aceleração. Logo do ICTi vetorizada.
+- Arquivo para enviar: `marketing/palestras/2026-11-itau-pipeline-global-vs2/pipeline-global-estudos.html` (único, offline; refazer com `montar_unico.py`).
+- **Para continuar:** ler `marketing/palestras/2026-11-itau-pipeline-global-vs2/REGISTRO.md`.
+
+**Apresentação ICPO (Itaú / ICTi), 19/11/2026.** Nada commitado nem publicado.
+- Apresentação independente sobre o Índice Composto de Performance Operacional: 28 slides, os 12 gráficos do estudo,
+  explicação didática, 3D claro próprio, vinheta Remotion. Pasta `marketing/palestras/apresentacao_indice_ICPO/`.
+- Entregas: `ICPO_apresentacao.html` (único, offline, 3,4 MB) e `ICPO_apresentacao.pdf` (leve, 2,2 MB).
+- **Para continuar:** ler `marketing/palestras/apresentacao_indice_ICPO/REGISTRO.md`.
 
 ## Pendências
 
 ### Palestra ADESG-MT (13/11, 19h, FAIPE)
 - [ ] Antes de sair: atualizar Nvidia, Binance, Smart Sampa e PL 2338 em
-      `marketing/Palestras/2026-11-palestra-ciberseguranca-soberania/apresentacao-v2/gerar_slides.py`, rodar o gerador e o verificador.
+      `marketing/palestras/2026-11-palestra-ciberseguranca-soberania/apresentacao-v2/gerar_slides.py`, rodar o gerador e o verificador.
 - [ ] Ensaiar com a NVIDIA forçada no Chrome; levar o PDF de contingência.
+
+### Apresentação ICPO
+- [ ] Confirmar apresentadores (Renato Rosa e Ian Barreiro) e validar os grupos de ação do G11.
+
+### Apresentação Itaú VS2
+- [ ] Atualizar o andamento dos testes da Target Factory com a responsável (slides 6, 7, 10 e 37) e rodar `montar_unico.py`.
+- [ ] Abrir o HTML único no notebook do Itaú antes do dia (se o 3D for bloqueado, segue sem o fundo).
+- [ ] Ensaiar com a NVIDIA forçada no Chrome; PDF de contingência em `marketing/palestras/2026-11-itau-pipeline-global-vs2/apresentacao.pdf`.
 
 ### Palestra ENBRA v3
 - [ ] **Gravar a demonstração do Cerra.AI** (3 min) e salvar em
-      `marketing/Palestras/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao-v3/video/demo-cerraai.mp4` (plano B, tecla V).
+      `marketing/palestras/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao-v3/video/demo-cerraai.mp4` (plano B, tecla V).
 - [ ] Na véspera: conferir se houve decisão nova no caso NYT × OpenAI (slide 09) e ensaiar com a RTX 4060 forçada no Chrome.
 
 ### Marketing: filmes 3D
@@ -237,7 +350,7 @@ aprovadas. Fonte em `marketing/filmes/frente-*/fonte/`, MP4 em `marketing/filmes
       ao mudar a versão animada, atualizar também a cópia online (passo a passo em `marketing/HISTORICO.md`).
 - [ ] **Re-renderizar as ~104 campanhas com a nova gramática de movimento.** Agora o `animar-carrossel.mjs`
       lê `brand/movimentos.json` pelo nome da campanha, mas só 6 peças foram re-renderizadas (uma por marca,
-      como amostra). Para as outras: `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`,
+      como amostra). Para as outras: `node ferramentas/animar-carrossel.mjs ../conteudo/<entrega>/carrossel.html --render`,
       uma por vez (o render trava se forem várias no mesmo comando). Depois, `python tools/otimizar_publicacoes.py`
       para encolher os MP4.
 - [ ] **3D nas artes:** a primeira tentativa (folha em CSS 3D, `filmes/cerraai-cobre/`) foi **reprovada**;
@@ -282,7 +395,7 @@ aprovadas. Fonte em `marketing/filmes/frente-*/fonte/`, MP4 em `marketing/filmes
       (série "O que a Cerrado Tech constrói"): ao mudar uma, mudar a outra.
 - [ ] **Carrossel animado das outras campanhas:** só as 4 apresentações têm coreografia própria. As outras ~110 usam o
       movimento genérico antigo e ainda **têm áudio**. Se o Renato pedir, re-renderizar sem áudio, com
-      `node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render`, uma por vez.
+      `node ferramentas/animar-carrossel.mjs ../conteudo/<entrega>/carrossel.html --render`, uma por vez.
       O espaço do GitHub Pages deixou de ser o travão (agora há folga); o custo é o tempo de render.
 - [ ] **IA da semana (opcional):** **FEITO em 02/11** — o Renato aprovou e a edição 01 já está na agenda
       (04/11). O gerador é `marketing/tools/gerar_ia_da_semana.py`; o passo a passo está no topo das Pendências
@@ -360,3 +473,18 @@ antes de publicar; se ele não gostar, apagar `marketing/filmes/cerraai-cobre/`.
 estava (o hero 3D foi reprovado e revertido, não refaça). Para continuar: re-renderizar as ~104 campanhas com
 a nova gramática e seguir as pendências de "Portfólio e vídeos (de 31/10 a 02/11)".
 ```
+
+## Organização das pastas de marketing (23/11/26)
+
+Feito, sem apagar nada: `posts/` → `conteudo/`, `videos/` → `filmes/remotion/`, `Palestras/` → `palestras/`
+(com `_modelo/` e as artes do ENBRA dentro do evento), `peças_publicitarias/` dividida entre
+`propostas/briefing-parceiros/` e `conteudo/v2-video-com-ia/`, `animacoes/folinha/` → `brand/folinha/`.
+
+- `_config.yml`: `marketing/conteudo` e `marketing/palestras` no `exclude`; `peças_publicitarias`/`animacoes` fora.
+- `marketing/.gitignore`: `filmes/remotion/out|public/sfx`.
+- Ferramentas e skills atualizadas; `agendar.py` manteve a chave `posts` do `agenda.json`.
+- Verificado: `tools/gerar_formatos.py` regerou os HTML de `conteudo/2026-11-formatos/`; `py_compile` em todos os
+  `.py`; a Central não mudou.
+- **Pendente:** 27 campanhas novas em `entregas/` (`2026-11-cerraai-*`) sem `.zip`/`conteudos.json` — rodar
+  `python tools/publicar.py` quando fecharem.
+- Versionado: 13 skills ideo-*, .claude/skills/README.md e .claude/commands/video{,-qa}.md. Docs de vídeo (ilmes/README.md, ideo-estudio/SKILL.md, skills/README.md) com o mapa de pastas novo.

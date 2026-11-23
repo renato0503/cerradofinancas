@@ -14,15 +14,20 @@ exclude:
   - PROXIMOS_PASSOS.md
   - LICENSE.txt
   # Estúdio de conteúdo: só marketing/index.html (Central de Marketing),
-  # marketing/entregas/ e marketing/kits/ são publicados. Pasta nova em marketing/ deve entrar aqui.
+  # marketing/entregas/, marketing/kits/ e marketing/formatos/ são publicados.
+  # Pasta nova em marketing/ deve entrar aqui.
   - marketing/.claude
   - marketing/README.md
   - marketing/HISTORICO.md
   - marketing/PLANEJAMENTO-credito-consultorias.md
+  - marketing/PLANEJAMENTO-cerraai.md
   - marketing/brand
-  - marketing/posts
+  - marketing/conteudo
   - marketing/tools
-  - marketing/videos
   - marketing/filmes
-  - marketing/animacoes
+  - marketing/palestras
   - marketing/dados
+  # Propostas comerciais (valores de clientes): uso interno, nunca publicar
+  - marketing/propostas
+  # Documentos da parceria LS (portfólio e comissionamento): uso interno, não publicar
+  - PortfolioParceriaLS

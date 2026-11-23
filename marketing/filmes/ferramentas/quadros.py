@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from checar_texto3d import RAIZ, abrir  # noqa: E402
+from checar_texto3d import RAIZ, servir  # noqa: E402
 
 slug, fmt, tempos, saida = sys.argv[1], sys.argv[2], [float(x) for x in sys.argv[3].split(",")], Path(sys.argv[4])
 from playwright.sync_api import sync_playwright  # noqa: E402
@@ -11,7 +11,11 @@ import io  # noqa: E402
 w, h = (1920, 1080) if fmt == "16x9" else (1080, 1920)
 with sync_playwright() as p:
     b = p.chromium.launch(args=["--ignore-gpu-blocklist", "--enable-unsafe-swiftshader"])
-    page = abrir(b, RAIZ / f"frente-{slug}" / fmt, w, h)
+    page = b.new_page(viewport={"width": w, "height": h})
+    page.route("**/*", servir(RAIZ / f"frente-{slug}" / fmt))
+    page.goto("http://f.local/index.html", wait_until="domcontentloaded")
+    page.wait_for_function("window.__hf && window.__hf.buildReady && window.__hf.buildReady.tres && window.__timelines", timeout=60000)
+    page.evaluate("() => window.__hf.buildReady.tres")
     ims = []
     for t in tempos:
         page.evaluate("""(t) => { const tl = window.__timelines.main; tl.seek(t, false);

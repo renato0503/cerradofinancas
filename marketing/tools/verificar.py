@@ -1,7 +1,7 @@
 """Verifica se alguma peça tem conteúdo invadindo o rodapé ou fora da área segura do story.
 
 Uso:
-    python tools/verificar.py posts/2026-10-curso-*/carrossel.html posts/2026-10-curso-*/story.html
+    python tools/verificar.py conteudo/2026-10-curso-*/carrossel.html conteudo/2026-10-curso-*/story.html
 """
 import re
 import subprocess

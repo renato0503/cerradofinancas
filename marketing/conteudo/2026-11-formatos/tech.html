@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Formatos · Cerrado Tech</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+@font-face { font-family: 'Archivo'; src: url('../../brand/fontes/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'JetBrains Mono'; src: url('../../brand/fontes/jetbrains-mono.woff2') format('woff2'); font-weight: 100 800; }
+@font-face { font-family: 'Bricolage Grotesque'; src: url('../../brand/fontes/bricolage.woff2') format('woff2'); font-weight: 200 800; font-stretch: 75% 100%; }
+@font-face { font-family: 'Schibsted Grotesk'; src: url('../../brand/fontes/schibsted.woff2') format('woff2'); font-weight: 400 900; }
+@font-face { font-family: 'Caveat'; src: url('../../brand/fontes/caveat.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Plex Cond'; src: url('../../brand/fontes/plex-cond-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Plex Cond'; src: url('../../brand/fontes/plex-cond-700.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Plex Mono'; src: url('../../brand/fontes/plex-mono-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Plex Mono'; src: url('../../brand/fontes/plex-mono-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Fraunces'; src: url('../../brand/fontes/fraunces-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Fraunces'; src: url('../../brand/fontes/fraunces-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Fraunces'; src: url('../../brand/fontes/fraunces-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Instrument Sans'; src: url('../../brand/fontes/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('../../brand/fontes/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('../../brand/fontes/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('../../brand/fontes/dm-mono-500.woff2') format('woff2'); font-weight: 500 700; }
+@font-face { font-family: 'Newsreader'; src: url('../../brand/fontes/newsreader-400-normal.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Newsreader'; src: url('../../brand/fontes/newsreader-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Newsreader'; src: url('../../brand/fontes/newsreader-600-normal.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Newsreader'; src: url('../../brand/fontes/newsreader-600-italic.woff2') format('woff2'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'Outfit'; src: url('../../brand/fontes/outfit.woff2') format('woff2'); font-weight: 300 900; }
+
+@page { margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { --w: 90mm; --h: 50mm; --sg: 3mm; }
+body { background: #8a8f98; font-family: system-ui, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body:not(.render) { padding: 12mm 0 30mm; }
+body:not(.render) .peca { margin: 0 auto 4mm; box-shadow: 0 2mm 6mm rgba(0,0,0,.25); }
+body:not(.render) .peca::before { content: attr(data-rotulo); position: absolute; left: 0; top: -5mm; font: 600 9pt system-ui; color: #fff; }
+body:not(.render) .peca { margin-top: 9mm; overflow: visible; }
+body:not(.render) .peca > .clip { overflow: hidden; }
+body.render { background: transparent; }
+body.render .peca:not(.on) { display: none; }
+body.render .peca.on + .peca.on { break-before: page; }
+.peca { position: relative; overflow: hidden; }
+.face { width: calc(var(--w) + 2 * var(--sg)); height: calc(var(--h) + 2 * var(--sg)); }
+.corte { position: absolute; inset: var(--sg); border: .2mm dashed rgba(255, 0, 140, .9); pointer-events: none; z-index: 50; }
+body.render .corte { display: none; }
+.s { position: absolute; inset: calc(var(--sg) + 4mm); display: flex; flex-direction: column; }
+.ico { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+.ct { list-style: none; display: flex; flex-direction: column; gap: .9mm; }
+.ct li { display: flex; align-items: center; gap: 1.4mm; white-space: nowrap; }
+.kv div { display: flex; gap: 2mm; }
+.kv dt { min-width: 15mm; opacity: .6; }
+.qr { display: block; }
+.jornal { width: 255mm; height: 360mm; }
+.b1200 { width: 1200px; height: 90px; }
+.b300 { width: 300px; height: 250px; }
+img { display: block; }
+.fill { position: absolute; inset: 0; }
+.cresce { flex: 1; }
+.lin { display: flex; align-items: center; }
+.entre { justify-content: space-between; }
+.fim { align-items: flex-end; }
+.assin { display: inline-flex; align-items: center; gap: 1.6mm; font-weight: 800; letter-spacing: -.02em; color: currentColor; white-space: nowrap; }
+.assin img { height: 1.5em; width: auto; }
+
+.jornal { background: var(--fundo); color: var(--tinta); font-family: var(--fb); }
+.jornal .j { position: absolute; inset: 14mm; display: flex; flex-direction: column; }
+.jornal .j-topo { display: flex; justify-content: space-between; align-items: center; padding-bottom: 7mm; border-bottom: .6mm solid var(--linha); }
+.jornal .j-topo-dir { display: flex; align-items: center; gap: 6mm; }
+.jornal .assin { font-size: 12pt; }
+.jornal .j-rot { font: 500 11pt var(--fm); letter-spacing: .12em; text-transform: uppercase; color: var(--acento-texto); }
+.jornal h1 { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none);
+  font-size: 54pt; line-height: .98; letter-spacing: var(--ft-esp, -0.02em); margin-top: 14mm; }
+.jornal h1 em { font-style: var(--em-estilo, normal); color: var(--acento-texto); }
+.jornal .j-sub { font-size: 17pt; line-height: 1.4; margin-top: 8mm; max-width: 190mm; opacity: .9; }
+.jornal .j-lista { list-style: none; margin-top: 12mm; display: grid; gap: 5mm; }
+.jornal .j-lista li { display: grid; grid-template-columns: 11mm 1fr; align-items: baseline; font-size: 16pt; line-height: 1.3; }
+.jornal .j-lista li b { font: 500 12pt var(--fm); color: var(--acento-texto); }
+.jornal .j-motivo { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.jornal .j-base { display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; padding-top: 8mm; border-top: .6mm solid var(--linha); }
+.jornal .j-cta { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none); font-size: 22pt; line-height: 1.05; }
+.jornal .j-base .ct { font-size: 14pt; gap: 3mm; margin-top: 6mm; }
+.jornal .j-qr { width: 40mm; text-align: center; font: 500 9pt var(--fm); }
+.jornal .j-qr .qr { width: 40mm; height: 40mm; margin-bottom: 2mm; }
+.jornal .j-aviso { font-size: 9pt; line-height: 1.35; margin-top: 5mm; opacity: .8; }
+
+.jornal.folha { width: 154mm; height: 216mm; }
+.jornal.folha .j { inset: 13mm; }
+.jornal.folha h1 { font-size: 32pt; margin-top: 6mm; }
+.jornal.folha > .j > .j-rot:first-child { font-size: 12pt; }
+.jornal.folha .j-sub { font-size: 16pt; line-height: 1.38; margin-top: 6mm; }
+.jornal.folha .j-lista { grid-template-columns: 1fr; gap: 6mm; margin-top: 10mm; }
+.jornal.folha .j-lista li { font-size: 15pt; grid-template-columns: 9mm 1fr; }
+.jornal.folha .j-cta { font-size: 17pt; }
+.jornal.folha .ct { font-size: 11pt; gap: 2.6mm; margin-top: 5mm; }
+.jornal.folha .j-qr { width: 34mm; } .jornal.folha .j-qr .qr { width: 34mm; height: 34mm; }
+.jornal.folha .j-aviso { font-size: 7.5pt; margin-top: 6mm; }
+body.render .jornal.folha .corte, body.render .corte { display: none; }
+.b1200 { background: var(--fundo); color: var(--tinta); font-family: var(--fb); display: flex; align-items: center; gap: 26px; padding: 0 22px 0 24px; }
+.b1200 .bt { flex: 1; font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none);
+  font-size: 27px; line-height: 1.05; letter-spacing: var(--ft-esp, -0.01em); }
+.b1200 .bt em { font-style: var(--em-estilo, normal); color: var(--acento-texto); }
+.b1200 .bt small { display: block; font: 500 13px var(--fb); text-transform: none; letter-spacing: 0; opacity: .85; margin-top: 5px; font-stretch: 100%; }
+.cta { background: var(--acento); color: var(--sobre-acento); font: 700 15px var(--fb); padding: 13px 20px; border-radius: var(--raio, 999px); white-space: nowrap; }
+.b1200 .av { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center; font-size: 8.5px; opacity: .75; }
+.b1200 .assin { font-size: 11px; }
+.b300 .assin { font-size: 9px; }
+.b300 { background: var(--fundo); color: var(--tinta); font-family: var(--fb); padding: 18px 18px 16px; display: flex; flex-direction: column; }
+.b300 .bt { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none);
+  font-size: 27px; line-height: 1.02; letter-spacing: var(--ft-esp, -0.01em); margin-top: 14px; }
+.b300 .bt em { font-style: var(--em-estilo, normal); color: var(--acento-texto); }
+.b300 .bs { font-size: 12.5px; line-height: 1.35; margin-top: 7px; opacity: .88; }
+.b300 .cta { align-self: flex-start; margin-top: auto; flex-shrink: 0; font-size: 14px; padding: 10px 16px; }
+.b300 .av { font-size: 7.2px; line-height: 1.25; opacity: .78; margin-top: 7px; }
+
+/* Folder novo (.fd): página cheia, 3D da frente, chamada para o WhatsApp */
+.fd .fd-pg { position: absolute; inset: 13mm 13mm 12mm; display: flex; flex-direction: column; }
+.fd .j-rot { font-size: 9.5pt; }
+.fd-topo { display: flex; justify-content: space-between; align-items: center; gap: 4mm; }
+.fd-marca { zoom: .62; }
+.fd-hero { flex: 1; min-height: 0; margin: 3mm -13mm; display: flex; align-items: center; justify-content: center; }
+.fd-hero img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.fd-h1, .fd-h2, .fd-cta-t { font-family: var(--ft); font-weight: var(--ft-peso); font-stretch: var(--ft-larg, 100%); text-transform: var(--ft-caixa, none); letter-spacing: var(--ft-esp, -0.02em); }
+.fd-h1 em, .fd-h2 em, .fd-cta-t em { font-style: var(--em-estilo, normal); color: var(--acento-texto); }
+.jornal.fd h1.fd-h1 { font-size: 29pt; line-height: 1.12; padding-top: 1.5mm; margin-top: 0; }
+.fd-h2 { font-size: 23pt; line-height: 1.03; margin-top: 3mm; }
+.fd-sub { font-size: 12.5pt; line-height: 1.35; margin-top: 4mm; opacity: .9; }
+.fd-acao { display: flex; align-items: center; gap: 4mm; margin-top: 6mm; }
+.fd-btn { display: inline-flex; align-items: center; gap: 2mm; background: var(--acento); color: var(--sobre-acento); font: 700 13pt var(--fb); padding: 3mm 5mm; border-radius: var(--raio, 999px); white-space: nowrap; align-self: flex-start; }
+.fd-btn .ico { width: 1.1em; height: 1.1em; }
+.fd-mini { font: 500 9pt var(--fm); opacity: .85; line-height: 1.3; }
+.fd-cards { flex: 1; min-height: 0; display: grid; grid-auto-rows: 1fr; gap: 3mm; margin-top: 7mm; }
+.fd-cards.duas { grid-template-columns: 1fr 1fr; }
+.fd-card { display: flex; gap: 3.5mm; align-items: center; padding: 3.5mm 4.5mm; border-radius: 3mm;
+  background: color-mix(in srgb, var(--tinta) 7%, transparent); border: .3mm solid color-mix(in srgb, var(--tinta) 16%, transparent); }
+.fd-n { font: 600 10pt var(--fm); color: var(--acento-texto); align-self: flex-start; padding-top: .8mm; }
+.fd-ct { font: 700 15pt var(--fb); line-height: 1.12; }
+.fd-cd { font-size: 11.5pt; line-height: 1.3; opacity: .82; margin-top: 1.2mm; }
+.fd-cards.duas .fd-ct { font-size: 12.5pt; }
+.fd-cards.duas .fd-card { padding: 3mm 3.5mm; gap: 2.5mm; }
+.fd-faixa { margin-top: 5mm; background: var(--acento); color: var(--sobre-acento); font: 700 13pt var(--fb); padding: 4.5mm 5mm; border-radius: 3mm; line-height: 1.25; }
+.fd-passos { list-style: none; display: grid; gap: 3.6mm; margin-top: 6mm; }
+.fd-passos li { display: flex; gap: 4mm; align-items: center; }
+.fd-passos li > b { flex-shrink: 0; width: 9mm; height: 9mm; border-radius: 50%; background: var(--acento); color: var(--sobre-acento);
+  display: flex; align-items: center; justify-content: center; font: 700 12pt var(--fb); }
+.fd-hero2 { margin-top: 2mm; margin-bottom: 3mm; }
+.fd-chips { display: flex; flex-wrap: wrap; gap: 2mm; }
+.fd-chips span { border: .35mm solid var(--acento-texto); border-radius: 99mm; padding: 1.5mm 3.6mm; font: 600 9.5pt var(--fb); }
+.fd-cta { margin: -16mm -16mm 0; padding: 18mm 16mm 11mm; background: var(--acento); color: var(--sobre-acento); }
+.fd-cta .j-rot { color: inherit; opacity: .85; }
+.fd-cta-t { font-size: 29pt; line-height: 1.03; margin-top: 3mm; }
+.fd-cta-t em { color: inherit; }
+.fd-cta-s { font-size: 12.5pt; margin-top: 3mm; line-height: 1.35; opacity: .92; }
+.fd-cta .fd-btn { background: var(--sobre-acento); color: var(--acento); margin-top: 6mm; }
+.fd-base { display: flex; gap: 6mm; align-items: center; }
+.fd-qr { width: 40mm; flex-shrink: 0; text-align: center; font: 500 8.5pt var(--fm); }
+.fd-qr .qr { width: 40mm; height: 40mm; margin-bottom: 1.5mm; }
+.fd-ctt { min-width: 0; }
+.jornal.fd .fd-ctt .ct { font-size: 9.3pt; gap: 3mm; }
+.fd-rodape { padding-top: 5mm; border-top: .5mm solid var(--linha); }
+.fd-aviso { font-size: 7.5pt; line-height: 1.35; margin-top: 4mm; opacity: .85; }
+.fd-assina { position: absolute; right: 0; bottom: -9mm; font-size: 8pt; opacity: .9; }
+
+body { font-family: 'Inter', sans-serif; }
+.noite { background: #000f2e; color: #fff; }
+.az { background: linear-gradient(140deg, #003399, #001f5c 55%, #000f2e); color: #fff; }
+.branco { background: #fff; color: #0f172a; }
+.ouro { background: #fecb00; color: #001f5c; }
+.nome { font-weight: 900; letter-spacing: -.03em; line-height: .95; }
+.nome span { color: #fecb00; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.rot { font: 600 5.2pt 'JetBrains Mono', monospace; letter-spacing: .08em; color: #fecb00; }
+.branco .rot { color: #003399; }
+.tag { font-size: 6.4pt; line-height: 1.35; font-weight: 500; }
+.ct { font-size: 6.5pt; font-weight: 500; }
+.ct .ico { color: #fecb00; }
+.branco .ct .ico { color: #003399; }
+.kv { font: 500 5.9pt 'JetBrains Mono', monospace; display: grid; gap: .8mm; }
+.kv dt { color: #7dd3fc; opacity: 1; min-width: 13mm; }
+.kv dd { color: #fde68a; }
+.mini { display: flex; align-items: center; gap: 1.6mm; font-weight: 900; font-size: 8pt; letter-spacing: -.02em; }
+.mini img { height: 6.5mm; }
+.qrbox { background: #fff; padding: 1mm; border-radius: 1.2mm; }
+.codigo { font: 500 6.4pt/1.65 'JetBrains Mono', monospace; counter-reset: l; }
+.codigo p { counter-increment: l; white-space: nowrap; }
+.codigo p::before { content: counter(l); display: inline-block; width: 4mm; color: #475569; }
+.codigo .f { color: #7dd3fc; } .codigo .t { color: #fde68a; } .codigo .k { color: #fecb00; }
+.n3 { display: grid; gap: 1.6mm; }
+.n3 p { display: grid; grid-template-columns: 6mm 1fr; font-size: 7pt; font-weight: 700; line-height: 1.2; }
+.n3 b { font: 600 6pt 'JetBrains Mono', monospace; color: #fecb00; }
+.pilulas { display: flex; flex-wrap: wrap; gap: 1mm; }
+.pilulas span { border: .25mm solid #003399; color: #001f5c; border-radius: 9mm; padding: .45mm 1.7mm; font-size: 5.3pt; font-weight: 700; }
+.jornal, .folha, .b1200, .b300 { --fundo: linear-gradient(160deg, #001f5c, #000f2e); --tinta: #fff; --acento: #fecb00; --acento-texto: #fecb00;
+  --sobre-acento: #001f5c; --linha: rgba(254,203,0,.5); --ft: 'Inter'; --ft-peso: 900; --fb: 'Inter'; --fm: 'JetBrains Mono'; --raio: 8px; }</style>
+</head>
+<body>
+<section class="peca face noite" data-grupo="cartao-v1" data-id="cartao-v1-frente" data-rotulo="Cartão v1 · frente · Cerrado Tech"><svg class="fill" viewBox="0 0 100 56" preserveAspectRatio="none" style="opacity:0.55" aria-hidden="true"><path d="M0 40 H18 L24 34 H44" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M0 46 H30 L36 52 H70 L76 46 H100" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M100 10 H80 L74 16 H58" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M100 22 H86 L80 28 H66" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M52 0 V8 L58 14" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M12 56 V50 L18 44 H26" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M88 56 V48 L94 42 H100" fill="none" stroke="#fecb00" stroke-width=".35"/><path d="M0 6 H10 L16 12 V20" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="44" cy="34" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="58" cy="16" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="66" cy="28" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="58" cy="14" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="26" cy="44" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="16" cy="20" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/><circle cx="70" cy="52" r="1" fill="none" stroke="#fecb00" stroke-width=".35"/></svg><div class="s "><div class="cresce lin" style="justify-content:center;gap:3mm">
+      <img src="img/folinha.png" style="height:15mm" alt=""><div><p class="nome" style="font-size:16pt">Cerrado <span>Tech</span></p>
+      <p class="rot" style="margin-top:1.4mm">// fábrica de software</p></div></div>
+      <p class="tag" style="text-align:center;opacity:.8">Software feito em torno do seu negócio</p></div><i class="corte"></i></section>
+<section class="peca face branco" data-grupo="cartao-v1" data-id="cartao-v1-verso" data-rotulo="Cartão v1 · verso · Cerrado Tech"><div class="s "><img src="img/logo-tech.png" style="height:9mm;align-self:flex-start" alt="Cerrado Tech">
+      <div class="cresce" style="display:flex;flex-direction:column;justify-content:center;gap:1.4mm">
+      <p class="rot">// o que a gente constrói</p>
+      <div class="pilulas"><span>ERPs e CRMs</span><span>IA offline</span><span>E-commerce e vendas</span><span>Compliance e auditoria</span><span>Dashboards e BI</span><span>Cyber security</span></div></div>
+      <div class="lin entre fim"><ul class="ct"><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 8.6c.2 2.6 3.6 6 6.3 6.3l1.1-1.4-1.9-1-.9.8c-1-.4-2.4-1.8-2.8-2.8l.8-.9-1-1.9z" fill="currentColor" stroke="none"/></svg><span>(67) 99351-5206</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><span>comercial@cerradofinancas.com.br</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></svg><span>cerradofinancas.com.br/fabrica</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@cerradofinancas</span></li></ul><div style="width:14mm"><svg class="qr" viewBox="0 0 31 31" shape-rendering="crispEdges" aria-label="QR Code"><rect width="31" height="31" fill="#fff"/><path d="M1 1h1v1h-1zM2 1h1v1h-1zM3 1h1v1h-1zM4 1h1v1h-1zM5 1h1v1h-1zM6 1h1v1h-1zM7 1h1v1h-1zM9 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM17 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM23 1h1v1h-1zM24 1h1v1h-1zM25 1h1v1h-1zM26 1h1v1h-1zM27 1h1v1h-1zM28 1h1v1h-1zM29 1h1v1h-1zM1 2h1v1h-1zM7 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM21 2h1v1h-1zM23 2h1v1h-1zM29 2h1v1h-1zM1 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM5 3h1v1h-1zM7 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM19 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM27 3h1v1h-1zM29 3h1v1h-1zM1 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM7 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM27 4h1v1h-1zM29 4h1v1h-1zM1 5h1v1h-1zM3 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM7 5h1v1h-1zM10 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM20 5h1v1h-1zM23 5h1v1h-1zM25 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM1 6h1v1h-1zM7 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM23 6h1v1h-1zM29 6h1v1h-1zM1 7h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1zM4 7h1v1h-1zM5 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM25 7h1v1h-1zM26 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM29 7h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM6 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM29 10h1v1h-1zM2 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM21 11h1v1h-1zM24 11h1v1h-1zM25 11h1v1h-1zM27 11h1v1h-1zM28 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM29 12h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM1 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM1 15h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM17 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM8 16h1v1h-1zM12 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM28 16h1v1h-1zM2 17h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM1 19h1v1h-1zM3 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM22 19h1v1h-1zM24 19h1v1h-1zM27 19h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM12 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM23 20h1v1h-1zM27 20h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM7 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM1 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM1 24h1v1h-1zM7 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM21 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM1 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM5 25h1v1h-1zM7 25h1v1h-1zM10 25h1v1h-1zM13 25h1v1h-1zM18 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM1 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM7 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1zM29 26h1v1h-1zM1 27h1v1h-1zM3 27h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM7 27h1v1h-1zM9 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM15 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM27 27h1v1h-1zM29 27h1v1h-1zM1 28h1v1h-1zM7 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM26 28h1v1h-1zM28 28h1v1h-1zM1 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM5 29h1v1h-1zM6 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM14 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM23 29h1v1h-1zM26 29h1v1h-1zM28 29h1v1h-1z" fill="#001f5c"/></svg></div></div></div><i class="corte"></i></section>
+<section class="peca jornal" data-grupo="jornal" data-id="jornal" data-rotulo="Jornal · 25,5 x 36 cm"><div class="j">
+  <div class="j-topo"><div class="mini" style="font-size:20pt;gap:4mm"><img src="img/folinha.png" style="height:16mm" alt=""><span>Cerrado <span style="color:#fecb00">Tech</span></span></div><span class="j-rot">// fábrica de software</span></div>
+  <h1>Software feito em torno do <em>seu negócio.</em></h1>
+  <p class="j-sub">ERPs, CRMs, IA (inclusive offline), e-commerce, compliance e dashboards, para empresas e para a gestão pública.</p>
+  <ul class="j-lista"><li><b>01</b><span>100% customizado: cada função nasce de uma necessidade real</span></li><li><b>02</b><span>O código é seu, sem amarras de fornecedor</span></li><li><b>03</b><span>Integra com SAP®, TOTVS, Power BI, bancos e notas fiscais</span></li></ul>
+  <div class="j-motivo"><div class="codigo" style="font-size:17pt;line-height:1.7;background:rgba(0,0,0,.25);padding:8mm 12mm;border-radius:4mm;border:.3mm solid rgba(254,203,0,.35)"><p><span class="f">fabrica</span>.de(<span class="t">"software"</span>)</p><p>&nbsp;&nbsp;.<span class="f">sobMedida</span>()</p><p>&nbsp;&nbsp;.<span class="f">integraCom</span>([<span class="t">"SAP®"</span>, <span class="t">"TOTVS"</span>, <span class="t">"Power BI"</span>])</p><p>&nbsp;&nbsp;.<span class="f">entrega</span>({ <span class="k">codigo</span>: <span class="t">"é seu"</span> })</p></div></div>
+  <div class="j-base">
+    <div><p class="j-cta">Conte o seu processo pelo WhatsApp</p><ul class="ct"><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 8.6c.2 2.6 3.6 6 6.3 6.3l1.1-1.4-1.9-1-.9.8c-1-.4-2.4-1.8-2.8-2.8l.8-.9-1-1.9z" fill="currentColor" stroke="none"/></svg><span>(67) 99351-5206</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><span>comercial@cerradofinancas.com.br</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></svg><span>cerradofinancas.com.br/fabrica</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@cerradofinancas</span></li></ul></div>
+    <div class="j-qr"><svg class="qr" viewBox="0 0 31 31" shape-rendering="crispEdges" aria-label="QR Code"><rect width="31" height="31" fill="#ffffff"/><path d="M1 1h1v1h-1zM2 1h1v1h-1zM3 1h1v1h-1zM4 1h1v1h-1zM5 1h1v1h-1zM6 1h1v1h-1zM7 1h1v1h-1zM9 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM17 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM23 1h1v1h-1zM24 1h1v1h-1zM25 1h1v1h-1zM26 1h1v1h-1zM27 1h1v1h-1zM28 1h1v1h-1zM29 1h1v1h-1zM1 2h1v1h-1zM7 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM21 2h1v1h-1zM23 2h1v1h-1zM29 2h1v1h-1zM1 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM5 3h1v1h-1zM7 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM19 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM27 3h1v1h-1zM29 3h1v1h-1zM1 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM7 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM27 4h1v1h-1zM29 4h1v1h-1zM1 5h1v1h-1zM3 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM7 5h1v1h-1zM10 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM20 5h1v1h-1zM23 5h1v1h-1zM25 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM1 6h1v1h-1zM7 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM23 6h1v1h-1zM29 6h1v1h-1zM1 7h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1zM4 7h1v1h-1zM5 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM25 7h1v1h-1zM26 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM29 7h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM6 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM29 10h1v1h-1zM2 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM21 11h1v1h-1zM24 11h1v1h-1zM25 11h1v1h-1zM27 11h1v1h-1zM28 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM29 12h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM1 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM1 15h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM17 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM8 16h1v1h-1zM12 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM28 16h1v1h-1zM2 17h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM1 19h1v1h-1zM3 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM22 19h1v1h-1zM24 19h1v1h-1zM27 19h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM12 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM23 20h1v1h-1zM27 20h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM7 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM1 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM1 24h1v1h-1zM7 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM21 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM1 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM5 25h1v1h-1zM7 25h1v1h-1zM10 25h1v1h-1zM13 25h1v1h-1zM18 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM1 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM7 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1zM29 26h1v1h-1zM1 27h1v1h-1zM3 27h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM7 27h1v1h-1zM9 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM15 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM27 27h1v1h-1zM29 27h1v1h-1zM1 28h1v1h-1zM7 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM26 28h1v1h-1zM28 28h1v1h-1zM1 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM5 29h1v1h-1zM6 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM14 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM23 29h1v1h-1zM26 29h1v1h-1zM28 29h1v1h-1z" fill="#001f5c"/></svg>aponte a câmera</div>
+  </div>
+</div></section>
+<section class="peca b1200" data-grupo="banner-1200x90" data-id="banner-1200x90" data-rotulo="Site · 1200 x 90"><div class="mini" style="font-size:17px;gap:9px"><img src="img/folinha.png" style="height:52px" alt=""><span>Cerrado <span style="color:#fecb00">Tech</span></span></div><p class="bt">Software feito em torno do <em>seu negócio.</em><small>ERPs, CRMs, IA e dashboards sob medida. O código é seu.</small></p><span class="cta">Conte o seu processo</span></section>
+<section class="peca b300" data-grupo="banner-300x250" data-id="banner-300x250" data-rotulo="Site · 300 x 250"><div class="mini" style="font-size:15px;gap:8px"><img src="img/folinha.png" style="height:34px" alt=""><span>Cerrado <span style="color:#fecb00">Tech</span></span></div><p class="bt">Software feito em torno do <em>seu negócio.</em></p><p class="bs">ERPs, CRMs, IA e dashboards sob medida. O código é seu.</p><span class="cta">Conte o seu processo</span></section>
+<section class="peca jornal folha fd " data-grupo="folder" data-id="folder-p1" data-rotulo="Folder · página 1 · capa"><div class="fd-pg"><div class="fd-topo"><div class="fd-marca"><div class="mini" style="font-size:20pt;gap:4mm"><img src="img/folinha.png" style="height:16mm" alt=""><span>Cerrado <span style="color:#fecb00">Tech</span></span></div></div><span class="j-rot">// fábrica de software</span></div>
+  <div class="fd-hero"><img src="img/3d-tech-1.png" alt=""></div>
+  <h1 class="fd-h1">Software feito em torno do <em>seu negócio.</em></h1><p class="fd-sub">A fábrica de software da Cerrado Finanças &amp; Tech.</p>
+  <div class="fd-acao"><span class="fd-btn"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 8.6c.2 2.6 3.6 6 6.3 6.3l1.1-1.4-1.9-1-.9.8c-1-.4-2.4-1.8-2.8-2.8l.8-.9-1-1.9z" fill="currentColor" stroke="none"/></svg> (67) 99351-5206</span><span class="fd-mini">Conte o seu processo pelo WhatsApp</span></div></div><i class="corte"></i></section>
+<section class="peca jornal folha fd " data-grupo="folder" data-id="folder-p2" data-rotulo="Folder · página 2 · o que fazemos"><div class="fd-pg"><p class="j-rot">O que construímos</p><h2 class="fd-h2">Do ERP à <em>Inteligência Artificial.</em></h2>
+  <div class="fd-cards "><div class="fd-card"><b class="fd-n">01</b><div><p class="fd-ct">ERPs</p><p class="fd-cd">financeiro, estoque e fiscal</p></div></div><div class="fd-card"><b class="fd-n">02</b><div><p class="fd-ct">CRMs</p><p class="fd-cd">funil e follow-ups</p></div></div><div class="fd-card"><b class="fd-n">03</b><div><p class="fd-ct">IA offline</p><p class="fd-cd">os dados ficam em casa</p></div></div><div class="fd-card"><b class="fd-n">04</b><div><p class="fd-ct">E-commerce e PDV</p><p class="fd-cd">integrados ao ERP</p></div></div><div class="fd-card"><b class="fd-n">05</b><div><p class="fd-ct">Dashboards</p><p class="fd-cd">DRE e KPIs no celular</p></div></div></div>
+  <div class="fd-faixa">Integra com SAP®, TOTVS, Power BI, bancos e notas fiscais. Fim da digitação dupla.</div></div><i class="corte"></i></section>
+<section class="peca jornal folha fd " data-grupo="folder" data-id="folder-p3" data-rotulo="Folder · página 3 · como funciona"><div class="fd-pg"><p class="j-rot">Como trabalhamos</p><h2 class="fd-h2">Sob medida, <em>do jeito certo.</em></h2>
+  <ol class="fd-passos"><li><b>1</b><div><p class="fd-ct">Descoberta &amp; Imersão</p></div></li><li><b>2</b><div><p class="fd-ct">Arquitetura &amp; Prototipação</p></div></li><li><b>3</b><div><p class="fd-ct">Desenvolvimento Ágil</p></div></li><li><b>4</b><div><p class="fd-ct">Entrega &amp; Evolução</p></div></li></ol>
+  <div class="fd-hero fd-hero2"><img src="img/3d-tech-2.png" alt=""></div><div class="fd-chips"><span>100% customizado</span><span>B2B e B2G</span><span>O código é seu</span></div></div><i class="corte"></i></section>
+<section class="peca jornal folha fd " data-grupo="folder" data-id="folder-p4" data-rotulo="Folder · página 4 · contracapa"><div class="fd-pg"><div class="fd-cta"><p class="j-rot">Qual software o seu negócio precisa?</p><p class="fd-cta-t">Conte o seu processo e desenhamos <em>a solução com você.</em></p><p class="fd-cta-s">Sem amarras de fornecedor: o código é seu.</p><span class="fd-btn"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 8.6c.2 2.6 3.6 6 6.3 6.3l1.1-1.4-1.9-1-.9.8c-1-.4-2.4-1.8-2.8-2.8l.8-.9-1-1.9z" fill="currentColor" stroke="none"/></svg> (67) 99351-5206</span></div>
+  <div class="cresce"></div><div class="fd-base"><div class="fd-qr"><svg class="qr" viewBox="0 0 31 31" shape-rendering="crispEdges" aria-label="QR Code"><rect width="31" height="31" fill="#ffffff"/><path d="M1 1h1v1h-1zM2 1h1v1h-1zM3 1h1v1h-1zM4 1h1v1h-1zM5 1h1v1h-1zM6 1h1v1h-1zM7 1h1v1h-1zM9 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM17 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM23 1h1v1h-1zM24 1h1v1h-1zM25 1h1v1h-1zM26 1h1v1h-1zM27 1h1v1h-1zM28 1h1v1h-1zM29 1h1v1h-1zM1 2h1v1h-1zM7 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM21 2h1v1h-1zM23 2h1v1h-1zM29 2h1v1h-1zM1 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM5 3h1v1h-1zM7 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM19 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM27 3h1v1h-1zM29 3h1v1h-1zM1 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM7 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM27 4h1v1h-1zM29 4h1v1h-1zM1 5h1v1h-1zM3 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM7 5h1v1h-1zM10 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM20 5h1v1h-1zM23 5h1v1h-1zM25 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM29 5h1v1h-1zM1 6h1v1h-1zM7 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM23 6h1v1h-1zM29 6h1v1h-1zM1 7h1v1h-1zM2 7h1v1h-1zM3 7h1v1h-1zM4 7h1v1h-1zM5 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM25 7h1v1h-1zM26 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM29 7h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM6 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM29 10h1v1h-1zM2 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM21 11h1v1h-1zM24 11h1v1h-1zM25 11h1v1h-1zM27 11h1v1h-1zM28 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM29 12h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM1 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM1 15h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM17 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM8 16h1v1h-1zM12 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM28 16h1v1h-1zM2 17h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM1 19h1v1h-1zM3 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM22 19h1v1h-1zM24 19h1v1h-1zM27 19h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM12 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM23 20h1v1h-1zM27 20h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM7 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM1 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM1 24h1v1h-1zM7 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM21 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM1 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM5 25h1v1h-1zM7 25h1v1h-1zM10 25h1v1h-1zM13 25h1v1h-1zM18 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM1 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM7 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1zM29 26h1v1h-1zM1 27h1v1h-1zM3 27h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM7 27h1v1h-1zM9 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM15 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM27 27h1v1h-1zM29 27h1v1h-1zM1 28h1v1h-1zM7 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM26 28h1v1h-1zM28 28h1v1h-1zM1 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM5 29h1v1h-1zM6 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM14 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM23 29h1v1h-1zM26 29h1v1h-1zM28 29h1v1h-1z" fill="#001f5c"/></svg><span>aponte a câmera</span></div>
+  <div class="fd-ctt"><ul class="ct"><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 8.6c.2 2.6 3.6 6 6.3 6.3l1.1-1.4-1.9-1-.9.8c-1-.4-2.4-1.8-2.8-2.8l.8-.9-1-1.9z" fill="currentColor" stroke="none"/></svg><span>(67) 99351-5206</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><span>comercial@cerradofinancas.com.br</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></svg><span>cerradofinancas.com.br/fabrica</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>@cerradofinancas</span></li></ul></div></div>
+  <div class="cresce"></div><div class="fd-chips"><span>100% customizado</span><span>B2B e B2G</span><span>O código é seu</span></div><div class="fd-rodape" style="margin-top:6mm"><div class="fd-marca"><div class="mini" style="font-size:20pt;gap:4mm"><img src="img/folinha.png" style="height:16mm" alt=""><span>Cerrado <span style="color:#fecb00">Tech</span></span></div></div></div></div><i class="corte"></i></section>
+
+<script>
+(function () {
+  const q = new URLSearchParams(location.search);
+  const tam = q.get('tam');
+  if (tam) { const [w, h] = tam.split('x'); document.documentElement.style.setProperty('--w', w + 'mm'); document.documentElement.style.setProperty('--h', h + 'mm'); }
+  const p = q.get('p');
+  if (p) {
+    document.body.classList.add('render');
+    document.querySelectorAll('.peca').forEach(e => { if (e.dataset.grupo === p || e.dataset.id === p) e.classList.add('on'); });
+  }
+})();
+</script>
+</body>
+</html>

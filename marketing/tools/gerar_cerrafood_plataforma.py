@@ -1,13 +1,13 @@
 """Gera a peça global do CerraFood: "a plataforma inteira" em 8 slides, com ilustrações e coreografia própria.
 
-Saída: posts/2026-11-cerrafood-plataforma/ (carrossel.html e story.html) e entregas/2026-11-cerrafood-plataforma/
+Saída: conteudo/2026-11-cerrafood-plataforma/ (carrossel.html e story.html) e entregas/2026-11-cerrafood-plataforma/
 (legendas e info.json). O movimento está em filmes/coreografias/2026-11-cerrafood-plataforma.mjs.
 Mesmas regras da série (brand/cerrafood/README.md): só o que o sistema faz, nenhum cliente, tudo ilustrativo.
 
 Uso:
     python tools/gerar_cerrafood_plataforma.py
-    python tools/exportar.py posts/2026-11-cerrafood-plataforma/carrossel.html posts/2026-11-cerrafood-plataforma/story.html
-    cd filmes && node ferramentas/animar-carrossel.mjs ../posts/2026-11-cerrafood-plataforma/carrossel.html --render
+    python tools/exportar.py conteudo/2026-11-cerrafood-plataforma/carrossel.html conteudo/2026-11-cerrafood-plataforma/story.html
+    cd filmes && node ferramentas/animar-carrossel.mjs ../conteudo/2026-11-cerrafood-plataforma/carrossel.html --render
 """
 import json
 import math
@@ -346,7 +346,7 @@ Saiba mais: https://www.{LINK}
 
 
 def main():
-    post, ent = RAIZ / "posts" / PASTA, RAIZ / "entregas" / PASTA
+    post, ent = RAIZ / "conteudo" / PASTA, RAIZ / "entregas" / PASTA
     post.mkdir(parents=True, exist_ok=True)
     ent.mkdir(parents=True, exist_ok=True)
     (post / "carrossel.html").write_text(CAB.format(entrega=PASTA, formato="1080x1350", titulo="Carrossel: CerraFood, a plataforma inteira")

@@ -1,6 +1,6 @@
 """Gera as campanhas dos cursos presenciais da Cerraclass a partir de dados/cerraclass-cursos.json.
 
-Para cada curso: posts/2026-10-curso-<slug>/{carrossel,story}.html e, em entregas/,
+Para cada curso: conteudo/2026-10-curso-<slug>/{carrossel,story}.html e, em entregas/,
 as legendas (Instagram e LinkedIn) e o info.json. Depois rode tools/exportar.py nas peças
 e tools/publicar.py. Para atualizar os dados: node tools/importar-cerraclass.mjs
 
@@ -225,7 +225,7 @@ def main():
     for c in DADOS["cursos"]:
         slug, cor, emoji, tags = VISUAL[c["id"]]
         entrega = PREFIXO + slug
-        pasta_post = RAIZ / "posts" / entrega
+        pasta_post = RAIZ / "conteudo" / entrega
         pasta_entrega = RAIZ / "entregas" / entrega
         pasta_post.mkdir(parents=True, exist_ok=True)
         pasta_entrega.mkdir(parents=True, exist_ok=True)

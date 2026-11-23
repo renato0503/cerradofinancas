@@ -547,7 +547,7 @@ def sabados(n, inicio=date(2026, 11, 7)):
 
 
 def gravar(entrega, carrossel_html, story_html, ig, li, info):
-    post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+    post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
     post.mkdir(parents=True, exist_ok=True)
     ent.mkdir(parents=True, exist_ok=True)
     (post / "carrossel.html").write_text(carrossel_html, encoding="utf-8")
@@ -580,7 +580,7 @@ def main():
     datas = datas_sugeridas(len(SERIE))
     for n, (c, d) in enumerate(zip(SERIE, datas), start=1):
         entrega = PREFIXO + c["slug"]
-        post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+        post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(carrossel(c, entrega), encoding="utf-8")

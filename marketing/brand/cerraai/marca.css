@@ -126,3 +126,45 @@ html.exportando body { padding: 0; gap: 0; }
 .contato { font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 700; }
 .contato.principal { align-self: flex-start; background: var(--grafite); color: var(--cobre); padding: 22px 30px; border-radius: 6px; }
 .slide:not(.cobre) .contato.principal { background: var(--cobre); color: var(--grafite); }
+
+/* ---------- Série de conteúdo (nov/2026) ---------- */
+/* A tela do Cerra.AI: barra do workspace, a pergunta, a resposta e a etiqueta de citação */
+.tela { border: 2px solid var(--linha); border-radius: 14px; background: var(--grafite-2); overflow: hidden; }
+.tela .barra { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 18px 26px; border-bottom: 2px solid var(--linha); font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; color: var(--tinta-suave); }
+.tela .barra b { color: var(--cobre); font-weight: 600; }
+.tela .barra .local { display: inline-flex; align-items: center; gap: 10px; }
+.tela .barra .local::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: #5bc98a; }
+.tela .corpo { padding: 30px 30px 32px; display: flex; flex-direction: column; gap: 24px; }
+.tela .eu { align-self: flex-end; max-width: 82%; background: var(--linha); border-radius: 18px 18px 4px 18px; padding: 18px 24px; font-size: 31px; line-height: 1.3; }
+.tela .ia { font-size: 32px; line-height: 1.38; font-weight: 500; border-left: 5px solid var(--cobre); padding-left: 24px; }
+.tela .ia b { color: var(--cobre); font-weight: 700; }
+.tela .cita { font-size: 23px; padding: 10px 16px; gap: 10px; }
+.tela .cita::before { width: 10px; height: 10px; }
+
+/* Selo de exemplo ilustrativo / função disponível */
+.selo { align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--tinta-suave); border: 2px dashed var(--tinta-suave); padding: 10px 18px; border-radius: 6px; }
+.selo.ok { color: #5bc98a; border: 2px solid #5bc98a; }
+.cobre .selo { color: var(--grafite); border-color: var(--grafite); }
+
+/* Nuvem x Cerra.AI, linha a linha */
+.versus { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--linha); }
+.versus > div { padding: 22px 0; border-bottom: 2px solid var(--linha); font-size: 32px; line-height: 1.25; }
+.versus > div:nth-child(odd) { color: var(--tinta-suave); padding-right: 28px; }
+.versus > div:nth-child(even) { color: var(--tinta); font-weight: 700; padding-left: 28px; border-left: 2px solid var(--cobre); }
+.versus .cab { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.versus .cab:nth-child(2) { color: var(--cobre); }
+
+/* Passos do tutorial */
+.passos { display: flex; flex-direction: column; }
+.passos .p { display: grid; grid-template-columns: 110px 1fr; gap: 22px; padding: 30px 0; border-top: 2px solid var(--linha); }
+.passos .p:last-child { border-bottom: 2px solid var(--linha); }
+.passos .n { font-weight: 900; font-stretch: 125%; font-size: 64px; line-height: .9; color: var(--cobre); }
+.passos b { display: block; font-size: 40px; font-weight: 800; line-height: 1.15; }
+.passos span { display: block; font-size: 30px; line-height: 1.3; color: var(--tinta-suave); margin-top: 8px; }
+.cobre .passos .p { border-color: rgba(13, 15, 14, .25); }
+.cobre .passos .n { color: var(--grafite); }
+.cobre .passos span { color: #3a210c; }
+
+/* Carimbo do mito */
+.carimbo { align-self: flex-start; font-weight: 900; font-stretch: 125%; font-size: 56px; letter-spacing: .06em; text-transform: uppercase; color: var(--cobre); border: 6px solid var(--cobre); padding: 6px 26px; transform: rotate(-5deg); margin-bottom: 44px; }
+.carimbo.riscado { color: var(--tinta-suave); border-color: var(--tinta-suave); text-decoration: line-through; text-decoration-thickness: 6px; }

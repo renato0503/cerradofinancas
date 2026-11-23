@@ -13,38 +13,46 @@ Cada campanha abre numa janela com orientações, peças, pacote .zip e legendas
 alguém: `#c=<pasta>`.
 
 Só a página (`index.html`), `entregas/`, `kits/` e `formatos/` são publicadas. As áreas de trabalho
-(`posts/`, `videos/`, `tools/`, `brand/`, `animacoes/`, `.claude/`) ficam fora do site pelo
+(`conteudo/`, `filmes/`, `palestras/`, `propostas/`, `brand/`, `tools/`, `dados/`, `.claude/`) ficam fora do site pelo
 `_config.yml` da raiz. **Ao criar uma pasta nova aqui, acrescente-a no `exclude` do `_config.yml`.**
 A página tem `noindex` e não aparece no menu nem no sitemap.
 
 ## Estrutura
 
+Seis grupos, na ordem em que se procura: **post**, **vídeo**, **palestra**, **proposta**, **marca** e **ferramentas**.
+
 | Pasta | O que vai nela |
 |---|---|
-| `brand/` | `tokens.css` e `carrossel.css` (Cerrado Tech/Finanças), `cerraai/`, `cerraclass/`, `cerrafood/` etc. (identidades próprias, cada uma com README), `fontes/` e `slides.js` |
-| `posts/AAAA-MM-tema/` | Fontes de uma campanha: `carrossel.html`, `story.html` etc. |
-| `entregas/AAAA-MM-tema/` | **Publicado.** Arquivos finais, `legenda-<rede>.txt`, `info.json` e o `.zip` |
-| `videos/` | Projetos Remotion (Reels 1080×1920) de Cerrado Tech e Cerrado Finanças |
-| `filmes/` | Vídeos HyperFrames (HTML + GSAP) de Cerra.AI e CerraClass, em 16:9 e 9:16. Ver `filmes/README.md` |
-| `animacoes/` | Logos e ícones animados (Lottie, GIF, MP4) |
+| `index.html` | **Publicado.** A Central de Marketing (Agenda, Por frente, Mídia kits, Formatos, Como usar) |
+| `entregas/AAAA-MM-tema/` | **Publicado.** Peça final de cada campanha: PNG, MP4, `legenda-<rede>.txt`, `info.json` e o `.zip`; aqui também ficam `conteudos.json` e `agenda.json` |
 | `kits/` | **Publicado.** Mídia kit de cada frente (logos, fontes, guia.pdf, exemplos e .zip), gerado por `tools/gerar_kits.py` |
-| `tools/` | `exportar.py` (HTML → PNG em `entregas/`), `publicar.py` (gera .zip e `conteudos.json`, com a frente e a série de cada campanha) e os geradores de série |
-| `.claude/skills/` | Skills usadas pelo Claude dentro desta pasta |
+| `formatos/` | **Publicado.** Cartões, folder, jornal e banners por frente, gerado por `tools/gerar_formatos.py` |
+| `conteudo/AAAA-MM-tema/` | **1 · post.** Fontes de cada campanha: `carrossel.html`, `story.html`, `post.html`, `facebook.html` |
+| `conteudo/2026-11-formatos/` | Fontes HTML das artes de impressão (lidas por `tools/gerar_formatos.py`) |
+| `filmes/` | **2 · vídeo.** Estúdio HyperFrames: `<filme>/` (16:9 e 9:16), `coreografias/`, `frentes-comum/`, `ferramentas/` |
+| `filmes/remotion/` | Projeto Remotion antigo (Reels de outubro, `scripts/gerar-sfx.mjs`); não abrir peça nova nele |
+| `filmes/carrosseis/`, `filmes/out/` | **Gerados** (não versionados): projeto HyperFrames de cada carrossel animado e os renders |
+| `palestras/<palestra>/` | **3 · palestra.** Deck HTML+GSAP offline, PDFs, artes, vídeos, `REGISTRO.md` e `_modelo/` (modelo de slidedeck) |
+| `propostas/` | **4 · proposta.** Propostas comerciais e o briefing de parceiros (uso interno, nunca publicar) |
+| `brand/` | **5 · marca.** `tokens.css` e `carrossel.css` (Cerrado Tech/Finanças), uma pasta por marca (com README), `fontes/`, `slides.js` e `folinha/` (Lottie) |
+| `tools/` | **6 · ferramentas.** `exportar.py` (HTML → PNG), `publicar.py` (.zip + `conteudos.json`), `agendar.py` e os `gerar_*.py` |
+| `dados/` | **6 · dados.** Catálogo da CerraClass, estudos e JSONs de insumo |
+| `.claude/` | Skills e comandos usados dentro desta pasta |
 
 As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img/ls-logo.png` etc.
 
 ## Fluxo de uma campanha
 
-1. Crie as peças em `posts/AAAA-MM-tema/`. Cada HTML declara
+1. Crie as peças em `conteudo/AAAA-MM-tema/`. Cada HTML declara
    `<meta name="entrega" content="AAAA-MM-tema">` e `<meta name="formato" content="1080x1350">`,
    e cada slide é um elemento `class="slide"`. Abra no navegador para revisar (os slides aparecem empilhados).
 2. Verifique e exporte: `python tools/verificar.py ...` (acusa estouro de rodapé, de área segura e sobreposição de
-   ícone/logo sobre texto) e `python tools/exportar.py posts/AAAA-MM-tema/carrossel.html posts/AAAA-MM-tema/story.html`
-   (some `posts/AAAA-MM-tema/facebook.html` nas campanhas do Guia Acadêmico, que têm a arte única de Facebook).
+   ícone/logo sobre texto) e `python tools/exportar.py conteudo/AAAA-MM-tema/carrossel.html conteudo/AAAA-MM-tema/story.html`
+   (some `conteudo/AAAA-MM-tema/facebook.html` nas campanhas do Guia Acadêmico, que têm a arte única de Facebook).
 3. Em `entregas/AAAA-MM-tema/`, crie o `info.json` (`titulo`, `data`, `descricao`, `orientacoes`)
    e as legendas `legenda-instagram.txt`, `legenda-linkedin.txt`, `legenda-facebook.txt` etc. Vídeos e GIFs finais também vão aqui.
 4. **Carrossel animado (padrão de vídeo desde 28/10):**
-   `cd filmes && node ferramentas/animar-carrossel.mjs ../posts/AAAA-MM-tema/carrossel.html --render`
+   `cd filmes && node ferramentas/animar-carrossel.mjs ../conteudo/AAAA-MM-tema/carrossel.html --render`
    grava `entregas/AAAA-MM-tema/carrossel-animado.mp4` (mesma arte, slides deslizando, com trilha).
    Comerciais HyperFrames (`filmes/`) só quando pedidos, como vídeo extra.
 5. Agende: `python tools/agendar.py 2026-10-31` (o Felipe começou a postar em 31/10; mantenha essa data para não
@@ -71,10 +79,10 @@ As imagens da marca vêm do site, sem cópia: `../img/folinha-hero.png`, `../img
    a campanha cai em "Institucional · Avulsa".
 7. Mudou uma identidade (cor, fonte, logo)? Atualize `KITS_DADOS` em `tools/gerar_kits.py` e rode o gerador.
 
-## Vídeos e folinha animada (`videos/`, Remotion)
+## Remotion antigo e folinha animada (`filmes/remotion/`)
 
 ```
-cd videos
+cd filmes/remotion
 npm install            # primeira vez (node_modules fica fora do git)
 npm run sfx            # gera os efeitos sonoros em public/sfx/
 npm run studio         # editor visual no navegador
@@ -86,12 +94,12 @@ npm run render:frentes # out/reel-software|contabilidade|credito|cursos.mp4
 npm run render:cerra-ai # out/reel-cerra-ai.mp4
 ```
 
-Depois de renderizar, copie os arquivos finais de `videos/out/` para `entregas/<campanha>/` e rode `tools/publicar.py`.
-Tema (cores, curvas, molas) em `videos/src/theme.ts`; cenas em `videos/src/scenes/`.
-Os Reels por frente são guiados por dados: edite `videos/src/campanhas.ts` (gancho, 3 blocos dos tipos
+Depois de renderizar, copie os arquivos finais de `filmes/remotion/out/` para `entregas/<campanha>/` e rode `tools/publicar.py`.
+Tema (cores, curvas, molas) em `filmes/remotion/src/theme.ts`; cenas em `filmes/remotion/src/scenes/`.
+Os Reels por frente são guiados por dados: edite `filmes/remotion/src/campanhas.ts` (gancho, 3 blocos dos tipos
 lista/passos/contraste/numeros e fechamento). Peças estáticas usam os componentes de `brand/carrossel.css`.
-A animação Lottie da folinha é gerada por `python animacoes/folinha/gerar_lottie.py`
-(grava em `entregas/folinha-animada/`; copie os .json para `videos/public/` se mudar).
+A animação Lottie da folinha é gerada por `python brand/folinha/gerar_lottie.py`
+(grava em `entregas/folinha-animada/`; copie os .json para `filmes/remotion/public/` se mudar).
 
 Formatos usados:
 - Feed (Instagram/LinkedIn): **1080×1350**
@@ -109,8 +117,8 @@ removido por flood fill e o resultado (com transparência) fica em `img/logo_cer
 python tools/recortar_logo_cerraai.py
 ```
 
-O script também copia a versão limpa para `videos/public/cerraai.png`, usada no Reel.
-No Reel, uma campanha pode usar a logo no lugar do ícone: campo `logo` em `videos/src/campanhas.ts`.
+O script também copia a versão limpa para `filmes/remotion/public/cerraai.png`, usada no Reel.
+No Reel, uma campanha pode usar a logo no lugar do ícone: campo `logo` em `filmes/remotion/src/campanhas.ts`.
 
 ## Cursos presenciais da Cerraclass (geração automática)
 
@@ -119,13 +127,13 @@ As campanhas dos cursos presenciais saem do catálogo oficial do projeto CerraCl
 ```
 node tools/importar-cerraclass.mjs          # copia o catálogo para dados/cerraclass-cursos.json
 python tools/gerar_cursos_cerraclass.py     # carrossel, story, legendas e info.json de cada curso
-python tools/exportar.py posts/2026-10-curso-*/carrossel.html posts/2026-10-curso-*/story.html
-python tools/verificar.py posts/2026-10-curso-*/carrossel.html posts/2026-10-curso-*/story.html
+python tools/exportar.py conteudo/2026-10-curso-*/carrossel.html conteudo/2026-10-curso-*/story.html
+python tools/verificar.py conteudo/2026-10-curso-*/carrossel.html conteudo/2026-10-curso-*/story.html
 cd videos && npm run render:cursos-presenciais   # Reels; depois copie para entregas/<curso>/reel.mp4
 python tools/publicar.py
 ```
 
-Cor, ícone e hashtags de cada curso ficam em `VISUAL` (no gerador e em `videos/src/cursosCerraclass.ts`).
+Cor, ícone e hashtags de cada curso ficam em `VISUAL` (no gerador e em `filmes/remotion/src/cursosCerraclass.ts`).
 `tools/verificar.py` acusa qualquer conteúdo que invada o rodapé ou saia da área segura do story.
 
 ## Catálogo de cursos no site (`/cursos/`)
@@ -157,12 +165,14 @@ antigos para outro armazenamento (Google Drive, Firebase Storage).
 ## Skills e repositórios (apresentações e vídeos)
 
 Catálogo para pessoas e agentes de IA. As skills ficam em `marketing/.claude/skills/` (escopo só desta pasta; o
-site não as enxerga) e cada uma traz a licença na própria pasta. Levantamento de 13/11/2026.
+site não as enxerga) e cada uma traz a licença na própria pasta. Levantamento de 13/11/2026, revisado em 23/11/2026
+(depois da reorganização das pastas e com o pacote de vídeo versionado).
 
 ### O que usamos hoje, em uma linha
 
-Vídeo = **HyperFrames + GSAP** (`filmes/`); 3D = **Three.js** dentro do HyperFrames; palestras = **HTML + GSAP offline**
-(`Palestras/`), com PNG/PDF pelo **Playwright**. O Remotion (`videos/`) ficou só nos vídeos antigos.
+Vídeo = **HyperFrames + GSAP** (`filmes/`), com a entrada `python tools/video.py` e as 13 skills `video-*`;
+3D = **Three.js** dentro do HyperFrames; palestras = **HTML + GSAP offline** (`palestras/`), com PNG/PDF pelo
+**Playwright**. O Remotion (`filmes/remotion/`) ficou só nos vídeos antigos.
 
 ### Pacote de vídeo (21/11/2026)
 
@@ -241,10 +251,10 @@ repositório deduzido do zip original (`D:\Dev\*-main.zip`, já removidos); conf
 | Repositório | Versão | Onde | Para que serve |
 |---|---|---|---|
 | `heygen-com/hyperframes` | 0.8.210 | `filmes/package.json` | Render dos vídeos |
-| `greensock/GSAP` | — | `filmes/`, `Palestras/` | Animação |
+| `greensock/GSAP` | — | `filmes/`, `palestras/` | Animação |
 | `mrdoob/three.js` | 0.170.0 | `filmes/` | 3D dos filmes e do globo |
-| `remotion-dev/remotion` | 4.0.539 | `videos/package.json` | Projeto de vídeo antigo |
-| `airbnb/lottie-web` | 5.13 | `videos/`, palestras | Toca o Lottie da folinha |
+| `remotion-dev/remotion` | 4.0.539 | `filmes/remotion/package.json` | Projeto de vídeo antigo |
+| `airbnb/lottie-web` | 5.13 | `filmes/remotion/`, palestras | Toca o Lottie da folinha |
 | `microsoft/playwright` (Python) | — | `tools/*.py` | PNG e PDF de peças e palestras |
 | `phosphor-icons`, `fontsource` | 2.1 / 5.3 | `filmes/package.json` | Ícones e fontes locais (offline) |
 
@@ -257,9 +267,9 @@ repositório deduzido do zip original (`D:\Dev\*-main.zip`, já removidos); conf
 | `filmes/coreografias/<entrega>.mjs` | Coreografia por elemento e por marca |
 | `filmes/frentes-comum/`, `montar-frentes.mjs`, `render-frentes.sh` | Motor 3D comum e render dos 8 filmes das frentes |
 | `filmes/ferramentas/trilha.mjs` | Trilha sintética (desativada) |
-| `videos/` | Projeto Remotion (Reels antigos, `scripts/gerar-sfx.mjs`) |
-| `animacoes/folinha/gerar_lottie.py` | Lottie da folinha |
-| `Palestras/<palestra>/` + `gerar_slides.py` | Palestras HTML+GSAP offline; o script gera o `index.html` dos textos |
+| `filmes/remotion/` | Projeto Remotion (Reels antigos, `scripts/gerar-sfx.mjs`) |
+| `brand/folinha/gerar_lottie.py` | Lottie da folinha |
+| `palestras/<palestra>/` + `gerar_slides.py` | Palestras HTML+GSAP offline; o script gera o `index.html` dos textos |
 | `tools/exportar.py` → `tools/publicar.py` | Exporta PNG e publica na Central de Marketing |
 
 ## Peças prontas
@@ -289,8 +299,8 @@ python tools/gerar_formatos.py --render                 # todas as frentes
 python tools/gerar_formatos.py --render cerraai credito # só algumas
 ```
 
-- **Fontes:** `posts/2026-11-formatos/<frente>.html` (abrir no navegador mostra todas as peças com a linha de corte
-  tracejada em rosa) e `posts/2026-11-formatos/img/` (logos recortadas e reduzidas, para o PDF ficar leve).
+- **Fontes:** `conteudo/2026-11-formatos/<frente>.html` (abrir no navegador mostra todas as peças com a linha de corte
+  tracejada em rosa) e `conteudo/2026-11-formatos/img/` (logos recortadas e reduzidas, para o PDF ficar leve).
 - **Saída publicada:** `formatos/<frente>/`, `formatos/<frente>.zip` e `formatos/formatos.json`, que a aba lê.
   A pasta `formatos/` **é publicada** (não está no `exclude`). Não passa pelo `publicar.py` nem pela agenda.
 - **Por frente (9: institucional, tech, cerraai, cerraclass, credito, contabilidade, consultorias, guiacademico,
@@ -306,7 +316,7 @@ python tools/gerar_formatos.py --render cerraai credito # só algumas
   funciona" em passos + segundo 3D + diferenciais, e contracapa com bloco de chamada, QR grande e contatos. Textos no
   dicionário `FOLDER` (só filmes das frentes e site). O 3D vem de `python tools/gerar_stills3d.py [frentes]`, que tira
   quadros das cenas Three.js dos filmes (`filmes/frente-*`, montados) com fundo transparente para
-  `posts/2026-11-formatos/img/3d-<frente>-1/2.png`; rodar antes do `gerar_formatos.py --render` quando a cena mudar.
+  `conteudo/2026-11-formatos/img/3d-<frente>-1/2.png`; rodar antes do `gerar_formatos.py --render` quando a cena mudar.
 - **Como renderiza:** Playwright (Chromium) imprime o PDF de cada peça; o Chrome arredonda a página para pixel
   (94 mm vira 94,2 mm), por isso `medida_exata()` corta a sobra, que cai na sangria. A imposição do folder é feita com
   PyMuPDF (`impor()`).

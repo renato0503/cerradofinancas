@@ -36,6 +36,9 @@ apresentacoes/
 # Scripts com credenciais / fora do site
 gerar_gamma.py
 
+# Propostas comerciais (uso interno, com valores de clientes): NUNCA versionar nem publicar
+marketing/propostas/
+
 # Filmes HyperFrames (marketing/filmes): dependências, renders e projetos gerados por ferramentas/montar.mjs
 marketing/filmes/node_modules/
 marketing/filmes/out/

@@ -57,7 +57,7 @@ de `D:\Dev\GuiAcademico\logo3d.png`. O rodapé das peças usa a bússola + "Guia
 
 ## Gerador
 
-`tools/gerar_guiacademico.py` (15 temas em `TEMAS`) → `posts/2026-11-guiacademico-<tema>/` (carrossel, story e
+`tools/gerar_guiacademico.py` (15 temas em `TEMAS`) → `conteudo/2026-11-guiacademico-<tema>/` (carrossel, story e
 facebook) → exportar, verificar e `filmes/ferramentas/animar-carrossel.mjs --clima pb` → `tools/agendar.py 2026-10-31`
 → `tools/publicar.py`. A peça de Facebook (`facebook.html` → `facebook.png`) e a legenda (`legenda-facebook.txt`)
 saem no mesmo gerador; a apresentação institucional ganhou a sua em `tools/gerar_apresentacoes.py`.

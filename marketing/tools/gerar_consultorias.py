@@ -291,7 +291,7 @@ Se a sua empresa se reconhece aqui:
 def main():
     for n, (c, d) in enumerate(zip(CONSULTORIAS, quartas(len(CONSULTORIAS))), start=1):
         entrega = f"2026-11-consultoria-{c['slug']}"
-        post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+        post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(carrossel(c, n, entrega), encoding="utf-8")

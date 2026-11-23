@@ -36,6 +36,19 @@ Arquivos das fontes em `brand/fontes/` (servidos localmente, sem Google Fonts).
 `.linhas`, `.rota` (nuvem x local), `.parede` (tipos de arquivo), `.cenarios`, `.emblema` (logo grande
 sangrando na borda; use `data-sangra` para o verificador ignorar), `.slide.cobre` (slide com fundo cobre).
 
+## Série de conteúdo (nov/2026)
+
+`tools/gerar_cerraai.py` gera 25 campanhas em 4 séries: "Na sua área", "Por que local?", "Mostra como faz" e "Mitos
+da IA local". O plano está em `PLANEJAMENTO-cerraai.md`. Componentes novos:
+- `.tela`: a tela do Cerra.AI, com o workspace, a pergunta, a resposta e "Trechos consultados";
+- `.selo` ("Exemplo ilustrativo") e `.selo.ok` ("Função disponível hoje");
+- `.versus`: nuvem × Cerra.AI, sempre genérico;
+- `.passos`, para os tutoriais;
+- `.carimbo`, o "Mito".
+
+Toda peça da série "Na sua área" leva o selo de exemplo ilustrativo. As áreas além dos 3 cenários prontos são
+"cenário configurável".
+
 ## Vídeos
 
 Em `filmes/cerra-ai-comercial` (15s) e `filmes/cerra-ai-lancamento` (30s, minimalista P&B; a cor só

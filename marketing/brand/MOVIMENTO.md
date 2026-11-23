@@ -77,7 +77,7 @@ O método vem do [bang-motion](https://github.com/bangtutorial/bang-motion) (MIT
 
 ```
 # a peça de feed (carrossel animado) já lê a identidade da marca pelo nome da campanha
-node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html --render
+node ferramentas/animar-carrossel.mjs ../conteudo/<entrega>/carrossel.html --render
 
 # os filmes (com coreografia própria) seguem a mesma identidade:
 # a coreografia escolhe os movimentos por elemento, mas não pode inventar outra gramática

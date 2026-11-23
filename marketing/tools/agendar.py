@@ -63,8 +63,8 @@ def campanhas():
     for p in sorted(ENTREGAS.iterdir()):
         if p.is_dir() and (p / "info.json").exists() and p.name not in FORA_DA_AGENDA:
             frente, serie = classificar(p.name)
-            out.append(dict(pasta=p.name, frente=frente, serie=serie,
-                            titulo=json.loads((p / "info.json").read_text(encoding="utf-8"))["titulo"],
+            info = json.loads((p / "info.json").read_text(encoding="utf-8"))
+            out.append(dict(pasta=p.name, frente=frente, serie=info.get("serie") or serie, titulo=info["titulo"],
                             arquivos={f.name for f in p.iterdir()}))
     return out
 

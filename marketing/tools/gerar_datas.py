@@ -104,7 +104,7 @@ def peca(d, story, entrega):
 def main():
     for d in DATAS:
         entrega = f"{d['data'][:7]}-data-{d['slug']}"
-        post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+        post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "post.html").write_text(peca(d, False, entrega), encoding="utf-8")

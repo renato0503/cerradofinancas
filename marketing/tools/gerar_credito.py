@@ -478,7 +478,7 @@ Três perguntas para fazer:
 
 
 def gravar(entrega, carrossel_html, story_html, ig, li, info):
-    post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+    post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
     post.mkdir(parents=True, exist_ok=True)
     ent.mkdir(parents=True, exist_ok=True)
     (post / "carrossel.html").write_text(carrossel_html, encoding="utf-8")

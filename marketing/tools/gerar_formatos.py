@@ -7,7 +7,7 @@ Por frente:
 - Anúncio de jornal 25,5 x 36 cm (PDF + PNG de prévia).
 - Banners de site 1200 x 90 e 300 x 250 (PNG em 1x e 2x).
 
-Fontes (HTML) em posts/2026-11-formatos/<frente>.html; abrir no navegador mostra todas as peças com a linha de corte
+Fontes (HTML) em conteudo/2026-11-formatos/<frente>.html; abrir no navegador mostra todas as peças com a linha de corte
 tracejada. Saída publicada em formatos/<frente>/ + formatos/<frente>.zip + formatos/formatos.json (a página lê).
 
 Textos: só o que já está no site, nas legendas institucionais e nos guias de marca (nada inventado, sem preço).
@@ -32,7 +32,7 @@ from PIL import Image
 
 MARKETING = Path(__file__).resolve().parent.parent
 RAIZ = MARKETING.parent
-FONTE = MARKETING / "posts" / "2026-11-formatos"
+FONTE = MARKETING / "conteudo" / "2026-11-formatos"
 SAIDA = MARKETING / "formatos"
 IMG = FONTE / "img"
 

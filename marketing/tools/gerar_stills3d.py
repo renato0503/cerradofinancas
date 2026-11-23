@@ -6,7 +6,7 @@ alpha e pixel ratio 2, esconde os planos de texto, posiciona a cena no tempo t e
     python tools/gerar_stills3d.py            # todos
     python tools/gerar_stills3d.py credito    # só uma frente
 
-Saída: posts/2026-11-formatos/img/3d-<slug>-<n>.png (usada pelo gerar_formatos.py).
+Saída: conteudo/2026-11-formatos/img/3d-<slug>-<n>.png (usada pelo gerar_formatos.py).
 Pré-requisito: filmes/frente-*/16x9 montados (npm run montar:frentes, em filmes/).
 """
 import io
@@ -18,8 +18,8 @@ from PIL import Image
 
 RAIZ = Path(__file__).resolve().parents[1]
 FILMES = RAIZ / "filmes"
-SAIDA = RAIZ / "posts" / "2026-11-formatos" / "img"
-GSAP = RAIZ / "Palestras" / "2026-10-palestra-carreira-ia" / "apresentacao" / "vendor" / "gsap.min.js"
+SAIDA = RAIZ / "conteudo" / "2026-11-formatos" / "img"
+GSAP = RAIZ / "palestras" / "2026-10-palestra-carreira-ia" / "apresentacao" / "vendor" / "gsap.min.js"
 
 # slug do folder -> [(cena do filme, tempo em segundos[, corte à esquerda]), ...]  (1 = capa, 2 = miolo)
 STILLS = {

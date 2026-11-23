@@ -1,0 +1,61 @@
+{
+  "nome": "video-estudio",
+  "versao": "1.1",
+  "atualizado": "2026-11-21",
+  "entrada": "python tools/video.py",
+  "kit": ".claude/skills/video-estudio/scripts/kit.py",
+  "sem_api_paga": true,
+  "rodar_de": "marketing/",
+  "formatos": {
+    "9x16": [1080, 1920],
+    "4x5": [1080, 1350],
+    "1x1": [1080, 1080],
+    "16x9": [1920, 1080],
+    "4x3": [1440, 1080]
+  },
+  "metas": {
+    "lufs": -14,
+    "true_peak": -1.5,
+    "fps": 30,
+    "area_segura_9x16": { "laterais": 120, "topo": 220, "base": 220 }
+  },
+  "comandos": {
+    "doctor": "confere ffmpeg, dependências, voz, GPU, ComfyUI e disco",
+    "projeto": "cria conteudo/<entrega>/ e entregas/<entrega>/ com briefing, roteiro e storyboard",
+    "demo": "gera um clipe 9:16 de teste com voz, SFX, legenda, normalização e QA",
+    "sondar": "metadados em JSON",
+    "quadros": "extrai quadros em tempos dados",
+    "contato": "folha de contato",
+    "cortar": "corte preciso com reencode",
+    "juntar": "concatena normalizando resolução, fps e áudio",
+    "enquadrar": "9x16, 4x5, 1x1, 16x9 por corte ou fundo desfocado",
+    "legendar": "faster-whisper local, SRT/ASS, karaokê, queimar",
+    "normalizar": "loudness em duas passadas",
+    "sfx": "whoosh, pop, click, riser, impacto",
+    "analisar": "cortes, silêncios, pretos e loudness em JSON",
+    "qa": "confere formato, áudio, loudness e pretos",
+    "tts": "voz pt-BR local (SAPI) ou edge-tts gratuita"
+  },
+  "skills": [
+    { "name": "video-estudio", "papel": "orquestrador e dono do kit", "gatilhos": ["fazer um vídeo", "Reel", "comercial", "editar", "por onde começar"] },
+    { "name": "video-roteiro", "papel": "gancho, estrutura e locução", "gatilhos": ["roteiro", "script", "narração", "o que falar"] },
+    { "name": "video-storyboard", "papel": "plano a plano e prova de movimento", "gatilhos": ["storyboard", "decupagem", "plano de cenas"] },
+    { "name": "video-motion", "papel": "movimento, transições e timing", "gatilhos": ["animar", "transição", "easing", "coreografia"] },
+    { "name": "video-render", "papel": "HyperFrames e Remotion", "gatilhos": ["renderizar", "MP4", "HyperFrames", "Remotion"] },
+    { "name": "video-audio", "papel": "voz, SFX, mix e loudness", "gatilhos": ["voz", "locução", "áudio", "trilha", "efeito"] },
+    { "name": "video-legendas", "papel": "transcrição e legenda", "gatilhos": ["legenda", "SRT", "transcrever", "karaokê"] },
+    { "name": "video-edicao", "papel": "corte, concat, reframe e transição", "gatilhos": ["cortar", "juntar", "vertical", "acelerar"] },
+    { "name": "video-referencia", "papel": "decompor referência em VIDEO.md", "gatilhos": ["referência", "copiar estilo", "por que funciona"] },
+    { "name": "video-entrega", "papel": "formatos, capa, variantes e nomes", "gatilhos": ["entregar", "capa", "exportar", "formato"] },
+    { "name": "video-local-ia", "papel": "ComfyUI/LTX/Wan opcional", "gatilhos": ["IA local", "ComfyUI", "texto para vídeo", "GPU"] },
+    { "name": "video-marca", "papel": "identidade e claims por frente", "gatilhos": ["marca", "cores", "fonte", "aviso legal", "o que pode falar"] },
+    { "name": "video-qa", "papel": "portões automáticos e checklist", "gatilhos": ["conferir", "QA", "revisar", "antes de publicar"] }
+  ],
+  "limites": {
+    "sem_nuvem": true,
+    "voz": "SAPI pt-BR offline; edge-tts opcional exige rede",
+    "cuda_whisper": "requer cuBLAS/cuDNN; o kit cai para CPU",
+    "comfyui": "não instalado",
+    "nao_fazer": ["clonar rosto ou voz", "copiar conteúdo de referência", "afirmar o que não está no site/projeto"]
+  }
+}

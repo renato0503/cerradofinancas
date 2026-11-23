@@ -1,4 +1,4 @@
-/* Anúncio de pessoa do time (identidade institucional Cerrado Finanças & Tech: azul, dourado e a folinha). Usado em posts/2026-11-talita-consultora e posts/2026-11-felipe_borges.
+/* Anúncio de pessoa do time (identidade institucional Cerrado Finanças & Tech: azul, dourado e a folinha). Usado em conteudo/2026-11-talita-consultora e conteudo/2026-11-felipe_borges.
    A foto entra numa moldura em arco com contorno dourado; os anéis do fundo são os mesmos das datas comemorativas. */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; background: #000; font-family: 'Inter', sans-serif; }

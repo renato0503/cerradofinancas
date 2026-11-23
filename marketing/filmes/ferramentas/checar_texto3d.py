@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
-GSAP = RAIZ.parent / "Palestras" / "2026-10-palestra-carreira-ia" / "apresentacao" / "vendor" / "gsap.min.js"
+GSAP = RAIZ.parent / "palestras" / "2026-10-palestra-carreira-ia" / "apresentacao" / "vendor" / "gsap.min.js"
 MIN_DUR = 0.6     # segundos: problema mais curto que isso é transição
 LIM_FORA = 0.02   # fração da etiqueta fora do quadro
 LIM_OCULTO = 0.12 # fração dos pontos da face escondidos
@@ -71,24 +71,25 @@ async (t) => {
   for (const m of malhas) {
     const ms = mats(m);
     const iTex = ms.findIndex(x => x && x.map && x.map.userData && x.map.userData.textos && (x.opacity ?? 1) > 0.15);
-    if (iTex < 0) continue;
-    const textos = [...ms[iTex].map.userData.textos].join(' / ');
+    const letras3d = iTex < 0 && m.userData.textos; // letras extrudadas (TextGeometry): a frente fica em z = max
+    if (iTex < 0 && !letras3d) continue;
+    const textos = letras3d ? m.userData.textos.join(' / ') : [...ms[iTex].map.userData.textos].join(' / ');
     const g = m.geometry; if (!g.boundingBox) g.computeBoundingBox();
     const bb = g.boundingBox;
     // pontos da face com o texto (local)
     let pts = [];
     const L = (a, b, u) => a + (b - a) * u;
     // pontos nas palavras: cada fillText guardou a sua caixa (fração do canvas, y para baixo)
-    const cxs = ms[iTex].map.userData.caixas || [[0.08, 0.12, 0.92, 0.88]];
+    const cxs = letras3d ? [[0.04, 0.1, 0.96, 0.9]] : (ms[iTex].map.userData.caixas || [[0.08, 0.12, 0.92, 0.88]]);
     const k = (a) => Math.min(1, Math.max(0, a));
     const uvs = [];
     for (const c of cxs) for (const [fu, fv] of [[0.12, 0.5], [0.5, 0.5], [0.88, 0.5], [0.5, 0.2], [0.5, 0.8]])
       uvs.push([k(L(c[0], c[2], fu)), k(1 - L(c[1], c[3], fv))]);
     const ext = new THREE.Vector3(); bb.getSize(ext);
-    const plano = g.type === 'PlaneGeometry' || g.type === 'CircleGeometry' || g.type === 'ShapeGeometry' || ext.z < 1e-4;
+    const plano = letras3d || g.type === 'PlaneGeometry' || g.type === 'CircleGeometry' || g.type === 'ShapeGeometry' || ext.z < 1e-4;
     const deitado = !plano && ext.y < 1e-4;
     for (const [u, v] of uvs) {
-      if (plano) pts.push(new THREE.Vector3(L(bb.min.x, bb.max.x, u), L(bb.min.y, bb.max.y, v), (bb.min.z + bb.max.z) / 2));
+      if (plano) pts.push(new THREE.Vector3(L(bb.min.x, bb.max.x, u), L(bb.min.y, bb.max.y, v), letras3d ? bb.max.z : (bb.min.z + bb.max.z) / 2));
       else if (deitado) pts.push(new THREE.Vector3(L(bb.min.x, bb.max.x, u), bb.max.y, L(bb.min.z, bb.max.z, 1 - v)));
       else if (g.type === 'BoxGeometry' && Array.isArray(m.material)) {
         const eixo = Math.floor(iTex / 2), lado = iTex % 2 ? bb.min : bb.max;
@@ -159,7 +160,7 @@ def servir(pasta: Path):
 def abrir(browser, pasta: Path, w, h):
     page = browser.new_page(viewport={"width": w, "height": h})
     page.route("**/*", servir(pasta))
-    page.goto("http://f.local/index.html", wait_until="domcontentloaded")
+    page.goto("http://f.local/index.html?amostras=1", wait_until="domcontentloaded")  # 1 sub-quadro basta para conferir
     page.wait_for_function("window.__hf && window.__hf.buildReady && window.__hf.buildReady.tres && window.__palco", timeout=60000)
     page.evaluate("() => window.__hf.buildReady.tres")
     return page

@@ -2,7 +2,15 @@
 
 Vídeos em HTML + GSAP renderizados com [HyperFrames](https://github.com/heygen-com/hyperframes)
 (a base do hypit). Cada filme sai em **16:9 (1920×1080)** e **9:16 (1080×1920)**, 30 fps, com trilha.
-Os Reels antigos do Remotion (`../videos/`) continuam valendo para Cerrado Tech e Cerrado Finanças.
+Os Reels antigos do Remotion (`remotion/`) continuam valendo para Cerrado Tech e Cerrado Finanças.
+
+## Antes de começar
+
+O pacote de vídeo do estúdio (`video-estudio` + 12 especialistas) mora em `../.claude/skills/`, e a entrada é
+`python tools/video.py` (rodando de `marketing/`): `doctor`, `projeto`, `demo`, `qa`… O mapa "pedido → comando →
+skill" está em `../.claude/skills/video-estudio/references/atalhos.md`. Fontes das campanhas em
+`../conteudo/<entrega>/` e peças finais em `../entregas/<entrega>/`. O Remotion antigo fica em `remotion/` e não
+recebe peça nova.
 
 | Filme | Duração | Prompt de referência |
 |---|---|---|
@@ -13,7 +21,7 @@ Os Reels antigos do Remotion (`../videos/`) continuam valendo para Cerrado Tech 
 
 ## Carrossel animado (o padrão de toda campanha nova)
 
-`node ferramentas/animar-carrossel.mjs ../posts/<entrega>/carrossel.html [--render] [--clima cobre|pb|sala]`
+`node ferramentas/animar-carrossel.mjs ../conteudo/<entrega>/carrossel.html [--render] [--clima cobre|pb|sala]`
 lê o carrossel do estúdio (qualquer identidade), embute o CSS, as fontes, as imagens e os ícones Phosphor locais,
 monta `carrosseis/<entrega>/` (fora do git) e, com `--render`, grava `entregas/<entrega>/carrossel-animado.mp4`
 (1080×1350). Cada slide fica de 3 a 5 s conforme o texto; os slides deslizam colados, como num carrossel, e os

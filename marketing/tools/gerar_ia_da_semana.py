@@ -227,7 +227,7 @@ def main():
     for arquivo in sorted(DADOS.glob("????-??-??.json")):
         d = json.loads(arquivo.read_text(encoding="utf-8"))
         entrega = d["entrega"]
-        post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+        post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(carrossel(d), encoding="utf-8")

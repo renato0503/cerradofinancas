@@ -555,7 +555,7 @@ Como o Guia Acadêmico ajuda:
 def main():
     for n, t in enumerate(TEMAS, start=1):
         entrega = f"2026-11-guiacademico-{t['slug']}"
-        post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+        post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
         post.mkdir(parents=True, exist_ok=True)
         ent.mkdir(parents=True, exist_ok=True)
         (post / "carrossel.html").write_text(carrossel(t, n, entrega), encoding="utf-8")

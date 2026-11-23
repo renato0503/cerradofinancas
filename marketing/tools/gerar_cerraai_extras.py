@@ -661,7 +661,7 @@ def deck():
 # ============================ Saída ============================
 
 def gravar(entrega, pecas, ig, li, titulo, descricao, carrossel, data, orient_extra=()):
-    post, ent = RAIZ / "posts" / entrega, RAIZ / "entregas" / entrega
+    post, ent = RAIZ / "conteudo" / entrega, RAIZ / "entregas" / entrega
     post.mkdir(parents=True, exist_ok=True)
     ent.mkdir(parents=True, exist_ok=True)
     for nome, html in pecas.items():
@@ -689,8 +689,8 @@ def gerar_pdfs():
     with sync_playwright() as p:
         nav = p.chromium.launch()
         pg = nav.new_page(viewport={"width": 794, "height": 1123}, device_scale_factor=2)
-        for fonte, destino, previa in ((RAIZ / "posts/2026-11-cerraai-material-checklist-lgpd/checklist.html", chk / "checklist-ia-lgpd.pdf", chk / "checklist-pagina"),
-                                       (RAIZ / "posts/2026-11-cerraai-material-kit-vendas/onepager.html", kit / "one-pager.pdf", kit / "one-pager")):
+        for fonte, destino, previa in ((RAIZ / "conteudo/2026-11-cerraai-material-checklist-lgpd/checklist.html", chk / "checklist-ia-lgpd.pdf", chk / "checklist-pagina"),
+                                       (RAIZ / "conteudo/2026-11-cerraai-material-kit-vendas/onepager.html", kit / "one-pager.pdf", kit / "one-pager")):
             pg.goto(fonte.resolve().as_uri()); pg.wait_for_timeout(800)
             pg.pdf(path=str(destino), format="A4", print_background=True)
             folhas = pg.query_selector_all(".folha")
@@ -698,7 +698,7 @@ def gerar_pdfs():
                 f.screenshot(path=f"{previa}{'-' + str(i) if len(folhas) > 1 else ''}.png")
             print(" ", destino.name)
         pg = nav.new_page(viewport={"width": 1920, "height": 1080})
-        pg.goto((RAIZ / "posts/2026-11-cerraai-material-kit-vendas/deck.html").resolve().as_uri() + "?pdf=1"); pg.wait_for_timeout(800)
+        pg.goto((RAIZ / "conteudo/2026-11-cerraai-material-kit-vendas/deck.html").resolve().as_uri() + "?pdf=1"); pg.wait_for_timeout(800)
         pg.add_style_tag(content="html, body { background: #000 !important; padding: 0 !important; gap: 0 !important; } .slide { break-after: page; } @page { size: 1920px 1080px; margin: 0; }")
         pg.pdf(path=str(kit / "deck.pdf"), width="1920px", height="1080px", print_background=True)
         print("  deck.pdf")
@@ -727,9 +727,9 @@ def main():
                      "https://www.cerradofinancas.com.br/marketing/entregas/2026-11-cerraai-material-checklist-lgpd/checklist-ia-lgpd.pdf",)
         gravar(entrega, pecas, ig, li, titulo, desc, car, f"2026-11-{n + 2:02d}", extra)
     # materiais que não são post
-    (RAIZ / "posts/2026-11-cerraai-material-checklist-lgpd/checklist.html").write_text(checklist_html(), encoding="utf-8")
+    (RAIZ / "conteudo/2026-11-cerraai-material-checklist-lgpd/checklist.html").write_text(checklist_html(), encoding="utf-8")
     entrega, deck_html = deck()
-    pasta = RAIZ / "posts" / entrega
+    pasta = RAIZ / "conteudo" / entrega
     pasta.mkdir(parents=True, exist_ok=True)
     (pasta / "deck.html").write_text(deck_html, encoding="utf-8")
     (pasta / "onepager.html").write_text(onepager_html(), encoding="utf-8")
