@@ -1120,5 +1120,9 @@ de duas frentes.
 - **Publicação:** `tools/publicar.py` ganhou modo seletivo (`python tools/publicar.py <pasta>...`), que publica só
   as pastas pedidas e mantém as demais entradas do `conteudos.json`.
 - **Conferência:** `tools/video.py qa` nos dois (1080×1920, 30 fps, H.264, mudo); 1,3 MB e 1,9 MB.
-- **Pendente:** as outras sete frentes (institucional, Crédito, Consultorias, CerraClass, Cerra.AI, Guia
-  Acadêmico, CerraFood), duas por vez, e a versão 16:9 de cada uma.
+- **Segundo par (mesmo dia):** **Crédito** (caneta azul sobre contrato em branco, tinta azul, aviso legal curto e
+  parceria LS) e **Consultorias** (monólito grafite sobre planta quadriculada, traço e caneta laranja). Corrigi a
+  margem da pauta que cruzava o texto, o aviso legal para 26 px e o nome do fecho em Fraunces (`marca_fs`); Tech e
+  Contabilidade foram re-renderizadas com as correções.
+- **Pendente:** CerraClass, Cerra.AI, Guia Acadêmico, CerraFood e Institucional, duas por vez, e a versão 16:9 de
+  todas.

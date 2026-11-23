@@ -487,4 +487,24 @@ Feito, sem apagar nada: `posts/` → `conteudo/`, `videos/` → `filmes/remotion
   `.py`; a Central não mudou.
 - **Pendente:** 27 campanhas novas em `entregas/` (`2026-11-cerraai-*`) sem `.zip`/`conteudos.json` — rodar
   `python tools/publicar.py` quando fecharem.
-- Versionado: 13 skills ideo-*, .claude/skills/README.md e .claude/commands/video{,-qa}.md. Docs de vídeo (ilmes/README.md, ideo-estudio/SKILL.md, skills/README.md) com o mapa de pastas novo.
+- Versionado: 13 skills `video-*`, `.claude/skills/README.md` e `.claude/commands/video{,-qa}.md`. Docs de vídeo (`filmes/README.md`, `video-estudio/SKILL.md`, `skills/README.md`) com o mapa novo.
+
+## Chamadas 15s — onde parei (23/11/26)
+
+Feitas e no ar, na série **“Chamada 15s”** da Central: **Tech, Contabilidade, Crédito e Consultorias**.
+Faltam: **CerraClass, Cerra.AI, Guia Acadêmico, CerraFood e Institucional**, duas por vez; depois, as versões 16:9.
+
+Para continuar:
+1. Escrever o prompt do elemento novo em `D:\Dev\ComfyUI\prompts\<slug>.json` (uma ação, uma câmera, terço
+   superior limpo, sem texto).
+2. Com o ComfyUI rodando (porta 8188, `--lowvram`), rodar
+   `python D:\Dev\ComfyUI\wan_t2v.py <slug> D:\Dev\ComfyUI\prompts\<slug>.json` — ~2–3 min por clipe.
+3. Copiar o MP4 para `marketing/conteudo/2026-11-chamadas/<slug>/elemento.mp4`.
+4. Acrescentar a frente no dicionário `DADOS` de `marketing/tools/gerar_chamadas.py` (paleta, fontes, copy,
+   transição, scrims, aviso legal e rótulo do botão).
+5. `python tools/gerar_chamadas.py <slug>` e `python tools/publicar.py 2026-11-chamada-<slug>`.
+6. Conferir no navegador e rodar `python tools/video.py qa ... --formato 9x16` (mudo é esperado).
+
+Aprendizados da rodada: logo em `data:` base64 (o Chromium bloqueia `file://` entre pastas); margem da pauta fora do
+texto (`left:84px`); aviso legal a 26 px; nome longo no fecho com `marca_fs` menor; scrim claro nas marcas de papel
+e escuro nas de fundo escuro; `_trab/` guarda os intermediários e não vai para o git.

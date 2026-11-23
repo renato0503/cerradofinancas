@@ -17,6 +17,10 @@ Erro que aparecer duas vezes vira regra aqui. Atualizado em 22/11/2026.
 | **Reaproveite objetos aprovados** dos filmes das frentes | coerência de marca e menos risco |
 | Sem cidade/números/claims fora do site | "não precisa falar que é em Cuiabá"; regra de verdade da casa |
 | **Enquadramento calculado**, não chutado | 4 rodadas de quadro perdidas; a conta: área visível ≈ 59% da largura no 16:9 com faixa; meia-largura visível ≈ 0,28 × distância (fov 30) |
+| **Logo em PNG local dentro do HTML de render** | O Chromium bloqueia `file://` entre pastas e a imagem sai quebrada; embutir em `data:` base64. |
+| **Vídeo mudo “falha” no `qa`** | O portão marca `sem áudio` como falha; nos vídeos mudos (regra da casa) é esperado. |
+| **“Elemento novo” é elemento gerado** | Quando o pedido é para não reaproveitar, gerar no Wan local (text-to-video) em vez de reusar os stills aprovados. |
+| **Sempre conferir o quadro do fecho** | Margem de pauta, aviso legal e logo só se provam no PNG final; 1 quadro resolve antes de renderizar o vídeo. |
 
 ## 2. Processo (o que os especialistas fazem e nós adotamos)
 

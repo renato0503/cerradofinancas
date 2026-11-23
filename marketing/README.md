@@ -324,3 +324,25 @@ python tools/gerar_formatos.py --render cerraai credito # só algumas
   o aviso legal em toda peça. Os cartões são institucionais (sem nome de pessoa); um cartão por pessoa do time é só
   acrescentar nome e cargo na frente.
 - **Cores:** os PDFs saem em RGB; a gráfica converte para CMYK. Pedir prova de cor antes de rodar a tiragem.
+
+## Chamadas 15s por frente (`entregas/2026-11-chamada-<frente>/`)
+
+Reels de **9:16, 15 s e mudos**, um por frente, para Instagram, Stories e TikTok. Cada peça tem um **elemento 3D
+novo**, gerado na GPU (Wan 2.2 TI2V-5B no ComfyUI local, em `D:\Dev\ComfyUI`), e o copy em cartões HTML/PNG — a IA
+não desenha texto, logo nem aviso legal.
+
+- **Fonte:** `conteudo/2026-11-chamadas/<frente>/` — `elemento.mp4` (clipe do Wan), `hook/c2/c3/c4/close.html` e os
+  PNGs; os intermediários de ffmpeg ficam em `_trab/` (fora do git).
+- **Gerador:** `python tools/gerar_chamadas.py <frente> [<frente> ...]`, de `marketing/` — renderiza os cartões com
+  Playwright e compõe com ffmpeg (gancho e fecho sobre o clipe; três cartões no meio; transição da marca).
+- **Por frente:** o dicionário `DADOS` no topo do gerador (paleta, fontes, copy, transição, scrims, aviso legal e
+  rótulo do botão). Frente nova = entrada nova + `elemento.mp4`.
+- **Clipe novo na GPU:** `python D:\Dev\ComfyUI\wan_t2v.py <slug> D:\Dev\ComfyUI\prompts\<slug>.json`
+  (text-to-video, 512×896, 49 quadros, 24 fps; ~2–3 min na RTX 4060 com `--lowvram`). Depois copie para
+  `conteudo/2026-11-chamadas/<slug>/elemento.mp4`.
+- **Publicação:** `python tools/publicar.py 2026-11-chamada-<frente>` publica só essa campanha, com a série
+  **“Chamada 15s”**.
+- **QA:** `python tools/video.py qa <arquivo> --formato 9x16`. O portão marca “sem áudio” como falha; nos vídeos
+  mudos isso é esperado.
+- **Feitas:** Tech, Contabilidade, Crédito e Consultorias. **Faltam:** CerraClass, Cerra.AI, Guia Acadêmico,
+  CerraFood e Institucional, e a versão 16:9 de todas.
