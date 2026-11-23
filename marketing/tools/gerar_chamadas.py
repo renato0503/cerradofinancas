@@ -78,6 +78,67 @@ DADOS = {
         ),
         rodape="Renato Rosa · CRC-MT 021719/O-5",
     ),
+    "cerraclass": dict(
+        nome="CerraClass",
+        logo=MARKETING / "brand" / "cerraclass" / "logo.png",
+        fonte="Bricolage",
+        mono_fonte="Bricolage",
+        fundo="#ffc83d", tinta="#141414", acento="#141414", sobre_acento="#ffc83d", apoio="#3f3f3f",
+        cartao="papel",
+        cartao_bg="#ffc83d",
+        transicao="slideleft", transicao_dur=0.38,
+        scrim_hook="rgba(255,200,61,.9) 0%,rgba(255,200,61,.62) 40%,rgba(255,200,61,.95) 100%",
+        scrim_close="rgba(255,200,61,.66) 0%,rgba(255,200,61,.88) 55%,rgba(255,200,61,.97) 100%",
+        kicker="CERRACLASS · ESCOLA DE IA E TECNOLOGIA",
+        gancho="Sua equipe aprende IA fazendo?",
+        c2_tit="11 cursos presenciais.", c2_sub="Um dia ou imersão, sempre em turma de até 10.",
+        c3_tit="Você sai com algo funcionando.", c3_sub="Aula 100% prática, no seu notebook, com problemas reais.",
+        c4_tit="In company ou na escola.", c4_sub="Treinamento sob medida para o seu time.",
+        fecho="Veja as turmas.",
+        botao="WhatsApp (67) 99351-5206",
+        site="cerraclass.com.br",
+        rotulo_botao="Ver as turmas",
+        legenda_ig=(
+            "Sua equipe aprende IA fazendo?\n\n"
+            "Onze cursos presenciais, em turma de até 10 alunos: um dia inteiro ou imersão de 4 encontros.\n"
+            "Aula 100% prática, no seu notebook, com problemas reais — você sai com algo funcionando.\n"
+            "Também no formato in company, para o seu time.\n\n"
+            "Veja as turmas em cerraclass.com.br ou no WhatsApp (67) 99351-5206.\n\n"
+            "#CerraClass #IA #CursosPresenciais #InCompany #Cuiaba #MatoGrosso"
+        ),
+    ),
+    "cerraai": dict(
+        nome="Cerra.AI",
+        logo=MARKETING.parent / "img" / "logo_cerraai-icone.png",
+        fonte="Archivo",
+        mono_fonte="JetBrains Mono",
+        fundo="#0d0f0e", tinta="#f1ece3", acento="#e2873b", sobre_acento="#0d0f0e", apoio="#a39d93",
+        cartao="cor",
+        cartao_bg="#0d0f0e",
+        transicao="fade", transicao_dur=0.26,
+        scrim_hook="rgba(13,15,14,.93) 0%,rgba(13,15,14,.6) 40%,rgba(13,15,14,.92) 100%",
+        scrim_close="rgba(13,15,14,.5) 0%,rgba(13,15,14,.78) 55%,rgba(13,15,14,.96) 100%",
+        kicker="CERRA.AI · BY CERRADO TECH",
+        gancho="Seus documentos vão para a nuvem?",
+        c2_tit="A IA roda na empresa.", c2_sub="Depois de instalada, funciona sem internet.",
+        c3_tit="Lê e cita a fonte.", c3_sub="PDF, Word, Excel, áudio e vídeo — com o arquivo e a página.",
+        c4_tit="Anonimiza o dado pessoal.", c4_sub="Nome, CPF e endereço viram tarja antes do modelo.",
+        fecho="Peça uma demonstração.",
+        botao="WhatsApp (67) 99351-5206",
+        site="cerradofinancas.com.br/cerraai",
+        rotulo_botao="Pedir demonstração",
+        rodape="by Cerrado Tech",
+        legenda_ig=(
+            "Seus documentos vão para a nuvem?\n\n"
+            "O Cerra.AI roda no computador da empresa e responde com base nos seus arquivos: PDF (também escaneado), "
+            "Word, Excel, áudio e vídeo.\n"
+            "Mostra o arquivo e a página de onde tirou a informação, anonimiza o dado pessoal antes do modelo e "
+            "funciona sem internet depois de instalado.\n\n"
+            "Peça uma demonstração com os seus documentos no WhatsApp (67) 99351-5206.\n"
+            "cerradofinancas.com.br/cerraai\n\n"
+            "#CerraAI #IALocal #IAOffline #LGPD #Documentos #Cuiaba #MatoGrosso"
+        ),
+    ),
     "credito": dict(
         nome="Cerrado Finanças · Crédito",
         logo=MARKETING.parent / "img" / "folinha-hero.png",
@@ -159,6 +220,8 @@ FAMILIAS = {
     "Inter": [("inter.woff2", "400 800")],
     "Plex Cond": [("plex-cond-500.woff2", "500"), ("plex-cond-700.woff2", "700")],
     "Schibsted": [("schibsted.woff2", "400 900")],
+    "Bricolage": [("bricolage.woff2", "200 800")],
+    "Archivo": [("archivo.woff2", "100 900")],
     "Fraunces": [("fraunces-400.woff2", "400"), ("fraunces-600.woff2", "600")],
     "JetBrains Mono": [("jetbrains-mono.woff2", "400 700")],
     "Plex Mono": [("plex-mono-500.woff2", "500"), ("plex-mono-600.woff2", "600")],

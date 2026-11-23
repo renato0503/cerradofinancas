@@ -5002,6 +5002,78 @@
     }
   },
   {
+    "pasta": "2026-11-chamada-cerraclass",
+    "frente": "cerraclass",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Sua equipe aprende IA fazendo?",
+    "data": "2026-11-23",
+    "descricao": "Veja as turmas.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 393
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1436
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Sua equipe aprende IA fazendo?\n\nOnze cursos presenciais, em turma de até 10 alunos: um dia inteiro ou imersão de 4 encontros.\nAula 100% prática, no seu notebook, com problemas reais — você sai com algo funcionando.\nTambém no formato in company, para o seu time.\n\nVeja as turmas em cerraclass.com.br ou no WhatsApp (67) 99351-5206.\n\n#CerraClass #IA #CursosPresenciais #InCompany #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-cerraclass.zip",
+      "kb": 392
+    }
+  },
+  {
+    "pasta": "2026-11-chamada-cerraai",
+    "frente": "cerraai",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Seus documentos vão para a nuvem?",
+    "data": "2026-11-23",
+    "descricao": "Peça uma demonstração.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 300
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1650
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Seus documentos vão para a nuvem?\n\nO Cerra.AI roda no computador da empresa e responde com base nos seus arquivos: PDF (também escaneado), Word, Excel, áudio e vídeo.\nMostra o arquivo e a página de onde tirou a informação, anonimiza o dado pessoal antes do modelo e funciona sem internet depois de instalado.\n\nPeça uma demonstração com os seus documentos no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br/cerraai\n\n#CerraAI #IALocal #IAOffline #LGPD #Documentos #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-cerraai.zip",
+      "kb": 297
+    }
+  },
+  {
     "pasta": "2026-11-guiacademico-cronograma",
     "frente": "guiacademico",
     "serie": "Cadernos de método",

@@ -344,5 +344,5 @@ não desenha texto, logo nem aviso legal.
   **“Chamada 15s”**.
 - **QA:** `python tools/video.py qa <arquivo> --formato 9x16`. O portão marca “sem áudio” como falha; nos vídeos
   mudos isso é esperado.
-- **Feitas:** Tech, Contabilidade, Crédito e Consultorias. **Faltam:** CerraClass, Cerra.AI, Guia Acadêmico,
+- **Feitas:** Tech, Contabilidade, Crédito, Consultorias, CerraClass e Cerra.AI. **Faltam:** Guia Acadêmico,
   CerraFood e Institucional, e a versão 16:9 de todas.

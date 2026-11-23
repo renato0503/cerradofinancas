@@ -1124,5 +1124,7 @@ de duas frentes.
   parceria LS) e **Consultorias** (monólito grafite sobre planta quadriculada, traço e caneta laranja). Corrigi a
   margem da pauta que cruzava o texto, o aviso legal para 26 px e o nome do fecho em Fraunces (`marca_fs`); Tech e
   Contabilidade foram re-renderizadas com as correções.
-- **Pendente:** CerraClass, Cerra.AI, Guia Acadêmico, CerraFood e Institucional, duas por vez, e a versão 16:9 de
-  todas.
+- **Terceiro par (mesmo dia):** **CerraClass** (sala amarela com cadeiras coloridas em volta da mesa, Bricolage,
+  sem sombra) e **Cerra.AI** (pilha de papéis e emblema de cobre no grafite, Archivo + JetBrains Mono). No Cerra.AI o
+  scrim do gancho foi a `.93` porque o emblema ficava atrás do título.
+- **Pendente:** Guia Acadêmico, CerraFood e Institucional, duas por vez, e a versão 16:9 de todas.
