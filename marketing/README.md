@@ -154,19 +154,113 @@ O `.zip` de cada campanha **não** leva os vídeos (`.mp4`, `.webm`, `.mov`): o 
 Central de Conteúdos. Sem isso, `entregas/` passou de 400 MB. Se o limite apertar de novo, mover os vídeos
 antigos para outro armazenamento (Google Drive, Firebase Storage).
 
-## Skills instaladas (`.claude/skills/`)
+## Skills e repositórios (apresentações e vídeos)
+
+Catálogo para pessoas e agentes de IA. As skills ficam em `marketing/.claude/skills/` (escopo só desta pasta; o
+site não as enxerga) e cada uma traz a licença na própria pasta. Levantamento de 13/11/2026.
+
+### O que usamos hoje, em uma linha
+
+Vídeo = **HyperFrames + GSAP** (`filmes/`); 3D = **Three.js** dentro do HyperFrames; palestras = **HTML + GSAP offline**
+(`Palestras/`), com PNG/PDF pelo **Playwright**. O Remotion (`videos/`) ficou só nos vídeos antigos.
+
+### Pacote de vídeo (21/11/2026)
+
+Biblioteca de produção **sem API paga**: só Claude, código, ffmpeg e, quando fizer sentido, GPU local. Orquestrador
+`video-estudio` + 12 especialistas, com o canivete `video-estudio/scripts/kit.py`.
 
 | Skill | Para quê |
 |---|---|
-| `remotion-motion-graphics` | Vídeos e Reels em código (Remotion) |
-| `text-to-lottie` | Animações Lottie (logo, ícones, loaders) |
-| `wiggle` | Logo estático → animação GIF/MP4 |
-| `gsap-*` | Animações web com GSAP |
-| `animate`, `emil-design-eng`, `review-animations` etc. | Critério de motion design (curvas, tempos, revisão) |
-| `threejs-*` | Cenas 3D (uso pontual) |
-| `lemo-opuscar` | Curtas cinematográficos em código (pesado: baixa uma biblioteca na primeira execução) |
+| `video-estudio` | Decide o caminho e encadeia roteiro → storyboard → prova → render → QA → entrega |
+| `video-roteiro` | Gancho, estrutura de 15/21/30/60 s, locução pt-BR |
+| `video-storyboard` | Tabela de planos, área segura, prova de movimento |
+| `video-motion` | Vocabulário, 35 receitas GSAP, easing, stagger, batida |
+| `video-render` | HyperFrames e Remotion, determinismo, diagnóstico |
+| `video-audio` | Voz local (SAPI/edge-tts), SFX, mix em -14 LUFS |
+| `video-legendas` | faster-whisper, SRT/ASS, karaokê, queimar |
+| `video-edicao` | ffmpeg: corte, concat, reframe, transição, proxy |
+| `video-referencia` | Decompor referência em `VIDEO.md` |
+| `video-entrega` | Formatos, capa, variantes, nomes, `.zip` |
+| `video-local-ia` | ComfyUI/LTX/Wan opcional na RTX 4060 (8 GB) |
+| `video-marca` | Paleta, fonte, tom e o que cada frente pode afirmar |
+| `video-qa` | Portões automáticos (`kit.py qa`) e checklist manual |
 
-Origem: zips em `D:\Dev\*-main.zip`, com as licenças de cada skill dentro da própria pasta.
+O raio-X dos 80 repositórios do tópico `ai-video` — o que adotamos, adaptamos, só consultamos e o que fica de fora
+por exigir API paga — está em `video-estudio/references/fontes.md`. Limites de hardware e o que não dá para fazer
+offline em `video-estudio/references/limites.md`.
+
+Uso por comando, a partir de `marketing/`:
+
+```bash
+python tools/video.py doctor                       # o que falta no ambiente
+python tools/video.py projeto <nome> --frente tech  # briefing, roteiro e storyboard
+python tools/video.py demo                         # clipe 9:16 de teste, com QA
+```
+
+O mapa "pedido → comando → skill" está em `video-estudio/references/atalhos.md`; o catálogo legível por máquina
+em `video-estudio/manifest.json`. Há também os comandos `/video` e `/video-qa` em `.claude/commands/`.
+
+### Skills
+
+| Skill | Para que serve | Onde usamos |
+|---|---|---|
+| `hyperframes` | Vídeo a partir de HTML, quadro a quadro | Carrossel animado, comerciais, filmes das frentes |
+| `hyperframes-cli` | CLI: `snapshot --at`, render, `remove-background` | Conferir quadro antes de renderizar; recorte das fotos da palestra |
+| `hyperframes-registry` | ~450 blocos prontos (transições, títulos, legendas, gráficos) | Consulta quando falta um efeito |
+| `media-use` | Mídia para o vídeo (som, ícone, logo, imagem) | Apoio; áudio desligado desde 31/10 |
+| `gsap-core`, `gsap-timeline`, `gsap-plugins`, `gsap-utils`, `gsap-performance` | GSAP oficial: easing, stagger, timeline, SplitText, DrawSVG | Coreografia dos vídeos e transições das palestras |
+| `gsap-scrolltrigger`, `gsap-react`, `gsap-frameworks` | GSAP com rolagem e frameworks | Pouco usadas (são do site) |
+| `threejs-*` (13: fundamentals, geometry, materials, lighting, textures, shaders, postprocessing, animation, interaction, loaders, asset-pipeline, performance, react-three-fiber) | 3D em WebGL | Filmes 3D das frentes; globo da palestra de cibersegurança |
+| `remotion-motion-graphics` | Vídeo em React (Remotion) | Primeiros Reels (lançamento e por frente) |
+| `text-to-lottie` | Cria/corrige Lottie JSON | Folinha animada |
+| `animation-vocabulary` | Glossário de motion (nome certo de cada efeito) | Base do dicionário de motion (pop in, wipe, punch zoom...) |
+| `animate`, `improve-animations`, `review-animations`, `find-animation-opportunities`, `animation-performance`, `emil-design-eng` | Critério de motion (Emil Kowalski): se anima, como, revisão, desempenho | Auditoria e acabamento das animações e palestras |
+| `wiggle` | Logo parado → GIF/MP4/Lottie | Instalada, **não usada** (Lottie cobriu) |
+| `lemo-opuscar` | 59 estilos de curta em código | Instalada, **não usada** (pesada; parte dos assets CC BY 4.0) |
+| `apple-design`, `design-taste-frontend`, `prototype`, `pick-ui-library`, `break-ui`, `mobile-native`, `ask-sonner` | Design de interface | Não entram em vídeo/apresentação (são do site) |
+
+### Repositórios das skills
+
+"Na skill" = o endereço está escrito nos arquivos da skill. "Deduzido" = autor confirmado no LICENSE, nome do
+repositório deduzido do zip original (`D:\Dev\*-main.zip`, já removidos); confira no navegador antes de citar fora.
+
+| Repositório | Autor | Skills | Licença | Endereço |
+|---|---|---|---|---|
+| `github.com/heygen-com/hyperframes` | HeyGen | hyperframes, hyperframes-cli, hyperframes-registry, media-use | Apache 2.0 | Na skill |
+| `github.com/greensock/gsap-skills` | GreenSock | gsap-* (8) | MIT | Deduzido |
+| `github.com/emilkowalski/skills` | Emil Kowalski | animate, improve-/review-/find-animation(-opportunities), animation-performance, animation-vocabulary, emil-design-eng, apple-design, prototype, pick-ui-library, break-ui, mobile-native, ask-sonner | MIT | Deduzido |
+| `github.com/CloudAI-X/threejs-skills` | CloudAI-X | threejs-* (13) | MIT | Deduzido |
+| `github.com/haidrrrry/claude-remotion-skill` | haidrrrry | remotion-motion-graphics | MIT | Deduzido |
+| `github.com/diffusionstudio/lottie` | Diffusion Studio | text-to-lottie | ver LICENSE da pasta | Deduzido |
+| `github.com/talknerdytome-labs/wiggle-claude-skill` | talknerdytome-labs | wiggle | Apache 2.0 | Na skill |
+| `github.com/lemomo-ai/lemo-opuscar` | LemoLab | lemo-opuscar | MIT | Na skill |
+| `github.com/Leonxlnx/taste-skill` | Leonxlnx | design-taste-frontend | MIT | Na skill |
+
+### Ferramentas (bibliotecas que o nosso código usa)
+
+| Repositório | Versão | Onde | Para que serve |
+|---|---|---|---|
+| `heygen-com/hyperframes` | 0.8.210 | `filmes/package.json` | Render dos vídeos |
+| `greensock/GSAP` | — | `filmes/`, `Palestras/` | Animação |
+| `mrdoob/three.js` | 0.170.0 | `filmes/` | 3D dos filmes e do globo |
+| `remotion-dev/remotion` | 4.0.539 | `videos/package.json` | Projeto de vídeo antigo |
+| `airbnb/lottie-web` | 5.13 | `videos/`, palestras | Toca o Lottie da folinha |
+| `microsoft/playwright` (Python) | — | `tools/*.py` | PNG e PDF de peças e palestras |
+| `phosphor-icons`, `fontsource` | 2.1 / 5.3 | `filmes/package.json` | Ícones e fontes locais (offline) |
+
+### Projetos e scripts internos
+
+| Caminho | Para que serve |
+|---|---|
+| `filmes/` | Estúdio principal de vídeo (HyperFrames + GSAP + Three.js) |
+| `filmes/ferramentas/animar-carrossel.mjs` | `carrossel.html` → `carrossel-animado.mp4` (1080×1350, mudo; `--com-audio` reativa) |
+| `filmes/coreografias/<entrega>.mjs` | Coreografia por elemento e por marca |
+| `filmes/frentes-comum/`, `montar-frentes.mjs`, `render-frentes.sh` | Motor 3D comum e render dos 8 filmes das frentes |
+| `filmes/ferramentas/trilha.mjs` | Trilha sintética (desativada) |
+| `videos/` | Projeto Remotion (Reels antigos, `scripts/gerar-sfx.mjs`) |
+| `animacoes/folinha/gerar_lottie.py` | Lottie da folinha |
+| `Palestras/<palestra>/` + `gerar_slides.py` | Palestras HTML+GSAP offline; o script gera o `index.html` dos textos |
+| `tools/exportar.py` → `tools/publicar.py` | Exporta PNG e publica na Central de Marketing |
 
 ## Peças prontas
 
@@ -201,7 +295,8 @@ python tools/gerar_formatos.py --render cerraai credito # só algumas
   A pasta `formatos/` **é publicada** (não está no `exclude`). Não passa pelo `publicar.py` nem pela agenda.
 - **Por frente (9: institucional, tech, cerraai, cerraclass, credito, contabilidade, consultorias, guiacademico,
   cerrafood):**
-  - 5 cartões de visita, cada um com frente e verso: `cartao-vN-90x50mm.pdf` e `cartao-vN-88x48mm.pdf` (2 páginas,
+  - 1 cartão de visita na maioria das frentes (5 na Contabilidade e no CerraFood), sempre com frente e verso:
+    `cartao-vN-90x50mm.pdf` e `cartao-vN-88x48mm.pdf` (2 páginas,
     3 mm de sangria por lado, área segura de 4 mm), mais `cartao-vN-frente.png`/`-verso.png` (prévia em 300 dpi);
   - folder de 4 páginas A5 (folha A4 dobrada): `folder-paginas-a5.pdf` (as 4 páginas em ordem, com sangria) e
     `folder-impressao-a4.pdf` (2 folhas já imposicionadas: lado de fora 4|1, lado de dentro 2|3), mais `folder-pN.png`;

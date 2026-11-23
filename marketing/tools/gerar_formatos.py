@@ -1,7 +1,8 @@
 """Gera as artes de impressão e de site de cada frente (aba "Formatos" da Central de Marketing).
 
 Por frente:
-- 5 versões de cartão de visita, frente e verso, em PDF vetorial para a gráfica, nos dois tamanhos pedidos:
+- as versões de cartão de visita de cada frente (uma na maioria; a Contabilidade e o CerraFood ainda têm 5),
+  frente e verso, em PDF vetorial para a gráfica, nos dois tamanhos pedidos:
   9 x 5 cm e 8,8 x 4,8 cm, cada um com 3 mm de sangria por lado (96 x 56 mm e 94 x 54 mm). PNG de prévia (300 dpi).
 - Anúncio de jornal 25,5 x 36 cm (PDF + PNG de prévia).
 - Banners de site 1200 x 90 e 300 x 250 (PNG em 1x e 2x).
@@ -351,52 +352,7 @@ body { font-family: 'Inter', sans-serif; }
 .ct.linha li { gap: 1mm; }
 """
     c = []
-    # v1 clássico
-    c.append(cartao(1, "az", s(f"""<div class="cresce lin" style="flex-direction:column;justify-content:center;text-align:center;gap:2mm">
-      <img src="img/folinha.png" style="height:15mm" alt=""><p class="nome" style="font-size:15pt">Cerrado <span>Finanças</span></p>
-      <p class="tag" style="opacity:.85">Um só parceiro para o seu negócio crescer</p></div>"""),
-        "branco", f'<i class="fill" style="bottom:auto;height:calc(var(--sg) + 1.6mm);background:#fecb00"></i>' + s(f"""
-      <div class="mini"><img src="img/folinha.png" alt="">Cerrado Finanças</div>
-      <div class="cresce lin entre fim"><div>{contatos(b, ("whats", "email", "site", "insta", "local"))}</div>
-      <div style="width:17mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    # v2 folinha sangrando
-    c.append(cartao(2, "noite", """<img src="img/folinha.png" style="position:absolute;height:44mm;right:-8mm;bottom:-6mm;opacity:.95" alt="">""" + s("""
-      <p class="rot">Finanças &amp; Tech</p><div class="cresce"></div>
-      <p class="nome" style="font-size:17pt">Cerrado<br><span>Finanças</span></p>
-      <i style="display:block;width:9mm;height:.7mm;background:#fecb00;margin:2.2mm 0 1.6mm"></i>
-      <p class="tag" style="max-width:40mm;opacity:.85">Um só parceiro para o seu negócio crescer</p>"""),
-        "az", s(f"""<p class="rot">Nossas frentes</p>
-      <div class="pilulas" style="margin-top:1.6mm">{''.join(f'<span>{f}</span>' for f in frentes)}</div>
-      <div class="cresce"></div><div class="lin entre fim">{contatos(b, ("whats", "email", "site"))}
-      <div class="qrbox" style="width:14mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    # v3 faixa dourada lateral
-    c.append(cartao(3, "branco", '<i class="fill" style="right:auto;width:calc(var(--sg) + 9mm);background:#fecb00"></i>'
-                    '<img src="img/folinha.png" style="position:absolute;left:calc(var(--sg) + 1.5mm);top:50%;transform:translateY(-50%);width:13mm" alt="">'
-                    + s(f"""<div style="margin-left:13mm" class="cresce lin"><div>
-      <p class="rot">Finanças &amp; Tech</p><p class="nome" style="font-size:16pt;color:#001f5c;margin-top:1.2mm">Cerrado <span>Finanças</span></p>
-      <p class="tag" style="margin-top:2mm;color:#475569">{" · ".join(frentes)}</p></div></div>"""),
-        "az", s(f"""<div class="mini"><img src="img/folinha.png" alt="">Cerrado <span style="color:#fecb00">Finanças</span></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "email", "site", "insta"))}
-      <div class="qrbox" style="width:16mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    # v4 tipográfico dourado
-    c.append(cartao(4, "ouro", s("""<p class="rot" style="color:#001f5c">Cerrado Finanças &amp; Tech</p>
-      <p class="nome cresce" style="font-size:15.5pt;margin-top:2mm;color:#001f5c">Um só parceiro para o seu negócio crescer.</p>
-      <div class="lin entre fim"><p class="tag" style="font-weight:700">Software · Contabilidade · Crédito · Cursos · Consultorias</p>
-      <img src="img/folinha.png" style="height:9mm" alt=""></div>"""),
-        "noite", s(f"""<div class="lin entre"><div class="mini"><img src="img/folinha.png" alt="">Cerrado <span style="color:#fecb00">Finanças</span></div><p class="rot">{CIDADE}</p></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "email", "site", "insta"))}
-      <div class="qrbox" style="width:16mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    # v5 dividido
-    c.append(cartao(5, "az", '<i class="fill" style="right:auto;width:calc(var(--sg) + 28mm);background:#fecb00"></i>'
-                    '<img src="img/folinha.png" style="position:absolute;left:calc(var(--sg) + 5mm);top:50%;transform:translateY(-50%);width:18mm" alt="">'
-                    + s("""<div class="cresce lin" style="margin-left:28mm"><div>
-      <p class="nome" style="font-size:15pt">Cerrado<br><span>Finanças</span></p>
-      <p class="rot" style="margin-top:2mm">Finanças &amp; Tech</p></div></div>"""),
-        "branco", '<i class="fill" style="top:auto;height:calc(var(--sg) + 7.5mm);background:#001f5c"></i>' + s(f"""
-      <div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "insta", "local"))}
-      <div style="width:15mm">{qr(url, "#001f5c")}</div></div><div class="cresce"></div>
-      <p style="font-size:7pt;font-weight:800;color:#fecb00;position:relative;top:2.6mm">cerradofinancas.com.br</p>"""), nome))
-    # v6 frente da v2 + verso da v4 com tudo o que o escritório faz (serviços tirados das páginas do site)
+    # frente da antiga v2 + verso da antiga v4 com tudo o que o escritório faz (serviços tirados das páginas do site)
     servicos = [
         ("Fábrica de Software", "ERPs, CRMs, IA offline, e-commerce, dashboards e cyber security"),
         ("Contabilidade", "abertura de empresa, tributos, folha e eSocial, BPO e BI"),
@@ -405,7 +361,7 @@ body { font-family: 'Inter', sans-serif; }
         ("Consultorias", "CSC, BPO financeiro, controladoria, tributário, GRC, GovTech e Web3"),
     ]
     lista_sv = "".join(f'<div class="sv"><b>{t}</b><span>{d}</span></div>' for t, d in servicos)
-    c.append(cartao(6, "noite", """<img src="img/folinha.png" style="position:absolute;height:44mm;right:-8mm;bottom:-6mm;opacity:.95" alt="">""" + s("""
+    c.append(cartao(1, "noite", """<img src="img/folinha.png" style="position:absolute;height:44mm;right:-8mm;bottom:-6mm;opacity:.95" alt="">""" + s("""
       <p class="rot">Finanças &amp; Tech</p><div class="cresce"></div>
       <p class="nome" style="font-size:17pt">Cerrado<br><span>Finanças</span></p>
       <i style="display:block;width:9mm;height:.7mm;background:#fecb00;margin:2.2mm 0 1.6mm"></i>
@@ -481,41 +437,20 @@ body { font-family: 'Inter', sans-serif; }
 .n3 { display: grid; gap: 1.6mm; }
 .n3 p { display: grid; grid-template-columns: 6mm 1fr; font-size: 7pt; font-weight: 700; line-height: 1.2; }
 .n3 b { font: 600 6pt 'JetBrains Mono', monospace; color: #fecb00; }
+.pilulas { display: flex; flex-wrap: wrap; gap: 1mm; }
+.pilulas span { border: .25mm solid #003399; color: #001f5c; border-radius: 9mm; padding: .45mm 1.7mm; font-size: 5.3pt; font-weight: 700; }
 """
     c = []
+    softwares = ["ERPs e CRMs", "IA offline", "E-commerce e vendas", "Compliance e auditoria", "Dashboards e BI", "Cyber security"]
     c.append(cartao(1, "noite", circuito("#fecb00") + s("""<div class="cresce lin" style="justify-content:center;gap:3mm">
       <img src="img/folinha.png" style="height:15mm" alt=""><div><p class="nome" style="font-size:16pt">Cerrado <span>Tech</span></p>
       <p class="rot" style="margin-top:1.4mm">// fábrica de software</p></div></div>
       <p class="tag" style="text-align:center;opacity:.8">Software feito em torno do seu negócio</p>"""),
         "branco", s(f"""<img src="img/logo-tech.png" style="height:9mm;align-self:flex-start" alt="Cerrado Tech">
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    c.append(cartao(2, "branco", s("""<div class="cresce lin" style="justify-content:center">
-      <img src="img/logo-tech.png" style="width:52mm" alt="Cerrado Tech"></div>
-      <p class="rot" style="text-align:center">// software feito em torno do seu negócio</p>"""),
-        "az", s(f"""<p class="tag" style="font-weight:800;font-size:6.8pt">ERPs · CRMs · IA · E-commerce · Compliance · Dashboards</p>
-      <p class="rot" style="margin-top:1mm">para empresas e para a gestão pública</p>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "email", "site"))}<div class="qrbox" style="width:14mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    c.append(cartao(3, "noite", s("""<div class="lin entre"><div class="mini"><img src="img/folinha.png" alt="">Cerrado <span style="color:#fecb00">Tech</span></div>
-      <p class="rot">fabrica.js</p></div>
-      <div class="cresce lin"><div class="codigo">
-      <p><span class="f">fabrica</span>.de(<span class="t">"software"</span>)</p>
-      <p>&nbsp;&nbsp;.<span class="f">sobMedida</span>()</p>
-      <p>&nbsp;&nbsp;.<span class="f">integraCom</span>([<span class="t">"SAP®"</span>, <span class="t">"TOTVS"</span>, <span class="t">"Power BI"</span>])</p>
-      <p>&nbsp;&nbsp;.<span class="f">entrega</span>({ <span class="k">codigo</span>: <span class="t">"é seu"</span> })</p></div></div>"""),
-        "noite", s(f"""<p class="rot">// contato</p><div class="cresce lin entre" style="align-items:center">{contatos_mono(b, ("whats", "email", "site", "insta"))}
-      <div class="qrbox" style="width:15mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    c.append(cartao(4, "ouro", s("""<p class="rot" style="color:#001f5c">// Cerrado Tech</p>
-      <p class="nome cresce lin" style="font-size:21pt;color:#001f5c">O código é seu.</p>
-      <div class="lin entre fim"><p class="tag" style="font-weight:700">100% customizado, sem amarras de fornecedor</p>
-      <img src="img/folinha.png" style="height:9mm" alt=""></div>"""),
-        "noite", circuito("#fecb00", .35) + s(f"""<div class="mini"><img src="img/folinha.png" alt="">Cerrado <span style="color:#fecb00">Tech</span></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div class="qrbox" style="width:16mm">{qr(url, "#001f5c")}</div></div>"""), nome))
-    c.append(cartao(5, "az", s("""<p class="rot">// por que sob medida</p><div class="cresce lin"><div class="n3">
-      <p><b>01</b>100% customizado: cada função nasce de uma necessidade real</p>
-      <p><b>02</b>O código é seu, sem amarras de fornecedor</p>
-      <p><b>03</b>Integra com SAP®, TOTVS, Power BI, bancos e notas fiscais</p></div></div>"""),
-        "branco", s(f"""<img src="img/logo-tech.png" style="height:9mm;align-self:flex-start" alt="Cerrado Tech">
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "email", "site", "local"))}<div style="width:16mm">{qr(url, "#001f5c")}</div></div>"""), nome))
+      <div class="cresce" style="display:flex;flex-direction:column;justify-content:center;gap:1.4mm">
+      <p class="rot">// o que a gente constrói</p>
+      <div class="pilulas">{''.join(f'<span>{x}</span>' for x in softwares)}</div></div>
+      <div class="lin entre fim">{contatos(b)}<div style="width:14mm">{qr(url, "#001f5c")}</div></div>"""), nome))
 
     marca_j = '<div class="mini" style="font-size:20pt;gap:4mm"><img src="img/folinha.png" style="height:16mm" alt="">Cerrado&nbsp;<span style="color:#fecb00">Tech</span></div>'
     motivo = '<div class="codigo" style="font-size:17pt;line-height:1.7;background:rgba(0,0,0,.25);padding:8mm 12mm;border-radius:4mm;border:.3mm solid rgba(254,203,0,.35)">' \
@@ -564,37 +499,19 @@ body { font-family: 'Archivo', sans-serif; }
 .lst { list-style: none; display: grid; gap: 1.3mm; font-size: 6.6pt; font-weight: 600; }
 .lst li { display: flex; gap: 1.6mm; align-items: baseline; }
 .lst li::before { content: ""; width: 1.4mm; height: 1.4mm; background: #e2873b; flex-shrink: 0; }
+.cobre .lst li::before { background: #0d0f0e; }
 """
     def marca(t=9):
         return f'<p class="cx" style="font-size:{t}pt">Cerra<span class="c">.AI</span></p>'
     c = []
-    c.append(cartao(1, "graf", s(f"""<div class="cresce lin" style="flex-direction:column;justify-content:center;gap:2mm;text-align:center">
-      <img src="img/cerraai.png" style="height:17mm" alt="">{marca(15)}<p class="rot" style="color:#a39d93">by Cerrado Tech</p></div>"""),
-        "graf", s(f"""<div class="lin entre"><p class="rot">IA local · offline</p><img src="img/cerraai.png" style="height:6mm" alt=""></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0d0f0e", "#f1ece3")}</div></div>"""), nome))
-    c.append(cartao(2, "graf", '<img src="img/cerraai.png" style="position:absolute;height:48mm;right:-14mm;top:50%;transform:translateY(-50%)" alt="">' + s(f"""
+    c.append(cartao(1, "graf", '<img src="img/cerraai.png" style="position:absolute;height:48mm;right:-14mm;top:50%;transform:translateY(-50%)" alt="">' + s(f"""
       {marca(8)}<div class="cresce"></div>
       <p class="cx" style="font-size:11pt;max-width:48mm">A IA da empresa, <span class="c">dentro da empresa.</span></p>"""),
         "cobre", s(f"""<div class="lin entre">{marca(10).replace('class="c"', 'style="color:#f1ece3"')}<p class="rot">by Cerrado Tech</p></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0d0f0e", "#f1ece3")}</div></div>"""), nome))
-    c.append(cartao(3, "graf", s(f"""<p class="rot">Anonimização</p>
-      <div class="cresce lin"><div class="mono" style="font-size:7.4pt;line-height:1.9">
-      <p>Cliente: <span class="tarja" style="width:24mm"></span></p><p>CPF: <span class="tarja" style="width:5.5mm"></span>.<span class="tarja" style="width:5.5mm"></span>.<span class="tarja" style="width:5.5mm"></span>-<span class="tarja" style="width:3.6mm"></span></p></div></div>
-      <p class="cx" style="font-size:7.4pt">Anonimiza o dado pessoal <span class="c">antes de chegar ao modelo.</span></p>"""),
-        "graf", s(f"""<div class="lin entre">{marca(9)}<img src="img/cerraai.png" style="height:6mm" alt=""></div>
-      <p class="cita" style="margin-top:1.8mm">Trechos consultados: cartao.pdf (p. 1)</p>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "email", "site"))}<div style="width:14mm">{qr(url, "#0d0f0e", "#f1ece3")}</div></div>"""), nome))
-    c.append(cartao(4, "cobre", s(f"""<div class="lin entre">{marca(8).replace('class="c"', 'style="color:#f1ece3"')}<img src="img/cerraai.png" style="height:7mm" alt=""></div>
-      <p class="cx cresce lin" style="font-size:16pt">Funciona sem internet.</p>
-      <p class="rot">depois de instalado · roda no computador da empresa</p>"""),
-        "graf", s(f"""<p class="rot">Demonstração com os seus documentos</p>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0d0f0e", "#f1ece3")}</div></div>"""), nome))
-    c.append(cartao(5, "graf", s(f"""<div class="lin entre">{marca(9)}<img src="img/cerraai.png" style="height:7mm" alt=""></div>
-      <div class="cresce lin"><ul class="lst">
-      <li>Lê PDF (também escaneado), Word, Excel, áudio e vídeo</li><li>Mostra o arquivo e a página da resposta</li>
-      <li>Anonimiza o dado pessoal antes do modelo</li><li>Funciona sem internet, depois de instalado</li></ul></div>"""),
-        "clara", s(f"""<div class="lin entre"><img src="img/cerraai.png" style="height:9mm" alt="">{marca(11).replace('class="c"', 'style="color:#e2873b"')}</div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0d0f0e", "#f1ece3")}</div></div>"""), nome))
+      <div class="cresce" style="display:flex;flex-direction:column;justify-content:center">
+      <ul class="lst"><li>Lê PDF (também escaneado), Word, Excel, áudio e vídeo</li><li>Mostra o arquivo e a página da resposta</li>
+      <li>Anonimiza o dado pessoal antes do modelo</li><li>Funciona sem internet, depois de instalado</li></ul></div>
+      <div class="lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0d0f0e", "#f1ece3")}</div></div>"""), nome))
 
     motivo = ('<div class="mono" style="font-size:20pt;line-height:2;border:.4mm solid #e2873b;padding:8mm 12mm">'
               '<p>Cliente: <span class="tarja" style="width:80mm"></span></p><p>CPF: <span class="tarja" style="width:18mm"></span>.'
@@ -651,40 +568,44 @@ body { font-family: 'Bricolage Grotesque', sans-serif; color: #141414; }
 .regua { position: relative; height: 7mm; border-bottom: .4mm solid #141414; display: flex; justify-content: space-between; }
 .regua i { width: .3mm; background: #141414; align-self: flex-end; height: 1.6mm; }
 .regua i:nth-child(odd) { height: 3mm; }
+.cursos { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3mm; margin-top: 1mm; }
+.cursos > div { display: flex; flex-direction: column; gap: .3mm; }
+.grp { font-weight: 800; text-transform: uppercase; font-size: 4.6pt; letter-spacing: .06em; border-bottom: .3mm solid #141414; padding-bottom: .4mm; margin-bottom: .6mm; }
+.cursos p { font-size: 4.6pt; font-weight: 600; line-height: 1.08; display: flex; gap: 1.1mm; align-items: baseline; }
+.cursos i { width: 1.2mm; height: 1.2mm; flex-shrink: 0; transform: translateY(-.35mm); }
 """
     def selo(mm):
         return f'<div class="selo" style="width:{mm}mm;height:{mm}mm"><img src="img/cerraclass.png" alt="CerraClass"></div>'
     listras = '<div class="listras fill" style="top:auto;height:calc(var(--sg) + 3mm)">' + "".join(f'<i style="background:{c_}"></i>' for c_ in CORES_CURSOS) + "</div>"
     c = []
-    c.append(cartao(1, "ipe", s(f"""<div class="cresce lin" style="gap:3mm">{selo(19)}<div>
-      <p class="cx" style="font-size:22pt">CerraClass</p><p class="tag" style="margin-top:1mm">Cursos presenciais de IA e tecnologia</p></div></div>
-      <div><span class="etq">Turma de até 10 alunos</span></div>"""),
-        "branco", listras + s(f"""<div class="lin entre"><p class="cx" style="font-size:11pt">CerraClass</p>{selo(8)}</div>
-      <div class="cresce lin entre" style="align-items:center">{contatos(b, ("whats", "site", "insta", "local"))}<div style="width:15mm">{qr(url, "#141414")}</div></div>"""), nome))
-    c.append(cartao(2, "ipe", s(f"""<div class="lin entre" style="align-items:flex-start"><div>
-      <p class="cx" style="font-size:16pt">Turma de<br>até 10 alunos</p><p class="tag" style="margin-top:1.4mm">Aula presencial e 100% prática</p></div>{selo(10)}</div>
-      <div class="cresce"></div><div class="cadeiras">{''.join(cadeira(CORES_CURSOS[i + 1]) for i in range(10))}</div>"""),
-        "verde", s(f"""<div class="lin entre"><p class="cx" style="font-size:11pt">CerraClass</p>{selo(8)}</div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta", "local"))}<div style="width:16mm;border:.3mm solid #141414">{qr(url, "#141414")}</div></div>"""), nome))
-    c.append(cartao(3, "ipe", f"""<div class="ingresso"><div class="corpo">
-      <p class="tag" style="font-size:5.4pt;letter-spacing:.14em">INGRESSO · CURSO PRESENCIAL</p>
-      <p class="cx cresce lin" style="font-size:15pt">Aprenda IA com quem constrói software</p>
-      <p class="tag" style="font-size:5.8pt">Você sai com algo funcionando</p></div>
-      <div class="canhoto"><div style="width:11mm;margin:0 auto 1.4mm">{selo(11)}</div><p class="cx" style="font-size:7pt">Até 10<br>alunos</p></div></div>""",
-        "ipe", s(f"""<div class="lin entre"><p class="cx" style="font-size:12pt">CerraClass</p><span class="etq">Nenhuma linha de código exigida</span></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta"))}<div style="width:16mm;border:.3mm solid #141414">{qr(url, "#141414")}</div></div>"""), nome))
-    c.append(cartao(4, "lilas", s("""<p class="tag" style="font-size:5.6pt;letter-spacing:.14em">UM DIA DE AULA</p>
-      <p class="cx" style="font-size:15pt;margin-top:1.4mm">Nenhuma linha de código exigida</p><div class="cresce"></div>
-      <div class="lin entre cx" style="font-size:8pt"><span>08:00</span><span>17:00</span></div>
-      <div class="regua">""" + "<i></i>" * 19 + """</div>"""),
-        "branco", s(f"""<div class="lin" style="gap:2.4mm">{selo(11)}<div><p class="cx" style="font-size:12pt">CerraClass</p>
-      <p class="tag" style="font-size:5.8pt">Treinamentos presenciais e práticos</p></div></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta"))}<div style="width:15mm">{qr(url, "#141414")}</div></div>"""), nome))
-    c.append(cartao(5, "branco", '<div class="listras fill" style="right:auto;width:calc(var(--sg) + 26mm)">' + "".join(f'<i style="background:{c_}"></i>' for c_ in CORES_CURSOS) + "</div>"
-                    + s("""<div class="cresce lin" style="margin-left:27mm"><div><p class="cx" style="font-size:14.5pt">Aprenda IA com quem constrói software</p>
-      <p class="tag" style="margin-top:1.8mm">Uma cor para cada curso: de Excel com IA a Ciência de Dados</p></div></div>"""),
-        "ipe", s(f"""<div class="lin" style="gap:2.4mm">{selo(12)}<p class="cx" style="font-size:15pt">CerraClass</p></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta", "local"))}<div style="width:15mm;border:.3mm solid #141414">{qr(url, "#141414")}</div></div>"""), nome))
+    CURSOS_UM_DIA = [("IA na Gestão", "#ffc83d"), ("Excel com IA", "#4cc274"), ("Consultoria Contábil com IA", "#7cc4f0"),
+                     ("Consultoria Financeira com IA", "#ff9f2e"), ("Introdução à Análise de Dados", "#b9a3ff"),
+                     ("Processos Empresariais BPMN com IA", "#f2684f"), ("Introdução à Automação com IA", "#cbe847")]
+    CURSOS_IMERSAO = [("Ciência de Dados Aplicada", "#3fcfbf"), ("IA na Farma", "#ff8fb8"),
+                      ("BI e Dashboards com IA", "#8fa6ff"), ("Prototipação de Apps com IA", "#ff7a5c")]
+
+    def lista_cursos(itens):
+        return "".join(f'<p><i style="background:{cor}"></i>{escape(t)}</p>' for t, cor in itens)
+
+    # frente: o que é a escola e como funciona; verso: todos os cursos + como agendar (in company ou na escola)
+    c.append(cartao(1, "ipe", '<div class="listras fill" style="top:auto;height:calc(var(--sg) + 2.6mm)">'
+                    + "".join(f'<i style="background:{c_}"></i>' for c_ in CORES_CURSOS) + "</div>"
+                    + s(f"""<div class="lin" style="gap:3.4mm;align-items:center">{selo(20)}<div>
+      <p class="cx" style="font-size:21pt">CerraClass</p>
+      <p class="tag" style="margin-top:.8mm">Escola de IA e tecnologia · Cuiabá</p></div></div>
+      <div class="cresce"></div>
+      <p class="cx" style="font-size:13pt;max-width:64mm">Aprenda IA com quem constrói software.</p>
+      <p class="tag" style="margin-top:1.6mm;font-size:6.1pt">Cursos presenciais e 100% práticos, no seu notebook, com problemas reais. Turma de até 10 alunos e certificado com validação.</p>
+      <div class="lin entre" style="margin-top:1.8mm;align-items:flex-end"><p class="tag" style="font-size:6.2pt"><b>In company</b> no seu time<br>ou <b>na escola</b>, em Cuiabá</p>
+      <div class="cadeiras" style="grid-template-columns:repeat(10,3mm);gap:.7mm">{''.join(cadeira(CORES_CURSOS[i + 1]) for i in range(10))}</div></div>"""),
+        "branco", listras + s(f"""<div class="lin entre"><div><p class="cx" style="font-size:12pt">CerraClass</p>
+      <p class="tag" style="font-size:5.6pt">11 cursos presenciais, em Cuiabá</p></div>{selo(9)}</div>
+      <div class="cursos">
+      <div><p class="grp">Um dia · sábado, 8h</p>{lista_cursos(CURSOS_UM_DIA)}</div>
+      <div><p class="grp">Imersão · 4 encontros, 22h</p>{lista_cursos(CURSOS_IMERSAO)}</div></div>
+      <div class="cresce"></div>
+      <p class="tag" style="font-size:5.8pt"><b>Na escola</b>, em Cuiabá, ou <b>in company</b> no seu time.</p>
+      <div class="lin entre fim" style="margin-top:1mm">{contatos(b, ("whats", "site", "insta"))}<div style="width:10mm;border:.3mm solid #141414">{qr(url, "#141414")}</div></div>"""), nome))
 
     motivo = f'<div style="display:grid;grid-template-columns:repeat(5,24mm);gap:5mm 8mm">{"".join(cadeira(CORES_CURSOS[i + 1]) for i in range(10))}</div>'
     j = jornal(f'<div class="lin" style="gap:4mm">{selo(20)}<p class="cx" style="font-size:30pt">CerraClass</p></div>',
@@ -741,37 +662,35 @@ body { font-family: 'Schibsted Grotesk', sans-serif; color: #111522; }
 .par p { display: grid; grid-template-columns: 6mm 1fr; font-size: 8pt; font-weight: 800; line-height: 1.15; }
 .par b { color: #e6ff3d; }
 .qrb { background: #fff; padding: .8mm; }
+.serv { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 3.4mm; margin-top: 1.2mm; }
+.serv > div { font-size: 4.7pt; line-height: 1.22; }
+.serv b { display: block; font-size: 6pt; font-weight: 800; color: #1f3ae0; line-height: 1.1; }
+.serv span { display: block; font-size: 4.7pt; line-height: 1.22; color: #3f4555; }
+.miuda { font-size: 4.4pt; line-height: 1.25; }
 """
     av = f'<p class="miuda">{escape(AVISO_CREDITO)}</p>'
-    mini = '<div class="mini"><img src="img/folinha.png" alt="">Cerrado Finanças <small>· Crédito</small></div>'
+    mini = '<div class="mini"><img src="img/folinha.png" style="height:5mm" alt="">Cerrado Finanças <small>· Crédito</small></div>'
     c = []
-    c.append(cartao(1, "papel", s(f"""{mini}<p class="t cresce lin" style="font-size:15.5pt">Antes de assinar,&nbsp;<span class="grifo">compare.</span></p>
-      <div class="assina"><b>X</b><span><i class="rubrica">Você decide</i></span></div>"""),
-        "papel", s(f"""<div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "site", "insta"))}<div style="width:14mm">{qr(url, "#111522")}</div></div>
-      <div class="cresce"></div>{av}"""), nome))
-    c.append(cartao(2, "caneta", s(f"""{mini}<div class="cresce lin"><div><p class="t" style="font-size:26pt">Crédito</p>
-      <p style="font-size:7.4pt;font-weight:700;margin-top:1.6mm">Uma consulta só. <span class="grifo">Vários bancos comparados.</span></p></div></div>
-      <p class="rot">Empréstimos · Consignado · Financiamentos · Seguros · Consórcios</p>"""),
-        "papel", s(f"""<div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "site", "insta"))}<div style="width:14mm">{qr(url, "#111522")}</div></div>
-      <div class="cresce"></div>{av}"""), nome))
-    c.append(cartao(3, "papel", s(f"""<div class="lin entre">{mini}<p class="rot">Comparativo</p></div>
-      <div class="cresce lin"><table class="tab"><tr><td>Proposta A</td><td><div class="bar" style="width:85%"></div></td></tr>
-      <tr><td>Proposta B</td><td><div class="bar" style="width:70%"></div></td></tr>
-      <tr class="top"><td>Proposta C ✓</td><td><div class="bar" style="width:52%"></div></td></tr></table></div>
-      <p class="t" style="font-size:9pt">Nós comparamos. <span class="rubrica" style="font-size:12pt;letter-spacing:0">Você escolhe.</span></p>"""),
-        "caneta", s(f"""<div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "site", "insta"))}<div class="qrb" style="width:14mm">{qr(url, "#111522")}</div></div>
-      <div class="cresce"></div>{av}"""), nome))
-    c.append(cartao(4, "caneta", s(f"""{mini}<div class="cresce lin"><div class="par">
-      <p><b>§ 1</b>Uma consulta só.</p><p><b>§ 2</b>Vários bancos comparados.</p><p><b>§ 3</b>Você escolhe, sem pressão.</p></div></div>
-      <p class="rot">Simulação gratuita e sem compromisso</p>"""),
-        "papel", s(f"""<div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "site", "insta"))}<div style="width:14mm">{qr(url, "#111522")}</div></div>
-      <div class="cresce"></div>{av}"""), nome))
-    c.append(cartao(5, "papel", '<i class="fill" style="right:auto;width:calc(var(--sg) + 2.4mm);background:#1f3ae0"></i>' + s(f"""{mini}
-      <ul style="list-style:none;font-size:7.2pt;font-weight:700;line-height:1.5;margin-top:2mm" class="cresce">
-      <li>Empréstimos e capital de giro</li><li>Consignado, portabilidade e refinanciamento</li><li><span class="grifo">Financiamento</span> de imóveis e veículos</li><li>Seguros e consórcios</li></ul>
-      <p class="rot">Simulação gratuita e sem compromisso</p>"""),
-        "papel", s(f"""<div class="lin entre" style="align-items:flex-start">{contatos(b, ("whats", "email", "site"))}<div style="width:13mm">{qr(url, "#111522")}</div></div>
-      <div class="cresce"></div><div class="assina" style="margin:1mm 0 1.6mm"><b>X</b><span><i class="rubrica" style="font-size:12pt">Você decide</i></span></div>{av}"""), nome))
+    servicos = [("Empréstimos", "pessoal, capital de giro e com garantia"),
+                ("Consignado", "aposentados, pensionistas e servidores; portabilidade e refinanciamento"),
+                ("Financiamento", "imóveis, veículos, máquinas e equipamentos"),
+                ("Seguros e consórcios", "proteção e planejamento para o seu patrimônio")]
+    serv = "".join(f'<div><b>{t}</b><span>{d}</span></div>' for t, d in servicos)
+
+    # frente: o que é o serviço; verso: todos os serviços englobados + como falar com a gente + aviso legal
+    c.append(cartao(1, "papel", s(f"""{mini}
+      <div class="cresce lin"><div>
+      <p class="t" style="font-size:17pt">Crédito e seguros,<br>para pessoa e empresa.</p>
+      <p style="font-size:7pt;font-weight:700;margin-top:2mm;line-height:1.3">Empréstimos, consignado, financiamento, seguros e consórcios. <span class="grifo">Uma consulta só, vários bancos comparados.</span></p></div></div>
+      <div class="assina"><b>X</b><span><i class="rubrica">Você decide</i></span></div>
+      <p class="miuda" style="margin-top:1.2mm">Correspondente bancário em parceria com a LS Intermediação Financeira.</p>"""),
+        "papel", s(f"""{mini}
+      <p class="rot" style="margin-top:1.2mm">Serviços englobados</p>
+      <div class="serv">{serv}</div>
+      <div class="cresce"></div>
+      <p class="t" style="font-size:8.4pt;margin-top:2mm">Simulação gratuita e <span class="grifo">sem compromisso.</span></p>
+      <div class="lin entre fim" style="margin-top:1.4mm">{contatos(b, ("whats", "email", "site"))}<div style="width:10mm">{qr(url, "#111522")}</div></div>
+      <div style="margin-top:1.4mm">{av}</div>"""), nome))
 
     motivo = ('<div style="width:100%"><table class="tab" style="font-size:15pt"><tr><td>Proposta A</td><td><div class="bar" style="width:85%;height:5mm"></div></td></tr>'
               '<tr><td>Proposta B</td><td><div class="bar" style="width:70%;height:5mm"></div></td></tr>'
@@ -906,6 +825,9 @@ body { font-family: 'Instrument Sans', sans-serif; color: #23262b; }
 .carimbo span { padding: .8mm 1.4mm; } .carimbo span + span { border-left: .3mm solid currentColor; }
 .lista7 { list-style: none; font: 500 5.4pt 'DM Mono', monospace; display: grid; grid-template-columns: 1fr 1fr; gap: .7mm 3mm; }
 .lista7 b { color: #e4570e; font-weight: 500; margin-right: 1mm; }
+.lista11 { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: .8mm 3mm; font: 500 5.2pt 'DM Mono', monospace; align-content: start; }
+.lista11 li { display: flex; gap: 1.2mm; align-items: baseline; }
+.lista11 b { color: #e4570e; font-weight: 500; }
 .cota { position: relative; height: 5mm; display: flex; align-items: center; justify-content: center; }
 .cota::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: .3mm solid #e4570e; }
 .cota i { position: absolute; top: 0; bottom: 0; width: .3mm; background: #e4570e; } .cota i:first-child { left: 0; } .cota i:last-child { right: 0; }
@@ -922,28 +844,22 @@ body { font-family: 'Instrument Sans', sans-serif; color: #23262b; }
            '<path d="M40 8v5M14 13h52M14 13v4M40 13v4M66 13v4M40 24v3M30 27h20"/>'
            '<rect x="5" y="17" width="18" height="7"/><rect x="31" y="17" width="18" height="7"/><rect x="57" y="17" width="18" height="7"/></svg>')
     c = []
-    c.append(cartao(1, "vegetal", s(f"""{mini}<div class="cresce lin"><p class="t" style="font-size:17pt">Consultorias <em>especializadas</em></p></div>
-      <div class="carimbo"><span>Cerrado Finanças · Consultoria</span><span>Prancha 01/07</span><span>Esc. 1:1</span></div>"""),
-        "vegetal", s(f"""<p class="rot">O que fazemos</p><div style="margin-top:1.4mm">{l7}</div><div class="cresce"></div>
-      <div class="lin entre fim">{contatos(b, ("whats", "email", "site"))}<div style="width:12mm">{qr(url, "#23262b")}</div></div>"""), nome))
-    c.append(cartao(2, "vegetal", s(f"""{mini}<div class="cresce lin"><p class="t" style="font-size:16pt">A estrutura da empresa, <em>redesenhada</em></p></div>
-      <div class="cota"><i></i><span>DIAGNÓSTICO GRATUITO</span><i></i></div>"""),
-        "grafite", s(f"""<div class="lin entre"><p class="t" style="font-size:10pt">Consultorias <em>especializadas</em></p><img src="img/folinha.png" style="height:6mm" alt=""></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#23262b")}</div></div>"""), nome))
-    c.append(cartao(3, "vegetal", s(f"""<div class="lin entre"><p class="rot">Organograma · corte</p><p class="rot" style="color:#23262b">Prancha 03</p></div>
-      <div class="cresce lin" style="gap:4mm"><div style="width:34mm">{org}</div><p class="t" style="font-size:11pt">Quem responde por <em>cada ação</em></p></div>
-      {mini}"""),
-        "vegetal", s(f"""<div class="carimbo" style="margin-bottom:2mm"><span>Contato</span><span>Prancha 03/07</span><span>{CIDADE}</span></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#23262b")}</div></div>"""), nome))
-    c.append(cartao(4, "grafite", s(f"""<div class="lin entre"><p class="rot">7 consultorias</p><img src="img/folinha.png" style="height:6mm" alt=""></div>
-      <div class="cresce lin">{l7.replace('class="lista7"', 'class="lista7" style="font-size:5.9pt;gap:1.1mm 3mm"')}</div>
-      <p class="t" style="font-size:9pt">Consultorias <em>especializadas</em></p>"""),
-        "vegetal", s(f"""{mini}<div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#23262b")}</div></div>"""), nome))
-    c.append(cartao(5, "vegetal", s(f"""<div class="cresce lin entre" style="gap:3mm"><div>
-      <p class="rot">Cerrado Finanças</p><p class="t" style="font-size:15pt;margin-top:1.4mm">Consultorias <em>especializadas</em></p>
-      <p style="font-size:6.2pt;margin-top:2mm">Do CSC ao venture building</p></div>
-      <div style="width:22mm;flex-shrink:0;transform:rotate(-8deg)">{selo_svg}</div></div>"""),
-        "grafite", s(f"""{mini}<div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#23262b")}</div></div>"""), nome))
+    consultas = [("01", "CSC Strategy"), ("02", "BPO financeiro"), ("03", "Controladoria estruturada"),
+                 ("04", "Planejamento tributário e inovação"), ("05", "Governança, risco e compliance"),
+                 ("06", "Venture building"), ("07", "Consultoria GovTech"), ("08", "Web3 e blockchain"),
+                 ("09", "Engenharia de software"), ("10", "Contabilidade digital"), ("11", "Implementação B2B")]
+    l11 = "".join(f"<li><b>{n}</b>{escape(t)}</li>" for n, t in consultas)
+
+    # frente: o que é a consultoria; verso: as 11 linhas + como funciona + diagnóstico gratuito e contato
+    c.append(cartao(1, "vegetal", s(f"""{mini}
+      <div class="cresce lin"><div><p class="t" style="font-size:17pt">A estrutura da empresa, <em>redesenhada</em></p>
+      <p style="font-size:6.4pt;margin-top:2mm;max-width:58mm">Do CSC ao venture building, para empresas e para a gestão pública.</p></div></div>
+      <div class="cota"><i></i><span>DIAGNÓSTICO GRATUITO</span><i></i></div>
+      <div class="carimbo"><span>Cerrado Finanças · Consultoria</span><span>Prancha 01/11</span><span>{CIDADE}</span></div>"""),
+        "grafite", s(f"""<div class="carimbo"><span>O que fazemos</span><span>11 consultorias</span><span>Esc. 1:1</span></div>
+      <ul class="lista11 cresce">{l11}</ul>
+      <p class="tag" style="font-size:5.4pt"><b>Como funciona:</b> diagnóstico gratuito → roadmap → implantação com o seu time → acompanhamento por indicadores.</p>
+      <div class="lin entre fim" style="margin-top:1.4mm">{contatos(b, ("whats", "email", "site"))}<div style="width:10mm">{qr(url, "#23262b")}</div></div>"""), nome))
 
     motivo = f'<div style="display:flex;gap:16mm;align-items:center;width:100%"><div style="flex:1">{org}</div><div style="width:58mm;transform:rotate(-8deg)">{selo_svg}</div></div>'
     j = jornal('<div class="mini" style="font-size:16pt;gap:4mm"><img src="img/folinha.png" style="height:15mm" alt="">Cerrado Finanças · Consultoria</div>',
@@ -988,32 +904,16 @@ body { font-family: 'Newsreader', serif; color: #1e2a44; }
 .quadro td:first-child { font: 500 5pt 'DM Mono', monospace; color: #a8822a; text-transform: uppercase; width: 18mm; }
 """
     c = []
-    c.append(cartao(1, "papel", s(f"""<div class="cab"><span>Guia Acadêmico</span><span>Consultoria acadêmica</span></div>
-      <div class="cresce lin" style="justify-content:center"><img src="img/guiacademico.png" style="height:24mm" alt="Guia Acadêmico"></div>"""),
-        "papel", s(f"""<div class="cab"><span>Resumo</span><span>nº 01</span></div>
-      <p style="font-size:7pt;line-height:1.3;margin-top:1.4mm">Orientação metodológica e análise de dados para TCC, especialização, mestrado e doutorado.</p>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta"))}<div style="width:14mm">{qr(url, "#1e2a44")}</div></div>"""), nome))
-    c.append(cartao(2, "marinho", '<img src="img/bussola.png" style="position:absolute;height:50mm;right:-12mm;top:50%;transform:translateY(-50%);opacity:.95" alt="">' + s("""
+    # frente da v2; verso da v2 com o quadro de ferramentas que estava no verso da v5
+    c.append(cartao(1, "marinho", '<img src="img/bussola.png" style="position:absolute;height:50mm;right:-12mm;top:50%;transform:translateY(-50%);opacity:.95" alt="">' + s("""
       <p class="rot">Consultoria acadêmica</p><div class="cresce"></div>
       <p class="t" style="font-size:17pt">Guia<br>Acadêmico</p><p class="t" style="font-size:11pt;margin-top:1mm"><em>Seu Mentor</em></p>"""),
         "papel", s(f"""<div class="lin entre"><img src="img/bussola.png" style="height:8mm" alt=""><p class="rot">guiacademico.com.br</p></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta", "local"))}<div style="width:16mm">{qr(url, "#1e2a44")}</div></div>"""), nome))
-    c.append(cartao(3, "papel", s(f"""<div class="cab"><span>Revisão · controle de alterações</span><span>p. 1</span></div>
-      <div class="cresce lin"><p class="t" style="font-size:14pt;line-height:1.15">O autor da pesquisa é <span class="risco">a consultoria</span> <span class="ins">você.</span></p></div>
-      <p class="mono" style="font-size:5.4pt">Não executamos trabalhos por terceiros.</p>"""),
-        "papel", s(f"""<div class="lin entre"><img src="img/guiacademico.png" style="height:11mm" alt="Guia Acadêmico"><div style="width:15mm">{qr(url, "#1e2a44")}</div></div>
-      <div class="cresce"></div>{contatos(b, ("whats", "site", "insta"))}"""), nome))
-    c.append(cartao(4, "papel", s(f"""<p class="rot">Guia Acadêmico · Seu Mentor</p>
-      <div class="cresce lin"><p class="t" style="font-size:13pt">Orientação metodológica e <em>análise de dados</em></p></div>
-      <p style="font-size:6.4pt"><b class="mono" style="font-size:5pt;color:#a8822a">PALAVRAS-CHAVE:</b> TCC; especialização; mestrado; doutorado.</p>"""),
-        "marinho", s(f"""<div class="lin entre"><p class="t" style="font-size:11pt">Guia Acadêmico <em>· Seu Mentor</em></p><img src="img/bussola.png" style="height:8mm" alt=""></div>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta"))}<div style="width:16mm">{qr(url, "#1e2a44")}</div></div>"""), nome))
-    c.append(cartao(5, "papel", s(f"""<div class="cab"><span>Guia Acadêmico</span><span>Seu Mentor</span></div>
-      <div class="cresce lin"><p class="t" style="font-size:12.5pt;line-height:1.1">Orientamos, ensinamos, analisamos e <em>revisamos.</em><sup style="font-size:7pt;color:#a8822a">1</sup></p></div>
-      <p class="nota"><sup>1</sup> Não executamos trabalhos por terceiros. O autor da pesquisa é você.</p>"""),
-        "papel", s(f"""<table class="quadro"><tr><td>Estatística</td><td>STATA, R, Python, SPSS</td></tr>
+      <table class="quadro" style="margin-top:1.8mm"><tr><td>Estatística</td><td>STATA, R, Python, SPSS</td></tr>
       <tr><td>Qualitativa</td><td>IRAMUTEQ, NVivo, Atlas.ti</td></tr><tr><td>Formatação</td><td>ABNT, APA, Vancouver</td></tr></table>
-      <div class="cresce lin entre fim">{contatos(b, ("whats", "site", "insta"))}<div style="width:13mm">{qr(url, "#1e2a44")}</div></div>"""), nome))
+      <div class="cresce"></div>
+      <div class="lin entre fim">{contatos(b, ("whats", "site", "insta", "local"))}<div style="width:14mm">{qr(url, "#1e2a44")}</div></div>
+      <p class="mono" style="font-size:5.4pt;margin-top:1.2mm">Não executamos trabalhos por terceiros: o autor da pesquisa é você.</p>"""), nome))
 
     motivo = ('<div style="width:100%"><table class="quadro" style="font-size:15pt"><tr><td style="font-size:11pt;width:50mm">Estatística</td><td>STATA, R, Python, SPSS</td></tr>'
               '<tr><td style="font-size:11pt">Qualitativa</td><td>IRAMUTEQ, NVivo, Atlas.ti</td></tr><tr><td style="font-size:11pt">Formatação</td><td>ABNT, APA e Vancouver</td></tr></table>'
@@ -1426,7 +1326,7 @@ def renderizar(f, caminho, browser):
 
 
 def versoes(f):
-    """Quantas versões de cartão a frente tem (5 na maioria; o institucional tem uma 6ª)."""
+    """Quantas versões de cartão a frente tem (1 na maioria; a Contabilidade e o CerraFood têm 5)."""
     return len(set(re.findall(r'data-grupo="cartao-v(\d+)"', f["pecas"])))
 
 

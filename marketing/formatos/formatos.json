@@ -12,95 +12,10 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 152
-     },
-     {
-      "nome": "cartao-v1-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 166
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 165
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 178
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 161
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 175
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 163
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 163
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 146
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 160
-     }
-    ]
-   },
-   {
-    "versao": 6,
-    "frente": "cartao-v6-frente.png",
-    "verso": "cartao-v6-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v6-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
       "kb": 201
      },
      {
-      "nome": "cartao-v6-88x48mm.pdf",
+      "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
       "kb": 201
      }
@@ -138,7 +53,7 @@
   ],
   "zip": {
    "nome": "institucional.zip",
-   "kb": 6428
+   "kb": 4637
   }
  },
  {
@@ -154,80 +69,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 392
+      "kb": 416
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 392
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 299
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 299
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 146
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 146
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 156
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 156
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 310
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 310
+      "kb": 416
      }
     ]
    }
@@ -263,7 +110,7 @@
   ],
   "zip": {
    "nome": "tech.zip",
-   "kb": 7095
+   "kb": 5187
   }
  },
  {
@@ -279,80 +126,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 575
+      "kb": 605
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 575
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 585
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 585
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 597
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 597
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 585
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 585
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 591
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 591
+      "kb": 605
      }
     ]
    }
@@ -388,7 +167,7 @@
   ],
   "zip": {
    "nome": "cerraai.zip",
-   "kb": 10704
+   "kb": 6050
   }
  },
  {
@@ -404,80 +183,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 312
+      "kb": 408
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 312
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 304
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 304
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 335
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 335
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 315
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 315
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 307
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 307
+      "kb": 409
      }
     ]
    }
@@ -513,7 +224,7 @@
   ],
   "zip": {
    "nome": "cerraclass.zip",
-   "kb": 6926
+   "kb": 4518
   }
  },
  {
@@ -529,80 +240,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 160
+      "kb": 226
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 160
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 170
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 170
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 176
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 176
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 171
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 171
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 173
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 173
+      "kb": 226
      }
     ]
    }
@@ -638,7 +281,7 @@
   ],
   "zip": {
    "nome": "credito.zip",
-   "kb": 4272
+   "kb": 3073
   }
  },
  {
@@ -779,80 +422,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 134
+      "kb": 145
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 134
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 131
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 130
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 131
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 130
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 133
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 133
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 140
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 139
+      "kb": 145
      }
     ]
    }
@@ -888,7 +463,7 @@
   ],
   "zip": {
    "nome": "consultorias.zip",
-   "kb": 3419
+   "kb": 2233
   }
  },
  {
@@ -904,80 +479,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 436
+      "kb": 292
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 436
-     }
-    ]
-   },
-   {
-    "versao": 2,
-    "frente": "cartao-v2-frente.png",
-    "verso": "cartao-v2-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v2-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 282
-     },
-     {
-      "nome": "cartao-v2-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 282
-     }
-    ]
-   },
-   {
-    "versao": 3,
-    "frente": "cartao-v3-frente.png",
-    "verso": "cartao-v3-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v3-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 445
-     },
-     {
-      "nome": "cartao-v3-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 445
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 284
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 284
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 29
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 29
+      "kb": 292
      }
     ]
    }
@@ -1013,7 +520,7 @@
   ],
   "zip": {
    "nome": "guiacademico.zip",
-   "kb": 8423
+   "kb": 5963
   }
  },
  {

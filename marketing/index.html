@@ -251,7 +251,7 @@
     </section>
 
     <section class="vista" id="v-formatos" hidden>
-      <p class="intro">Artes para <b>impressão e site</b>, por frente: <b>5 cartões de visita</b> (cada um com frente e verso, em PDF nos tamanhos 9 x 5 cm e 8,8 x 4,8 cm), <b>folder de 4 páginas</b> (A5, uma folha A4 dobrada ao meio), <b>anúncio de jornal</b> (25,5 x 36 cm) e <b>banners de site</b> (1200 x 90 e 300 x 250). Para a gráfica, mande sempre o <b>PDF</b>: ele já vem com 3 mm de sangria em cada lado.</p>
+      <p class="intro">Artes para <b>impressão e site</b>, por frente: <b>cartões de visita</b> (frente e verso, em PDF nos tamanhos 9 x 5 cm e 8,8 x 4,8 cm), <b>folder de 4 páginas</b> (A5, uma folha A4 dobrada ao meio), <b>anúncio de jornal</b> (25,5 x 36 cm) e <b>banners de site</b> (1200 x 90 e 300 x 250). Para a gráfica, mande sempre o <b>PDF</b>: ele já vem com 3 mm de sangria em cada lado.</p>
       <div class="chips" id="chips-formatos"></div>
       <div id="formatos"></div>
     </section>
@@ -517,11 +517,11 @@
         const sec = el('section', { class: 'bloco-frente', style: `--cor: ${f.cor}` },
           el('header', {}, el('h2', { text: f.nome }),
             el('a', { class: 'btn btn-ouro', href: baseFormatos + f.zip.nome, download: f.zip.nome, text: `⬇ Baixar tudo (.zip, ${tamanho(f.zip.kb)})` })));
-        sec.append(el('h3', { text: 'Cartões de visita · 5 versões (frente e verso)' }));
+        sec.append(el('h3', { text: f.cartoes.length > 1 ? `Cartões de visita · ${f.cartoes.length} versões (frente e verso)` : 'Cartão de visita (frente e verso)' }));
         const g1 = el('div', { class: 'fmt-grade' });
         f.cartoes.forEach(c => g1.append(el('div', { class: 'fmt' },
           el('div', { class: 'faces' }, fig(f, c.frente, 'Frente'), fig(f, c.verso, 'Verso')),
-          el('div', { class: 'rodape' }, el('strong', { text: `Versão ${c.versao}` }),
+          el('div', { class: 'rodape' }, f.cartoes.length > 1 ? el('strong', { text: `Versão ${c.versao}` }) : null,
             el('div', { class: 'baixar' }, ...c.pdfs.map(p => link(f, p.nome, `PDF ${p.rotulo}`)))))));
         sec.append(g1);
         if (f.folder) {

@@ -43,6 +43,8 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 10/11 | `466a054` | Boas-vindas ao time, fora da agenda: Talita Marques (Consultora Comercial) e Felipe Borges (Marketing), post e story na identidade institucional, com o estilo comum `brand/anuncio-equipe.css`; CerraFood reposicionado para gestão de restaurantes em geral (textos, exemplos, hambúrguer e prato feito nas ilustrações) |
 | 10/11 | `d2ac000` | Peça da equipe do Renato Rosa (Consultor Técnico e Proprietário), rótulo "Quem lidera a Cerrado" e citação real da página `/iacao/`; arco do story menor nas peças da equipe |
 | 10/11 | `9223395` | Peça da equipe da Camila Anjos (Especialista Contábil), rótulo "Nosso time", foto recortada e ampliada |
+| 08/11 | (sem commit) | Palestra ENBRA v2 em `Palestras/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao-v2/`: 43 slides com WebGL (Three.js), com abertura de contexto em cada parte, GSAP e momentos de plateia; dados corrigidos listados no README da pasta. Online em https://www.cerradofinancas.com.br/marketing/entregas/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao/. `Palestras/` ainda não está no `exclude` do `_config.yml` |
+| 11/11 | (sem commit) | Campanha **Vídeo com IA** (CerraClass, dezembro/2026): 10 slides, 4 stories, post, reel 9:16 e landing em https://cerraclass.com.br/videocomia; data e preço só na landing (19/12, R$ 59,90), peças falam apenas de 8 horas. Fonte em `D:\Dev\CerraClass\marketing\videocomia\`; pendente o checkout InfinityPay |
 
 ## CerraFood, a plataforma white label de gestão de restaurantes (10/11)
 
@@ -785,6 +787,145 @@ Valem para todas as próximas campanhas.
       Se apertar o limite de novo, o próximo passo é mover os vídeos antigos para outro armazenamento
       (Google Drive, Firebase Storage) e deixar no repositório só as peças estáticas.
 
+## Palestra "Como criar sua solução e lançar no mercado" (06/11)
+
+Pasta: `Palestras/como criar sua solução e lançar no mercado/` (briefing em `contexto.md`, fonte de verdade).
+Apresentação: `apresentacao/index.html`, com 31 slides em 1920×1080, feita no mesmo motor da palestra de carreira (GSAP + SplitText + DrawSVG, cortina com a folinha em Lottie). Funciona offline: fontes em `fontes/`, bibliotecas em `vendor/` e logos em `assets/`.
+
+- Cor por bloco: 1 Descobrir (dourado, case Cerrado Tech), 2 Desenhar (teal do CAIM), 3 Entregar (cobre e grafite do Cerra.AI), 4 Medir (verde). A trilha no rodapé mostra o bloco atual.
+- Cenas próprias: tags de tecnologia riscadas (o mercado não compra código), seis meses no quarto escuro com contador, pilha de PDF com o carimbo, celular com o CAIM, skate → carro desenhado, ciclo construir-medir-aprender, terminal de deploy digitando e a frase final com "quebra" tremendo.
+- Teclas: ← → passam; F tela cheia; **P abre a janela do apresentador** (notas de cada slide, próximo slide e cronômetro); R zera o cronômetro. `?estatico=1` empilha todos os slides no estado final (PDF).
+- Números do slide "quarto escuro" (1.248 commits, 37 funcionalidades), o terminal e os gráficos do dashboard são ilustrativos, e as notas avisam isso. Nenhum dado de cliente, usuário ou receita foi inventado.
+- Logo do CAIM: a oficial é o letreiro em pixel de `D:\Dev\CerrAI.Mobile\assets\icons\logo_caim.svg` (Press Start 2P, teal #2dd4bf sobre navy #0f172a). Dentro de `<img>`, o SVG perde a fonte, então a palestra usa `assets/logo-caim.png`, renderizado com a fonte certa em formato horizontal. O teal do bloco 2 é o #2dd4bf da marca. (O `img/caim-logo*.svg/png` do site, com hexágono e círculo, não é a logo do CAIM.)
+- Slide 2 "Quem está falando" (interativo): 5 abas (Formação, Mercado, Docência, Formação continuada, Internacional). O → abre a próxima aba e, depois da quinta, passa de slide; o ← volta uma aba. Logos das instituições em `assets/inst-*` (Unifacc e UniSENAI dos sites oficiais; UNIC do site oficial, só existe em 123×50; ECONET do site; Uniasselvi do seeklogo porque o site estava fora do ar; ICTi pelo símbolo da página de carreiras no Gupy, com o nome em texto ao lado). Formação continuada (SEDUC, SESP, Politec) sem logo, a pedido.
+- Aba Formação: incluídas as especializações (Gestão Financeira, Gestão Escolar e Docência Tecnológica e de Nível Superior) e as logos da UFMS, UFPR e Fucape. A UFMS vertical azul foi montada a partir do `UFMS_logo_black.svg` do Wikimedia Commons, recolorido para #0A88BF. A UFPR é o SVG oficial do Commons, com o texto em #3C3C3B. A Fucape foi redesenhada em Times New Roman, porque o site só tem a logo em 184×49.
+
+## Palestra "Segurança Cibernética e Soberania Tecnológica" (11/11)
+
+Pasta: `Palestras/2026-11-palestra-ciberseguranca-soberania/apresentacao/` (mapa dos slides e atributos no `README.md`).
+5 slides em 1920×1080, HTML + GSAP offline, no motor da ENBRA sem o 3D (fundo em canvas 2D: grade em perspectiva e nós conectados, cor por clique). Estética cybertech com "Hyperframes": cards de vidro fosco com cantoneiras neon, rótulo `F.0n // ...`, conectores com luz correndo; ciano/azul, âmbar para alerta, vermelho para ataque, verde para resiliência.
+- Motion: varredura de holograma na capa; F.01→F.03 com trilho no slide 2; alerta vermelho pulsando e depois contido pela barreira Zero Trust no 3; frame central que se expande na IA local no 4; frames convergindo no selo "Autonomia estratégica" no 5.
+- Pedido original em React/Tailwind; ficou no padrão da casa (HTML puro, abre com dois cliques, notas na tecla P).
+- Duração definida: **1 hora** (11/11), com a distribuição por bloco no `UPGRADE.md`. Casos identificados pelas matérias que o Renato enviou: roubo de US$ 6,3 bi na Binance (29/10/2026, CNN Brasil/Reuters) e Jensen Huang × Alice Huang/Megaspeed na Nvidia (g1, 09/11/2026); pista nova: senhas expostas do Smart Sampa (SP).
+- Pendências: evento, data, tempo para perguntas, links das matérias para o `FONTES.md` e se entram slides de apresentação pessoal e de encerramento com QR.
+- Registro completo de como foi feito: `Palestras/2026-11-palestra-ciberseguranca-soberania/REGISTRO.md`. **Upgrade planejado (palestra mais longa, com casos de vazamento e ataques a polícias e Forças Armadas, Nvidia, Binance e o debate sobre IA estrangeira):** `UPGRADE.md` na mesma pasta. Os casos foram listados de memória e precisam de conferência na fonte antes de entrar no slide.
+
+## Artes do XXX ENBRA: painel "Transformação Digital e IA na Gestão" (11/11)
+
+Em `marketing/artes_enbra/`, no padrão visual do ENBRA (CRA-MT e Sistema CFA/CRAs), em 1080×1350:
+
+- `painel.png`: post do painel com os três painelistas (Gian Vasconcelos no centro, Renato Rosa e Sandro Brandão nas laterais), sexta, 13/11/2026, às 14h00, no Centro de Eventos do Pantanal.
+- `solo-renato.png`, `solo-gian.png`, `solo-sandro.png`: modelo "confirmado" individual, com o selo "PAINELISTA CONFIRMADO" no lugar de "PALESTRANTE".
+- Fonte: `painel.html` (dados no bloco `PECA`) e `solo.html` (dados em `PESSOAS`, escolha com `?p=`). Para gerar os PNGs: `python gerar.py`.
+- As fotos têm o fundo recortado com `npx hyperframes remove-background`. Os logos do CRA-MT e do CFA/CRAs foram redesenhados em vetor como aproximação: trocar pelos oficiais se chegarem. A foto do Sandro é de 300 px e fica mais suave.
+- **Versões animadas (11/11):** `painel-animado.mp4` (9 s) e `solo-<nome>-animado.mp4` (8 s), 1080×1350, sem áudio. Para gerar: `node animar.mjs --render` em `artes_enbra/`. O script monta um projeto HyperFrames por peça em `filmes/enbra/` a partir dos mesmos HTML e aplica a coreografia: a rede acende, os arcos se desenham, os blocos entram em sequência e o fim fica parado. Legendas no padrão do ENBRA em `legendas.md`.
+- **Vídeo completo (11/11):** `enbra-completo-animado.mp4` (31 s) junta os solos de Gian, Renato e Sandro e fecha com o painel, com transições de 0,6 s (`xfade smoothleft` no ffmpeg).
+
+## Filmes 3D das frentes (11/11) — aguardando aval
+
+Pedido do Renato: "um vídeo artístico para cada frente, que fale tudo sobre ela, com HyperFrames, motion e elementos
+3D únicos". Foram feitos 8 filmes de 32 s, em 16:9 e 9:16, sem áudio (regra de 31/10), em `filmes/frente-<slug>/`.
+
+- **3D de verdade:** depois das duas reprovações do 3D por camadas de CSS (regra 18), o 3D agora é **Three.js
+  (WebGL)** dentro do HyperFrames, desenhado como função do tempo (`hf-seek`). O render usa a GPU; os 16 MP4 saem em
+  ~25 min no total, ~4 MB cada (crf 24).
+- **Um objeto por frente, tirado da identidade:** Cerra.AI, o chip do emblema com trilhas de cobre, a ficha com
+  tarjas e a "fronteira da máquina"; Cerrado Tech, blocos ERP/CRM/IA... em volta do cubo dourado "você", conexões e
+  torres sob medida; CerraClass, as 10 cadeiras (contagem até 10), o chão mudando para a cor de cada um dos 11 cursos
+  e o ingresso; Guia Acadêmico, a bússola da logo, com a agulha apontando cada serviço quando ele entra no quadro, e os
+  cadernos do protocolo; CerraFood, a impressora térmica imprimindo a comanda, as comandas da cozinha com a cor da
+  espera, a pizza em fatias e os três aparelhos white label; Contabilidade, o razonete "T", a escada MEI → Lucro
+  Presumido, as barras das 4 fases e o carimbo EM DIA; Crédito, o contrato em que a caneta marca os 4 passos e assina
+  "Você decide", e as barras do comparativo **sem números**; Consultorias, o organograma em arame (antes torto, depois
+  alinhado e ligado ao centro pelo traço laranja) e as 7 pranchas acendendo.
+- **Conteúdo:** só o que já estava nas peças aprovadas (apresentações "Prazer, ..." e campanhas de cada frente). Crédito
+  com o aviso legal completo e a LS só como parceira; Guia Acadêmico com "Você continua sendo o autor" e "Não
+  executamos trabalhos por terceiros"; CerraClass com a citação real do Renato; telas e comandas com "Exemplo
+  ilustrativo".
+- **Qualidade:** `hyperframes check` sem erro nos 16 projetos e contraste 100% (o laranja sobre o papel no fecho do
+  CerraFood passou a bloco laranja com tinta verde). Quadros conferidos no MP4 em volta das transições. A comanda do
+  CerraFood curvava além de 90° e mostrava o verso ao avesso: agora para em 75° e tem verso liso.
+- **Não publicado:** espera o aval. O passo a passo para publicar está em `PROXIMOS_PASSOS.md`.
+
+## Palestra ENBRA refeita: v3, "IA na empresa: o dado sai ou fica em casa?" (12/11)
+
+Pedido do Renato: falar só dos riscos de usar IA sem governança (dados e cibersegurança), dos benefícios da IA offline,
+do Cerra.AI, reservar tempo para ele demonstrar o produto e encerrar. Pasta `Palestras/2026-11-palestra-enbra-transformacao-digital-ia/`,
+reorganizada: a v3 na raiz (`apresentacao-v3/` e o PDF), as versões 1 e 2 em `anteriores/` como contexto.
+
+- **29 slides, 44 min:** abertura, ato 1 (o caminho do dado: Samsung, retenção, falhas do provedor), ato 2 (seis riscos, injeção
+  de prompt, LGPD, custo, resposta sem fonte), ato 3 (a virada: governança, nuvem × local, IA offline), ato 4 (Cerra.AI),
+  10 min de demonstração ao vivo e encerramento com checklist e QR codes (inclusive o checklist IA e LGPD em PDF).
+- **Motor da v2 reaproveitado** (palco 3D Three.js, efeitos por clique, janela do apresentador) e ampliado: o mundo da empresa,
+  do cabo e da nuvem, a folha que viaja por cinco estações, a nuvem rachada, os seis riscos, o documento com instrução escondida,
+  o cabo que estoura e a fronteira de cobre, o chip sólido do Cerra.AI. Transições `ruptura` e `mergulho`; efeitos `tarja` e
+  `vaza`. Da virada em diante o destaque passa do ouro ao cobre. No slide da demonstração o 3D desliga sozinho (a placa de
+  vídeo fica para o Cerra.AI) e a tecla V abre o vídeo do plano B.
+- **Fontes conferidas na origem** antes de entrar no slide (tabela no `apresentacao-v3/README.md`). Correções de leitura: o 78%
+  do Work Trend Index é de quem já usa IA; o 97% da IBM é das empresas com violação ligada à IA; a ordem de preservação do caso
+  NYT × OpenAI foi restringida em out/2025.
+- **Verificação:** regras editoriais ok, nenhum estouro, nenhum erro de JavaScript, PDF de 29 páginas. Publicada como página
+  privada no claude.ai para o Renato ver.
+- **Pendente:** gravar o vídeo da demonstração em `apresentacao-v3/video/demo-cerraai.mp4`.
+
+## Palestra de cibersegurança e soberania: v2 para a ADESG-MT (12/11)
+
+Evento: ADESG-MT (Associação dos Diplomados da Escola Superior de Guerra), sexta 13/11/2026, 19h, Faculdade FAIPE.
+Pasta `Palestras/2026-11-palestra-ciberseguranca-soberania/`: `apresentacao-v2/` (39 slides), `apresentacao-v2.pdf`,
+`PLANO-v2.md` (roteiro e fontes) e a v1 de 5 slides mantida em `apresentacao/`.
+
+- **Fio condutor:** as quatro portas de entrada (pessoa, configuração, fornecedor, Estado), com uma ficha padrão por caso
+  (quem, como, qual falha, o que evitaria). 13 casos: OPM, PSNI, Strava, Discord, honey trap, Delgatti (Spoofing e CNJ),
+  Smart Sampa, Viasat, Stuxnet, Nvidia, Lapsus$, STJ e Binance (com Bybit), mais o bloco "quem pode desligar" (CLOUD Act,
+  TPI, Starlink, DeepSeek, chips e CrowdStrike), o Brasil (PBIA e PL 2338) e a IA local.
+- **3D:** globo holográfico de partículas com a máscara de terra do Natural Earth, um pino por caso na cor da porta, arcos
+  e um holograma de 30 mil partículas que muda de forma a cada caso. Transições `varredura`, `alerta`, `contido` e
+  `mergulho`. O `index.html` é gerado por `gerar_slides.py` (os textos ficam lá).
+- **Fontes conferidas em 12/11** (seção 6 do plano). Correções: PSNI são 9.483 servidores, não 10 mil; honey trap são
+  "dezenas" de celulares; a caixa postal da Spoofing é "segundo a PF".
+- **Verificação:** nenhuma falha de regra, nenhum estouro, nenhum erro de JavaScript; PDF de 39 páginas. Publicada como página
+  privada no claude.ai.
+- **Na véspera:** atualizar Nvidia, Binance, Smart Sampa e o PL 2338.
+
+## Catálogo de skills e repositórios (13/11/2026)
+
+A pedido do Renato, o `README.md` ganhou a seção "Skills e repositórios (apresentações e vídeos)", para pessoas e
+agentes de IA consultarem: todas as skills de `.claude/skills/` com uso real, os repositórios de origem (com aviso de
+quais endereços estão escritos na skill e quais foram deduzidos do nome do zip), licenças, bibliotecas com versão e
+scripts internos. Também saiu um PDF com os repositórios (2 páginas A4), entregue fora do repositório.
+
+## Apresentação "Pipeline Global VS2" para o Itaú / ICTi (16/11)
+
+Pedido do Renato: apresentação no estilo das palestras, **100% Itaú** (nada da Cerrado), com as logos do Itaú (só a laranja,
+versão 2023) e do ICTi, Remotion e 3D sem partículas, e bem didática. Apresentadores: Renato Rosa e Ian Barreiro.
+Pasta `Palestras/2026-11-itau-pipeline-global-vs2/` (registro completo em `REGISTRO.md`).
+
+- **35 slides, ~60 min:** o problema (69 esteiras, régua única), o pipeline de 8 estações, os selos de evidência, as 8 frentes,
+  como se conectam, estado real, frases seguras, agenda de validação, próximos passos e glossário.
+- **3D novo:** cidade de 69 colunas de vidro escuro e um tubo laranja com 8 anéis; cada estação muda a cena (metas, gêmeo
+  fantasma, ilhas por arquétipo, fronteiras, coluna partida, sinais de risco, cenários, top 13).
+- **Vinheta Remotion** de 12 s em `marketing/videos/src/itau-vs2/` (entrada própria, separada dos vídeos da Cerrado).
+- **Conteúdo** refeito com a versão 2 do documento (status 16/11): Target Factory em testes com a Coordenação de Planejamento
+  e Monitoramento Operacional e com a DIOV; DiD proxy executado (605,20, 13 × 31), sem efeito causal oficial.
+- **Verificação:** nenhum estouro, nenhum erro de JavaScript, PDF de 35 páginas. Não publicada (marca de terceiro).
+- **Rodada 2 (16/11, tarde):** título passou a ser só "Pipeline Global Estudos"; saíram 6 slides (três promessas,
+  69 esteiras, dois buracos no chão, frases seguras, agenda e calendário); cada frente ganhou uma ficha de abertura com a
+  pergunta, o método em uma linha e o **resultado esperado**; corrigido o "limite físico" apagado sobre o 3D. 37 slides.
+- **Rodada 3 (16/11, noite):** logo do ICTi vetorizada; bloco do DiD refeito com o artigo de resultados da Aceleração
+  (caso FGTS e "o que dá para dizer" novos); 39 slides; HTML único offline `pipeline-global-estudos.html` para o notebook do Itaú.
+
+## Apresentação ICPO, Índice Composto de Performance Operacional (19/11)
+
+Pedido do Renato: gerar a apresentação do estudo ICPO (e-mail com o documento consolidado e o prompt dos 12 gráficos) com
+as nossas skills: 3D, Remotion, transições, animações, todos os gráficos e explicação didática. Pasta própria
+`Palestras/apresentacao_indice_ICPO/` (registro completo em `REGISTRO.md`).
+
+- **28 slides**, fundo claro e laranja Itaú (#FF6200), um gráfico por slide com "o que este gráfico prova".
+- **3D claro com sombras:** cada esteira é uma coluna feita dos 4 indicadores; as cenas mostram o método (4 colunas soltas,
+  extremos cortados, caixa 0 a 1, pilha dos pesos, fusão no score, fila do ranking, ilhas por arquétipo, esfera da síntese).
+- **Vinheta Remotion** de 12 s em `marketing/videos/src/itau-icpo/`.
+- **Entregas:** HTML único offline (3,4 MB) e PDF leve (28 páginas, 2,2 MB). Verificação sem estouro nem erro.
+
 ## Formatos para impressão e site: aba "Formatos" (21/11)
 
 Pedido do Renato, com os formatos que o Felipe passou (jornal 25,5 x 36 cm; site 1200 x 90 e 300 x 250; cartão 9 x 5 cm,
@@ -830,3 +971,61 @@ de", de um jeito mais criativo.
   (borda do quadro, objeto na frente, coluna HTML), rodada nos 8 filmes nos dois formatos: todos "ok" depois das
   correções em Contabilidade, Crédito, Tech, Guia Acadêmico, Consultorias e CerraClass (detalhes em `filmes/README.md`).
 - **Peso:** `formatos/` foi de ~79 MB para ~118 MB (o 3D nos PDFs dos folders, ~2 MB cada, e as cópias nos .zip).
+
+## Institucional "o escritório" (21/11)
+
+Vídeo de 30 s (16:9 + Reel 9:16 + story 15 s) em `entregas/2026-11-escritorio/`, feito com as 13 skills de vídeo, sem
+API paga. Fonte em `filmes/frente-escritorio/fonte/` e `posts/2026-11-escritorio/`; relatório completo em
+`entregas/2026-11-escritorio/RELATORIO.md`.
+
+- **Sem mídia real verificada:** `img/escritorio.jpeg` tem o ✦ de edição do Gemini no canto; não entrou no filme até
+  alguém confirmar que é foto real. O espaço virou uma maquete Three.js inspirada no layout (planta baixa que se desenha,
+  paredes azuis, janelões dourados, sala de vidro, lounge); quatro placas de mesa (as frentes) saem de quatro portas e
+  sentam à mesma mesa.
+- **Voz local por frase** (SAPI Maria, sem acelerar) posicionada no tempo de cada plano + 5 tipos de SFX; -14,7 LUFS,
+  pico -1,68 dBTP.
+- **Legenda:** a saída do `legendar --karaoke` precisou de revisão (blocos de 3+ linhas, `\k` sem pausas, 1ª palavra
+  adiantada 1,5 s após silêncio, margem de 192 px e Inter em woff2 que o libass não lê). Script de revisão em
+  `posts/2026-11-escritorio/trab/legenda_revisada.py`; vale levar essas correções para o `kit.py`.
+- **v2 do 3D (mesmo dia):** a maquete com portas e placas de mesa foi reprovada ("portas e caixinhas, nada a ver").
+  O 3D virou **a folinha da marca**: extrudada do contorno da logo e recortada nas partes dela (diagonal + faixa
+  amarela); cada parte é uma frente, a faixa é a equipe. Monta, se espalha no "porta em porta", volta parte a parte
+  (circuitos se redesenham), vista explodida e pulso. Roteiro, voz e legenda não mudaram. A entrega inteira se refaz
+  com `bash posts/2026-11-escritorio/trab/refazer.sh`.
+- **Pendente:** foto/vídeo real do escritório (entra no plano 2, 3,3–7,4 s). Não publicado.
+
+- **v3 (22/11):** a v2 (folinha remodelada) também foi reprovada ("folha torta", logo pequena com o nome; tirar
+  Cuiabá; melhorar o texto). Texto refeito antes do vídeo: gancho "Seu contador enxerga o seu sistema?" e a corrente
+  da home ("o software organiza → o contador enxerga → o crédito parte dos números → a equipe opera"). Guia
+  `posts/2026-11-escritorio/DIRECAO.md` (lição dos vídeos da Factual e do Felipe Borges: guia de estilo fixo, texto
+  na palavra falada, 3D de verdade, stills antes do render). Cena: quatro ilhas com os objetos dos filmes das
+  frentes e um fio dourado que fecha o circuito. **Armadilha achada:** `img/folinha.png` tem ~67% de margem
+  transparente; para tamanho na tela usar `folinha-hero.png`. Refazer: `bash posts/2026-11-escritorio/trab/refazer.sh`.
+
+## Cartões de visita: uma frente, um cartão (22/11)
+
+Pedido do Renato na revisão da aba **📐 Formatos**: com 5 versões por frente, o time não sabia qual levar. A regra
+passou a ser **um cartão por frente** (frente e verso), com o conteúdo do serviço, para a pessoa entender o que é e
+falar com a gente.
+
+- **Institucional:** ficou só a antiga v6 (frente da v2 + verso com os serviços do escritório), renumerada para v1.
+- **Cerrado Tech:** ficou só a v1; o verso ganhou a lista do que a fábrica constrói (ERPs e CRMs, IA offline,
+  e-commerce, compliance, dashboards e BI, cyber security), sem tirar a logo, os contatos e o QR.
+- **Cerra.AI:** ficou só a antiga v2 (frente do 3D com "A IA da empresa, dentro da empresa"); o verso, que estava
+  vazio, ganhou as 4 características do produto (lê PDF também escaneado, Word, Excel, áudio e vídeo; mostra o arquivo
+  e a página; anonimiza o dado pessoal antes do modelo; funciona sem internet).
+- **CerraClass:** os 5 cartões viraram um: frente com a escola (presencial em Cuiabá, 10 alunos, 100% prático, "in
+  company ou na escola") e verso com os **11 cursos**, separados em "Um dia · sábado, 8h" (7) e "Imersão · 4
+  encontros, 22h" (4), cada um com a cor da marca, mais o contato.
+- **Crédito:** um cartão só: frente "Crédito e seguros, para pessoa e empresa" e verso com os serviços englobados
+  (empréstimos, consignado, financiamento, seguros e consórcios), a simulação gratuita, os contatos e o aviso legal.
+- **Consultorias:** um cartão só: frente com a "estrutura redesenhada", a cota do diagnóstico gratuito e o carimbo
+  Prancha 01/11; verso escuro com as **11 consultorias** numeradas, o "como funciona" (diagnóstico → roadmap →
+  implantação → acompanhamento) e os contatos.
+- **Guia Acadêmico:** ficou só a v2; o verso ganhou o quadro de ferramentas que estava no verso da v5 (estatística,
+  qualitativa e formatação) e a frase de ética.
+- **Contabilidade e CerraFood:** seguem com as 5 versões (não foram revisadas).
+- **Central:** o título virou "Cartão de visita (frente e verso)" quando há uma versão só, e o "Versão N" só aparece
+  quando há mais de uma; a introdução não fala mais em "5 cartões".
+- **Ferramenta:** `tools/gerar_formatos.py` — as versões são numeradas de 1 a N por frente (`versoes()` conta os
+  grupos `cartao-vN`), então quem fica com um cartão só precisa manter essa numeração contínua.
