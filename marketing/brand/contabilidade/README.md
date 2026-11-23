@@ -36,7 +36,8 @@ A folinha + "Cerrado Contabilidade" no rodapé.
 - Sem limites, alíquotas ou prazos que mudam por lei. Exceções: o Fator R (6% e 28%, LC 123) e as datas da reforma
   tributária (2026 a 2033, EC 132).
 - Publicidade sóbria, conforme o código de ética do CFC: nada de promessa de economia.
-- Pendente: nome e CRC do responsável técnico.
+- Contador responsável: **Renato Rosa**, **CRC-MT 021719/O-5** (informado em 22/11/2026). Nas peças, só "Renato Rosa"
+  (nunca o nome completo) e foto sempre **pequena** (até 3×4; cartões v1–v3 em `tools/gerar_formatos.py`, verso "Qual é a sua empresa?" com o mesmo conteúdo em 3 layouts: grade 2×2, 4 colunas centradas, lista no verde-tinta).
 
 ## "Você sabia?": notas explicativas
 

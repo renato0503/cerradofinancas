@@ -297,12 +297,12 @@
      {
       "nome": "cartao-v1-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 119
+      "kb": 140
      },
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 119
+      "kb": 140
      }
     ]
    },
@@ -314,12 +314,12 @@
      {
       "nome": "cartao-v2-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 113
+      "kb": 151
      },
      {
       "nome": "cartao-v2-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 113
+      "kb": 151
      }
     ]
    },
@@ -331,46 +331,12 @@
      {
       "nome": "cartao-v3-90x50mm.pdf",
       "rotulo": "9 x 5 cm",
-      "kb": 121
+      "kb": 145
      },
      {
       "nome": "cartao-v3-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
-      "kb": 121
-     }
-    ]
-   },
-   {
-    "versao": 4,
-    "frente": "cartao-v4-frente.png",
-    "verso": "cartao-v4-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v4-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 113
-     },
-     {
-      "nome": "cartao-v4-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 113
-     }
-    ]
-   },
-   {
-    "versao": 5,
-    "frente": "cartao-v5-frente.png",
-    "verso": "cartao-v5-verso.png",
-    "pdfs": [
-     {
-      "nome": "cartao-v5-90x50mm.pdf",
-      "rotulo": "9 x 5 cm",
-      "kb": 113
-     },
-     {
-      "nome": "cartao-v5-88x48mm.pdf",
-      "rotulo": "8,8 x 4,8 cm",
-      "kb": 113
+      "kb": 145
      }
     ]
    }
@@ -406,7 +372,7 @@
   ],
   "zip": {
    "nome": "contabilidade.zip",
-   "kb": 2438
+   "kb": 2181
   }
  },
  {

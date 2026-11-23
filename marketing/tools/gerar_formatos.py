@@ -1,7 +1,7 @@
 """Gera as artes de impressão e de site de cada frente (aba "Formatos" da Central de Marketing).
 
 Por frente:
-- as versões de cartão de visita de cada frente (uma na maioria; a Contabilidade e o CerraFood ainda têm 5),
+- as versões de cartão de visita de cada frente (uma na maioria; a Contabilidade tem 3 e o CerraFood 5),
   frente e verso, em PDF vetorial para a gráfica, nos dois tamanhos pedidos:
   9 x 5 cm e 8,8 x 4,8 cm, cada um com 3 mm de sangria por lado (96 x 56 mm e 94 x 54 mm). PNG de prévia (300 dpi).
 - Anúncio de jornal 25,5 x 36 cm (PDF + PNG de prévia).
@@ -11,7 +11,9 @@ Fontes (HTML) em posts/2026-11-formatos/<frente>.html; abrir no navegador mostra
 tracejada. Saída publicada em formatos/<frente>/ + formatos/<frente>.zip + formatos/formatos.json (a página lê).
 
 Textos: só o que já está no site, nas legendas institucionais e nos guias de marca (nada inventado, sem preço).
-Crédito leva o aviso legal em toda peça. Cartões são institucionais (sem nome de pessoa).
+Crédito leva o aviso legal em toda peça. Cartões são institucionais (sem nome de pessoa), com uma exceção pedida pelo
+Renato em 22/11/2026: os 3 cartões da Contabilidade apresentam o contador responsável (fotinha, nome e CRC,
+como pede o CFC); as 5 versões institucionais antigas da Contabilidade foram retiradas a pedido dele.
 
 Uso:
     python tools/gerar_formatos.py            # gera os HTML
@@ -53,18 +55,24 @@ LOGOS = {
     "cerrafood": (MARKETING / "brand/cerrafood/simbolo.png", 700),
     "guiacademico": (MARKETING / "brand/guiacademico/logo.png", 900),
     "bussola": (MARKETING / "brand/guiacademico/logo-icone.png", 600),
+    # Contabilidade v1-v3: o contador responsável (foto autorizada pelo Renato, 22/11/2026)
+    "renato-foto": (RAIZ / "img/renato.jpg", 320),                     # fotinha de até 22 mm (3x4) ≈ 260 px a 300 dpi; sai em JPEG
 }
 
 
 def preparar_imagens():
     IMG.mkdir(parents=True, exist_ok=True)
     for nome, (origem, lado) in LOGOS.items():
-        destino = IMG / f"{nome}.png"
+        destino = IMG / f"{nome}.{'jpg' if origem.suffix.lower() in ('.jpg', '.jpeg') else 'png'}"
         if destino.exists() and destino.stat().st_mtime > origem.stat().st_mtime:
             continue
         im = Image.open(origem).convert("RGBA")
         im = im.crop(im.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox())
         im.thumbnail((lado, lado), Image.LANCZOS)
+        if origem.suffix.lower() in (".jpg", ".jpeg"):  # foto sem transparência: JPEG (o PDF fica leve)
+            destino = destino.with_suffix(".jpg")
+            im.convert("RGB").save(destino, quality=88, optimize=True)
+            continue
         im.save(destino, optimize=True)
 
 
@@ -752,32 +760,92 @@ body { font-family: 'Plex Cond', sans-serif; color: #0c3b2e; }
     livro = ('<dl class="livro">' + "".join(f"<div><dt>{k}</dt><dd>{escape(v)}</dd></div>" for k, v in
              [("WhatsApp", WHATS), ("E-mail", EMAIL), ("Site", b["site"]), ("Instagram", b["insta"])]) + "</dl>")
     c = []
-    c.append(cartao(1, "razao margem", s(f"""<div style="margin-left:5mm" class="cresce lin"><div>
-      <p class="rot">Livro-razão · fl. 01</p><p class="t" style="font-size:16pt;margin-top:1.4mm">Cerrado<br>Contabilidade</p>
-      <p style="font-size:7pt;font-weight:500;margin-top:1.6mm">Inteligência fiscal para PMEs e MEI</p></div></div>"""),
-        "razao", s(f"""<div class="lin entre">{mini}<p class="rot">Contatos</p></div>
-      <div class="cresce lin" style="gap:3mm">{livro}<div style="width:15mm;flex-shrink:0">{qr(url, "#0c3b2e")}</div></div>"""), nome))
-    c.append(cartao(2, "razao", s(f"""{mini}<div class="cresce lin"><div class="razonete" style="width:100%">
-      <div><h4>VOCÊ CUIDA DE</h4><p>o seu negócio</p></div>
-      <div><h4>A GENTE CUIDA DE</h4><p>impostos, folha e declarações</p></div></div></div>
-      <p class="rot">Saldo: tudo em dia</p>"""),
-        "tinta", s(f"""<div class="lin entre"><p class="t" style="font-size:10pt">Cerrado Contabilidade</p><img src="img/folinha.png" style="height:6mm" alt=""></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0c3b2e")}</div></div>"""), nome))
-    c.append(cartao(3, "razao", s(f"""{mini}<div class="cresce lin entre"><div>
-      <p class="t" style="font-size:14pt">Sua empresa</p><p style="font-size:6.6pt;font-weight:500;margin-top:1.2mm;max-width:38mm">Simples Nacional, notas, folha e declarações</p></div>
-      <span class="carimbo">EM DIA</span></div><p class="rot">Abertura de CNPJ 100% digital</p>"""),
-        "razao", s(f"""<div class="lin entre">{mini}<span class="carimbo" style="font-size:6pt;padding:.3mm 1.4mm">EM DIA</span></div>
-      <div class="cresce lin" style="gap:3mm">{livro}<div style="width:15mm;flex-shrink:0">{qr(url, "#0c3b2e")}</div></div>"""), nome))
-    c.append(cartao(4, "razao", s(f"""<div class="lin entre">{mini}<p class="rot">Crescimento</p></div>
-      <p class="t" style="font-size:10pt;margin-top:1.6mm">Do MEI ao Lucro Presumido</p><div class="cresce"></div>
-      <div class="escada"><div style="height:30%">MEI</div><div style="height:50%">ME</div><div style="height:72%">EPP</div><div style="height:100%">LUCRO PRESUMIDO</div></div>"""),
-        "tinta", s(f"""<div class="lin entre"><p class="t" style="font-size:10pt">Cerrado Contabilidade</p><img src="img/folinha.png" style="height:6mm" alt=""></div>
-      <div class="cresce lin entre fim">{contatos(b)}<div style="width:16mm">{qr(url, "#0c3b2e")}</div></div>"""), nome))
-    c.append(cartao(5, "tinta", s(f"""<div class="lin entre"><p class="rot">Cerrado Contabilidade</p><img src="img/folinha.png" style="height:6mm" alt=""></div>
-      <p class="t cresce lin" style="font-size:16pt">Os seus números viram&nbsp;<span class="grifo">decisão.</span></p>
-      <p class="mono" style="font-size:5.6pt">Suporte humano direto no WhatsApp</p>"""),
-        "razao margem", s(f"""<div style="margin-left:5mm" class="cresce lin" ><div style="width:100%"><p class="t" style="font-size:10pt;margin-bottom:2mm">Cerrado Contabilidade</p>
-      <div class="lin" style="gap:3mm">{livro}<div style="width:14mm;flex-shrink:0">{qr(url, "#0c3b2e")}</div></div></div></div>"""), nome))
+    # ---- os cartões (22/11/2026): o contador responsável (foto, nome e CRC) e o escritório certo para cada tipo de empresa ----
+    # Serviços e perfis: contabilidade.html ("Para quem é", serviços); Fator R e a escada: brand/contabilidade/README.md.
+    contador = "Renato Rosa"
+    crc = "CRC-MT 021719/O-5"
+    zap = f'<ul class="ct">{"".join(f"<li>{ico(k)}<span>{escape(v)}</span></li>" for k, v in [("whats", WHATS), ("site", b["site"])])}</ul>'
+    css += """
+.rt-nome { font-weight: 700; line-height: .98; letter-spacing: -.012em; }
+.rt-crc { display: inline-flex; align-items: center; gap: 1.2mm; font: 600 6.2pt 'Plex Mono', monospace; letter-spacing: .04em; border: .3mm solid currentColor; padding: .7mm 1.6mm; border-radius: .6mm; }
+.rt-crc b { font-weight: 600; color: #d23a2c; }
+.tinta .rt-crc b { color: #fecb00; }
+.rt-3x4 { width: 14mm; height: 18mm; flex-shrink: 0; border: .45mm solid #0c3b2e; padding: .7mm; background: #fff; transform: rotate(-2deg); box-shadow: .4mm .6mm 0 rgba(12,59,46,.18); }
+.rt-3x4 img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.rt-foto { border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.rt-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+.lanc { width: 100%; font-size: 6.9pt; display: grid; gap: .9mm; }
+.lanc div { display: flex; align-items: baseline; gap: 1.2mm; }
+.lanc div::after { content: ""; order: 1; flex: 1; border-bottom: .25mm dotted #0c3b2e; opacity: .45; }
+.lanc span { order: 0; font-weight: 700; }
+.lanc em { order: 2; font: 600 5.2pt 'Plex Mono', monospace; font-style: normal; color: #d23a2c; letter-spacing: .06em; }
+.perfis { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 3mm; width: 100%; }
+.perfis div { display: flex; gap: 1.4mm; align-items: flex-start; }
+.perfis i { width: 3mm; height: 3mm; border: .35mm solid #0c3b2e; border-radius: .4mm; flex-shrink: 0; margin-top: .3mm; }
+.perfis b { display: block; font-size: 7pt; line-height: 1; white-space: nowrap; }
+.perfis small { display: block; font: 500 5.3pt 'Plex Mono', monospace; color: #3d6b58; margin-top: .5mm; line-height: 1.15; }
+.perfis4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; margin-top: 3mm; text-align: center; }
+.perfis4 div { display: flex; flex-direction: column; align-items: center; }
+.perfis4 i { width: 3.2mm; height: 3.2mm; border: .35mm solid #0c3b2e; border-radius: .4mm; margin-bottom: 1.1mm; }
+.perfis4 b { font-size: 6.6pt; line-height: 1.05; }
+.perfis4 small { font: 500 4.9pt 'Plex Mono', monospace; color: #3d6b58; margin-top: .6mm; line-height: 1.2; }
+.lista-emp { flex: 1; display: grid; gap: 1.5mm; }
+.lista-emp div { display: flex; align-items: baseline; gap: 1.6mm; border-bottom: .2mm solid rgba(216,239,223,.25); padding-bottom: 1.1mm; }
+.lista-emp i { width: 2.8mm; height: 2.8mm; border: .35mm solid #d8efdf; border-radius: .4mm; flex-shrink: 0; align-self: center; }
+.lista-emp b { font-size: 7pt; white-space: nowrap; }
+.lista-emp small { font: 500 5.2pt 'Plex Mono', monospace; color: #d8efdf; margin-left: auto; white-space: nowrap; }
+"""
+    # o verso aprovado pelo Renato (22/11): "Qual é a sua empresa?" com caixas para marcar à mão; é o mesmo nas três versões
+    verso_empresa = s(f"""<div style="margin-left:5mm;display:flex;flex-direction:column;height:100%"><div class="lin entre"><p class="t" style="font-size:10.5pt">Qual é a sua empresa?</p>{mini}</div>
+      <div class="lin" style="gap:3mm;margin-top:2.4mm"><div class="perfis">
+        <div><i></i><span><b>MEI</b><small>abertura, DAS e declaração anual</small></span></div>
+        <div><i></i><span><b>Prestador de serviço</b><small>Simples Nacional e Fator R</small></span></div>
+        <div><i></i><span><b>Saúde</b><small>clínicas e consultórios, Fator R</small></span></div>
+        <div><i></i><span><b>Comércio e e-commerce</b><small>notas, ICMS e ST</small></span></div></div>
+        <div style="width:13mm;flex-shrink:0">{qr(url, "#0c3b2e")}</div></div>
+      <div class="cresce"></div><div class="lin entre fim">{zap}<p class="mono" style="font-size:5.2pt;text-align:right">{escape(contador)}<br>{crc}</p></div></div>""")
+    PERFIS = [("MEI", "abertura, DAS e declaração anual"), ("Prestador de serviço", "Simples Nacional e Fator R"),
+              ("Saúde", "clínicas e consultórios, Fator R"), ("Comércio e e‑commerce", "notas, ICMS e ST")]  # hífen inseparável
+    # verso v2 · centrado, como a frente "Perfil": quatro colunas com a caixa em cima
+    verso_colunas = s(f"""<div style="display:flex;flex-direction:column;height:100%">
+      <div style="text-align:center"><p class="t lin" style="font-size:10.5pt;justify-content:center;gap:1.6mm"><img src="img/folinha.png" style="height:5.2mm" alt="">Qual é a sua empresa?</p>
+        <p class="mono" style="font-size:5.2pt;margin-top:.8mm;color:#3d6b58">{escape(contador)} · {crc}</p></div>
+      <div class="perfis4">{"".join(f'<div><i></i><b>{escape(n)}</b><small>{escape(d)}</small></div>' for n, d in PERFIS)}</div>
+      <div class="cresce"></div>
+      <div class="lin entre fim">{zap}<div style="width:12mm;flex-shrink:0">{qr(url, "#0c3b2e")}</div></div></div>""")
+    # verso v3 · verde-tinta, como a frente "Tinta": lista de uma linha por empresa e o QR numa cartela clara
+    verso_lista = s(f"""<div class="lin entre" style="align-items:flex-start"><p class="t" style="font-size:10.5pt">Qual é a sua empresa?</p>
+        <div class="mini" style="color:#f1f6f0"><img src="img/folinha.png" alt="">Cerrado Contabilidade</div></div>
+      <div class="cresce lin" style="gap:3.5mm"><div class="lista-emp">{"".join(f'<div><i></i><b>{escape(n)}</b><small>{escape(d)}</small></div>' for n, d in PERFIS)}</div>
+        <div style="width:14mm;flex-shrink:0;background:#f1f6f0;padding:.8mm;border-radius:.6mm">{qr(url, "#0c3b2e", "#f1f6f0")}</div></div>
+      <div class="lin entre fim">{zap.replace('class="ct"', 'class="ct" style="color:#f1f6f0"')}<p class="mono" style="font-size:5.2pt;text-align:right;color:#d8efdf">{escape(contador)}<br>{crc}</p></div>""")
+    # v1 · "Ficha": a fotinha 3x4 presa na ficha do livro-razão, ao lado do nome e do CRC
+    c.append(cartao(1, "razao margem", s(f"""<div style="margin-left:5mm;display:flex;flex-direction:column;height:100%">
+      <div class="lin entre"><p class="rot">Contador responsável</p><p class="rot" style="color:#0c3b2e">fl. 01</p></div>
+      <div class="cresce lin" style="gap:4.5mm">
+        <div class="rt-3x4"><img src="img/renato-foto.jpg" alt=""></div>
+        <div><p class="rt-nome" style="font-size:17pt">Renato Rosa</p>
+          <p style="font-size:8pt;font-weight:500;margin-top:1.2mm">Contador</p>
+          <p style="margin-top:2.4mm"><span class="rt-crc"><b>CRC</b> MT 021719/O-5</span></p></div></div>
+      <div class="lin">{mini}</div></div>"""),
+        "razao margem", verso_empresa, nome))
+    # v2 · "Perfil": composição centrada e simétrica; a fotinha (13 mm) no eixo do nome, nunca solta num canto
+    c.append(cartao(2, "razao", s(f"""<div style="display:flex;flex-direction:column;align-items:center;height:100%;text-align:center">
+        <div class="rt-foto" style="width:13mm;height:13mm;border:.5mm solid #0c3b2e;outline:.3mm solid #d23a2c;outline-offset:.6mm"><img src="img/renato-foto.jpg" alt=""></div>
+        <p class="rt-nome" style="font-size:17pt;margin-top:2.4mm">Renato Rosa</p>
+        <p style="font-size:7.6pt;font-weight:500;margin-top:.8mm">Contador</p>
+        <p style="margin-top:1.8mm"><span class="rt-crc"><b>CRC</b> MT 021719/O-5</span></p>
+        <div class="cresce"></div>{mini}</div>"""),
+        "razao", verso_colunas, nome))
+    # v3 · "Tinta": fotinha e nome em linha no verde-tinta, com o carimbo EM DIA
+    c.append(cartao(3, "tinta", s(f"""<div class="lin entre" style="align-items:flex-start"><p class="rot" style="margin-top:1mm">Contador responsável</p>
+        <span class="carimbo" style="font-size:6.4pt;padding:.3mm 1.4mm;color:#fecb00;border-color:#fecb00;outline-color:#fecb00">EM DIA</span></div>
+      <div class="cresce lin" style="gap:3.5mm">
+        <div class="rt-foto" style="width:13mm;height:13mm;border:.5mm solid #d8efdf"><img src="img/renato-foto.jpg" alt=""></div>
+        <div><p class="rt-nome" style="font-size:18pt">Renato Rosa</p>
+          <p style="margin-top:2.2mm"><span class="rt-crc"><b>CRC</b> MT 021719/O-5</span></p></div></div>
+      <div class="lin entre"><div class="mini" style="color:#f1f6f0"><img src="img/folinha.png" alt="">Cerrado Contabilidade</div><p class="mono" style="font-size:5.4pt;color:#d8efdf">Suporte direto no WhatsApp</p></div>"""),
+        "tinta", verso_lista, nome))
 
     motivo = ('<div class="razonete" style="width:100%;border-top-width:1.2mm"><div style="padding:5mm 7mm 0"><h4 style="font-size:12pt">VOCÊ CUIDA DE</h4>'
               '<p style="font-size:22pt">o seu negócio</p></div><div style="padding:5mm 7mm 0;border-left-width:1.2mm"><h4 style="font-size:12pt">A GENTE CUIDA DE</h4>'
@@ -1326,7 +1394,7 @@ def renderizar(f, caminho, browser):
 
 
 def versoes(f):
-    """Quantas versões de cartão a frente tem (1 na maioria; a Contabilidade e o CerraFood têm 5)."""
+    """Quantas versões de cartão a frente tem (1 na maioria; a Contabilidade tem 3 e o CerraFood 5)."""
     return len(set(re.findall(r'data-grupo="cartao-v(\d+)"', f["pecas"])))
 
 
