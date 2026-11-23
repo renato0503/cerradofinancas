@@ -13,3 +13,5 @@ filmes/remotion/public/sfx/
 
 # Cache do kit de vídeo (demo, testes)
 .cache/
+# Intermediarios das chamadas (gerados pelo tools/gerar_chamadas.py)
+conteudo/2026-11-chamadas/*/_trab/

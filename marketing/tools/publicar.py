@@ -13,6 +13,7 @@ Uso:
     python tools/publicar.py
 """
 import json
+import sys
 import zipfile
 from pathlib import Path
 
@@ -28,6 +29,15 @@ TIPOS = {
 # Frente e série de cada campanha, pelo nome da pasta (sem a data): a primeira regra que casar vale.
 # A página agrupa e filtra por elas; ao criar um prefixo novo, acrescente aqui.
 REGRAS = [
+    ("chamada-tech", "tech", "Chamada 15s"),
+    ("chamada-contabilidade", "contabilidade", "Chamada 15s"),
+    ("chamada-credito", "credito", "Chamada 15s"),
+    ("chamada-consultoria", "consultorias", "Chamada 15s"),
+    ("chamada-cerraclass", "cerraclass", "Chamada 15s"),
+    ("chamada-cerraai", "cerraai", "Chamada 15s"),
+    ("chamada-cerrafood", "cerrafood", "Chamada 15s"),
+    ("chamada-guiacademico", "guiacademico", "Chamada 15s"),
+    ("chamada-institucional", "institucional", "Chamada 15s"),
     ("apresentacao-cerraai", "cerraai", "Apresentação institucional"),
     ("apresentacao-cerradotech", "tech", "Apresentação institucional"),
     ("apresentacao-cerraclass", "cerraclass", "Apresentação institucional"),
@@ -113,18 +123,24 @@ def publicar_pasta(pasta: Path):
     }
 
 
-def main():
-    campanhas = [
-        publicar_pasta(p)
-        for p in sorted(ENTREGAS.iterdir(), reverse=True)
-        if p.is_dir() and (p / "info.json").exists()
-    ]
-    campanhas.sort(key=lambda c: c["data"], reverse=True)
+def main(alvos=()):
+    if alvos:
+        pastas = [ENTREGAS / a for a in alvos]
+    else:
+        pastas = [p for p in sorted(ENTREGAS.iterdir(), reverse=True)
+                  if p.is_dir() and (p / "info.json").exists()]
+    campanhas = [publicar_pasta(p) for p in pastas if (p / "info.json").exists()]
     destino = ENTREGAS / "conteudos.json"
+    if alvos and destino.exists():
+        # publica só as pastas pedidas e mantém as campanhas que já estavam na Central
+        atuais = {c["pasta"]: c for c in json.loads(destino.read_text(encoding="utf-8"))}
+        atuais.update({c["pasta"]: c for c in campanhas})
+        campanhas = list(atuais.values())
+    campanhas.sort(key=lambda c: c["data"], reverse=True)
     destino.write_text(json.dumps(campanhas, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for c in campanhas:
         print(f"{c['pasta']}: {len(c['arquivos'])} arquivos, {len(c['legendas'])} legendas, zip {c['pacote']['kb']} KB")
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])

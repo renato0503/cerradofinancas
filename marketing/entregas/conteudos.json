@@ -4858,6 +4858,78 @@
     }
   },
   {
+    "pasta": "2026-11-chamada-tech",
+    "frente": "tech",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Quantas planilhas ainda seguram o seu processo?",
+    "data": "2026-11-23",
+    "descricao": "Conte o seu processo.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 402
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1330
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quantas planilhas ainda seguram o seu processo?\n\nERP, CRM, IA offline, e-commerce e dashboards sob medida — integrados ao que a empresa já usa.\nO código é seu: sem amarras de fornecedor.\n\nConte o seu processo no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br/fabrica\n\n#CerradoTech #SoftwareSobMedida #ERP #CRM #IAoffline #Dashboards #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-tech.zip",
+      "kb": 398
+    }
+  },
+  {
+    "pasta": "2026-11-chamada-contabilidade",
+    "frente": "contabilidade",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Imposto em dia. E a gestão?",
+    "data": "2026-11-23",
+    "descricao": "Agende um diagnóstico.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 437
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1860
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Imposto em dia. E a gestão?\n\nAbertura de CNPJ, tributos, folha e eSocial no mesmo lugar, 100% digital — do MEI à média empresa.\nBPO financeiro, controladoria e dashboards para os números virarem decisão.\n\nAgende um diagnóstico no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br/contabilidade\n\n#Contabilidade #ContabilidadeDigital #MEI #SimplesNacional #BPOFinanceiro #Controladoria #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-contabilidade.zip",
+      "kb": 437
+    }
+  },
+  {
     "pasta": "2026-11-guiacademico-cronograma",
     "frente": "guiacademico",
     "serie": "Cadernos de método",

@@ -1102,3 +1102,23 @@ ordem em que se procura: **post** (`conteudo/`), **vídeo** (`filmes/`), **pales
 - **Pendente:** 27 campanhas em `entregas/` (as `2026-11-cerraai-*` novas) ainda sem `.zip` e sem entrada no
   `conteudos.json` — rodar `python tools/publicar.py` quando o conteúdo estiver fechado.
 - **Pacote de vídeo versionado (23/11):** as 13 skills ideo-*, .claude/skills/README.md e .claude/commands/video{,-qa}.md entraram no git (antes só existiam nesta máquina). ilmes/README.md, ideo-estudio/SKILL.md e skills/README.md ganharam o mapa novo (conteudo/, entregas/, ilmes/, ilmes/remotion/, palestras/) e a entrada python tools/video.py.
+
+## Chamadas 15s por frente, com 3D gerado na GPU (23/11)
+
+Pedido do Renato: um vídeo novo por frente, com copy nova (a "chamada"), usando a GPU para a parte que pediria
+uma API de IA externa — o movimento e o 3D — e **sem reaproveitar os elementos** que já existiam. Feito em lotes
+de duas frentes.
+
+- **Piloto:** Cerrado Tech e Cerrado Contabilidade, em `entregas/2026-11-chamada-<frente>/` (9:16, 15 s, mudo).
+- **Elemento 3D novo por frente:** `wan_t2v.py` (fora do git, em `D:\Dev\ComfyUI`) roda o **Wan 2.2 TI2V-5B
+  (Apache 2.0)** no ComfyUI portátil, na RTX 4060 (8 GB, `--lowvram`), em text-to-video — sem imagem de entrada.
+  Tech: estrutura de blocos azuis com filamento dourado. Contabilidade: papel e fita de tinta verde.
+  ~140–170 s por clipe; pesos e cache só em `D:`.
+- **Montagem:** `tools/gerar_chamadas.py` renderiza os cartões tipográficos (Playwright, 1080×1920) na identidade
+  de cada frente e compõe com ffmpeg: gancho e fecho sobre o clipe 3D, três cartões no meio, transição da marca
+  (`slideleft` na Tech, `coverleft` na Contabilidade). Texto, logo e CTA são HTML/PNG — nunca gerados pela IA.
+- **Publicação:** `tools/publicar.py` ganhou modo seletivo (`python tools/publicar.py <pasta>...`), que publica só
+  as pastas pedidas e mantém as demais entradas do `conteudos.json`.
+- **Conferência:** `tools/video.py qa` nos dois (1080×1920, 30 fps, H.264, mudo); 1,3 MB e 1,9 MB.
+- **Pendente:** as outras sete frentes (institucional, Crédito, Consultorias, CerraClass, Cerra.AI, Guia
+  Acadêmico, CerraFood), duas por vez, e a versão 16:9 de cada uma.
