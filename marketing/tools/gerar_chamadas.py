@@ -78,6 +78,99 @@ DADOS = {
         ),
         rodape="Renato Rosa · CRC-MT 021719/O-5",
     ),
+    "guiacademico": dict(
+        nome="Guia Acadêmico",
+        logo=MARKETING / "brand" / "guiacademico" / "logo-icone.png",
+        fonte="Newsreader",
+        mono_fonte="DM Mono",
+        fundo="#f6f2e9", tinta="#1e2a44", acento="#1e2a44", sobre_acento="#f6f2e9", apoio="#5a5e6b",
+        cartao="papel",
+        cartao_bg="#f6f2e9",
+        margem_cor="#a8822a",
+        transicao="fade", transicao_dur=0.3,
+        scrim_hook="rgba(246,242,233,.9) 0%,rgba(246,242,233,.66) 40%,rgba(246,242,233,.95) 100%",
+        scrim_close="rgba(246,242,233,.64) 0%,rgba(246,242,233,.88) 55%,rgba(246,242,233,.97) 100%",
+        kicker="GUIA ACADÊMICO · CONSULTORIA ACADÊMICA",
+        gancho="Quem escreve a sua pesquisa?",
+        c2_tit="Você continua sendo o autor.", c2_sub="Orientamos, ensinamos, analisamos e revisamos.",
+        c3_tit="Método e dados.", c3_sub="Orientação metodológica, análise estatística e qualitativa.",
+        c4_tit="Do projeto à banca.", c4_sub="Formatação ABNT, APA e Vancouver; submissão a periódicos.",
+        fecho="Agende o diagnóstico da pesquisa.",
+        botao="WhatsApp (67) 99351-5206",
+        site="guiacademico.com.br",
+        rotulo_botao="Agendar diagnóstico",
+        rodape="Prof. Renato Rosa",
+        legenda_ig=(
+            "Quem escreve a sua pesquisa?\n\n"
+            "No Guia Acadêmico, o autor é você: orientação metodológica, análise estatística e qualitativa, "
+            "formatação ABNT/APA/Vancouver e apoio na submissão a periódicos.\n"
+            "Para TCC, especialização, mestrado e doutorado.\n\n"
+            "Agende o diagnóstico da pesquisa no WhatsApp (67) 99351-5206.\n"
+            "guiacademico.com.br\n\n"
+            "#GuiaAcademico #Metodologia #AnaliseDeDados #TCC #Mestrado #Doutorado #Pesquisa"
+        ),
+    ),
+    "cerrafood": dict(
+        nome="CerraFood",
+        logo=MARKETING / "brand" / "cerrafood" / "simbolo.png",
+        fonte="Outfit",
+        mono_fonte="DM Mono",
+        fundo="#0f2a16", tinta="#f4efe2", acento="#f39200", sobre_acento="#0f2a16", apoio="#c9c2b0",
+        cartao="cor",
+        cartao_bg="#0f2a16",
+        transicao="slideleft", transicao_dur=0.4,
+        scrim_hook="rgba(15,42,22,.72) 0%,rgba(15,42,22,.35) 40%,rgba(15,42,22,.9) 100%",
+        scrim_close="rgba(15,42,22,.5) 0%,rgba(15,42,22,.8) 55%,rgba(15,42,22,.96) 100%",
+        kicker="CERRAFOOD · GESTÃO DE RESTAURANTES",
+        gancho="Quanto custa cada prato?",
+        c2_tit="Ficha técnica por ingrediente.", c2_sub="Mudou o preço do ingrediente, o custo do prato é recalculado.",
+        c3_tit="Do pedido à porta.", c3_sub="Totem, caixa, cozinha, estoque, entrega e fidelidade.",
+        c4_tit="Com a sua marca.", c4_sub="Site, app, totem e painel com o seu nome, a sua logo e as suas cores.",
+        fecho="Demonstração com o seu cardápio.",
+        botao="WhatsApp (67) 99351-5206",
+        site="cerradofinancas.com.br/cerrafood",
+        rotulo_botao="Agendar demonstração",
+        rodape="by Cerrado Tech",
+        legenda_ig=(
+            "Quanto custa cada prato?\n\n"
+            "No CerraFood, a ficha técnica calcula o custo por ingrediente: mudou o preço, o prato é recalculado.\n"
+            "Do pedido à porta: totem, caixa, cozinha, estoque, entrega e fidelidade — com a sua marca.\n\n"
+            "Demonstração gratuita com o seu cardápio no WhatsApp (67) 99351-5206.\n"
+            "cerradofinancas.com.br/cerrafood\n\n"
+            "#CerraFood #Restaurante #Delivery #FichaTecnica #GestaoDeRestaurantes #Cuiaba #MatoGrosso"
+        ),
+    ),
+    "institucional": dict(
+        nome="Cerrado Finanças & Tech",
+        marca_fs=36,
+        logo=MARKETING.parent / "img" / "folinha-hero.png",
+        fonte="Inter",
+        mono_fonte="JetBrains Mono",
+        fundo="#000f2e", tinta="#ffffff", acento="#fecb00", sobre_acento="#001f5c", apoio="#cbd5e1",
+        cartao="cor",
+        cartao_bg="#000f2e",
+        transicao="slideleft", transicao_dur=0.45,
+        scrim_hook="rgba(0,6,20,.75) 0%,rgba(0,6,20,.32) 40%,rgba(0,6,20,.9) 100%",
+        scrim_close="rgba(0,6,20,.5) 0%,rgba(0,6,20,.78) 55%,rgba(0,6,20,.96) 100%",
+        kicker="CERRADO FINANÇAS & TECH",
+        gancho="Tudo no seu negócio conversa?",
+        c2_tit="O software organiza a operação.", c2_sub="ERPs, CRMs, IA offline e dashboards sob medida.",
+        c3_tit="O contador enxerga os números.", c3_sub="Abertura, tributos, folha e BI no mesmo lugar.",
+        c4_tit="O crédito parte deles.", c4_sub="E a sua equipe aprende a operar: cursos e consultorias.",
+        fecho="Um só parceiro para o seu negócio crescer.",
+        botao="WhatsApp (67) 99351-5206",
+        site="cerradofinancas.com.br",
+        rotulo_botao="Falar no WhatsApp",
+        legenda_ig=(
+            "Tudo no seu negócio conversa?\n\n"
+            "O software organiza a operação. O contador enxerga os números. O crédito parte deles. "
+            "E a sua equipe aprende a operar.\n"
+            "Software, contabilidade, crédito, cursos e consultorias — com um só parceiro.\n\n"
+            "Fale com a gente no WhatsApp (67) 99351-5206.\n"
+            "cerradofinancas.com.br\n\n"
+            "#CerradoFinancas #CerradoTech #Contabilidade #Credito #Cursos #Consultoria #Cuiaba #MatoGrosso"
+        ),
+    ),
     "cerraclass": dict(
         nome="CerraClass",
         logo=MARKETING / "brand" / "cerraclass" / "logo.png",
@@ -222,6 +315,8 @@ FAMILIAS = {
     "Schibsted": [("schibsted.woff2", "400 900")],
     "Bricolage": [("bricolage.woff2", "200 800")],
     "Archivo": [("archivo.woff2", "100 900")],
+    "Newsreader": [("newsreader-400-normal.woff2", "400"), ("newsreader-600-normal.woff2", "600")],
+    "Outfit": [("outfit.woff2", "300 900")],
     "Fraunces": [("fraunces-400.woff2", "400"), ("fraunces-600.woff2", "600")],
     "JetBrains Mono": [("jetbrains-mono.woff2", "400 700")],
     "Plex Mono": [("plex-mono-500.woff2", "500"), ("plex-mono-600.woff2", "600")],

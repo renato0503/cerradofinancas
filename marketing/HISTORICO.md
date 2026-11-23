@@ -1127,4 +1127,9 @@ de duas frentes.
 - **Terceiro par (mesmo dia):** **CerraClass** (sala amarela com cadeiras coloridas em volta da mesa, Bricolage,
   sem sombra) e **Cerra.AI** (pilha de papéis e emblema de cobre no grafite, Archivo + JetBrains Mono). No Cerra.AI o
   scrim do gancho foi a `.93` porque o emblema ficava atrás do título.
-- **Pendente:** Guia Acadêmico, CerraFood e Institucional, duas por vez, e a versão 16:9 de todas.
+- **Fechamento da série (mesmo dia):** **Guia Acadêmico** (caneta dourada sobre papel creme, Newsreader), **CerraFood**
+  (balcão verde-mata com bilhete, tigela laranja e colher, Outfit) e **Institucional** (mesa com monitor, livro,
+  contrato e cadeira ligados por um fio dourado, Inter). No institucional o nome do fecho foi a 36 px para caber numa
+  linha.
+- **As nove frentes estão no ar** (série "Chamada 15s"). **Pendente:** as versões 16:9 e, se o Renato pedir, uma
+  segunda rodada de copy para data comemorativa.

@@ -5074,6 +5074,114 @@
     }
   },
   {
+    "pasta": "2026-11-chamada-guiacademico",
+    "frente": "guiacademico",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Quem escreve a sua pesquisa?",
+    "data": "2026-11-23",
+    "descricao": "Agende o diagnóstico da pesquisa.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 416
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1491
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quem escreve a sua pesquisa?\n\nNo Guia Acadêmico, o autor é você: orientação metodológica, análise estatística e qualitativa, formatação ABNT/APA/Vancouver e apoio na submissão a periódicos.\nPara TCC, especialização, mestrado e doutorado.\n\nAgende o diagnóstico da pesquisa no WhatsApp (67) 99351-5206.\nguiacademico.com.br\n\n#GuiaAcademico #Metodologia #AnaliseDeDados #TCC #Mestrado #Doutorado #Pesquisa\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-guiacademico.zip",
+      "kb": 415
+    }
+  },
+  {
+    "pasta": "2026-11-chamada-cerrafood",
+    "frente": "cerrafood",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Quanto custa cada prato?",
+    "data": "2026-11-23",
+    "descricao": "Demonstração com o seu cardápio.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 514
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1400
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Quanto custa cada prato?\n\nNo CerraFood, a ficha técnica calcula o custo por ingrediente: mudou o preço, o prato é recalculado.\nDo pedido à porta: totem, caixa, cozinha, estoque, entrega e fidelidade — com a sua marca.\n\nDemonstração gratuita com o seu cardápio no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br/cerrafood\n\n#CerraFood #Restaurante #Delivery #FichaTecnica #GestaoDeRestaurantes #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-cerrafood.zip",
+      "kb": 513
+    }
+  },
+  {
+    "pasta": "2026-11-chamada-institucional",
+    "frente": "institucional",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Tudo no seu negócio conversa?",
+    "data": "2026-11-23",
+    "descricao": "Um só parceiro para o seu negócio crescer.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 359
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1458
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Tudo no seu negócio conversa?\n\nO software organiza a operação. O contador enxerga os números. O crédito parte deles. E a sua equipe aprende a operar.\nSoftware, contabilidade, crédito, cursos e consultorias — com um só parceiro.\n\nFale com a gente no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br\n\n#CerradoFinancas #CerradoTech #Contabilidade #Credito #Cursos #Consultoria #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-institucional.zip",
+      "kb": 355
+    }
+  },
+  {
     "pasta": "2026-11-guiacademico-cronograma",
     "frente": "guiacademico",
     "serie": "Cadernos de método",

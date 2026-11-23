@@ -491,9 +491,9 @@ Feito, sem apagar nada: `posts/` → `conteudo/`, `videos/` → `filmes/remotion
 
 ## Chamadas 15s — onde parei (23/11/26)
 
-Feitas e no ar, na série **“Chamada 15s”** da Central: **Tech, Contabilidade, Crédito, Consultorias, CerraClass e
-Cerra.AI**. Faltam: **Guia Acadêmico, CerraFood e Institucional** (o Guia + CerraFood formam o próximo par); depois,
-as versões 16:9.
+Feitas e no ar, na série **“Chamada 15s”** da Central: **as nove frentes** (Tech, Contabilidade, Crédito,
+Consultorias, CerraClass, Cerra.AI, Guia Acadêmico, CerraFood e Institucional). **Falta:** a versão 16:9 de cada uma
+(mesmo `DADOS` e mesmo clipe; é só acrescentar o formato no gerador).
 
 Para continuar:
 1. Escrever o prompt do elemento novo em `D:\Dev\ComfyUI\prompts\<slug>.json` (uma ação, uma câmera, terço
