@@ -4873,12 +4873,12 @@
       {
         "nome": "capa-9x16.png",
         "tipo": "imagem",
-        "kb": 402
+        "kb": 400
       },
       {
         "nome": "video-9x16.mp4",
         "tipo": "video",
-        "kb": 1330
+        "kb": 1282
       }
     ],
     "legendas": [
@@ -4890,7 +4890,7 @@
     ],
     "pacote": {
       "nome": "2026-11-chamada-tech.zip",
-      "kb": 398
+      "kb": 396
     }
   },
   {
@@ -4909,12 +4909,12 @@
       {
         "nome": "capa-9x16.png",
         "tipo": "imagem",
-        "kb": 437
+        "kb": 433
       },
       {
         "nome": "video-9x16.mp4",
         "tipo": "video",
-        "kb": 1860
+        "kb": 1456
       }
     ],
     "legendas": [
@@ -4926,7 +4926,79 @@
     ],
     "pacote": {
       "nome": "2026-11-chamada-contabilidade.zip",
-      "kb": 437
+      "kb": 433
+    }
+  },
+  {
+    "pasta": "2026-11-chamada-credito",
+    "frente": "credito",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "Parcela ou custo total?",
+    "data": "2026-11-23",
+    "descricao": "Antes de assinar, compare.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 330
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 1549
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Parcela ou custo total?\n\nUma consulta só e vários bancos comparados: empréstimo, consignado, financiamento, seguro e consórcio.\nComparamos o custo total, não só a parcela — e você decide, sem pressão.\n\nSimulação gratuita e sem compromisso no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br/credito\n\n#Credito #Consignado #Financiamento #Seguros #Consorcio #CorrespondenteBancario #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-credito.zip",
+      "kb": 328
+    }
+  },
+  {
+    "pasta": "2026-11-chamada-consultoria",
+    "frente": "consultorias",
+    "serie": "Chamada 15s",
+    "capa": "capa-9x16.png",
+    "titulo": "A empresa cresceu. A estrutura acompanhou?",
+    "data": "2026-11-23",
+    "descricao": "Comece pelo diagnóstico gratuito.",
+    "orientacoes": [
+      "Vídeo mudo: o texto na tela é a mensagem.",
+      "9:16 para Reels, Stories e TikTok; exporte o 16:9 do mesmo projeto quando for para o site."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 444
+      },
+      {
+        "nome": "video-9x16.mp4",
+        "tipo": "video",
+        "kb": 3073
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "A empresa cresceu. A estrutura acompanhou?\n\nSete consultorias, um diagnóstico: CSC, BPO financeiro, controladoria, planejamento tributário, governança e compliance, GovTech e Web3.\nEstrutura desenhada, não improvisada — com indicadores para medir o resultado.\n\nComece pelo diagnóstico gratuito no WhatsApp (67) 99351-5206.\ncerradofinancas.com.br/consultorias\n\n#Consultoria #CSC #BPOFinanceiro #Controladoria #Governanca #GovTech #Web3 #Cuiaba #MatoGrosso\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-chamada-consultoria.zip",
+      "kb": 444
     }
   },
   {

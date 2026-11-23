@@ -78,6 +78,74 @@ DADOS = {
         ),
         rodape="Renato Rosa · CRC-MT 021719/O-5",
     ),
+    "credito": dict(
+        nome="Cerrado Finanças · Crédito",
+        logo=MARKETING.parent / "img" / "folinha-hero.png",
+        fonte="Schibsted",
+        mono_fonte="DM Mono",
+        fundo="#fbfbf8", tinta="#111522", acento="#1f3ae0", apoio="#3f4555", linha="#d6d8de",
+        sobre_acento="#ffffff",
+        cartao="papel",
+        cartao_bg="#fbfbf8",
+        margem_cor="#1f3ae0",
+        transicao="coverleft", transicao_dur=0.55,
+        scrim_hook="rgba(251,251,248,.86) 0%,rgba(251,251,248,.6) 40%,rgba(251,251,248,.95) 100%",
+        scrim_close="rgba(251,251,248,.6) 0%,rgba(251,251,248,.86) 55%,rgba(251,251,248,.97) 100%",
+        kicker="CERRADO FINANÇAS · CRÉDITO MULTI BANCOS",
+        gancho="Parcela ou custo total?",
+        c2_tit="Uma consulta, vários bancos.", c2_sub="Empréstimo, consignado, financiamento, seguro e consórcio.",
+        c3_tit="Compare com calma.", c3_sub="Nós comparamos o custo total, não só a parcela. Você escolhe, sem pressão.",
+        c4_tit="Simulação gratuita e sem compromisso.", c4_sub="Com quem entende de finanças, em parceria com a LS.",
+        fecho="Antes de assinar, compare.",
+        botao="WhatsApp (67) 99351-5206",
+        site="cerradofinancas.com.br/credito",
+        rotulo_botao="Simular no WhatsApp",
+        aviso="Cerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e não é instituição financeira. Crédito sujeito a análise e aprovação.",
+        legenda_ig=(
+            "Parcela ou custo total?\n\n"
+            "Uma consulta só e vários bancos comparados: empréstimo, consignado, financiamento, seguro e consórcio.\n"
+            "Comparamos o custo total, não só a parcela — e você decide, sem pressão.\n\n"
+            "Simulação gratuita e sem compromisso no WhatsApp (67) 99351-5206.\n"
+            "cerradofinancas.com.br/credito\n\n"
+            "#Credito #Consignado #Financiamento #Seguros #Consorcio #CorrespondenteBancario #Cuiaba #MatoGrosso"
+        ),
+    ),
+    "consultoria": dict(
+        nome="Cerrado Finanças · Consultoria",
+        logo=MARKETING.parent / "img" / "folinha-hero.png",
+        fonte="Fraunces",
+        mono_fonte="DM Mono",
+        marca_fs=34,
+        fundo="#f3f0e8", tinta="#23262b", acento="#e4570e", apoio="#5c5f66", linha="#d8d2c4",
+        sobre_acento="#ffffff",
+        cartao="papel",
+        cartao_bg=(
+            "linear-gradient(rgba(35,38,43,.07) .2mm, transparent .2mm) 0 0 / 44px 44px, "
+            "linear-gradient(90deg, rgba(35,38,43,.07) .2mm, transparent .2mm) 0 0 / 44px 44px, #f3f0e8"
+        ),
+        margem_cor="#e4570e",
+        transicao="fade", transicao_dur=0.24,
+        scrim_hook="rgba(243,240,232,.86) 0%,rgba(243,240,232,.6) 40%,rgba(243,240,232,.95) 100%",
+        scrim_close="rgba(243,240,232,.6) 0%,rgba(243,240,232,.86) 55%,rgba(243,240,232,.97) 100%",
+        kicker="CERRADO FINANÇAS · CONSULTORIA",
+        gancho="A empresa cresceu. A estrutura acompanhou?",
+        c2_tit="Sete consultorias, um diagnóstico.", c2_sub="CSC, BPO financeiro, controladoria, tributário, GRC, GovTech e Web3.",
+        c3_tit="Cada projeto é único.", c3_sub="Diagnóstico gratuito, roadmap e implantação junto com o seu time.",
+        c4_tit="Estrutura desenhada, não improvisada.", c4_sub="Indicadores para medir o resultado.",
+        fecho="Comece pelo diagnóstico gratuito.",
+        botao="WhatsApp (67) 99351-5206",
+        site="cerradofinancas.com.br/consultorias",
+        rotulo_botao="Agendar diagnóstico",
+        legenda_ig=(
+            "A empresa cresceu. A estrutura acompanhou?\n\n"
+            "Sete consultorias, um diagnóstico: CSC, BPO financeiro, controladoria, planejamento tributário, "
+            "governança e compliance, GovTech e Web3.\n"
+            "Estrutura desenhada, não improvisada — com indicadores para medir o resultado.\n\n"
+            "Comece pelo diagnóstico gratuito no WhatsApp (67) 99351-5206.\n"
+            "cerradofinancas.com.br/consultorias\n\n"
+            "#Consultoria #CSC #BPOFinanceiro #Controladoria #Governanca #GovTech #Web3 #Cuiaba #MatoGrosso"
+        ),
+    ),
 }
 
 
@@ -87,32 +155,33 @@ def logo_data_uri(caminho):
     return f"data:{tipo};base64,{dados}"
 
 
-def fonte_css(nome):
-    arquivos = {
-        "Inter": ["inter.woff2"],
-        "Plex Cond": ["plex-cond-500.woff2", "plex-cond-700.woff2"],
-    }[nome]
+FAMILIAS = {
+    "Inter": [("inter.woff2", "400 800")],
+    "Plex Cond": [("plex-cond-500.woff2", "500"), ("plex-cond-700.woff2", "700")],
+    "Schibsted": [("schibsted.woff2", "400 900")],
+    "Fraunces": [("fraunces-400.woff2", "400"), ("fraunces-600.woff2", "600")],
+    "JetBrains Mono": [("jetbrains-mono.woff2", "400 700")],
+    "Plex Mono": [("plex-mono-500.woff2", "500"), ("plex-mono-600.woff2", "600")],
+    "DM Mono": [("dm-mono-400.woff2", "400"), ("dm-mono-500.woff2", "500 700")],
+}
+
+
+def fonte_css(*nomes):
     out = []
-    for a in arquivos:
-        peso = "700" if "700" in a else "400 500"
-        out.append(f"@font-face{{font-family:'{nome}';src:url('{Path(FONTES / a).as_uri()}') format('woff2');font-weight:{peso};}}")
+    for nome in nomes:
+        for arquivo, peso in FAMILIAS[nome]:
+            out.append(f"@font-face{{font-family:'{nome}';src:url('{Path(FONTES / arquivo).as_uri()}') format('woff2');font-weight:{peso};}}")
     return "\n".join(out)
 
 
 def html(d, kind):
-    mono = "font-family:'JetBrains Mono',monospace" if d["fonte"] == "Inter" else "font-family:'Plex Mono',monospace"
-    mono += ""
-    if d["fonte"] == "Plex Cond":
-        mono = "font-family:'Plex Mono',monospace"
+    mono = f"font-family:'{d.get('mono_fonte', 'JetBrains Mono')}',monospace"
     papel = d["cartao"] == "papel"
-    fundo = d["fundo"]
-    if papel:
-        fundo = (
-            "repeating-linear-gradient(transparent 0 46px, #cfe0d4 46px 48px) #f1f6f0"
-        )
+    fundo = d.get("cartao_bg") or d["fundo"]
+    margem = d.get("margem_cor")
     regua = (
-        f"<i style=\"position:absolute;left:150px;top:0;bottom:0;width:3px;background:{d.get('vermelho','#d23a2c')};opacity:.75\"></i>"
-        if papel else ""
+        f"<i style=\"position:absolute;left:84px;top:0;bottom:0;width:3px;background:{margem};opacity:.75\"></i>"
+        if margem else ""
     )
     sombra = "0 2px 24px rgba(0,0,0,.55)" if not papel else "none"
     base = f"""
@@ -124,16 +193,16 @@ def html(d, kind):
       .kicker{{{mono};font-size:26px;letter-spacing:.16em;text-transform:uppercase;color:{d['apoio']}}}
       h1{{font-weight:800;font-size:92px;line-height:1.02;letter-spacing:-.03em;margin:0;text-shadow:{sombra}}}
       .sub{{font-size:42px;line-height:1.3;color:{d['apoio']};max-width:820px}}
-      .marca{{display:flex;align-items:center;gap:22px;font-weight:800;font-size:44px;letter-spacing:-.02em}}
+      .marca{{display:flex;align-items:center;gap:22px;font-weight:800;font-size:{d.get('marca_fs', 44)}px;letter-spacing:-.02em}}
       .marca img{{width:230px;height:230px;object-fit:contain}}
-      .botao{{display:inline-block;background:{d['acento']};color:{d['fundo'] if not papel else '#f1f6f0'};font-weight:800;font-size:40px;padding:22px 40px;border-radius:999px}}
+      .botao{{display:inline-block;background:{d['acento']};color:{d.get('sobre_acento', d['fundo'])};font-weight:800;font-size:40px;padding:22px 40px;border-radius:999px}}
       .ctt{{font-size:32px;font-weight:600;color:{d['apoio']}}}
-      .aviso{{font-size:22px;line-height:1.3;color:{d['apoio']};opacity:.85}}
+      .aviso{{font-size:26px;line-height:1.35;color:{d['apoio']};opacity:.85}}
       .conteudo{{position:absolute;left:120px;right:120px;top:240px;bottom:220px;display:flex;flex-direction:column}}
     </style>"""
     if kind == "hook":
         return f"""<!doctype html><html><head><meta charset="utf-8">{base}
-        <style>{fonte_css(d['fonte'])}</style></head><body>
+        <style>{fonte_css(d['fonte'], d.get('mono_fonte', 'JetBrains Mono'))}</style></head><body>
         <div class="bg" style="background:linear-gradient(180deg,{d['scrim_hook']})"></div>
         <div class="conteudo" style="justify-content:flex-start">
           <p class="kicker" style="margin:0 0 26px">{d['kicker']}</p>
@@ -141,14 +210,15 @@ def html(d, kind):
         </div></body></html>"""
     if kind == "close":
         return f"""<!doctype html><html><head><meta charset="utf-8">{base}
-        <style>{fonte_css(d['fonte'])}</style></head><body>
+        <style>{fonte_css(d['fonte'], d.get('mono_fonte', 'JetBrains Mono'))}</style></head><body>
         <div class="bg" style="background:linear-gradient(180deg,{d['scrim_close']})"></div>
         <div class="conteudo" style="justify-content:flex-end">
           <div class="marca"><img src="{logo_data_uri(d['logo'])}"><span>{d['nome']}</span></div>
           <h1 style="font-size:74px;margin:26px 0 0">{d['fecho']}</h1>
           <p class="ctt" style="margin:26px 0 34px">{d['botao']}<br>{d['site']}</p>
-          <div><span class="botao">Falar no WhatsApp</span></div>
-          {f'<p class="aviso" style="margin-top:26px">{d["rodape"]}</p>' if d.get('rodape') else ''}
+          <div><span class="botao">{d.get('rotulo_botao', 'Falar no WhatsApp')}</span></div>
+          {f'<p class="aviso" style="margin-top:26px">{d["aviso"]}</p>' if d.get('aviso') else ''}
+          {f'<p class="aviso" style="margin-top:14px">{d["rodape"]}</p>' if d.get('rodape') else ''}
         </div></body></html>"""
     # cartões cheios (c2/c3/c4)
     corpo = {
@@ -158,7 +228,7 @@ def html(d, kind):
     }[kind]
     tit, sub, num = corpo
     return f"""<!doctype html><html><head><meta charset="utf-8">{base}
-    <style>{fonte_css(d['fonte'])}</style></head><body>
+    <style>{fonte_css(d['fonte'], d.get('mono_fonte', 'JetBrains Mono'))}</style></head><body>
     <div class="bg"></div>{regua}
     <div class="conteudo" style="justify-content:center">
       <p class="kicker" style="margin:0 0 18px">{num} · {d['nome']}</p>
