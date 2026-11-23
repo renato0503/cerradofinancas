@@ -1,0 +1,107 @@
+/* Vídeo com IA · Storyboard: o filme planejado no papel. Traço de lápis, legenda de caneta fora do quadro. */
+@font-face { font-family: 'Outfit'; src: url('assets/fonts/outfit.woff2') format('woff2'); font-weight: 200 900; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+@font-face { font-family: 'Caveat'; src: url('assets/fonts/caveat.woff2') format('woff2'); font-weight: 400 700; }
+
+:root { --papel: #f2ecdf; --folha: #fbf7ee; --tinta: #23201a; --fraco: #8a8377; --vermelho: #c8452f; --azul: #2b5fa8; --verde: #3f7a45; }
+html, body { background: var(--papel); }
+#root { font-family: 'Instrument Sans', sans-serif; color: var(--tinta); background: var(--papel); }
+#tela { pointer-events: none; }
+
+#papel { position: absolute; inset: 0; background:
+  radial-gradient(circle at 18% 8%, #fffdf8, transparent 58%),
+  radial-gradient(circle at 92% 96%, #e7dfcd, transparent 55%),
+  repeating-linear-gradient(0deg, rgba(120, 110, 90, .13) 0 1px, transparent 1px 46px),
+  repeating-linear-gradient(90deg, rgba(120, 110, 90, .13) 0 1px, transparent 1px 46px),
+  var(--papel); }
+
+/* ---- zonas de texto: nada encosta na borda, nada divide espaço com o desenho ---- */
+.conteudo.sb { justify-content: center; }
+.horizontal .conteudo.sb { left: 96px; right: 96px; top: 70px; bottom: 64px; }
+.vertical .conteudo.sb { left: 64px; right: 64px; top: 150px; bottom: 140px; }
+
+.rot { font: 500 24px 'DM Mono', monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--fraco); margin-bottom: 18px; }
+.vertical .rot { font-size: 22px; margin-bottom: 14px; }
+
+/* capa: texto à esquerda, primeiro quadro à direita */
+.capa { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 56px; }
+.vertical .capa { display: flex; flex-direction: column; align-items: flex-start; gap: 40px; }
+.mega { font: 800 96px/0.96 'Outfit', sans-serif; letter-spacing: -.03em; }
+.vertical .mega { font-size: 88px; }
+.capa .quadro.grande { padding: 22px 22px 18px; }
+.capa .quadro.grande svg { width: 100%; height: auto; }
+.vertical .capa .quadro.grande { width: 100%; }
+
+.titulo { font: 800 62px/1 'Outfit', sans-serif; letter-spacing: -.02em; margin-bottom: 34px; }
+.vertical .titulo { font-size: 60px; margin-bottom: 26px; }
+.vertical #p2 .titulo { font-size: 52px; margin-bottom: 18px; }
+
+/* quadros desenhados a traço */
+.grade { display: grid; gap: 22px; }
+.grade.cinco { grid-template-columns: repeat(5, 1fr); }
+.vertical .grade.cinco { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grade.tres { grid-template-columns: repeat(3, 1fr); }
+.vertical .grade.tres { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+.quadro { position: relative; background: var(--folha); border: 2.5px solid var(--tinta); border-radius: 3px;
+  box-shadow: 7px 8px 0 rgba(35, 32, 26, .09); padding: 12px 12px 10px; }
+.grade .quadro { display: flex; flex-direction: column; align-items: center; }
+.grade.cinco .quadro { padding: 9px 9px 8px; }
+.quadro svg { width: 100%; height: auto; display: block; }
+.cena { align-self: flex-start; font: 500 17px 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--fraco); margin-bottom: 2px; }
+
+.tr { fill: none; stroke: var(--tinta); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; }
+.tr.az { stroke: var(--azul); }
+.tr.ver { stroke: var(--verde); }
+
+.leg { font: 700 29px/1.05 'Outfit', sans-serif; margin-top: 10px; text-align: center; }
+.desc { font: 400 21px/1.25 'Instrument Sans', sans-serif; color: var(--fraco); text-align: center; margin-top: 4px; }
+.vertical .leg { font-size: 27px; }
+.vertical .desc { font-size: 20px; }
+.vertical .grade.cinco .leg { font-size: 24px; }
+
+/* marca-texto de caneta verde (nunca por cima do texto, sempre atrás) */
+.grifo { background: linear-gradient(180deg, transparent 58%, rgba(122, 168, 84, .42) 58%); padding: 0 .08em; }
+.ver { color: var(--verde); }
+.az { color: var(--azul); }
+
+/* contagem das entregas */
+.n3 { font: 800 112px/0.85 'Outfit', sans-serif; color: var(--vermelho); margin-right: .06em; }
+.ib { font: inherit; }
+#p3 .titulo { display: flex; align-items: baseline; gap: 6px; }
+
+/* letras A/B/C escritas à mão */
+.letra { font: 700 132px/0.8 'Caveat', cursive; color: var(--vermelho); }
+.letra.az { color: var(--azul); }
+.letra.ver { color: var(--verde); }
+.grade .baixo { width: 88%; height: 30px; }
+.baixo .tr { stroke-width: 2.2; }
+
+.caneta { font-family: 'Caveat', cursive; font-weight: 600; color: var(--azul); }
+.capa .grifo { font-size: 58px; line-height: 1; display: inline-block; margin-top: 26px; }
+.vertical .capa .grifo { font-size: 48px; margin-top: 18px; }
+.nota { font-size: 42px; line-height: 1; margin-top: 26px; }
+
+/* a regra, circulada de caneta vermelha */
+.centro-v { align-items: center; justify-content: center; text-align: center; }
+.regra { position: relative; display: inline-flex; align-items: center; justify-content: center; padding: 30px 46px; }
+.circ { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.circulo { fill: none; stroke: var(--vermelho); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 1; opacity: .85; }
+.citacao { position: relative; font: 800 82px/1.02 'Outfit', sans-serif; letter-spacing: -.02em; }
+.vertical .citacao { font-size: 74px; }
+.autor { margin-top: 34px; font: 500 24px 'DM Mono', monospace; letter-spacing: .08em; color: var(--fraco); }
+
+/* fecho */
+.fecho { gap: 0; }
+.selo { width: 132px; height: 132px; border-radius: 50%; background: #fff; border: 2.5px solid var(--tinta); display: grid; place-items: center; margin-bottom: 30px; }
+.selo img { width: 108px; height: 108px; object-fit: contain; }
+.chamada { font: 900 92px/0.98 'Outfit', sans-serif; letter-spacing: -.03em; }
+.vertical .chamada { font-size: 84px; }
+.tag { margin-top: 30px; font: 500 26px 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--fraco); }
+.botao { margin-top: 26px; font: 600 36px 'Instrument Sans', sans-serif; background: var(--tinta); color: var(--folha); padding: 14px 34px 18px; border-radius: 999px; }
+.vertical .botao { font-size: 30px; }
+.sub { width: 300px; height: 16px; margin-top: 10px; }
+.sublinha { fill: none; stroke: var(--vermelho); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 1; }

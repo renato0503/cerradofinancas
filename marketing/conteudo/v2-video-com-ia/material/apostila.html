@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila — Vídeo com IA</title>
+<style>
+  @font-face { font-family: 'Outfit'; src: url('../../../brand/fontes/outfit.woff2') format('woff2'); font-weight: 200 900; font-display: swap; }
+  @font-face { font-family: 'Instrument Sans'; src: url('../../../brand/fontes/instrument-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Instrument Sans'; src: url('../../../brand/fontes/instrument-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'DM Mono'; src: url('../../../brand/fontes/dm-mono-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'DM Mono'; src: url('../../../brand/fontes/dm-mono-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+
+  :root {
+    --tinta: #141419;
+    --papel: #fbfbf7;
+    --papel-2: #f1f1ea;
+    --linha: #d8d8cf;
+    --mudo: #6d6d78;
+    --lima: #a8cc00;
+    --lima-claro: #eef7c8;
+    --azul: #4a68d8;
+    --coral: #e0503c;
+    --violeta: #8a4fd0;
+    --ciano: #129a8e;
+    --mono: 'DM Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #d9d9d2; font-family: 'Instrument Sans', sans-serif; color: var(--tinta); -webkit-font-smoothing: antialiased; }
+  .pagina {
+    position: relative; width: 210mm; min-height: 297mm; background: var(--papel);
+    padding: 17mm 16mm 16mm; margin: 0 auto 8mm; page-break-after: always; overflow: hidden;
+  }
+  .pagina:last-child { page-break-after: auto; }
+  @media print {
+    body { background: #fff; }
+    .pagina { margin: 0; }
+    @page { size: A4; margin: 0; }
+  }
+
+  h1, h2, h3, .titulo { font-family: 'Outfit', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1.02; }
+  h1 { font-size: 42pt; }
+  h2 { font-size: 23pt; margin-bottom: 4mm; }
+  h3 { font-size: 12.5pt; margin: 5mm 0 2mm; }
+  p, li { font-size: 10.2pt; line-height: 1.5; }
+  p + p { margin-top: 2.5mm; }
+  ul { padding-left: 5mm; }
+  li { margin-bottom: 1.4mm; }
+  b, strong { font-weight: 600; }
+  .mono { font-family: var(--mono); font-size: 8.6pt; letter-spacing: .06em; text-transform: uppercase; color: var(--mudo); }
+  .et { display: inline-flex; align-items: center; gap: 2mm; font-family: var(--mono); font-size: 8.4pt; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta); border: 1px solid var(--tinta); border-radius: 999px; padding: 1.6mm 3.4mm; margin-bottom: 5mm; }
+  .et::before { content: ''; width: 2mm; height: 2mm; border-radius: 50%; background: var(--lima); }
+  .lead { font-size: 13pt; line-height: 1.4; color: #3f3f48; margin-bottom: 5mm; }
+  .rodape-pagina { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 7.5pt; color: var(--mudo); border-top: 1px solid var(--linha); padding-top: 3mm; }
+
+  .grade { display: grid; gap: 4mm; }
+  .g2 { grid-template-columns: 1fr 1fr; }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .caixa { background: var(--papel-2); border: 1px solid var(--linha); border-radius: 4mm; padding: 4.5mm; }
+  .caixa.destaque { background: var(--lima-claro); border-color: #c6dd7a; }
+  .caixa.escura { background: #15151c; color: #f2f2f6; border-color: #15151c; }
+  .caixa.escura .mono { color: #a7a7b5; }
+  .caixa h3 { margin-top: 0; }
+
+  .passo { display: flex; gap: 3.5mm; margin-bottom: 3.2mm; }
+  .passo .n { flex: 0 0 auto; width: 7.5mm; height: 7.5mm; border-radius: 50%; background: var(--tinta); color: var(--papel); display: grid; place-items: center; font-family: var(--mono); font-size: 8.5pt; }
+  .passo .txt { font-size: 10.2pt; line-height: 1.45; }
+
+  .prompt { background: #15151c; color: #e8e8ef; border-radius: 3mm; padding: 4mm; font-family: var(--mono); font-size: 8.4pt; line-height: 1.55; white-space: pre-wrap; }
+  .prompt .rot { display: block; color: #8f8f9f; font-size: 7.4pt; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 2mm; }
+  .prompt b { color: #d8ff3e; font-weight: 500; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 2mm; }
+  .chip { border: 1px solid var(--linha); background: #fff; border-radius: 2mm; padding: 1.6mm 2.6mm; font-family: var(--mono); font-size: 8pt; }
+  .chip::before { content: ''; display: inline-block; width: 1.6mm; height: 1.6mm; border-radius: .5mm; background: var(--lima); margin-right: 1.6mm; vertical-align: .4mm; }
+
+  .check { list-style: none; padding: 0; }
+  .check li { display: flex; gap: 2.6mm; padding: 1.8mm 0; border-bottom: 1px solid var(--linha); margin: 0; }
+  .check li::before { content: '✓'; font-weight: 700; color: var(--ciano); }
+  .check.vazia li::before { content: '☐'; color: var(--mudo); }
+
+  .tabela { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  .tabela th { text-align: left; font-family: var(--mono); font-size: 7.6pt; letter-spacing: .08em; text-transform: uppercase; color: var(--mudo); border-bottom: 1.4px solid var(--tinta); padding: 2mm 2mm; }
+  .tabela td { border-bottom: 1px solid var(--linha); padding: 2.2mm 2mm; vertical-align: top; }
+
+  .timeline-simples { background: #15151c; border-radius: 4mm; padding: 5mm; }
+  .timeline-simples .regua { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 7pt; color: #8f8f9f; margin-bottom: 3mm; }
+  .timeline-simples .faixa { display: flex; align-items: center; gap: 2.5mm; margin-bottom: 2.4mm; }
+  .timeline-simples .rot { width: 24mm; font-family: var(--mono); font-size: 7pt; color: #a7a7b5; }
+  .timeline-simples .pista { flex: 1; height: 6mm; background: #0d0d13; border: 1px solid #2a2a36; border-radius: 1.4mm; position: relative; overflow: hidden; }
+  .timeline-simples .clipe { position: absolute; top: 1mm; bottom: 1mm; border-radius: 1mm; }
+  .timeline-simples .c1 { background: #d8ff3e; } .timeline-simples .c2 { background: #6b8cff; }
+  .timeline-simples .c3 { background: #b06bff; } .timeline-simples .c4 { background: #ff6b57; }
+  .timeline-simples .c5 { background: #3ee0cf; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+  .split span { display: grid; place-items: center; height: 22mm; border-radius: 2mm; font-family: var(--mono); font-size: 8pt; }
+  .split .antes { background: #e5e5dd; color: #6d6d78; }
+  .split .depois { background: var(--lima-claro); border: 1px solid #c6dd7a; color: #5a6b00; }
+
+  .sumario { list-style: none; padding: 0; }
+  .sumario li { display: flex; align-items: baseline; gap: 3mm; border-bottom: 1px solid var(--linha); padding: 3mm 0; font-size: 11pt; }
+  .sumario .n { font-family: var(--mono); font-size: 8pt; color: var(--mudo); width: 8mm; }
+  .sumario .tit { flex: 1; font-weight: 600; }
+  .sumario .pag { font-family: var(--mono); font-size: 8pt; color: var(--mudo); }
+
+  .duas-col { column-count: 2; column-gap: 7mm; }
+  .duas-col p, .duas-col li { break-inside: avoid; }
+  .aviso { border-left: 1.2mm solid var(--coral); background: #fdeeea; padding: 3.5mm 4mm; border-radius: 0 2mm 2mm 0; font-size: 9.4pt; }
+  .dica { border-left: 1.2mm solid var(--ciano); background: #e8f7f5; padding: 3.5mm 4mm; border-radius: 0 2mm 2mm 0; font-size: 9.4pt; }
+  .capa { background: #0a0a0f; color: #f4f4f7; display: flex; flex-direction: column; }
+  .capa::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 7mm 7mm; }
+  .capa > * { position: relative; }
+  .capa .marca { font-family: var(--mono); font-size: 9pt; letter-spacing: .18em; color: #d8ff3e; }
+  .capa h1 { font-size: 46pt; margin-top: 8mm; max-width: 150mm; }
+  .capa h1 em { font-style: normal; color: #d8ff3e; }
+  .capa .sub { font-size: 13pt; color: #c9c9d4; max-width: 130mm; margin-top: 6mm; }
+  .capa .pe { margin-top: auto; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8pt; color: #9a9aad; border-top: 1px solid #2b2b3a; padding-top: 4mm; }
+  .onda { display: flex; align-items: center; gap: 1.2mm; height: 10mm; margin-top: 2mm; }
+  .onda i { flex: 1; background: #3ee0cf; border-radius: 1px; opacity: .85; }
+  .onda i:nth-child(3n) { height: 70%; }
+  .onda i:nth-child(3n+1) { height: 44%; }
+  .onda i:nth-child(3n+2) { height: 60%; }
+  .onda i:nth-child(5n) { height: 96%; background: #d8ff3e; }
+  .onda i:nth-child(7n) { height: 30%; }  .notas { margin-top: 8mm; border-top: 1px dashed var(--linha); padding-top: 3mm; }
+  .notas .rot { font-family: var(--mono); font-size: 7.5pt; letter-spacing: .1em; text-transform: uppercase; color: var(--mudo); margin-bottom: 2mm; }
+  .notas .linha { height: 9mm; border-bottom: 1px solid var(--linha); }
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section id="p1" class="pagina capa">
+  <span class="marca">VÍDEO COM IA · MATERIAL DO PARTICIPANTE</span>
+  <h1>Seu primeiro <em>vídeo com IA</em> em um dia.</h1>
+  <p class="sub">Apostila da maratona ao vivo. Roteiro, apresentador virtual, vídeo por código, realismo e corte — sem estúdio, sem equipe e sem programar.</p>
+  <div class="pe">
+    <span>1 dia · 8h · replay 7 dias</span>
+    <span>realização Cerrado Tech · CerraClass</span>
+  </div>
+</section>
+
+<!-- 2 · COMO USAR -->
+<section id="p2" class="pagina">
+  <span class="et">Como usar este material</span>
+  <h2>Três caminhos. Um vídeo no final.</h2>
+  <p class="lead">O curso foi desenhado para uma turma grande e com habilidades muito diferentes. Em cada módulo prático você escolhe o caminho que faz sentido para você.</p>
+  <div class="grade g3">
+    <div class="caixa"><span class="mono">Caminho A</span><h3>Só clicar</h3><p>Você usa as ferramentas no navegador e um editor simples. Nenhuma instalação, nenhuma linha de código.</p></div>
+    <div class="caixa"><span class="mono">Caminho B</span><h3>Modelo pronto</h3><p>Você abre o template do curso, troca textos e imagens e manda renderizar. Um comando, sem programar.</p></div>
+    <div class="caixa"><span class="mono">Caminho C</span><h3>Com código</h3><p>Você pede ao agente para adaptar a cena, mexe no HTML/React e gera variações em lote.</p></div>
+  </div>
+  <div class="dica" style="margin-top: 6mm"><b>Regra de ouro:</b> no primeiro vídeo, escolha o caminho mais simples. O objetivo do dia é publicar, não aprender tudo.</div>
+
+  <h3 style="margin-top: 8mm">Sumário</h3>
+  <ul class="sumario">
+    <li><span class="n">01</span><span class="tit">O mapa do vídeo com IA</span><span class="pag">p. 3</span></li>
+    <li><span class="n">02</span><span class="tit">Roteiro em 15 minutos</span><span class="pag">p. 4</span></li>
+    <li><span class="n">03</span><span class="tit">Apresentador, voz e legendas</span><span class="pag">p. 6</span></li>
+    <li><span class="n">04</span><span class="tit">Vídeo por código com modelo pronto</span><span class="pag">p. 7</span></li>
+    <li><span class="n">05</span><span class="tit">Realismo com Higgsfield Genjutsu</span><span class="pag">p. 8</span></li>
+    <li><span class="n">06</span><span class="tit">Corte final e publicação</span><span class="pag">p. 9</span></li>
+    <li><span class="n">07</span><span class="tit">Projeto final</span><span class="pag">p. 10</span></li>
+    <li><span class="n">+</span><span class="tit">Kit de prompts, checklist, direitos e glossário</span><span class="pag">p. 11</span></li>
+  </ul>
+  <div class="rodape-pagina"><span>Vídeo com IA · apostila</span><span>2</span></div>
+</section>
+
+<!-- 3 · MAPA -->
+<section id="p3" class="pagina">
+  <span class="et">Módulo 1</span>
+  <h2>O mapa do vídeo com IA</h2>
+  <p class="lead">Todo vídeo, do Reel ao treinamento interno, passa pelas mesmas cinco etapas. A IA acelera cada uma delas — e nenhuma delas desaparece.</p>
+  <div class="timeline-simples">
+    <div class="regua"><span>IDEIA</span><span>ROTEIRO</span><span>IMAGEM</span><span>MONTAGEM</span><span>PUBLICAÇÃO</span></div>
+    <div class="faixa"><span class="rot">ETAPA</span><span class="pista"><i class="clipe c1" style="left:1%;width:17%"></i><i class="clipe c2" style="left:20%;width:17%"></i><i class="clipe c3" style="left:39%;width:17%"></i><i class="clipe c4" style="left:58%;width:17%"></i><i class="clipe c5" style="left:77%;width:21%"></i></span></div>
+  </div>
+  <div class="grade g2" style="margin-top: 6mm">
+    <div>
+      <h3>O que a IA faz bem</h3>
+      <ul>
+        <li>Transformar um brief curto em roteiro e variações.</li>
+        <li>Gerar voz, avatar e legendas em minutos.</li>
+        <li>Repetir o mesmo template para 10 produtos diferentes.</li>
+        <li>Trocar cenário, personagem e produto de um vídeo existente.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>O que ainda é seu</h3>
+      <ul>
+        <li>Saber o que o vídeo precisa vender ou explicar.</li>
+        <li>Escolher o gancho e cortar o excesso.</li>
+        <li>Conferir informação, marca e direitos.</li>
+        <li>Decidir o que não deve ser gerado.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="aviso" style="margin-top: 6mm"><b>Transparência:</b> quando o vídeo tiver rosto gerado por IA, avise no próprio conteúdo ou na legenda. Não use a imagem de uma pessoa real sem autorização.</div>
+  <div class="rodape-pagina"><span>Módulo 1 · o mapa</span><span>3</span></div>
+</section>
+
+<!-- 4 · ROTEIRO -->
+<section id="p4" class="pagina">
+  <span class="et">Módulo 2</span>
+  <h2>Roteiro em 15 minutos</h2>
+  <p class="lead">Vídeo curto não é vídeo sem estrutura. Use sempre os quatro blocos abaixo.</p>
+  <div class="grade g2">
+    <div class="caixa"><span class="mono">0–3 segundos</span><h3>Gancho</h3><p>A frase ou imagem que impede o dedo de rolar. Prometa algo concreto.</p></div>
+    <div class="caixa"><span class="mono">3–8 segundos</span><h3>Problema</h3><p>O que dói hoje. Fale do cliente, não de você.</p></div>
+    <div class="caixa"><span class="mono">8–13 segundos</span><h3>Prova</h3><p>Um número, um antes/depois, uma demonstração. Sem invenção.</p></div>
+    <div class="caixa"><span class="mono">13–15 segundos</span><h3>Chamada</h3><p>Uma ação só: chamar no WhatsApp, salvar, visitar a página.</p></div>
+  </div>
+
+  <h3 style="margin-top: 7mm">Prompt de roteiro (copie e adapte)</h3>
+  <div class="prompt"><span class="rot">Cole no ChatGPT, Claude ou Gemini</span>Você é roteirista de vídeos curtos para redes sociais.
+Negócio: <b>[descreva em uma frase]</b>
+Público: <b>[quem precisa ver]</b>
+Objetivo: <b>[vender, agendar, informar]</b>
+Formato: vídeo de <b>15 segundos</b>, vertical 9:16.
+Escreva 3 opções de gancho com menos de 10 palavras.
+Depois, um roteiro em 4 blocos: gancho, problema, prova e chamada.
+Linguagem simples, sem jargão. Uma ação por chamada.
+No fim, sugira 5 cenas visualmente possíveis de gravar ou gerar.</div>
+  <div class="dica" style="margin-top: 5mm"><b>Se a resposta vier longa, peça:</b> “corte para 40 palavras e mantenha só o essencial”. Roteiro bom é o que cabe no tempo.</div>  <div class="notas"><div class="rot">Anote aqui</div><div class="linha"></div><div class="linha"></div><div class="linha"></div><div class="linha"></div></div>
+  <div class="rodape-pagina"><span>Módulo 2 · roteiro</span><span>4</span></div>
+</section>
+
+<!-- 5 · EXERCÍCIO ROTEIRO -->
+<section id="p5" class="pagina">
+  <span class="et">Módulo 2 · exercício</span>
+  <h2>Seu roteiro de 15 segundos</h2>
+  <div class="grade g2">
+    <div>
+      <h3>Preencha antes de pedir</h3>
+      <table class="tabela">
+        <tr><th>Campo</th><th>Seu preenchimento</th></tr>
+        <tr><td>Negócio</td><td>&nbsp;</td></tr>
+        <tr><td>Público</td><td>&nbsp;</td></tr>
+        <tr><td>Objetivo</td><td>&nbsp;</td></tr>
+        <tr><td>Ação final</td><td>&nbsp;</td></tr>
+      </table>
+      <h3 style="margin-top: 6mm">Escolha um gancho</h3>
+      <ul class="check vazia">
+        <li>Pergunta que expõe um problema</li>
+        <li>Número ou resultado concreto</li>
+        <li>Antes e depois em uma frase</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Exemplo pronto</h3>
+      <div class="prompt"><span class="rot">Clínica odontológica · 15s</span>GANCHO
+“Seu sorriso some nas fotos?”
+PROBLEMA
+“Você evita sorrir e deixa a consulta para depois.”
+PROVA
+“Em uma avaliação de 30 minutos você sai com o plano e o valor.”
+CHAMADA
+“Chame no WhatsApp e agende sua avaliação.”</div>
+      <div class="aviso" style="margin-top: 5mm"><b>Não prometa resultado clínico.</b> Fale do processo, do atendimento e do que a pessoa recebe.</div>
+    </div>
+  </div>
+  <div class="rodape-pagina"><span>Módulo 2 · exercício</span><span>5</span></div>
+</section>
+
+<!-- 6 · HEYGEN -->
+<section id="p6" class="pagina">
+  <span class="et">Módulo 3</span>
+  <h2>Apresentador, voz e legendas</h2>
+  <p class="lead">No HeyGen você transforma o roteiro em um vídeo com apresentador, sem gravar nada. O caminho abaixo é o mais curto.</p>
+  <div class="grade g2">
+    <div>
+      <div class="passo"><span class="n">1</span><span class="txt">Crie a conta gratuita e abra <b>Create video → Avatar video</b>.</span></div>
+      <div class="passo"><span class="n">2</span><span class="txt">Escolha um avatar público. Prefira enquadramento neutro e fundo limpo.</span></div>
+      <div class="passo"><span class="n">3</span><span class="txt">Cole o roteiro no campo de script e escolha a voz em português.</span></div>
+      <div class="passo"><span class="n">4</span><span class="txt">Ajuste a velocidade e ouça a prévia. Corrija nomes e números escritos.</span></div>
+      <div class="passo"><span class="n">5</span><span class="txt">Gere, baixe o MP4 e ative as legendas automáticas.</span></div>
+      <div class="passo"><span class="n">6</span><span class="txt">Se o vídeo for traduzido, revise a legenda antes de publicar.</span></div>
+    </div>
+    <div>
+      <div class="caixa destaque"><h3 style="margin-top:0">Dica de qualidade</h3><p>Avatar funciona melhor com frases curtas e pausas. Se o texto tiver 80 palavras, divida em dois blocos e junte no corte.</p></div>
+      <h3>Quando não usar avatar</h3>
+      <ul>
+        <li>Depoimento de cliente real.</li>
+        <li>Assunto sensível, saúde ou crise.</li>
+        <li>Quando a marca exige rosto humano.</li>
+      </ul>
+      <div class="aviso" style="margin-top: 4mm"><b>Cheque sempre:</b> a voz está natural? A boca acompanha? A legenda tem erro? O avatar parece uma pessoa real que você não autorizou?</div>
+    </div>
+  </div>
+  <div class="caixa escura" style="margin-top: 6mm">
+    <div style="display: flex; align-items: center; gap: 4mm">
+      <div style="width: 12mm; height: 12mm; border-radius: 50%; background: linear-gradient(140deg, #6b8cff, #b06bff); flex: 0 0 auto"></div>
+      <div style="flex: 1">
+        <div class="mono" style="color: #8f8f9f">AVATAR + VOZ</div>
+        <div class="onda"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="mono" style="color: #d8ff3e">MP4 · 30s</div>
+    </div>
+  </div>
+  <div class="notas"><div class="rot">Anote aqui</div><div class="linha"></div><div class="linha"></div><div class="linha"></div><div class="linha"></div><div class="linha"></div><div class="linha"></div></div>
+  <div class="rodape-pagina"><span>Módulo 3 · HeyGen</span><span>6</span></div>
+</section>
+
+<!-- 7 · CÓDIGO -->
+<section id="p7" class="pagina">
+  <span class="et">Módulo 4</span>
+  <h2>Vídeo por código com modelo pronto</h2>
+  <p class="lead">A ideia é simples: a cena vira um arquivo, os dados viram uma lista e o renderizador gera o MP4. Você troca o conteúdo, não a arte.</p>
+  <div class="grade g2">
+    <div>
+      <h3>Caminho B · sem programar</h3>
+      <div class="passo"><span class="n">1</span><span class="txt">Baixe a pasta <b>template-video</b> do kit do curso.</span></div>
+      <div class="passo"><span class="n">2</span><span class="txt">Abra <b>dados.js</b> e troque título, subtítulo, cor e nome do arquivo de logo.</span></div>
+      <div class="passo"><span class="n">3</span><span class="txt">Renderize com o HyperFrames ou grave a tela em 1080×1920 (o passo a passo está no <b>LEIA-ME</b>).</span></div>
+      <div class="passo"><span class="n">4</span><span class="txt">O MP4 sai na pasta de render (ou na gravação). Repita mudando os dados.</span></div>
+      <div class="dica" style="margin-top: 4mm"><b>Não tem terminal?</b> Use o caminho A: monte a mesma cena no CapCut com o modelo visual da pasta <b>assets/</b>.</div>
+    </div>
+    <div>
+      <h3>Caminho C · com agente</h3>
+      <div class="passo"><span class="n">1</span><span class="txt">Abra o template no Claude Code, Cursor ou opencode.</span></div>
+      <div class="passo"><span class="n">2</span><span class="txt">Cole o pedido: “adaptar a cena para uma clínica, manter a timeline e a trilha”.</span></div>
+      <div class="passo"><span class="n">3</span><span class="txt">Revise o diff e rode o render. Exporte 9:16 e 16:9.</span></div>
+      <div class="prompt" style="margin-top: 3mm"><span class="rot">Pedido ao agente</span>Leia o template. Crie uma variação de 15s para <b>[negócio]</b>.
+Mantenha a estrutura de cenas e a trilha.
+Troque textos, cores e imagens. Gere as versões 9:16 e 16:9.
+Não altere a duração de cada cena.</div>
+    </div>
+  </div>
+  <div class="aviso" style="margin-top: 5mm"><b>Licenças:</b> HyperFrames é aberto; o Remotion é gratuito para pessoa física e empresas pequenas, mas exige licença em empresas maiores. Confira antes de usar comercialmente.</div>
+  <div class="rodape-pagina"><span>Módulo 4 · código</span><span>7</span></div>
+</section>
+
+<!-- 8 · GENJUTSU -->
+<section id="p8" class="pagina">
+  <span class="et">Módulo 5</span>
+  <h2>Realismo com Higgsfield Genjutsu</h2>
+  <p class="lead">O Genjutsu é video-to-video: ele parte de um vídeo real e troca personagem, produto, cenário ou estilo mantendo o movimento, a câmera e o tempo.</p>
+  <div class="grade g2">
+    <div>
+      <h3>Motion transfer</h3>
+      <div class="passo"><span class="n">1</span><span class="txt">Grave um vídeo de 4 a 30 segundos, com o celular apoiado e luz estável.</span></div>
+      <div class="passo"><span class="n">2</span><span class="txt">Suba o vídeo e de 1 a 8 imagens de referência do novo personagem.</span></div>
+      <div class="passo"><span class="n">3</span><span class="txt">Descreva a cena no prompt: figurino, ambiente, luz e estilo.</span></div>
+      <div class="passo"><span class="n">4</span><span class="txt">Gere, compare com o original e baixe a melhor versão.</span></div>
+    </div>
+    <div>
+      <h3>Object swap</h3>
+      <div class="passo"><span class="n">1</span><span class="txt">Escolha um vídeo em que o objeto aparece inteiro e sem oclusão.</span></div>
+      <div class="passo"><span class="n">2</span><span class="txt">Envie a imagem do produto que deve entrar no lugar.</span></div>
+      <div class="passo"><span class="n">3</span><span class="txt">Peça “trocar o objeto mantendo mãos, movimento e reflexos”.</span></div>
+      <div class="passo"><span class="n">4</span><span class="txt">Revise mãos, bordas e texto. Gere de novo se necessário.</span></div>
+    </div>
+  </div>
+  <div class="split" style="margin-top: 6mm"><span class="antes">VÍDEO ORIGINAL</span><span class="depois">CENA GERADA</span></div>
+  <div class="aviso" style="margin-top: 5mm"><b>Fila:</b> no plano gratuito a geração pode levar horas. Para a aula, use as cenas pré-renderizadas pelo instrutor e guarde seus créditos para o exercício final.</div>  <div class="notas"><div class="rot">Anote aqui</div><div class="linha"></div><div class="linha"></div><div class="linha"></div><div class="linha"></div></div>
+  <div class="rodape-pagina"><span>Módulo 5 · Genjutsu</span><span>8</span></div>
+</section>
+
+<!-- 9 · CORTE -->
+<section id="p9" class="pagina">
+  <span class="et">Módulo 6</span>
+  <h2>Corte final e publicação</h2>
+  <p class="lead">O vídeo só existe quando está publicado. Aqui entram ritmo, formato, capa e legenda.</p>
+  <div class="grade g2">
+    <div>
+      <h3>Roteiro de corte (20 minutos)</h3>
+      <div class="passo"><span class="n">1</span><span class="txt">Importe o vídeo, a trilha e a legenda.</span></div>
+      <div class="passo"><span class="n">2</span><span class="txt">Corte o começo: o gancho precisa aparecer no primeiro segundo.</span></div>
+      <div class="passo"><span class="n">3</span><span class="txt">Elimine pausas e repetições. Deixe o áudio na frente do corte bonito.</span></div>
+      <div class="passo"><span class="n">4</span><span class="txt">Aplique a legenda queimada e confira a leitura no celular.</span></div>
+      <div class="passo"><span class="n">5</span><span class="txt">Exporte 9:16, 16:9 e 1:1. Guarde o projeto, não só o MP4.</span></div>
+    </div>
+    <div>
+      <h3>Antes de publicar</h3>
+      <ul class="check">
+        <li>Primeiro segundo tem gancho visível</li>
+        <li>Áudio sem clipping e voz audível no celular</li>
+        <li>Legenda revisada (nome, número, marca)</li>
+        <li>Capa com rosto, produto ou frase legível</li>
+        <li>Link e chamada corretos</li>
+        <li>Aviso de IA quando houver rosto gerado</li>
+      </ul>
+    </div>
+  </div>
+  <table class="tabela" style="margin-top: 6mm">
+    <tr><th>Formato</th><th>Onde</th><th>Duração</th><th>Cuidado</th></tr>
+    <tr><td><b>9:16</b></td><td>Reels, TikTok, Stories</td><td>15–60s</td><td>Área segura no topo e na base</td></tr>
+    <tr><td><b>16:9</b></td><td>YouTube, site, treinamento</td><td>30s–5min</td><td>Legenda maior e margem lateral</td></tr>
+    <tr><td><b>1:1</b></td><td>Feed</td><td>15–30s</td><td>Enquadramento central</td></tr>
+  </table>
+  <div class="rodape-pagina"><span>Módulo 6 · corte</span><span>9</span></div>
+</section>
+
+<!-- 10 · PROJETO FINAL -->
+<section id="p10" class="pagina">
+  <span class="et">Módulo 7</span>
+  <h2>Projeto final: seu vídeo de 15 segundos</h2>
+  <p class="lead">Escolha um negócio real (o seu ou de alguém que você conhece) e produza um vídeo completo. Não precisa ser perfeito; precisa estar publicado.</p>
+  <div class="grade g2">
+    <div class="caixa destaque">
+      <h3 style="margin-top:0">Brief do projeto</h3>
+      <ul class="check vazia">
+        <li>Um roteiro de 15s com os quatro blocos</li>
+        <li>Um vídeo com apresentador virtual ou cena gerada</li>
+        <li>Legenda queimada e correção de áudio</li>
+        <li>Uma versão 9:16 e uma capa</li>
+        <li>Checklist de direitos e LGPD preenchido</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Como é avaliado</h3>
+      <ul>
+        <li><b>Clareza:</b> dá para entender a oferta em 3 segundos?</li>
+        <li><b>Ritmo:</b> sobra alguma parte que poderia ser cortada?</li>
+        <li><b>Coerência:</b> áudio, legenda e imagem contam a mesma história?</li>
+        <li><b>Responsabilidade:</b> imagem, voz e informação estão autorizadas?</li>
+      </ul>
+      <div class="dica" style="margin-top: 4mm"><b>Publicou, acabou.</b> O certificado considera a entrega do projeto e a conclusão dos módulos, não a nota.</div>
+    </div>
+  </div>
+  <h3 style="margin-top: 7mm">Três erros que mais aparecem</h3>
+  <ol>
+    <li><b>Gancho tarde:</b> o vídeo começa com logo e o espectador vai embora.</li>
+    <li><b>Texto demais:</b> a legenda cobre a imagem e ninguém lê.</li>
+    <li><b>Voz artificial:</b> frase longa sem pausa. Divida e regrave.</li>
+  </ol>
+  <div class="rodape-pagina"><span>Módulo 7 · projeto</span><span>10</span></div>
+</section>
+
+<!-- 11 · KIT DE PROMPTS -->
+<section id="p11" class="pagina">
+  <span class="et">Kit de prompts</span>
+  <h2>Copie, adapte, produza</h2>
+  <div class="grade g2">
+    <div>
+      <h3>Roteiro</h3>
+      <div class="prompt" style="margin-bottom: 4mm"><span class="rot">15 segundos</span>Negócio: [ ]. Público: [ ]. Objetivo: [ ].
+Crie 3 ganchos de até 10 palavras e um roteiro de 15s
+em 4 blocos: gancho, problema, prova, chamada.
+Máximo 40 palavras. Linguagem falada.</div>
+      <h3>Variações</h3>
+      <div class="prompt"><span class="rot">mesmo vídeo, 5 ângulos</span>Reescreva o roteiro em 5 versões:
+1. pergunta, 2. número, 3. antes/depois,
+4. erro comum, 5. bastidor.
+Mantenha a mesma chamada final.</div>
+    </div>
+    <div>
+      <h3>Cena realista</h3>
+      <div class="prompt" style="margin-bottom: 4mm"><span class="rot">Genjutsu</span>Mantenha o movimento e a câmera do vídeo.
+Troque o personagem por [descrição].
+Cenário: [ambiente]. Luz: [suave/dura].
+Estilo: [documental/publicidade].
+Não altere o tempo nem o enquadramento.</div>
+      <h3>Avatar</h3>
+      <div class="prompt"><span class="rot">HeyGen</span>Leia o texto abaixo com ritmo de conversa,
+pausas curtas nas vírgulas e ênfase nos números.
+Não sorria o tempo todo. Olhe para a câmera.
+Texto: [ ]</div>
+    </div>
+  </div>
+  <div class="dica" style="margin-top: 6mm"><b>Guarde seus prompts bons.</b> Um arquivo de texto com 20 prompts resolve mais do que 20 tutoriais.</div>
+  <div class="rodape-pagina"><span>Kit de prompts</span><span>11</span></div>
+</section>
+
+<!-- 12 · CHECKLIST E DIREITOS -->
+<section id="p12" class="pagina">
+  <span class="et">Antes de publicar</span>
+  <h2>A checklist e os direitos</h2>
+  <div class="grade g2">
+    <div>
+      <h3>Checklist de produção</h3>
+      <ul class="check vazia">
+        <li>Roteiro aprovado por quem responde pela marca</li>
+        <li>Vídeo no formato certo (9:16, 16:9 ou 1:1)</li>
+        <li>Primeiro segundo com gancho</li>
+        <li>Áudio sem distorção e voz audível</li>
+        <li>Legenda revisada</li>
+        <li>Capa legível no celular</li>
+        <li>Link e chamada testados</li>
+        <li>Aviso de IA quando houver rosto gerado</li>
+        <li>Projeto salvo e arquivo final nomeado</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Direitos e LGPD</h3>
+      <ul>
+        <li>Imagem de pessoa: autorização escrita, mesmo em vídeo interno.</li>
+        <li>Voz: não clone a voz de alguém sem consentimento.</li>
+        <li>Trilha: use música licenciada ou biblioteca da plataforma.</li>
+        <li>Dados de cliente: não apareça em tela, planilha ou conversa.</li>
+        <li>Menores: autorização dos responsáveis.</li>
+        <li>Conteúdo sensível: revise com alguém da área antes.</li>
+      </ul>
+      <div class="aviso" style="margin-top: 4mm"><b>Regra simples:</b> se você não faria o mesmo vídeo com uma pessoa real, não faça com IA.</div>
+    </div>
+  </div>
+  <div class="rodape-pagina"><span>Checklist e direitos</span><span>12</span></div>
+</section>
+
+<!-- 13 · GLOSSÁRIO -->
+<section id="p13" class="pagina">
+  <span class="et">Glossário</span>
+  <h2>As palavras do dia</h2>
+  <div class="duas-col">
+    <p><b>Prompt:</b> o pedido que você faz à IA, com contexto, tarefa e formato.</p>
+    <p><b>Avatar:</b> apresentador virtual gerado a partir de texto.</p>
+    <p><b>TTS:</b> texto transformado em voz (text-to-speech).</p>
+    <p><b>Clonagem de voz:</b> criar uma voz parecida com outra. Exige autorização.</p>
+    <p><b>Video-to-video:</b> usar um vídeo existente como base e transformá-lo.</p>
+    <p><b>Motion transfer:</b> manter o movimento do vídeo original em outra cena.</p>
+    <p><b>Object swap:</b> trocar um objeto do vídeo por outro.</p>
+    <p><b>Image-to-video:</b> gerar vídeo a partir de uma imagem.</p>
+    <p><b>Render:</b> o processo de transformar o projeto em arquivo de vídeo.</p>
+    <p><b>Template:</b> projeto pronto em que você troca textos, imagens e cores.</p>
+    <p><b>Timeline:</b> a linha do tempo onde as cenas e o áudio são organizados.</p>
+    <p><b>Safe area:</b> margem que as plataformas cobrem com botões e legendas.</p>
+    <p><b>Upscale:</b> aumentar a resolução de um vídeo ou imagem.</p>
+    <p><b>Clipping:</b> distorção quando o áudio passa do limite.</p>
+    <p><b>Legenda queimada:</b> texto gravado no vídeo, não apenas arquivo separado.</p>
+    <p><b>CTA:</b> a chamada para a ação no fim do vídeo.</p>
+  </div>
+  <h3 style="margin-top: 8mm">Perguntas frequentes</h3>
+  <p><b>Preciso de computador potente?</b> Para navegador, não. Para o corte no DaVinci, sim; use o CapCut como alternativa.</p>
+  <p><b>Preciso pagar as ferramentas?</b> Não para acompanhar. As versões gratuitas bastam; os créditos pagos aceleram.</p>
+  <p><b>Vou aparecer?</b> Não é obrigatório. O curso tem caminhos com avatar e com cena gerada.</p>
+  <p><b>Serve para vídeo corporativo?</b> Sim. O método é o mesmo; mudam o tom e a autorização.</p>
+  <div class="rodape-pagina"><span>Glossário</span><span>13</span></div>
+</section>
+
+<!-- 14 · CONTRACAPA -->
+<section id="p14" class="pagina">
+  <span class="et">Anotações</span>
+  <h2>Seu plano para os próximos 7 dias</h2>
+  <div class="grade g3">
+    <div class="caixa"><span class="mono">Dia 1</span><h3>Publicar</h3><p>Publique o vídeo do projeto final, mesmo simples.</p></div>
+    <div class="caixa"><span class="mono">Dia 2–3</span><h3>Repetir</h3><p>Troque só o gancho e gere três variações do mesmo vídeo.</p></div>
+    <div class="caixa"><span class="mono">Dia 4–7</span><h3>Sistematizar</h3><p>Monte um template com a sua marca e uma lista de 10 temas.</p></div>
+  </div>
+  <div style="margin-top: 12mm; border-top: 1px solid var(--linha); padding-top: 6mm">
+    <p class="mono">Continue</p>
+    <p style="font-size: 14pt; margin-top: 3mm"><b>Comunidade e plantões:</b> o acesso ao grupo e às datas dos encontros ao vivo fica na área do participante.</p>
+    <p style="margin-top: 4mm">Dúvidas de conteúdo: leve para o plantão. Dúvidas de acesso: fale com o suporte.</p>
+  </div>
+  <div class="pe" style="position:absolute; left:16mm; right:16mm; bottom:10mm; display:flex; justify-content:space-between; font-family:var(--mono); font-size:8pt; color:var(--mudo); border-top:1px solid var(--linha); padding-top:4mm">
+    <span>Vídeo com IA · apostila do participante</span>
+    <span>realização Cerrado Tech · CerraClass</span>
+  </div>
+</section>
+
+
+<script>const _p=new URLSearchParams(location.search).get('p');if(_p){document.querySelectorAll('.pagina').forEach((el,i)=>{if(i+1!==+_p)el.style.display='none';});}</script>
+</body>
+</html>

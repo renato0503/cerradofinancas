@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template — Vídeo com IA (15s)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #050507; color: #f4f4f7; font-family: 'Outfit', Arial, sans-serif; }
+  body { position: relative; overflow: hidden; }
+  .palco {
+    position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    background: var(--fundo);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(var(--escala, .45)); transform-origin: center;
+    border: 1px solid #2b2b3a; border-radius: 8px;
+    padding: 150px 90px 260px;
+  }
+  .palco::before {
+    content: ''; position: absolute; inset: 0; opacity: .55;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 54px 54px;
+  }
+  .brilho { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(80px); opacity: .25; }
+  .brilho.a { background: var(--cor); top: -300px; right: -250px; }
+  .brilho.b { background: #6b8cff; bottom: -350px; left: -300px; }
+
+  .topo { position: relative; z-index: 3; display: flex; justify-content: space-between; align-items: center; font-family: monospace; font-size: 26px; letter-spacing: .14em; text-transform: uppercase; color: #a2a2b4; }
+  .topo b { display: flex; align-items: center; gap: 14px; color: #f4f4f7; font-family: 'Outfit', Arial, sans-serif; font-size: 34px; letter-spacing: -.01em; }
+  .topo b::before { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--cor); box-shadow: 0 0 18px var(--cor); }
+  .tag { border: 1px solid #2b2b3a; border-radius: 999px; padding: 10px 18px; color: var(--cor); }
+
+  .cena { position: absolute; left: 90px; right: 90px; top: 520px; z-index: 3; opacity: 0; transform: translateY(40px); transition: opacity .5s ease, transform .5s ease; }
+  .cena.ativa { opacity: 1; transform: translateY(0); }
+  .rotulo { font-family: monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase; color: var(--cor); margin-bottom: 26px; }
+  .titulo { font-size: 118px; font-weight: 800; line-height: .95; letter-spacing: -.03em; }
+  .titulo em { font-style: normal; color: var(--cor); }
+  .texto { font-size: 48px; line-height: 1.25; color: #d9d9e2; margin-top: 36px; max-width: 820px; }
+  .grande { font-size: 300px; font-weight: 800; color: var(--cor); line-height: .8; }
+  .cta { display: inline-flex; align-items: center; gap: 18px; margin-top: 48px; background: var(--cor); color: #0a0a0f; border-radius: 20px; padding: 28px 40px; font-size: 46px; font-weight: 800; }
+
+  .rodape { position: absolute; left: 90px; right: 90px; bottom: 120px; z-index: 3; }
+  .onda { display: flex; align-items: center; gap: 8px; height: 110px; }
+  .onda i { flex: 1; background: #3ee0cf; border-radius: 3px; opacity: .8; }
+  .onda i:nth-child(3n) { height: 70%; }
+  .onda i:nth-child(3n+1) { height: 42%; }
+  .onda i:nth-child(3n+2) { height: 58%; }
+  .onda i:nth-child(5n) { height: 98%; background: var(--cor); }
+  .barra { height: 8px; background: #22222f; border-radius: 999px; margin-top: 34px; overflow: hidden; }
+  .barra span { display: block; height: 100%; width: 0; background: var(--cor); }
+  .controles { position: fixed; bottom: 18px; left: 0; right: 0; display: flex; justify-content: center; }
+  .controles button { background: #171722; color: #f4f4f7; border: 1px solid #2b2b3a; border-radius: 10px; padding: 10px 18px; font-family: monospace; font-size: 13px; cursor: pointer; }
+</style>
+</head>
+<body>
+  <div class="palco" id="palco">
+    <div class="brilho a"></div>
+    <div class="brilho b"></div>
+    <div class="topo"><b id="marca">Sua marca</b><span class="tag">9:16 · 15s</span></div>
+
+    <div class="cena ativa" data-cena="1">
+      <div class="rotulo">Vídeo com IA</div>
+      <div class="titulo" id="titulo">Seu primeiro <em>vídeo com IA</em></div>
+      <div class="texto" id="subtitulo">Roteiro, cena e corte em um dia.</div>
+    </div>
+
+    <div class="cena" data-cena="2">
+      <div class="rotulo">O problema</div>
+      <div class="texto" id="problema" style="font-size: 76px; color: #f4f4f7; font-weight: 600; margin-top: 0"></div>
+    </div>
+
+    <div class="cena" data-cena="3">
+      <div class="rotulo">A prova</div>
+      <div class="grande">15s</div>
+      <div class="texto" id="prova"></div>
+    </div>
+
+    <div class="cena" data-cena="4">
+      <div class="rotulo">Agora é com você</div>
+      <div class="cta" id="cta">Chame no WhatsApp <span>→</span></div>
+    </div>
+
+    <div class="rodape">
+      <div class="onda" id="onda"></div>
+      <div class="barra"><span id="progresso"></span></div>
+    </div>
+  </div>
+  <div class="controles"><button id="reiniciar">Reiniciar (15s)</button></div>
+
+  <script src="dados.js"></script>
+  <script>
+    const D = window.DADOS;
+    const palco = document.getElementById('palco');
+    palco.style.setProperty('--cor', D.cor || '#d8ff3e');
+    palco.style.setProperty('--fundo', D.fundo || '#0a0a0f');
+    document.documentElement.style.background = D.fundo || '#0a0a0f';
+
+    document.getElementById('marca').textContent = D.marca;
+    document.getElementById('titulo').innerHTML = D.titulo.replace(/(vídeo com IA)/i, '<em>$1</em>');
+    document.getElementById('subtitulo').textContent = D.subtitulo;
+    document.getElementById('problema').textContent = D.problema;
+    document.getElementById('prova').textContent = D.prova;
+    document.getElementById('cta').innerHTML = D.cta + ' <span>→</span>';
+
+    const onda = document.getElementById('onda');
+    for (let i = 0; i < 46; i++) onda.appendChild(document.createElement('i'));
+
+    const cenas = [...document.querySelectorAll('.cena')];
+    const dur = (D.duracao || 15) * 1000;
+    let inicio = 0, raf = 0;
+
+    function cenaAtual(t) {
+      if (t < 4000) return 0;
+      if (t < 9000) return 1;
+      if (t < 13000) return 2;
+      return 3;
+    }
+
+    function loop(agora) {
+      const t = (agora - inicio) % dur;
+      const i = cenaAtual(t);
+      cenas.forEach((el, n) => el.classList.toggle('ativa', n === i));
+      document.getElementById('progresso').style.width = (t / dur * 100) + '%';
+      raf = requestAnimationFrame(loop);
+    }
+
+    function reiniciar() {
+      cancelAnimationFrame(raf);
+      inicio = performance.now();
+      raf = requestAnimationFrame(loop);
+    }
+
+    // Ajusta a escala do palco à janela, sem cortar
+    function ajustar() {
+      const escala = Math.min((window.innerWidth - 40) / 1180, (window.innerHeight - 90) / 2020, 1);
+      palco.style.setProperty('--escala', escala);
+    }
+    window.addEventListener('resize', ajustar);
+    ajustar();
+    document.getElementById('reiniciar').addEventListener('click', reiniciar);
+    reiniciar();
+  </script>
+</body>
+</html>

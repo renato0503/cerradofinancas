@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeos com IA na Prática — CerraClass 18s</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="18" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <div id="fundo" class="camada"></div>
+      <div id="orb"></div>
+
+      <div id="palco" data-layout-allow-overflow data-layout-allow-overlap>
+        <section id="cena-hook" class="bloco">
+          <p class="et">Curso presencial · 1 dia</p>
+          <h1 id="hook" class="display">Seu próximo vídeo não precisa de estúdio.</h1>
+          <p id="hook-sub" class="sub">Roteiro, apresentador, cenas realistas e corte. Sem estúdio, sem equipe e sem programar.</p>
+        </section>
+
+        <section id="cena-roteiro" class="bloco">
+          <p class="et">01 · Roteiro</p>
+          <h2 id="rot-titulo" class="display">Um pedido claro. Quarenta palavras.</h2>
+          <div id="prompt-card" class="card">
+            <div class="janela-topo"><i></i><i></i><i></i><span>roteiro.md</span></div>
+            <div class="janela-corpo">
+              <span class="rot">Seu pedido</span>
+              <p>Crie um roteiro de 15s para uma clínica. Gancho nos 3s, prova e chamada.</p>
+              <span class="cursor"></span>
+            </div>
+          </div>
+          <div class="chips"><span>ChatGPT</span><span>Claude</span><span>Gemini</span></div>
+        </section>
+
+        <section id="cena-avatar" class="bloco">
+          <p class="et">02 · Apresentador</p>
+          <h2 id="av-titulo" class="display">Sem estúdio. Sem decorar texto.</h2>
+          <div id="avatar-card" class="card avatar">
+            <div id="bolha"></div>
+            <div id="onda"></div>
+          </div>
+          <div class="chips"><span>HeyGen</span><span>Voz e legenda</span></div>
+        </section>
+
+        <section id="cena-real" class="bloco">
+          <p class="et">03 · Realismo</p>
+          <h2 id="real-titulo" class="display">Seu celular vira cena de cinema.</h2>
+          <div id="split">
+            <div class="lado antes">Antes</div>
+            <div class="lado depois">Depois</div>
+          </div>
+          <div class="chips"><span>Higgsfield Genjutsu</span><span>HyperFrames</span><span>Remotion</span></div>
+        </section>
+
+        <section id="cena-info" class="bloco">
+          <p class="et">O dia</p>
+          <h2 id="info-titulo" class="display">1 dia. 8 horas. Cuiabá.</h2>
+          <div id="turma">
+            <span class="num">10</span>
+            <span class="txt">alunos,<br>no máximo</span>
+          </div>
+          <div id="assentos"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="chips"><span>Presencial</span><span>Prático</span><span>Turma pequena</span></div>
+        </section>
+
+        <div id="cortina"></div>
+
+        <section id="cena-marca" class="bloco">
+          <div id="selo"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <p id="marca-nome" class="display">CerraClass</p>
+          <p id="curso-nome">Vídeos com IA na Prática</p>
+          <p id="link-final">cerraclass.com.br</p>
+          <p id="whats-final">WhatsApp (67) 99351-5206</p>
+        </section>
+      </div>
+
+      <audio id="trilha" class="clip" data-start="0" data-duration="18" data-track-index="9" data-volume="0.7" src="assets/trilha.wav"></audio>
+    </div>
+    <script src="filme.js"></script>
+  </body>
+</html>

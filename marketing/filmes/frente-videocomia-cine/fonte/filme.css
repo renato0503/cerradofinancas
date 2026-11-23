@@ -1,0 +1,23 @@
+/* Vídeo com IA · Cinema: o canvas ocupa tudo; as legendas moram numa faixa embaixo, que o 3D não usa. */
+@font-face { font-family: 'Outfit'; src: url('assets/fonts/outfit.woff2') format('woff2'); font-weight: 200 900; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root { --lima: #d8ff3e; --texto: #f4f4f7; --mudo: #a2a2b4; --fundo: #06060a; }
+html, body { background: var(--fundo); }
+#root { font-family: 'Instrument Sans', sans-serif; color: var(--texto); background: var(--fundo); }
+em { font-style: normal; color: var(--lima); }
+
+.legenda, #fim { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+.horizontal .legenda, .horizontal #fim { bottom: 56px; }
+.vertical .legenda, .vertical #fim { bottom: 150px; padding: 0 70px; }
+.lp { will-change: transform, filter, opacity; }
+.rot { font: 500 24px 'DM Mono', monospace; letter-spacing: .24em; text-transform: uppercase; color: var(--lima); text-shadow: 0 0 18px rgba(216,255,62,.45); }
+.frase { font: 600 46px/1.15 'Instrument Sans', sans-serif; letter-spacing: -.01em; text-shadow: 0 4px 30px rgba(0,0,0,.8); }
+.vertical .frase { font-size: 48px; }
+.tag { font: 500 28px 'DM Mono', monospace; letter-spacing: .18em; text-transform: uppercase; color: var(--texto); }
+.botao { font: 600 42px 'Instrument Sans', sans-serif; color: #0a0a0f; background: var(--lima); padding: 18px 44px; border-radius: 999px; box-shadow: 0 0 60px rgba(216,255,62,.45); }
+#clarao { position: absolute; inset: 0; background: radial-gradient(circle at 50% 45%, #fbffe8, var(--lima) 55%, #9fc21c); opacity: 0; }
+#tela { pointer-events: none; }

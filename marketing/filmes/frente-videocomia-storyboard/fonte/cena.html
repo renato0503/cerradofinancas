@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeo com IA · Storyboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Storyboard": o filme é planejado no papel. Quadros desenhados a traço, legenda de caneta embaixo de cada um.
+      // Título em cima, quadros embaixo, legenda fora do quadro: nada se sobrepõe.
+      window.ESTILO = { ease: "power3.out", dur: 0.6, stagger: 0.06, desloc: 26, saida: 0.32, saidaEase: "power3.in" };
+      window.EXTRAS = (tl) => {
+        // cada desenho é feito a traço quando o quadro dele entra (pathLength = 1)
+        const desenhar = (sel, t, dur = 0.9) => tl.fromTo(sel, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: dur, ease: "power2.inOut", stagger: 0.12 }, t);
+        desenhar("#p1 svg .tr", 0.9, 1.2);
+        document.querySelectorAll("#p2 .quadro").forEach((q, i) => desenhar(q.querySelectorAll(".tr"), 5 + 0.9 + i * 0.5));
+        document.querySelectorAll("#p3 .quadro").forEach((q, i) => desenhar(q.querySelectorAll(".tr"), 11 + 1.6 + i * 0.7));
+        document.querySelectorAll("#p4 .quadro").forEach((q, i) => desenhar(q.querySelectorAll(".tr"), 18 + 0.7 + i * 0.6));
+        desenhar("#p5 .circulo", 24 + 1.0, 0.8);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <div id="papel" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 0"></div>
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="4" style="z-index: 1"></canvas>
+
+      <!-- 0-5: capa do storyboard -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo sb capa">
+          <div class="capa-txt">
+            <p class="rot" data-entra="subir" data-t="0.2">Storyboard · Vídeo com IA · CerraClass</p>
+            <h1 class="mega" data-entra="palavras" data-t="0.5">Aprenda a fazer vídeo com IA.</h1>
+            <p class="caneta grifo" data-entra="revelar" data-t="1.8" data-dur="0.6">Rápido e fácil.</p>
+          </div>
+          <div class="quadro grande" data-entra="subir" data-t="0.4">
+            <p class="cena">Cena 01 · take 1</p>
+            <svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M42 8 L58 8 Q63 8 63 13 L63 57 Q63 62 58 62 L42 62 Q37 62 37 57 L37 13 Q37 8 42 8 Z"/><path class="tr" pathLength="1" d="M46 28 L57 35 L46 42 Z"/><path class="tr az" pathLength="1" d="M14 20 Q24 14 30 22 M70 48 Q80 56 88 48"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-11: cinco quadros, uma etapa em cada -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo sb">
+          <p class="rot" data-entra="subir" data-t="0.1">O processo</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.25">Cinco etapas. <span class="grifo" data-inteiro>A IA acelera todas.</span></h2>
+          <div class="grade cinco" data-entra="lista" data-t="0.8" data-stagger="0.5">
+            <div class="quadro"><p class="cena">01</p><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M50 10 C35 10 27 21 27 31 C27 41 35 45 37 53 L63 53 C65 45 73 41 73 31 C73 21 65 10 50 10 Z"/><path class="tr" pathLength="1" d="M40 60 L60 60 M50 2 L50 5 M20 30 L16 30 M80 30 L84 30"/></svg><p class="leg">Ideia</p></div>
+            <div class="quadro"><p class="cena">02</p><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M30 6 L62 6 L72 16 L72 64 L30 64 Z"/><path class="tr" pathLength="1" d="M38 24 L64 24 M38 34 L64 34 M38 44 L56 44"/></svg><p class="leg">Roteiro</p></div>
+            <div class="quadro"><p class="cena">03</p><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M16 10 L84 10 L84 60 L16 60 Z"/><path class="tr" pathLength="1" d="M18 56 L40 32 L55 47 L65 37 L82 56 M66 24 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg><p class="leg">Imagem</p></div>
+            <div class="quadro"><p class="cena">04</p><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M12 18 L88 18 L88 52 L12 52 Z M12 26 L88 26 M12 44 L88 44"/><path class="tr ver" pathLength="1" d="M50 8 L50 62"/></svg><p class="leg">Montagem</p></div>
+            <div class="quadro"><p class="cena">05</p><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M16 38 L84 12 L64 62 L52 44 Z M52 44 L84 12"/></svg><p class="leg">Publicação</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11-18: as três entregas -->
+      <div id="p3" class="plano clip" data-start="11" data-duration="7" data-track-index="1" style="z-index: 3">
+        <div class="conteudo sb">
+          <p class="rot" data-entra="subir" data-t="0.1">Você sai com</p>
+          <h2 class="titulo"><span class="n3" data-entra="contar" data-de="0" data-ate="3" data-t="0.2" data-dur="1">0</span> <span data-entra="subir" data-t="0.4" class="ib">entregas no mesmo dia</span></h2>
+          <div class="grade tres" data-entra="lista" data-t="1.4" data-stagger="0.7">
+            <div class="quadro"><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M30 6 L62 6 L72 16 L72 64 L30 64 Z"/><path class="tr ver" pathLength="1" d="M38 26 L64 26 M38 36 L64 36 M38 46 L56 46"/></svg><p class="leg">Roteiro de 15 segundos</p><p class="desc">gancho, problema, prova e chamada</p></div>
+            <div class="quadro"><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M50 8 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="tr" pathLength="1" d="M24 64 C24 42 76 42 76 64 M80 22 L80 36 M76 30 Q80 40 84 30"/></svg><p class="leg">Vídeo com apresentador</p><p class="desc">avatar, voz e legenda</p></div>
+            <div class="quadro"><svg viewBox="0 0 100 70"><path class="tr" pathLength="1" d="M41 4 L59 4 Q65 4 65 10 L65 60 Q65 66 59 66 L41 66 Q35 66 35 60 L35 10 Q35 4 41 4 Z"/><path class="tr ver" pathLength="1" d="M45 27 L57 35 L45 43 Z M72 20 L78 26 L90 12"/></svg><p class="leg">Vídeo pronto para postar</p><p class="desc">9:16, cortado e revisado</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18-24: três caminhos -->
+      <div id="p4" class="plano clip" data-start="18" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo sb">
+          <p class="rot" data-entra="subir" data-t="0.1">Três caminhos</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.2">Escolha por onde <span class="grifo">começar.</span></h2>
+          <div class="grade tres" data-entra="lista" data-t="0.6" data-stagger="0.6">
+            <div class="quadro"><p class="letra">A</p><svg class="baixo" viewBox="0 0 100 14"><path class="tr" pathLength="1" d="M20 8 Q50 2 80 8"/></svg><p class="leg">Só clicar</p><p class="desc">Nunca editou? Comece aqui.</p></div>
+            <div class="quadro"><p class="letra az">B</p><svg class="baixo" viewBox="0 0 100 14"><path class="tr az" pathLength="1" d="M20 8 Q50 2 80 8"/></svg><p class="leg">Modelo pronto</p><p class="desc">Troque texto e cor, e renderize.</p></div>
+            <div class="quadro"><p class="letra ver">C</p><svg class="baixo" viewBox="0 0 100 14"><path class="tr ver" pathLength="1" d="M20 8 Q50 2 80 8"/></svg><p class="leg">Com código</p><p class="desc">Peça a cena ao agente e revise.</p></div>
+          </div>
+          <p class="caneta nota" data-entra="subir" data-t="2.6">Para começar, só o navegador.</p>
+        </div>
+      </div>
+
+      <!-- 24-27,5: a regra, circulada de caneta vermelha em volta (nunca por cima) -->
+      <div id="p5" class="plano clip" data-start="24" data-duration="3.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo sb centro-v">
+          <p class="rot" data-entra="subir" data-t="0.1">A regra da casa</p>
+          <div class="regra">
+            <svg class="circ" viewBox="0 0 400 200" preserveAspectRatio="none"><path class="circulo" pathLength="1" d="M200 8 C330 6 394 40 392 100 C390 162 320 194 196 192 C76 190 6 160 8 98 C10 44 84 12 214 14"/></svg>
+            <p class="citacao" data-entra="palavras" data-t="0.3" data-stagger="0.07">“A IA erra. <span class="ver">A gente confere.”</span></p>
+          </div>
+          <p class="autor" data-entra="subir" data-t="1.4">Renato Rosa · Dados, IA e Software</p>
+        </div>
+      </div>
+
+      <!-- 27,5-32: a chamada -->
+      <div id="p6" class="plano clip" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div class="conteudo sb centro-v fecho">
+          <div class="selo" data-entra="pop" data-t="0.2"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.4">Transforme ideias em <span class="grifo" data-inteiro>vídeos com IA.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.2">8 horas · online e ao vivo</p>
+          <p class="botao" data-entra="pop" data-t="1.6" data-rot="-2" data-rot-fim="-1">cerraclass.com.br/videocomia</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

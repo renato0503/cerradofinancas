@@ -1,0 +1,70 @@
+/* Vídeo com IA · Tipográfico: letra enorme no centro, fundo de cor chapada por ideia. */
+@font-face { font-family: 'Outfit'; src: url('assets/fonts/outfit.woff2') format('woff2'); font-weight: 200 900; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root { --preto: #0a0a0f; --branco: #f4f4f7; --lima: #d8ff3e; --mudo: #a2a2b4; }
+html, body { background: var(--preto); }
+#root { font-family: 'Instrument Sans', sans-serif; color: var(--branco); background: var(--preto); }
+#fundo { position: absolute; inset: 0; background: var(--preto); }
+#tela { pointer-events: none; }
+em { font-style: normal; color: var(--lima); }
+
+.conteudo.centro { gap: 0; }
+.horizontal .conteudo.centro { left: 150px; right: 150px; top: 90px; bottom: 120px; }
+.vertical .conteudo.centro { left: 80px; right: 80px; top: 160px; bottom: 200px; }
+
+.mono { font: 500 30px 'DM Mono', monospace; letter-spacing: .18em; text-transform: uppercase; color: var(--lima); margin-bottom: 34px; }
+.mega { font: 800 150px/0.92 'Outfit', sans-serif; letter-spacing: -.035em; }
+.vertical .mega { font-size: 132px; }
+.faixa-lima { margin-top: 44px; font: 800 74px 'Outfit', sans-serif; color: var(--preto); background: var(--lima); padding: 10px 34px 16px; border-radius: 14px; }
+.grande { font: 800 118px/0.95 'Outfit', sans-serif; letter-spacing: -.03em; }
+.vertical .grande { font-size: 112px; }
+
+/* cada etapa ocupa a tela: número mono + palavra gigante, sobre a cor da etapa */
+.etapa { color: var(--preto); }
+.etapa.escura .palavra, .etapa.escura .num { color: var(--preto); }
+.etapa .num { font: 500 64px 'DM Mono', monospace; letter-spacing: .1em; margin-bottom: 10px; }
+.etapa .palavra { font: 900 230px/0.9 'Outfit', sans-serif; letter-spacing: -.045em; }
+.vertical .etapa .palavra { font-size: 150px; }
+
+.contador { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+.contador .n3 { font: 900 300px/0.8 'Outfit', sans-serif; color: var(--lima); }
+.contador .rot { font: 700 64px 'Outfit', sans-serif; margin-top: 18px; }
+.entregas { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.entregas li { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.entregas b { font: 800 54px/1.05 'Outfit', sans-serif; }
+.entregas span { font: 500 26px 'DM Mono', monospace; color: var(--mudo); }
+.vertical .entregas { gap: 30px; }
+
+.clara { color: var(--preto); }
+.clara .mono { color: #5b6b00; }
+.abc { list-style: none; display: flex; gap: 70px; }
+.vertical .abc { flex-direction: column; gap: 46px; }
+.abc li { display: flex; flex-direction: column; align-items: center; width: 460px; }
+.abc li > b { font: 900 210px/0.85 'Outfit', sans-serif; color: var(--preto); -webkit-text-stroke: 0; }
+.vertical .abc li > b { font-size: 150px; }
+.abc li:nth-child(2) > b { color: #6b8cff; }
+.abc li:nth-child(3) > b { color: #ff6b57; }
+.abc strong { font: 800 52px 'Outfit', sans-serif; margin-top: 12px; }
+.abc span { font-size: 28px; color: #3d3d4a; margin-top: 6px; }
+.nota { margin-top: 56px; font: 500 28px 'DM Mono', monospace; color: #3d3d4a; }
+
+.citacao { font: 800 136px/0.98 'Outfit', sans-serif; letter-spacing: -.03em; }
+.vertical .citacao { font-size: 120px; }
+.autor { margin-top: 40px; font: 500 28px 'DM Mono', monospace; color: var(--mudo); }
+
+.fecho { color: var(--preto); }
+.selo { width: 150px; height: 150px; border-radius: 50%; background: #fff; display: grid; place-items: center; margin-bottom: 36px; }
+.selo img { width: 120px; height: 120px; object-fit: contain; }
+.chamada { font: 900 112px/0.95 'Outfit', sans-serif; letter-spacing: -.03em; }
+.vertical .chamada { font-size: 104px; }
+.chamada .a { background: var(--preto); color: var(--lima); padding: 0 20px 6px; border-radius: 12px; }
+.tag { margin-top: 36px; font: 500 30px 'DM Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+.botao { margin-top: 30px; font: 600 40px 'Instrument Sans', sans-serif; background: var(--preto); color: var(--lima); padding: 18px 40px; border-radius: 999px; }
+
+#progresso { position: absolute; left: 150px; right: 150px; bottom: 56px; display: flex; flex-direction: column; gap: 12px; }
+.vertical #progresso { left: 80px; right: 80px; bottom: 90px; }
+#progresso i { display: block; height: 8px; border-radius: 4px; background: currentColor; transform-origin: 0 50%; color: var(--lima); mix-blend-mode: difference; }
+#progresso span { font: 500 20px 'DM Mono', monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--mudo); mix-blend-mode: difference; }

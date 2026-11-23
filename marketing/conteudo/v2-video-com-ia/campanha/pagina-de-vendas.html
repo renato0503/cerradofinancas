@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vídeo com IA — do zero ao primeiro vídeo em um dia</title>
+<meta name="description" content="Maratona ao vivo de um dia para criar seu primeiro vídeo com IA: roteiro, apresentador virtual, vídeo por código, realismo e corte. Sem estúdio, sem equipe e sem programar.">
+<link rel="stylesheet" href="../identidade/tokens.css">
+<style>
+  body { display: block; padding: 0; background: var(--fundo); overflow-x: hidden; }
+  .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+  .hero .kicker { white-space: nowrap; }
+  .topo { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); background: rgba(10,10,15,.82); border-bottom: 1px solid var(--linha); }
+  .topo .wrap { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px; }
+  .topo .marca { display: flex; align-items: center; gap: 10px; font-family: var(--titulo); font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+  .topo .marca .ponto { width: 10px; height: 10px; border-radius: 50%; background: var(--lima); box-shadow: 0 0 14px var(--lima); }
+  .topo nav { display: flex; gap: 22px; font-family: var(--mono); font-size: 13px; color: var(--mudo); }
+  .topo nav a { color: inherit; text-decoration: none; }
+  .topo nav a:hover { color: var(--lima); }
+  .topo .botao { font-size: 15px; padding: 10px 16px; text-decoration: none; }
+  @media (max-width: 820px) { .topo nav { display: none; } }
+
+  .hero { padding: 72px 0 40px; position: relative; }
+  .hero .grade-hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(44px, 6.4vw, 88px); }
+  .hero .lead { margin-top: 24px; font-size: clamp(18px, 2vw, 24px); }
+  .hero .acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .hero .acoes .botao { text-decoration: none; font-size: 19px; padding: 16px 24px; }
+  .hero .prova { display: flex; gap: 34px; margin-top: 40px; }
+  .hero .prova .stat b { font-size: clamp(30px, 4vw, 46px); }
+  .hero .prova .stat span { font-size: 12px; }
+  .hero .lado { display: flex; flex-direction: column; gap: 18px; align-items: center; }
+  .hero .phone { width: min(250px, 62vw); }
+  .hero .timeline { width: 100%; }
+  @media (max-width: 860px) {
+    .hero .grade-hero { grid-template-columns: 1fr; }
+    .hero .lado { order: 0; }
+    .hero .kicker { white-space: normal; }
+  }
+  @media (max-width: 520px) {
+    .topo .botao { font-size: 13px; padding: 8px 10px; }
+    .topo .marca { font-size: 18px; }
+    .hero .kicker { font-size: 16px; }
+    .so-desktop { display: none; }
+  }
+
+  .faixa-rolante { margin: 6px 0 0; }
+  .faixa-rolante .trilho { animation: rolar 28s linear infinite; }
+  @keyframes rolar { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .faixa-rolante .trilho { animation: none; } }
+
+  section.bloco { padding: 84px 0; border-top: 1px solid var(--linha); }
+  .bloco .h2 { font-size: clamp(34px, 4.6vw, 60px); }
+  .bloco .lead { font-size: clamp(17px, 1.8vw, 21px); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 36px; }
+  .cards .card { padding: 28px; }
+  .cards .card h3 { font-size: 26px; }
+  .cards .card p { font-size: 17px; }
+  .cards .card .num { font-size: 12px; }
+
+  .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 36px; }
+  .passo-item { border-top: 2px solid var(--lima); padding-top: 18px; }
+  .passo-item .n { font-family: var(--mono); font-size: 12px; color: var(--lima); }
+  .passo-item h3 { font-family: var(--titulo); font-size: 24px; margin: 8px 0; }
+  .passo-item p { font-size: 16px; color: var(--mudo); line-height: 1.5; }
+
+  .programa { display: flex; flex-direction: column; border-top: 1px solid var(--linha); margin-top: 30px; }
+  .mod { display: grid; grid-template-columns: 130px 1fr; gap: 26px; padding: 24px 0; border-bottom: 1px solid var(--linha); }
+  .mod .quando { font-family: var(--mono); font-size: 12px; color: var(--lima); letter-spacing: .08em; }
+  .mod h3 { font-family: var(--titulo); font-size: 26px; margin-bottom: 6px; }
+  .mod p { color: var(--mudo); font-size: 16px; line-height: 1.5; }
+  @media (max-width: 620px) { .mod { grid-template-columns: 1fr; gap: 8px; } }
+
+  .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin-top: 34px; }
+  @media (max-width: 860px) { .duas { grid-template-columns: 1fr; } }
+  .lista-check { list-style: none; display: flex; flex-direction: column; }
+  .lista-check li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--linha); font-size: 18px; }
+  .lista-check li::before { content: '✓'; color: var(--lima); font-weight: 700; }
+
+  .instrutor { display: flex; gap: 28px; align-items: center; margin-top: 34px; flex-wrap: wrap; }
+  .instrutor img { width: 190px; height: 190px; object-fit: cover; border-radius: 22px; border: 1px solid var(--linha); }
+  .instrutor .bio { flex: 1; min-width: 260px; }
+  .instrutor h3 { font-family: var(--titulo); font-size: 38px; }
+  .instrutor p { color: var(--mudo); font-size: 17px; margin-top: 8px; line-height: 1.5; }
+
+  .faq { margin-top: 30px; border-top: 1px solid var(--linha); }
+  .faq details { border-bottom: 1px solid var(--linha); padding: 20px 0; }
+  .faq summary { cursor: pointer; font-family: var(--titulo); font-weight: 700; font-size: 21px; }
+  .faq p { color: var(--mudo); font-size: 17px; line-height: 1.6; margin-top: 12px; max-width: 820px; }
+
+  .final { text-align: center; padding: 100px 0; }
+  .final .h2 { font-size: clamp(38px, 5.4vw, 68px); }
+  .final .lead { margin: 22px auto 0; max-width: 680px; }
+  .final .acoes { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+  .final .acoes .botao { text-decoration: none; font-size: 19px; padding: 16px 26px; }
+  .final .link { margin-top: 22px; }
+
+  .pe { border-top: 1px solid var(--linha); padding: 30px 0; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px; color: var(--mudo); }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+    <nav>
+      <a href="#metodo">Método</a>
+      <a href="#programa">Programa</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#entregas">Entregas</a>
+      <a href="#perguntas">Dúvidas</a>
+    </nav>
+    <a class="botao" href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20garantir%20minha%20vaga%20no%20V%C3%ADdeo%20com%20IA">Quero minha vaga</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap grade-hero">
+      <div>
+        <span class="kicker">Maratona ao vivo · 1 dia <span class="so-desktop">· replay 7 dias</span></span>
+        <h1 class="h1">Seu primeiro <em>vídeo com IA</em> em um dia.</h1>
+        <p class="lead">Roteiro, apresentador virtual, vídeo por código, cenas realistas e corte. Sem estúdio, sem equipe e sem programar.</p>
+        <div class="acoes">
+          <a class="botao" href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20garantir%20minha%20vaga%20no%20V%C3%ADdeo%20com%20IA">Quero minha vaga <span class="seta">→</span></a>
+          <a class="botao escuro" href="#programa">Ver o programa</a>
+        </div>
+        <div class="prova">
+          <div class="stat"><b>1</b><span>dia ao vivo</span></div>
+          <div class="stat"><b>8h</b><span>de prática</span></div>
+          <div class="stat"><b>7</b><span>dias de replay</span></div>
+        </div>
+      </div>
+      <div class="lado">
+        <div class="phone">
+          <div class="phone-tela">
+            <div class="ceu"></div>
+            <span class="tag">SEU VÍDEO · 9:16</span>
+            <span class="play">▶</span>
+            <span class="legenda">Publicado no mesmo dia.</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="regua"><span>09h</span><span>11h</span><span>13h</span><span>15h</span><span>17h</span></div>
+          <div class="faixas">
+            <div class="faixa"><span class="rotulo">ROTEIRO</span><span class="pista"><i class="clipe lima" style="left:1%;width:30%"></i></span></div>
+            <div class="faixa"><span class="rotulo">AVATAR</span><span class="pista"><i class="clipe" style="left:31%;width:26%"></i></span></div>
+            <div class="faixa"><span class="rotulo">CÓDIGO</span><span class="pista"><i class="clipe violeta" style="left:50%;width:24%"></i></span></div>
+            <div class="faixa"><span class="rotulo">REALISMO</span><span class="pista"><i class="clipe coral" style="left:70%;width:26%"></i></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixa-rolante" aria-hidden="true">
+    <div class="trilho">
+      <span>ROTEIRO COM IA</span><span>·</span><span>AVATAR E VOZ</span><span>·</span><span>VÍDEO POR CÓDIGO</span><span>·</span><span>MOTION TRANSFER</span><span>·</span><span>CORTE E PUBLICAÇÃO</span><span>·</span>
+      <span>ROTEIRO COM IA</span><span>·</span><span>AVATAR E VOZ</span><span>·</span><span>VÍDEO POR CÓDIGO</span><span>·</span><span>MOTION TRANSFER</span><span>·</span><span>CORTE E PUBLICAÇÃO</span><span>·</span>
+    </div>
+  </div>
+
+  <section class="bloco">
+    <div class="wrap">
+      <span class="kicker coral">O problema</span>
+      <h2 class="h2">O vídeo sempre fica para depois.</h2>
+      <p class="lead" style="margin-top: 16px">Agência cara, editor travado ou ninguém quer aparecer. A IA encurtou o caminho — mas só funciona com processo.</p>
+      <div class="cards">
+        <div class="card"><span class="num">01 · ORÇAMENTO</span><h3>Agência cobra caro</h3><p>E entrega em semanas, quando a campanha já passou.</p></div>
+        <div class="card"><span class="num">02 · EDIÇÃO</span><h3>Você trava no corte</h3><p>Grava, regrava, abre o editor e o vídeo não sai.</p></div>
+        <div class="card"><span class="num">03 · CÂMERA</span><h3>Ninguém quer aparecer</h3><p>Sem apresentador, o conteúdo do mês inteiro para.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="metodo">
+    <div class="wrap">
+      <span class="kicker">O método</span>
+      <h2 class="h2">Quatro peças. Um fluxo.</h2>
+      <div class="passos">
+        <div class="passo-item"><span class="n">01 · ROTEIRO</span><h3>Gancho e script</h3><p>Um pedido claro para a IA e três opções de abertura.</p></div>
+        <div class="passo-item"><span class="n">02 · APRESENTADOR</span><h3>Sem estúdio</h3><p>Avatar e voz no lugar de locutor e cenário.</p></div>
+        <div class="passo-item"><span class="n">03 · CÓDIGO</span><h3>Reel em série</h3><p>Um template gera as variações; o agente escreve a cena.</p></div>
+        <div class="passo-item"><span class="n">04 · REALISMO</span><h3>Celular vira cinema</h3><p>O movimento fica; o personagem, o produto e o cenário mudam.</p></div>
+      </div>
+      <div class="cards" style="margin-top: 34px">
+        <div class="card destaque"><h3>Habilidades variadas? Sem problema.</h3><p>Cada módulo tem o caminho “só clicar”, o “modelo pronto” e o “com código”. Você escolhe até onde ir.</p></div>
+        <div class="card"><h3>Turma grande, atenção individual</h3><p>Exercícios guiados, plantões ao vivo e material autoinstrucional para repetir no seu ritmo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="programa">
+    <div class="wrap">
+      <span class="kicker">Programa</span>
+      <h2 class="h2">O dia inteiro em uma timeline.</h2>
+      <div class="programa">
+        <div class="mod"><span class="quando">08:00–09:10</span><div><h3>O mapa do vídeo com IA</h3><p>As cinco etapas, o que a IA faz bem e o que continua sendo decisão sua.</p></div></div>
+        <div class="mod"><span class="quando">09:10–10:00</span><div><h3>Roteiro em 15 minutos</h3><p>Gancho, problema, prova e chamada. Prompt pronto e exercício.</p></div></div>
+        <div class="mod"><span class="quando">10:15–12:00</span><div><h3>Apresentador, voz e legendas</h3><p>Avatar, TTS, legenda e revisão. Você grava um vídeo de 30s.</p></div></div>
+        <div class="mod"><span class="quando">13:00–14:15</span><div><h3>Vídeo por código com modelo pronto</h3><p>Template + dados = variações. Caminho sem programar e caminho com agente.</p></div></div>
+        <div class="mod"><span class="quando">14:15–15:15</span><div><h3>Realismo com Genjutsu</h3><p>Motion transfer, object swap e os limites da geração.</p></div></div>
+        <div class="mod"><span class="quando">15:30–16:30</span><div><h3>Corte final e publicação</h3><p>Ritmo, formatos, capa, legenda e checklist de direitos.</p></div></div>
+        <div class="mod"><span class="quando">16:30–17:00</span><div><h3>Projeto final</h3><p>Brief, critérios e entrega do seu vídeo de 15s.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="ferramentas">
+    <div class="wrap">
+      <span class="kicker azul">Ferramentas</span>
+      <h2 class="h2">De verdade, no seu navegador.</h2>
+      <div class="tools" style="margin-top: 28px">
+        <span class="tool"><span class="ponto"></span> ChatGPT</span>
+        <span class="tool"><span class="ponto"></span> Claude</span>
+        <span class="tool"><span class="ponto"></span> Gemini</span>
+        <span class="tool azul"><span class="ponto"></span> HeyGen</span>
+        <span class="tool violeta"><span class="ponto"></span> HyperFrames</span>
+        <span class="tool violeta"><span class="ponto"></span> Remotion</span>
+        <span class="tool coral"><span class="ponto"></span> Higgsfield Genjutsu</span>
+        <span class="tool ciano"><span class="ponto"></span> DaVinci Resolve</span>
+        <span class="tool ciano"><span class="ponto"></span> CapCut</span>
+      </div>
+      <div class="duas">
+        <div class="janela">
+          <div class="janela-topo"><i></i><i></i><i></i><span>roteiro.md</span></div>
+          <div class="janela-corpo">
+            <div class="rotulo">SEU PEDIDO</div>
+            <div class="pedido">Crie um roteiro de 15s para uma loja de roupas. Gancho nos 3 primeiros segundos, prova social e chamada para o WhatsApp.<span class="cursor"></span></div>
+            <div class="resposta">Pronto. Aqui está o roteiro em 4 blocos, com 3 opções de gancho.</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="h2" style="font-size: 30px; margin-bottom: 14px">As versões gratuitas dão conta da aula.</h3>
+          <p class="lead">Você não precisa assinar nada para começar. Mostramos o custo real de produção e quando vale pagar.</p>
+          <ul class="lista-check" style="margin-top: 20px">
+            <li>Sem instalar nada para roteiro e avatar</li>
+            <li>Template pronto para o vídeo por código</li>
+            <li>Alternativa leve de corte para qualquer notebook</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="entregas">
+    <div class="wrap">
+      <span class="kicker">Você sai com</span>
+      <h2 class="h2">Arquivos prontos, não anotações.</h2>
+      <div class="duas">
+        <ul class="lista-check">
+          <li>Um Reel de 15s renderizado</li>
+          <li>Uma cena realista a partir do seu celular</li>
+          <li>Um vídeo com apresentador virtual legendado</li>
+          <li>Biblioteca de prompts e template</li>
+          <li>Checklist de direitos e LGPD</li>
+          <li>Apostila e replay por 7 dias</li>
+        </ul>
+        <div style="display:flex; justify-content:center">
+          <div class="phone" style="width: 240px">
+            <div class="phone-tela">
+              <div class="ceu"></div>
+              <span class="tag">SEU REEL</span>
+              <span class="play">▶</span>
+              <span class="legenda">Publicado no mesmo dia.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <div class="wrap">
+      <span class="kicker">Quem guia</span>
+      <h2 class="h2">Quem produz os vídeos da Cerrado.</h2>
+      <div class="instrutor">
+        <img src="../../../../img/renato.jpg" alt="Renato Rosa">
+        <div class="bio">
+          <h3>Renato Rosa</h3>
+          <p>Mestre em Contabilidade (UFPR) e doutorando em algoritmos e compliance. Bolsista ICTI / Itaú Unibanco em Dados e Machine Learning. Fundador da Cerrado Tech, fábrica de software.</p>
+          <p>O curso usa a mesma linha de produção que roda o marketing da Cerrado hoje: roteiro com IA, avatar, vídeo por código e cenas realistas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="perguntas">
+    <div class="wrap">
+      <span class="kicker">Dúvidas</span>
+      <h2 class="h2">Antes de garantir a vaga.</h2>
+      <div class="faq">
+        <details><summary>Preciso saber programar?</summary><p>Não. O curso tem o caminho “só clicar” e o “modelo pronto”. O caminho com código é opcional, para quem quiser ir além.</p></details>
+        <details><summary>Preciso pagar as ferramentas?</summary><p>Não para acompanhar. Usamos as versões gratuitas e uma conta compartilhada com créditos para os exercícios de realismo.</p></details>
+        <details><summary>Meu notebook roda?</summary><p>HeyGen e Genjutsu rodam no navegador. Para o corte, o DaVinci Resolve pede uma máquina razoável; indicamos o CapCut como alternativa leve.</p></details>
+        <details><summary>Vou aparecer no vídeo?</summary><p>Não é obrigatório. O curso usa avatar e cenas geradas, mas também ensina a gravar bem caso você queira aparecer.</p></details>
+        <details><summary>Serve para vídeo corporativo e redes sociais?</summary><p>Sim. O foco é conteúdo corporativo e de redes: anúncio, Reel, treinamento, apresentação de produto e comunicação interna.</p></details>
+        <details><summary>Recebo certificado?</summary><p>Sim, ao concluir os módulos e entregar o projeto final. O certificado é digital com carga horária.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="inscricao">
+    <div class="wrap">
+      <span class="kicker">Turma aberta · online e ao vivo</span>
+      <h2 class="h2">Garanta seu lugar na <em>maratona</em>.</h2>
+      <p class="lead">Um dia de aula, replay por 7 dias e o kit para fazer o seu primeiro vídeo com IA.</p>
+      <div class="acoes">
+        <a class="botao" href="https://api.whatsapp.com/send?phone=5567993515206&text=Quero%20garantir%20minha%20vaga%20no%20V%C3%ADdeo%20com%20IA">Quero minha vaga <span class="seta">→</span></a>
+        <a class="botao escuro" href="https://cerraclass.com.br">Conhecer a CerraClass</a>
+      </div>
+      <p class="link">WhatsApp (67) 99351-5206 · <b>cerraclass.com.br/video-ia</b></p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap pe">
+  <span>Vídeo com IA · realização Cerrado Tech · CerraClass</span>
+  <span>Imagens e vídeos gerados por IA quando indicado. Sem promessa de resultado.</span>
+</footer>
+
+</body>
+</html>

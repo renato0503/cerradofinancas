@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="entrega" content="pecas-video-com-ia-massa">
+  <meta name="formato" content="1080x1350">
+  <title>Carrossel: Vídeo com IA</title>
+  <link rel="stylesheet" href="../identidade/tokens.css">
+  <style>
+    .mini { background: #0d0d14; border: 1px solid #252533; border-radius: 14px; padding: 18px; margin-top: 18px; }
+    .mini .linha-txt { height: 9px; border-radius: 5px; background: #2c2c3c; margin-bottom: 9px; }
+    .mini .linha-txt.curta { width: 62%; }
+    .mini .linha-txt.lima { background: rgba(216,255,62,.7); }
+    .mini .avatar { display: flex; align-items: center; gap: 12px; }
+    .mini .avatar .bolha { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(140deg, #6b8cff, #b06bff); }
+    .mini .split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mini .split span { display: grid; place-items: center; height: 72px; border-radius: 8px; font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: .08em; }
+    .mini .split .antes { background: #22222e; color: #9a9aad; }
+    .mini .split .depois { background: rgba(216,255,62,.14); color: #d8ff3e; border: 1px solid rgba(216,255,62,.4); }
+    .mini .clipes { display: flex; gap: 6px; margin-top: 12px; }
+    .mini .clipes i { height: 26px; border-radius: 5px; display: block; }
+    .check { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .check li { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #252533; font-size: 30px; line-height: 1.25; }
+    .check li::before { content: '✓'; color: #d8ff3e; font-weight: 700; flex: 0 0 auto; }
+    .check li:first-child { padding-top: 0; }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <span class="kicker">Vídeo com IA · ao vivo · replay 7 dias</span>
+    <div class="linha entre" style="gap: 44px; align-items: flex-start">
+      <div class="col" style="max-width: 560px">
+        <h1 class="h1" style="font-size: 104px">Seu primeiro <em>vídeo com IA</em> em um dia.</h1>
+        <p class="lead mt24" style="font-size: 33px">Roteiro, apresentador, cenas realistas e corte. Sem estúdio, sem equipe e sem programar.</p>
+        <div class="frames mt34">
+          <span class="frame ativo b9"><b></b>9:16</span>
+          <span class="frame b16"><b></b>16:9</span>
+          <span class="frame b1"><b></b>1:1</span>
+        </div>
+        <span class="botao mt34">Quero minha vaga <span class="seta">→</span></span>
+      </div>
+      <div class="phone">
+        <div class="phone-tela">
+          <div class="ceu"></div>
+          <span class="tag">9:16 · 15s</span>
+          <span class="play">▶</span>
+          <span class="legenda">Seu vídeo começa aqui.</span>
+        </div>
+      </div>
+    </div>
+    <div class="wave mt48"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span>arraste →</span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker coral">O problema</span>
+    <h2 class="h2">O vídeo sempre fica para depois.</h2>
+    <div class="grid g3">
+      <div class="card"><span class="num">01 · ORÇAMENTO</span><h3>Agência cobra caro</h3><p>E entrega em semanas, quando a campanha já passou.</p></div>
+      <div class="card"><span class="num">02 · EDIÇÃO</span><h3>Você trava no corte</h3><p>Grava, regrava, abre o editor e o vídeo não sai.</p></div>
+      <div class="card"><span class="num">03 · CÂMERA</span><h3>Ninguém quer aparecer</h3><p>Sem apresentador, o conteúdo do mês inteiro para.</p></div>
+    </div>
+    <p class="lead mt48" style="font-size: 34px">A IA não eliminou o trabalho. Ela encurtou o caminho.</p>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">A virada</span>
+    <h2 class="h2">Quatro peças. Um fluxo.</h2>
+    <div class="grid g2">
+      <div class="card destaque">
+        <span class="num">01 · ROTEIRO</span><h3>Um pedido claro</h3><p>A IA devolve o script com gancho, prova e chamada.</p>
+        <div class="mini"><div class="linha-txt lima"></div><div class="linha-txt"></div><div class="linha-txt curta"></div></div>
+      </div>
+      <div class="card">
+        <span class="num">02 · APRESENTADOR</span><h3>Sem estúdio</h3><p>Avatar e voz no lugar de locutor e cenário.</p>
+        <div class="mini"><div class="avatar"><span class="bolha"></span><div style="flex:1"><div class="linha-txt lima"></div><div class="linha-txt curta"></div></div></div></div>
+      </div>
+      <div class="card">
+        <span class="num">03 · CÓDIGO</span><h3>Reel em série</h3><p>Um template gera as variações; o agente escreve a cena.</p>
+        <div class="mini"><div class="clipes"><i style="width:28%;background:#b06bff"></i><i style="width:20%;background:#6b8cff"></i><i style="width:34%;background:#d8ff3e"></i></div></div>
+      </div>
+      <div class="card">
+        <span class="num">04 · REALISMO</span><h3>Celular vira cinema</h3><p>O vídeo de origem mantém o movimento e ganha outra cena.</p>
+        <div class="mini"><div class="split"><span class="antes">ANTES</span><span class="depois">DEPOIS</span></div></div>
+      </div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">O caminho</span>
+    <h2 class="h2" style="margin-bottom: 30px">Tudo cabe numa timeline.</h2>
+    <div class="timeline">
+      <div class="regua"><span>09h</span><span>11h</span><span>13h</span><span>15h</span><span>17h</span></div>
+      <div class="faixas">
+        <div class="faixa"><span class="rotulo">ROTEIRO</span><span class="pista"><i class="clipe lima" style="left: 1%; width: 30%"></i></span></div>
+        <div class="faixa"><span class="rotulo">APRESENTADOR</span><span class="pista"><i class="clipe azul" style="left: 31%; width: 26%"></i></span></div>
+        <div class="faixa"><span class="rotulo">CÓDIGO</span><span class="pista"><i class="clipe violeta" style="left: 50%; width: 24%"></i></span></div>
+        <div class="faixa"><span class="rotulo">REALISMO</span><span class="pista"><i class="clipe coral" style="left: 70%; width: 26%"></i></span><i class="playhead" style="left: 68%"></i></div>
+        <div class="faixa"><span class="rotulo">ÁUDIO</span><span class="pista"><i class="clipe ciano" style="left: 4%; width: 88%"></i></span></div>
+      </div>
+    </div>
+    <div class="grid g3 mt34">
+      <div class="stat"><b>1</b><span>dia ao vivo</span></div>
+      <div class="stat"><b>8h</b><span>de aula prática</span></div>
+      <div class="stat"><b>7</b><span>dias de replay</span></div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">As ferramentas</span>
+    <h2 class="h2" style="margin-bottom: 34px">De verdade, no seu navegador.</h2>
+    <div class="tools">
+      <span class="tool"><span class="ponto"></span> ChatGPT</span>
+      <span class="tool"><span class="ponto"></span> Claude</span>
+      <span class="tool"><span class="ponto"></span> Gemini</span>
+      <span class="tool azul"><span class="ponto"></span> HeyGen</span>
+      <span class="tool violeta"><span class="ponto"></span> HyperFrames</span>
+      <span class="tool violeta"><span class="ponto"></span> Remotion</span>
+      <span class="tool coral"><span class="ponto"></span> Higgsfield Genjutsu</span>
+      <span class="tool ciano"><span class="ponto"></span> DaVinci Resolve</span>
+      <span class="tool ciano"><span class="ponto"></span> CapCut</span>
+    </div>
+    <div class="janela mt48">
+      <div class="janela-topo"><i></i><i></i><i></i><span>roteiro.md</span></div>
+      <div class="janela-corpo">
+        <div class="rotulo">SEU PEDIDO</div>
+        <div class="pedido">Crie um roteiro de 15s para uma clínica odontológica. Gancho nos 3 primeiros segundos, prova social e chamada para o WhatsApp.<span class="cursor"></span></div>
+        <div class="resposta">Pronto. Aqui está o roteiro em 4 blocos, com 3 opções de gancho.</div>
+      </div>
+    </div>
+    <p class="pequeno mt34">As versões gratuitas dão conta da aula. Você não precisa assinar nada para começar.</p>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Simples de verdade</span>
+    <h2 class="h2">Feito para quem nunca editou.</h2>
+    <div class="grid g3">
+      <div class="card"><span class="num">SEM INSTALAR</span><h3>Tudo no navegador</h3><p>Você entra, faz login e produz. O corte tem alternativa leve.</p></div>
+      <div class="card"><span class="num">SEM PROGRAMAR</span><h3>Modelo pronto</h3><p>Você usa um template e o agente escreve a cena com você.</p></div>
+      <div class="card"><span class="num">SEM APARECER</span><h3>O vídeo por você</h3><p>Avatar, voz e imagens resolvem a câmera e o cenário.</p></div>
+    </div>
+    <div class="card destaque mt48">
+      <h3 style="font-size: 42px">Habilidades variadas? O curso anda no seu ritmo.</h3>
+      <p style="font-size: 29px; margin-top: 10px">Cada módulo tem um caminho “só clicar” e um caminho “com código”. Você escolhe até onde ir.</p>
+    </div>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Você sai com</span>
+    <h2 class="h2" style="margin-bottom: 26px">Vídeo pronto, não anotações.</h2>
+    <div class="linha gap34" style="align-items: flex-start">
+      <ul class="check" style="flex: 1">
+        <li>Um Reel de 15s renderizado</li>
+        <li>Uma cena realista a partir do seu celular</li>
+        <li>Um vídeo com apresentador virtual</li>
+        <li>Biblioteca de prompts e template</li>
+        <li>Checklist de direitos e LGPD</li>
+      </ul>
+      <div class="phone" style="width: 280px; flex: 0 0 auto">
+        <div class="phone-tela">
+          <div class="ceu"></div>
+          <span class="tag">SEU REEL</span>
+          <span class="play">▶</span>
+          <span class="legenda">Publicado no mesmo dia.</span>
+        </div>
+      </div>
+    </div>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker azul">Para quem é</span>
+    <h2 class="h2">Do zero ao primeiro vídeo.</h2>
+    <div class="grid g2">
+      <div class="card"><span class="num">01</span><h3>Quem nunca editou</h3><p>Zero experiência. Você segue o passo a passo.</p></div>
+      <div class="card"><span class="num">02</span><h3>Social media</h3><p>Precisa entregar mais vídeo sem aumentar o time.</p></div>
+      <div class="card"><span class="num">03</span><h3>Empreendedor</h3><p>Quer produzir a própria comunicação sem agência.</p></div>
+      <div class="card"><span class="num">04</span><h3>Equipes</h3><p>RH, treinamento e comunicação interna.</p></div>
+    </div>
+    <p class="lead mt34" style="font-size: 30px">Não é para quem quer VFX de cinema. É para quem precisa publicar.</p>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Quem guia</span>
+    <div class="linha gap34" style="align-items: center">
+      <img src="../../../../img/renato.jpg" alt="Renato Rosa" style="width: 300px; height: 300px; object-fit: cover; border-radius: 24px; border: 1px solid #2b2b3a">
+      <div>
+        <h2 class="h2" style="font-size: 76px; margin-bottom: 8px">Renato Rosa</h2>
+        <p class="mono">Dados, IA e Software</p>
+      </div>
+    </div>
+    <ul class="check mt48">
+      <li>Mestre em Contabilidade (UFPR) e doutorando em algoritmos e compliance</li>
+      <li>Bolsista ICTI / Itaú Unibanco em Dados e Machine Learning</li>
+      <li>Fundador da Cerrado Tech, fábrica de software</li>
+      <li>Produz os vídeos e animações da Cerrado com código e IA</li>
+    </ul>
+    <p class="lead mt34" style="font-size: 30px">O curso usa a mesma linha de produção que roda o marketing da Cerrado hoje.</p>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Turma aberta · online e ao vivo</span>
+    <h2 class="h1" style="font-size: 108px">Garanta seu lugar na <em>maratona</em>.</h2>
+    <p class="lead mt34" style="font-size: 34px">1 dia de aula, replay por 7 dias e o kit de exercícios para fazer o seu vídeo.</p>
+    <div class="linha gap14 mt48">
+      <span class="botao">Quero minha vaga <span class="seta">→</span></span>
+      <span class="botao escuro">Falar no WhatsApp</span>
+    </div>
+    <p class="link mt34">cerraclass.com.br/video-ia · <b>WhatsApp (67) 99351-5206</b></p>
+    <div class="rodape">
+      <span class="marca"><span class="ponto"></span> Vídeo com IA</span>
+      <span data-pagina></span>
+    </div>
+  </section>
+  <script src="../identidade/slides.js"></script>
+</body>
+</html>

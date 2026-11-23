@@ -1,0 +1,64 @@
+/* Vídeo com IA: "Mesa de edição". Estúdio escuro, lima de playhead, mono de timeline. */
+@font-face { font-family: 'Outfit'; src: url('assets/fonts/outfit.woff2') format('woff2'); font-weight: 200 900; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'DM Mono'; src: url('assets/fonts/dm-mono-500.woff2') format('woff2'); font-weight: 500; }
+
+:root { --fundo: #0a0a0f; --painel: #12121a; --texto: #f4f4f7; --mudo: #a2a2b4; --lima: #d8ff3e; --linha: #2b2b3a; }
+html, body { background: var(--fundo); }
+#root { font-family: 'Instrument Sans', sans-serif; color: var(--texto); background: var(--fundo); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--painel); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 42%; border-right: 4px solid var(--lima); }
+.vertical #faixa { left: 0; right: 0; bottom: 0; height: 52%; border-top: 4px solid var(--lima); }
+.horizontal .conteudo.esq { width: 660px; left: 110px; }
+
+em { font-style: normal; color: var(--lima); }
+.etiqueta { align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; font-family: 'DM Mono', monospace; font-weight: 500; font-size: 26px; letter-spacing: .14em; text-transform: uppercase; color: var(--lima); background: rgba(216, 255, 62, .08); border: 2px solid rgba(216, 255, 62, .4); border-radius: 999px; padding: 10px 22px; margin-bottom: 36px; }
+.etiqueta::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--lima); box-shadow: 0 0 14px var(--lima); }
+
+.mega { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 104px; line-height: .94; letter-spacing: -.025em; }
+.titulo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 74px; line-height: .96; letter-spacing: -.02em; margin-bottom: 34px; }
+
+.etapas { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.etapas li { font-family: 'Outfit', sans-serif; font-size: 44px; font-weight: 700; display: flex; align-items: baseline; gap: 20px; }
+.etapas .n { font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 500; }
+
+.contador { display: flex; align-items: baseline; gap: 24px; margin-bottom: 30px; }
+.contador .num { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 210px; line-height: .8; color: var(--lima); }
+.contador .rotulo { font-size: 40px; font-weight: 600; }
+.entregas { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.entregas li { display: flex; flex-direction: column; gap: 4px; border-left: 6px solid var(--lima); padding: 6px 0 6px 24px; }
+.entregas b { font-family: 'Outfit', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.05; }
+.entregas span { font-family: 'DM Mono', monospace; font-size: 24px; color: var(--mudo); }
+
+.caminhos { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.caminhos li { display: flex; align-items: center; gap: 26px; background: #171722; border: 2px solid var(--linha); border-radius: 20px; padding: 20px 26px; }
+.caminhos li > b { flex: none; width: 76px; height: 76px; border-radius: 16px; background: var(--lima); color: var(--fundo); display: grid; place-items: center; font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 800; }
+.caminhos li > div { display: flex; flex-direction: column; gap: 4px; }
+.caminhos strong { font-family: 'Outfit', sans-serif; font-size: 42px; font-weight: 700; line-height: 1; }
+.caminhos span { font-size: 26px; color: var(--mudo); }
+.nota { margin-top: 30px; font-family: 'DM Mono', monospace; font-size: 26px; letter-spacing: .06em; color: var(--lima); }
+
+.citacao { font-family: 'Outfit', sans-serif; font-size: 96px; font-weight: 800; line-height: .98; letter-spacing: -.02em; }
+.autor { margin-top: 34px; align-self: flex-start; font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 500; background: var(--lima); color: var(--fundo); padding: 10px 18px; border-radius: 10px; }
+
+#cortina { position: absolute; inset: 0; background: var(--lima); }
+.fecho { color: var(--fundo); }
+.fecho .selo { width: 180px; height: 180px; border-radius: 50%; background: #ffffff; display: grid; place-items: center; border: 6px solid var(--fundo); }
+.fecho .selo img { width: 72%; height: 72%; object-fit: contain; }
+.fecho .chamada { margin-top: 40px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 140px; line-height: 1.12; letter-spacing: -.03em; color: var(--fundo); }
+.fecho .chamada .a { background: var(--fundo); color: var(--lima); padding: 0 .12em .02em; border-radius: .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.fecho .chamada .nw { white-space: nowrap; }
+.fecho .tag { margin-top: 34px; font-family: 'DM Mono', monospace; font-size: 36px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.fecho .botao { margin-top: 38px; background: var(--fundo); color: var(--lima); font-family: 'DM Mono', monospace; font-size: 46px; font-weight: 500; padding: 18px 40px; border-radius: 16px; }
+
+.vertical .mega { font-size: 100px; }
+.vertical .titulo { font-size: 70px; }
+.vertical .etapas li { font-size: 42px; }
+.vertical .contador .num { font-size: 190px; }
+.vertical .citacao { font-size: 92px; }
+.vertical .fecho .chamada { font-size: 112px; }
+.vertical .fecho .botao { font-size: 40px; }

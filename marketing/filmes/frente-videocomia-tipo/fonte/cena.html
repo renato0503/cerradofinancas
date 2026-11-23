@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeo com IA · Tipográfico</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Tipográfico": uma ideia por tela, letra enorme, cortes secos; o fundo muda de cor a cada ideia.
+      // Nada fica por cima de nada: só existe a coluna central de texto (sem 3D, sem painéis).
+      window.ESTILO = { ease: "expo.out", dur: 0.5, stagger: 0.05, desloc: 40, saida: 0.24, saidaEase: "power4.in" };
+      window.EXTRAS = (tl) => {
+        const FUNDOS = [
+          [0, "#0a0a0f"], [5, "#0a0a0f"], [6.2, "#d8ff3e"], [7.15, "#6b8cff"], [8.1, "#ff6b57"], [9.05, "#b06bff"], [10, "#3ee0cf"],
+          [11, "#0a0a0f"], [18, "#f4f4f7"], [24, "#0a0a0f"], [27.5, "#d8ff3e"],
+        ];
+        FUNDOS.forEach(([t, c]) => tl.set("#fundo", { backgroundColor: c }, t));
+        // barra de progresso de "render" no rodapé: enche ao longo do filme
+        tl.fromTo("#progresso i", { scaleX: 0 }, { scaleX: 1, duration: 27.5, ease: "none" }, 0);
+        tl.set("#progresso", { autoAlpha: 0 }, 27.5);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <div id="fundo" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 0"></div>
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="4" style="z-index: 1"></canvas>
+      <div id="progresso" class="clip" data-start="0" data-duration="32" data-track-index="5" style="z-index: 2"><i></i><span>render · vídeo com IA</span></div>
+
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo centro">
+          <p class="mono" data-entra="subir" data-t="0.3">Vídeo com IA · CerraClass</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.6">Aprenda a fazer vídeo com IA.</h1>
+          <p class="faixa-lima" data-entra="pop" data-t="1.9" data-rot="-4" data-rot-fim="-2">Rápido e fácil.</p>
+        </div>
+      </div>
+
+      <div id="p2" class="plano clip" data-start="5" data-duration="1.2" data-track-index="1" style="z-index: 3">
+        <div class="conteudo centro">
+          <h2 class="grande" data-entra="palavras" data-t="0.05" data-stagger="0.04">Cinco etapas. <em>A IA acelera todas.</em></h2>
+        </div>
+      </div>
+      <div class="plano clip etapa escura" data-start="6.2" data-duration="0.95" data-track-index="1" style="z-index: 3"><div class="conteudo centro"><p class="num" data-entra="subir" data-t="0" data-dur="0.3">01</p><p class="palavra" data-entra="palavras" data-t="0.05" data-dur="0.35">Ideia</p></div></div>
+      <div class="plano clip etapa" data-start="7.15" data-duration="0.95" data-track-index="1" style="z-index: 3"><div class="conteudo centro"><p class="num" data-entra="subir" data-t="0" data-dur="0.3">02</p><p class="palavra" data-entra="palavras" data-t="0.05" data-dur="0.35">Roteiro</p></div></div>
+      <div class="plano clip etapa" data-start="8.1" data-duration="0.95" data-track-index="1" style="z-index: 3"><div class="conteudo centro"><p class="num" data-entra="subir" data-t="0" data-dur="0.3">03</p><p class="palavra" data-entra="palavras" data-t="0.05" data-dur="0.35">Imagem</p></div></div>
+      <div class="plano clip etapa" data-start="9.05" data-duration="0.95" data-track-index="1" style="z-index: 3"><div class="conteudo centro"><p class="num" data-entra="subir" data-t="0" data-dur="0.3">04</p><p class="palavra" data-entra="palavras" data-t="0.05" data-dur="0.35">Montagem</p></div></div>
+      <div class="plano clip etapa escura" data-start="10" data-duration="1" data-track-index="1" style="z-index: 3"><div class="conteudo centro"><p class="num" data-entra="subir" data-t="0" data-dur="0.3">05</p><p class="palavra" data-entra="palavras" data-t="0.05" data-dur="0.35">Publicação</p></div></div>
+
+      <div id="p3" class="plano clip" data-start="11" data-duration="7" data-track-index="1" style="z-index: 3">
+        <div class="conteudo centro">
+          <p class="mono" data-entra="subir" data-t="0.1">Você sai com</p>
+          <p class="contador"><span class="n3" data-entra="contar" data-de="0" data-ate="3" data-t="0.2" data-dur="1">0</span><span class="rot" data-entra="palavras" data-t="0.4">entregas no mesmo dia</span></p>
+          <ul class="entregas" data-entra="lista" data-t="1.6" data-stagger="0.7">
+            <li><b>Roteiro de 15 segundos</b><span>gancho, problema, prova e chamada</span></li>
+            <li><b>Vídeo com apresentador</b><span>avatar, voz e legenda</span></li>
+            <li><b>Vídeo pronto para postar</b><span>9:16, cortado e revisado</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="p4" class="plano clip clara" data-start="18" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo centro">
+          <p class="mono" data-entra="subir" data-t="0.1">Três caminhos</p>
+          <ul class="abc" data-entra="lista" data-t="0.4" data-stagger="0.55">
+            <li><b>A</b><strong>Só clicar</strong><span>Nunca editou? Comece aqui.</span></li>
+            <li><b>B</b><strong>Modelo pronto</strong><span>Troque texto e cor, e renderize.</span></li>
+            <li><b>C</b><strong>Com código</strong><span>Peça a cena ao agente e revise.</span></li>
+          </ul>
+          <p class="nota" data-entra="subir" data-t="2.6">Para começar, só o navegador.</p>
+        </div>
+      </div>
+
+      <div id="p5" class="plano clip" data-start="24" data-duration="3.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo centro">
+          <p class="mono" data-entra="subir" data-t="0.1">A regra da casa</p>
+          <p class="citacao" data-entra="palavras" data-t="0.3" data-stagger="0.07">“A IA erra. <em>A gente confere.”</em></p>
+          <p class="autor" data-entra="subir" data-t="1.3">Renato Rosa · Dados, IA e Software</p>
+        </div>
+      </div>
+
+      <div id="p6" class="plano clip fecho" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div class="conteudo centro">
+          <div class="selo" data-entra="pop" data-t="0.2"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.4">Transforme ideias em <span class="a" data-inteiro>vídeos com IA.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.3">8 horas · online e ao vivo</p>
+          <p class="botao" data-entra="pop" data-t="1.7" data-rot="-3" data-rot-fim="0">cerraclass.com.br/videocomia</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

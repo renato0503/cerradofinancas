@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeo com IA · Editor</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Editor": a janela de um editor de vídeo ao lado do texto. Zonas separadas: a janela nunca passa por cima
+      // do texto, a agulha só corre dentro das trilhas (os nomes ficam na calha, fora do caminho dela) e o monitor
+      // mostra uma coisa de cada vez.
+      window.ESTILO = { ease: "expo.out", dur: 0.55, stagger: 0.04, desloc: 30, saida: 0.3, saidaEase: "power4.in" };
+      window.EXTRAS = (tl) => {
+        tl.fromTo("#app", { autoAlpha: 0, y: 40, scale: 0.97 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.8, ease: "expo.out" }, 0.15);
+        // primeiro clipe e a agulha
+        tl.fromTo(".trilha:nth-child(1) .c:nth-child(1)", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, 1.6);
+        // cada trilha recebe os seus clipes; o monitor mostra a etapa da vez
+        document.querySelectorAll(".trilha").forEach((tr, i) => {
+          const cs = [...tr.querySelectorAll(".c")].filter((c, k) => i || k);
+          tl.fromTo(cs, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "expo.out", stagger: 0.18 }, 5.4 + i * 1.0);
+          tl.fromTo(`.calha p:nth-child(${i + 1})`, { color: "#5c5c70" }, { color: "#f4f4f7", duration: 0.2 }, 5.4 + i * 1.0);
+        });
+        const cenas = ["#m1", "#m2", "#m3", "#m4", "#m5"];
+        const trocar = (de, para, t) => { tl.to(de, { autoAlpha: 0, duration: 0.2 }, t); tl.fromTo(para, { autoAlpha: 0, scale: 0.94 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: "expo.out" }, t + 0.15); };
+        tl.set(cenas.slice(1), { autoAlpha: 0 }, 0);
+        trocar("#m1", "#m2", 5.1); trocar("#m2", "#m3", 11.1); trocar("#m3", "#m4", 18.1); trocar("#m4", "#m5", 24.1);
+        document.querySelectorAll("#m2 .et").forEach((e, i) => {
+          tl.fromTo(e, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.35, ease: "expo.out" }, 5.45 + i * 1.0);
+          if (i < 4) tl.to(e, { autoAlpha: 0, y: -30, duration: 0.25, ease: "power3.in" }, 6.25 + i * 1.0);
+        });
+        // a agulha varre as trilhas; o clipe que ela toca acende
+        tl.fromTo("#agulha", { left: "0%" }, { left: "100%", duration: 6.2, ease: "none" }, 11.4);
+        document.querySelectorAll(".trilha .c").forEach((c) => {
+          const ini = parseFloat(c.style.left) / 100;
+          tl.fromTo(c, { filter: "brightness(1)" }, { filter: "brightness(1.55)", duration: 0.15, yoyo: true, repeat: 1 }, 11.4 + ini * 6.2);
+        });
+        tl.fromTo("#m3 .barra-render i", { scaleX: 0 }, { scaleX: 1, duration: 6.0, ease: "power1.inOut" }, 11.5);
+        tl.fromTo("#m3 .ok", { scale: 0, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.4, ease: "back.out(2)" }, 17.5);
+        // os três caminhos acendem no monitor
+        document.querySelectorAll("#m4 .modo").forEach((m, i) => {
+          tl.to(m, { backgroundColor: "#d8ff3e", color: "#0a0a0f", borderColor: "#d8ff3e", duration: 0.25 }, 18.7 + i * 0.55);
+        });
+        tl.fromTo("#m5 .visto", { scale: 0, rotate: -20 }, { scale: 1, rotate: 0, duration: 0.45, ease: "back.out(2)" }, 24.5);
+        // o REC pisca
+        tl.fromTo(".rec", { opacity: 1 }, { opacity: 0.25, duration: 0.5, repeat: 26, yoyo: true, ease: "none" }, 0.5);
+        tl.fromTo("#cortina", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power4.inOut" }, 27.5);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="4" style="z-index: 0"></canvas>
+
+      <div id="app" class="clip" data-start="0" data-duration="27.5" data-track-index="0" style="z-index: 1">
+        <div class="titulo-app"><i></i><i></i><i></i><span>seu-primeiro-video.mp4</span><b class="rec">● REC</b></div>
+        <div class="monitor">
+          <div id="m1" class="cena-m"><div class="play"></div><p class="leg">Vídeo com IA</p></div>
+          <div id="m2" class="cena-m">
+            <p class="et" style="color:#d8ff3e">01 · Ideia</p><p class="et" style="color:#6b8cff">02 · Roteiro</p><p class="et" style="color:#ff6b57">03 · Imagem</p>
+            <p class="et" style="color:#b06bff">04 · Montagem</p><p class="et" style="color:#3ee0cf">05 · Publicação</p>
+          </div>
+          <div id="m3" class="cena-m">
+            <div class="cel"><div class="play peq"></div><p>Seu vídeo, pronto.</p><div class="barra-render"><i></i></div><b class="ok">✓</b></div>
+          </div>
+          <div id="m4" class="cena-m"><p class="modo">A · Só clicar</p><p class="modo">B · Modelo pronto</p><p class="modo">C · Com código</p></div>
+          <div id="m5" class="cena-m"><b class="visto">✓</b><p class="leg">Revisado</p></div>
+        </div>
+        <div class="timeline">
+          <div class="calha"><p>Ideia</p><p>Roteiro</p><p>Imagem</p><p>Montagem</p><p>Publicação</p></div>
+          <div class="trilhas">
+            <div class="trilha"><i class="c" style="left:2%;width:12%;background:#d8ff3e"></i><i class="c" style="left:36%;width:16%;background:#d8ff3e"></i></div>
+            <div class="trilha"><i class="c" style="left:14%;width:22%;background:#6b8cff"></i><i class="c" style="left:55%;width:14%;background:#6b8cff"></i></div>
+            <div class="trilha"><i class="c" style="left:6%;width:14%;background:#ff6b57"></i><i class="c" style="left:24%;width:10%;background:#ff6b57"></i><i class="c" style="left:62%;width:18%;background:#ff6b57"></i></div>
+            <div class="trilha"><i class="c" style="left:28%;width:28%;background:#b06bff"></i><i class="c" style="left:70%;width:15%;background:#b06bff"></i></div>
+            <div class="trilha"><i class="c" style="left:78%;width:20%;background:#3ee0cf"></i></div>
+            <div id="agulha"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.4" data-rot="0" data-rot-fim="0">Vídeo com IA · CerraClass</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.8">Aprenda a fazer vídeo com IA. <em>Rápido e fácil.</em></h1>
+        </div>
+      </div>
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">O processo</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.25">Cinco etapas. <em>A IA acelera todas.</em></h2>
+          <ol class="etapas" data-entra="lista" data-t="0.4" data-stagger="1.0">
+            <li><span class="n" style="color: #d8ff3e">01</span>Ideia</li>
+            <li><span class="n" style="color: #6b8cff">02</span>Roteiro</li>
+            <li><span class="n" style="color: #ff6b57">03</span>Imagem</li>
+            <li><span class="n" style="color: #b06bff">04</span>Montagem</li>
+            <li><span class="n" style="color: #3ee0cf">05</span>Publicação</li>
+          </ol>
+        </div>
+      </div>
+      <div id="p3" class="plano clip" data-start="11" data-duration="7" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">Você sai com</p>
+          <p class="contador"><span class="num" data-entra="contar" data-de="0" data-ate="3" data-t="0.2" data-dur="1.2">0</span><span class="rotulo" data-entra="subir" data-t="0.3">entregas no mesmo dia</span></p>
+          <ul class="entregas" data-entra="lista" data-t="1.2" data-stagger="0.6">
+            <li><b>Roteiro de 15 segundos</b><span>gancho, problema, prova e chamada</span></li>
+            <li><b>Vídeo com apresentador</b><span>avatar, voz e legenda</span></li>
+            <li><b>Vídeo pronto para postar</b><span>9:16, cortado e revisado</span></li>
+          </ul>
+        </div>
+      </div>
+      <div id="p4" class="plano clip" data-start="18" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">Três caminhos</p>
+          <ul class="caminhos" data-entra="lista" data-t="0.5" data-stagger="0.55">
+            <li><b>A</b><div><strong>Só clicar</strong><span>Nunca editou? Comece aqui.</span></div></li>
+            <li><b>B</b><div><strong>Modelo pronto</strong><span>Troque texto e cor, e renderize.</span></div></li>
+            <li><b>C</b><div><strong>Com código</strong><span>Peça a cena ao agente e revise.</span></div></li>
+          </ul>
+          <p class="nota" data-entra="subir" data-t="2.4">Para começar, só o navegador.</p>
+        </div>
+      </div>
+      <div id="p5" class="plano clip" data-start="24" data-duration="3.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">A regra da casa</p>
+          <p class="citacao" data-entra="palavras" data-t="0.3" data-stagger="0.06">“A IA erra. <em>A gente confere.”</em></p>
+          <p class="autor" data-entra="subir" data-t="1.2">Renato Rosa · Dados, IA e Software</p>
+        </div>
+      </div>
+      <div id="p6" class="plano clip" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <div class="selo" data-entra="pop" data-t="0.4"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.6">Transforme ideias em <span class="a" data-inteiro>vídeos com IA.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.4">8 horas · online e ao vivo</p>
+          <p class="botao" data-entra="pop" data-t="1.8" data-rot="-3" data-rot-fim="0">cerraclass.com.br/videocomia</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

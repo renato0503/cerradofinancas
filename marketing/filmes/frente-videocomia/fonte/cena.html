@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeo com IA: filme da frente</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Mesa de edição": cortes secos de timeline, entrada rápida e assentada (expo), sem quique.
+      window.ESTILO = { ease: "expo.out", dur: 0.55, stagger: 0.04, desloc: 30, saida: 0.3, saidaEase: "power4.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power4.inOut" }, 0.1);
+        // a cortina final é lima: o "playhead" toma a tela inteira
+        tl.fromTo("#cortina", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power4.inOut" }, 27.5);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="0" style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="27.5" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-5: a timeline vazia recebe o primeiro clipe e a agulha -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.4" data-rot="0" data-rot-fim="0">Vídeo com IA · CerraClass</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.8">Aprenda a fazer vídeo com IA. <em>Rápido e fácil.</em></h1>
+        </div>
+      </div>
+
+      <!-- 5-11: as cinco trilhas recebem seus clipes, uma etapa por trilha -->
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">O processo</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.25">Cinco etapas. <em>A IA acelera todas.</em></h2>
+          <ol class="etapas" data-entra="lista" data-t="0.6" data-stagger="0.45">
+            <li><span class="n" style="color: #d8ff3e">01</span>Ideia</li>
+            <li><span class="n" style="color: #6b8cff">02</span>Roteiro</li>
+            <li><span class="n" style="color: #ff6b57">03</span>Imagem</li>
+            <li><span class="n" style="color: #b06bff">04</span>Montagem</li>
+            <li><span class="n" style="color: #3ee0cf">05</span>Publicação</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 11-18: a agulha percorre a timeline; o que ela toca acende -->
+      <div id="p3" class="plano clip" data-start="11" data-duration="7" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">Você sai com</p>
+          <p class="contador"><span class="num" data-entra="contar" data-de="0" data-ate="3" data-t="0.2" data-dur="1.2">0</span><span class="rotulo" data-entra="subir" data-t="0.3">entregas no mesmo dia</span></p>
+          <ul class="entregas" data-entra="lista" data-t="1.2" data-stagger="0.6">
+            <li><b>Roteiro de 15 segundos</b><span>gancho, problema, prova e chamada</span></li>
+            <li><b>Vídeo com apresentador</b><span>avatar, voz e legenda</span></li>
+            <li><b>Vídeo pronto para postar</b><span>9:16, cortado e revisado</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 18-24: o celular sobe da timeline com o vídeo renderizado -->
+      <div id="p4" class="plano clip" data-start="18" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">Três caminhos</p>
+          <ul class="caminhos" data-entra="lista" data-t="0.4" data-stagger="0.5">
+            <li><b>A</b><div><strong>Só clicar</strong><span>Nunca editou? Comece aqui.</span></div></li>
+            <li><b>B</b><div><strong>Modelo pronto</strong><span>Troque texto e cor, e renderize.</span></div></li>
+            <li><b>C</b><div><strong>Com código</strong><span>Peça a cena ao agente e revise.</span></div></li>
+          </ul>
+          <p class="nota" data-entra="subir" data-t="2.2">Para começar, só o navegador.</p>
+        </div>
+      </div>
+
+      <!-- 24-27,5: a câmera chega no celular; a regra do curso -->
+      <div id="p5" class="plano clip" data-start="24" data-duration="3.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0">A regra da casa</p>
+          <p class="citacao" data-entra="palavras" data-t="0.3" data-stagger="0.06">“A IA erra. <em>A gente confere.”</em></p>
+          <p class="autor" data-entra="subir" data-t="1.2">Renato Rosa · Dados, IA e Software</p>
+        </div>
+      </div>
+
+      <!-- 27,5-32: cortina lima e a chamada (sem preço e sem data: só na landing) -->
+      <div id="p6" class="plano clip" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <div class="selo" data-entra="pop" data-t="0.4"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.6">Transforme <span class="nw" data-inteiro>ideias em</span> <span class="a" data-inteiro>vídeos com IA.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.4">8 horas · online e ao vivo</p>
+          <p class="botao" data-entra="pop" data-t="1.8" data-rot="-3" data-rot-fim="0">cerraclass.com.br/videocomia</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

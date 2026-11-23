@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeo com IA · Estúdio</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Estúdio": a câmera no palco e o texto na coluna, em zonas que não se cruzam. O HUD do visor fica só nas bordas.
+      window.ESTILO = { ease: "expo.out", dur: 0.55, stagger: 0.04, desloc: 30, saida: 0.3, saidaEase: "power4.in" };
+      window.EXTRAS = (tl) => {
+        tl.fromTo("#cam", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.0, ease: "expo.out" }, 0.25);
+        tl.fromTo("#cam", { y: 0 }, { y: -16, duration: 3.6, ease: "sine.inOut", yoyo: true, repeat: 8 }, 1.3);
+        tl.fromTo(".tally", { opacity: 1 }, { opacity: 0.18, duration: 0.7, yoyo: true, repeat: 37, ease: "none" }, 0.4);
+        // os níveis de áudio sobem e descem, sempre no mesmo padrão (a cena é função pura do tempo)
+        const alturas = [0.85, 0.45, 0.7, 0.3, 0.95, 0.55, 0.75, 0.4, 0.9, 0.5, 0.65, 0.35];
+        document.querySelectorAll(".niveis i").forEach((b, i) => {
+          tl.fromTo(b, { scaleY: 0.18 + (i % 3) * 0.08 }, { scaleY: alturas[i % alturas.length], duration: 0.45 + (i % 4) * 0.12, yoyo: true, repeat: 40, ease: "sine.inOut" }, 0.2 + i * 0.06);
+        });
+        tl.fromTo("#cortina", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power4.inOut" }, 27.5);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="{{W}}" data-height="{{H}}" data-fps="30">
+      <canvas id="tela" class="clip" data-start="0" data-duration="32" data-track-index="4" style="z-index: 0"></canvas>
+
+      <!-- a câmera do estúdio, na zona da direita (16:9) ou em cima (9:16) -->
+      <div id="cena-cam" class="plano clip" data-start="0" data-duration="27.5" data-track-index="0" style="z-index: 1" data-fica>
+        <div id="cam">
+          <svg viewBox="0 0 620 640" aria-hidden="true">
+            <defs>
+              <radialGradient id="brilho" cx="50%" cy="42%" r="50%">
+                <stop offset="0%" stop-color="#d8ff3e" stop-opacity=".16" />
+                <stop offset="100%" stop-color="#d8ff3e" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="vidro" cx="38%" cy="34%" r="70%">
+                <stop offset="0%" stop-color="#6b8cff" />
+                <stop offset="45%" stop-color="#243060" />
+                <stop offset="100%" stop-color="#080b16" />
+              </radialGradient>
+            </defs>
+            <circle cx="310" cy="300" r="300" fill="url(#brilho)" />
+            <ellipse cx="310" cy="612" rx="180" ry="20" fill="#000" opacity=".45" />
+            <path d="M310 430 L214 606 M310 430 L406 606 M310 430 L310 606" stroke="#242432" stroke-width="20" stroke-linecap="round" fill="none" />
+            <rect x="292" y="386" width="36" height="70" rx="10" fill="#1b1b26" stroke="#33334a" stroke-width="4" />
+            <rect x="148" y="196" width="324" height="236" rx="34" fill="#1a1a26" stroke="#33334a" stroke-width="6" />
+            <rect x="236" y="158" width="148" height="30" rx="12" fill="#22222f" stroke="#33334a" stroke-width="4" />
+            <rect x="262" y="182" width="96" height="22" fill="#16161f" />
+            <g>
+              <circle cx="222" cy="158" r="50" fill="#14141e" stroke="#3a3a52" stroke-width="9" />
+              <circle cx="222" cy="158" r="34" fill="none" stroke="#2a2a3a" stroke-width="7" />
+              <circle cx="222" cy="158" r="9" fill="#3a3a52" />
+              <path d="M222 150 L272 158 L222 166 Z" fill="#2a2a3a" />
+            </g>
+            <g>
+              <circle cx="398" cy="158" r="50" fill="#14141e" stroke="#3a3a52" stroke-width="9" />
+              <circle cx="398" cy="158" r="34" fill="none" stroke="#2a2a3a" stroke-width="7" />
+              <circle cx="398" cy="158" r="9" fill="#3a3a52" />
+              <path d="M398 150 L448 158 L398 166 Z" fill="#2a2a3a" />
+            </g>
+            <circle cx="310" cy="316" r="104" fill="#0d0d15" stroke="#3a3a52" stroke-width="9" />
+            <circle cx="310" cy="316" r="80" fill="#101019" stroke="#2a2a3a" stroke-width="6" />
+            <circle cx="310" cy="316" r="58" fill="url(#vidro)" />
+            <circle cx="310" cy="316" r="58" fill="none" stroke="#d8ff3e" stroke-width="3" opacity=".65" />
+            <circle cx="310" cy="316" r="20" fill="#060a12" />
+            <path d="M282 288 a 44 44 0 0 1 34 -12" stroke="#cfdcff" stroke-width="6" stroke-linecap="round" fill="none" opacity=".55" />
+            <rect x="404" y="216" width="42" height="20" rx="7" fill="#ff5a45" class="tally" />
+            <rect x="176" y="392" width="132" height="12" rx="6" fill="#d8ff3e" opacity=".9" />
+            <rect x="322" y="392" width="46" height="12" rx="6" fill="#3a3a52" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- HUD do visor: só nas bordas, fora da coluna de texto -->
+      <div id="hud" class="plano clip" data-start="0" data-duration="27.5" data-track-index="6" style="z-index: 2" data-fica>
+        <div class="hud-topo">
+          <p class="hud-rec"><i></i>REC <span class="tc">00:00:<b data-entra="contar" data-de="0" data-ate="27" data-pad="2" data-t="0" data-dur="27.5">00</b></span></p>
+          <p class="hud-formato">{{W}}×{{H}} · 30 FPS · <span class="fmt"></span></p>
+        </div>
+        <div class="hud-base">
+          <div class="niveis"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="hud-cam">Câmera A · estúdio</p>
+        </div>
+        <span class="mira m1"></span><span class="mira m2"></span><span class="mira m3"></span><span class="mira m4"></span>
+        <span class="divisor"></span>
+      </div>
+
+      <div id="p1" class="plano clip" data-start="0" data-duration="5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="claquete"><i></i>Vídeo com IA · CerraClass</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.6">Aprenda a fazer vídeo com IA.</h1>
+          <p class="apoio" data-entra="revelar" data-t="1.9" data-dur="0.6">Rápido e fácil.</p>
+        </div>
+      </div>
+
+      <div id="p2" class="plano clip" data-start="5" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="claquete" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0"><i></i>O processo</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.25">Cinco etapas. <em>A IA acelera todas.</em></h2>
+          <ol class="etapas" data-entra="lista" data-t="0.5" data-stagger="0.95">
+            <li><span class="n" style="color: #d8ff3e">01</span>Ideia</li>
+            <li><span class="n" style="color: #6b8cff">02</span>Roteiro</li>
+            <li><span class="n" style="color: #ff6b57">03</span>Imagem</li>
+            <li><span class="n" style="color: #b06bff">04</span>Montagem</li>
+            <li><span class="n" style="color: #3ee0cf">05</span>Publicação</li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="p3" class="plano clip" data-start="11" data-duration="7" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="claquete" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0"><i></i>Você sai com</p>
+          <p class="contador"><span class="num" data-entra="contar" data-de="0" data-ate="3" data-t="0.2" data-dur="1.2">0</span><span class="rotulo" data-entra="subir" data-t="0.3">entregas no mesmo dia</span></p>
+          <ul class="entregas" data-entra="lista" data-t="1.2" data-stagger="0.6">
+            <li><b>Roteiro de 15 segundos</b><span>gancho, problema, prova e chamada</span></li>
+            <li><b>Vídeo com apresentador</b><span>avatar, voz e legenda</span></li>
+            <li><b>Vídeo pronto para postar</b><span>9:16, cortado e revisado</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="p4" class="plano clip" data-start="18" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="claquete" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0"><i></i>Três caminhos</p>
+          <ul class="caminhos" data-entra="lista" data-t="0.4" data-stagger="0.55">
+            <li><b>A</b><div><strong>Só clicar</strong><span>Nunca editou? Comece aqui.</span></div></li>
+            <li><b>B</b><div><strong>Modelo pronto</strong><span>Troque texto e cor, e renderize.</span></div></li>
+            <li><b>C</b><div><strong>Com código</strong><span>Peça a cena ao agente e revise.</span></div></li>
+          </ul>
+          <p class="nota" data-entra="subir" data-t="2.3">Para começar, só o navegador.</p>
+        </div>
+      </div>
+
+      <div id="p5" class="plano clip" data-start="24" data-duration="3.5" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="claquete" data-entra="pop" data-t="0.1" data-rot="0" data-rot-fim="0"><i></i>A regra da casa</p>
+          <p class="citacao" data-entra="palavras" data-t="0.3" data-stagger="0.06">“A IA erra. <em>A gente confere.”</em></p>
+          <p class="autor" data-entra="subir" data-t="1.2">Renato Rosa · Dados, IA e Software</p>
+        </div>
+      </div>
+
+      <div id="p6" class="plano clip" data-start="27.5" data-duration="4.5" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <div class="selo" data-entra="pop" data-t="0.3"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.5">Transforme ideias em <span class="a" data-inteiro>vídeos com IA.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.3">8 horas · online e ao vivo</p>
+          <p class="botao" data-entra="pop" data-t="1.7" data-rot="-3" data-rot-fim="0">cerraclass.com.br/videocomia</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

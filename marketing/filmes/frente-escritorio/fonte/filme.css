@@ -1,0 +1,52 @@
+/* Institucional v3 "tudo conversa": cena 3D clara + faixa azul institucional; a folinha oficial sempre grande. */
+@font-face { font-family: 'Inter'; src: url('assets/fonts/inter.woff2') format('woff2'); font-weight: 100 900; }
+
+:root { --azul: #001f5c; --azul-2: #00458b; --ouro: #fecb00; --papel: #eef2f8; --suave: #c9d6ec; }
+html, body { background: var(--papel); }
+#root { font-family: 'Inter', sans-serif; color: #fff; background: var(--papel); }
+
+#faixa-clip { position: absolute; inset: 0; pointer-events: none; }
+#faixa { position: absolute; background: var(--azul); }
+.horizontal #faixa { left: 0; top: 0; bottom: 0; width: 41%; border-right: 6px solid var(--ouro); }
+.vertical #faixa { left: 0; right: 0; top: 0; height: 860px; border-bottom: 6px solid var(--ouro); }
+.horizontal .conteudo.esq { width: 600px; left: 110px; }
+.vertical .conteudo.topo9 { left: 120px; right: 120px; top: 250px; bottom: auto; height: 580px; justify-content: flex-start; }
+
+.mega, .titulo { font-weight: 800; letter-spacing: -0.035em; line-height: 1.04; }
+.mega { font-size: 92px; }
+.titulo { font-size: 74px; }
+.d { color: var(--ouro); }
+.rotulo { display: flex; align-items: center; gap: 14px; font-size: 26px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #a9c2ee; margin-bottom: 26px; }
+.rotulo .num { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ouro); color: var(--azul); font-size: 24px; letter-spacing: 0; }
+.lista-lados { gap: 22px; }
+.lado { font-size: 70px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.lado:nth-child(2) { color: #d4def2; }
+.lado:nth-child(3) { color: #a9c2ee; }
+
+/* a marca: folinha oficial grande + o nome */
+.marca-grande { display: flex; align-items: center; gap: 26px; margin-bottom: 34px; }
+.marca-grande img { width: 220px; height: 220px; object-fit: contain; flex: none; filter: drop-shadow(0 10px 18px rgba(0,0,0,.28)); }
+.marca-grande .nome { font-size: 44px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; }
+.aviso { font-size: 19px; line-height: 1.4; color: #d3ddef; margin-top: 26px; font-weight: 500; max-width: 600px; }
+
+#cortina { position: absolute; inset: 0; background: var(--azul); }
+.horizontal .conteudo.fecho { top: 0; bottom: 130px; }
+.fecho .fecho-marca { flex-direction: column; gap: 18px; margin-bottom: 30px; text-align: center; }
+.fecho .fecho-marca img { width: 300px; height: 300px; }
+.fecho .fecho-marca .nome { font-size: 48px; }
+.fecho .pergunta { font-size: 104px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.02; }
+.fecho .botao { margin-top: 36px; background: var(--ouro); color: var(--azul); font-size: 42px; font-weight: 800; padding: 20px 46px; border-radius: 999px; }
+.aviso.rodape { position: absolute; left: 160px; right: 160px; bottom: 42px; max-width: none; text-align: center; font-size: 19px; color: #b9c8e4; }
+
+.vertical .mega { font-size: 92px; }
+.vertical .titulo { font-size: 78px; }
+.vertical .lado { font-size: 74px; }
+.vertical .rotulo { font-size: 28px; }
+.vertical .marca-grande img { width: 240px; height: 240px; }
+.vertical .marca-grande .nome { font-size: 50px; }
+.vertical .aviso { font-size: 22px; max-width: none; margin-top: 20px; }
+.vertical .conteudo.fecho { top: 300px; bottom: auto; height: 1000px; justify-content: flex-start; }
+.vertical .fecho .fecho-marca img { width: 320px; height: 320px; }
+.vertical .fecho .pergunta { font-size: 86px; white-space: nowrap; }
+.vertical .fecho .botao { font-size: 40px; }
+.vertical .aviso.rodape { left: 120px; right: 120px; bottom: auto; top: 1320px; font-size: 23px; }
