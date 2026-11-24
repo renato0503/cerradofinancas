@@ -181,8 +181,13 @@ def faixas(amostras, passo):
     return out
 
 
-def checar(browser, slug, formato, passo, dur=32.0):
+def checar(browser, slug, formato, passo, dur=None):
     pasta = RAIZ / f"frente-{slug}" / formato
+    if dur is None:  # a duração vem do próprio filme montado (antes era fixa em 32 s)
+        import re
+        html = (pasta / "index.html").read_text(encoding="utf-8")
+        m = re.search(r'data-duration="([\d.]+)"', html)
+        dur = float(m.group(1)) if m else 32.0
     w, h = (1920, 1080) if formato == "16x9" else (1080, 1920)
     page = abrir(browser, pasta, w, h)
     probs = {}  # (texto, tipo) -> [(t, valor)]

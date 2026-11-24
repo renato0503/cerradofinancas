@@ -114,6 +114,25 @@ bash ferramentas/render-frentes.sh credito   # só uma frente
 - **Cuidados:** papel nunca dobra além de 90° (a comanda do CerraFood para em 75° e tem verso liso); CSS não pode ter
   `transform` em elemento que o GSAP anima (as posições usam flex).
 
+### Filme do curso "Vídeo com IA" (23/11)
+
+`frente-videocomia-v2/` é o filme de 36 s que anuncia a maratona **Vídeo com IA** (`cerraclass.com.br/video-ia`):
+celular e notebook na mesa de edição rodando **as telas reais** dos sete filmes aprovados e, no plano 4, os **sete
+objetos 3D** (chip, ingresso, impressora, bússola, contrato, razonete, organograma) saindo das telas em fila, com a
+câmera passando por cada um. Direção e roteiro em `../conteudo/2026-11-filme-videocomia/`.
+
+- **Telas:** `node ferramentas/extrair-telas.mjs` tira 2,2 s a 10 fps de cada MP4 de `out/` em WebP (formato nativo:
+  9:16 só em celular, 16:9 só em notebook) para `fonte/assets/telas/<slug>/`. Rode de novo se um filme mudar.
+- **Objetos 3D:** miniaturas dos objetos aprovados de cada frente, escritas em `cena3d.js` — **sem texto no 3D**
+  (só forma e cor), então o `checar_texto3d.py` passa sem risco.
+- **Som:** só efeitos sintetizados. `frente-videocomia-v2/fonte/sfx.json` tem as deixas; `python
+  ferramentas/sfx-cues.py frente-videocomia-v2/fonte/sfx.json frente-videocomia-v2/fonte/assets/sfx.wav` monta a
+  faixa (o arquivo é gerado e fica fora do git).
+- **Render:** `node ferramentas/montar-frentes.mjs videocomia-v2` e, em cada pasta, `npx hyperframes render --crf 24
+  -o ../../out/frente-videocomia-v2-<formato>.mp4 .` (o `render-frentes.sh` não o inclui por padrão).
+- **Aprovado:** "esse vídeo ficou bom" (Renato, 23/11). Entregue em `../entregas/2026-11-filme-videocomia/`.
+
+
 ### Texto 3D sempre inteiro (regra desde 21/11)
 
 Tudo o que está **escrito** nos objetos 3D (rótulos, etiquetas, contrato, ingresso, mostrador) tem de aparecer inteiro:
@@ -136,6 +155,29 @@ python ferramentas/quadros.py tech 16x9 6.8,14,26 saida.png   # quadros soltos, 
   trecho, câmera recua no fim); Tech (fios translúcidos, alturas em arquibancada, produtos são os blocos de trás);
   Guia Acadêmico (agulha mais curta que o anel de rótulos); Consultorias (câmera recua na fileira das 7); CerraClass
   (título do ingresso cabe antes do picote).
+
+## Referência de qualidade (23/11/2026)
+
+Esta é a linha de base aprovada pelo Renato: **7 frentes em 16:9 e 9:16**, todas com **32 s, 30 fps, mudas**.
+Peça nova só é dada como boa se ficar neste nível (mesma cena 3D real, mesmo cuidado de texto, mesmo ritmo).
+
+```
+out/frente-cerraai-9x16.mp4          out/frente-cerraai-16x9.mp4
+out/frente-cerraclass-9x16.mp4       out/frente-cerraclass-16x9.mp4
+out/frente-cerrafood-9x16.mp4        out/frente-cerrafood-16x9.mp4
+out/frente-consultoria-9x16.mp4      out/frente-consultoria-16x9.mp4
+out/frente-contabilidade-9x16.mp4    out/frente-contabilidade-16x9.mp4
+out/frente-credito-9x16.mp4          out/frente-credito-16x9.mp4
+out/frente-guiacademico-9x16.mp4     out/frente-guiacademico-16x9.mp4
+```
+
+- **O que faz o nível:** Three.js de verdade (`palco3d.js`, `cena3d.js`), faixa chapada na cor da marca com o texto em
+  GSAP, texto 3D sempre inteiro (regra de 21/11) e `checar_texto3d.py` "ok" nos 16 antes do render.
+- **Não estão na lista:** Cerrado Tech (existe a `frente-tech-v2`, de 23/11, ainda sem avaliação) e Escritório
+  (`frente-escritorio`, de 22/11). Não usar como referência até o Renato aprovar.
+- **Como conferir um candidato:** `python ferramentas/checar_texto3d.py <slug> --formato 9x16`,
+  `python tools/video.py qa out/<arquivo>.mp4 --formato 9x16` (o "sem áudio" é esperado) e quadros soltos com
+  `python ferramentas/quadros.py`.
 
 ## Estrutura de um filme
 
@@ -180,3 +222,11 @@ Telemetria do HyperFrames desligada com `HYPERFRAMES_NO_TELEMETRY=1`.
 - `--variables-file` da 0.8.210 falha; o render dos cursos passa o JSON inline.
 - Não pode haver dois HTML raiz num projeto: por isso cada formato é um projeto (`16x9/`, `9x16/`).
 - Sempre conferir o MP4 final (quadros com `ffmpeg` e volume com `volumedetect`), não só a prévia.
+
+## Versão curta (15–20 s) de um filme
+
+O caminho aprovado para peça curta é **encurtar o filme**, não montar cartões. Pegue 3 planos (gancho + prova
+central + fecho), reescreva os `data-start` do `cena.html` e o tempo da ação no `cena3d.js` para ~18 s, mantendo a
+cena 3D viva e uma câmera contínua. Renderize 16:9 e 9:16 do mesmo fonte (`render-frentes.sh`), faça o QA e entregue
+em `entregas/`. Se o Wan entrar, que seja como textura ou objeto **dentro** da cena 3D. Contexto e o que não repetir:
+`.claude/skills/video-estudio/references/estrategia-filmes.md`.

@@ -1,4 +1,4 @@
-# Histórico do estúdio de marketing
+﻿# Histórico do estúdio de marketing
 
 Registro do que foi produzido, das decisões tomadas e do que ficou pendente. Para o passo a passo
 técnico (como exportar, renderizar e publicar), veja o [README](README.md).
@@ -45,6 +45,8 @@ técnico (como exportar, renderizar e publicar), veja o [README](README.md).
 | 10/11 | `9223395` | Peça da equipe da Camila Anjos (Especialista Contábil), rótulo "Nosso time", foto recortada e ampliada |
 | 08/11 | (sem commit) | Palestra ENBRA v2 em `palestras/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao-v2/`: 43 slides com WebGL (Three.js), com abertura de contexto em cada parte, GSAP e momentos de plateia; dados corrigidos listados no README da pasta. Online em https://www.cerradofinancas.com.br/marketing/entregas/2026-11-palestra-enbra-transformacao-digital-ia/apresentacao/. `palestras/` ainda não está no `exclude` do `_config.yml` |
 | 11/11 | (sem commit) | Campanha **Vídeo com IA** (CerraClass, dezembro/2026): 10 slides, 4 stories, post, reel 9:16 e landing em https://cerraclass.com.br/videocomia; data e preço só na landing (19/12, R$ 59,90), peças falam apenas de 8 horas. Fonte em `D:\Dev\CerraClass\marketing\videocomia\`; pendente o checkout InfinityPay |
+| 23/11 | (sem commit) | **Filme da frente v2 — piloto Cerrado Tech** em `entregas/2026-11-filme-tech-v2/` (32 s, 16:9 e 9:16, mudo, QA ok). Cena nova "a oficina": motor de três engrenagens + 8 objetos inventados descendo num trilho; tempos em `filmes/frente-tech-v2/fonte/timeline.json`, direção em `conteudo/2026-11-filme-tech-v2/DIRECAO.md`, revisão final em `filmes/out/revisao-v2i/`. Na segunda passada: rótulos a 0,66 com altura por objeto, câmera larga recuada no 16:9, 9:16 com fov 30→44 no gancho, piso 200 com `FogExp2`, painel com gradiente e cortina em 26,8 s. Corrigido o `</script>` do `tempo.js` no `montar-frentes.mjs`. Aprovado pelo Renato em 23/11 ("ficou interessante"), com a ressalva "os elementos ficaram meio aleatórios demais". Não corrigir; a lição entra na próxima frente. |
+| 23/11 | (sem commit) | **Filme da frente Contabilidade · v2 — PARADO.** Copy aprovado (6 frases: "Quanto sobrou este mês?" / "Nota. Folha. Guia. Extrato." / "Nada entra de um lado só." / "Os dois lados batem. O mês fecha." / "O fechamento é o começo." / "Decisão baseada em dados, não em intuição."). Conceito "O lançamento": uma moeda de ouro se parte em duas metades; cada documento do fechamento solta o seu par; as metades viram duas colunas espelhadas; o par de cima funde e um aro de latão trava; a moeda desenha o traço do resultado. Cena montada em `filmes/frente-contabilidade-v2/fonte/` — mas na paleta da Cerrado Tech: o Renato mandou parar, a identidade da frente é "Partida dobrada" (papel/tinta verde). Estado completo e pendências em `conteudo/2026-11-filme-contabilidade-v2/ESTADO.md` |
 
 ## CerraFood, a plataforma white label de gestão de restaurantes (10/11)
 
@@ -1131,5 +1133,78 @@ de duas frentes.
   (balcão verde-mata com bilhete, tigela laranja e colher, Outfit) e **Institucional** (mesa com monitor, livro,
   contrato e cadeira ligados por um fio dourado, Inter). No institucional o nome do fecho foi a 36 px para caber numa
   linha.
-- **As nove frentes estão no ar** (série "Chamada 15s"). **Pendente:** as versões 16:9 e, se o Renato pedir, uma
-  segunda rodada de copy para data comemorativa.
+- **As nove frentes estão no ar** (série "Chamada 15s"), mas **a série foi reprovada no mesmo dia** (“ficou muito
+  ruim”): clipe de 2 s em loop + cartões parados + `xfade` virou slide deck. Fica como registro; o padrão é o filme da
+  frente. Estratégia e receita da versão curta em
+  `.claude/skills/video-estudio/references/estrategia-filmes.md`; veredito no `aprendizados.md` §9.
+
+## Arquitetura de motion dos 20 repositórios (23/11)
+
+Pedido do Renato: estudar os 20 repositórios do Short da afCodeHub ("20 repositórios para motion graphics com
+Claude Code", `Hff6pHhJJwY`) e incorporar a arquitetura, sempre local e grátis. Clonamos e lemos 18 (o "Click Anime"
+da legenda não existe com esse nome); licenças conferidas uma a uma.
+
+- **Conclusão:** nenhum tem motor melhor que o nosso (todos são HTML + GSAP + ffmpeg ou Remotion). O que faltava era
+  estrutura: linha do tempo única, molas, continuidade entre batidas e revisão por quadros.
+- **Kit (versão 1.2):** `video.py revisar` (folha por batida + versão celular + `REVISAO.md` com notas 1–10),
+  `pops` (corte não declarado, quadro intruso, transição; `--loop`), `ritmo` (BPM, tempos fortes, queda),
+  `palavras` (transcrição por palavra), `som` (cue sheet na mesma linha do tempo). Código em
+  `video-estudio/scripts/revisao.py`.
+- **Filmes:** `filmes/frentes-comum/tempo.js` (linha do tempo `window.LINHA`, molas em forma fechada, troca com
+  desfoque, câmera com zoom em log, sorteio com semente, ligação ao `hf-seek`).
+- **Skills novas** (licença na pasta + bloco "Adaptação Cerrado"): `motion-design` (LottieFiles), `motion-broll`,
+  `sound-effects`, `object-separation` (Barty-Bart), `cut-silences`, `cut-mistakes` (Herk Edit Kit). Motor de som
+  sintetizado da claude-motion (MIT) em `video-audio/scripts/sfx/`. Instalados `librosa` e `soundfile` (grátis).
+- **Fora:** Remotion e suas skills (licença paga para 4+ pessoas); `onetake` (não comercial; só a ideia de
+  continuidade entrou); ElevenLabs/Cartesia/Kie.ai (pagos).
+- **Testado:** `ritmo` acertou 120,0 BPM e a queda (7,99 s contra 8,0 s) numa faixa de teste; `palavras` +
+  `cut-silences` cortaram 14,7 s → 8,4 s; `revisar` e `pops` no `cerra-ai-comercial-9x16.mp4` acharam defeitos reais
+  do filme antigo: a folha 3D sobre "RODA NO SEU" (7,3 s), cartões que somem num quadro (10,37 s) e a folha que surge e
+  encolhe de repente (12,57–12,63 s). Não corrigidos (filme de outubro).
+- Regra de trabalho: `.claude/skills/video-estudio/references/motion-arquitetura.md`; inventário em `fontes.md`.
+
+## Filme do curso "Vídeo com IA": os sete objetos 3D saindo das telas (23/11)
+
+Pedido do Renato: um roteiro no estilo dos filmes aprovados, anunciando um curso que ensina a fazer esse tipo de
+vídeo, "super interativo, com ação, ângulos de câmera, câmera rápida, câmera lenta e elementos 3D", com um celular e
+um notebook onde os filmes de referência aparecem — e, principalmente, a parte em que os **elementos 3D dos filmes
+das frentes** aparecem. Perguntou também qual modelo de imagem usar (a tabela que colou tinha Nano Banana 2.1,
+GPT Image 2.5 Sunburst, Grok Imagine 2.0 e MiniMax H3 Image).
+
+- **Nenhuma IA de imagem.** Os quatro são modelos de imagem (o próprio Nano Banana 2.1 não gera vídeo), não
+  reproduzem os nossos filmes e são APIs pagas — contra a regra "só grátis ou local" (22/11). Os elementos 3D são
+  código Three.js, miniaturas dos objetos aprovados de cada frente, e as telas são os MP4s reais. Ficou registrado
+  que, se um dia precisar de still (capa, poster), o escolhido é o **Nano Banana 2.1** (melhor texto pt-BR, edita com
+  até 14 referências, 1K a US$ 0,034) e o Grok Imagine 2.0 é o barato para rascunho (US$ 0,04).
+- **Benchmark registrado antes:** os 14 filmes das 7 frentes apontados pelo Renato como "nossos melhores" viraram a
+  seção "Referência de qualidade" em `filmes/README.md` (32 s, 30 fps, mudos, Three.js de verdade).
+- **Decisões da peça:** curso = maratona **Vídeo com IA** (`cerraclass.com.br/video-ia`, 1 dia ao vivo, replay 7
+  dias); som = mudo + efeitos locais; cada filme aparece no **formato nativo** (9:16 só em celular, 16:9 só em
+  notebook), sem recorte nem esticamento.
+
+**O filme:** `filmes/frente-videocomia-v2/`, 36 s, 6 planos de 6 s, 16:9 e 9:16 do mesmo fonte, 30 fps. Identidade
+"Mesa de edição". Plano 4: as sete telas acendem em onda e os sete objetos 3D (chip do Cerra.AI, ingresso e cadeiras
+da CerraClass, impressora e comanda do CerraFood, bússola do Guia Acadêmico, contrato e caneta do Crédito, razonete e
+escada da Contabilidade, organograma das Consultorias) **saem das telas em fila**, com a câmera passando por cada um
+enquanto as telas atrás rodam a 5 fps (câmera lenta) e o resto do quadro segue em velocidade normal.
+
+- **Telas:** `ferramentas/extrair-telas.mjs` (novo) tira 2,2 s a 10 fps de cada um dos sete MP4s de `out/` em WebP
+  (432×768 nos quatro verticais, 768×432 nos três horizontais): 155 arquivos, 2,19 MB, commitados porque `out/` é
+  ignorado e um clone limpo precisa deles.
+- **Objetos 3D:** miniaturas em `cena3d.js` **sem texto** (só forma, cor e material, seguindo as paletas de
+  `brand/<frente>/README.md`); por isso o `checar_texto3d.py` passa sem risco nos dois formatos.
+- **Extração da câmera e do enquadramento:** o bloco de texto come 36% da largura no 16:9 e 46% da altura no 9:16;
+  a parede de aparelhos foi comprimida em X (0,62 / 0,46) e a câmera do 9:16 anda a 0,8× para os elementos caberem
+  sem corte. Quatro rodadas de stills até acertar (mesma lição da regra "enquadramento calculado").
+- **Som:** só efeitos sintetizados (`kit.py sfx`), 27 deixas em `fonte/sfx.json`, montadas por
+  `ferramentas/sfx-cues.py` (novo; o wav gerado fica fora do git, como a trilha das frentes). Normalizado a −14 LUFS
+  no arquivo entregue.
+- **Ferramenta corrigida:** `checar_texto3d.py` tinha a duração fixa em 32 s; passou a ler `data-duration` do
+  `index.html` (o filme tem 36 s).
+- **Checagem:** `hyperframes check` 0 erros nos dois formatos; `video.py qa` ok nos dois arquivos entregues
+  (8,79 MB o 16:9, 7,91 MB o 9:16).
+- **Entrega:** `entregas/2026-11-filme-videocomia/` (`video-16x9.mp4`, `video-vertical.mp4`, `capa-16x9.png`,
+  `capa-9x16.png`, `info.json`, legendas de Instagram, LinkedIn e Facebook), publicada na Central como série "Filme
+  da frente", frente CerraClass (`REGRAS` do `publicar.py` ganhou `filme-videocomia`). Direção e roteiro em
+  `conteudo/2026-11-filme-videocomia/`.
+- **Aprovação:** "esse vídeo ficou bom" (Renato, 23/11).

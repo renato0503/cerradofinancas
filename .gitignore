@@ -1,4 +1,4 @@
-# IDE / Editor
+﻿# IDE / Editor
 .vscode/
 .idea/
 .opencode/
@@ -46,4 +46,8 @@ marketing/filmes/*/16x9/
 marketing/filmes/*/9x16/
 marketing/filmes/**/.hyperframes/
 marketing/filmes/*/fonte/assets/trilha.wav
+marketing/filmes/*/fonte/assets/sfx.wav
 marketing/filmes/carrosseis/
+
+# Estado do editor HyperFrames quando o comando roda na raiz
+.hyperframes/

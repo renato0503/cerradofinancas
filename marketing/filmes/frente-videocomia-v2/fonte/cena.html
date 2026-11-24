@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="pt-BR" class="{{CLASSE}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{W}}, height={{H}}" />
+    <title>Vídeo com IA · a prova na tela (36 s)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "./assets/three.module.min.js" } }</script>
+    <link rel="stylesheet" href="filme.css" />
+    <style>
+      html, body, #root { width: {{W}}px; height: {{H}}px; }
+    </style>
+    <script>
+      // "Mesa de edição": entrada rápida e assentada (expo), cortes secos, sem quique.
+      window.ESTILO = { ease: "expo.out", dur: 0.55, stagger: 0.045, desloc: 30, saida: 0.3, saidaEase: "power4.in" };
+      window.EXTRAS = (tl) => {
+        const V = document.documentElement.classList.contains("vertical");
+        tl.fromTo("#faixa", { clipPath: V ? "inset(100% 0% 0% 0%)" : "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power4.inOut" }, 0.1);
+        // a cortina lima é o playhead tomando a tela
+        tl.fromTo("#cortina", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "power4.inOut" }, window.LINHA.fecho.cortina);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="36" data-width="{{W}}" data-height="{{H}}" data-fps="30" data-motion-blur="on">
+      <canvas id="tela" class="clip" data-start="0" data-duration="36" data-track-index="0" data-layout-allow-overflow style="z-index: 1"></canvas>
+      <div id="faixa-clip" class="clip" data-start="0" data-duration="30.2" data-track-index="3" style="z-index: 2"><div id="faixa"></div></div>
+
+      <!-- 0-6: a prova — o par de aparelhos com os nossos filmes rodando -->
+      <div id="p1" class="plano clip" data-start="0" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="letras" data-t="0.15">Vídeo com IA · CerraClass</p>
+          <h1 class="mega" data-entra="palavras" data-t="0.5">Estes vídeos não têm <em>estúdio.</em></h1>
+          <p class="sub" data-entra="subir" data-t="2.3">Feitos em um dia.</p>
+        </div>
+      </div>
+
+      <!-- 6-12: o mito — câmera, tripé e claquete caem e somem -->
+      <div id="p2" class="plano clip" data-start="6" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="letras" data-t="0.15">O que você imagina</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.35">Câmera. Equipe. Três anos.</h2>
+          <p class="nada" data-entra="pop" data-t="3.3" data-rot="0">Nada disso.</p>
+        </div>
+      </div>
+
+      <!-- 12-18: a virada — os cinco chips entram na tela do notebook -->
+      <div id="p3" class="plano clip" data-start="12" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="letras" data-t="0.15">O processo</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">A IA é a equipe.</h2>
+          <ul class="chips" data-entra="lista" data-t="0.9" data-stagger="0.5">
+            <li><i class="pt"></i>Ideia</li>
+            <li><i class="pt"></i>Roteiro</li>
+            <li><i class="pt"></i>Imagem</li>
+            <li><i class="pt"></i>Montagem</li>
+            <li><i class="pt"></i>Publicação</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 18-24: a prova — sete filmes e os sete objetos 3D saindo das telas -->
+      <div id="p4" class="plano clip" data-start="18" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="letras" data-t="0.15">A prova</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Sete filmes. Um processo.</h2>
+          <p class="sub" data-entra="subir" data-t="1.2">E o 3D é código.</p>
+          <p class="nota" data-entra="subir" data-t="2.4">9:16 · 16:9 · 30 FPS</p>
+        </div>
+      </div>
+
+      <!-- 24-30: o curso -->
+      <div id="p5" class="plano clip" data-start="24" data-duration="6" data-track-index="1" style="z-index: 3">
+        <div class="conteudo esq">
+          <p class="etiqueta" data-entra="letras" data-t="0.15">A maratona</p>
+          <h2 class="titulo" data-entra="palavras" data-t="0.3">Um dia. Ao vivo.</h2>
+          <p class="sub" data-entra="subir" data-t="0.9">Você sai com o seu.</p>
+          <ul class="entregas" data-entra="lista" data-t="1.5" data-stagger="0.55">
+            <li>Reel de 15 segundos</li>
+            <li>Apresentador virtual</li>
+            <li>Cena realista</li>
+          </ul>
+          <p class="nota" data-entra="subir" data-t="3.4">Replay 7 dias</p>
+        </div>
+      </div>
+
+      <!-- 30-36: cortina lima e a chamada -->
+      <div id="p6" class="plano clip" data-start="30" data-duration="6" data-track-index="2" style="z-index: 5" data-fica>
+        <div id="cortina"></div>
+        <div class="conteudo centro fecho">
+          <div class="selo" data-entra="pop" data-t="0.6"><img src="assets/logo.png" alt="CerraClass" /></div>
+          <h2 class="chamada" data-entra="palavras" data-t="0.8">Vídeo <span class="nw" data-inteiro>com</span> <span class="a" data-inteiro>IA.</span></h2>
+          <p class="tag" data-entra="subir" data-t="1.8">1 dia · ao vivo · replay 7 dias</p>
+          <p class="botao" data-entra="pop" data-t="2.2" data-rot="-3" data-rot-fim="0">cerraclass.com.br/video-ia</p>
+          <p class="contato" data-entra="subir" data-t="2.6">WhatsApp (67) 99351-5206</p>
+        </div>
+      </div>
+
+      <audio id="sfx" class="clip" data-start="0" data-duration="36" data-track-index="9" data-volume="1" src="assets/sfx.wav"></audio>
+    </div>
+
+    <script src="tempo.js"></script>
+    <script src="planos.js"></script>
+    <script type="module" src="assets/cena3d.js"></script>
+  </body>
+</html>

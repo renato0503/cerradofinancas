@@ -210,6 +210,23 @@ python tools/video.py demo                         # clipe 9:16 de teste, com QA
 O mapa "pedido → comando → skill" está em `video-estudio/references/atalhos.md`; o catálogo legível por máquina
 em `video-estudio/manifest.json`. Há também os comandos `/video` e `/video-qa` em `.claude/commands/`.
 
+### Arquitetura de motion (versão 1.2 · 23/11/2026)
+
+Estudo dos 20 repositórios do Short "20 repositórios para motion graphics com Claude Code" (afCodeHub). Nenhum
+tem motor melhor que o nosso; o que trouxemos foi **estrutura**, tudo local e grátis:
+
+- **Linha do tempo única** (`timeline.json`): o filme (`filmes/frentes-comum/tempo.js`), o som (`video.py som`) e
+  a revisão (`video.py revisar --linha`) leem o mesmo arquivo. Retimar = editar o JSON.
+- **Molas e câmera** em `tempo.js` (forma fechada, amortecimento ≥ 0,72, zoom em log, sorteio com semente).
+- **Continuidade**: em toda fronteira entre batidas algo atravessa (resposta à reprovação das Chamadas 15s).
+- **Loop de revisão**: `video.py revisar` (folha por batida + versão celular + `REVISAO.md` com notas) e
+  `video.py pops` (corte não declarado, quadro intruso, costura de loop). Notas até tudo ≥ 8.
+- **Ritmo e som**: `video.py ritmo` (BPM, queda) e `video.py som` (motor sintetizado da claude-motion, MIT).
+- **Gravação com rosto**: `video.py palavras` → `cut-silences` → `cut-mistakes` → `motion-broll`.
+
+Regras em `video-estudio/references/motion-arquitetura.md`; inventário com licença e veredito por repositório em
+`video-estudio/references/fontes.md` (seção "Motion graphics").
+
 ### Skills
 
 | Skill | Para que serve | Onde usamos |
@@ -225,6 +242,11 @@ em `video-estudio/manifest.json`. Há também os comandos `/video` e `/video-qa`
 | `text-to-lottie` | Cria/corrige Lottie JSON | Folinha animada |
 | `animation-vocabulary` | Glossário de motion (nome certo de cada efeito) | Base do dicionário de motion (pop in, wipe, punch zoom...) |
 | `animate`, `improve-animations`, `review-animations`, `find-animation-opportunities`, `animation-performance`, `emil-design-eng` | Critério de motion (Emil Kowalski): se anima, como, revisão, desempenho | Auditoria e acabamento das animações e palestras |
+| `motion-design` | Princípios de motion (LottieFiles): emoção → timing, regra de 1/3, camadas | Antes de animar (23/11) |
+| `motion-broll` | Gravação com rosto + transcrição → B-roll "uma forma que nunca corta" | Palestras e falas do Renato (23/11) |
+| `sound-effects` | Passada de som com biblioteca CC0 + Mixkit grátis, licença conferida | Só peça com som (23/11) |
+| `object-separation` | Recorta pessoa/objeto do vídeo com SAM 2.1 local (GPU) | Sob demanda (23/11) |
+| `cut-silences`, `cut-mistakes` | Tira pausas e tropeços de gravação, com portão humano | Gravações com rosto (23/11) |
 | `wiggle` | Logo parado → GIF/MP4/Lottie | Instalada, **não usada** (Lottie cobriu) |
 | `lemo-opuscar` | 59 estilos de curta em código | Instalada, **não usada** (pesada; parte dos assets CC BY 4.0) |
 | `apple-design`, `design-taste-frontend`, `prototype`, `pick-ui-library`, `break-ui`, `mobile-native`, `ask-sonner` | Design de interface | Não entram em vídeo/apresentação (são do site) |
@@ -245,6 +267,10 @@ repositório deduzido do zip original (`D:\Dev\*-main.zip`, já removidos); conf
 | `github.com/talknerdytome-labs/wiggle-claude-skill` | talknerdytome-labs | wiggle | Apache 2.0 | Na skill |
 | `github.com/lemomo-ai/lemo-opuscar` | LemoLab | lemo-opuscar | MIT | Na skill |
 | `github.com/Leonxlnx/taste-skill` | Leonxlnx | design-taste-frontend | MIT | Na skill |
+| `github.com/LottieFiles/motion-design-skill` | LottieFiles | motion-design | MIT | Clonado em 23/11 |
+| `github.com/Barty-Bart/motion-graphics` | Bart | motion-broll, sound-effects, object-separation | MIT (sons CC0) | Clonado em 23/11 |
+| `github.com/nateherkai/hyperframes-student-kit` | Nate Herk | cut-silences, cut-mistakes | MIT + permissão de uso comercial | Clonado em 23/11 |
+| `github.com/whaleyxbt/claude-motion` | whaleyxbt | motor de som em `video-audio/scripts/sfx/` | MIT | Clonado em 23/11 |
 
 ### Ferramentas (bibliotecas que o nosso código usa)
 
@@ -289,6 +315,9 @@ repositório deduzido do zip original (`D:\Dev\*-main.zip`, já removidos); conf
 - **2026-11 · Peças da equipe** (fora da agenda, série "Equipe"): Talita Marques, Felipe Borges, Renato Rosa e Camila
   Anjos, post e story com foto em arco, no estilo comum `brand/anuncio-equipe.css`. Para uma pessoa nova, ver
   "Peças da equipe" no `HISTORICO.md`.
+- **2026-11 · Filme "Vídeo com IA"** (`entregas/2026-11-filme-videocomia/`): 36 s, 16:9 e 9:16, com efeitos locais.
+  Celular e notebook rodam as telas reais dos sete filmes aprovados das frentes e os sete objetos 3D saem das telas
+  em fila. Fonte em `filmes/frente-videocomia-v2/`, roteiro em `conteudo/2026-11-filme-videocomia/`.
 
 ## Formatos para impressão e site (aba "Formatos" da Central)
 
@@ -326,6 +355,12 @@ python tools/gerar_formatos.py --render cerraai credito # só algumas
 - **Cores:** os PDFs saem em RGB; a gráfica converte para CMYK. Pedir prova de cor antes de rodar a tiragem.
 
 ## Chamadas 15s por frente (`entregas/2026-11-chamada-<frente>/`)
+
+> **Reprovadas em 23/11/2026.** A montagem (clipe Wan de 2 s em loop + cartões parados + `xfade`) ficou com cara de
+> slide deck. A referência é o filme da frente (`filmes/frente-*`); a lista dos 14 vídeos aprovados como padrão
+> está em `filmes/README.md` → "Referência de qualidade (23/11/2026)". Estratégia e como fazer a versão curta:
+> `.claude/skills/video-estudio/references/estrategia-filmes.md`. O texto de cada frente no `DADOS` do
+> `tools/gerar_chamadas.py` continua útil.
 
 Reels de **9:16, 15 s e mudos**, um por frente, para Instagram, Stories e TikTok. Cada peça tem um **elemento 3D
 novo**, gerado na GPU (Wan 2.2 TI2V-5B no ComfyUI local, em `D:\Dev\ComfyUI`), e o copy em cartões HTML/PNG — a IA

@@ -1,0 +1,33 @@
+{
+  "base": "../../out/sfx",
+  "duration": 36,
+  "cues": [
+    { "t": 0.30, "tipo": "impacto", "g": 0.85 },
+    { "t": 1.05, "tipo": "whoosh", "g": 0.7 },
+    { "t": 2.20, "tipo": "click", "g": 0.5 },
+    { "t": 4.20, "tipo": "click", "g": 0.5 },
+    { "t": 6.00, "tipo": "whoosh", "g": 0.45 },
+    { "t": 8.30, "tipo": "impacto", "g": 0.55 },
+    { "t": 9.40, "tipo": "impacto", "g": 0.8 },
+    { "t": 12.60, "tipo": "click", "g": 0.45 },
+    { "t": 13.10, "tipo": "click", "g": 0.45 },
+    { "t": 13.60, "tipo": "click", "g": 0.45 },
+    { "t": 14.10, "tipo": "click", "g": 0.45 },
+    { "t": 14.60, "tipo": "click", "g": 0.45 },
+    { "t": 15.60, "tipo": "click", "g": 0.4 },
+    { "t": 15.90, "tipo": "click", "g": 0.35 },
+    { "t": 16.18, "tipo": "click", "g": 0.35 },
+    { "t": 18.60, "tipo": "riser", "g": 0.5 },
+    { "t": 20.30, "tipo": "pop", "g": 0.35 },
+    { "t": 20.72, "tipo": "pop", "g": 0.35 },
+    { "t": 21.14, "tipo": "pop", "g": 0.35 },
+    { "t": 21.56, "tipo": "pop", "g": 0.35 },
+    { "t": 21.98, "tipo": "pop", "g": 0.35 },
+    { "t": 22.40, "tipo": "pop", "g": 0.35 },
+    { "t": 22.82, "tipo": "pop", "g": 0.35 },
+    { "t": 23.40, "tipo": "whoosh", "g": 0.5 },
+    { "t": 25.00, "tipo": "impacto", "g": 0.8 },
+    { "t": 27.80, "tipo": "whoosh", "g": 0.6 },
+    { "t": 30.00, "tipo": "impacto", "g": 0.6 }
+  ]
+}

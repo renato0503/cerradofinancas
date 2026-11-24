@@ -1,6 +1,6 @@
-# Próximos passos: Cerrado Finanças & Tech
+﻿# Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 22/11/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 23/11/2026.
 
 **Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
 ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
@@ -14,6 +14,15 @@ ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
 | [`marketing/HISTORICO.md`](marketing/HISTORICO.md) | O que foi produzido em marketing, decisões de conteúdo e pendências |
 
 Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml`).
+
+## Sessão de 23/11/2026 (arquitetura de motion)
+
+**Pronto, sem commit:** estudo dos 20 repositórios de motion graphics incorporado ao estúdio (kit 1.2: `revisar`,
+`pops`, `ritmo`, `palavras`, `som`; `filmes/frentes-comum/tempo.js`; 6 skills novas com licença). Regra em
+`marketing/.claude/skills/video-estudio/references/motion-arquitetura.md`; detalhes em `marketing/HISTORICO.md`.
+
+**Próximo:** usar a arquitetura no próximo filme da frente (batidas em `timeline.json` primeiro, `tempo.js`, revisão
+por batida até notas ≥ 8). Opcional: corrigir os 3 defeitos que o `pops` achou no `cerra-ai-comercial`.
 
 ## Sessão de 21 e 22/11/2026 (institucional, cartões da Contabilidade, conhecimento de vídeo)
 
@@ -489,23 +498,93 @@ Feito, sem apagar nada: `posts/` → `conteudo/`, `videos/` → `filmes/remotion
   `python tools/publicar.py` quando fecharem.
 - Versionado: 13 skills `video-*`, `.claude/skills/README.md` e `.claude/commands/video{,-qa}.md`. Docs de vídeo (`filmes/README.md`, `video-estudio/SKILL.md`, `skills/README.md`) com o mapa novo.
 
-## Chamadas 15s — onde parei (23/11/26)
+## Chamadas 15s — reprovadas; retomar pelos filmes (23/11/26)
 
-Feitas e no ar, na série **“Chamada 15s”** da Central: **as nove frentes** (Tech, Contabilidade, Crédito,
-Consultorias, CerraClass, Cerra.AI, Guia Acadêmico, CerraFood e Institucional). **Falta:** a versão 16:9 de cada uma
-(mesmo `DADOS` e mesmo clipe; é só acrescentar o formato no gerador).
+A série “Chamada 15s” (nove frentes, no ar) foi **reprovada**: clipe Wan de 2 s em loop + cartões parados + `xfade`
+virou slide deck. Os arquivos ficam como registro em `entregas/2026-11-chamada-*`; não refazer nesse molde.
 
-Para continuar:
-1. Escrever o prompt do elemento novo em `D:\Dev\ComfyUI\prompts\<slug>.json` (uma ação, uma câmera, terço
-   superior limpo, sem texto).
-2. Com o ComfyUI rodando (porta 8188, `--lowvram`), rodar
-   `python D:\Dev\ComfyUI\wan_t2v.py <slug> D:\Dev\ComfyUI\prompts\<slug>.json` — ~2–3 min por clipe.
-3. Copiar o MP4 para `marketing/conteudo/2026-11-chamadas/<slug>/elemento.mp4`.
-4. Acrescentar a frente no dicionário `DADOS` de `marketing/tools/gerar_chamadas.py` (paleta, fontes, copy,
-   transição, scrims, aviso legal e rótulo do botão).
-5. `python tools/gerar_chamadas.py <slug>` e `python tools/publicar.py 2026-11-chamada-<slug>`.
-6. Conferir no navegador e rodar `python tools/video.py qa ... --formato 9x16` (mudo é esperado).
+**A base certa é o filme da frente** (`filmes/frente-*`, 32 s, 16:9 + 9:16 do mesmo `cena.html`). Para a versão
+curta (15–20 s):
+1. Escolher 3 planos do filme (gancho + prova central + fecho).
+2. Encurtar `cena.html` e `cena3d.js` para ~18 s, reescrevendo os `data-start` e o tempo da ação 3D (cena viva, sem
+   congelar entre planos).
+3. Uma câmera contínua; troca de plano na gramática da marca; ≤ 3 cartões de ≤ 6 palavras; CTA como plano.
+4. Se usar Wan, que seja textura/objeto **dentro** da cena 3D — nunca vídeo de fundo chapado.
+5. `node ferramentas/montar-frentes.mjs <slug>`, `bash ferramentas/render-frentes.sh <slug>`, QA e entrega em
+   `entregas/2026-11-<nome>/`; publicar com `tools/publicar.py <pasta>`.
+6. Ler antes: `.claude/skills/video-estudio/references/estrategia-filmes.md` e `aprendizados.md` §9.
 
-Aprendizados da rodada: logo em `data:` base64 (o Chromium bloqueia `file://` entre pastas); margem da pauta fora do
-texto (`left:84px`); aviso legal a 26 px; nome longo no fecho com `marca_fs` menor; scrim claro nas marcas de papel
-e escuro nas de fundo escuro; `_trab/` guarda os intermediários e não vai para o git.
+**Piloto aprovado (23/11), com ressalva:** `entregas/2026-11-filme-tech-v2/` — Cerrado Tech v2, 32 s, 16:9 e 9:16,
+mudo. Cena nova ("a oficina": motor de três engrenagens + 8 objetos inventados no trilho), tempos em
+`filmes/frente-tech-v2/fonte/timeline.json`, direção em `conteudo/2026-11-filme-tech-v2/DIRECAO.md`, revisão por
+batida em `filmes/out/revisao-v2i/`. QA dos dois formatos: ok (`--sem-audio`). Na segunda passada, rótulos reduzidos e afastados (altura por objeto), câmera larga recuada no 16:9, 9:16 com fov 30→44 no gancho e produtos menos espalhados, piso com `FogExp2` (sem linha de horizonte), painel do 9:16 com gradiente de 320 px e cortina em 26,8 s (o `pops` de 26,8 s sumiu; o de 4,93 s é a máscara do gancho, declarada). Se aprovar, repetir o molde para as
+outras frentes, duas por vez, nesta ordem: Contabilidade, Crédito, Consultorias, CerraClass, Cerra.AI, CerraFood,
+Guia Acadêmico, Institucional.
+**Aviso de manutenção:** `tempo.js` contém a string `</script>` no comentário de cabeçalho; o
+`montar-frentes.mjs` agora escapa isso ao embutir (`</script` → `<\/script`). Se mexer no `tempo.js`, mantenha o escape.
+
+## Contabilidade v2 — stopped by the Renato for breaking the brand (23/11/26)
+
+The **copy is approved** (6 lines): "Quanto sobrou este mês?" / "Nota. Folha. Guia. Extrato." / "Nada entra de um
+lado só." / "Os dois lados batem." + "O mês fecha." / "O fechamento é o começo." / "Decisão baseada em dados, não em
+intuição." (site line) + CTA.
+
+The **concept is approved too**: "O lançamento" — a gold coin falls, bounces and splits into two halves; each of the
+four closing documents (nota, folha, guia, extrato) releases its own pair; the halves stack into two mirrored
+columns tied by a thread per entry; the top pair meets in the centre and fuses, a brass ring locks, and the coin
+falls drawing the result line. Each element is a real input of the monthly close — that was the fix after the Tech
+pilot ("elementos aleatórios demais").
+
+**Why it stopped:** the scene was built in the Cerrado Tech palette (azul-tinta #07162b, ouro, latão). The
+Contabilidade identity is **"Partida dobrada"**: paper #f1f6f0 with pauta #cfe0d4, tinta verde #0c3b2e,
+verde-claro #d8efdf, red #d23a2c only on the margin and the pain; IBM Plex Cond + Plex Mono (fonts are already
+right). Rule now in prendizados.md §15: read rand/<frente>/README.md + kits/<frente>/LEIA-ME.txt +
+rand/tokens.css **before** modelling.
+
+**Full handoff:** marketing/conteudo/2026-11-filme-contabilidade-v2/ESTADO.md (approved copy table, what is on
+disk, commands, open technical issues: left column hidden behind the 42% text panel, documents with no anchor —
+idea: a brass paper spike — vertical never rendered, review/QA/delivery pending).
+
+**Next session, in order:** (1) re-plan the scene in "Partida dobrada"; (2) fix the 16:9 composition (shift the 3D
+group +0.45 and shorten the result line); (3) render 9:16 with its own camera plan; (4) review per beat, QA, deliver
+in entregas/2026-11-filme-contabilidade-v2/ with DIRECAO.md; (5) then the next frentes (Crédito, Consultorias,
+CerraClass, Cerra.AI, CerraFood, Guia Acadêmico, Institucional) — two at a time, each starting from the brand file.
+## Filme do curso "Vídeo com IA" (23/11/26) — feito e aprovado
+
+O Renato aprovou ("esse vídeo ficou bom"). O que existe agora, e por onde continuar.
+
+**Feito nesta sessão**
+
+- **Benchmark dos vídeos:** os 14 melhores filmes (7 frentes × 16:9 e 9:16) viraram a seção "Referência de qualidade
+  (23/11/2026)" em `marketing/filmes/README.md`, com o que define o nível e como conferir um candidato. A Cerrado Tech
+  (`frente-tech-v2`) e o Escritório (`frente-escritorio`) ficaram **fora** da lista até aval.
+- **Filme novo:** `marketing/filmes/frente-videocomia-v2/` — 36 s, 6 planos, 16:9 e 9:16 do mesmo fonte, mudo com
+  efeitos locais. Anuncia a maratona Vídeo com IA, mostra as sete telas com os filmes reais (formato nativo) e, no
+  plano 4, os sete objetos 3D das frentes saindo das telas em fila. Roteiro e direção em
+  `marketing/conteudo/2026-11-filme-videocomia/` (`DIRECAO.md`, `ROTEIRO.md`).
+- **Ferramentas:** `filmes/ferramentas/extrair-telas.mjs` (telas dos filmes → WebP, commitadas em
+  `fonte/assets/telas/`), `filmes/ferramentas/sfx-cues.py` + `fonte/sfx.json` (faixa de efeitos; o wav é gerado e
+  ignorado pelo git). `checar_texto3d.py` passou a ler a duração do filme (não mais 32 s fixo).
+- **Entrega:** `marketing/entregas/2026-11-filme-videocomia/`, publicada na Central (`publicar.py`, frente
+  CerraClass, série "Filme da frente"). QA ok nos dois arquivos.
+- **Registros:** `marketing/HISTORICO.md` (seção "Filme do curso Vídeo com IA"), `marketing/filmes/README.md`,
+  `marketing/README.md` (Peças prontas) e `context.md`.
+
+**Por que nenhuma IA de imagem**
+
+Os quatro modelos da tabela são de imagem; não reproduzem os nossos filmes e são APIs pagas (regra "só grátis ou
+local"). As telas saem dos MP4s reais e os objetos 3D são código Three.js. Se um dia precisar de still (capa,
+poster), a escolha registrada é Nano Banana 2.1 (1K ≈ US$ 0,034; melhor texto pt-BR e edição com referências) e, para
+rascunho barato, Grok Imagine 2.0 (US$ 0,04).
+
+**Pendências e próximos passos**
+
+1. **Comitar** a entrega e o filme (nada foi comitado; ver `git status`).
+2. **Agenda:** o filme está na Central, mas não na agenda de publicações (`tools/agendar.py`) — decidir data e conta.
+3. **Versão curta (15–20 s):** o caminho aprovado é encurtar o filme, mantendo 3 planos (gancho, a fila dos objetos,
+   fecho) — ver `video-estudio/references/estrategia-filmes.md`.
+4. **Reaproveitar o padrão:** a "fila de objetos 3D" do plano 4 (câmera passando um a um) serve para as outras
+   frentes; o `extrair-telas.mjs` + `sfx-cues.py` servem para qualquer peça que mostre tela de produto.
+5. **Avaliar Tech v2 e Escritório** para entrarem (ou não) na lista de referência de qualidade.
+6. Se o filme for para o site, avaliar uma versão sem o aviso de curso na tela (a mesma cena serve de prova de
+   portfólio em `/portfolio/`).

@@ -67,6 +67,7 @@ REGRAS = [
     ("cerra-ai", "cerraai", "Lançamento"),
     ("lancamento-4-frentes", "institucional", "Lançamento"),
     ("folinha-animada", "institucional", "Marca animada"),
+    ("filme-videocomia", "cerraclass", "Filme da frente"),
 ]
 
 

@@ -5182,6 +5182,64 @@
     }
   },
   {
+    "pasta": "2026-11-filme-videocomia",
+    "frente": "cerraclass",
+    "serie": "Filme da frente",
+    "capa": "capa-16x9.png",
+    "titulo": "Estes vídeos não têm estúdio",
+    "data": "2026-11-23",
+    "descricao": "Filme da maratona Vídeo com IA: o celular e o notebook rodando os sete filmes das frentes e os sete objetos 3D saindo das telas. 36 s, 16:9 e 9:16, com efeitos locais.",
+    "orientacoes": [
+      "Som: só efeitos sonoros sintetizados no estúdio (sem trilha e sem locução). 16:9 para site e YouTube; 9:16 para Reels, Stories e TikTok.",
+      "As telas mostram trechos reais dos sete filmes aprovados das frentes (23/11), cada um no seu formato nativo.",
+      "CTA: cerraclass.com.br/video-ia e WhatsApp (67) 99351-5206. Sem preço e sem data na peça.",
+      "Fonte e roteiro em marketing/conteudo/2026-11-filme-videocomia/."
+    ],
+    "arquivos": [
+      {
+        "nome": "capa-16x9.png",
+        "tipo": "imagem",
+        "kb": 526
+      },
+      {
+        "nome": "capa-9x16.png",
+        "tipo": "imagem",
+        "kb": 427
+      },
+      {
+        "nome": "video-16x9.mp4",
+        "tipo": "video",
+        "kb": 9002
+      },
+      {
+        "nome": "video-vertical.mp4",
+        "tipo": "video",
+        "kb": 8101
+      }
+    ],
+    "legendas": [
+      {
+        "rede": "Facebook",
+        "arquivo": "legenda-facebook.txt",
+        "texto": "Seu próximo vídeo não precisa de estúdio. Em um dia você aprende a criar vídeos realistas e corporativos com IA: roteiro, apresentador virtual, cenas e corte final.\n\nNeste filme, o celular e o notebook rodam sete filmes nossos — e os objetos 3D saem das telas. É o processo que a maratona Vídeo com IA ensina, ao vivo, com replay por 7 dias, sem precisar saber programar.\n\nVagas pelo WhatsApp: https://api.whatsapp.com/send?phone=5567993515206\n\nMais em https://cerraclass.com.br/video-ia\n"
+      },
+      {
+        "rede": "Instagram",
+        "arquivo": "legenda-instagram.txt",
+        "texto": "Estes vídeos não têm estúdio.\n\nSete filmes, um processo: celular e notebook na mesa rodando o que a gente produz, e o 3D saindo das telas — porque o 3D aqui também é código.\n\nÉ isso que a maratona Vídeo com IA ensina em um dia, ao vivo: roteiro, apresentador virtual, cena realista e corte. Sem estúdio, sem equipe e sem programar.\n\nAo vivo, com replay por 7 dias. Vagas e datas no link da bio ou no WhatsApp (67) 99351-5206.\n\n#VídeoComIA #InteligênciaArtificial #MarketingDigital #CriaçãoDeConteúdo #CerraClass #Cuiabá\n"
+      },
+      {
+        "rede": "LinkedIn",
+        "arquivo": "legenda-linkedin.txt",
+        "texto": "Produzir vídeo ainda parece caro, lento ou amador na maioria das empresas. A IA mudou isso — mas quase ninguém ensina o processo completo.\n\nNeste filme, as telas do celular e do notebook rodam sete filmes que a gente fez, e os objetos 3D saem de dentro delas. O 3D também é código: é isso que a maratona Vídeo com IA ensina em um dia.\n\nNo dia, ao vivo: roteiro e gancho com assistentes de IA; apresentador virtual, voz e legendas; vídeo por código, inclusive em lote; realismo a partir do seu celular; e corte final com direitos de imagem e LGPD.\n\nCada módulo tem o caminho \"só clicar\", o \"modelo pronto\" e o \"com código\". Serve para quem nunca editou e para times de marketing que precisam escalar. Ao vivo, com replay por 7 dias.\n\nInformações: https://cerraclass.com.br/video-ia ou WhatsApp (67) 99351-5206.\n\n#VídeoComIA #IA #MarketingDigital #ComunicaçãoCorporativa #CerraClass\n"
+      }
+    ],
+    "pacote": {
+      "nome": "2026-11-filme-videocomia.zip",
+      "kb": 942
+    }
+  },
+  {
     "pasta": "2026-11-guiacademico-cronograma",
     "frente": "guiacademico",
     "serie": "Cadernos de método",
