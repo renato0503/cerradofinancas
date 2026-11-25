@@ -18,6 +18,11 @@
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
       "kb": 201
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
+      "kb": 201
      }
     ]
    }
@@ -53,7 +58,7 @@
   ],
   "zip": {
    "nome": "institucional.zip",
-   "kb": 4637
+   "kb": 4795
   }
  },
  {
@@ -74,6 +79,11 @@
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
+      "kb": 416
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
       "kb": 416
      }
     ]
@@ -110,7 +120,7 @@
   ],
   "zip": {
    "nome": "tech.zip",
-   "kb": 5187
+   "kb": 5572
   }
  },
  {
@@ -131,6 +141,11 @@
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
+      "kb": 605
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
       "kb": 605
      }
     ]
@@ -167,7 +182,7 @@
   ],
   "zip": {
    "nome": "cerraai.zip",
-   "kb": 6050
+   "kb": 6633
   }
  },
  {
@@ -188,6 +203,11 @@
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
+      "kb": 409
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
       "kb": 409
      }
     ]
@@ -224,7 +244,7 @@
   ],
   "zip": {
    "nome": "cerraclass.zip",
-   "kb": 4518
+   "kb": 4853
   }
  },
  {
@@ -245,6 +265,11 @@
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
+      "kb": 226
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
       "kb": 226
      }
     ]
@@ -281,7 +306,7 @@
   ],
   "zip": {
    "nome": "credito.zip",
-   "kb": 3073
+   "kb": 3258
   }
  },
  {
@@ -303,6 +328,11 @@
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
       "kb": 140
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
+      "kb": 140
      }
     ]
    },
@@ -320,6 +350,11 @@
       "nome": "cartao-v2-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
       "kb": 151
+     },
+     {
+      "nome": "cartao-v2-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
+      "kb": 151
      }
     ]
    },
@@ -336,6 +371,11 @@
      {
       "nome": "cartao-v3-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
+      "kb": 145
+     },
+     {
+      "nome": "cartao-v3-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
       "kb": 145
      }
     ]
@@ -372,7 +412,7 @@
   ],
   "zip": {
    "nome": "contabilidade.zip",
-   "kb": 2181
+   "kb": 2603
   }
  },
  {
@@ -394,6 +434,11 @@
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
       "kb": 145
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
+      "kb": 144
      }
     ]
    }
@@ -429,7 +474,7 @@
   ],
   "zip": {
    "nome": "consultorias.zip",
-   "kb": 2233
+   "kb": 2370
   }
  },
  {
@@ -450,6 +495,11 @@
      {
       "nome": "cartao-v1-88x48mm.pdf",
       "rotulo": "8,8 x 4,8 cm",
+      "kb": 292
+     },
+     {
+      "nome": "cartao-v1-86x48mm.pdf",
+      "rotulo": "8,6 x 4,8 cm",
       "kb": 292
      }
     ]
@@ -486,7 +536,7 @@
   ],
   "zip": {
    "nome": "guiacademico.zip",
-   "kb": 5963
+   "kb": 6250
   }
  },
  {

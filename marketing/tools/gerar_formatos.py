@@ -2,8 +2,9 @@
 
 Por frente:
 - as versões de cartão de visita de cada frente (uma na maioria; a Contabilidade tem 3 e o CerraFood 5),
-  frente e verso, em PDF vetorial para a gráfica, nos dois tamanhos pedidos:
-  9 x 5 cm e 8,8 x 4,8 cm, cada um com 3 mm de sangria por lado (96 x 56 mm e 94 x 54 mm). PNG de prévia (300 dpi).
+  frente e verso, em PDF vetorial para a gráfica, nos tamanhos pedidos:
+  9 x 5 cm, 8,8 x 4,8 cm e 8,6 x 4,8 cm (este pedido em 25/11/2026), cada um com 3 mm de sangria por lado
+  (96 x 56, 94 x 54 e 92 x 54 mm). PNG de prévia (300 dpi).
 - Anúncio de jornal 25,5 x 36 cm (PDF + PNG de prévia).
 - Banners de site 1200 x 90 e 300 x 250 (PNG em 1x e 2x).
 
@@ -42,7 +43,7 @@ CIDADE = "Cuiabá · MT"
 AVISO_CREDITO = ("Cerrado Finanças, em parceria com a LS Intermediação Financeira, atua como correspondente bancário e "
                  "não é instituição financeira. Crédito sujeito a análise e aprovação. Taxas e condições variam conforme "
                  "o perfil e a instituição.")
-TAMANHOS = [(90, 50), (88, 48)]
+TAMANHOS = [(90, 50), (88, 48), (86, 48)]
 SANGRIA = 3
 
 # Assinatura "folinha + Cerrado Tech" que vai em todas as artes da CerraFood (produto da fábrica).
