@@ -334,8 +334,9 @@ python tools/gerar_formatos.py --render cerraai credito # só algumas
   A pasta `formatos/` **é publicada** (não está no `exclude`). Não passa pelo `publicar.py` nem pela agenda.
 - **Por frente (9: institucional, tech, cerraai, cerraclass, credito, contabilidade, consultorias, guiacademico,
   cerrafood):**
-  - 1 cartão de visita na maioria das frentes (5 na Contabilidade e no CerraFood), sempre com frente e verso:
-    `cartao-vN-90x50mm.pdf` e `cartao-vN-88x48mm.pdf` (2 páginas,
+  - 1 cartão de visita na maioria das frentes (3 na Contabilidade; o CerraFood não tem cartão desde 22/11), sempre
+    com frente e verso, em 3 tamanhos: `cartao-vN-90x50mm.pdf`, `cartao-vN-88x48mm.pdf` e `cartao-vN-86x48mm.pdf`
+    (este desde 25/11; os tamanhos ficam em `TAMANHOS`, no topo do `gerar_formatos.py`) (2 páginas,
     3 mm de sangria por lado, área segura de 4 mm), mais `cartao-vN-frente.png`/`-verso.png` (prévia em 300 dpi);
   - folder de 4 páginas A5 (folha A4 dobrada): `folder-paginas-a5.pdf` (as 4 páginas em ordem, com sangria) e
     `folder-impressao-a4.pdf` (2 folhas já imposicionadas: lado de fora 4|1, lado de dentro 2|3), mais `folder-pN.png`;

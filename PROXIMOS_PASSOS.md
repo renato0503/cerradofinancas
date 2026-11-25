@@ -1,6 +1,6 @@
 ﻿# Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 23/11/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 25/11/2026.
 
 **Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
 ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
@@ -14,6 +14,13 @@ ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
 | [`marketing/HISTORICO.md`](marketing/HISTORICO.md) | O que foi produzido em marketing, decisões de conteúdo e pendências |
 
 Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml`).
+
+## Sessão de 25/11/2026 (cartões de visita em 8,6 x 4,8 cm)
+
+**Pronto, com commit (`486c92d`), falta o push:** os cartões de visita ganharam o terceiro tamanho, **8,6 x 4,8 cm**
+(86 x 48 mm + 3 mm de sangria), ao lado de 9 x 5 e 8,8 x 4,8 cm. São 10 cartões, frente e verso, em
+`marketing/formatos/<frente>/cartao-vN-86x48mm.pdf`, já listados na aba Formatos e nos zips. Tamanhos em `TAMANHOS`
+no `marketing/tools/gerar_formatos.py`. Detalhes em `marketing/HISTORICO.md`.
 
 ## Sessão de 23/11/2026 (arquitetura de motion)
 
@@ -60,7 +67,7 @@ por batida até notas ≥ 8). Opcional: corrigir os 3 defeitos que o `pops` acho
       `movimento` (zoom/pan/cortes) e `cor` (brilho, contraste, saturação por cena) para analisar referências.
 - [ ] **Logo do site:** a marca agora é só a folinha, mas o header (`img/logoheader.png`) e o footer (`img/logo.png`)
       ainda usam o losango roxo antigo.
-- [ ] **CerraFood:** continua com 5 cartões (a única frente com mais de um, além da Contabilidade com 3).
+- [x] **CerraFood:** ficou sem cartão de visita desde 22/11 (`3e76d54`); só a Contabilidade tem mais de um (3).
 - [ ] **Reorganizar as pastas de `marketing/`** (pedido do Renato, para outra IA): ver a seção abaixo.
 
 ### Reorganizar as pastas de marketing (prompt para outra IA)

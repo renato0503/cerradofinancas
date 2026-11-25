@@ -1208,3 +1208,19 @@ enquanto as telas atrás rodam a 5 fps (câmera lenta) e o resto do quadro segue
   da frente", frente CerraClass (`REGRAS` do `publicar.py` ganhou `filme-videocomia`). Direção e roteiro em
   `conteudo/2026-11-filme-videocomia/`.
 - **Aprovação:** "esse vídeo ficou bom" (Renato, 23/11).
+
+## Cartões de visita também em 8,6 x 4,8 cm (25/11)
+
+Pedido do Renato: uma nova versão dos cartões de visita no formato **86 x 48 mm**. Entrou como **terceiro tamanho**, ao
+lado de 9 x 5 e 8,8 x 4,8 cm, que continuam iguais.
+
+- **O que saiu:** 10 cartões (1 por frente e 3 na Contabilidade; o CerraFood não tem cartão desde 22/11), cada um com
+  frente e verso, em `formatos/<frente>/cartao-vN-86x48mm.pdf`, com 3 mm de sangria por lado (página de 92 x 54 mm,
+  medida conferida nos 10 PDFs).
+- **Como:** o tamanho foi acrescentado em `TAMANHOS` no `tools/gerar_formatos.py`; o layout se ajusta sozinho pelas
+  variáveis `--w`/`--h`. Conferidas as 20 faces numa prancha, sem nada estourado nem cortado.
+- **Central:** `formatos.json` e os `.zip` de cada frente foram refeitos; a aba Formatos mostra o botão
+  "8,6 x 4,8 cm".
+- **Cuidado ao re-renderizar:** o `--render` refaz todos os PDFs e PNGs, que mudam só nos bytes. Para não inchar o
+  GitHub Pages, voltar os arquivos que não mudaram com `git checkout` e refazer só os zips e o JSON (função `indice`).
+- **Commit:** `486c92d`.
