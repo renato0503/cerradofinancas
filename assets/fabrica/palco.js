@@ -13,7 +13,7 @@ export function nivelInicial() {
   return "completo";
 }
 
-export function criarPalco(canvas, { nivel = "completo", fundo = null, exposicao = 1.0 } = {}) {
+export function criarPalco(canvas, { nivel = "completo", fundo = null, exposicao = 1.0, comChao = true } = {}) {
   const leve = nivel === "leve";
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: !leve, alpha: fundo === null, powerPreference: "high-performance", preserveDrawingBuffer: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, leve ? 1.25 : 1.75));
@@ -44,7 +44,7 @@ export function criarPalco(canvas, { nivel = "completo", fundo = null, exposicao
   // chão que só recebe sombra (o fundo é o da página)
   const chao = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), new THREE.ShadowMaterial({ opacity: 0.28 }));
   chao.rotation.x = -Math.PI / 2; chao.receiveShadow = true;
-  cena.add(chao);
+  if (comChao) cena.add(chao);
 
   const camera = new THREE.PerspectiveCamera(32, 1, 0.01, 50);
 
