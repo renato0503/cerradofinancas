@@ -46,14 +46,14 @@ def main():
                 pg.on("pageerror", lambda e: erros.append(str(e)))
                 pg.goto(url)
                 try:
-                    pg.wait_for_function("document.documentElement.classList.contains('com3d') || document.documentElement.classList.contains('sem3d')", timeout=25000)
+                    pg.wait_for_function("document.documentElement.classList.contains('com3d') || document.documentElement.classList.contains('sem3d') || document.documentElement.classList.contains('cel')", timeout=25000)
                 except Exception:
                     pg.mouse.wheel(0, 400); time.sleep(1)  # no celular o 3D espera o primeiro gesto
                     try:
                         pg.wait_for_function("document.documentElement.classList.contains('com3d') || document.documentElement.classList.contains('sem3d')", timeout=25000)
                     except Exception:
                         pass
-                estado = pg.evaluate("document.documentElement.classList.contains('com3d') ? '3D' : document.documentElement.classList.contains('sem3d') ? 'sem 3D' : 'carregando'")
+                estado = pg.evaluate("document.documentElement.classList.contains('cel') ? 'celular: vídeos' : document.documentElement.classList.contains('com3d') ? '3D' : document.documentElement.classList.contains('sem3d') ? 'sem 3D' : 'carregando'")
                 pg.evaluate("document.querySelector('#monte').scrollIntoView()"); time.sleep(1.5)
                 pg.screenshot(path=str(OUT / f"nav-{nome.split()[0].lower()}-{rot}.png"))
                 confere(f"{nome} · {rot}", not erros and estado != "carregando", f"({estado}{'; ' + erros[0][:80] if erros else ''})")
@@ -63,7 +63,7 @@ def main():
         # 2. fluidez da rolagem
         casos = [("GPU NVIDIA · PC", ARGS_GPU, {"width": 1440, "height": 900}, 1, False),
                  ("sem placa de vídeo (software) · PC", [], {"width": 1440, "height": 900}, 1, False),
-                 ("celular lento (CPU 4x) · NVIDIA", ARGS_GPU, {"width": 390, "height": 844}, 4, True)]
+                 ("PC lento (CPU 4x) · NVIDIA", ARGS_GPU, {"width": 1280, "height": 800}, 4, False)]
         for nome, args, vp, cpu, movel in casos:
             nav = pw.chromium.launch(args=args)
             ctx = nav.new_context(viewport=vp, is_mobile=movel, has_touch=movel, device_scale_factor=2 if movel else 1)

@@ -91,7 +91,7 @@ def main():
     with sync_playwright() as pw:
         nav = pw.chromium.launch(args=ARGS_GPU)
         rodar(nav, "pc", {"width": 1440, "height": 900}, False, porta, video)
-        rodar(nav, "celular", {"width": 390, "height": 844}, True, porta, video)
+        # o celular não usa 3D ao vivo (vídeos curtos): ver fabrica-estudio/celular.py
         nav.close()
     srv.shutdown()
     if video:

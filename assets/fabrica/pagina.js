@@ -57,10 +57,62 @@ if (ponteiroFino && !reduz) document.querySelectorAll(".inclina").forEach((el) =
   el.addEventListener("pointerleave", () => { el.style.transform = ""; });
 });
 
-// ---------------------------------------------------------------- 3D
+// ---------------------------------------------------------------- celular: vídeos curtos e tela 2D (sem 3D ao vivo)
+const celular = raiz.classList.contains("cel");
+if (celular) iniciarCelular();
+
+function iniciarCelular() {
+  const V = "assets/fabrica/videos/";
+  const vitrines = [...document.querySelectorAll(".vitrine")];
+  const tocar = (a) => {
+    const v = a.querySelector("video"), id = a.dataset.video;
+    if (reduz) { v.poster = V + id + "-fim.webp"; return; }        // sem movimento: só o quadro final
+    if (!v.src) { v.src = V + id + ".mp4"; v.preload = "auto"; }
+    v.currentTime = 0;
+    a.classList.remove("tocando", "fim"); void a.offsetWidth; a.classList.add("tocando");
+    v.onended = () => a.classList.add("fim");
+    v.play().catch(() => { v.poster = V + id + "-fim.webp"; a.classList.remove("tocando"); }); // economia de bateria: fica o final
+  };
+  // entra: o painel aparece e o vídeo toca uma vez (o objeto "acontece"); sai: pausa
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    const a = e.target, v = a.querySelector("video");
+    if (e.isIntersecting) { a.classList.add("vis"); tocar(a); } else { v.pause(); a.classList.remove("tocando"); }
+  }), { threshold: 0.55 });
+  vitrines.forEach((a) => io.observe(a));
+  // carrega com antecedência o vídeo da próxima vitrine (só o arquivo, sem tocar)
+  const pre = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const v = e.target.querySelector("video");
+    if (!v.src && !reduz) { v.src = V + e.target.dataset.video + ".mp4"; v.preload = "auto"; }
+    pre.unobserve(e.target);
+  }), { rootMargin: "120% 0px" });
+  vitrines.forEach((a) => pre.observe(a));
+
+  // Monte o seu sistema: a tela 2D se monta de novo a cada escolha
+  const cv = document.querySelector(".tela2d canvas");
+  if (cv) import("./telas.js").then(({ erp }) => {
+    const ctx = cv.getContext("2d");
+    let t0 = 0, anim = 0;
+    const quadro = (agora) => {
+      const p = reduz ? 1 : Math.min(1, (agora - t0) / 1400);
+      ctx.save(); erp(ctx, cv.width, cv.height, p, { modulos }); ctx.restore();
+      anim = p < 1 ? requestAnimationFrame(quadro) : 0;
+    };
+    const montar = () => { cancelAnimationFrame(anim); t0 = performance.now(); anim = requestAnimationFrame(quadro); };
+    Promise.all(["800 20px Inter", "500 20px Inter"].map((f) => document.fonts.load(f).catch(() => 0))).then(() => {
+      const vis = new IntersectionObserver((es) => { if (es[0].isIntersecting) { montar(); vis.disconnect(); } }, { threshold: 0.4 });
+      vis.observe(cv);
+      addEventListener("fabrica:modulos", montar);
+    });
+  });
+}
+
+// ---------------------------------------------------------------- 3D (PC)
 const { nivelInicial } = await import("./nivel.js");
 let nivel = new URLSearchParams(location.search).get("nivel") || nivelInicial();
-if (nivel === "estatico") {
+if (celular) {
+  // celular: nada de WebGL
+} else if (nivel === "estatico") {
   raiz.classList.add("sem3d");
 } else {
   // o texto aparece primeiro; o 3D entra depois da carga (no nível leve, quando o navegador estiver livre)

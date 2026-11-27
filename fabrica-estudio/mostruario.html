@@ -45,11 +45,14 @@
     document.querySelectorAll(".ui button[data-id]").forEach((b) => b.classList.toggle("on", b.dataset.id === id));
     inst.desenhar(1, 0); // enquadra no estado final (aberto)
     palco.enquadrar(inst.grupo, atual.vista);
+    caixaFinal = palco.caixaDe(inst.grupo);
     inst.desenhar(p, 0);
     palco.pedirQuadro();
   }
-  // ângulo extra de giro em torno do objeto (a câmera gira, o objeto fica parado)
-  function girar(a) { inst.grupo.rotation.y = a; }
+  // giro: a câmera orbita o centro do objeto (o objeto fica parado e sempre centralizado)
+  let caixaFinal = null;
+  const folgaVideo = Number(q.get("folga") || 1);
+  function girar(a) { palco.enquadrar(inst.grupo, { ...atual.vista, az: (atual.vista.az ?? 0.6) + a, folga: (atual.vista.folga ?? 1.25) * folgaVideo, caixa: caixaFinal }); }
   palco.desenhar = () => {
     if (!inst) return;
     const t = (performance.now() - t0) / 1000;

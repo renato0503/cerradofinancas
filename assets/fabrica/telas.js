@@ -1,6 +1,6 @@
 // Interfaces que aparecem nas telas dos objetos. Cada função desenha num canvas a partir do progresso p (0→1).
 // Desenho numa "base" fixa (ex.: 1280 x 800) e escala para o tamanho real do canvas.
-import { COR, FONTE, MONO, MAO, ret, txt, txtCabe, faixa, saida, clamp, lerp, reais } from "./base.js";
+import { COR, FONTE, MONO, MAO, ret, txt, txtCabe, faixa, saida, clamp, lerp, reais } from "./desenho.js";
 
 function base(c, w, h, bw, bh) { c.setTransform(w / bw, 0, 0, h / bh, 0, 0); }
 const aparece = (p, i, ini = 0.08, passo = 0.07, dur = 0.14) => saida(faixa(p, ini + i * passo, ini + i * passo + dur));

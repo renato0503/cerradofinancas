@@ -265,3 +265,55 @@ html.com3d body { touch-action: pan-y pinch-zoom; }
     transition: opacity 1.2s var(--ease); }
   .com3d .poster, .sem3d .poster { opacity: 0; }
 }
+
+/* ================= celular: sem 3D ao vivo — vídeos curtos dos mesmos objetos, em painéis ================= */
+.vitrine, .tela2d { display: none; }
+.cel #palco, .cel .veu, .cel .poster, .cel .trilho, .cel .dica-giro, .cel .still { display: none !important; }
+.cel {
+  --painel: #07132e;
+}
+.cel .vitrine {
+  display: block; position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden;
+  background: var(--painel); border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 24px 60px rgba(0,0,0,.45), inset 0 0 0 1px rgba(254,203,0,.04);
+  transform: translateY(26px) scale(.94); opacity: 0; transition: transform 1s var(--ease), opacity .9s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.cel .vitrine.vis { transform: none; opacity: 1; }
+.cel .vitrine video { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 7s cubic-bezier(.25,.1,.25,1); }
+/* depois que o objeto "acontece", a imagem segue viva com uma aproximação lenta */
+.cel .vitrine.fim video { transform: scale(1.07); }
+/* brilho que passa pelo painel quando ele entra */
+.cel .vitrine::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(254,203,0,.16) 50%, transparent 65%); transform: translateX(-120%); }
+.cel .vitrine.vis::before { animation: brilho 1.6s .3s var(--ease) both; }
+@keyframes brilho { to { transform: translateX(120%); } }
+/* barra dourada que acompanha o vídeo */
+.cel .vitrine i { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--ouro); transform-origin: left; transform: scaleX(0); }
+.cel .vitrine.tocando i { animation: barra 4.6s linear both; }
+@keyframes barra { to { transform: scaleX(1); } }
+
+.cel .hero { flex-direction: column; align-items: stretch; justify-content: flex-start; min-height: 0; padding: 78px 16px 56px; gap: 22px; }
+.cel .hero .rolar { display: none; }
+.cel .sol-cab { min-height: 0; padding: 8vh 0 4vh; }
+.cel .parada { display: block; min-height: 0; padding: 5vh 0 7vh; }
+.cel .parada .cartao { position: relative; margin: -12px 10px 0; z-index: 2; }
+.cel .monte .cartao { margin-top: 18px; margin-inline: 0; }
+.cel .bloco { background: none; }
+
+/* Monte o seu sistema: notebook desenhado em CSS com a tela 2D do ERP */
+.cel .tela2d { display: block; margin: 0 auto; width: min(100%, 420px); }
+.tela2d .tampa { background: #0b0d11; border-radius: 14px 14px 4px 4px; padding: 9px 9px 14px; border: 2px solid #c4c8cf; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+.tela2d canvas { display: block; width: 100%; height: auto; border-radius: 3px; aspect-ratio: 16 / 10; }
+.tela2d .base { height: 14px; margin: 0 -18px; border-radius: 0 0 16px 16px; background: linear-gradient(#e1e4e8, #a9aeb6); position: relative; }
+.tela2d .base::after { content: ""; position: absolute; left: 50%; top: 0; width: 22%; height: 5px; margin-left: -11%; border-radius: 0 0 8px 8px; background: #8b9098; }
+@media (prefers-reduced-motion: reduce) { .cel .vitrine { transform: none; opacity: 1; transition: none; } .cel .vitrine::before { animation: none; } }
+
+/* celular: sem desfoque de fundo nem fundo fixo (custam repintura a cada quadro de vídeo e a cada rolagem) */
+.cel body { background-attachment: scroll, scroll; }
+.cel .cartao, .cel .fim > div, .cel .consult, .cel .pessoa, .cel .topo.solido, .cel .btn-vidro, .cel .stack li {
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.cel .cartao, .cel .fim > div, .cel .consult, .cel .pessoa { background: #0a1736; }
+.cel .topo.solido { background: rgba(3,10,28,.97); }
+.cel .btn-vidro { background: #13234a; }

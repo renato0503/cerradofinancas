@@ -58,8 +58,8 @@ export function criarPalco(canvas, { nivel = "completo", fundo = null, exposicao
   tamanho();
 
   // Enquadra um objeto: câmera olhando o centro, distância pelo tamanho da caixa.
-  function enquadrar(obj, { az = 0.6, el = 0.35, folga = 1.25, alvoY = null } = {}) {
-    const caixa = new THREE.Box3().setFromObject(obj);
+  function enquadrar(obj, { az = 0.6, el = 0.35, folga = 1.25, alvoY = null, caixa: cx = null } = {}) {
+    const caixa = cx ? cx.clone() : new THREE.Box3().setFromObject(obj);
     const c = caixa.getCenter(new THREE.Vector3()), s = caixa.getSize(new THREE.Vector3());
     const raio = s.length() / 2;
     const fov = THREE.MathUtils.degToRad(camera.fov);
@@ -73,5 +73,6 @@ export function criarPalco(canvas, { nivel = "completo", fundo = null, exposicao
     chave.position.set(alvo.x + 2.2, alvo.y + 3.4, alvo.z + 2.0);
   }
 
-  return { renderer, cena, camera, chao, chave, nivel, pedirQuadro, enquadrar, set desenhar(f) { desenhar = f; } };
+  const caixaDe = (o) => new THREE.Box3().setFromObject(o);
+  return { renderer, cena, camera, chao, chave, nivel, pedirQuadro, enquadrar, caixaDe, set desenhar(f) { desenhar = f; } };
 }
