@@ -1,6 +1,6 @@
 ﻿# Próximos passos: Cerrado Finanças & Tech
 
-Ponto de partida para retomar o trabalho. Última atualização: 25/11/2026.
+Ponto de partida para retomar o trabalho. Última atualização: 27/11/2026.
 
 **Vai continuar em outra IA?** Leia a seção [Passagem para outra IA](#passagem-para-outra-ia-021126) no fim deste arquivo:
 ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
@@ -14,6 +14,24 @@ ela tem o resumo do que foi feito, o que falta e um prompt pronto para colar.
 | [`marketing/HISTORICO.md`](marketing/HISTORICO.md) | O que foi produzido em marketing, decisões de conteúdo e pendências |
 
 Nenhum desses arquivos é publicado no site (estão no `exclude` do `_config.yml`).
+
+## Sessão de 26 e 27/11/2026 (nova /fabrica com escritório 3D)
+
+**Pronto e publicado no site:**
+- **O que é:** a `fabrica.html` foi refeita do zero com um escritório 3D de **objetos reais** modelados em código.
+  São notebook, estante, celular, rack, maquininha, pastas, monitor, cadeado, switch e prancheta, e a rolagem leva a
+  câmera de um serviço a outro.
+- **Processo:** plano em `PLANO-FABRICA.md`, com portões aprovados pelo Renato (objetos → conceito em movimento →
+  página).
+- **Lighthouse:** celular 99, PC 91, Acessibilidade, Boas práticas e SEO 100.
+- **Testes:** Chrome, Firefox e Safari (WebKit), a 60 fps.
+- **Onde está:** código em `assets/fabrica/`, estúdio e testes em `fabrica-estudio/`. Estrutura no `context.md`.
+- **Transições:** o `css/global.css` ganhou `@view-transition` (transição suave entre páginas).
+
+**Próximo:**
+- [ ] Felipe e 1–2 pessoas testarem no celular (agora no ar) e anotar o que travar ou confundir.
+- [ ] Opcional: medir cliques em proposta e WhatsApp e a profundidade da rolagem (F6 do plano).
+- [ ] Opcional: usar os objetos 3D (`assets/fabrica/objetos/`) nos filmes e peças do marketing.
 
 ## Sessão de 25/11/2026 (cartões de visita em 8,6 x 4,8 cm)
 

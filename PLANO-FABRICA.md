@@ -2,6 +2,14 @@
 
 Criado em 26/11/2026. Documento interno (no `exclude` do `_config.yml`), não é publicado.
 
+> **Estado em 27/11/2026: F0–F5 concluídas e publicadas.** Portões 1 e 2 aprovados.
+> No Portão 3, o Renato mandou publicar direto e testar no ar.
+> Diferenças em relação ao plano:
+> - O GSAP não foi necessário: as animações são CSS e Three.js.
+> - O celular abre com um pôster e o 3D entra no primeiro gesto.
+> - Os objetos são criados sob demanda.
+> - Lighthouse: celular 99 e PC 91.
+
 ## Objetivo
 
 Página **totalmente nova** em `cerradofinancas.com.br/fabrica`. Ela deve impressionar com 3D, animação e transições,

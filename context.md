@@ -59,7 +59,7 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 ### Reposicionamento (out/2026): home vira hub de 4 frentes
 
 - `index.html` — Hub "Cerrado Finanças & Tech": hero, 4 frentes (Fábrica de Software → `fabrica.html`, Contabilidade → `contabilidade.html`, Crédito → `/credito/`, Cursos → `/cursos/`), CTA Consultorias, Ecossistema (Startups, Parceiros, Data Driven), Quem Somos e formulário com seleção de frente.
-- `fabrica.html` — A antiga home de software, intacta (estrutura descrita abaixo).
+- `fabrica.html` — Fábrica de Software, refeita do zero em 27/11/2026 com escritório 3D (estrutura descrita abaixo).
 - `credito.html` (permalink `/credito/`) — Correspondente Bancário Multi Bancos em parceria com a LS Intermediação Financeira (@ls.intermedfin): empréstimos, consignados, financiamentos, seguros e consórcios, com CTAs de WhatsApp por produto e aviso legal.
 - `cursos.html` (permalink `/cursos/`) — Página da Cerraclass no próprio site: destaques IA na Prática (`/iacao/`) e IA em Ação Farma (`/iafarma/`), seção **Catálogo Presencial** com os 11 cursos do catálogo da CerraClass (7 de um dia, 4 imersões, com link para `https://cerraclass.com.br/presencial/<id>`), método, in company; todos os botões de inscrição levam para https://cerraclass.com.br/. A seção do catálogo é gerada por `marketing/tools/gerar_cursos_site.py` a partir de `marketing/dados/cerraclass-cursos.json` — mexa no gerador, não no HTML.
 - `marketing/index.html` (`/marketing/`) — **Central de Conteúdos** para o time de marketing: lê `marketing/entregas/conteudos.json` e mostra cada campanha com prévias, download por peça, `.zip` e legendas com botão de copiar. PDF aparece como cartão "Abrir o documento" (tipo `documento` no `publicar.py`, desde 30/10). Tem `noindex` e não aparece no menu nem no sitemap. Só ela, `marketing/entregas/`, `marketing/kits/` e `marketing/formatos/` são publicadas; o resto de `marketing/` é o estúdio de produção, organizado em **`conteudo/`** (fontes dos posts), **`filmes/`** (vídeo), **`palestras/`**, **`propostas/`**, **`brand/`**, **`tools/`** e **`dados/`** (mapa em `marketing/README.md`, desde 23/11; o antigo `posts/` virou `conteudo/` e o antigo `videos/` virou `filmes/remotion/`). Desde 30/10 a agenda tem 4 contas (@cerradofinancas, @cerra.ai, @cerraclass e @guiacademico), começa em 31/10/2026, repete o conteúdo da conta quando ele acaba e inclui as datas comemorativas nacionais; `marketing/kits/` tem o mídia kit de cada marca, incluindo o do Guia Acadêmico (site próprio em guiacademico.com.br, projeto `D:\Dev\GuiAcademico`). Desde 31/10, as campanhas do Guia Acadêmico têm também uma arte única de Facebook (`facebook.png`, 1080×1350, no lugar do carrossel) e `legenda-facebook.txt`, que sempre traz o link do WhatsApp clicável `https://api.whatsapp.com/send?phone=5567993515206`. Desde 10/11 há também a frente **CerraFood** (12 campanhas na agenda) e as **peças da equipe** (série "Equipe": Talita, Felipe, Renato e Camila), que ficam na Central **fora da agenda** (`FORA_DA_AGENDA` em `marketing/tools/agendar.py`).
@@ -70,19 +70,42 @@ Site estático hospedado no **GitHub Pages** com domínio `www.cerradofinancas.c
 - `marketing/palestras/2026-10-palestra-carreira-ia/` — apresentação animada da palestra "Muito Além do Currículo" (29 slides, GSAP + Lottie, navegação por setas). A fonte é `marketing/conteudo/2026-10-palestra-carreira-ia/apresentacao-animada.html`; a cópia que ficava em `entregas/` saiu em 22/11. Não está no sitemap.
 - Header: Início, Fábrica de Software, Contabilidade, Crédito, Cursos. Startups/Parceiros/Data Driven saíram do header e ficam no footer (coluna "Ecossistema") e na home.
 
-### 1. `fabrica.html` — Fábrica de Software (antiga home)
-**Title:** Cerrado Tech — Fábrica de Software Customizada | ERPs, CRMs, IA e Dashboards
+### 1. `fabrica.html` — Fábrica de Software (nova, com escritório 3D, desde 27/11/2026)
+**Title:** Cerrado Tech · Fábrica de Software sob medida | ERP, CRM, IA offline e Dashboards
 
-Estrutura:
-1. **Hero** com vídeo `video.mp4`, logo `logohome.png`, badge "Fábrica de Software Corporativa", título "O software que o seu negócio realmente precisa", subtítulo sobre software customizado, CTA "Solicitar Proposta"
-2. **Faixa de plataformas** — SAP®, TOTVS Protheus, Power BI, ContaAzul, Bling ERP
-3. **Categorias de Software** (6 cards clicáveis com ícones Phosphor 3D): ERPs Customizados, CRMs Inteligentes, IA Offline, E-commerce & Vendas, Compliance & Auditoria, Dashboards & Analytics
-4. **Pipeline / Metodologia** (4 passos): Descoberta → Arquitetura → Desenvolvimento Ágil → Entrega & Evolução
-5. **Comparação** Custom vs Software de Prateleira (cards lado a lado)
-6. **Consultorias CTA** (banner azul escuro)
-7. **Quem Somos**: Foto + bio do Renato, LinkedIn CTA
-   - **Nossa Stack Tecnológica** (6 cards compactos com ícones Phosphor 3D): Cloud, IA Offline, Mobile/PWA, APIs & Integrações, Segurança & LGPD, Blockchain
-8. **Formulário de Contato** → FormSubmit.co → `gestor.renatorosa@gmail.com`
+Página **estática** (sem front matter, sem header/footer do site: tem cabeçalho e rodapé próprios com a folinha). Tudo em
+`assets/fabrica/`. O fundo é um **escritório 3D** (Three.js r170, no próprio site) com 10 objetos reais modelados em
+código. A rolagem move a câmera de objeto em objeto, e cada objeto toca a sua animação (função pura do progresso,
+igual aos filmes HyperFrames).
+
+1. **Abertura:** o notebook na mesa abre e o ERP se monta. No celular aparece um pôster
+   (`stills/notebook.webp`) até o 3D entrar, no primeiro gesto.
+2. **7 soluções**, cada uma com o seu objeto e link para a página do serviço:
+   - estante + NF → ERP;
+   - celular → CRM;
+   - rack + roteador desconectado → IA offline;
+   - maquininha → e-commerce;
+   - pastas + carimbo → compliance;
+   - monitor + GovDash → dashboards;
+   - notebook + cadeado → cyber.
+3. **Integrações** (switch com cabos SAP/TOTVS/Bling/Power BI/Banco) e **Como trabalhamos** (prancheta, 4 passos).
+4. **Monte o seu sistema:** os módulos marcados montam a tela do notebook, viram o link do WhatsApp com a lista e
+   entram no formulário (campo `modulos`).
+5. **Prateleira × sob medida** (comparador arrastável), **Consultorias**, **Quem somos** (Renato Rosa, foto pequena)
+   e **Stack**.
+6. **Formulário** → FormSubmit.co → `gestor.renatorosa@gmail.com` (`_next` = obrigado.html).
+
+Detalhes técnicos:
+- **Arrastar e tocar:** arrastar gira a câmera e ela volta ao soltar; clicar ou tocar no objeto abre o serviço.
+- **Níveis de qualidade** (`assets/fabrica/nivel.js`): `completo` no PC, `leve` no celular com texturas a 60%,
+  `estatico` sem WebGL ou com reduzir movimento (mostra imagens de `stills/`).
+- **Desempenho:** os objetos são criados sob demanda (`escritorio.js` → `garantir`).
+- **Lighthouse (27/11):** celular 99, PC 91, Acessibilidade, Boas práticas e SEO 100.
+- **Estúdio e testes:** em `fabrica-estudio/`, fora do site. Os testes são `pagina.py`, `interacoes.py`,
+  `verificar.py` e `lighthouse.sh`; detalhes no README da pasta.
+- **Para mexer:** objeto em `assets/fabrica/objetos/<id>.js` (tamanho real, em metros), tela em `telas.js`, lugar no
+  escritório em `escritorio.js` (`LUGARES`), texto no `fabrica.html`.
+- A página antiga está no histórico do git (antes de `c5916dc`).
 
 ### 2. `contabilidade.html` — Cerrado Contabilidade
 **Title:** Cerrado Contabilidade | Inteligência Fiscal para PMEs e MEI
