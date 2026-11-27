@@ -12,6 +12,7 @@ exclude:
   - README.md
   - context.md
   - PROXIMOS_PASSOS.md
+  - PLANO-FABRICA.md
   - LICENSE.txt
   # Estúdio de conteúdo: só marketing/index.html (Central de Marketing),
   # marketing/entregas/, marketing/kits/ e marketing/formatos/ são publicados.
