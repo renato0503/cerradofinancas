@@ -72,3 +72,5 @@ p.subtitle { font-size: 1.125rem; color: var(--text-muted); }
   text-decoration: none; transition: var(--transition); border: 2px solid var(--secondary);
 }
 .btn-secondary:hover { background: transparent; color: var(--secondary) !important; }
+/* Transição suave entre páginas (View Transitions entre documentos; navegador sem suporte troca normalmente) */
+@view-transition { navigation: auto; }

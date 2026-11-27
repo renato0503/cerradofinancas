@@ -102,7 +102,9 @@ export function criarEscritorio() {
   // o switch fica em cima do rack (onde ele fica de verdade)
   const rack = paradas.servidor.inst.grupo;
   const sw = switchRede.criar(); sw.grupo.position.set(0, 12 * 0.0445 + 0.1 + 0.03, -0.06); rack.add(sw.grupo);
-  paradas.switch = { id: "switch", def: switchRede, inst: sw, rotY: -0.3, vista: switchRede.vista };
+  paradas.switch = { id: "switch", def: switchRede, inst: sw, rotY: -0.3, vista: { az: 0.15, el: 0.42, folga: 0.62 } };
+  // o mesmo notebook, visto de frente e mais perto, para o "Monte o seu sistema" (a tela precisa ser lida)
+  paradas["notebook-monte"] = { ...paradas.notebook, id: "notebook-monte", vista: { az: 0.04, el: 0.2, folga: 0.78 } };
   // visão geral do escritório (fecho da página)
   paradas.escritorio = { id: "escritorio", inst: { grupo: g, desenhar() {} }, rotY: 0, vista: { az: 0.2, el: 0.36, folga: 0.62 } };
 

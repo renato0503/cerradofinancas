@@ -51,7 +51,7 @@ def rodar(nav, nome, viewport, mobile, porta, video):
     time.sleep(3.8)
     fotos = []
     alvos = ["section.hero", ".sol-cab"] + [f"[data-parada='{i}']" for i in
-                                            ["estoque", "celular", "servidor", "maquininha", "auditoria", "monitor", "cyber"]] + ["#contato"]
+                                            ["estoque", "celular", "servidor", "maquininha", "auditoria", "monitor", "cyber", "switch", "prancheta", "notebook-monte"]] + [".compara", ".equipe", "#contato"]
     for k, sel in enumerate(alvos):
         if k:
             ir_para(pg, sel)

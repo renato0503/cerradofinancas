@@ -142,3 +142,107 @@ main, .rodape { position: relative; z-index: 1; }
   .js .revela > * { opacity: 1; transform: none; transition: none; }
   .rolar span { animation: none; }
 }
+
+/* ---------------- F3: seções completas ---------------- */
+.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.dica { font-size: 14px; color: var(--txt-2); }
+.passos { list-style: none; counter-reset: p; padding: 0; margin: 6px 0 0; display: grid; gap: 14px; }
+.passos li { counter-increment: p; display: grid; grid-template-columns: 38px 1fr; column-gap: 10px; }
+.passos li::before { content: "0" counter(p); grid-row: span 2; font: 800 15px "JetBrains Mono", monospace; color: var(--ouro); padding-top: 3px; }
+.passos b { font-size: 17px; }
+.passos span { color: var(--txt-2); font-size: 15px; line-height: 1.5; }
+
+/* Monte o seu sistema */
+.modulos { border: 0; padding: 0; margin: 4px 0 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.modulos label { cursor: pointer; }
+.modulos input { position: absolute; opacity: 0; }
+.modulos span { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22);
+  font-weight: 600; font-size: 14px; transition: all .25s var(--ease); }
+.modulos span::before { content: ""; width: 14px; height: 14px; border-radius: 4px; border: 2px solid rgba(255,255,255,.45); transition: all .25s var(--ease); }
+.modulos input:checked + span { background: rgba(254,203,0,.14); border-color: var(--ouro); }
+.modulos input:checked + span::before { background: var(--ouro) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%23001f5c' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat; border-color: var(--ouro); }
+.modulos input:focus-visible + span { outline: 3px solid var(--ouro); outline-offset: 2px; }
+
+/* blocos de conteúdo cheio (sem objeto em destaque) */
+.bloco { position: relative; padding: 14vh clamp(16px, 5vw, 72px); background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(3,10,28,.88), rgba(3,10,28,.6) 75%, rgba(3,10,28,.35)); }
+.bloco h2 { margin: 0; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
+.bloco h2 span { color: var(--ouro); }
+.compara header { max-width: 760px; margin: 0 auto 36px; text-align: center; }
+
+/* comparador arrastável */
+.comparador { position: relative; max-width: 1040px; margin: 0 auto; border-radius: 24px; overflow: hidden; border: 1px solid var(--linha); box-shadow: var(--sombra); min-height: 380px; }
+.comparador .lado { position: absolute; inset: 0; padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center; }
+.comparador .lado h3 { margin: 0 0 18px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -.02em; }
+.comparador ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; max-width: 46%; }
+.comparador li { padding-left: 30px; position: relative; line-height: 1.5; }
+.prateleira { background: repeating-linear-gradient(135deg, #2a2f38 0 14px, #262a32 14px 28px); color: #c3c9d4; }
+.prateleira li::before { content: "✕"; position: absolute; left: 0; color: #f87171; font-weight: 800; }
+.medida { background: linear-gradient(135deg, #0b3a8c, #001f5c); clip-path: inset(0 0 0 var(--corte)); align-items: flex-end; }
+.medida ul, .medida h3 { width: 46%; max-width: 46%; }
+.medida li::before { content: "✓"; position: absolute; left: 0; color: var(--ouro); font-weight: 900; }
+.medida h3 { color: var(--ouro); }
+.comparador::after { content: ""; position: absolute; top: 0; bottom: 0; left: var(--corte); width: 3px; margin-left: -1.5px; background: var(--ouro); box-shadow: 0 0 24px rgba(254,203,0,.6); pointer-events: none; }
+.js .revela.vis > .divisoria, .divisoria { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; transform: none; cursor: ew-resize; -webkit-appearance: none; appearance: none; z-index: 3; }
+.comparador .pega { position: absolute; top: 50%; left: var(--corte); width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: var(--ouro); color: var(--azul);
+  display: grid; place-items: center; font-weight: 900; pointer-events: none; box-shadow: 0 6px 20px rgba(0,0,0,.4); z-index: 2; }
+
+/* consultorias, pessoa e stack */
+.equipe { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1180px; margin: 0 auto; }
+.consult, .pessoa { padding: 32px; border-radius: var(--raio); background: var(--vidro); border: 1px solid var(--linha); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.consult p, .pessoa p { color: var(--txt-2); }
+.consult h2, .pessoa h2 { font-size: clamp(26px, 2.4vw, 34px); }
+.pessoa { display: grid; grid-template-columns: 96px 1fr; gap: 22px; align-items: start; }
+.pessoa img { width: 96px; height: 96px; border-radius: 16px; object-fit: cover; border: 2px solid rgba(254,203,0,.5); }
+.pessoa .cargo { margin: 4px 0 10px; color: var(--ouro); font-weight: 600; }
+.stack { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.stack li { padding: 24px; border-radius: var(--raio); background: rgba(6,16,40,.7); border: 1px solid var(--linha); transform-style: preserve-3d; transition: transform .35s var(--ease), border-color .35s; }
+.stack li:hover { border-color: rgba(254,203,0,.45); }
+.stack b { display: block; font-size: 18px; margin-bottom: 6px; }
+.stack span { color: var(--txt-2); font-size: 15px; }
+
+/* formulário */
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: left; margin-top: 6px; }
+.form label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: var(--txt-2); }
+.form .larga { grid-column: 1 / -1; }
+.form input, .form textarea { width: 100%; font: 500 16px Inter, sans-serif; color: #fff; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.2); border-radius: 12px; padding: 12px 14px; transition: border-color .2s, background .2s; }
+.form input:focus, .form textarea:focus { outline: none; border-color: var(--ouro); background: rgba(255,255,255,.1); }
+.form button { cursor: pointer; border: 0; }
+.ou { margin: 18px 0 14px !important; font-size: 14px; }
+.fim > div { max-width: 760px; }
+
+/* imagem estática do objeto: só aparece sem 3D */
+.still { display: none; }
+.sem3d .still, html:not(.js) .still { display: block; width: min(560px, 100%); height: auto; border-radius: var(--raio); margin: 0 0 18px; }
+.sem3d .parada, html:not(.js) .parada { min-height: 0; padding: 8vh 0; flex-direction: column; align-items: flex-start; }
+.sem3d .hero, html:not(.js) .hero { flex-direction: column-reverse; justify-content: center; gap: 24px; }
+.sem3d .still-hero, html:not(.js) .still-hero { width: min(640px, 100%); }
+.sem3d .veu { display: none; }
+
+/* dica de toque e giro */
+.dica-giro { position: fixed; right: clamp(16px, 4vw, 56px); bottom: 22px; z-index: 5; font-size: 12px; font-weight: 600; color: var(--txt-2); background: rgba(3,10,28,.6);
+  padding: 6px 12px; border-radius: 999px; border: 1px solid var(--linha); opacity: 0; transition: opacity .4s; pointer-events: none; }
+.dica-giro.on { opacity: 1; }
+.com3d.pegando, .com3d.pegando * { cursor: grabbing !important; }
+.com3d .sobre-objeto { cursor: pointer; }
+
+@view-transition { navigation: auto; }
+
+@media (max-width: 820px) {
+  .bloco { padding: 10vh 16px; }
+  .equipe { grid-template-columns: 1fr; }
+  .stack { grid-template-columns: 1fr 1fr; }
+  .stack li { padding: 18px; }
+  .pessoa { grid-template-columns: 72px 1fr; padding: 22px; }
+  .pessoa img { width: 72px; height: 72px; }
+  .form { grid-template-columns: 1fr; }
+  .comparador { min-height: 0; }
+  .comparador ul, .medida ul, .medida h3 { max-width: 100%; width: 100%; }
+  .comparador .lado { position: static; clip-path: none; padding: 24px 20px; }
+  .medida { align-items: flex-start; border-top: 3px solid var(--ouro); }
+  .comparador::after, .divisoria, .comparador .pega { display: none; }
+  .dica-giro { bottom: auto; top: 72px; right: 16px; }
+}
+@media (max-width: 480px) { .stack { grid-template-columns: 1fr; } }
+
+/* no toque, o arrasto de lado gira o 3D e o de cima para baixo rola a página */
+html.com3d body { touch-action: pan-y pinch-zoom; }
