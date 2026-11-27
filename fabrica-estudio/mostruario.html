@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mostruário 3D · Fábrica</title>
+<style>
+  @font-face { font-family: 'Inter'; src: url('../assets/fabrica/fontes/inter.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'JetBrains Mono'; src: url('../assets/fabrica/fontes/jetbrains-mono.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'Caveat'; src: url('../assets/fabrica/fontes/caveat.woff2') format('woff2'); font-weight: 400 700; }
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: radial-gradient(circle at 70% 20%, #12306b 0%, #061433 55%, #030a1c 100%); font-family: Inter, system-ui, sans-serif; color: #e2e8f0; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .ui { position: fixed; left: 16px; right: 16px; bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .ui button { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 8px 14px; font: 600 13px Inter; cursor: pointer; }
+  .ui button.on { background: #fecb00; color: #001f5c; border-color: #fecb00; }
+  .ui input { flex: 1 1 200px; accent-color: #fecb00; }
+  .rot { position: fixed; left: 24px; top: 20px; }
+  .rot b { display: block; font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+  .rot span { color: #fecb00; font-size: 14px; font-weight: 600; }
+  body.captura .ui { display: none; }
+</style>
+<script type="importmap">{ "imports": { "three": "../assets/fabrica/vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="rot"><b id="nome"></b><span id="serv"></span></div>
+<div class="ui" id="ui"></div>
+<script type="module">
+  import { criarPalco } from "../assets/fabrica/palco.js";
+  const q = new URLSearchParams(location.search);
+  if (q.has("captura")) document.body.classList.add("captura");
+  await Promise.all(["800 20px Inter", "500 20px Inter", "600 20px 'JetBrains Mono'", "500 20px Caveat"].map((f) => document.fonts.load(f)));
+  const IDS = ["notebook", "estoque", "celular", "servidor", "maquininha", "auditoria", "monitor", "cyber", "switch", "prancheta"];
+  const mods = {};
+  for (const id of IDS) { try { mods[id] = (await import(`../assets/fabrica/objetos/${id}.js`)).default; } catch (e) { if (!String(e).includes("Failed to fetch")) console.error(id, e); } }
+  const palco = criarPalco(document.getElementById("c"), { nivel: q.get("nivel") || "completo" });
+  let atual = null, inst = null, p = Number(q.get("p") ?? 1), az = 0, auto = !q.has("captura"), t0 = performance.now();
+  function abrir(id) {
+    if (inst) palco.cena.remove(inst.grupo);
+    atual = mods[id]; inst = atual.criar();
+    palco.cena.add(inst.grupo);
+    document.getElementById("nome").textContent = atual.nome;
+    document.getElementById("serv").textContent = atual.servico;
+    document.querySelectorAll(".ui button[data-id]").forEach((b) => b.classList.toggle("on", b.dataset.id === id));
+    inst.desenhar(1, 0); // enquadra no estado final (aberto)
+    palco.enquadrar(inst.grupo, atual.vista);
+    inst.desenhar(p, 0);
+    palco.pedirQuadro();
+  }
+  // ângulo extra de giro em torno do objeto (a câmera gira, o objeto fica parado)
+  function girar(a) { inst.grupo.rotation.y = a; }
+  palco.desenhar = () => {
+    if (!inst) return;
+    const t = (performance.now() - t0) / 1000;
+    if (auto) { p = (t % 6) / 5; if (p > 1) p = 1; girar(Math.sin(t * 0.35) * 0.45); slider.value = p; }
+    inst.desenhar(p, t);
+    if (auto) palco.pedirQuadro();
+  };
+  // interface
+  const ui = document.getElementById("ui");
+  Object.keys(mods).forEach((id) => { const b = document.createElement("button"); b.dataset.id = id; b.textContent = mods[id].nome; b.onclick = () => abrir(id); ui.append(b); });
+  const play = document.createElement("button"); play.textContent = "▶ auto"; play.onclick = () => { auto = !auto; play.classList.toggle("on", auto); t0 = performance.now(); palco.pedirQuadro(); }; play.classList.toggle("on", auto);
+  const slider = Object.assign(document.createElement("input"), { type: "range", min: 0, max: 1, step: 0.001, value: p });
+  slider.oninput = () => { auto = false; play.classList.remove("on"); p = Number(slider.value); palco.pedirQuadro(); };
+  ui.append(play, slider);
+  abrir(q.get("obj") && mods[q.get("obj")] ? q.get("obj") : Object.keys(mods)[0]);
+  // gancho para a ferramenta de captura (Playwright)
+  window.quadro = (id, pp, giro, t = 0) => {
+    if (!atual || atual.id !== id) abrir(id);
+    auto = false; p = pp; girar(giro); inst.desenhar(pp, t);
+    palco.renderer.render(palco.cena, palco.camera);
+  };
+  window.objetos = Object.keys(mods);
+  window.pronto = true;
+</script>
+</body>
+</html>

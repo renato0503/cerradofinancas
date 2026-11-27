@@ -13,6 +13,8 @@ exclude:
   - context.md
   - PROXIMOS_PASSOS.md
   - PLANO-FABRICA.md
+  # Estúdio da nova /fabrica (mostruário 3D e capturas): uso interno
+  - fabrica-estudio
   - LICENSE.txt
   # Estúdio de conteúdo: só marketing/index.html (Central de Marketing),
   # marketing/entregas/, marketing/kits/ e marketing/formatos/ são publicados.
