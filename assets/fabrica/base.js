@@ -82,7 +82,12 @@ export function superficie(pxW, pxH) {
 }
 
 // Tela de aparelho: plano que brilha sozinho (não depende da luz da cena) com um desenho por progresso.
-export function tela(larg, alt, pxW, desenhar, { papel = false } = {}) {
+export let ESCALA_TELA = 1;
+export let MEDINDO = false;
+export function medindo(x) { MEDINDO = x; }
+export function escalaTelas(x) { ESCALA_TELA = x; }
+export function tela(larg, alt, pxW0, desenhar, { papel = false } = {}) {
+  const pxW = Math.round(pxW0 * ESCALA_TELA);
   const pxH = Math.round(pxW * alt / larg);
   const s = superficie(pxW, pxH);
   const mat = papel ? new THREE.MeshStandardMaterial({ map: s.tex, roughness: 0.92 })
@@ -91,6 +96,7 @@ export function tela(larg, alt, pxW, desenhar, { papel = false } = {}) {
   if (papel) mesh.receiveShadow = true;
   let ultimo = null;
   mesh.userData.atualizar = (p, extra) => {
+    if (MEDINDO) return;
     const chave = (Math.round(p * 400) / 400) + "|" + JSON.stringify(extra ?? null);
     if (chave === ultimo) return;
     ultimo = chave;

@@ -36,7 +36,6 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="assets/fabrica/fontes/inter.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="modulepreload" href="assets/fabrica/vendor/three.module.min.js">
   <link rel="stylesheet" href="assets/fabrica/fabrica.css">
   <script>document.documentElement.classList.add("js")</script>
   <script type="importmap">{ "imports": { "three": "./assets/fabrica/vendor/three.module.min.js" } }</script>
@@ -45,8 +44,8 @@
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="topo" id="topo">
-    <a class="marca" href="/" aria-label="Cerrado Finanças &amp; Tech, página inicial">
-      <img src="img/folinha-hero.png" alt="" width="509" height="490">
+    <a class="marca" href="/" aria-label="Cerrado Tech, página inicial">
+      <img src="assets/fabrica/img/folinha.webp" alt="" width="240" height="231">
       <span><b>Cerrado</b> <em>Tech</em></span>
     </a>
     <nav class="menu" aria-label="Seções">
@@ -64,8 +63,9 @@
   <main id="conteudo">
     <!-- abertura -->
     <section class="hero" data-parada="notebook" aria-labelledby="h-hero">
-      <img class="still still-hero" src="assets/fabrica/stills/notebook.webp" alt="" width="800" height="533">
-      <div class="hero-txt revela">
+      <img class="still still-hero" src="assets/fabrica/stills/notebook.webp" alt="" width="800" height="533" loading="lazy">
+      <img class="poster" src="assets/fabrica/stills/notebook.webp" alt="" width="800" height="533" fetchpriority="low">
+      <div class="hero-txt">
         <p class="sobre">Cerrado Tech · Fábrica de software</p>
         <h1 id="h-hero">O software que o seu negócio <span>realmente precisa.</span></h1>
         <p class="lead">ERPs, CRMs, IA offline e painéis feitos sob medida para o seu processo. Nenhuma funcionalidade sobrando: você paga só pelo que usa.</p>
@@ -255,7 +255,7 @@
         <a class="mais" href="/consultorias.html">Ver todas as consultorias</a>
       </div>
       <div class="pessoa revela">
-        <img src="img/renato.jpg" alt="Renato Rosa" width="96" height="96" loading="lazy">
+        <img src="assets/fabrica/img/renato.webp" alt="Renato Rosa" width="96" height="96" loading="lazy">
         <div>
           <p class="sobre">Quem somos</p>
           <h2 id="h-eq">Renato Rosa</h2>
@@ -277,7 +277,7 @@
     <!-- contato -->
     <section class="fim" id="contato" data-parada="escritorio" aria-labelledby="h-fim">
       <div class="revela">
-        <img class="fim-folha" src="img/folinha-hero.png" alt="" width="509" height="490" loading="lazy">
+        <img class="fim-folha" src="assets/fabrica/img/folinha.webp" alt="" width="240" height="231" loading="lazy">
         <h2 id="h-fim">Vamos construir o software do seu negócio</h2>
         <p>Conte o que a sua empresa precisa. A gente responde com um caminho e uma proposta.</p>
         <form class="form" action="https://formsubmit.co/gestor.renatorosa@gmail.com" method="POST">

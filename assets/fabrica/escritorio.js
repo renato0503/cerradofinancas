@@ -88,34 +88,46 @@ export function criarEscritorio() {
   // balcão de vendas (direita)
   const bal = balcao(1.3, 0.6); bal.position.set(2.55, 0, 0.75); bal.rotation.y = -0.35; g.add(bal);
 
-  const paradas = {
-    notebook: colocar(g, notebook, [0, H_MESA, 0.02], 0, { az: 0.0, el: 0.3, folga: 1.0 }),
-    prancheta: colocar(g, prancheta, [-0.48, H_MESA, 0.05], 0.35),
-    celular: colocar(g, celular, [0.5, H_MESA, -0.08], -0.35),
-    monitor: colocar(g, monitor, [-2.35, H_MESA, -0.35], 0.1),
-    cyber: colocar(g, cyber, [-1.6, H_MESA, 0.0], 0.05, { az: 0.35 }),
-    estoque: colocar(g, estoque, [-1.0, 0, -1.75], 0.15),
-    servidor: colocar(g, servidor, [1.75, 0, -1.95], -0.3, { az: -0.05, el: 0.3 }),
-    auditoria: colocar(g, auditoria, [-3.5, H_MESA, 0.8], 0.35, { el: 0.55 }),
-    maquininha: colocar(g, maquininha, [2.55, H_BALCAO, 0.75], -0.35),
+  // onde fica cada objeto (criado só quando a câmera se aproxima: a página não trava na carga)
+  const LUGARES = {
+    notebook: [notebook, [0, H_MESA, 0.02], 0, { az: 0.0, el: 0.3, folga: 1.0 }],
+    prancheta: [prancheta, [-0.48, H_MESA, 0.05], 0.35],
+    celular: [celular, [0.5, H_MESA, -0.08], -0.35],
+    monitor: [monitor, [-2.35, H_MESA, -0.35], 0.1],
+    cyber: [cyber, [-1.6, H_MESA, 0.0], 0.05, { az: 0.35 }],
+    estoque: [estoque, [-1.0, 0, -1.75], 0.15],
+    servidor: [servidor, [1.75, 0, -1.95], -0.3, { az: -0.05, el: 0.3 }],
+    auditoria: [auditoria, [-3.5, H_MESA, 0.8], 0.35, { el: 0.55 }],
+    maquininha: [maquininha, [2.55, H_BALCAO, 0.75], -0.35],
   };
+  const paradas = {};
+  for (const [id, [def, pos, rotY, vx]] of Object.entries(LUGARES)) paradas[id] = { id, def, pos, rotY, vista: { ...def.vista, ...(vx || {}) }, inst: null };
   // o switch fica em cima do rack (onde ele fica de verdade)
-  const rack = paradas.servidor.inst.grupo;
-  const sw = switchRede.criar(); sw.grupo.position.set(0, 12 * 0.0445 + 0.1 + 0.03, -0.06); rack.add(sw.grupo);
-  paradas.switch = { id: "switch", def: switchRede, inst: sw, rotY: -0.3, vista: { az: 0.15, el: 0.42, folga: 0.62 } };
+  paradas.switch = { id: "switch", def: switchRede, pai: "servidor", pos: [0, 12 * 0.0445 + 0.1 + 0.03, -0.06], rotY: -0.3, vista: { az: 0.15, el: 0.42, folga: 0.62 }, inst: null };
   // o mesmo notebook, visto de frente e mais perto, para o "Monte o seu sistema" (a tela precisa ser lida)
-  paradas["notebook-monte"] = { ...paradas.notebook, id: "notebook-monte", vista: { az: 0.04, el: 0.2, folga: 0.78 } };
-  // visão geral do escritório (fecho da página)
-  paradas.escritorio = { id: "escritorio", inst: { grupo: g, desenhar() {} }, rotY: 0, vista: { az: 0.2, el: 0.36, folga: 0.62 } };
+  paradas["notebook-monte"] = { id: "notebook-monte", alias: "notebook", rotY: 0, vista: { az: 0.04, el: 0.2, folga: 0.78 }, inst: null };
+  // visão geral do escritório (fecho da página), com a caixa do ambiente inteiro
+  paradas.escritorio = { id: "escritorio", inst: { grupo: g, desenhar() {} }, rotY: 0, vista: { az: 0.2, el: 0.36, folga: 0.62 },
+    caixa: new THREE.Box3(new THREE.Vector3(-4.0, 0, -2.4), new THREE.Vector3(3.3, 1.3, 1.3)) };
 
-  return { grupo: raiz, paradas };
+  function garantir(id) {
+    const p = paradas[id];
+    if (!p || p.inst) return p;
+    if (p.alias) { p.inst = garantir(p.alias).inst; return p; }
+    p.inst = p.def.criar();
+    p.inst.grupo.position.set(...p.pos);
+    if (p.pai) garantir(p.pai).inst.grupo.add(p.inst.grupo);
+    else { p.inst.grupo.rotation.y = p.rotY; g.add(p.inst.grupo); }
+    return p;
+  }
+  return { grupo: raiz, paradas, garantir };
 }
 
 // Pose da câmera que enquadra uma parada dentro da área útil da tela (a fração fw x fh onde o texto não cobre).
 const _caixa = new THREE.Box3(), _c = new THREE.Vector3(), _s = new THREE.Vector3();
 export function pose(parada, camera, fw = 1, fh = 1) {
   const v = parada.vista;
-  _caixa.setFromObject(parada.inst.grupo);
+  if (parada.caixa) _caixa.copy(parada.caixa); else _caixa.setFromObject(parada.inst.grupo);
   _caixa.getCenter(_c); _caixa.getSize(_s);
   const raio = _s.length() / 2;
   const tv = Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2);

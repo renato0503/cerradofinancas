@@ -246,3 +246,21 @@ main, .rodape { position: relative; z-index: 1; }
 
 /* no toque, o arrasto de lado gira o 3D e o de cima para baixo rola a página */
 html.com3d body { touch-action: pan-y pinch-zoom; }
+
+/* abertura: entrada em cascata só com CSS (o texto não espera o JavaScript nem o 3D) */
+.hero-txt > * { animation: entra .9s var(--ease) both; }
+.hero-txt > :nth-child(2) { animation-delay: .06s; } .hero-txt > :nth-child(3) { animation-delay: .14s; }
+.hero-txt > :nth-child(4) { animation-delay: .22s; } .hero-txt > :nth-child(5) { animation-delay: .3s; }
+@keyframes entra { from { opacity: .01; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+#palco { opacity: 0; transition: opacity 1.2s var(--ease); }
+.com3d #palco { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .hero-txt > * { animation: none; } }
+
+/* pôster da abertura (celular): a imagem do notebook enquanto o 3D carrega; some com fade quando o 3D entra */
+.poster { display: none; }
+@media (max-width: 820px) {
+  .js .poster { display: block; position: absolute; left: 0; right: 0; top: 64px; width: 100%; height: 40svh; object-fit: contain; pointer-events: none;
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 55%, transparent 100%); mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 55%, transparent 100%);
+    transition: opacity 1.2s var(--ease); }
+  .com3d .poster, .sem3d .poster { opacity: 0; }
+}

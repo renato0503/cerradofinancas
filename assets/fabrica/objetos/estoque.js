@@ -21,18 +21,18 @@ export default {
   vista: { az: 0.45, el: 0.18, folga: 1.0 },
   criar() {
     const g = new THREE.Group();
-    // estrutura: 4 colunas em cantoneira perfurada + 4 prateleiras
+    // estrutura: 4 colunas em cantoneira perfurada + 4 prateleiras (furos numa instância só)
+    const furos = new THREE.InstancedMesh(new THREE.PlaneGeometry(0.008, 0.016), MAT.plasticoPreto, 4 * 28);
+    const mf = new THREE.Matrix4(), qf = new THREE.Quaternion(), um = new THREE.Vector3(1, 1, 1);
+    let nf = 0;
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
       const col = caixa(0.035, A, 0.035, 0.002, MAT.acoPintado);
       col.position.set(sx * (L / 2 - 0.0175), A / 2, sz * (P / 2 - 0.0175));
       g.add(col);
-      for (let i = 0; i < 28; i++) {
-        const furo = new THREE.Mesh(new THREE.PlaneGeometry(0.008, 0.016), MAT.plasticoPreto);
-        furo.position.set(sx * (L / 2 - 0.0175), 0.06 + i * 0.04, sz * (P / 2) + sz * 0.0002);
-        if (sz < 0) furo.rotation.y = Math.PI;
-        g.add(furo);
-      }
+      qf.setFromAxisAngle(new THREE.Vector3(0, 1, 0), sz < 0 ? Math.PI : 0);
+      for (let i = 0; i < 28; i++) furos.setMatrixAt(nf++, mf.compose(new THREE.Vector3(sx * (L / 2 - 0.0175), 0.06 + i * 0.04, sz * (P / 2) + sz * 0.0002), qf, um));
     }
+    g.add(furos);
     const alturas = [0.06, 0.42, 0.78, 1.16];
     alturas.forEach((y) => {
       const pr = caixa(L - 0.01, 0.02, P - 0.01, 0.002, MAT.acoPintado);

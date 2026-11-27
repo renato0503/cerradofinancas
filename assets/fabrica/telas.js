@@ -17,18 +17,8 @@ function codigoBarras(c, x, y, w, h, semente = 7, cor = "#111") {
 }
 
 // ---------------------------------------------------------------- ERP (notebook da abertura e "Monte o seu sistema")
-export const MODULOS = {
-  financeiro: { menu: "Financeiro", card: ["Saldo em caixa", "R$ 248.390,00", "+12% no mês", COR.verde] },
-  vendas: { menu: "Vendas", card: ["Vendas do mês", "R$ 412.870,00", "86% da meta", COR.azulClaro] },
-  estoque: { menu: "Estoque", card: ["Estoque crítico", "3 itens", "repor até sexta", COR.laranja] },
-  fiscal: { menu: "Fiscal", card: ["NF-e emitidas hoje", "47", "0 rejeitadas", COR.verde] },
-  crm: { menu: "CRM", card: ["Propostas abertas", "18", "R$ 1,2 mi no funil", COR.azulClaro] },
-  loja: { menu: "Loja online", card: ["Pedidos online", "126", "hoje", COR.azulClaro] },
-  paineis: { menu: "Painéis", card: ["EBITDA", "18,4%", "margem no mês", COR.verde] },
-  ia: { menu: "Cerra.AI", card: ["Cerra.AI", "Pergunte aos documentos", "offline", COR.dourado] },
-  rh: { menu: "Pessoas", card: ["Folha de pagamento", "42 pessoas", "fecha dia 30", COR.cinza] },
-};
-export const MODULOS_PADRAO = ["financeiro", "vendas", "estoque", "fiscal"];
+import { MODULOS, MODULOS_PADRAO } from "./modulos.js";
+export { MODULOS, MODULOS_PADRAO };
 
 export function erp(c, w, h, p, extra) {
   const BW = 1280, BH = 800;
@@ -76,7 +66,7 @@ export function erp(c, w, h, p, extra) {
     ret(c, x, y, 6, ch, 3, cor);
     txtCabe(c, rot, x + 22, y + 36, 16, cw - 36, COR.cinza, 600);
     txtCabe(c, val, x + 22, y + (linhas > 1 ? 72 : 80), linhas > 1 ? 26 : 30, cw - 36, COR.tinta, 800);
-    txtCabe(c, sub, x + 22, y + (linhas > 1 ? 98 : 112), 15, cw - 36, cor === COR.cinza ? COR.cinza : cor, 600);
+    txtCabe(c, sub, x + 22, y + (linhas > 1 ? 98 : 112), 15, cw - 36, cor, 600);
   });
   // gráfico
   const gy = 122 + linhas * (ch + 14) + 10, gh = BH - gy - 36;

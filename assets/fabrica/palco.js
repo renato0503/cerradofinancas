@@ -3,15 +3,7 @@
 import * as THREE from "three";
 import { RoomEnvironment } from "./vendor/RoomEnvironment.js";
 
-export function nivelInicial() {
-  const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const gl = (() => { try { const c = document.createElement("canvas"); return c.getContext("webgl2") || c.getContext("webgl"); } catch { return null; } })();
-  if (!gl || reduz) return "estatico";
-  const toque = matchMedia("(pointer: coarse)").matches;
-  const mem = navigator.deviceMemory || 8, nucleos = navigator.hardwareConcurrency || 8;
-  if (toque || mem <= 4 || nucleos <= 4 || innerWidth < 820) return "leve";
-  return "completo";
-}
+export { nivelInicial } from "./nivel.js";
 
 export function criarPalco(canvas, { nivel = "completo", fundo = null, exposicao = 1.0, comChao = true } = {}) {
   const leve = nivel === "leve";

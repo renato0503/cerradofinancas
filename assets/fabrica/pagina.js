@@ -1,6 +1,6 @@
 // Controlador da /fabrica: texto primeiro, 3D depois. A rolagem escolhe a parada da câmera e o progresso
 // da animação de cada objeto (função pura, igual aos filmes); o relógio só toca a abertura e os LEDs.
-import { MODULOS, MODULOS_PADRAO } from "./telas.js";
+import { MODULOS, MODULOS_PADRAO } from "./modulos.js";
 
 const raiz = document.documentElement;
 const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -58,11 +58,20 @@ if (ponteiroFino && !reduz) document.querySelectorAll(".inclina").forEach((el) =
 });
 
 // ---------------------------------------------------------------- 3D
-const { nivelInicial } = await import("./palco.js");
+const { nivelInicial } = await import("./nivel.js");
 let nivel = new URLSearchParams(location.search).get("nivel") || nivelInicial();
 if (nivel === "estatico") {
   raiz.classList.add("sem3d");
 } else {
+  // o texto aparece primeiro; o 3D entra depois da carga (no nível leve, quando o navegador estiver livre)
+  if (document.readyState !== "complete") await new Promise((r) => addEventListener("load", r, { once: true }));
+  if (nivel === "leve") await new Promise((r) => {
+    // no celular, o pôster segura a abertura; o 3D entra no primeiro gesto ou depois de alguns segundos
+    let feito = false;
+    const vai = () => { if (feito) return; feito = true; ["scroll", "touchstart", "pointerdown"].forEach((ev) => removeEventListener(ev, vai)); r(); };
+    ["scroll", "touchstart", "pointerdown"].forEach((ev) => addEventListener(ev, vai, { passive: true, once: true }));
+    setTimeout(() => (window.requestIdleCallback || setTimeout)(vai, { timeout: 2000 }), 3500);
+  });
   await Promise.all(["800 20px Inter", "500 20px Inter", "600 20px 'JetBrains Mono'", "500 20px Caveat"].map((f) => document.fonts.load(f).catch(() => 0)));
   iniciar3D().catch((e) => { console.error(e); raiz.classList.add("sem3d"); });
 }
@@ -70,12 +79,16 @@ if (nivel === "estatico") {
 async function iniciar3D() {
   const THREE = await import("three");
   const { criarPalco } = await import("./palco.js");
+  const { escalaTelas, medindo } = await import("./base.js");
+  if (nivel === "leve") escalaTelas(0.6);
   const { criarEscritorio, pose } = await import("./escritorio.js");
   const canvas = document.getElementById("palco");
   const palco = criarPalco(canvas, { nivel, comChao: false, exposicao: 1.0 });
   const { camera, renderer, cena, chave } = palco;
   const esc = criarEscritorio();
   cena.add(esc.grupo);
+  // o que aparece na abertura já nasce pronto (a mesa principal e a estante ao fundo)
+  ["notebook", "prancheta", "celular", "estoque"].forEach((id) => esc.garantir(id));
   const sc = chave.shadow.camera; sc.left = -1.8; sc.right = 1.8; sc.top = 1.8; sc.bottom = -1.8; sc.far = 12; sc.updateProjectionMatrix();
 
   // paradas na ordem da página
@@ -83,28 +96,35 @@ async function iniciar3D() {
     el, id: el.dataset.parada, par: esc.paradas[el.dataset.parada],
     link: el.querySelector(".mais")?.getAttribute("href") || null,
   }));
-  const todas = Object.values(esc.paradas);
   const OBJETOS = new Set(["notebook", "estoque", "celular", "servidor", "maquininha", "auditoria", "monitor", "cyber", "switch", "prancheta", "notebook-monte"]);
 
   // layout: no PC o objeto fica à direita do texto; no celular, na parte de cima
   let layout = null, poses = [];
-  function calcularPoses() {
-    const w = innerWidth, h = innerHeight, pc = w > 820;
-    layout = pc ? { fw: 0.56, fh: 1, sx: 0.42, sy: 0.02, folga: 1.05 } : { fw: 1, fh: 0.42, sx: 0, sy: 0.58, folga: 1.05 };
-    todas.forEach((p) => p.inst.desenhar(1, 0)); // poses medidas com tudo aberto
-    poses = secoes.map((s) => {
-      const extra = s.id === "notebook" ? { folga: pc ? 1.35 : 1.15, el: 0.34, az: pc ? 0.22 : 0.08 } : {};
-      const vista = { ...s.par.vista, ...extra };
-      if (s.id === "escritorio") return { ...pose({ ...s.par, vista }, camera, 1, 1), sx: 0, sy: pc ? 0 : 0.1 };
-      vista.folga = (vista.folga ?? 1.1) * layout.folga;
-      return { ...pose({ ...s.par, vista }, camera, layout.fw, layout.fh), sx: layout.sx, sy: layout.sy };
-    });
+  function calcularLayout() {
+    const w = innerWidth, h = innerHeight;
+    layout = w > 820 ? { pc: true, fw: 0.56, fh: 1, sx: 0.42, sy: 0.02, folga: 1.05 } : { pc: false, fw: 1, fh: 0.42, sx: 0, sy: 0.58, folga: 1.05 };
+    poses = [];
   }
-  calcularPoses();
-  addEventListener("resize", () => { calcularPoses(); acordar(); });
+  // pose de uma parada, calculada na primeira vez que é pedida (cria o objeto se preciso; mede tudo "aberto")
+  function poseDe(k) {
+    if (poses[k]) return poses[k];
+    const s = secoes[k], pc = layout.pc;
+    esc.garantir(s.id);
+    if (s.id !== "escritorio") { medindo(true); s.par.inst.desenhar(1, 0); medindo(false); }
+    const extra = s.id === "notebook" ? { folga: pc ? 1.35 : 1.15, el: 0.34, az: pc ? 0.22 : 0.08 } : {};
+    const vista = { ...s.par.vista, ...extra };
+    if (s.id === "escritorio") poses[k] = { ...pose({ ...s.par, vista }, camera, 1, 1), sx: 0, sy: pc ? 0 : 0.1 };
+    else {
+      vista.folga = (vista.folga ?? 1.1) * layout.folga;
+      poses[k] = { ...pose({ ...s.par, vista }, camera, layout.fw, layout.fh), sx: layout.sx, sy: layout.sy };
+    }
+    return poses[k];
+  }
+  calcularLayout();
+  addEventListener("resize", () => { calcularLayout(); acordar(); });
 
   // desloca a imagem para a área livre (sem cobrir o texto)
-  const desloc = { x: poses[0].sx, y: poses[0].sy };
+  const desloc = { x: poseDe(0).sx, y: poseDe(0).sy };
   function projetar() {
     camera.updateProjectionMatrix();
     camera.projectionMatrix.elements[8] -= desloc.x; camera.projectionMatrix.elements[9] -= desloc.y;
@@ -113,7 +133,7 @@ async function iniciar3D() {
   palco.desenhar = projetar;
 
   // câmera suavizada + giro do usuário (arrastar) que volta sozinho ao soltar
-  const camPos = poses[0].pos.clone(), camAlvo = poses[0].alvo.clone();
+  const camPos = poseDe(0).pos.clone(), camAlvo = poseDe(0).alvo.clone();
   const desejoPos = new THREE.Vector3(), desejoAlvo = new THREE.Vector3();
   const mouse = { x: 0, y: 0, sx: 0, sy: 0 };
   const giro = { yaw: 0, pitch: 0, alvoYaw: 0, alvoPitch: 0, ativo: false };
@@ -148,7 +168,10 @@ async function iniciar3D() {
     const t = (agora - t0) / 1000;
     estado = estadoRolagem();
     const { i, f } = estado;
-    const a = poses[i], b = poses[Math.min(i + 1, poses.length - 1)];
+    const a = poseDe(i), b = poseDe(Math.min(i + 1, secoes.length - 1));
+    // prepara com antecedência o objeto da parada seguinte à próxima (um por quadro, sem travar)
+    const adiante = secoes[Math.min(i + 2, secoes.length - 1)];
+    if (adiante && !adiante.par.inst) esc.garantir(adiante.id);
     desejoPos.lerpVectors(a.pos, b.pos, f); desejoAlvo.lerpVectors(a.alvo, b.alvo, f);
     desejoPos.y += Math.sin(f * Math.PI) * 0.35;
     const kd = reduz ? 1 : 1 - Math.exp(-dt * 5.5);
@@ -171,9 +194,16 @@ async function iniciar3D() {
     projetar();
     chave.target.position.copy(camAlvo); chave.position.set(camAlvo.x + 2.2, camAlvo.y + 3.4, camAlvo.z + 2.0);
     // animações: cada objeto com o progresso da sua seção (o notebook toca a abertura e mostra os módulos escolhidos)
-    const p = (id) => progDe(id);
-    esc.paradas.notebook.inst.desenhar(DUR_ABERTURA ? clamp(t / DUR_ABERTURA) : 1, t, { modulos });
-    for (const id of ["estoque", "celular", "servidor", "maquininha", "auditoria", "monitor", "cyber", "switch", "prancheta"]) esc.paradas[id].inst.desenhar(p(id), t);
+    // só atualiza o que está perto da câmera (o resto fica parado no último estado)
+    const perto = new Set();
+    for (let k = Math.max(0, i - 1); k <= Math.min(secoes.length - 1, i + 2); k++) perto.add(secoes[k].par.alias || secoes[k].id);
+    if (i <= 1) ["prancheta", "celular"].forEach((id) => perto.add(id));
+    for (const id of perto) {
+      const par = esc.paradas[id];
+      if (!par || !par.inst || id === "escritorio") continue;
+      if (id === "notebook") par.inst.desenhar(DUR_ABERTURA ? clamp(t / DUR_ABERTURA) : 1, t, { modulos });
+      else par.inst.desenhar(progDe(id), t);
+    }
     renderer.render(cena, camera);
     // parada atual: trilho, dica de giro
     const idx = f > 0.5 ? i + 1 : i;
@@ -184,7 +214,7 @@ async function iniciar3D() {
       dicaGiro.classList.toggle("on", !jaGirou && OBJETOS.has(id) && id !== "notebook");
     }
     if (!baixou && amostras.length < 90) { amostras.push(dt); if (amostras.length === 90) { const m = amostras.reduce((x, y) => x + y) / 90; if (m > 0.03) { renderer.setPixelRatio(1); baixou = true; } } }
-    const movendo = camPos.distanceToSquared(desejoPos) > 1e-7 || camAlvo.distanceToSquared(desejoAlvo) > 1e-7 || Math.abs(giro.yaw) > 1e-4 || Math.abs(giro.pitch) > 1e-4 || Math.abs(desloc.x - b.sx) > 1e-4;
+    const movendo = t < DUR_ABERTURA + 0.2 || camPos.distanceToSquared(desejoPos) > 1e-7 || camAlvo.distanceToSquared(desejoAlvo) > 1e-7 || Math.abs(giro.yaw) > 1e-4 || Math.abs(giro.pitch) > 1e-4 || Math.abs(desloc.x - b.sx) > 1e-4;
     const vivo = t < DUR_ABERTURA + 0.2 || ["servidor", "monitor", "cyber", "switch"].includes(secoes[idx]?.id);
     if ((movendo || vivo) && !document.hidden) requestAnimationFrame(quadro); else ativo = false;
   }
@@ -198,7 +228,7 @@ async function iniciar3D() {
   const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
   function objetoSob(x, y) {
     const s = secoes[atual];
-    if (!s || !OBJETOS.has(s.id)) return null;
+    if (!s || !OBJETOS.has(s.id) || !s.par.inst) return null;
     ndc.set((x / innerWidth) * 2 - 1, -(y / innerHeight) * 2 + 1);
     ray.setFromCamera(ndc, camera);
     return ray.intersectObject(s.par.inst.grupo, true).length ? s : null;
@@ -238,7 +268,9 @@ async function iniciar3D() {
   addEventListener("pointerup", soltar);
   addEventListener("pointercancel", () => { arr = null; giro.ativo = false; raiz.classList.remove("pegando"); });
 
+  // compila os shaders sem travar a página e só então mostra o 3D (aparece com fade)
+  if (renderer.compileAsync) await renderer.compileAsync(cena, camera);
   acordar();
   raiz.classList.add("com3d");
-  window.__fabrica = { palco, esc, poses, nivel, objetoSob, atual: () => secoes[atual]?.id };
+  window.__fabrica = { palco, esc, poses: () => poses, nivel, objetoSob, atual: () => secoes[atual]?.id };
 }
